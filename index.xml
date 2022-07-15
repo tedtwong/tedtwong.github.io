@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Teddy&#39;s online desktop</title>
-    <link>https://tedtwong.github.io/</link>
+    <link>https://www.codelooper.com/</link>
     <description>Recent content on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate><atom:link href="https://tedtwong.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Dec 2020 21:13:14 -0500</lastBuildDate><atom:link href="https://www.codelooper.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello R Markdown</title>
-      <link>https://tedtwong.github.io/post/2020-12-01-r-rmarkdown/</link>
+      <link>https://www.codelooper.com/post/2020-12-01-r-rmarkdown/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://tedtwong.github.io/post/2020-12-01-r-rmarkdown/</guid>
+      <guid>https://www.codelooper.com/post/2020-12-01-r-rmarkdown/</guid>
       <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
@@ -19,10 +19,10 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
     
     <item>
       <title>Math Sample</title>
-      <link>https://tedtwong.github.io/post/2017-03-05-math-sample/</link>
+      <link>https://www.codelooper.com/post/2017-03-05-math-sample/</link>
       <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://tedtwong.github.io/post/2017-03-05-math-sample/</guid>
+      <guid>https://www.codelooper.com/post/2017-03-05-math-sample/</guid>
       <description>&lt;p&gt;KaTeX can be used to generate complex math formulas server-side.&lt;/p&gt;
 &lt;p&gt;$$
 \phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots
@@ -37,10 +37,10 @@ $$&lt;/p&gt;
     
     <item>
       <title>About me</title>
-      <link>https://tedtwong.github.io/page/about/</link>
+      <link>https://www.codelooper.com/page/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://tedtwong.github.io/page/about/</guid>
+      <guid>https://www.codelooper.com/page/about/</guid>
       <description>A work in progress.</description>
     </item>
     
