@@ -11,6 +11,9 @@
     <loc>https://www.codelooper.com/tags/github/</loc>
     <lastmod>2022-07-14T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.codelooper.com/page/</loc>
+    <lastmod>2022-07-14T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.codelooper.com/post/</loc>
     <lastmod>2022-07-14T00:00:00+00:00</lastmod>
   </url><url>
@@ -21,6 +24,12 @@
     <lastmod>2022-07-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/</loc>
+    <lastmod>2022-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/page/resume/</loc>
+    <lastmod>2022-07-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/resume/</loc>
     <lastmod>2022-07-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/categories/</loc>
@@ -51,7 +60,5 @@
     <lastmod>2017-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/page/about/</loc>
-  </url><url>
-    <loc>https://www.codelooper.com/page/</loc>
   </url>
 </urlset>
