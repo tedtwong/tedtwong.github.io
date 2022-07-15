@@ -17,42 +17,6 @@ I wasn’t too familiar with how to set up git to sync the R/blogdown/public fol
     </item>
     
     <item>
-      <title>Teddy Wong&#39;s resume</title>
-      <link>https://www.codelooper.com/page/resume/</link>
-      <pubDate>Thu, 14 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.codelooper.com/page/resume/</guid>
-      <description>Aside It’s easy to understand something once you understand it.
-Teddy Wong
-Contact Info teddy.t.wong@gmail.com tedtwong.github.io +1 510.684.6176 Skills Insurance/insurtech business development.
-Reinsurance treaty underwriting. Agriculture, weather, and parametric risks.
-Global crop insurance market and public/private partnerships.
-Applied statistical analysis, models, and optimization methods.
-R, Python, SQL, Tableau, Matlab, Stata.
-Collaboration, communication, problem-solving, presentation, research, and adaptability.
-Disclaimer This resume was made with the R package pagedown.
-Last updated on 2022-07-14.</description>
-    </item>
-    
-    <item>
-      <title>Teddy Wong&#39;s resume</title>
-      <link>https://www.codelooper.com/resume/</link>
-      <pubDate>Thu, 14 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.codelooper.com/resume/</guid>
-      <description>Aside It’s easy to understand something once you understand it.
-Teddy Wong
-Contact Info teddy.t.wong@gmail.com tedtwong.github.io +1 510.684.6176 Skills Insurance/insurtech business development.
-Reinsurance treaty underwriting. Agriculture, weather, and parametric risks.
-Global crop insurance market and public/private partnerships.
-Applied statistical analysis, models, and optimization methods.
-R, Python, SQL, Tableau, Matlab, Stata.
-Collaboration, communication, problem-solving, presentation, research, and adaptability.
-Disclaimer This resume was made with the R package pagedown.
-Last updated on 2022-07-14.</description>
-    </item>
-    
-    <item>
       <title>Hello R Markdown</title>
       <link>https://www.codelooper.com/post/2020-12-01-r-rmarkdown/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>

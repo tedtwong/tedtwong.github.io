@@ -4,26 +4,7 @@
     <title>Pages on Teddy&#39;s online desktop</title>
     <link>https://www.codelooper.com/page/</link>
     <description>Recent content in Pages on Teddy&#39;s online desktop</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 14 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/page/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Teddy Wong&#39;s resume</title>
-      <link>https://www.codelooper.com/page/resume/</link>
-      <pubDate>Thu, 14 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.codelooper.com/page/resume/</guid>
-      <description>Aside It’s easy to understand something once you understand it.
-Teddy Wong
-Contact Info teddy.t.wong@gmail.com tedtwong.github.io +1 510.684.6176 Skills Insurance/insurtech business development.
-Reinsurance treaty underwriting. Agriculture, weather, and parametric risks.
-Global crop insurance market and public/private partnerships.
-Applied statistical analysis, models, and optimization methods.
-R, Python, SQL, Tableau, Matlab, Stata.
-Collaboration, communication, problem-solving, presentation, research, and adaptability.
-Disclaimer This resume was made with the R package pagedown.
-Last updated on 2022-07-14.</description>
-    </item>
-    
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://www.codelooper.com/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About me</title>
       <link>https://www.codelooper.com/page/about/</link>
