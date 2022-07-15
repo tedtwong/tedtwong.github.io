@@ -112,11 +112,8 @@ Davis, CA
 
 2011
 
-::: concise
--   Dissertation: Commodity Futures Markets Under Rational Expectations with a Speculative Fringe: Theory and Evidence"
+-   Dissertation: "Commodity Futures Markets Under Rational Expectations with a Speculative Fringe: Theory and Evidence"
 -   Fields of Interest: Commodities Markets, Development Economics, Industrial Organization, and Econometrics.
--   Dissertation Committee: Colin Carter, Aaron Smith, and Jeffrey Williams
-:::
 
 ### University of California, Berkeley
 
@@ -208,6 +205,7 @@ September 2008
 Beijing, China
 
 July 2007
+
 
 ```{js move_disclaim, echo=FALSE}
 (function() {
