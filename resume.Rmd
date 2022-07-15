@@ -4,17 +4,21 @@ author: Teddy Wong
 date: "`r Sys.Date()`" 
 output:
   pagedown::html_resume:
+    css:
+      - override.css #overide css defaults
+      - resume #default file
     # set it to true for a self-contained HTML page but it'll take longer to render
     self_contained: TRUE
 # uncomment this line to produce HTML and PDF in RStudio:
 knit: pagedown::chrome_print
 ---
 
-# Aside
-
+# Aside {#aside}
 It's easy to understand something once you understand it.
 
-![Teddy Wong](teddywong.jpg){width="80%"}
+<center>
+![Teddy Wong](teddywong.jpg){width="90%"}
+</center>
 
 ## Contact Info {#contact}
 
@@ -32,9 +36,11 @@ It's easy to understand something once you understand it.
 
 -   <i class="fa fa-calculator"></i> Applied statistical analysis, models, and optimization methods.
 
--   <i class="fa fa-code"></i> R, Python, SQL, Tableau, Matlab, Stata.
+-   <i class="fa fa-code"></i> R, Python, SQL, Tableau, Matlab, GitHub, Quarto.
 
 -   <i class="fa fa-handshake"></i> Collaboration, communication, problem-solving, presentation, research, and adaptability.
+
+
 
 ## Disclaimer {#disclaimer}
 
@@ -58,7 +64,7 @@ Current - 2021
 
 -   Business planning
 -   Reinsurance consulting
--   Capital/cashflow/loss modeling
+-   Capital/cash flow/loss modeling
 -   Regulatory requirements, ratings, domicile consulting
 
 ### Ironshore/Pembroke/Liberty/Hamilton
@@ -71,8 +77,8 @@ Los Angeles, CA
 
 -   Manage and underwrite global agriculture treaty risk portfolio.
 -   Lead reinsurance binder for India and manage delegated underwriting authority in Australia.
--   Lead datascience projects involving yield estimation and portoflio optimization.
--   Liaise with clients, brokers, governemnt and academic partners.
+-   Lead data science projects involving yield estimation and portfolio optimization.
+-   Liaise with clients, brokers, government and academic partners.
 
 ### Catlin/XL/AXA
 
@@ -82,8 +88,8 @@ Costa Mesa, CA
 
 2015 - 2012
 
--   Underwriting crop, hail, parametric risks.
--   Coordinate with local branches in N.America, Aisa, Europe, Australia.
+-   Underwriting crop, livestock, hail, parametric risks.
+-   Coordinate with local branches in N.America, Asia, Europe, Australia.
 -   Develop new business opportunities
 
 ### Endurance Re
@@ -96,7 +102,7 @@ Irvine, CA
 
 ### ERS/USDA
 
-Economist for the Market and Trade Economics Division, Economic Research Service of the U.S. Department of Agriculture. Summer Internship.
+Economist for the Market and Trade Economics Division, Economic Research Service of the U.S. Department of Agriculture. Summer internship.
 
 Washington D.C.
 
@@ -104,7 +110,7 @@ Washington D.C.
 
 ## Education {data-icon="graduation-cap" data-concise="true"}
 
-### Universeity of California, Davis
+### University of California, Davis
 
 PhD Candidate, Agriculture and Resource Economics. ABD
 
@@ -112,11 +118,8 @@ Davis, CA
 
 2011
 
-::: concise
--   Dissertation: Commodity Futures Markets Under Rational Expectations with a Speculative Fringe: Theory and Evidence"
+-   Dissertation: "Commodity Futures Markets Under Rational Expectations with a Speculative Fringe: Theory and Evidence"
 -   Fields of Interest: Commodities Markets, Development Economics, Industrial Organization, and Econometrics.
--   Dissertation Committee: Colin Carter, Aaron Smith, and Jeffrey Williams
-:::
 
 ### University of California, Berkeley
 
@@ -160,7 +163,7 @@ Davis, CA
 -   Scott Rozelle (Development Economics), Fall 2003, Spring 2004
 :::
 
-## Presentations {data-icon="presentation-screen"}
+## Presentations {data-icon="comments"}
 ### Presenter
 "Machine Learning in Agriculture Yield Estimation" at Guy Carpenter Agriculture Rendezvous
 
@@ -208,6 +211,7 @@ September 2008
 Beijing, China
 
 July 2007
+
 
 ```{js move_disclaim, echo=FALSE}
 (function() {

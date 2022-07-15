@@ -4,17 +4,21 @@ author: Teddy Wong
 date: "`r Sys.Date()`" 
 output:
   pagedown::html_resume:
+    css:
+      - override.css #overide css defaults
+      - resume #default file
     # set it to true for a self-contained HTML page but it'll take longer to render
     self_contained: TRUE
 # uncomment this line to produce HTML and PDF in RStudio:
 knit: pagedown::chrome_print
 ---
 
-# Aside
-
+# Aside {#aside}
 It's easy to understand something once you understand it.
 
-![Teddy Wong](teddywong.jpg){width="80%"}
+<center>
+![Teddy Wong](teddywong.jpg){width="90%"}
+</center>
 
 ## Contact Info {#contact}
 
@@ -32,9 +36,11 @@ It's easy to understand something once you understand it.
 
 -   <i class="fa fa-calculator"></i> Applied statistical analysis, models, and optimization methods.
 
--   <i class="fa fa-code"></i> R, Python, SQL, Tableau, Matlab, Stata.
+-   <i class="fa fa-code"></i> R, Python, SQL, Tableau, Matlab, GitHub, Quarto.
 
 -   <i class="fa fa-handshake"></i> Collaboration, communication, problem-solving, presentation, research, and adaptability.
+
+
 
 ## Disclaimer {#disclaimer}
 
