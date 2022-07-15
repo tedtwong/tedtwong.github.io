@@ -3,7 +3,40 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.codelooper.com/</loc>
-    <lastmod>2022-07-14T00:00:00+00:00</lastmod>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/html/</loc>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/julia/</loc>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/jupyter/</loc>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/observable-js/</loc>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/pdf/</loc>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/post/</loc>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/python/</loc>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/quarto/</loc>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/post/2022-07-15-quarto/</loc>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/r/</loc>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/</loc>
+    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/blogdown/</loc>
     <lastmod>2022-07-14T00:00:00+00:00</lastmod>
@@ -11,16 +44,7 @@
     <loc>https://www.codelooper.com/tags/github/</loc>
     <lastmod>2022-07-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.codelooper.com/post/</loc>
-    <lastmod>2022-07-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/tags/r/</loc>
-    <lastmod>2022-07-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.codelooper.com/post/2022-07-14-blogdown-github/2022-07-14-blogdown-github/</loc>
-    <lastmod>2022-07-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/tags/</loc>
     <lastmod>2022-07-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/categories/</loc>
