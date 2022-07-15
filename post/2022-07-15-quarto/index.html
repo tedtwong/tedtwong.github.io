@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>R blogdown and GitHub - Teddy&#39;s online desktop</title>
-  <meta name="description" content="Not as easy as I thought">
+  <title>Quarto - Teddy&#39;s online desktop</title>
+  <meta name="description" content="Weave text and code and render into many outputs">
   <meta name="author" content="Teddy Wong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -44,8 +44,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/www.codelooper.com\/post\/2022-07-14-blogdown-github\/2022-07-14-blogdown-github\/",
-          "name": "R blogdown and git hub"
+          "@id": "https:\/\/www.codelooper.com\/post\/2022-07-15-quarto\/",
+          "name": "Quarto"
         }
     }]
 }
@@ -56,15 +56,15 @@
   "author": {
     "name" : "Teddy Wong"
   },
-  "headline": "R blogdown and GitHub",
-  "description" : "It’s taken all day to get blogdown to sync with GitHub. I already had a repo set up at https:\/\/tedtwong.github.io\/ and I had set up a blogdown folder in R Studio, let’s call it: R\/blogdown.\nI wasn’t too familiar with how to set up git to sync the R\/blogdown\/public folder with https:\/\/tedtwong.github.io\/ repo so that I can version control blogdown files and host the files on GitHub at the same time.",
+  "headline": "Quarto",
+  "description" : "Checking out Quarto today. It looks like a more comprehensive tool than rmarkdown though it does a lot of similar things like being able to write text and include code cells (like Jupyter), but then also able to render the output into many formats (pdf, html, word, etc) using Pandoc. I guess that makes sense since it’s published by the same folks behind rmarkdown and R Studio:\nQuarto is a multi-language, next-generation version of R Markdown from RStudio, and includes dozens of new features and capabilities while at the same being able to render most existing Rmd files without modification.",
   "inLanguage" : "en",
-  "wordCount":  173 ,
-  "datePublished" : "2022-07-14T00:00:00",
-  "dateModified" : "2022-07-14T00:00:00",
+  "wordCount":  184 ,
+  "datePublished" : "2022-07-15T00:00:00",
+  "dateModified" : "2022-07-15T00:00:00",
   "image" : "https:\/\/www.codelooper.com\/img\/redplane.png",
-  "keywords" : [ "R, blogdown, GitHub" ],
-  "mainEntityOfPage" : "https:\/\/www.codelooper.com\/post\/2022-07-14-blogdown-github\/2022-07-14-blogdown-github\/",
+  "keywords" : [ "Quarto, R, Python, Jupyter, Observable JS, Julia, Pdf, HTML" ],
+  "mainEntityOfPage" : "https:\/\/www.codelooper.com\/post\/2022-07-15-quarto\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/www.codelooper.com",
@@ -78,15 +78,15 @@
 }
 </script>
 
-<meta property="og:title" content="R blogdown and GitHub" />
-<meta property="og:description" content="Not as easy as I thought">
+<meta property="og:title" content="Quarto" />
+<meta property="og:description" content="Weave text and code and render into many outputs">
 <meta property="og:image" content="https://www.codelooper.com/img/redplane.png" />
-<meta property="og:url" content="https://www.codelooper.com/post/2022-07-14-blogdown-github/2022-07-14-blogdown-github/" />
+<meta property="og:url" content="https://www.codelooper.com/post/2022-07-15-quarto/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Teddy&#39;s online desktop" />
 
-  <meta name="twitter:title" content="R blogdown and GitHub" />
-  <meta name="twitter:description" content="Not as easy as I thought">
+  <meta name="twitter:title" content="Quarto" />
+  <meta name="twitter:description" content="Weave text and code and render into many outputs">
   <meta name="twitter:image" content="https://www.codelooper.com/img/redplane.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link href='https://www.codelooper.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -257,25 +257,25 @@ if (!doNotTrack) {
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>R blogdown and GitHub</h1>
+                <h1>Quarto</h1>
               
               
               
                 
-                  <h2 class="post-subheading">Not as easy as I thought</h2>
+                  <h2 class="post-subheading">Weave text and code and render into many outputs</h2>
                 
               
               
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 14, 2022
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 15, 2022
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;173&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;184&nbsp;words
   
   
     
@@ -304,32 +304,32 @@ if (!doNotTrack) {
         
 
 
-<p>It’s taken all day to get blogdown to sync with GitHub. I already had a
-repo set up at <a href="https://tedtwong.github.io/" class="uri">https://tedtwong.github.io/</a> and I had set up a blogdown
-folder in R Studio, let’s call it: R/blogdown.</p>
-<p>I wasn’t too familiar with how to set up git to sync the
-R/blogdown/public folder with <a href="https://tedtwong.github.io/" class="uri">https://tedtwong.github.io/</a> repo so that
-I can version control blogdown files and host the files on GitHub at the
-same time. What worked for me was to clone <a href="https://tedtwong.github.io" class="uri">https://tedtwong.github.io</a>
-to R/blogdown/ and then change the folder name to ‘public’. That way it
-only synced the public files once blogdown does its thing.</p>
-<p>Now I can edit the files in blogdown and then use git to sync with
-github.io and everything works pretty well. One note of caution: put stuff (for example media files, etc.) into the contents folder and not directly into the public folder since rebuilding the blogdown site will overwrite the public folder from the contents folder.</p>
-<p>I hope this helps someone in the same predicament.</p>
-<p>Now it’s time to fly.</p>
-<video width="320" height="240" controls>
-<source src="airplane.mp4" type="video/mp4">
-</video>
+<p>Checking out <a href="https://quarto.org">Quarto</a> today. It looks like a more comprehensive tool than rmarkdown though it does a lot of similar things like being able to write text and include code cells (like Jupyter), but then also able to render the output into many formats (pdf, html, word, etc) using Pandoc. I guess that makes sense since it’s published by the same folks behind rmarkdown and R Studio:</p>
+<blockquote>
+<p>Quarto is a multi-language, next-generation version of R Markdown from RStudio, and includes dozens of new features and capabilities while at the same being able to render most existing Rmd files without modification.</p>
+</blockquote>
+<p>It’s also able to handle more languages in code cells than R Markdown. It’s fairly new so support isn’t as widespread as it is for rmarkdown. For example, I made a resume yesterday using pagedown or blogdown (I don’t remember which already), but I don’t see a readily available template for creating resumes yet in Quarto though I’m sure it will be coming soon.</p>
+<p>Installing Quarto is easy and I had it up and running under Visual Studio and R Studio in 5 mins.</p>
 
 
         
           <div class="blog-tags">
             
+              <a href="https://www.codelooper.com/tags/quarto/">Quarto</a>&nbsp;
+            
               <a href="https://www.codelooper.com/tags/r/">R</a>&nbsp;
             
-              <a href="https://www.codelooper.com/tags/blogdown/">blogdown</a>&nbsp;
+              <a href="https://www.codelooper.com/tags/python/">Python</a>&nbsp;
             
-              <a href="https://www.codelooper.com/tags/github/">GitHub</a>&nbsp;
+              <a href="https://www.codelooper.com/tags/jupyter/">Jupyter</a>&nbsp;
+            
+              <a href="https://www.codelooper.com/tags/observable-js/">Observable JS</a>&nbsp;
+            
+              <a href="https://www.codelooper.com/tags/julia/">Julia</a>&nbsp;
+            
+              <a href="https://www.codelooper.com/tags/pdf/">Pdf</a>&nbsp;
+            
+              <a href="https://www.codelooper.com/tags/html/">HTML</a>&nbsp;
             
           </div>
         
@@ -344,42 +344,42 @@ github.io and everything works pretty well. One note of caution: put stuff (for 
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-07-14-blogdown-github%2f2022-07-14-blogdown-github%2f&amp;text=R%20blogdown%20and%20GitHub&amp;via=" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-07-15-quarto%2f&amp;text=Quarto&amp;via=" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-07-14-blogdown-github%2f2022-07-14-blogdown-github%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-07-15-quarto%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-07-14-blogdown-github%2f2022-07-14-blogdown-github%2f&amp;title=R%20blogdown%20and%20GitHub" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-07-15-quarto%2f&amp;title=Quarto" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-07-14-blogdown-github%2f2022-07-14-blogdown-github%2f&amp;title=R%20blogdown%20and%20GitHub" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-07-15-quarto%2f&amp;title=Quarto" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-07-14-blogdown-github%2f2022-07-14-blogdown-github%2f&amp;title=R%20blogdown%20and%20GitHub" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-07-15-quarto%2f&amp;title=Quarto" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-07-14-blogdown-github%2f2022-07-14-blogdown-github%2f&amp;description=R%20blogdown%20and%20GitHub" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-07-15-quarto%2f&amp;description=Quarto" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -401,7 +401,7 @@ github.io and everything works pretty well. One note of caution: put stuff (for 
                   <ul>
                 
                 
-                    <li><a href="/post/2022-07-15-quarto/">Quarto</a></li>
+                    <li><a href="/post/2022-07-14-blogdown-github/2022-07-14-blogdown-github/">R blogdown and GitHub</a></li>
                 
               </ul>
 
@@ -413,13 +413,9 @@ github.io and everything works pretty well. One note of caution: put stuff (for 
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://www.codelooper.com/post/2020-12-01-r-rmarkdown/" data-toggle="tooltip" data-placement="top" title="Hello R Markdown">&larr; Previous Post</a>
+              <a href="https://www.codelooper.com/post/2022-07-14-blogdown-github/2022-07-14-blogdown-github/" data-toggle="tooltip" data-placement="top" title="R blogdown and GitHub">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://www.codelooper.com/post/2022-07-15-quarto/" data-toggle="tooltip" data-placement="top" title="Quarto">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
@@ -429,12 +425,12 @@ github.io and everything works pretty well. One note of caution: put stuff (for 
         
           
           <div class="disqus-comments">                  
-            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="https://www.codelooper.com/post/2022-07-14-blogdown-github/2022-07-14-blogdown-github">comments</span></button>
+            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="https://www.codelooper.com/post/2022-07-15-quarto">comments</span></button>
             <div id="disqus_thread"></div>
 
             <script type="text/javascript">
               var disqus_config = function () {
-              this.page.url = 'https:\/\/www.codelooper.com\/post\/2022-07-14-blogdown-github\/2022-07-14-blogdown-github';
+              this.page.url = 'https:\/\/www.codelooper.com\/post\/2022-07-15-quarto';
             };
 
           </script>

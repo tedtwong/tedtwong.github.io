@@ -5,7 +5,17 @@
     <link>https://www.codelooper.com/</link>
     <description>Recent content on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 14 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quarto</title>
+      <link>https://www.codelooper.com/post/2022-07-15-quarto/</link>
+      <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/2022-07-15-quarto/</guid>
+      <description>Checking out Quarto today. It looks like a more comprehensive tool than rmarkdown though it does a lot of similar things like being able to write text and include code cells (like Jupyter), but then also able to render the output into many formats (pdf, html, word, etc) using Pandoc. I guess that makes sense since it’s published by the same folks behind rmarkdown and R Studio:
+Quarto is a multi-language, next-generation version of R Markdown from RStudio, and includes dozens of new features and capabilities while at the same being able to render most existing Rmd files without modification.</description>
+    </item>
+    
     <item>
       <title>R blogdown and GitHub</title>
       <link>https://www.codelooper.com/post/2022-07-14-blogdown-github/2022-07-14-blogdown-github/</link>
