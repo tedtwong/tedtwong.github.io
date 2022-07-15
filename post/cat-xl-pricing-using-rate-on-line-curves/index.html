@@ -7,7 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>blogdown - Teddy&#39;s online desktop</title>
+  <title>Cat XL pricing using rate on line (ROL) curves - Teddy&#39;s online desktop</title>
+  <meta name="description" content="Making an R Shiny App to replace cumbersome Excel Spreadsheet">
   <meta name="author" content="Teddy Wong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -28,14 +29,64 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/www.codelooper.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/www.codelooper.com\/post\/cat-xl-pricing-using-rate-on-line-curves\/",
+          "name": "Cat xl pricing using rate on line ( rol) curves"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Package Build"
+  },
+  "headline": "Cat XL pricing using rate on line (ROL) curves",
+  "description" : "When I was working with stop loss reinsurance contracts the usual way to perform the pricing exercise would be to gather all the loss data, fit a loss distribution to that data, make adjustments based on seasonal outlook or other variables, and apply the limits and retentions asked by the clients\/brokers.\nAlthough this is standard practice and almost second nature, another way to look at the pricing problem is from the point of view that you, as an underwriter, do not have all the information and perhaps should take into consideration market pricing.",
+  "inLanguage" : "en",
+  "wordCount":  398 ,
+  "datePublished" : "2022-07-15T00:00:00",
+  "dateModified" : "2022-07-15T00:00:00",
+  "image" : "https:\/\/www.codelooper.com\/img\/redplane.png",
+  "keywords" : [ "R Shiny, Reactive Programming, Reinsurance" ],
+  "mainEntityOfPage" : "https:\/\/www.codelooper.com\/post\/cat-xl-pricing-using-rate-on-line-curves\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/www.codelooper.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/www.codelooper.com\/img\/redplane.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="blogdown" />
+<meta property="og:title" content="Cat XL pricing using rate on line (ROL) curves" />
+<meta property="og:description" content="Making an R Shiny App to replace cumbersome Excel Spreadsheet">
 <meta property="og:image" content="https://www.codelooper.com/img/redplane.png" />
-<meta property="og:url" content="https://www.codelooper.com/tags/blogdown/" />
+<meta property="og:url" content="https://www.codelooper.com/post/cat-xl-pricing-using-rate-on-line-curves/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Teddy&#39;s online desktop" />
 
-  <meta name="twitter:title" content="blogdown" />
+  <meta name="twitter:title" content="Cat XL pricing using rate on line (ROL) curves" />
+  <meta name="twitter:description" content="Making an R Shiny App to replace cumbersome Excel Spreadsheet">
   <meta name="twitter:image" content="https://www.codelooper.com/img/redplane.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link href='https://www.codelooper.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -204,14 +255,37 @@ if (!doNotTrack) {
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="tags-heading">
+            <div class="post-heading">
               
-                <h1>blogdown</h1>
-              
-              
-                <hr class="small">
+                <h1>Cat XL pricing using rate on line (ROL) curves</h1>
               
               
+              
+                
+                  <h2 class="post-subheading">Making an R Shiny App to replace cumbersome Excel Spreadsheet</h2>
+                
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 15, 2022
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;398&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Package Build
+    
+  
+  
+</span>
+
+
               
             </div>
           </div>
@@ -223,73 +297,144 @@ if (!doNotTrack) {
 
 
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
         
-        <div class="posts-list">
+
+
+<p>When I was working with stop loss reinsurance contracts the usual way to perform the pricing exercise would be to gather all the loss data, fit a loss distribution to that data, make adjustments based on seasonal outlook or other variables, and apply the limits and retentions asked by the clients/brokers.</p>
+<p>Although this is standard practice and almost second nature, another way to look at the pricing problem is from the point of view that you, as an underwriter, do not have all the information and perhaps should take into consideration market pricing. Reinsurance is often a market that suffers from what in auction theory is called “winner’s curse”, that you’ll get the business if you offer a lower price than the competition but that just means you may have mis-priced the risk in order to gain the business!</p>
+<p>To prevent going too astray from market pricing then, it’s helpful to look at the market price graphically as a curve. I’ve called it the ‘implied rol’ curve previously. I have used a spreadsheet to draw this curve from pricing data, either prior years, or similar risks, to do this. But it was cumbersome to wrestle all the columns and rows used in the calculations. So, I decided to create a R Shiny app to make the process a lot easier. The app is live now at <a href="https://twong.shinyapps.io/Implied_rol/" class="uri">https://twong.shinyapps.io/Implied_rol/</a></p>
+<p>As can be seen in the image file below, this app allows you to input stop loss layer pricing information and will fit the power curve to the layers.</p>
+<div class="figure">
+<img src="images/Screen%20Shot%202022-07-15%20at%2012.05.12%20PM.png" style="width:80.0%" alt="" />
+<p class="caption">implied_rol</p>
+</div>
+<p>You can now input new layer limit and retention and calculate the pricing of that new layer based on the calculated power curve. In this case, a layer of 15% xs 95% given the layers used above gives a price of 1.83% and a ROL of 12.21%.</p>
+<div class="figure">
+<img src="images/Screen%20Shot%202022-07-15%20at%2012.09.25%20PM.png" style="width:80.0%" alt="" />
+<p class="caption">Implicit Market Price</p>
+</div>
+<p>This little tool then provides a good back of the envelope calculation for what a new layer might cost. The other tabs in the app allows for comparisons of two different pricing regimes. For example, if there are two companies with similar underlying risks, it would be easy to visually compare the pricing curves given the pricing data.</p>
+<div class="figure">
+<img src="images/Screen%20Shot%202022-07-15%20at%2012.12.55%20PM.png" style="width:80.0%" alt="" />
+<p class="caption">ROL Compared</p>
+</div>
+<p>I found the paper by <a href="https://www.casact.org/sites/default/files/2021-02/2013_morel.pdf">David Morel</a> very useful in thinking about these curves and I might try to implement his spline curve or some other non-parametric curves in the future.</p>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://www.codelooper.com/tags/r-shiny/">R Shiny</a>&nbsp;
+            
+              <a href="https://www.codelooper.com/tags/reactive-programming/">Reactive Programming</a>&nbsp;
+            
+              <a href="https://www.codelooper.com/tags/reinsurance/">Reinsurance</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fwww.codelooper.com%2fpost%2fcat-xl-pricing-using-rate-on-line-curves%2f&amp;text=Cat%20XL%20pricing%20using%20rate%20on%20line%20%28ROL%29%20curves&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.codelooper.com%2fpost%2fcat-xl-pricing-using-rate-on-line-curves%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fwww.codelooper.com%2fpost%2fcat-xl-pricing-using-rate-on-line-curves%2f&amp;title=Cat%20XL%20pricing%20using%20rate%20on%20line%20%28ROL%29%20curves" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.codelooper.com%2fpost%2fcat-xl-pricing-using-rate-on-line-curves%2f&amp;title=Cat%20XL%20pricing%20using%20rate%20on%20line%20%28ROL%29%20curves" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fwww.codelooper.com%2fpost%2fcat-xl-pricing-using-rate-on-line-curves%2f&amp;title=Cat%20XL%20pricing%20using%20rate%20on%20line%20%28ROL%29%20curves" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.codelooper.com%2fpost%2fcat-xl-pricing-using-rate-on-line-curves%2f&amp;description=Cat%20XL%20pricing%20using%20rate%20on%20line%20%28ROL%29%20curves" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
           
-            <article class="post-preview">
-    <a href="https://www.codelooper.com/post/2022-07-14-blogdown-github/2022-07-14-blogdown-github/">
-        <h2 class="post-title">R blogdown and GitHub</h2>
-        
-        <h3 class="post-subtitle">
-            Not as easy as I thought
-        </h3>
-        
-        
-        
-    </a>
 
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 14, 2022
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;925&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Teddy Wong
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        It’s taken all day to get blogdown to sync with GitHub. I already had a repo set up at https://tedtwong.github.io/ and I had set up a blogdown folder in R Studio, let’s call it: R/blogdown.
-I wasn’t too familiar with how to set up git to sync the R/blogdown/public folder with https://tedtwong.github.io/ repo so that I can version control blogdown files and host the files on GitHub at the same time.
-        <a href="https://www.codelooper.com/post/2022-07-14-blogdown-github/2022-07-14-blogdown-github/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://www.codelooper.com/tags/r/">R</a>&nbsp;
-        
-        <a href="https://www.codelooper.com/tags/blogdown/">blogdown</a>&nbsp;
-        
-        <a href="https://www.codelooper.com/tags/github/">GitHub</a>&nbsp;
-        
-    </div>
-    
-
-</article>
           
-        </div>
         
-      </div>
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://www.codelooper.com/post/2022-07-15-hello/" data-toggle="tooltip" data-placement="top" title="Hello">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">                  
+            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="https://www.codelooper.com/post/cat-xl-pricing-using-rate-on-line-curves">comments</span></button>
+            <div id="disqus_thread"></div>
+
+            <script type="text/javascript">
+              var disqus_config = function () {
+              this.page.url = 'https:\/\/www.codelooper.com\/post\/cat-xl-pricing-using-rate-on-line-curves';
+            };
+
+          </script>
+          </div>
+          
+        
+        
+      
+
     </div>
   </div>
+</div>
 
       
 <footer>
@@ -340,7 +485,7 @@ I wasn’t too familiar with how to set up git to sync the R/blogdown/public fol
               </li>
           
           <li>
-            <a href="/tags/blogdown/index.xml" title="RSS">
+            <a href="" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
