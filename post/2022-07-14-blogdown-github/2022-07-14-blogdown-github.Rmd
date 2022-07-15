@@ -27,6 +27,8 @@ github.io and everything works pretty well. One note of caution: put stuff (for 
 
 I hope this helps someone in the same predicament.
 
+Now it's time to fly.
+
 <video width="320" height="240" controls>
   <source src="airplane.mp4" type="video/mp4">
 </video>
