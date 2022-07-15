@@ -19,7 +19,7 @@ It's easy to understand something once you understand it.
 ## Contact Info {#contact}
 
 -   <i class="fa fa-envelope"></i> [teddy.t.wong\@gmail.com](mailto:teddy.t.wong@gmail.com){.email}
--   <i class="fa fa-github"></i> [github.com/tedtwong](https://tedtwong.github.io/)
+-   <i class="fa fa-github"></i> [tedtwong.github.io](https://tedtwong.github.io/)
 -   <i class="fa fa-phone"></i> +1 510.684.6176
 
 ## Skills {#skills}
