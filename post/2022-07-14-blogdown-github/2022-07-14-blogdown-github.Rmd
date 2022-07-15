@@ -1,0 +1,31 @@
+---
+date: "2022-07-14"
+subtitle: Not as easy as I thought
+tags:
+- R
+- blogdown
+- GitHub
+title: R blogdown and GitHub
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+It's taken all day to get blogdown to sync with GitHub. I already had a
+repo set up at <https://tedtwong.github.io/> and I had set up a blogdown
+folder in R Studio, let's call it: R/blogdown.
+
+I wasn't too familiar with how to set up git to sync the
+R/blogdown/public folder with <https://tedtwong.github.io/> repo so that
+I can version control blogdown files and host the files on GitHub at the
+same time. What worked for me was to clone <https://tedtwong.github.io>
+to R/blogdown/ and then change the folder name to 'public'. That way it
+only synced the public files once blogdown does its thing.
+
+Now I can edit the files in blogdown and then use git to sync with
+github.io and everything works pretty well. I hope this helps someone in
+the same predicament.
+
+<video width="320" height="240" controls>
+  <source src="airplane.mp4" type="video/mp4">
+</video>

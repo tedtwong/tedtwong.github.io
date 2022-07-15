@@ -12,8 +12,8 @@
       <pubDate>Thu, 14 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.codelooper.com/post/2022-07-14-blogdown-github/2022-07-14-blogdown-github/</guid>
-      <description>It&amp;rsquo;s taken all day to get blogdown to sync with GitHub. I already had a repo set up at https://tedtwong.github.io/ and I had set up a blogdown folder in R Studio, let&amp;rsquo;s call it: R/blogdown.
-I wasn&amp;rsquo;t too familiar with how to set up git to sync the R/blogdown/public folder with https://tedtwong.github.io/ repo so that I can version control blogdown files and host the files on GitHub at the same time.</description>
+      <description>It’s taken all day to get blogdown to sync with GitHub. I already had a repo set up at https://tedtwong.github.io/ and I had set up a blogdown folder in R Studio, let’s call it: R/blogdown.
+I wasn’t too familiar with how to set up git to sync the R/blogdown/public folder with https://tedtwong.github.io/ repo so that I can version control blogdown files and host the files on GitHub at the same time.</description>
     </item>
     
     <item>
