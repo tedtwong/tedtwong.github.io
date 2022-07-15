@@ -58,7 +58,7 @@ Current - 2021
 
 -   Business planning
 -   Reinsurance consulting
--   Capital/cashflow/loss modeling
+-   Capital/cash flow/loss modeling
 -   Regulatory requirements, ratings, domicile consulting
 
 ### Ironshore/Pembroke/Liberty/Hamilton
@@ -71,8 +71,8 @@ Los Angeles, CA
 
 -   Manage and underwrite global agriculture treaty risk portfolio.
 -   Lead reinsurance binder for India and manage delegated underwriting authority in Australia.
--   Lead datascience projects involving yield estimation and portoflio optimization.
--   Liaise with clients, brokers, governemnt and academic partners.
+-   Lead data science projects involving yield estimation and portfolio optimization.
+-   Liaise with clients, brokers, government and academic partners.
 
 ### Catlin/XL/AXA
 
@@ -82,8 +82,8 @@ Costa Mesa, CA
 
 2015 - 2012
 
--   Underwriting crop, hail, parametric risks.
--   Coordinate with local branches in N.America, Aisa, Europe, Australia.
+-   Underwriting crop, livestock, hail, parametric risks.
+-   Coordinate with local branches in N.America, Asia, Europe, Australia.
 -   Develop new business opportunities
 
 ### Endurance Re
@@ -96,7 +96,7 @@ Irvine, CA
 
 ### ERS/USDA
 
-Economist for the Market and Trade Economics Division, Economic Research Service of the U.S. Department of Agriculture. Summer Internship.
+Economist for the Market and Trade Economics Division, Economic Research Service of the U.S. Department of Agriculture. Summer internship.
 
 Washington D.C.
 
@@ -104,7 +104,7 @@ Washington D.C.
 
 ## Education {data-icon="graduation-cap" data-concise="true"}
 
-### Universeity of California, Davis
+### University of California, Davis
 
 PhD Candidate, Agriculture and Resource Economics. ABD
 
@@ -160,7 +160,7 @@ Davis, CA
 -   Scott Rozelle (Development Economics), Fall 2003, Spring 2004
 :::
 
-## Presentations {data-icon="presentation-screen"}
+## Presentations {data-icon="comments"}
 ### Presenter
 "Machine Learning in Agriculture Yield Estimation" at Guy Carpenter Agriculture Rendezvous
 
