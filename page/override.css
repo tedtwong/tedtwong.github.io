@@ -1,0 +1,68 @@
+/* Set my own typography */
+/*
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  /* Set my own colors */
+  --background-color: #eff0f4;
+  --primary-color: #233b6e;
+  --text-color: #404040;
+  --links-colors: #2c2857;
+  
+  --sidebar-width: 14.5rem; /* side bar width */
+  --sidebar-background-color: #d3d6db !important;
+  --decorator-border: 2px solid #415f9d; /* change color and thickness of timeline */
+
+}
+
+.pagedjs_pagebox {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.pagedjs_pages {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+.aside {
+    padding: 0.1in var(--sidebar-horizontal-padding);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color) !important;
+}
+
+.fa {
+  color: var(--primary-color) !important;
+}
+
+.decorator::after{
+  background-color: var(--primary-color); /* change color timeline dots */
+
+}
+
+a {
+  color: var(--links-colors)
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+#aside {
+  background-color: #d3d6db;
+}
+
+@media print {
+body {-webkit-print-color-adjust: exact;}
+}
+

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+* {
+  /* Override default margins*/
+  --pagedjs-margin-right: 0.5in;
+  --pagedjs-margin-left: 0.5in;
+  --pagedjs-margin-top: 0.55in;
+  --pagedjs-margin-bottom: 0.55in;
+}
+
+
+
+:root{
+  --sidebar-width: 14rem; /* side bar width */
+  --sidebar-background-color: #d3d6db;
+  --sidebar-horizontal-padding: 3em; /* Reduce sidebar padding */
+  --decorator-border: 2px solid #415f9d; /* change color and thickness of timeline */
+  --details-horizontal-padding: 1.5em;
+
+}
+
+#main{
+  width: var(--main-width);
+  padding: 0.25in 0.25in 0 0.25in;
+  font-size: 7pt;
+  grid-row: 1/-1;
+}
+
+
+.decorator::after{
+  background-color: #233b6e; /* change color timeline dots */
+
+}
+
+
+@page {
+    background: 0% 0% / 100% 0.1% linear-gradient(to left, var(--sidebar-background-color) var(--sidebar-background-width), white var(--sidebar-background-width));
+}
+
+
+/* Define the font family here */
+body{
+  font-family: "Lato", sans-serif;
+  line-height: 1.3;
+}
+
+/* Make sure elements in aside are centered and have a nice small text */
+.aside {
+  width: calc(var(--sidebar-width) + 9px);
+  line-height: 1.2;
+  font-size: 0.75rem;
+}
+
+/* 
+
+color font-family.first-color { 
+	background: #eff0f4; 
+}
+	
+.second-color { 
+	background: #d3d6db; 
+}
+
+.third-color { 
+	background: #415f9d; 
+}
+
+.fourth-color { 
+	background: #233b6e; 
+}*/
