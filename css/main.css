@@ -1,20 +1,8 @@
 /* --- General --- */
 
-/*
-body {
-  font-family: 'Lora', 'Times New Roman', serif;
-  font-size: 18px;
-  color: #404040;
-  position: relative;
-  background: #FFF;
-  display: flex;
-  flex-flow: column;
-  height: 100vh;
-}
-*/
 
 body {
-  font-family: 'Lato';
+  font-family: 'Lora', 'Times New Roman', serif;
   font-size: 16px;
   color: #404040;
   position: relative;
@@ -23,6 +11,9 @@ body {
   flex-flow: column;
   height: 100vh;
 }
+
+
+
 
 @media (prefers-color-scheme: dark) {
   body {
@@ -61,7 +52,7 @@ p a {
 
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 800;
+  font-weight: 600;
 }
 a {
   color: #008AFF;
@@ -115,7 +106,7 @@ hr.small {
 
 div.panel-body a.list-group-item {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 800;
+  font-weight: 600;
   border-radius: 0;
   border: none;
   font-size: 16px;
@@ -128,7 +119,7 @@ div.panel-group .panel+.panel {
 }
 
 div.panel-body a.list-group-item.view-all {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 ::-moz-selection, ::selection {
@@ -189,7 +180,7 @@ figure:not(.dark) img, img.white {
 
 .navbar-custom .navbar-brand,
 .navbar-custom .nav li a {
-  font-weight: 800;
+  font-weight: 600;
   color: #404040;
 }
 
@@ -398,7 +389,7 @@ footer .theme-by {
     font-size: 18px;
   }
   footer .copyright {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
