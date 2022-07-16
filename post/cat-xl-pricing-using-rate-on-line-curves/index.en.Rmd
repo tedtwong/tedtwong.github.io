@@ -1,6 +1,6 @@
 ---
 title: Cat XL pricing using rate on line (ROL) curves
-author: Package Build
+author: Teddy Wong
 date: '2022-07-15'
 slug: 'Cat XL pricing using rate on line curves'
 categories:
