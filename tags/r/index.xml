@@ -18,6 +18,15 @@ I think the course could use a bit more on statistical thinking and diving a bit
     </item>
     
     <item>
+      <title>Running Shiny R within blogdown</title>
+      <link>https://www.codelooper.com/post/running-shiny-within-blogdown/</link>
+      <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/running-shiny-within-blogdown/</guid>
+      <description>I just learned that I could embed the R Shiny app I made into this blog. So here it is:</description>
+    </item>
+    
+    <item>
       <title>Quarto</title>
       <link>https://www.codelooper.com/post/2022-07-15-quarto/</link>
       <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>

@@ -47,10 +47,19 @@
     <loc>https://www.codelooper.com/tags/r/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.codelooper.com/tags/r-shiny/</loc>
+    <lastmod>2022-07-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/categories/r-shiny/</loc>
+    <lastmod>2022-07-18T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.codelooper.com/tags/reinsurance/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/categories/reinsurance/</loc>
+    <lastmod>2022-07-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/post/running-shiny-within-blogdown/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/</loc>
@@ -84,9 +93,6 @@
     <lastmod>2022-07-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/categories/r/</loc>
-    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/tags/r-shiny/</loc>
     <lastmod>2022-07-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/reactive-programming/</loc>
