@@ -15,6 +15,6 @@ runtime: shiny
 output: html_document
 ---
 
-I just learned that I could embed the R Shiny app I made into this blog. So here it is:
+I just learned that I could embed the R Shiny app into blogdown from this [post](https://statsandr.com/blog/how-to-embed-a-shiny-app-in-blogdown/).  So here's an attempt at that.
 
-<iframe height="800" width="100%" frameborder="no" src="https://twong.shinyapps.io/implied_rol"> </iframe>
+<iframe height=800 width="100%" frameborder="yes" src="https://twong.shinyapps.io/implied_rol"> </iframe>
