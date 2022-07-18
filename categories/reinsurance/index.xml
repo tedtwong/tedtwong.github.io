@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Reinsurance on Teddy&#39;s online desktop</title>
-    <link>https://www.codelooper.com/tags/reinsurance/</link>
+    <link>https://www.codelooper.com/categories/reinsurance/</link>
     <description>Recent content in Reinsurance on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/reinsurance/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/categories/reinsurance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Global size of agriculture insurance market in 2020 and beyond</title>
       <link>https://www.codelooper.com/post/global-size-of-agriculture-insurance-market-in-2020-and-beyond/</link>
@@ -14,16 +14,6 @@
       <guid>https://www.codelooper.com/post/global-size-of-agriculture-insurance-market-in-2020-and-beyond/</guid>
       <description>People often ask me how large is the world wide agriculture insurance market. U.S., Canada, China, and India have large government subsidized programs and provide reports on premiums. However, the reports do not contain privately sold products and premiums. These are mostly hail and top-up programs that complement the government subsidized crop and livestock insurance programs.
 Roman Shynkarenko provided the post below on Linkedin for the agriculture insurance market in 2020 according to Allianz (32bn world wide in 2020).</description>
-    </item>
-    
-    <item>
-      <title>Cat XL pricing using rate on line (ROL) curves</title>
-      <link>https://www.codelooper.com/post/cat-xl-pricing-using-rate-on-line-curves/</link>
-      <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.codelooper.com/post/cat-xl-pricing-using-rate-on-line-curves/</guid>
-      <description>When I was working with stop loss reinsurance contracts the usual way to perform the pricing exercise would be to gather all the loss data, fit a loss distribution to that data, make adjustments based on seasonal outlook or other variables, and apply the limits and retentions asked by the clients/brokers.
-Although this is standard practice and almost second nature, another way to look at the pricing problem is from the point of view that you, as an underwriter, do not have all the information and perhaps should take into consideration market pricing.</description>
     </item>
     
   </channel>
