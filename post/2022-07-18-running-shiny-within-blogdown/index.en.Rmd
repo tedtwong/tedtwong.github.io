@@ -1,0 +1,20 @@
+---
+title: Running Shiny R within blogdown
+author: Teddy Wong
+date: '2022-07-18'
+slug: running-shiny-within-blogdown
+categories:
+  - R Shiny
+tags:
+  - R
+  - R Shiny
+type: ''
+subtitle: ''
+image: ''
+runtime: shiny
+output: html_document
+---
+
+I just learned that I could embed the R Shiny app I made into this blog. So here it is:
+
+<iframe height="800" width="100%" frameborder="no" src="https://twong.shinyapps.io/implied_rol"> </iframe>
