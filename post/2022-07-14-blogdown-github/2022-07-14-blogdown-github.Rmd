@@ -28,6 +28,7 @@ github.io and everything works pretty well. One note of caution: put stuff (for 
 I hope this helps someone in the same predicament.
 
 I also created a resume using pagedown resume template. The code is here:
+
 ```
 ---
 title: "Teddy Wong's resume"
@@ -35,17 +36,21 @@ author: Teddy Wong
 date: "`r Sys.Date()`" 
 output:
   pagedown::html_resume:
+    css:
+      - override.css #overide css defaults
+      - resume #default file
     # set it to true for a self-contained HTML page but it'll take longer to render
     self_contained: TRUE
 # uncomment this line to produce HTML and PDF in RStudio:
 knit: pagedown::chrome_print
 ---
 
-# Aside
-
+# Aside {#aside}
 It's easy to understand something once you understand it.
 
-![Teddy Wong](teddywong.jpg){width="80%"}
+<center>
+![Teddy Wong](teddywong.jpg){width="90%"}
+</center>
 
 ## Contact Info {#contact}
 
@@ -63,9 +68,11 @@ It's easy to understand something once you understand it.
 
 -   <i class="fa fa-calculator"></i> Applied statistical analysis, models, and optimization methods.
 
--   <i class="fa fa-code"></i> R, Python, SQL, Tableau, Matlab, Stata.
+-   <i class="fa fa-code"></i> R, Python, SQL, Tableau, Matlab, GitHub, Quarto.
 
 -   <i class="fa fa-handshake"></i> Collaboration, communication, problem-solving, presentation, research, and adaptability.
+
+
 
 ## Disclaimer {#disclaimer}
 
@@ -153,6 +160,14 @@ BA Economics & BA Political Economy
 Berkeley, CA
 
 2003
+
+### Certificates
+
+Google Data Analytics 
+
+Online
+
+2022
 
 ## Teaching/Research Experience {data-icon="chalkboard-teacher"}
 
@@ -262,8 +277,12 @@ July 2007
 })()
 ```
 ```
+
 That last bit of code is to move the disclaimer to the second page that I found on Stack Overflow written by [Phil](https://stackoverflow.com/questions/72167895/pagedown-html-resume-how-to-move-disclaimer-section-within-aside-section-to-th).
 
+css and other files are at: https://github.com/tedtwong/tedtwong.github.io/tree/main/page
+
+I adapted the css file from one I found from Jesús Vélez Santiago: https://github.com/jvelezmagic/cv/blob/main/override.css
 
 Now it's time to fly.
 
