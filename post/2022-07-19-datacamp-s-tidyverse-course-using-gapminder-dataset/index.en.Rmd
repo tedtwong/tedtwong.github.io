@@ -1,0 +1,133 @@
+---
+title: "Datacamp's tidyverse course using gapminder dataset"
+author: Teddy Wong
+date: '2022-07-19'
+slug: [Datacamp-tidyverse-course-using-gapminder-dataset]
+categories:
+  - R
+tags:
+  - R
+type: ''
+subtitle: ''
+image: ''
+---
+
+
+**Datacamp's Tidyverse course using Gapminder dataset**
+
+```{R}
+library(gapminder)
+library(dplyr)
+head(gapminder)
+```
+
+There are 1706 observations (country, year - pairs)
+
+Using pipes to filter:
+
+```{R}
+gapminder %>% 
+  filter(year == 2007)
+```
+
+142 rows in 2007.
+
+```{R}
+gapminder %>%
+  filter(country == "United States", year == 2007)
+```
+
+Arrange function.
+
+```{R}
+gapminder %>%
+  filter(year == 2007) %>%
+  arrange(desc(gdpPercap)) 
+```
+
+Mutate function.
+
+```{R}
+gapminder %>%
+  mutate(pop = pop / 1000000)
+
+gapminder %>%
+  mutate(gdp = gdpPercap * pop)
+```
+
+Combining verbs
+
+```{R}
+gapminder %>%
+  mutate(gdp = gdpPercap * pop) %>%
+  filter(year == 2007) %>%
+  arrange(desc(gdp))
+
+gapminder %>%
+  filter(year == 2007) %>%
+  mutate(lifeExpMonths = 12 * lifeExp) %>%
+  arrange(desc(lifeExpMonths))
+```
+
+**ggplot2**
+
+```{R}
+library(ggplot2)
+
+gapminder_2007 <- gapminder %>% filter(year == 2007)
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp) ) +
+  geom_point()
+```
+
+log scale on x-axis
+
+```{R}
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp)) +
+  geom_point() + scale_x_log10()
+```
+
+additional aesthetics
+
+```{R}
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +
+  geom_point() + scale_x_log10() 
+```
+
+faceting
+
+```{R}
+ggplot(gapminder_2007, aes(x = gdpPercap, y = lifeExp, color = continent, size = pop)) +
+  geom_point() + scale_x_log10() + facet_wrap(~ continent)
+```
+
+summarize verb
+
+```{R}
+gapminder %>%
+  summarize(medianLifeExp = median(lifeExp))
+
+gapminder %>%
+  filter(year == 2007) %>%
+  summarize(meanLifeExp = mean(lifeExp), totalPop = sum(pop))
+```
+
+group_by verb
+
+```{R}
+gapminder %>%
+  group_by(year, continent) %>%
+  summarize(meanLifeExp = mean(lifeExp), totalPop = sum(pop))
+```
+
+```{R}
+# Summarize medianGdpPercap within each continent within each year: by_year_continent
+
+by_year_continent <- gapminder %>%
+ group_by(year, continent) %>%
+ summarize(medianGdpPercap = median(gdpPercap))
+
+
+# Plot the change in medianGdpPercap in each continent over time
+
+ggplot(by_year_continent, aes(x=year, y=medianGdpPercap, color = continent)) + geom_point() + expand_limits(y = 0)
+```

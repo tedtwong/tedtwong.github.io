@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming on Teddy&#39;s online desktop</title>
+    <link>https://www.codelooper.com/categories/programming/</link>
+    <description>Recent content in Programming on Teddy&#39;s online desktop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ideas from programming</title>
+      <link>https://www.codelooper.com/post/ideas-from-programming/</link>
+      <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/ideas-from-programming/</guid>
+      <description> Version Control and GitHub + Main/Branches, Push/Pull/Merge Functions/Modules Methods should be deep. Write the interface first Try to minimize exceptions define them away Be strategic + Invest in building the future/don&amp;rsquo;t introduce bad code today Write the unit test before the useful code Make sure you do input validation </description>
+    </item>
+    
+  </channel>
+</rss>

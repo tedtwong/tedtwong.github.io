@@ -5,7 +5,17 @@
     <link>https://www.codelooper.com/</link>
     <description>Recent content on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Datacamp&#39;s tidyverse course using gapminder dataset</title>
+      <link>https://www.codelooper.com/post/2022-07-19-datacamp-s-tidyverse-course-using-gapminder-dataset/</link>
+      <pubDate>Tue, 19 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/2022-07-19-datacamp-s-tidyverse-course-using-gapminder-dataset/</guid>
+      <description>Datacamp’s Tidyverse course using Gapminder dataset
+library(gapminder) library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union head(gapminder) ## # A tibble: 6 × 6 ## country continent year lifeExp pop gdpPercap ## &amp;lt;fct&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; ## 1 Afghanistan Asia 1952 28.8 8425333 779. ## 2 Afghanistan Asia 1957 30.</description>
+    </item>
+    
     <item>
       <title>Global size of agriculture insurance market in 2020 and beyond</title>
       <link>https://www.codelooper.com/post/global-size-of-agriculture-insurance-market-in-2020-and-beyond/</link>
@@ -25,6 +35,15 @@ Roman Shynkarenko provided the post below on Linkedin for the agriculture insura
       <description>I&amp;rsquo;ve finally completed the Coursera Google Data Analytics Certificate.
 I think the course is great for beginners in data analytics. For me it was a great refresher on SQL and R but the other sections were not all that useful. The course did motivate me to learn R (again) and this blog site is probably a result of that.
 I think the course could use more on statistical thinking and spending more time on probability since data analysts could really use that in their work.</description>
+    </item>
+    
+    <item>
+      <title>Ideas from programming</title>
+      <link>https://www.codelooper.com/post/ideas-from-programming/</link>
+      <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/ideas-from-programming/</guid>
+      <description> Version Control and GitHub + Main/Branches, Push/Pull/Merge Functions/Modules Methods should be deep. Write the interface first Try to minimize exceptions define them away Be strategic + Invest in building the future/don&amp;rsquo;t introduce bad code today Write the unit test before the useful code Make sure you do input validation </description>
     </item>
     
     <item>

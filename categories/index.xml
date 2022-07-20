@@ -5,7 +5,16 @@
     <link>https://www.codelooper.com/categories/</link>
     <description>Recent content in Categories on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R</title>
+      <link>https://www.codelooper.com/categories/r/</link>
+      <pubDate>Tue, 19 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/categories/r/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Agriculture</title>
       <link>https://www.codelooper.com/categories/agriculture/</link>
@@ -52,6 +61,15 @@
     </item>
     
     <item>
+      <title>Programming</title>
+      <link>https://www.codelooper.com/categories/programming/</link>
+      <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>R Shiny</title>
       <link>https://www.codelooper.com/categories/r-shiny/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
@@ -66,15 +84,6 @@
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.codelooper.com/categories/reinsurance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>https://www.codelooper.com/categories/r/</link>
-      <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.codelooper.com/categories/r/</guid>
       <description></description>
     </item>
     

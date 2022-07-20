@@ -3,15 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.codelooper.com/</loc>
-    <lastmod>2022-07-18T00:00:00+00:00</lastmod>
+    <lastmod>2022-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/categories/</loc>
+    <lastmod>2022-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/post/2022-07-19-datacamp-s-tidyverse-course-using-gapminder-dataset/</loc>
+    <lastmod>2022-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/post/</loc>
+    <lastmod>2022-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/r/</loc>
+    <lastmod>2022-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/categories/r/</loc>
+    <lastmod>2022-07-19T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/</loc>
+    <lastmod>2022-07-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/agriculture/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/categories/agriculture/</loc>
-    <lastmod>2022-07-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/categories/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/data-analytics/</loc>
@@ -38,13 +53,16 @@
     <loc>https://www.codelooper.com/post/google-data-analytics-certificate/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.codelooper.com/post/ideas-from-programming/</loc>
+    <lastmod>2022-07-18T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.codelooper.com/categories/insurance/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.codelooper.com/post/</loc>
+    <loc>https://www.codelooper.com/tags/programming/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.codelooper.com/tags/r/</loc>
+    <loc>https://www.codelooper.com/categories/programming/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/r-shiny/</loc>
@@ -60,9 +78,6 @@
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/post/running-shiny-within-blogdown/</loc>
-    <lastmod>2022-07-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/tags/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/post/cat-xl-pricing-using-rate-on-line-curves/</loc>
@@ -90,9 +105,6 @@
     <lastmod>2022-07-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/post/2022-07-15-quarto/</loc>
-    <lastmod>2022-07-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/categories/r/</loc>
     <lastmod>2022-07-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/reactive-programming/</loc>
