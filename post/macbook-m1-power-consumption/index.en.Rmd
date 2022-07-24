@@ -1,0 +1,19 @@
+---
+title: Macbook air m1 power consumption
+author: Teddy Wong            
+date: '2022-07-24'
+slug: macbook-m1-power-consumption
+categories:
+  - computers
+tags:
+  - macbook
+type: ''
+subtitle: ''
+image: ''
+---
+
+I found that rsessions-arm64 was running the cpu at 100% and using almost 7 watts, and ran my laptop battery down very quickly. A restart seem to have solved the problem.
+
+Using command "sudo powermetrics" in terminal opens up the powermetrics program that's included in osx which power usage as shown in the following screenshot without having to install any apps:
+
+![powermetrics](images/Screen Shot 2022-07-24 at 2.11.59 AM.png)

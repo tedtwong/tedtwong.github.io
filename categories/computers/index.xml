@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>computers on Teddy&#39;s online desktop</title>
+    <link>https://www.codelooper.com/categories/computers/</link>
+    <description>Recent content in computers on Teddy&#39;s online desktop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 24 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/categories/computers/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Macbook air m1 power consumption</title>
+      <link>https://www.codelooper.com/post/macbook-m1-power-consumption/</link>
+      <pubDate>Sun, 24 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/macbook-m1-power-consumption/</guid>
+      <description>I found that rsessions-arm64 was running the cpu at 100% and using almost 7 watts, and ran my laptop battery down very quickly. A restart seem to have solved the problem.
+Using command “sudo powermetrics” in terminal opens up the powermetrics program that’s included in osx which power usage as shown in the following screenshot without having to install any apps:
+powermetrics</description>
+    </item>
+    
+  </channel>
+</rss>
