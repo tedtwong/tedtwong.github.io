@@ -1,0 +1,139 @@
+---
+title: Codecademy - Pandas Lesson
+author: Teddy Wong
+date: '2022-07-28'
+slug: 2022-07-28-codecademy-pandas-lesson
+categories:
+  - Programming
+tags:
+  - Python
+type: ''
+subtitle: ''
+image: ''
+---
+```{r setup, include=FALSE}
+library(reticulate)
+
+```
+
+
+```{python}
+#import     /;../,codecademylib3
+
+import pandas as pd
+
+df = pd.DataFrame([
+  ['January', 100, 100, 23, 100],
+  ['February', 51, 45, 145, 45],
+  ['March', 81, 96, 65, 96],
+  ['April', 80, 80, 54, 180],
+  ['May', 51, 54, 54, 154],
+  ['June', 112, 109, 79, 129]],
+  columns=['month', 'clinic_east',
+           'clinic_north', 'clinic_south',
+           'clinic_west'])
+           
+print(df)
+```
+1. You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.
+
+Write a command that will produce a Series made up of the March data from df from all four clinic sites and save it to the variable march.
+
+```{python}
+# integer location within dataframe 
+# locations are zero indexed and doesn't include the ending integer
+
+march = df.iloc[2]
+print(march)
+
+april_may_june = df.iloc[3:6]
+print(april_may_june)
+```
+
+You can select a subset of the a DataFrame by using logical statements and isin method.
+
+```{python}
+january = df[df.month == 'January']
+print(january)
+
+march_april = df[(df.month == 'March') | (df.month == 'April')]
+
+print(march_april)
+
+january_february_march = df[df.month.isin(['January', 'February', 'March'])]
+
+print(january_february_march)
+```
+
+Reset indices
+
+```{python}
+df2 = df.loc[[1, 3, 5]]
+
+print(df2)
+
+df3 = df2.reset_index()
+
+print(df3)
+
+df2.reset_index(inplace = True, drop = True)
+
+print(df2)
+```
+
+Adding a column to the dataframe
+```{python}
+df = pd.DataFrame([
+  [1, '3 inch screw', 0.5, 0.75],
+  [2, '2 inch nail', 0.10, 0.25],
+  [3, 'hammer', 3.00, 5.50],
+  [4, 'screwdriver', 2.50, 3.00]
+],
+  columns=['Product ID', 'Description', 'Cost to Manufacture', 'Price']
+)
+
+df['Sold in Bulk?'] = ['Yes','Yes','No','No']
+
+df['In Stock?'] = True
+
+df['Margin'] = df.Price - df['Cost to Manufacture']
+
+print(df)
+```
+
+Applying functions to dataframe
+
+```{python}
+df = pd.DataFrame([
+  ['JOHN SMITH', 'john.smith@gmail.com'],
+  ['Jane Doe', 'jdoe@yahoo.com'],
+  ['joe schmo', 'joeschmo@hotmail.com']
+],
+columns=['Name', 'Email'])
+
+df['Lowercase Name'] = df.Name.apply(str.lower)
+
+print(df)
+
+#prints the python code for the dataframe
+
+print(f'df = pd.DataFrame( {str(df.to_dict())} )')
+```
+
+Applying lambda functions
+
+```{python}
+mylambda = lambda x: (x[0]+x[-1])
+
+mylambda = lambda x: 'Welcome to BattleCity!' if x >= 13 else 'You must be over 13'
+
+print(mylambda(14))
+
+get_last_name = lambda x: x.split(' ')[-1]
+
+#df['last_name'] = df.name.apply(get_last_name)
+
+
+
+```
+
