@@ -128,12 +128,95 @@ mylambda = lambda x: (x[0]+x[-1])
 mylambda = lambda x: 'Welcome to BattleCity!' if x >= 13 else 'You must be over 13'
 
 print(mylambda(14))
+```
+
+```{python}
+df = pd.DataFrame( {'id': {0: 10310, 1: 18656, 2: 61254, 3: 16886, 4: 89010, 5: 87246, 6: 20578, 7: 12869, 8: 53461, 9: 14746, 10: 71127, 11: 92522, 12: 22447, 13: 61654, 14: 16988, 15: 68619, 16: 59949, 17: 81418, 18: 27267, 19: 19985}, 'name': {0: 'Lauren Durham', 1: 'Grace Sellers', 2: 'Shirley Rasmussen', 3: 'Brian Rojas', 4: 'Samantha Mosley', 5: 'Louis Guzman', 6: 'Denise Mcclure', 7: 'James Raymond', 8: 'Noah Collier', 9: 'Donna Frederick', 10: 'Shirley Beck', 11: 'Christina Kelly', 12: 'Brian Noble', 13: 'Randy Key', 14: 'Diana Stewart', 15: 'Timothy Sosa', 16: 'Betty Skinner', 17: 'Janet Maxwell', 18: 'Madison Johnston', 19: 'Virginia Nichols'}, 'hourly_wage': {0: 19, 1: 17, 2: 16, 3: 18, 4: 11, 5: 14, 6: 15, 7: 15, 8: 18, 9: 20, 10: 14, 11: 8, 12: 11, 13: 16, 14: 14, 15: 14, 16: 11, 17: 12, 18: 20, 19: 13}, 'hours_worked': {0: 43, 1: 40, 2: 30, 3: 47, 4: 38, 5: 39, 6: 40, 7: 32, 8: 35, 9: 41, 10: 32, 11: 44, 12: 39, 13: 38, 14: 48, 15: 42, 16: 48, 17: 38, 18: 37, 19: 49}, 'total_earned': {0: 845.5, 1: 680.0, 2: 480.0, 3: 909.0, 4: 418.0, 5: 546.0, 6: 600.0, 7: 480.0, 8: 630.0, 9: 830.0, 10: 448.0, 11: 368.0, 12: 429.0, 13: 608.0, 14: 728.0, 15: 602.0, 16: 572.0, 17: 456.0, 18: 740.0, 19: 695.5}} )
+
 
 get_last_name = lambda x: x.split(' ')[-1]
 
-#df['last_name'] = df.name.apply(get_last_name)
+df['last_name'] = df.name.apply(get_last_name)
 
+total_earned = lambda row: (40 * row.hourly_wage) + ((row.hours_worked - 40) * 1.5 * row.hourly_wage) \
+if row.hours_worked > 40 \
+else (row.hours_worked * row.hourly_wage)
 
+df['total_earned'] = df.apply(total_earned, axis =1)
 
+print(df)
 ```
 
+Renaming columns
+
+```{python}
+df = pd.DataFrame({
+    'name': ['John', 'Jane', 'Sue', 'Fred'],
+    'age': [23, 29, 21, 18]
+})
+df.columns = ['First Name', 'Age']
+
+#or this method if you only want to rename one or more columns
+
+df.rename(columns={
+    'name': 'First Name',
+    'age': 'Age'},
+    inplace=True)
+
+print(df)
+```
+
+```{python}
+
+#command to print dataframe data as a dictionary so I can copy the data from codecademy
+
+#print(f'orders = pd.DataFrame( {str(orders.to_dict())} )')
+
+orders = pd.DataFrame( {'id': {0: 54791, 1: 53450, 2: 91987, 3: 14437, 4: 79357, 5: 52386, 6: 20487, 7: 76971, 8: 21586, 9: 62083, 10: 91629, 11: 98602, 12: 45832, 13: 33862, 14: 73431, 15: 93889, 16: 39888, 17: 35961, 18: 24560, 19: 28559}, 'first_name': {0: 'Rebecca', 1: 'Emily', 2: 'Joyce', 3: 'Justin', 4: 'Andrew', 5: 'Julie', 6: 'Thomas', 7: 'Janice', 8: 'Gabriel', 9: 'Frances', 10: 'Jessica', 11: 'Lawrence', 12: 'Susan', 13: 'Diane', 14: 'Rebecca', 15: 'Jacqueline', 16: 'Vincent', 17: 'Roy', 18: 'Thomas', 19: 'Angela'}, 'last_name': {0: 'Lindsay', 1: 'Joyce', 2: 'Waller', 3: 'Erickson', 4: 'Banks', 5: 'Marsh', 6: 'Jensen', 7: 'Hicks', 8: 'Porter', 9: 'Palmer', 10: 'Hale', 11: 'Parker', 12: 'Dennis', 13: 'Ochoa', 14: 'Charles', 15: 'Crane', 16: 'Stephenson', 17: 'Tillman', 18: 'Roberson', 19: 'Newton'}, 'gender': {0: 'female', 1: 'female', 2: 'female', 3: 'male', 4: 'male', 5: 'female', 6: 'male', 7: 'female', 8: 'male', 9: 'female', 10: 'female', 11: 'male', 12: 'female', 13: 'female', 14: 'female', 15: 'female', 16: 'male', 17: 'male', 18: 'male', 19: 'female'}, 'email': {0: 'RebeccaLindsay57@hotmail.com', 1: 'EmilyJoyce25@gmail.com', 2: 'Joyce.Waller@gmail.com', 3: 'Justin.Erickson@outlook.com', 4: 'AB4318@gmail.com', 5: 'JulieMarsh59@gmail.com', 6: 'TJ5470@gmail.com', 7: 'Janice.Hicks@gmail.com', 8: 'GabrielPorter24@gmail.com', 9: 'FrancesPalmer50@gmail.com', 10: 'JessicaHale25@gmail.com', 11: 'LawrenceParker44@gmail.com', 12: 'SusanDennis58@gmail.com', 13: 'DO2680@gmail.com', 14: 'Rebecca.Charles@gmail.com', 15: 'JC2072@hotmail.com', 16: 'VS4753@outlook.com', 17: 'RoyTillman20@gmail.com', 18: 'Thomas.Roberson@gmail.com', 19: 'ANewton1977@outlook.com'}, 'shoe_type': {0: 'clogs', 1: 'ballet flats', 2: 'sandles', 3: 'clogs', 4: 'boots', 5: 'sandles', 6: 'clogs', 7: 'clogs', 8: 'clogs', 9: 'wedges', 10: 'clogs', 11: 'wedges', 12: 'ballet flats', 13: 'sandles', 14: 'boots', 15: 'wedges', 16: 'boots', 17: 'boots', 18: 'wedges', 19: 'wedges'}, 'shoe_material': {0: 'faux-leather', 1: 'faux-leather', 2: 'fabric', 3: 'faux-leather', 4: 'leather', 5: 'fabric', 6: 'fabric', 7: 'faux-leather', 8: 'leather', 9: 'leather', 10: 'leather', 11: 'fabric', 12: 'fabric', 13: 'fabric', 14: 'faux-leather', 15: 'fabric', 16: 'leather', 17: 'leather', 18: 'fabric', 19: 'fabric'}, 'shoe_color': {0: 'black', 1: 'navy', 2: 'black', 3: 'red', 4: 'brown', 5: 'black', 6: 'navy', 7: 'navy', 8: 'brown', 9: 'white', 10: 'red', 11: 'brown', 12: 'white', 13: 'red', 14: 'white', 15: 'red', 16: 'black', 17: 'white', 18: 'red', 19: 'red'}} )
+
+orders.rename(columns={
+    'name': 'First Name',
+    'age': 'Age'},
+    inplace=True)
+    
+shoe_source = lambda x: 'animal' if x.shoe_material == 'leather' else 'vegan'
+
+orders['shoe_source'] = orders.apply(shoe_source, axis = 1)
+
+salutation = lambda x: 'Dear Mr. ' + x.last_name if x.gender == 'male' else 'Dear Ms. ' + x.last_name
+
+orders['salutation'] = orders.apply(salutation, axis = 1)
+
+print(orders)
+```
+
+Pedal Power Inventory
+
+```{python}
+#import codecademylib3
+#import pandas as pd
+
+#inventory = pd.read_csv('inventory.csv')
+
+inventory = pd.DataFrame( {'location': {0: 'Staten Island', 1: 'Staten Island', 2: 'Staten Island', 3: 'Staten Island', 4: 'Staten Island', 5: 'Staten Island', 6: 'Staten Island', 7: 'Staten Island', 8: 'Staten Island', 9: 'Staten Island', 10: 'Brooklyn', 11: 'Brooklyn', 12: 'Brooklyn', 13: 'Brooklyn', 14: 'Brooklyn', 15: 'Brooklyn', 16: 'Brooklyn', 17: 'Brooklyn', 18: 'Brooklyn', 19: 'Brooklyn', 20: 'Queens', 21: 'Queens', 22: 'Queens', 23: 'Queens', 24: 'Queens', 25: 'Queens', 26: 'Queens', 27: 'Queens', 28: 'Queens'}, 'product_type': {0: 'seeds', 1: 'seeds', 2: 'seeds', 3: 'garden tools', 4: 'garden tools', 5: 'garden tools', 6: 'pest_control', 7: 'pest_control', 8: 'planter', 9: 'planter', 10: 'seeds', 11: 'seeds', 12: 'seeds', 13: 'garden tools', 14: 'garden tools', 15: 'garden tools', 16: 'pest_control', 17: 'pest_control', 18: 'planter', 19: 'planter', 20: 'seeds', 21: 'seeds', 22: 'seeds', 23: 'garden tools', 24: 'garden tools', 25: 'garden tools', 26: 'pest_control', 27: 'pest_control', 28: 'planter'}, 'product_description': {0: 'daisy', 1: 'calla lily', 2: 'tomato', 3: 'rake', 4: 'wheelbarrow', 5: 'spade', 6: 'insect killer', 7: 'weed killer', 8: '20 inch terracotta planter', 9: '8 inch plastic planter', 10: 'daisy', 11: 'calla lily', 12: 'tomato', 13: 'rake', 14: 'wheelbarrow', 15: 'spade', 16: 'insect killer', 17: 'weed killer', 18: '20 inch terracotta planter', 19: '8 inch plastic planter', 20: 'daisy', 21: 'calla lily', 22: 'tomato', 23: 'rake', 24: 'wheelbarrow', 25: 'spade', 26: 'insect killer', 27: 'weed killer', 28: '20 inch terracotta planter'}, 'quantity': {0: 4, 1: 46, 2: 85, 3: 4, 4: 0, 5: 93, 6: 74, 7: 8, 8: 0, 9: 53, 10: 50, 11: 0, 12: 0, 13: 15, 14: 82, 15: 36, 16: 80, 17: 76, 18: 5, 19: 26, 20: 57, 21: 95, 22: 45, 23: 21, 24: 98, 25: 26, 26: 0, 27: 16, 28: 87}, 'price': {0: 6.99, 1: 19.99, 2: 13.99, 3: 13.99, 4: 89.99, 5: 19.99, 6: 12.99, 7: 23.99, 8: 17.99, 9: 3.99, 10: 6.99, 11: 19.99, 12: 13.99, 13: 13.99, 14: 89.99, 15: 19.99, 16: 12.99, 17: 23.99, 18: 17.99, 19: 3.99, 20: 6.99, 21: 19.99, 22: 13.99, 23: 13.99, 24: 89.99, 25: 19.99, 26: 12.99, 27: 23.99, 28: 17.99}} )
+
+print(inventory.head())
+
+staten_island = inventory[:10]
+
+product_request = staten_island.product_description 
+
+seed_request = inventory.loc[(inventory['location'] == 'Brooklyn') & (inventory['product_type'] == 'seeds')]
+
+inventory['in_stock'] = inventory.apply(lambda x: True if x.quantity > 0 else False, axis =1)
+
+inventory['total_value'] = inventory.price * inventory.quantity
+
+combine_lambda = lambda row: \
+    '{} - {}'.format(row.product_type,
+                     row.product_description)
+
+inventory['full_description'] = inventory.apply(combine_lambda, axis = 1)
+
+print(inventory)
+```

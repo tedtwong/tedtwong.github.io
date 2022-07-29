@@ -59,7 +59,7 @@
   "headline": "Codecademy - Pandas Lesson",
   "description" : "#import \/;..\/,codecademylib3 import pandas as pd df = pd.DataFrame([ [\u0026#39;January\u0026#39;, 100, 100, 23, 100], [\u0026#39;February\u0026#39;, 51, 45, 145, 45], [\u0026#39;March\u0026#39;, 81, 96, 65, 96], [\u0026#39;April\u0026#39;, 80, 80, 54, 180], [\u0026#39;May\u0026#39;, 51, 54, 54, 154], [\u0026#39;June\u0026#39;, 112, 109, 79, 129]], columns=[\u0026#39;month\u0026#39;, \u0026#39;clinic_east\u0026#39;, \u0026#39;clinic_north\u0026#39;, \u0026#39;clinic_south\u0026#39;, \u0026#39;clinic_west\u0026#39;]) print(df) ## month clinic_east clinic_north clinic_south clinic_west ## 0 January 100 100 23 100 ## 1 February 51 45 145 45 ## 2 March 81 96 65 96 ## 3 April 80 80 54 180 ## 4 May 51 54 54 154 ## 5 June 112 109 79 129 You’re getting ready to staff the clinic for March this year.",
   "inLanguage" : "en",
-  "wordCount":  658 ,
+  "wordCount":  2503 ,
   "datePublished" : "2022-07-28T00:00:00",
   "dateModified" : "2022-07-28T00:00:00",
   "image" : "https:\/\/www.codelooper.com\/img\/redplane.png",
@@ -270,10 +270,10 @@ if (!doNotTrack) {
   <i class="fas fa-calendar"></i>&nbsp;Posted on July 28, 2022
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;12&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;658&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;2503&nbsp;words
   
   
     
@@ -436,10 +436,171 @@ mylambda = lambda x: &#39;Welcome to BattleCity!&#39; if x &gt;= 13 else &#39;Yo
 
 print(mylambda(14))</code></pre>
 <pre><code>## Welcome to BattleCity!</code></pre>
-<pre class="python"><code>get_last_name = lambda x: x.split(&#39; &#39;)[-1]
+<pre class="python"><code>df = pd.DataFrame( {&#39;id&#39;: {0: 10310, 1: 18656, 2: 61254, 3: 16886, 4: 89010, 5: 87246, 6: 20578, 7: 12869, 8: 53461, 9: 14746, 10: 71127, 11: 92522, 12: 22447, 13: 61654, 14: 16988, 15: 68619, 16: 59949, 17: 81418, 18: 27267, 19: 19985}, &#39;name&#39;: {0: &#39;Lauren Durham&#39;, 1: &#39;Grace Sellers&#39;, 2: &#39;Shirley Rasmussen&#39;, 3: &#39;Brian Rojas&#39;, 4: &#39;Samantha Mosley&#39;, 5: &#39;Louis Guzman&#39;, 6: &#39;Denise Mcclure&#39;, 7: &#39;James Raymond&#39;, 8: &#39;Noah Collier&#39;, 9: &#39;Donna Frederick&#39;, 10: &#39;Shirley Beck&#39;, 11: &#39;Christina Kelly&#39;, 12: &#39;Brian Noble&#39;, 13: &#39;Randy Key&#39;, 14: &#39;Diana Stewart&#39;, 15: &#39;Timothy Sosa&#39;, 16: &#39;Betty Skinner&#39;, 17: &#39;Janet Maxwell&#39;, 18: &#39;Madison Johnston&#39;, 19: &#39;Virginia Nichols&#39;}, &#39;hourly_wage&#39;: {0: 19, 1: 17, 2: 16, 3: 18, 4: 11, 5: 14, 6: 15, 7: 15, 8: 18, 9: 20, 10: 14, 11: 8, 12: 11, 13: 16, 14: 14, 15: 14, 16: 11, 17: 12, 18: 20, 19: 13}, &#39;hours_worked&#39;: {0: 43, 1: 40, 2: 30, 3: 47, 4: 38, 5: 39, 6: 40, 7: 32, 8: 35, 9: 41, 10: 32, 11: 44, 12: 39, 13: 38, 14: 48, 15: 42, 16: 48, 17: 38, 18: 37, 19: 49}, &#39;total_earned&#39;: {0: 845.5, 1: 680.0, 2: 480.0, 3: 909.0, 4: 418.0, 5: 546.0, 6: 600.0, 7: 480.0, 8: 630.0, 9: 830.0, 10: 448.0, 11: 368.0, 12: 429.0, 13: 608.0, 14: 728.0, 15: 602.0, 16: 572.0, 17: 456.0, 18: 740.0, 19: 695.5}} )
 
-#df[&#39;last_name&#39;] = df.name.apply(get_last_name)
-</code></pre>
+
+get_last_name = lambda x: x.split(&#39; &#39;)[-1]
+
+df[&#39;last_name&#39;] = df.name.apply(get_last_name)
+
+total_earned = lambda row: (40 * row.hourly_wage) + ((row.hours_worked - 40) * 1.5 * row.hourly_wage) \
+if row.hours_worked &gt; 40 \
+else (row.hours_worked * row.hourly_wage)
+
+df[&#39;total_earned&#39;] = df.apply(total_earned, axis =1)
+
+print(df)</code></pre>
+<pre><code>##        id               name  ...  total_earned  last_name
+## 0   10310      Lauren Durham  ...         845.5     Durham
+## 1   18656      Grace Sellers  ...         680.0    Sellers
+## 2   61254  Shirley Rasmussen  ...         480.0  Rasmussen
+## 3   16886        Brian Rojas  ...         909.0      Rojas
+## 4   89010    Samantha Mosley  ...         418.0     Mosley
+## 5   87246       Louis Guzman  ...         546.0     Guzman
+## 6   20578     Denise Mcclure  ...         600.0    Mcclure
+## 7   12869      James Raymond  ...         480.0    Raymond
+## 8   53461       Noah Collier  ...         630.0    Collier
+## 9   14746    Donna Frederick  ...         830.0  Frederick
+## 10  71127       Shirley Beck  ...         448.0       Beck
+## 11  92522    Christina Kelly  ...         368.0      Kelly
+## 12  22447        Brian Noble  ...         429.0      Noble
+## 13  61654          Randy Key  ...         608.0        Key
+## 14  16988      Diana Stewart  ...         728.0    Stewart
+## 15  68619       Timothy Sosa  ...         602.0       Sosa
+## 16  59949      Betty Skinner  ...         572.0    Skinner
+## 17  81418      Janet Maxwell  ...         456.0    Maxwell
+## 18  27267   Madison Johnston  ...         740.0   Johnston
+## 19  19985   Virginia Nichols  ...         695.5    Nichols
+## 
+## [20 rows x 6 columns]</code></pre>
+<p>Renaming columns</p>
+<pre class="python"><code>df = pd.DataFrame({
+    &#39;name&#39;: [&#39;John&#39;, &#39;Jane&#39;, &#39;Sue&#39;, &#39;Fred&#39;],
+    &#39;age&#39;: [23, 29, 21, 18]
+})
+df.columns = [&#39;First Name&#39;, &#39;Age&#39;]
+
+#or this method if you only want to rename one or more columns
+
+df.rename(columns={
+    &#39;name&#39;: &#39;First Name&#39;,
+    &#39;age&#39;: &#39;Age&#39;},
+    inplace=True)
+
+print(df)</code></pre>
+<pre><code>##   First Name  Age
+## 0       John   23
+## 1       Jane   29
+## 2        Sue   21
+## 3       Fred   18</code></pre>
+<pre class="python"><code>
+#command to print dataframe data as a dictionary so I can copy the data from codecademy
+
+#print(f&#39;orders = pd.DataFrame( {str(orders.to_dict())} )&#39;)
+
+orders = pd.DataFrame( {&#39;id&#39;: {0: 54791, 1: 53450, 2: 91987, 3: 14437, 4: 79357, 5: 52386, 6: 20487, 7: 76971, 8: 21586, 9: 62083, 10: 91629, 11: 98602, 12: 45832, 13: 33862, 14: 73431, 15: 93889, 16: 39888, 17: 35961, 18: 24560, 19: 28559}, &#39;first_name&#39;: {0: &#39;Rebecca&#39;, 1: &#39;Emily&#39;, 2: &#39;Joyce&#39;, 3: &#39;Justin&#39;, 4: &#39;Andrew&#39;, 5: &#39;Julie&#39;, 6: &#39;Thomas&#39;, 7: &#39;Janice&#39;, 8: &#39;Gabriel&#39;, 9: &#39;Frances&#39;, 10: &#39;Jessica&#39;, 11: &#39;Lawrence&#39;, 12: &#39;Susan&#39;, 13: &#39;Diane&#39;, 14: &#39;Rebecca&#39;, 15: &#39;Jacqueline&#39;, 16: &#39;Vincent&#39;, 17: &#39;Roy&#39;, 18: &#39;Thomas&#39;, 19: &#39;Angela&#39;}, &#39;last_name&#39;: {0: &#39;Lindsay&#39;, 1: &#39;Joyce&#39;, 2: &#39;Waller&#39;, 3: &#39;Erickson&#39;, 4: &#39;Banks&#39;, 5: &#39;Marsh&#39;, 6: &#39;Jensen&#39;, 7: &#39;Hicks&#39;, 8: &#39;Porter&#39;, 9: &#39;Palmer&#39;, 10: &#39;Hale&#39;, 11: &#39;Parker&#39;, 12: &#39;Dennis&#39;, 13: &#39;Ochoa&#39;, 14: &#39;Charles&#39;, 15: &#39;Crane&#39;, 16: &#39;Stephenson&#39;, 17: &#39;Tillman&#39;, 18: &#39;Roberson&#39;, 19: &#39;Newton&#39;}, &#39;gender&#39;: {0: &#39;female&#39;, 1: &#39;female&#39;, 2: &#39;female&#39;, 3: &#39;male&#39;, 4: &#39;male&#39;, 5: &#39;female&#39;, 6: &#39;male&#39;, 7: &#39;female&#39;, 8: &#39;male&#39;, 9: &#39;female&#39;, 10: &#39;female&#39;, 11: &#39;male&#39;, 12: &#39;female&#39;, 13: &#39;female&#39;, 14: &#39;female&#39;, 15: &#39;female&#39;, 16: &#39;male&#39;, 17: &#39;male&#39;, 18: &#39;male&#39;, 19: &#39;female&#39;}, &#39;email&#39;: {0: &#39;RebeccaLindsay57@hotmail.com&#39;, 1: &#39;EmilyJoyce25@gmail.com&#39;, 2: &#39;Joyce.Waller@gmail.com&#39;, 3: &#39;Justin.Erickson@outlook.com&#39;, 4: &#39;AB4318@gmail.com&#39;, 5: &#39;JulieMarsh59@gmail.com&#39;, 6: &#39;TJ5470@gmail.com&#39;, 7: &#39;Janice.Hicks@gmail.com&#39;, 8: &#39;GabrielPorter24@gmail.com&#39;, 9: &#39;FrancesPalmer50@gmail.com&#39;, 10: &#39;JessicaHale25@gmail.com&#39;, 11: &#39;LawrenceParker44@gmail.com&#39;, 12: &#39;SusanDennis58@gmail.com&#39;, 13: &#39;DO2680@gmail.com&#39;, 14: &#39;Rebecca.Charles@gmail.com&#39;, 15: &#39;JC2072@hotmail.com&#39;, 16: &#39;VS4753@outlook.com&#39;, 17: &#39;RoyTillman20@gmail.com&#39;, 18: &#39;Thomas.Roberson@gmail.com&#39;, 19: &#39;ANewton1977@outlook.com&#39;}, &#39;shoe_type&#39;: {0: &#39;clogs&#39;, 1: &#39;ballet flats&#39;, 2: &#39;sandles&#39;, 3: &#39;clogs&#39;, 4: &#39;boots&#39;, 5: &#39;sandles&#39;, 6: &#39;clogs&#39;, 7: &#39;clogs&#39;, 8: &#39;clogs&#39;, 9: &#39;wedges&#39;, 10: &#39;clogs&#39;, 11: &#39;wedges&#39;, 12: &#39;ballet flats&#39;, 13: &#39;sandles&#39;, 14: &#39;boots&#39;, 15: &#39;wedges&#39;, 16: &#39;boots&#39;, 17: &#39;boots&#39;, 18: &#39;wedges&#39;, 19: &#39;wedges&#39;}, &#39;shoe_material&#39;: {0: &#39;faux-leather&#39;, 1: &#39;faux-leather&#39;, 2: &#39;fabric&#39;, 3: &#39;faux-leather&#39;, 4: &#39;leather&#39;, 5: &#39;fabric&#39;, 6: &#39;fabric&#39;, 7: &#39;faux-leather&#39;, 8: &#39;leather&#39;, 9: &#39;leather&#39;, 10: &#39;leather&#39;, 11: &#39;fabric&#39;, 12: &#39;fabric&#39;, 13: &#39;fabric&#39;, 14: &#39;faux-leather&#39;, 15: &#39;fabric&#39;, 16: &#39;leather&#39;, 17: &#39;leather&#39;, 18: &#39;fabric&#39;, 19: &#39;fabric&#39;}, &#39;shoe_color&#39;: {0: &#39;black&#39;, 1: &#39;navy&#39;, 2: &#39;black&#39;, 3: &#39;red&#39;, 4: &#39;brown&#39;, 5: &#39;black&#39;, 6: &#39;navy&#39;, 7: &#39;navy&#39;, 8: &#39;brown&#39;, 9: &#39;white&#39;, 10: &#39;red&#39;, 11: &#39;brown&#39;, 12: &#39;white&#39;, 13: &#39;red&#39;, 14: &#39;white&#39;, 15: &#39;red&#39;, 16: &#39;black&#39;, 17: &#39;white&#39;, 18: &#39;red&#39;, 19: &#39;red&#39;}} )
+
+orders.rename(columns={
+    &#39;name&#39;: &#39;First Name&#39;,
+    &#39;age&#39;: &#39;Age&#39;},
+    inplace=True)
+    
+shoe_source = lambda x: &#39;animal&#39; if x.shoe_material == &#39;leather&#39; else &#39;vegan&#39;
+
+orders[&#39;shoe_source&#39;] = orders.apply(shoe_source, axis = 1)
+
+salutation = lambda x: &#39;Dear Mr. &#39; + x.last_name if x.gender == &#39;male&#39; else &#39;Dear Ms. &#39; + x.last_name
+
+orders[&#39;salutation&#39;] = orders.apply(salutation, axis = 1)
+
+print(orders)</code></pre>
+<pre><code>##        id  first_name   last_name  ... shoe_color shoe_source           salutation
+## 0   54791     Rebecca     Lindsay  ...      black       vegan     Dear Ms. Lindsay
+## 1   53450       Emily       Joyce  ...       navy       vegan       Dear Ms. Joyce
+## 2   91987       Joyce      Waller  ...      black       vegan      Dear Ms. Waller
+## 3   14437      Justin    Erickson  ...        red       vegan    Dear Mr. Erickson
+## 4   79357      Andrew       Banks  ...      brown      animal       Dear Mr. Banks
+## 5   52386       Julie       Marsh  ...      black       vegan       Dear Ms. Marsh
+## 6   20487      Thomas      Jensen  ...       navy       vegan      Dear Mr. Jensen
+## 7   76971      Janice       Hicks  ...       navy       vegan       Dear Ms. Hicks
+## 8   21586     Gabriel      Porter  ...      brown      animal      Dear Mr. Porter
+## 9   62083     Frances      Palmer  ...      white      animal      Dear Ms. Palmer
+## 10  91629     Jessica        Hale  ...        red      animal        Dear Ms. Hale
+## 11  98602    Lawrence      Parker  ...      brown       vegan      Dear Mr. Parker
+## 12  45832       Susan      Dennis  ...      white       vegan      Dear Ms. Dennis
+## 13  33862       Diane       Ochoa  ...        red       vegan       Dear Ms. Ochoa
+## 14  73431     Rebecca     Charles  ...      white       vegan     Dear Ms. Charles
+## 15  93889  Jacqueline       Crane  ...        red       vegan       Dear Ms. Crane
+## 16  39888     Vincent  Stephenson  ...      black      animal  Dear Mr. Stephenson
+## 17  35961         Roy     Tillman  ...      white      animal     Dear Mr. Tillman
+## 18  24560      Thomas    Roberson  ...        red       vegan    Dear Mr. Roberson
+## 19  28559      Angela      Newton  ...        red       vegan      Dear Ms. Newton
+## 
+## [20 rows x 10 columns]</code></pre>
+<p>Pedal Power Inventory</p>
+<pre class="python"><code>#import codecademylib3
+#import pandas as pd
+
+#inventory = pd.read_csv(&#39;inventory.csv&#39;)
+
+inventory = pd.DataFrame( {&#39;location&#39;: {0: &#39;Staten Island&#39;, 1: &#39;Staten Island&#39;, 2: &#39;Staten Island&#39;, 3: &#39;Staten Island&#39;, 4: &#39;Staten Island&#39;, 5: &#39;Staten Island&#39;, 6: &#39;Staten Island&#39;, 7: &#39;Staten Island&#39;, 8: &#39;Staten Island&#39;, 9: &#39;Staten Island&#39;, 10: &#39;Brooklyn&#39;, 11: &#39;Brooklyn&#39;, 12: &#39;Brooklyn&#39;, 13: &#39;Brooklyn&#39;, 14: &#39;Brooklyn&#39;, 15: &#39;Brooklyn&#39;, 16: &#39;Brooklyn&#39;, 17: &#39;Brooklyn&#39;, 18: &#39;Brooklyn&#39;, 19: &#39;Brooklyn&#39;, 20: &#39;Queens&#39;, 21: &#39;Queens&#39;, 22: &#39;Queens&#39;, 23: &#39;Queens&#39;, 24: &#39;Queens&#39;, 25: &#39;Queens&#39;, 26: &#39;Queens&#39;, 27: &#39;Queens&#39;, 28: &#39;Queens&#39;}, &#39;product_type&#39;: {0: &#39;seeds&#39;, 1: &#39;seeds&#39;, 2: &#39;seeds&#39;, 3: &#39;garden tools&#39;, 4: &#39;garden tools&#39;, 5: &#39;garden tools&#39;, 6: &#39;pest_control&#39;, 7: &#39;pest_control&#39;, 8: &#39;planter&#39;, 9: &#39;planter&#39;, 10: &#39;seeds&#39;, 11: &#39;seeds&#39;, 12: &#39;seeds&#39;, 13: &#39;garden tools&#39;, 14: &#39;garden tools&#39;, 15: &#39;garden tools&#39;, 16: &#39;pest_control&#39;, 17: &#39;pest_control&#39;, 18: &#39;planter&#39;, 19: &#39;planter&#39;, 20: &#39;seeds&#39;, 21: &#39;seeds&#39;, 22: &#39;seeds&#39;, 23: &#39;garden tools&#39;, 24: &#39;garden tools&#39;, 25: &#39;garden tools&#39;, 26: &#39;pest_control&#39;, 27: &#39;pest_control&#39;, 28: &#39;planter&#39;}, &#39;product_description&#39;: {0: &#39;daisy&#39;, 1: &#39;calla lily&#39;, 2: &#39;tomato&#39;, 3: &#39;rake&#39;, 4: &#39;wheelbarrow&#39;, 5: &#39;spade&#39;, 6: &#39;insect killer&#39;, 7: &#39;weed killer&#39;, 8: &#39;20 inch terracotta planter&#39;, 9: &#39;8 inch plastic planter&#39;, 10: &#39;daisy&#39;, 11: &#39;calla lily&#39;, 12: &#39;tomato&#39;, 13: &#39;rake&#39;, 14: &#39;wheelbarrow&#39;, 15: &#39;spade&#39;, 16: &#39;insect killer&#39;, 17: &#39;weed killer&#39;, 18: &#39;20 inch terracotta planter&#39;, 19: &#39;8 inch plastic planter&#39;, 20: &#39;daisy&#39;, 21: &#39;calla lily&#39;, 22: &#39;tomato&#39;, 23: &#39;rake&#39;, 24: &#39;wheelbarrow&#39;, 25: &#39;spade&#39;, 26: &#39;insect killer&#39;, 27: &#39;weed killer&#39;, 28: &#39;20 inch terracotta planter&#39;}, &#39;quantity&#39;: {0: 4, 1: 46, 2: 85, 3: 4, 4: 0, 5: 93, 6: 74, 7: 8, 8: 0, 9: 53, 10: 50, 11: 0, 12: 0, 13: 15, 14: 82, 15: 36, 16: 80, 17: 76, 18: 5, 19: 26, 20: 57, 21: 95, 22: 45, 23: 21, 24: 98, 25: 26, 26: 0, 27: 16, 28: 87}, &#39;price&#39;: {0: 6.99, 1: 19.99, 2: 13.99, 3: 13.99, 4: 89.99, 5: 19.99, 6: 12.99, 7: 23.99, 8: 17.99, 9: 3.99, 10: 6.99, 11: 19.99, 12: 13.99, 13: 13.99, 14: 89.99, 15: 19.99, 16: 12.99, 17: 23.99, 18: 17.99, 19: 3.99, 20: 6.99, 21: 19.99, 22: 13.99, 23: 13.99, 24: 89.99, 25: 19.99, 26: 12.99, 27: 23.99, 28: 17.99}} )
+
+print(inventory.head())</code></pre>
+<pre><code>##         location  product_type product_description  quantity  price
+## 0  Staten Island         seeds               daisy         4   6.99
+## 1  Staten Island         seeds          calla lily        46  19.99
+## 2  Staten Island         seeds              tomato        85  13.99
+## 3  Staten Island  garden tools                rake         4  13.99
+## 4  Staten Island  garden tools         wheelbarrow         0  89.99</code></pre>
+<pre class="python"><code>staten_island = inventory[:10]
+
+product_request = staten_island.product_description 
+
+seed_request = inventory.loc[(inventory[&#39;location&#39;] == &#39;Brooklyn&#39;) &amp; (inventory[&#39;product_type&#39;] == &#39;seeds&#39;)]
+
+inventory[&#39;in_stock&#39;] = inventory.apply(lambda x: True if x.quantity &gt; 0 else False, axis =1)
+
+inventory[&#39;total_value&#39;] = inventory.price * inventory.quantity
+
+combine_lambda = lambda row: \
+    &#39;{} - {}&#39;.format(row.product_type,
+                     row.product_description)
+
+inventory[&#39;full_description&#39;] = inventory.apply(combine_lambda, axis = 1)
+
+print(inventory)</code></pre>
+<pre><code>##          location  ...                      full_description
+## 0   Staten Island  ...                         seeds - daisy
+## 1   Staten Island  ...                    seeds - calla lily
+## 2   Staten Island  ...                        seeds - tomato
+## 3   Staten Island  ...                   garden tools - rake
+## 4   Staten Island  ...            garden tools - wheelbarrow
+## 5   Staten Island  ...                  garden tools - spade
+## 6   Staten Island  ...          pest_control - insect killer
+## 7   Staten Island  ...            pest_control - weed killer
+## 8   Staten Island  ...  planter - 20 inch terracotta planter
+## 9   Staten Island  ...      planter - 8 inch plastic planter
+## 10       Brooklyn  ...                         seeds - daisy
+## 11       Brooklyn  ...                    seeds - calla lily
+## 12       Brooklyn  ...                        seeds - tomato
+## 13       Brooklyn  ...                   garden tools - rake
+## 14       Brooklyn  ...            garden tools - wheelbarrow
+## 15       Brooklyn  ...                  garden tools - spade
+## 16       Brooklyn  ...          pest_control - insect killer
+## 17       Brooklyn  ...            pest_control - weed killer
+## 18       Brooklyn  ...  planter - 20 inch terracotta planter
+## 19       Brooklyn  ...      planter - 8 inch plastic planter
+## 20         Queens  ...                         seeds - daisy
+## 21         Queens  ...                    seeds - calla lily
+## 22         Queens  ...                        seeds - tomato
+## 23         Queens  ...                   garden tools - rake
+## 24         Queens  ...            garden tools - wheelbarrow
+## 25         Queens  ...                  garden tools - spade
+## 26         Queens  ...          pest_control - insect killer
+## 27         Queens  ...            pest_control - weed killer
+## 28         Queens  ...  planter - 20 inch terracotta planter
+## 
+## [29 rows x 8 columns]</code></pre>
 
 
         
