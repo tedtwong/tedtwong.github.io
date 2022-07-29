@@ -16,6 +16,9 @@ library(reticulate)
 
 ```
 
+You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.
+
+Write a command that will produce a Series made up of the March data from df from all four clinic sites and save it to the variable march.
 
 ```{python}
 #import     /;../,codecademylib3
@@ -35,9 +38,6 @@ df = pd.DataFrame([
            
 print(df)
 ```
-1. You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.
-
-Write a command that will produce a Series made up of the March data from df from all four clinic sites and save it to the variable march.
 
 ```{python}
 # integer location within dataframe 

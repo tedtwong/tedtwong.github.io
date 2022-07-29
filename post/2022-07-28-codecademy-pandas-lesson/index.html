@@ -8,7 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Codecademy - Pandas Lesson - Teddy&#39;s online desktop</title>
-  <meta name="description" content="#import /;../,codecademylib3 import pandas as pd df = pd.DataFrame([ [&#39;January&#39;, 100, 100, 23, 100], [&#39;February&#39;, 51, 45, 145, 45], [&#39;March&#39;, 81, 96, 65, 96], [&#39;April&#39;, 80, 80, 54, 180], [&#39;May&#39;, 51, 54, 54, 154], [&#39;June&#39;, 112, 109, 79, 129]], columns=[&#39;month&#39;, &#39;clinic_east&#39;, &#39;clinic_north&#39;, &#39;clinic_south&#39;, &#39;clinic_west&#39;]) print(df) ## month clinic_east clinic_north clinic_south clinic_west ## 0 January 100 100 23 100 ## 1 February 51 45 145 45 ## 2 March 81 96 65 96 ## 3 April 80 80 54 180 ## 4 May 51 54 54 154 ## 5 June 112 109 79 129 You’re getting ready to staff the clinic for March this year.">
+  <meta name="description" content="You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.
+Write a command that will produce a Series made up of the March data from df from all four clinic sites and save it to the variable march.
+#import /;../,codecademylib3 import pandas as pd df = pd.DataFrame([ [&#39;January&#39;, 100, 100, 23, 100], [&#39;February&#39;, 51, 45, 145, 45], [&#39;March&#39;, 81, 96, 65, 96], [&#39;April&#39;, 80, 80, 54, 180], [&#39;May&#39;, 51, 54, 54, 154], [&#39;June&#39;, 112, 109, 79, 129]], columns=[&#39;month&#39;, &#39;clinic_east&#39;, &#39;clinic_north&#39;, &#39;clinic_south&#39;, &#39;clinic_west&#39;]) print(df) ## month clinic_east clinic_north clinic_south clinic_west ## 0 January 100 100 23 100 ## 1 February 51 45 145 45 ## 2 March 81 96 65 96 ## 3 April 80 80 54 180 ## 4 May 51 54 54 154 ## 5 June 112 109 79 129 # integer location within dataframe # locations are zero indexed and doesn&#39;t include the ending integer march = df.">
   <meta name="author" content="Teddy Wong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -57,7 +59,7 @@
     "name" : "Teddy Wong"
   },
   "headline": "Codecademy - Pandas Lesson",
-  "description" : "#import \/;..\/,codecademylib3 import pandas as pd df = pd.DataFrame([ [\u0026#39;January\u0026#39;, 100, 100, 23, 100], [\u0026#39;February\u0026#39;, 51, 45, 145, 45], [\u0026#39;March\u0026#39;, 81, 96, 65, 96], [\u0026#39;April\u0026#39;, 80, 80, 54, 180], [\u0026#39;May\u0026#39;, 51, 54, 54, 154], [\u0026#39;June\u0026#39;, 112, 109, 79, 129]], columns=[\u0026#39;month\u0026#39;, \u0026#39;clinic_east\u0026#39;, \u0026#39;clinic_north\u0026#39;, \u0026#39;clinic_south\u0026#39;, \u0026#39;clinic_west\u0026#39;]) print(df) ## month clinic_east clinic_north clinic_south clinic_west ## 0 January 100 100 23 100 ## 1 February 51 45 145 45 ## 2 March 81 96 65 96 ## 3 April 80 80 54 180 ## 4 May 51 54 54 154 ## 5 June 112 109 79 129 You’re getting ready to staff the clinic for March this year.",
+  "description" : "You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.\nWrite a command that will produce a Series made up of the March data from df from all four clinic sites and save it to the variable march.\n#import \/;..\/,codecademylib3 import pandas as pd df = pd.DataFrame([ [\u0026#39;January\u0026#39;, 100, 100, 23, 100], [\u0026#39;February\u0026#39;, 51, 45, 145, 45], [\u0026#39;March\u0026#39;, 81, 96, 65, 96], [\u0026#39;April\u0026#39;, 80, 80, 54, 180], [\u0026#39;May\u0026#39;, 51, 54, 54, 154], [\u0026#39;June\u0026#39;, 112, 109, 79, 129]], columns=[\u0026#39;month\u0026#39;, \u0026#39;clinic_east\u0026#39;, \u0026#39;clinic_north\u0026#39;, \u0026#39;clinic_south\u0026#39;, \u0026#39;clinic_west\u0026#39;]) print(df) ## month clinic_east clinic_north clinic_south clinic_west ## 0 January 100 100 23 100 ## 1 February 51 45 145 45 ## 2 March 81 96 65 96 ## 3 April 80 80 54 180 ## 4 May 51 54 54 154 ## 5 June 112 109 79 129 # integer location within dataframe # locations are zero indexed and doesn\u0026#39;t include the ending integer march = df.",
   "inLanguage" : "en",
   "wordCount":  2503 ,
   "datePublished" : "2022-07-28T00:00:00",
@@ -79,14 +81,17 @@
 </script>
 
 <meta property="og:title" content="Codecademy - Pandas Lesson" />
-<meta property="og:description" content="#import /;../,codecademylib3 import pandas as pd df = pd.DataFrame([ [&#39;January&#39;, 100, 100, 23, 100], [&#39;February&#39;, 51, 45, 145, 45], [&#39;March&#39;, 81, 96, 65, 96], [&#39;April&#39;, 80, 80, 54, 180], [&#39;May&#39;, 51, 54, 54, 154], [&#39;June&#39;, 112, 109, 79, 129]], columns=[&#39;month&#39;, &#39;clinic_east&#39;, &#39;clinic_north&#39;, &#39;clinic_south&#39;, &#39;clinic_west&#39;]) print(df) ## month clinic_east clinic_north clinic_south clinic_west ## 0 January 100 100 23 100 ## 1 February 51 45 145 45 ## 2 March 81 96 65 96 ## 3 April 80 80 54 180 ## 4 May 51 54 54 154 ## 5 June 112 109 79 129 You’re getting ready to staff the clinic for March this year.">
+<meta property="og:description" content="You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.
+Write a command that will produce a Series made up of the March data from df from all four clinic sites and save it to the variable march.
+#import /;../,codecademylib3 import pandas as pd df = pd.DataFrame([ [&#39;January&#39;, 100, 100, 23, 100], [&#39;February&#39;, 51, 45, 145, 45], [&#39;March&#39;, 81, 96, 65, 96], [&#39;April&#39;, 80, 80, 54, 180], [&#39;May&#39;, 51, 54, 54, 154], [&#39;June&#39;, 112, 109, 79, 129]], columns=[&#39;month&#39;, &#39;clinic_east&#39;, &#39;clinic_north&#39;, &#39;clinic_south&#39;, &#39;clinic_west&#39;]) print(df) ## month clinic_east clinic_north clinic_south clinic_west ## 0 January 100 100 23 100 ## 1 February 51 45 145 45 ## 2 March 81 96 65 96 ## 3 April 80 80 54 180 ## 4 May 51 54 54 154 ## 5 June 112 109 79 129 # integer location within dataframe # locations are zero indexed and doesn&#39;t include the ending integer march = df.">
 <meta property="og:image" content="https://www.codelooper.com/img/redplane.png" />
 <meta property="og:url" content="https://www.codelooper.com/post/2022-07-28-codecademy-pandas-lesson/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Teddy&#39;s online desktop" />
 
   <meta name="twitter:title" content="Codecademy - Pandas Lesson" />
-  <meta name="twitter:description" content="#import /;../,codecademylib3 import pandas as pd df = pd.DataFrame([ [&#39;January&#39;, 100, 100, 23, 100], [&#39;February&#39;, 51, 45, 145, 45], [&#39;March&#39;, 81, 96, 65, 96], [&#39;April&#39;, …">
+  <meta name="twitter:description" content="You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.
+Write a command that will produce a Series made up of …">
   <meta name="twitter:image" content="https://www.codelooper.com/img/redplane.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link href='https://www.codelooper.com/img/redplane.png' rel='icon' type='image/x-icon'/>
@@ -302,6 +307,8 @@ if (!doNotTrack) {
         
 
 
+<p>You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.</p>
+<p>Write a command that will produce a Series made up of the March data from df from all four clinic sites and save it to the variable march.</p>
 <pre class="python"><code>#import     /;../,codecademylib3
 
 import pandas as pd
@@ -325,10 +332,6 @@ print(df)</code></pre>
 ## 3     April           80            80            54          180
 ## 4       May           51            54            54          154
 ## 5      June          112           109            79          129</code></pre>
-<ol style="list-style-type: decimal">
-<li>You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.</li>
-</ol>
-<p>Write a command that will produce a Series made up of the March data from df from all four clinic sites and save it to the variable march.</p>
 <pre class="python"><code># integer location within dataframe 
 # locations are zero indexed and doesn&#39;t include the ending integer
 

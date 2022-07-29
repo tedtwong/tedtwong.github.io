@@ -263,7 +263,9 @@ if (!doNotTrack) {
     </p>
     <div class="post-entry">
         
-        #import /;../,codecademylib3 import pandas as pd df = pd.DataFrame([ [&#39;January&#39;, 100, 100, 23, 100], [&#39;February&#39;, 51, 45, 145, 45], [&#39;March&#39;, 81, 96, 65, 96], [&#39;April&#39;, 80, 80, 54, 180], [&#39;May&#39;, 51, 54, 54, 154], [&#39;June&#39;, 112, 109, 79, 129]], columns=[&#39;month&#39;, &#39;clinic_east&#39;, &#39;clinic_north&#39;, &#39;clinic_south&#39;, &#39;clinic_west&#39;]) print(df) ## month clinic_east clinic_north clinic_south clinic_west ## 0 January 100 100 23 100 ## 1 February 51 45 145 45 ## 2 March 81 96 65 96 ## 3 April 80 80 54 180 ## 4 May 51 54 54 154 ## 5 June 112 109 79 129 You’re getting ready to staff the clinic for March this year.
+        You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.
+Write a command that will produce a Series made up of the March data from df from all four clinic sites and save it to the variable march.
+#import /;../,codecademylib3 import pandas as pd df = pd.DataFrame([ [&#39;January&#39;, 100, 100, 23, 100], [&#39;February&#39;, 51, 45, 145, 45], [&#39;March&#39;, 81, 96, 65, 96], [&#39;April&#39;, 80, 80, 54, 180], [&#39;May&#39;, 51, 54, 54, 154], [&#39;June&#39;, 112, 109, 79, 129]], columns=[&#39;month&#39;, &#39;clinic_east&#39;, &#39;clinic_north&#39;, &#39;clinic_south&#39;, &#39;clinic_west&#39;]) print(df) ## month clinic_east clinic_north clinic_south clinic_west ## 0 January 100 100 23 100 ## 1 February 51 45 145 45 ## 2 March 81 96 65 96 ## 3 April 80 80 54 180 ## 4 May 51 54 54 154 ## 5 June 112 109 79 129 # integer location within dataframe # locations are zero indexed and doesn&#39;t include the ending integer march = df.
         <a href="https://www.codelooper.com/post/2022-07-28-codecademy-pandas-lesson/" class="post-read-more">[Read More]</a>
         
     </div>
