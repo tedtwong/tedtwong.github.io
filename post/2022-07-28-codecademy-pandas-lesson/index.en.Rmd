@@ -11,12 +11,13 @@ type: ''
 subtitle: ''
 image: ''
 ---
+
 ```{r setup, include=FALSE}
 library(reticulate)
 
 ```
 
-You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.
+You're getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.
 
 Write a command that will produce a Series made up of the March data from df from all four clinic sites and save it to the variable march.
 
@@ -82,6 +83,7 @@ print(df2)
 ```
 
 Adding a column to the dataframe
+
 ```{python}
 df = pd.DataFrame([
   [1, '3 inch screw', 0.5, 0.75],
@@ -219,4 +221,165 @@ combine_lambda = lambda row: \
 inventory['full_description'] = inventory.apply(combine_lambda, axis = 1)
 
 print(inventory)
+```
+
+## Calculating Aggregate Functions
+
+Calculate aggregate statistics (mean, standard deviation, median, percentiles, etc.) over certain subsets of the data.
+
+df.groupby('column1').column2.measurement()
+
+```{python}
+orders = pd.DataFrame( {'id': {190: 57860, 191: 31063, 192: 18731, 193: 53962, 194: 50212, 195: 74787, 196: 15734, 197: 18956, 198: 55835, 199: 68900}, 'first_name': {190: 'Evelyn', 191: 'Debra', 192: 'Virginia', 193: 'Andrea', 194: 'Brenda', 195: 'James', 196: 'Dylan', 197: 'Tiffany', 198: 'Jeremy', 199: 'Eugene'}, 'last_name': {190: 'Holden', 191: 'Nichols', 192: 'Shepard', 193: 'Trevino', 194: 'Burnett', 195: 'Gill', 196: 'Hurst', 197: 'Stone', 198: 'Randall', 199: 'Kinney'}, 'email': {190: 'Evelyn.Holden@gmail.com', 191: 'DNichols1991@gmail.com', 192: 'VirginiaShepard73@gmail.com', 193: 'Andrea.Trevino@gmail.com', 194: 'BrendaBurnett83@hotmail.com', 195: 'JamesGill43@gmail.com', 196: 'Dylan.Hurst@gmail.com', 197: 'TStone1981@gmail.com', 198: 'JeremyRandall28@gmail.com', 199: 'EugeneKinney89@gmail.com'}, 'shoe_type': {190: 'ballet flats', 191: 'sandals', 192: 'sandals', 193: 'sandals', 194: 'sandals', 195: 'sandals', 196: 'wedges', 197: 'ballet flats', 198: 'sandals', 199: 'ballet flats'}, 'shoe_material': {190: 'fabric', 191: 'faux-leather', 192: 'fabric', 193: 'fabric', 194: 'fabric', 195: 'fabric', 196: 'leather', 197: 'leather', 198: 'fabric', 199: 'faux-leather'}, 'shoe_color': {190: 'brown', 191: 'navy', 192: 'white', 193: 'navy', 194: 'navy', 195: 'brown', 196: 'brown', 197: 'white', 198: 'brown', 199: 'black'}, 'price': {190: 477, 191: 478, 192: 480, 193: 482, 194: 484, 195: 485, 196: 488, 197: 492, 198: 498, 199: 498}} )
+
+pricey_shoes = orders.groupby('shoe_type').price.max()
+
+print(pricey_shoes)
+```
+
+In order to get that, we can use reset_index(). This will transform our Series into a DataFrame and move the indices into their own column.
+
+df.groupby('column1').column2.measurement().reset_index()
+
+```{python}
+pricey_shoes = orders.groupby('shoe_type').price.max().reset_index()
+
+print(pricey_shoes)
+
+print(type(pricey_shoes))
+```
+
+calculate other functions:
+
+```{python}
+import numpy as np
+
+cheap_shoes = orders.groupby('shoe_color').price \
+    .apply(lambda x: np.percentile(x, 25)) \
+    .reset_index()
+
+print(cheap_shoes)
+```
+
+Group by more than one column
+
+```{python}
+shoe_counts = orders.groupby(['shoe_type','shoe_color']).id.count().reset_index()
+
+print(shoe_counts)
+```
+
+## Pivot Tables
+
+df.pivot(columns='ColumnToPivot', index='ColumnToBeRows', values='ColumnToBeValues')
+
+```{python}
+shoe_counts_pivot = shoe_counts.pivot( 
+  columns = 'shoe_color', 
+  index = 'shoe_type' ,
+  values = 'id').reset_index() 
+
+print(shoe_counts_pivot)
+```
+
+```{python}
+user_visits = pd.DataFrame( {'id': {0: 10043, 1: 10150, 2: 10155, 3: 10178, 4: 10208, 5: 10260, 6: 10271, 7: 10278, 8: 10320, 9: 10389, 10: 10432, 11: 10511, 12: 10572, 13: 10672, 14: 10683, 15: 10717, 16: 10763, 17: 10788, 18: 10809, 19: 10845}, 'first_name': {0: 'Louis', 1: 'Bruce', 2: 'Nicholas', 3: 'William', 4: 'Karen', 5: 'Benjamin', 6: 'Gerald', 7: 'Melissa', 8: 'Adam', 9: 'Ethan', 10: 'Charles', 11: 'Scott', 12: 'Samantha', 13: 'Joyce', 14: 'Richard', 15: 'Louis', 16: 'Jesse', 17: 'Donald', 18: 'Olivia', 19: 'Daniel'}, 'last_name': {0: 'Koch', 1: 'Webb', 2: 'Hoffman', 3: 'Key', 4: 'Bass', 5: 'Ochoa', 6: 'Aguilar', 7: 'Lambert', 8: 'Strickland', 9: 'Payne', 10: 'Herrera', 11: 'Hines', 12: 'Townsend', 13: 'Ford', 14: 'Stanley', 15: 'Prince', 16: 'Booker', 17: 'Mcpherson', 18: 'Osborne', 19: 'Haney'}, 'email': {0: 'LouisKoch43@gmail.com', 1: 'BruceWebb44@outlook.com', 2: 'Nicholas.Hoffman@gmail.com', 3: 'William.Key@outlook.com', 4: 'KB4971@gmail.com', 5: 'Benjamin.Ochoa@outlook.com', 6: 'Gerald.Aguilar@gmail.com', 7: 'Melissa.Lambert@gmail.com', 8: 'Adam.Strickland@gmail.com', 9: 'EthanPayne26@outlook.com', 10: 'CH7703@gmail.com', 11: 'SHines1999@hotmail.com', 12: 'Samantha.Townsend@gmail.com', 13: 'JF8697@gmail.com', 14: 'RStanley1971@gmail.com', 15: 'LPrince1992@gmail.com', 16: 'JBooker1977@gmail.com', 17: 'DMcpherson1995@gmail.com', 18: 'Olivia.Osborne@gmail.com', 19: 'DHaney1985@gmail.com'}, 'month': {0: '3 - March', 1: '3 - March', 2: '2 - February', 3: '3 - March', 4: '2 - February', 5: '1 - January', 6: '3 - March', 7: '2 - February', 8: '3 - March', 9: '2 - February', 10: '3 - March', 11: '3 - March', 12: '2 - February', 13: '3 - March', 14: '3 - March', 15: '3 - March', 16: '1 - January', 17: '2 - February', 18: '1 - January', 19: '3 - March'}, 'utm_source': {0: 'yahoo', 1: 'twitter', 2: 'google', 3: 'yahoo', 4: 'google', 5: 'twitter', 6: 'google', 7: 'email', 8: 'email', 9: 'facebook', 10: 'yahoo', 11: 'yahoo', 12: 'google', 13: 'email', 14: 'email', 15: 'yahoo', 16: 'yahoo', 17: 'yahoo', 18: 'facebook', 19: 'yahoo'}} )
+
+print(user_visits.head(5))
+
+click_source = user_visits.groupby('utm_source').count().reset_index()
+
+print(click_source)
+
+click_source_by_month = user_visits.groupby(['utm_source','month']).count().reset_index()
+
+print(click_source_by_month)
+
+click_source_by_month_pivot = click_source_by_month.pivot(
+  columns = 'month',
+  index = 'utm_source',
+  values = 'id').reset_index()
+
+print(click_source_by_month_pivot)
+```
+
+## A/B testing in Python
+
+```
+#import codecademylib3
+import pandas as pd
+import numpy as np
+
+ad_clicks = pd.read_csv('ad_clicks.csv')
+
+<!-- ad_clicks = pd.DataFrame( {'user_id': {0: '008b7c6c-7272-471e-b90e-930d548bd8d7', 1: '009abb94-5e14-4b6c-bb1c-4f4df7aa7557', 2: '00f5d532-ed58-4570-b6d2-768df5f41aed', 3: '011adc64-0f44-4fd9-a0bb-f1506d2ad439', 4: '012137e6-7ae7-4649-af68-205b4702169c', 5: '013b0072-7b72-40e7-b698-98b4d0c9967f', 6: '0153d85b-7660-4c39-92eb-1e1acd023280', 7: '01555297-d6e6-49ae-aeba-1b196fdbb09f', 8: '018cea61-19ea-4119-895b-1a4309ccb148', 9: '01a210c3-fde0-4e6f-8efd-4f0e38730ae6', 10: '01adb2e7-f711-4ae4-a7c6-29f48457eea1', 11: '01ae0361-7d17-4760-a2c8-23977a46fb78', 12: '01fb228a-9d28-4cde-932c-59b933fa763b', 13: '023598b8-09e2-40ed-9c90-34d607094ff9', 14: '02405d93-9c33-4034-894a-b9523956a3ad', 15: '0254b59f-082d-4a5a-913d-4f2bba267768', 16: '02d8dba0-5d12-4983-a407-63fab9757d94', 17: '0378e9e1-0ad8-4a26-8190-ebb3370239d3', 18: '041deef8-b242-4114-afd0-e584784ec9f0', 19: '0429608e-61f3-4df0-ba45-3633029a14db', 20: '04389894-b52c-4485-9266-435e9b9c0efd', 21: '0441f866-dd3f-422a-a36a-cdc2f034e6ef', 22: '04797f05-9cbe-48b6-8662-b9ee20828b0a', 23: '0482e1ab-b513-4bfb-9914-9fb5ab41c915', 24: '04ca737b-85f4-4194-8c38-d8d363b490f7', 25: '056f771f-e5ba-483f-a074-db2d7b94309d', 26: '05aec9ea-92c1-4ffc-84b5-c3864dd307e4', 27: '05c41c49-8521-4ad0-a1b5-724e99fe46ff', 28: '05d08d6d-62d5-4e28-8f10-107ae2cd03c7', 29: '05e8721a-cbb7-4c13-a115-eac7dd5ee7f6', 30: '06234d6f-8729-49d3-a39e-6bba740847e3', 31: '068ad376-b5c2-4825-afc0-2be657e1f4df', 32: '06a18971-a97b-48a4-bda6-3881960e3796', 33: '06a8681a-7de2-4053-8462-29df2b1e8aab', 34: '06aa1cc0-4366-4558-b74c-24bb797cff0b', 35: '06cf79f4-ac53-4b72-8736-829b8c63c7df', 36: '06da5468-c366-4388-b0ac-f84ea36949e0', 37: '07476cb4-247d-4fe2-b830-a399717bd07e', 38: '076b9eb7-a7c3-4319-a830-eb3344d88b6e', 39: '0771c92b-2ec8-463d-99fc-d4c31b7264b1', 40: '07760e06-0ff5-4f4b-a483-eaa46e504aca', 41: '0789f648-70fa-4711-8d1c-62ddde084aff', 42: '07cc1e2c-b5cc-4daf-95f2-2326021e7d52', 43: '081372d5-a1a8-4819-9bf1-911d4855360c', 44: '082ad0da-546b-4c00-b2f8-e21a5113e66a', 45: '083e3bbf-abe4-418c-8b17-7ac77b436ab1', 46: '0846d988-4b9e-4593-857b-594dabb8d5bb', 47: '084e8dc0-94df-4321-bbde-dc521b5c58d9', 48: '089cd63a-f7e2-4381-a864-b4378334885f', 49: '0928d4d2-9012-4806-99f7-06672ede99af'}, 'utm_source': {0: 'google', 1: 'facebook', 2: 'twitter', 3: 'google', 4: 'facebook', 5: 'facebook', 6: 'google', 7: 'google', 8: 'email', 9: 'email', 10: 'google', 11: 'facebook', 12: 'email', 13: 'google', 14: 'twitter', 15: 'google', 16: 'google', 17: 'facebook', 18: 'google', 19: 'google', 20: 'email', 21: 'google', 22: 'google', 23: 'twitter', 24: 'google', 25: 'google', 26: 'facebook', 27: 'facebook', 28: 'facebook', 29: 'email', 30: 'facebook', 31: 'email', 32: 'google', 33: 'facebook', 34: 'email', 35: 'google', 36: 'google', 37: 'twitter', 38: 'google', 39: 'google', 40: 'email', 41: 'google', 42: 'google', 43: 'twitter', 44: 'facebook', 45: 'google', 46: 'google', 47: 'facebook', 48: 'facebook', 49: 'google'}, 'day': {0: '6 - Saturday', 1: '7 - Sunday', 2: '2 - Tuesday', 3: '2 - Tuesday', 4: '7 - Sunday', 5: '1 - Monday', 6: '4 - Thursday', 7: '3 - Wednesday', 8: '1 - Monday', 9: '2 - Tuesday', 10: '3 - Wednesday', 11: '4 - Thursday', 12: '7 - Sunday', 13: '2 - Tuesday', 14: '2 - Tuesday', 15: '5 - Friday', 16: '3 - Wednesday', 17: '1 - Monday', 18: '3 - Wednesday', 19: '7 - Sunday', 20: '1 - Monday', 21: '7 - Sunday', 22: '6 - Saturday', 23: '6 - Saturday', 24: '2 - Tuesday', 25: '4 - Thursday', 26: '5 - Friday', 27: '7 - Sunday', 28: '2 - Tuesday', 29: '5 - Friday', 30: '6 - Saturday', 31: '3 - Wednesday', 32: '4 - Thursday', 33: '7 - Sunday', 34: '4 - Thursday', 35: '6 - Saturday', 36: '5 - Friday', 37: '7 - Sunday', 38: '5 - Friday', 39: '7 - Sunday', 40: '3 - Wednesday', 41: '1 - Monday', 42: '4 - Thursday', 43: '7 - Sunday', 44: '2 - Tuesday', 45: '2 - Tuesday', 46: '4 - Thursday', 47: '2 - Tuesday', 48: '7 - Sunday', 49: '3 - Wednesday'}, 'ad_click_timestamp': {0: '7:18', 1: 'None', 2: 'None', 3: 'None', 4: 'None', 5: 'None', 6: 'None', 7: 'None', 8: '18:33', 9: '15:21', 10: 'None', 11: '7:11', 12: 'None', 13: 'None', 14: 'None', 15: 'None', 16: 'None', 17: 'None', 18: '10:54', 19: 'None', 20: 'None', 21: '11:16', 22: 'None', 23: '1:20', 24: 'None', 25: 'None', 26: '8:46', 27: 'None', 28: 'None', 29: 'None', 30: 'None', 31: 'None', 32: 'None', 33: '9:2', 34: 'None', 35: 'None', 36: 'None', 37: 'None', 38: 'None', 39: 'None', 40: 'None', 41: 'None', 42: 'None', 43: 'None', 44: 'None', 45: '3:21', 46: 'None', 47: 'None', 48: 'None', 49: 'None'}, 'experimental_group': {0: 'A', 1: 'B', 2: 'A', 3: 'B', 4: 'B', 5: 'A', 6: 'A', 7: 'A', 8: 'A', 9: 'B', 10: 'B', 11: 'B', 12: 'A', 13: 'B', 14: 'A', 15: 'A', 16: 'B', 17: 'B', 18: 'A', 19: 'B', 20: 'B', 21: 'A', 22: 'B', 23: 'A', 24: 'B', 25: 'A', 26: 'B', 27: 'B', 28: 'A', 29: 'B', 30: 'A', 31: 'B', 32: 'B', 33: 'A', 34: 'A', 35: 'B', 36: 'B', 37: 'B', 38: 'A', 39: 'B', 40: 'B', 41: 'A', 42: 'B', 43: 'B', 44: 'A', 45: 'B', 46: 'B', 47: 'A', 48: 'B', 49: 'B'}, 'is_clicked': {0: True, 1: False, 2: False, 3: False, 4: False, 5: False, 6: False, 7: False, 8: True, 9: True, 10: False, 11: True, 12: False, 13: False, 14: False, 15: False, 16: False, 17: False, 18: True, 19: False, 20: False, 21: True, 22: False, 23: True, 24: False, 25: False, 26: True, 27: False, 28: False, 29: False, 30: False, 31: False, 32: False, 33: True, 34: False, 35: False, 36: False, 37: False, 38: False, 39: False, 40: False, 41: False, 42: False, 43: False, 44: False, 45: True, 46: False, 47: False, 48: False, 49: False}} ) -->
+
+print(ad_clicks.head())
+
+print(ad_clicks.groupby('utm_source').count())
+
+ad_clicks['is_clicked'] = ad_clicks.ad_click_timestamp.notnull() 
+
+# This doesn't work (nan is string).
+#is_clicked_fn = lambda row: True if row.ad_click_timestamp != 'nan' else False
+#ad_clicks['is_clicked'] = ad_clicks.apply(is_clicked_fn, axis = 1)
+
+print(ad_clicks.head())
+
+clicks_by_source = ad_clicks.groupby(['utm_source', 'is_clicked']).user_id.count().reset_index()
+
+print(clicks_by_source)
+
+clicks_pivot = clicks_by_source.pivot(
+  columns = 'is_clicked',
+  index = 'utm_source',
+  values = 'user_id').reset_index()
+
+print(clicks_pivot)
+
+# note: no quotation marks around True and False
+clicks_pivot['percent_clicked'] = clicks_pivot[True] / (clicks_pivot[True] + clicks_pivot[False])
+
+print(clicks_pivot)
+
+clicks_by_ad = ad_clicks.groupby(['experimental_group', 'is_clicked']).user_id.count().reset_index()
+
+print(clicks_by_ad)
+
+clicks_pivot_ad = clicks_by_ad.pivot(
+  columns = 'is_clicked',
+  index = 'experimental_group',
+  values = 'user_id').reset_index()
+
+
+clicks_pivot_ad['percent_clicked'] = clicks_pivot_ad[True] / (clicks_pivot_ad[True] + clicks_pivot_ad[False])
+
+print(clicks_pivot_ad)
+
+a_clicks = ad_clicks[ad_clicks.experimental_group == 'A']
+b_clicks = ad_clicks[ad_clicks.experimental_group == 'B']
+
+a_clicks_by_day = a_clicks.groupby(['day', 'is_clicked']).user_id.count().reset_index()
+
+a_clicks_pivot_by_day = a_clicks_by_day.pivot(
+  columns = 'is_clicked',
+  index = 'day',
+  values = 'user_id').reset_index()
+
+# note: no quotation marks around True and False
+a_clicks_pivot_by_day['percent_clicked'] = a_clicks_pivot_by_day[True] / (a_clicks_pivot_by_day[True] + a_clicks_pivot_by_day[False])
+
+print(a_clicks_pivot_by_day)
+
+b_clicks_by_day = b_clicks.groupby(['day', 'is_clicked']).user_id.count().reset_index()
+
+b_clicks_pivot_by_day = b_clicks_by_day.pivot(
+  columns = 'is_clicked',
+  index = 'day',
+  values = 'user_id').reset_index()
+
+# note: no quotation marks around True and False
+b_clicks_pivot_by_day['percent_clicked'] = b_clicks_pivot_by_day[True] / (b_clicks_pivot_by_day[True] + b_clicks_pivot_by_day[False])
+
+print(b_clicks_pivot_by_day)
 ```
