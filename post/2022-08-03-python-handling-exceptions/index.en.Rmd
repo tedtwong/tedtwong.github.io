@@ -1,0 +1,97 @@
+---
+title: Python - Handling Exceptions
+author: Teddy Wong
+date: '2022-08-03'
+slug: 2022-08-03-python-handling-exceptions
+categories:
+  - Programming
+tags:
+  - Python
+type: ''
+subtitle: ''
+image: ''
+---
+Try, except, finally
+
+```{python}
+
+import time as time
+
+def causeError():
+	start = time.time() #set start timer
+	try: 
+		#delay run by 0.5 secs
+		time.sleep(0.5)
+		return 1/0
+	except Exception:
+		print('There was some sort of error!')
+	finally:
+		print(f'Function took {time.time() - start} seconds to execute')
+		
+causeError()
+```
+
+Custom Decorators
+`*args` `**kwargs` are multiple arguments or string arguments.
+
+```{python}
+def handleException(func):
+	def wrapper(*args):
+		try:
+			func(*args)
+		except TypeError:
+			print('There was a type error!')
+		except ZeroDivisionError:
+			print('There was a zero division error!')
+		except Exception:
+			print('There was some sort of error!')
+	return wrapper
+
+@handleException
+def causeError():
+	return 1/0
+
+causeError()
+
+```
+
+Raising exceptions
+
+```{python}
+@handleException
+def raiseError(n):
+	if n == 0:
+		raise Exception()
+	print(n)
+	
+raiseError(0)
+raiseError(1)
+
+```
+
+Adding attributes to custom exceptions
+
+```{python}
+
+class HttpException(Exception):
+	statusCode = None
+	message = None
+	# inherit parent class but with alteration.
+	def __init__(self, message=''):
+		#super().__init__(colored(message,'red'))
+		super().__init__(f'Status code: {self.statusCode} and message is: {self.message}')
+
+class NotFound(HttpException):
+	statusCode = 404
+	message = 'Resource not found'
+
+class ServerError(HttpException):
+	statusCode = 500
+	message = 'The server messed up'
+
+def raiseServerError():
+	raise ServerError()
+
+#raiseServerError()
+
+```
