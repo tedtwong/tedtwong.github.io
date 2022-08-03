@@ -1,0 +1,97 @@
+---
+title: Python - Multithreading/Multiprocessing
+author: Teddy Wong
+date: '2022-08-03'
+slug: 2022-08-03-python-multithreading-multiprocessing
+categories:
+  - Programming
+tags:
+  - Python
+type: ''
+subtitle: ''
+image: ''
+---
+
+From: LinkedIn course 'Python Essential Training' by Ryan Mitchell 
+https://www.linkedin.com/learning/python-essential-training-14898805
+
+```{python}
+import threading
+import time
+```
+
+Threads
+
+```{python}
+def longSquare(num):
+    time.sleep(1)
+    return num**2
+
+[longSquare(n) for n in range(0, 5)]
+```
+
+```{python}
+t1 = threading.Thread(target=longSquare, args=(1,)) #args is tuple
+t2 = threading.Thread(target=longSquare, args=(2,))
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+```
+
+```{python}
+
+def longSquare(num, results):
+  time.sleep(1)
+  results[num] = num**2
+
+results = {}
+
+t1 = threading.Thread(target=longSquare, args=(1, results)) #args are tuples
+t2 = threading.Thread(target=longSquare, args=(2, results))
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+print(results)
+```
+
+Laborious to write t1 t2 etc... so we can put them in a list.
+
+```{python}
+def longSquare(num, results):
+  time.sleep(1)
+  results[num] = num**2
+  
+results = {}
+threads = [threading.Thread(target=longSquare, args=(n, results)) for n in range(0,100)] # a hundred threads
+[t.start() for t in threads]
+[t.join() for t in threads]
+
+print(results)
+```
+
+Multiprocessing. Multiprocessing does not share memory like multi-threading
+
+```
+from multiprocessing import Process
+#import myfunction #need to import the function you use unless you use the package below:
+#pip install multiprocess
+
+def longSquare(num, results):
+  time.sleep(1)
+  print(num**2)
+  print('Finished computing!')
+
+results = {}
+processes = [Process(target=longSquare, args=(n,results)) for n in range(0,10)]
+[p.start() for p in processes]
+[p.join() for p in processes]
+```
+
+

@@ -1,0 +1,147 @@
+---
+title: Python - opening reading writing files
+author: Teddy Wong
+date: '2022-08-03'
+slug: 2022-08-03-python-opening-reading-writing-files
+categories:
+  - Programming
+tags:
+  - Python
+type: ''
+subtitle: ''
+image: ''
+---
+From: LinkedIn course 'Python Essential Training' by Ryan Mitchell 
+https://www.linkedin.com/learning/python-essential-training-14898805
+
+reading files
+
+```
+f = open('some_file.txt','r')
+print(f) #gets file type, need to read the file
+
+f.readline()
+f.readlines() #puts lines into list of strings
+for line in f.readlines():
+  print(line.strip()) # strips leading and trailing spaces
+
+```
+
+writing files
+```
+f = open('somefiles.txt','w') # creates a file
+f.write('Line 1\n')
+f.write('Line 2\n')
+f.close() 
+# python doesn't write until you close or run out of buffer and will overwrite existing text
+```
+
+appending files
+```
+f = open('somefile.txt', 'a')
+f.write('Line 3\n')
+f.write('Line 4\n')
+f.close()
+```
+
+use 'with' so that the file closes when you finish the code block. 
+
+```
+with open('somefiles.txt','a') as f: # creates a file
+  f.write('Line 1\n')
+  f.write('Line 2\n')
+```
+
+csv files
+
+```
+import csv
+
+with open('somefile.csv','r') as f:
+  # reader = csv.reader(f, delimiter = '\t') # for tab delimited ',' is assumed
+  # reader = list(csv.reader(f, delimiter = '\t')) # read as list
+  reader = csv.DictReader(f, delimiter = '\t') # read as dictionary
+    for row in reader:
+      print(row)
+
+type(reader) 
+```
+convert reader object to list object
+
+```
+with open('somefile.csv','r') as f:
+  data - list(csv.DictReader(f. delimiter = '\t'))
+
+```
+Finding some prime location (zips that are prime in CA)
+
+```
+with open('geofile.csv','r') as f:
+  data = list(csv.DictReader(f,delimiter='\t'))
+  
+primes = []
+for number in range(2,99999):
+  for factor in range(2, int(number**.05))
+    if number % factor == 0:
+      break
+    else:
+      primes.append(number)
+
+data = [row for row in data if int(row['postal code']) in primes and row['state code'] == 'CA']
+
+len(data)
+```
+writing the data to file
+
+```
+with open('somefile.csv','w') as f:
+  writer = csv.writer(f)
+  for row in data:
+    writer.writerow([row['place name'], row['country']])
+```
+.json files
+
+```{python}
+import json
+from json import JSONDecodeError
+
+jsonString = '{"a":"apple", "b":"bear", "c":"cat"}'
+json.loads(jsonString)
+```
+
+```{python}
+# add trailing comma
+jsonString = '{"a":"apple", "b":"bear", "c":"cat",}'
+
+try:
+  json.loads(jsonString)
+except JSONDecodeError:
+    print('could not parse JSON!')
+    
+
+```
+Dumping JSON 
+```{python}
+pythonDict = {"a":"apple", "b":"bear", "c":"cat",}
+json.dumps(pythonDict)
+```
+and using custom decoder
+```{python}
+
+from json import JSONEncoder
+
+class Animal:
+    def __init__(self,name):
+      self.name = name
+      
+class AnimalEncoder(JSONEncoder):
+  def default(self,o): #o is object that needs to be decoded
+    if type(o) == Animal:
+        return o.name
+    return super().default(o)
+    
+pythonDict = {"a": Animal("aardvark"), "b" : Animal("bear"), "c" : Animal("cat"),}
+json.dumps(pythonDict, cls=AnimalEncoder)
+```
+
+

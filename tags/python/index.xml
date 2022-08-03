@@ -24,9 +24,32 @@ How would you create a neural network that learns this relationship so that it w
       <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.codelooper.com/post/2022-08-03-python-handling-exceptions/</guid>
-      <description>From: LinkedIn course ‘Python Essential Training’ by Ryan Mitchell
+      <description>From: LinkedIn course ‘Python Essential Training’ by Ryan Mitchell https://www.linkedin.com/learning/python-essential-training-14898805
 Try, except, finally
-import time as time def causeError(): start = time.time() #set start timer try: #delay run by 0.5 secs time.sleep(0.5) return 1/0 except Exception: print(&amp;#39;There was some sort of error!&amp;#39;) finally: print(f&amp;#39;Function took {time.time() - start} seconds to execute&amp;#39;) causeError() ## There was some sort of error! ## Function took 0.5051310062408447 seconds to execute Custom Decorators *args **kwargs are multiple arguments or string arguments.</description>
+import time as time def causeError(): start = time.time() #set start timer try: #delay run by 0.5 secs time.sleep(0.5) return 1/0 except Exception: print(&amp;#39;There was some sort of error!&amp;#39;) finally: print(f&amp;#39;Function took {time.time() - start} seconds to execute&amp;#39;) causeError() ## There was some sort of error! ## Function took 0.5048558712005615 seconds to execute Custom Decorators *args **kwargs are multiple arguments or string arguments.</description>
+    </item>
+    
+    <item>
+      <title>Python - Multithreading/Multiprocessing</title>
+      <link>https://www.codelooper.com/post/2022-08-03-python-multithreading-multiprocessing/</link>
+      <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/2022-08-03-python-multithreading-multiprocessing/</guid>
+      <description>From: LinkedIn course ‘Python Essential Training’ by Ryan Mitchell https://www.linkedin.com/learning/python-essential-training-14898805
+import threading import time Threads
+def longSquare(num): time.sleep(1) return num**2 [longSquare(n) for n in range(0, 5)] ## [0, 1, 4, 9, 16] t1 = threading.Thread(target=longSquare, args=(1,)) #args is tuple t2 = threading.Thread(target=longSquare, args=(2,)) t1.start() t2.start() t1.join() t2.join() def longSquare(num, results): time.sleep(1) results[num] = num**2 results = {} t1 = threading.Thread(target=longSquare, args=(1, results)) #args are tuples t2 = threading.Thread(target=longSquare, args=(2, results)) t1.</description>
+    </item>
+    
+    <item>
+      <title>Python - opening reading writing files</title>
+      <link>https://www.codelooper.com/post/2022-08-03-python-opening-reading-writing-files/</link>
+      <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/2022-08-03-python-opening-reading-writing-files/</guid>
+      <description>From: LinkedIn course ‘Python Essential Training’ by Ryan Mitchell https://www.linkedin.com/learning/python-essential-training-14898805
+reading files
+f = open(&amp;#39;some_file.txt&amp;#39;,&amp;#39;r&amp;#39;) print(f) #gets file type, need to read the file f.readline() f.readlines() #puts lines into list of strings for line in f.readlines(): print(line.strip()) # strips leading and trailing spaces writing files
+f = open(&amp;#39;somefiles.txt&amp;#39;,&amp;#39;w&amp;#39;) # creates a file f.write(&amp;#39;Line 1\n&amp;#39;) f.write(&amp;#39;Line 2\n&amp;#39;) f.close() # python doesn&amp;#39;t write until you close or run out of buffer and will overwrite existing text appending files</description>
     </item>
     
     <item>

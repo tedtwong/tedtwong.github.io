@@ -11,7 +11,8 @@ type: ''
 subtitle: ''
 image: ''
 ---
-From: LinkedIn course 'Python Essential Training' by Ryan Mitchell
+From: LinkedIn course 'Python Essential Training' by Ryan Mitchell 
+https://www.linkedin.com/learning/python-essential-training-14898805
 
 Try, except, finally
 
@@ -80,7 +81,7 @@ class HttpException(Exception):
 	message = None
 	# inherit parent class but with alteration.
 	def __init__(self, message=''):
-		#super().__init__(colored(message,'red'))
+		#super().__init__(colored(message,'red')) #missing package for 'colored' function
 		super().__init__(f'Status code: {self.statusCode} and message is: {self.message}')
 
 class NotFound(HttpException):
