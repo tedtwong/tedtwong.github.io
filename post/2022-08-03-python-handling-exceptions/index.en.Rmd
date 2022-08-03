@@ -11,6 +11,8 @@ type: ''
 subtitle: ''
 image: ''
 ---
+From: LinkedIn course 'Python Essential Training' by Ryan Mitchell
+
 Try, except, finally
 
 ```{python}
