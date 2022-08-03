@@ -5,7 +5,19 @@
     <link>https://www.codelooper.com/tags/python/</link>
     <description>Recent content in Python on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 28 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coursera - introduction to tensorflow</title>
+      <link>https://www.codelooper.com/post/2022-08-03-coursera-introduction-to-tensorflow/</link>
+      <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/2022-08-03-coursera-introduction-to-tensorflow/</guid>
+      <description>Week 1 Assignment: Housing Prices In this exercise you’ll try to build a neural network that predicts the price of a house according to a simple formula.
+Imagine that house pricing is as easy as:
+A house has a base cost of 50k, and every additional bedroom adds a cost of 50k. This will make a 1 bedroom house cost 100k, a 2 bedroom house cost 150k etc.
+How would you create a neural network that learns this relationship so that it would predict a 7 bedroom house as costing close to 400k etc.</description>
+    </item>
+    
     <item>
       <title>Codecademy - Pandas Lesson</title>
       <link>https://www.codelooper.com/post/2022-07-28-codecademy-pandas-lesson/</link>

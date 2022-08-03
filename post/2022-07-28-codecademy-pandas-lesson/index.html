@@ -61,7 +61,7 @@ Write a command that will produce a Series made up of the March data from df fro
   "headline": "Codecademy - Pandas Lesson",
   "description" : "You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.\nWrite a command that will produce a Series made up of the March data from df from all four clinic sites and save it to the variable march.\n#import \/;..\/,codecademylib3 import pandas as pd df = pd.DataFrame([ [\u0026#39;January\u0026#39;, 100, 100, 23, 100], [\u0026#39;February\u0026#39;, 51, 45, 145, 45], [\u0026#39;March\u0026#39;, 81, 96, 65, 96], [\u0026#39;April\u0026#39;, 80, 80, 54, 180], [\u0026#39;May\u0026#39;, 51, 54, 54, 154], [\u0026#39;June\u0026#39;, 112, 109, 79, 129]], columns=[\u0026#39;month\u0026#39;, \u0026#39;clinic_east\u0026#39;, \u0026#39;clinic_north\u0026#39;, \u0026#39;clinic_south\u0026#39;, \u0026#39;clinic_west\u0026#39;]) print(df) ## month clinic_east clinic_north clinic_south clinic_west ## 0 January 100 100 23 100 ## 1 February 51 45 145 45 ## 2 March 81 96 65 96 ## 3 April 80 80 54 180 ## 4 May 51 54 54 154 ## 5 June 112 109 79 129 # integer location within dataframe # locations are zero indexed and doesn\u0026#39;t include the ending integer march = df.",
   "inLanguage" : "en",
-  "wordCount":  4376 ,
+  "wordCount":  5258 ,
   "datePublished" : "2022-07-28T00:00:00",
   "dateModified" : "2022-07-28T00:00:00",
   "image" : "https:\/\/www.codelooper.com\/img\/redplane.png",
@@ -275,10 +275,10 @@ if (!doNotTrack) {
   <i class="fas fa-calendar"></i>&nbsp;Posted on July 28, 2022
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;21&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;25&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;4376&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;5258&nbsp;words
   
   
     
@@ -718,47 +718,101 @@ print(click_source_by_month_pivot)</code></pre>
 </div>
 <div id="ab-testing-in-python" class="section level2">
 <h2>A/B testing in Python</h2>
-<pre><code>#import codecademylib3
+<pre class="python"><code>
+# import codecademylib3
 import pandas as pd
 import numpy as np
 
-ad_clicks = pd.read_csv(&#39;ad_clicks.csv&#39;)
+# ad_clicks = pd.read_csv(&#39;ad_clicks.csv&#39;)
 
-&lt;!-- ad_clicks = pd.DataFrame( {&#39;user_id&#39;: {0: &#39;008b7c6c-7272-471e-b90e-930d548bd8d7&#39;, 1: &#39;009abb94-5e14-4b6c-bb1c-4f4df7aa7557&#39;, 2: &#39;00f5d532-ed58-4570-b6d2-768df5f41aed&#39;, 3: &#39;011adc64-0f44-4fd9-a0bb-f1506d2ad439&#39;, 4: &#39;012137e6-7ae7-4649-af68-205b4702169c&#39;, 5: &#39;013b0072-7b72-40e7-b698-98b4d0c9967f&#39;, 6: &#39;0153d85b-7660-4c39-92eb-1e1acd023280&#39;, 7: &#39;01555297-d6e6-49ae-aeba-1b196fdbb09f&#39;, 8: &#39;018cea61-19ea-4119-895b-1a4309ccb148&#39;, 9: &#39;01a210c3-fde0-4e6f-8efd-4f0e38730ae6&#39;, 10: &#39;01adb2e7-f711-4ae4-a7c6-29f48457eea1&#39;, 11: &#39;01ae0361-7d17-4760-a2c8-23977a46fb78&#39;, 12: &#39;01fb228a-9d28-4cde-932c-59b933fa763b&#39;, 13: &#39;023598b8-09e2-40ed-9c90-34d607094ff9&#39;, 14: &#39;02405d93-9c33-4034-894a-b9523956a3ad&#39;, 15: &#39;0254b59f-082d-4a5a-913d-4f2bba267768&#39;, 16: &#39;02d8dba0-5d12-4983-a407-63fab9757d94&#39;, 17: &#39;0378e9e1-0ad8-4a26-8190-ebb3370239d3&#39;, 18: &#39;041deef8-b242-4114-afd0-e584784ec9f0&#39;, 19: &#39;0429608e-61f3-4df0-ba45-3633029a14db&#39;, 20: &#39;04389894-b52c-4485-9266-435e9b9c0efd&#39;, 21: &#39;0441f866-dd3f-422a-a36a-cdc2f034e6ef&#39;, 22: &#39;04797f05-9cbe-48b6-8662-b9ee20828b0a&#39;, 23: &#39;0482e1ab-b513-4bfb-9914-9fb5ab41c915&#39;, 24: &#39;04ca737b-85f4-4194-8c38-d8d363b490f7&#39;, 25: &#39;056f771f-e5ba-483f-a074-db2d7b94309d&#39;, 26: &#39;05aec9ea-92c1-4ffc-84b5-c3864dd307e4&#39;, 27: &#39;05c41c49-8521-4ad0-a1b5-724e99fe46ff&#39;, 28: &#39;05d08d6d-62d5-4e28-8f10-107ae2cd03c7&#39;, 29: &#39;05e8721a-cbb7-4c13-a115-eac7dd5ee7f6&#39;, 30: &#39;06234d6f-8729-49d3-a39e-6bba740847e3&#39;, 31: &#39;068ad376-b5c2-4825-afc0-2be657e1f4df&#39;, 32: &#39;06a18971-a97b-48a4-bda6-3881960e3796&#39;, 33: &#39;06a8681a-7de2-4053-8462-29df2b1e8aab&#39;, 34: &#39;06aa1cc0-4366-4558-b74c-24bb797cff0b&#39;, 35: &#39;06cf79f4-ac53-4b72-8736-829b8c63c7df&#39;, 36: &#39;06da5468-c366-4388-b0ac-f84ea36949e0&#39;, 37: &#39;07476cb4-247d-4fe2-b830-a399717bd07e&#39;, 38: &#39;076b9eb7-a7c3-4319-a830-eb3344d88b6e&#39;, 39: &#39;0771c92b-2ec8-463d-99fc-d4c31b7264b1&#39;, 40: &#39;07760e06-0ff5-4f4b-a483-eaa46e504aca&#39;, 41: &#39;0789f648-70fa-4711-8d1c-62ddde084aff&#39;, 42: &#39;07cc1e2c-b5cc-4daf-95f2-2326021e7d52&#39;, 43: &#39;081372d5-a1a8-4819-9bf1-911d4855360c&#39;, 44: &#39;082ad0da-546b-4c00-b2f8-e21a5113e66a&#39;, 45: &#39;083e3bbf-abe4-418c-8b17-7ac77b436ab1&#39;, 46: &#39;0846d988-4b9e-4593-857b-594dabb8d5bb&#39;, 47: &#39;084e8dc0-94df-4321-bbde-dc521b5c58d9&#39;, 48: &#39;089cd63a-f7e2-4381-a864-b4378334885f&#39;, 49: &#39;0928d4d2-9012-4806-99f7-06672ede99af&#39;}, &#39;utm_source&#39;: {0: &#39;google&#39;, 1: &#39;facebook&#39;, 2: &#39;twitter&#39;, 3: &#39;google&#39;, 4: &#39;facebook&#39;, 5: &#39;facebook&#39;, 6: &#39;google&#39;, 7: &#39;google&#39;, 8: &#39;email&#39;, 9: &#39;email&#39;, 10: &#39;google&#39;, 11: &#39;facebook&#39;, 12: &#39;email&#39;, 13: &#39;google&#39;, 14: &#39;twitter&#39;, 15: &#39;google&#39;, 16: &#39;google&#39;, 17: &#39;facebook&#39;, 18: &#39;google&#39;, 19: &#39;google&#39;, 20: &#39;email&#39;, 21: &#39;google&#39;, 22: &#39;google&#39;, 23: &#39;twitter&#39;, 24: &#39;google&#39;, 25: &#39;google&#39;, 26: &#39;facebook&#39;, 27: &#39;facebook&#39;, 28: &#39;facebook&#39;, 29: &#39;email&#39;, 30: &#39;facebook&#39;, 31: &#39;email&#39;, 32: &#39;google&#39;, 33: &#39;facebook&#39;, 34: &#39;email&#39;, 35: &#39;google&#39;, 36: &#39;google&#39;, 37: &#39;twitter&#39;, 38: &#39;google&#39;, 39: &#39;google&#39;, 40: &#39;email&#39;, 41: &#39;google&#39;, 42: &#39;google&#39;, 43: &#39;twitter&#39;, 44: &#39;facebook&#39;, 45: &#39;google&#39;, 46: &#39;google&#39;, 47: &#39;facebook&#39;, 48: &#39;facebook&#39;, 49: &#39;google&#39;}, &#39;day&#39;: {0: &#39;6 - Saturday&#39;, 1: &#39;7 - Sunday&#39;, 2: &#39;2 - Tuesday&#39;, 3: &#39;2 - Tuesday&#39;, 4: &#39;7 - Sunday&#39;, 5: &#39;1 - Monday&#39;, 6: &#39;4 - Thursday&#39;, 7: &#39;3 - Wednesday&#39;, 8: &#39;1 - Monday&#39;, 9: &#39;2 - Tuesday&#39;, 10: &#39;3 - Wednesday&#39;, 11: &#39;4 - Thursday&#39;, 12: &#39;7 - Sunday&#39;, 13: &#39;2 - Tuesday&#39;, 14: &#39;2 - Tuesday&#39;, 15: &#39;5 - Friday&#39;, 16: &#39;3 - Wednesday&#39;, 17: &#39;1 - Monday&#39;, 18: &#39;3 - Wednesday&#39;, 19: &#39;7 - Sunday&#39;, 20: &#39;1 - Monday&#39;, 21: &#39;7 - Sunday&#39;, 22: &#39;6 - Saturday&#39;, 23: &#39;6 - Saturday&#39;, 24: &#39;2 - Tuesday&#39;, 25: &#39;4 - Thursday&#39;, 26: &#39;5 - Friday&#39;, 27: &#39;7 - Sunday&#39;, 28: &#39;2 - Tuesday&#39;, 29: &#39;5 - Friday&#39;, 30: &#39;6 - Saturday&#39;, 31: &#39;3 - Wednesday&#39;, 32: &#39;4 - Thursday&#39;, 33: &#39;7 - Sunday&#39;, 34: &#39;4 - Thursday&#39;, 35: &#39;6 - Saturday&#39;, 36: &#39;5 - Friday&#39;, 37: &#39;7 - Sunday&#39;, 38: &#39;5 - Friday&#39;, 39: &#39;7 - Sunday&#39;, 40: &#39;3 - Wednesday&#39;, 41: &#39;1 - Monday&#39;, 42: &#39;4 - Thursday&#39;, 43: &#39;7 - Sunday&#39;, 44: &#39;2 - Tuesday&#39;, 45: &#39;2 - Tuesday&#39;, 46: &#39;4 - Thursday&#39;, 47: &#39;2 - Tuesday&#39;, 48: &#39;7 - Sunday&#39;, 49: &#39;3 - Wednesday&#39;}, &#39;ad_click_timestamp&#39;: {0: &#39;7:18&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;, 3: &#39;None&#39;, 4: &#39;None&#39;, 5: &#39;None&#39;, 6: &#39;None&#39;, 7: &#39;None&#39;, 8: &#39;18:33&#39;, 9: &#39;15:21&#39;, 10: &#39;None&#39;, 11: &#39;7:11&#39;, 12: &#39;None&#39;, 13: &#39;None&#39;, 14: &#39;None&#39;, 15: &#39;None&#39;, 16: &#39;None&#39;, 17: &#39;None&#39;, 18: &#39;10:54&#39;, 19: &#39;None&#39;, 20: &#39;None&#39;, 21: &#39;11:16&#39;, 22: &#39;None&#39;, 23: &#39;1:20&#39;, 24: &#39;None&#39;, 25: &#39;None&#39;, 26: &#39;8:46&#39;, 27: &#39;None&#39;, 28: &#39;None&#39;, 29: &#39;None&#39;, 30: &#39;None&#39;, 31: &#39;None&#39;, 32: &#39;None&#39;, 33: &#39;9:2&#39;, 34: &#39;None&#39;, 35: &#39;None&#39;, 36: &#39;None&#39;, 37: &#39;None&#39;, 38: &#39;None&#39;, 39: &#39;None&#39;, 40: &#39;None&#39;, 41: &#39;None&#39;, 42: &#39;None&#39;, 43: &#39;None&#39;, 44: &#39;None&#39;, 45: &#39;3:21&#39;, 46: &#39;None&#39;, 47: &#39;None&#39;, 48: &#39;None&#39;, 49: &#39;None&#39;}, &#39;experimental_group&#39;: {0: &#39;A&#39;, 1: &#39;B&#39;, 2: &#39;A&#39;, 3: &#39;B&#39;, 4: &#39;B&#39;, 5: &#39;A&#39;, 6: &#39;A&#39;, 7: &#39;A&#39;, 8: &#39;A&#39;, 9: &#39;B&#39;, 10: &#39;B&#39;, 11: &#39;B&#39;, 12: &#39;A&#39;, 13: &#39;B&#39;, 14: &#39;A&#39;, 15: &#39;A&#39;, 16: &#39;B&#39;, 17: &#39;B&#39;, 18: &#39;A&#39;, 19: &#39;B&#39;, 20: &#39;B&#39;, 21: &#39;A&#39;, 22: &#39;B&#39;, 23: &#39;A&#39;, 24: &#39;B&#39;, 25: &#39;A&#39;, 26: &#39;B&#39;, 27: &#39;B&#39;, 28: &#39;A&#39;, 29: &#39;B&#39;, 30: &#39;A&#39;, 31: &#39;B&#39;, 32: &#39;B&#39;, 33: &#39;A&#39;, 34: &#39;A&#39;, 35: &#39;B&#39;, 36: &#39;B&#39;, 37: &#39;B&#39;, 38: &#39;A&#39;, 39: &#39;B&#39;, 40: &#39;B&#39;, 41: &#39;A&#39;, 42: &#39;B&#39;, 43: &#39;B&#39;, 44: &#39;A&#39;, 45: &#39;B&#39;, 46: &#39;B&#39;, 47: &#39;A&#39;, 48: &#39;B&#39;, 49: &#39;B&#39;}, &#39;is_clicked&#39;: {0: True, 1: False, 2: False, 3: False, 4: False, 5: False, 6: False, 7: False, 8: True, 9: True, 10: False, 11: True, 12: False, 13: False, 14: False, 15: False, 16: False, 17: False, 18: True, 19: False, 20: False, 21: True, 22: False, 23: True, 24: False, 25: False, 26: True, 27: False, 28: False, 29: False, 30: False, 31: False, 32: False, 33: True, 34: False, 35: False, 36: False, 37: False, 38: False, 39: False, 40: False, 41: False, 42: False, 43: False, 44: False, 45: True, 46: False, 47: False, 48: False, 49: False}} ) --&gt;
+# ad_clicks = ad_clicks.replace({np.nan: None})
+# print(f&#39;ad_clicks = pd.DataFrame( {str(ad_clicks.head(100).to_dict())} )&#39;)</code></pre>
+<p>Use first 100 rows of data rather than loading codecademylib3</p>
+<pre class="python"><code>
+ad_clicks = pd.DataFrame( {&#39;user_id&#39;: {0: &#39;008b7c6c-7272-471e-b90e-930d548bd8d7&#39;, 1: &#39;009abb94-5e14-4b6c-bb1c-4f4df7aa7557&#39;, 2: &#39;00f5d532-ed58-4570-b6d2-768df5f41aed&#39;, 3: &#39;011adc64-0f44-4fd9-a0bb-f1506d2ad439&#39;, 4: &#39;012137e6-7ae7-4649-af68-205b4702169c&#39;, 5: &#39;013b0072-7b72-40e7-b698-98b4d0c9967f&#39;, 6: &#39;0153d85b-7660-4c39-92eb-1e1acd023280&#39;, 7: &#39;01555297-d6e6-49ae-aeba-1b196fdbb09f&#39;, 8: &#39;018cea61-19ea-4119-895b-1a4309ccb148&#39;, 9: &#39;01a210c3-fde0-4e6f-8efd-4f0e38730ae6&#39;, 10: &#39;01adb2e7-f711-4ae4-a7c6-29f48457eea1&#39;, 11: &#39;01ae0361-7d17-4760-a2c8-23977a46fb78&#39;, 12: &#39;01fb228a-9d28-4cde-932c-59b933fa763b&#39;, 13: &#39;023598b8-09e2-40ed-9c90-34d607094ff9&#39;, 14: &#39;02405d93-9c33-4034-894a-b9523956a3ad&#39;, 15: &#39;0254b59f-082d-4a5a-913d-4f2bba267768&#39;, 16: &#39;02d8dba0-5d12-4983-a407-63fab9757d94&#39;, 17: &#39;0378e9e1-0ad8-4a26-8190-ebb3370239d3&#39;, 18: &#39;041deef8-b242-4114-afd0-e584784ec9f0&#39;, 19: &#39;0429608e-61f3-4df0-ba45-3633029a14db&#39;, 20: &#39;04389894-b52c-4485-9266-435e9b9c0efd&#39;, 21: &#39;0441f866-dd3f-422a-a36a-cdc2f034e6ef&#39;, 22: &#39;04797f05-9cbe-48b6-8662-b9ee20828b0a&#39;, 23: &#39;0482e1ab-b513-4bfb-9914-9fb5ab41c915&#39;, 24: &#39;04ca737b-85f4-4194-8c38-d8d363b490f7&#39;, 25: &#39;056f771f-e5ba-483f-a074-db2d7b94309d&#39;, 26: &#39;05aec9ea-92c1-4ffc-84b5-c3864dd307e4&#39;, 27: &#39;05c41c49-8521-4ad0-a1b5-724e99fe46ff&#39;, 28: &#39;05d08d6d-62d5-4e28-8f10-107ae2cd03c7&#39;, 29: &#39;05e8721a-cbb7-4c13-a115-eac7dd5ee7f6&#39;, 30: &#39;06234d6f-8729-49d3-a39e-6bba740847e3&#39;, 31: &#39;068ad376-b5c2-4825-afc0-2be657e1f4df&#39;, 32: &#39;06a18971-a97b-48a4-bda6-3881960e3796&#39;, 33: &#39;06a8681a-7de2-4053-8462-29df2b1e8aab&#39;, 34: &#39;06aa1cc0-4366-4558-b74c-24bb797cff0b&#39;, 35: &#39;06cf79f4-ac53-4b72-8736-829b8c63c7df&#39;, 36: &#39;06da5468-c366-4388-b0ac-f84ea36949e0&#39;, 37: &#39;07476cb4-247d-4fe2-b830-a399717bd07e&#39;, 38: &#39;076b9eb7-a7c3-4319-a830-eb3344d88b6e&#39;, 39: &#39;0771c92b-2ec8-463d-99fc-d4c31b7264b1&#39;, 40: &#39;07760e06-0ff5-4f4b-a483-eaa46e504aca&#39;, 41: &#39;0789f648-70fa-4711-8d1c-62ddde084aff&#39;, 42: &#39;07cc1e2c-b5cc-4daf-95f2-2326021e7d52&#39;, 43: &#39;081372d5-a1a8-4819-9bf1-911d4855360c&#39;, 44: &#39;082ad0da-546b-4c00-b2f8-e21a5113e66a&#39;, 45: &#39;083e3bbf-abe4-418c-8b17-7ac77b436ab1&#39;, 46: &#39;0846d988-4b9e-4593-857b-594dabb8d5bb&#39;, 47: &#39;084e8dc0-94df-4321-bbde-dc521b5c58d9&#39;, 48: &#39;089cd63a-f7e2-4381-a864-b4378334885f&#39;, 49: &#39;0928d4d2-9012-4806-99f7-06672ede99af&#39;, 50: &#39;09347a02-3824-481b-a9aa-706047b3fcb0&#39;, 51: &#39;097b056d-bad3-4fd0-a304-2c1a74bfc64e&#39;, 52: &#39;099e073f-e629-4ba2-9979-47a8f117b771&#39;, 53: &#39;0a046b08-1ed1-4ff6-b64c-176d1472dc9b&#39;, 54: &#39;0a33a6d3-85ba-4120-88a6-63ce94df559d&#39;, 55: &#39;0a8bcbfc-d71b-4407-8df3-d4d9a85b6fd5&#39;, 56: &#39;0aa54825-7375-4b19-8622-d5e8ce41b73e&#39;, 57: &#39;0b14202a-919f-4d9c-915c-82d0d4c13500&#39;, 58: &#39;0b4a71b1-b264-4bc3-8ca3-d8c893e009ef&#39;, 59: &#39;0bac51ca-724a-4e21-bd2e-2ccb9e426d76&#39;, 60: &#39;0bece189-a24f-4dcf-888e-583381a26383&#39;, 61: &#39;0bf24554-eac9-423d-8dc0-349e9629f422&#39;, 62: &#39;0c1e88c0-dde5-400a-83fb-3b60f86ef62c&#39;, 63: &#39;0c8fbfbf-38e6-4639-8aff-26f3dbd4492b&#39;, 64: &#39;0cb5db50-1ded-4f68-8574-30b94677e4b8&#39;, 65: &#39;0d16721b-99cc-4fda-8285-dc0675b93c26&#39;, 66: &#39;0d4e8d25-6432-494d-9d25-616d165bdfa7&#39;, 67: &#39;0d90321b-e549-4ceb-bc37-e8248a462863&#39;, 68: &#39;0d92256f-4380-49c2-91d8-dab758556fe1&#39;, 69: &#39;0db7af3c-1601-4cc5-b68d-7715927c6ce4&#39;, 70: &#39;0dbb0270-1caf-420a-829f-ff1770ac865b&#39;, 71: &#39;0dd20a2e-cb05-46c7-b14a-2e4a54d3dca3&#39;, 72: &#39;0dd3a053-0fd2-4761-b588-ecfb2dc85983&#39;, 73: &#39;0debfe68-f334-448e-8408-b2147eabac36&#39;, 74: &#39;0e02cc50-6226-459c-8cf4-f727a2ab23ad&#39;, 75: &#39;0e07be6f-4a36-4f75-98e7-460c4d2b740a&#39;, 76: &#39;0e0b6077-26cb-4d81-908c-61d149c3af4a&#39;, 77: &#39;0e79d58c-cf48-4635-ad09-324373a02b72&#39;, 78: &#39;0e83486b-16ce-4565-9d08-16ebdb8e02e6&#39;, 79: &#39;0e857013-279a-46cd-80e3-95e87b4ceb45&#39;, 80: &#39;0ef8f17a-3710-4eca-a81f-9184202f6921&#39;, 81: &#39;0f410c84-05f3-450c-8fdf-e514cece69e5&#39;, 82: &#39;0f618ad1-8b42-4b89-9bac-e42e6c56d4bf&#39;, 83: &#39;0f7c85ed-9ddc-4b4f-abdd-40aa5deda4a3&#39;, 84: &#39;0f849a72-a35c-466a-845e-1fe31894e2ab&#39;, 85: &#39;0faba4df-7bea-470a-8100-27b8aa7d7190&#39;, 86: &#39;0fba2e02-2be7-4481-b3f0-cdf9d4529e1c&#39;, 87: &#39;0fc9978b-273f-4ba0-8e27-5d60efb9af3b&#39;, 88: &#39;0fe1e1f1-f3c7-4bd8-8f1d-33bf3c216d7f&#39;, 89: &#39;0ffe21ef-31b3-43f4-97fe-22cb7e77f6a0&#39;, 90: &#39;100ca263-d877-4fc2-91ba-c860ab59b4ad&#39;, 91: &#39;1013d42e-cc4a-4bc1-9994-69ec076f9ae7&#39;, 92: &#39;104dfffd-4431-44fd-96a9-579b47709989&#39;, 93: &#39;109bf72e-9672-4588-b4d6-a042e6c42cc2&#39;, 94: &#39;10d1b412-39dd-488e-b51c-da566e9edc17&#39;, 95: &#39;113f979a-b4aa-47fb-ab14-b2ebb211ed40&#39;, 96: &#39;1141b1f9-4e20-4b4f-a0c2-8f7e6bc2b6bd&#39;, 97: &#39;114e067e-2f09-452c-a293-859cb8303326&#39;, 98: &#39;114f097c-92fd-49ce-81bf-e1bdc79d2331&#39;, 99: &#39;11b9794f-1c03-42f3-835b-a186246972e5&#39;}, &#39;utm_source&#39;: {0: &#39;google&#39;, 1: &#39;facebook&#39;, 2: &#39;twitter&#39;, 3: &#39;google&#39;, 4: &#39;facebook&#39;, 5: &#39;facebook&#39;, 6: &#39;google&#39;, 7: &#39;google&#39;, 8: &#39;email&#39;, 9: &#39;email&#39;, 10: &#39;google&#39;, 11: &#39;facebook&#39;, 12: &#39;email&#39;, 13: &#39;google&#39;, 14: &#39;twitter&#39;, 15: &#39;google&#39;, 16: &#39;google&#39;, 17: &#39;facebook&#39;, 18: &#39;google&#39;, 19: &#39;google&#39;, 20: &#39;email&#39;, 21: &#39;google&#39;, 22: &#39;google&#39;, 23: &#39;twitter&#39;, 24: &#39;google&#39;, 25: &#39;google&#39;, 26: &#39;facebook&#39;, 27: &#39;facebook&#39;, 28: &#39;facebook&#39;, 29: &#39;email&#39;, 30: &#39;facebook&#39;, 31: &#39;email&#39;, 32: &#39;google&#39;, 33: &#39;facebook&#39;, 34: &#39;email&#39;, 35: &#39;google&#39;, 36: &#39;google&#39;, 37: &#39;twitter&#39;, 38: &#39;google&#39;, 39: &#39;google&#39;, 40: &#39;email&#39;, 41: &#39;google&#39;, 42: &#39;google&#39;, 43: &#39;twitter&#39;, 44: &#39;facebook&#39;, 45: &#39;google&#39;, 46: &#39;google&#39;, 47: &#39;facebook&#39;, 48: &#39;facebook&#39;, 49: &#39;google&#39;, 50: &#39;facebook&#39;, 51: &#39;google&#39;, 52: &#39;facebook&#39;, 53: &#39;facebook&#39;, 54: &#39;facebook&#39;, 55: &#39;facebook&#39;, 56: &#39;twitter&#39;, 57: &#39;google&#39;, 58: &#39;email&#39;, 59: &#39;email&#39;, 60: &#39;google&#39;, 61: &#39;facebook&#39;, 62: &#39;google&#39;, 63: &#39;google&#39;, 64: &#39;facebook&#39;, 65: &#39;google&#39;, 66: &#39;google&#39;, 67: &#39;google&#39;, 68: &#39;facebook&#39;, 69: &#39;facebook&#39;, 70: &#39;twitter&#39;, 71: &#39;twitter&#39;, 72: &#39;email&#39;, 73: &#39;google&#39;, 74: &#39;google&#39;, 75: &#39;facebook&#39;, 76: &#39;facebook&#39;, 77: &#39;email&#39;, 78: &#39;google&#39;, 79: &#39;google&#39;, 80: &#39;twitter&#39;, 81: &#39;facebook&#39;, 82: &#39;facebook&#39;, 83: &#39;facebook&#39;, 84: &#39;email&#39;, 85: &#39;google&#39;, 86: &#39;twitter&#39;, 87: &#39;facebook&#39;, 88: &#39;facebook&#39;, 89: &#39;facebook&#39;, 90: &#39;google&#39;, 91: &#39;google&#39;, 92: &#39;google&#39;, 93: &#39;google&#39;, 94: &#39;facebook&#39;, 95: &#39;facebook&#39;, 96: &#39;twitter&#39;, 97: &#39;email&#39;, 98: &#39;email&#39;, 99: &#39;google&#39;}, &#39;day&#39;: {0: &#39;6 - Saturday&#39;, 1: &#39;7 - Sunday&#39;, 2: &#39;2 - Tuesday&#39;, 3: &#39;2 - Tuesday&#39;, 4: &#39;7 - Sunday&#39;, 5: &#39;1 - Monday&#39;, 6: &#39;4 - Thursday&#39;, 7: &#39;3 - Wednesday&#39;, 8: &#39;1 - Monday&#39;, 9: &#39;2 - Tuesday&#39;, 10: &#39;3 - Wednesday&#39;, 11: &#39;4 - Thursday&#39;, 12: &#39;7 - Sunday&#39;, 13: &#39;2 - Tuesday&#39;, 14: &#39;2 - Tuesday&#39;, 15: &#39;5 - Friday&#39;, 16: &#39;3 - Wednesday&#39;, 17: &#39;1 - Monday&#39;, 18: &#39;3 - Wednesday&#39;, 19: &#39;7 - Sunday&#39;, 20: &#39;1 - Monday&#39;, 21: &#39;7 - Sunday&#39;, 22: &#39;6 - Saturday&#39;, 23: &#39;6 - Saturday&#39;, 24: &#39;2 - Tuesday&#39;, 25: &#39;4 - Thursday&#39;, 26: &#39;5 - Friday&#39;, 27: &#39;7 - Sunday&#39;, 28: &#39;2 - Tuesday&#39;, 29: &#39;5 - Friday&#39;, 30: &#39;6 - Saturday&#39;, 31: &#39;3 - Wednesday&#39;, 32: &#39;4 - Thursday&#39;, 33: &#39;7 - Sunday&#39;, 34: &#39;4 - Thursday&#39;, 35: &#39;6 - Saturday&#39;, 36: &#39;5 - Friday&#39;, 37: &#39;7 - Sunday&#39;, 38: &#39;5 - Friday&#39;, 39: &#39;7 - Sunday&#39;, 40: &#39;3 - Wednesday&#39;, 41: &#39;1 - Monday&#39;, 42: &#39;4 - Thursday&#39;, 43: &#39;7 - Sunday&#39;, 44: &#39;2 - Tuesday&#39;, 45: &#39;2 - Tuesday&#39;, 46: &#39;4 - Thursday&#39;, 47: &#39;2 - Tuesday&#39;, 48: &#39;7 - Sunday&#39;, 49: &#39;3 - Wednesday&#39;, 50: &#39;4 - Thursday&#39;, 51: &#39;1 - Monday&#39;, 52: &#39;2 - Tuesday&#39;, 53: &#39;1 - Monday&#39;, 54: &#39;4 - Thursday&#39;, 55: &#39;3 - Wednesday&#39;, 56: &#39;4 - Thursday&#39;, 57: &#39;1 - Monday&#39;, 58: &#39;5 - Friday&#39;, 59: &#39;7 - Sunday&#39;, 60: &#39;4 - Thursday&#39;, 61: &#39;1 - Monday&#39;, 62: &#39;1 - Monday&#39;, 63: &#39;4 - Thursday&#39;, 64: &#39;2 - Tuesday&#39;, 65: &#39;4 - Thursday&#39;, 66: &#39;7 - Sunday&#39;, 67: &#39;6 - Saturday&#39;, 68: &#39;1 - Monday&#39;, 69: &#39;4 - Thursday&#39;, 70: &#39;3 - Wednesday&#39;, 71: &#39;3 - Wednesday&#39;, 72: &#39;6 - Saturday&#39;, 73: &#39;6 - Saturday&#39;, 74: &#39;3 - Wednesday&#39;, 75: &#39;3 - Wednesday&#39;, 76: &#39;3 - Wednesday&#39;, 77: &#39;2 - Tuesday&#39;, 78: &#39;2 - Tuesday&#39;, 79: &#39;7 - Sunday&#39;, 80: &#39;1 - Monday&#39;, 81: &#39;6 - Saturday&#39;, 82: &#39;1 - Monday&#39;, 83: &#39;3 - Wednesday&#39;, 84: &#39;3 - Wednesday&#39;, 85: &#39;2 - Tuesday&#39;, 86: &#39;1 - Monday&#39;, 87: &#39;1 - Monday&#39;, 88: &#39;2 - Tuesday&#39;, 89: &#39;5 - Friday&#39;, 90: &#39;5 - Friday&#39;, 91: &#39;6 - Saturday&#39;, 92: &#39;7 - Sunday&#39;, 93: &#39;3 - Wednesday&#39;, 94: &#39;4 - Thursday&#39;, 95: &#39;5 - Friday&#39;, 96: &#39;2 - Tuesday&#39;, 97: &#39;1 - Monday&#39;, 98: &#39;5 - Friday&#39;, 99: &#39;5 - Friday&#39;}, &#39;ad_click_timestamp&#39;: {0: &#39;7:18&#39;, 1: None, 2: None, 3: None, 4: None, 5: None, 6: None, 7: None, 8: &#39;18:33&#39;, 9: &#39;15:21&#39;, 10: None, 11: &#39;7:11&#39;, 12: None, 13: None, 14: None, 15: None, 16: None, 17: None, 18: &#39;10:54&#39;, 19: None, 20: None, 21: &#39;11:16&#39;, 22: None, 23: &#39;1:20&#39;, 24: None, 25: None, 26: &#39;8:46&#39;, 27: None, 28: None, 29: None, 30: None, 31: None, 32: None, 33: &#39;9:2&#39;, 34: None, 35: None, 36: None, 37: None, 38: None, 39: None, 40: None, 41: None, 42: None, 43: None, 44: None, 45: &#39;3:21&#39;, 46: None, 47: None, 48: None, 49: None, 50: &#39;16:52&#39;, 51: None, 52: None, 53: None, 54: None, 55: None, 56: &#39;10:21&#39;, 57: None, 58: None, 59: None, 60: None, 61: &#39;2:2&#39;, 62: None, 63: &#39;12:23&#39;, 64: &#39;4:8&#39;, 65: &#39;5:27&#39;, 66: None, 67: None, 68: None, 69: None, 70: &#39;13:46&#39;, 71: &#39;10:24&#39;, 72: None, 73: None, 74: None, 75: None, 76: None, 77: None, 78: None, 79: &#39;1:49&#39;, 80: None, 81: None, 82: None, 83: None, 84: None, 85: None, 86: None, 87: None, 88: None, 89: None, 90: None, 91: &#39;5:1&#39;, 92: &#39;10:14&#39;, 93: &#39;21:18&#39;, 94: &#39;17:44&#39;, 95: None, 96: None, 97: None, 98: None, 99: &#39;19:30&#39;}, &#39;experimental_group&#39;: {0: &#39;A&#39;, 1: &#39;B&#39;, 2: &#39;A&#39;, 3: &#39;B&#39;, 4: &#39;B&#39;, 5: &#39;A&#39;, 6: &#39;A&#39;, 7: &#39;A&#39;, 8: &#39;A&#39;, 9: &#39;B&#39;, 10: &#39;B&#39;, 11: &#39;B&#39;, 12: &#39;A&#39;, 13: &#39;B&#39;, 14: &#39;A&#39;, 15: &#39;A&#39;, 16: &#39;B&#39;, 17: &#39;B&#39;, 18: &#39;A&#39;, 19: &#39;B&#39;, 20: &#39;B&#39;, 21: &#39;A&#39;, 22: &#39;B&#39;, 23: &#39;A&#39;, 24: &#39;B&#39;, 25: &#39;A&#39;, 26: &#39;B&#39;, 27: &#39;B&#39;, 28: &#39;A&#39;, 29: &#39;B&#39;, 30: &#39;A&#39;, 31: &#39;B&#39;, 32: &#39;B&#39;, 33: &#39;A&#39;, 34: &#39;A&#39;, 35: &#39;B&#39;, 36: &#39;B&#39;, 37: &#39;B&#39;, 38: &#39;A&#39;, 39: &#39;B&#39;, 40: &#39;B&#39;, 41: &#39;A&#39;, 42: &#39;B&#39;, 43: &#39;B&#39;, 44: &#39;A&#39;, 45: &#39;B&#39;, 46: &#39;B&#39;, 47: &#39;A&#39;, 48: &#39;B&#39;, 49: &#39;B&#39;, 50: &#39;A&#39;, 51: &#39;B&#39;, 52: &#39;B&#39;, 53: &#39;A&#39;, 54: &#39;B&#39;, 55: &#39;B&#39;, 56: &#39;A&#39;, 57: &#39;B&#39;, 58: &#39;A&#39;, 59: &#39;B&#39;, 60: &#39;A&#39;, 61: &#39;A&#39;, 62: &#39;B&#39;, 63: &#39;A&#39;, 64: &#39;A&#39;, 65: &#39;A&#39;, 66: &#39;B&#39;, 67: &#39;A&#39;, 68: &#39;B&#39;, 69: &#39;A&#39;, 70: &#39;A&#39;, 71: &#39;B&#39;, 72: &#39;B&#39;, 73: &#39;A&#39;, 74: &#39;A&#39;, 75: &#39;B&#39;, 76: &#39;A&#39;, 77: &#39;B&#39;, 78: &#39;A&#39;, 79: &#39;B&#39;, 80: &#39;A&#39;, 81: &#39;A&#39;, 82: &#39;B&#39;, 83: &#39;B&#39;, 84: &#39;A&#39;, 85: &#39;A&#39;, 86: &#39;B&#39;, 87: &#39;B&#39;, 88: &#39;A&#39;, 89: &#39;A&#39;, 90: &#39;B&#39;, 91: &#39;A&#39;, 92: &#39;A&#39;, 93: &#39;A&#39;, 94: &#39;A&#39;, 95: &#39;A&#39;, 96: &#39;B&#39;, 97: &#39;A&#39;, 98: &#39;A&#39;, 99: &#39;A&#39;}} )
 
-print(ad_clicks.head())
+print(ad_clicks.head())</code></pre>
+<pre><code>##                                 user_id  ... experimental_group
+## 0  008b7c6c-7272-471e-b90e-930d548bd8d7  ...                  A
+## 1  009abb94-5e14-4b6c-bb1c-4f4df7aa7557  ...                  B
+## 2  00f5d532-ed58-4570-b6d2-768df5f41aed  ...                  A
+## 3  011adc64-0f44-4fd9-a0bb-f1506d2ad439  ...                  B
+## 4  012137e6-7ae7-4649-af68-205b4702169c  ...                  B
+## 
+## [5 rows x 5 columns]</code></pre>
+<pre class="python"><code>print(ad_clicks.groupby(&#39;utm_source&#39;).count())</code></pre>
+<pre><code>##             user_id  day  ad_click_timestamp  experimental_group
+## utm_source                                                      
+## email            15   15                   2                  15
+## facebook         32   32                   7                  32
+## google           42   42                  11                  42
+## twitter          11   11                   4                  11</code></pre>
+<pre class="python"><code>ad_clicks[&#39;is_clicked&#39;] = ad_clicks.ad_click_timestamp.notnull() 
 
-print(ad_clicks.groupby(&#39;utm_source&#39;).count())
+print(ad_clicks.head())</code></pre>
+<pre><code>##                                 user_id  ... is_clicked
+## 0  008b7c6c-7272-471e-b90e-930d548bd8d7  ...       True
+## 1  009abb94-5e14-4b6c-bb1c-4f4df7aa7557  ...      False
+## 2  00f5d532-ed58-4570-b6d2-768df5f41aed  ...      False
+## 3  011adc64-0f44-4fd9-a0bb-f1506d2ad439  ...      False
+## 4  012137e6-7ae7-4649-af68-205b4702169c  ...      False
+## 
+## [5 rows x 6 columns]</code></pre>
+<!-- This doesn't work (nan is string). -->
+<!-- is_clicked_fn = lambda row: True if row.ad_click_timestamp != 'nan' else False -->
+<!-- ad_clicks['is_clicked'] = ad_clicks.apply(is_clicked_fn, axis = 1) -->
+<pre class="python"><code>
+print(ad_clicks.head())</code></pre>
+<pre><code>##                                 user_id  ... is_clicked
+## 0  008b7c6c-7272-471e-b90e-930d548bd8d7  ...       True
+## 1  009abb94-5e14-4b6c-bb1c-4f4df7aa7557  ...      False
+## 2  00f5d532-ed58-4570-b6d2-768df5f41aed  ...      False
+## 3  011adc64-0f44-4fd9-a0bb-f1506d2ad439  ...      False
+## 4  012137e6-7ae7-4649-af68-205b4702169c  ...      False
+## 
+## [5 rows x 6 columns]</code></pre>
+<pre class="python"><code>clicks_by_source = ad_clicks.groupby([&#39;utm_source&#39;, &#39;is_clicked&#39;]).user_id.count().reset_index()
 
-ad_clicks[&#39;is_clicked&#39;] = ad_clicks.ad_click_timestamp.notnull() 
-
-# This doesn&#39;t work (nan is string).
-#is_clicked_fn = lambda row: True if row.ad_click_timestamp != &#39;nan&#39; else False
-#ad_clicks[&#39;is_clicked&#39;] = ad_clicks.apply(is_clicked_fn, axis = 1)
-
-print(ad_clicks.head())
-
-clicks_by_source = ad_clicks.groupby([&#39;utm_source&#39;, &#39;is_clicked&#39;]).user_id.count().reset_index()
-
-print(clicks_by_source)
-
-clicks_pivot = clicks_by_source.pivot(
+print(clicks_by_source)</code></pre>
+<pre><code>##   utm_source  is_clicked  user_id
+## 0      email       False       13
+## 1      email        True        2
+## 2   facebook       False       25
+## 3   facebook        True        7
+## 4     google       False       31
+## 5     google        True       11
+## 6    twitter       False        7
+## 7    twitter        True        4</code></pre>
+<pre class="python"><code>clicks_pivot = clicks_by_source.pivot(
   columns = &#39;is_clicked&#39;,
   index = &#39;utm_source&#39;,
   values = &#39;user_id&#39;).reset_index()
 
-print(clicks_pivot)
-
-# note: no quotation marks around True and False
+print(clicks_pivot)</code></pre>
+<pre><code>## is_clicked utm_source  False  True
+## 0               email     13     2
+## 1            facebook     25     7
+## 2              google     31    11
+## 3             twitter      7     4</code></pre>
+<p>note: no quotation marks around True and False</p>
+<pre class="python"><code>
 clicks_pivot[&#39;percent_clicked&#39;] = clicks_pivot[True] / (clicks_pivot[True] + clicks_pivot[False])
 
-print(clicks_pivot)
+print(clicks_pivot)</code></pre>
+<pre><code>## is_clicked utm_source  False  True  percent_clicked
+## 0               email     13     2         0.133333
+## 1            facebook     25     7         0.218750
+## 2              google     31    11         0.261905
+## 3             twitter      7     4         0.363636</code></pre>
+<pre class="python"><code>clicks_by_ad = ad_clicks.groupby([&#39;experimental_group&#39;, &#39;is_clicked&#39;]).user_id.count().reset_index()
 
-clicks_by_ad = ad_clicks.groupby([&#39;experimental_group&#39;, &#39;is_clicked&#39;]).user_id.count().reset_index()
-
-print(clicks_by_ad)
-
-clicks_pivot_ad = clicks_by_ad.pivot(
+print(clicks_by_ad)</code></pre>
+<pre><code>##   experimental_group  is_clicked  user_id
+## 0                  A       False       33
+## 1                  A        True       18
+## 2                  B       False       43
+## 3                  B        True        6</code></pre>
+<pre class="python"><code>clicks_pivot_ad = clicks_by_ad.pivot(
   columns = &#39;is_clicked&#39;,
   index = &#39;experimental_group&#39;,
   values = &#39;user_id&#39;).reset_index()
@@ -766,9 +820,11 @@ clicks_pivot_ad = clicks_by_ad.pivot(
 
 clicks_pivot_ad[&#39;percent_clicked&#39;] = clicks_pivot_ad[True] / (clicks_pivot_ad[True] + clicks_pivot_ad[False])
 
-print(clicks_pivot_ad)
-
-a_clicks = ad_clicks[ad_clicks.experimental_group == &#39;A&#39;]
+print(clicks_pivot_ad)</code></pre>
+<pre><code>## is_clicked experimental_group  False  True  percent_clicked
+## 0                           A     33    18         0.352941
+## 1                           B     43     6         0.122449</code></pre>
+<pre class="python"><code>a_clicks = ad_clicks[ad_clicks.experimental_group == &#39;A&#39;]
 b_clicks = ad_clicks[ad_clicks.experimental_group == &#39;B&#39;]
 
 a_clicks_by_day = a_clicks.groupby([&#39;day&#39;, &#39;is_clicked&#39;]).user_id.count().reset_index()
@@ -778,22 +834,37 @@ a_clicks_pivot_by_day = a_clicks_by_day.pivot(
   index = &#39;day&#39;,
   values = &#39;user_id&#39;).reset_index()
 
-# note: no quotation marks around True and False
+
 a_clicks_pivot_by_day[&#39;percent_clicked&#39;] = a_clicks_pivot_by_day[True] / (a_clicks_pivot_by_day[True] + a_clicks_pivot_by_day[False])
 
-print(a_clicks_pivot_by_day)
-
-b_clicks_by_day = b_clicks.groupby([&#39;day&#39;, &#39;is_clicked&#39;]).user_id.count().reset_index()
+print(a_clicks_pivot_by_day)</code></pre>
+<pre><code>## is_clicked            day  False  True  percent_clicked
+## 0              1 - Monday      5     2         0.285714
+## 1             2 - Tuesday      8     1         0.111111
+## 2           3 - Wednesday      4     3         0.428571
+## 3            4 - Thursday      5     5         0.500000
+## 4              5 - Friday      6     1         0.142857
+## 5            6 - Saturday      4     3         0.428571
+## 6              7 - Sunday      1     3         0.750000</code></pre>
+<pre class="python"><code>b_clicks_by_day = b_clicks.groupby([&#39;day&#39;, &#39;is_clicked&#39;]).user_id.count().reset_index()
 
 b_clicks_pivot_by_day = b_clicks_by_day.pivot(
   columns = &#39;is_clicked&#39;,
   index = &#39;day&#39;,
   values = &#39;user_id&#39;).reset_index()
 
-# note: no quotation marks around True and False
+
 b_clicks_pivot_by_day[&#39;percent_clicked&#39;] = b_clicks_pivot_by_day[True] / (b_clicks_pivot_by_day[True] + b_clicks_pivot_by_day[False])
 
 print(b_clicks_pivot_by_day)</code></pre>
+<pre><code>## is_clicked            day  False  True  percent_clicked
+## 0              1 - Monday    9.0   NaN              NaN
+## 1             2 - Tuesday    6.0   2.0         0.250000
+## 2           3 - Wednesday    8.0   1.0         0.111111
+## 3            4 - Thursday    4.0   1.0         0.200000
+## 4              5 - Friday    3.0   1.0         0.250000
+## 5            6 - Saturday    3.0   NaN              NaN
+## 6              7 - Sunday   10.0   1.0         0.090909</code></pre>
 </div>
 
 
@@ -872,6 +943,8 @@ print(b_clicks_pivot_by_day)</code></pre>
                   <ul>
                 
                 
+                    <li><a href="/post/2022-08-03-coursera-introduction-to-tensorflow/">Coursera - introduction to tensorflow</a></li>
+                
                     <li><a href="/post/2022-07-15-quarto/">Quarto</a></li>
                 
               </ul>
@@ -887,6 +960,10 @@ print(b_clicks_pivot_by_day)</code></pre>
               <a href="https://www.codelooper.com/post/macbook-m1-power-consumption/" data-toggle="tooltip" data-placement="top" title="Macbook air m1 power consumption">&larr; Previous Post</a>
             </li>
           
+          
+            <li class="next">
+              <a href="https://www.codelooper.com/post/2022-08-03-coursera-introduction-to-tensorflow/" data-toggle="tooltip" data-placement="top" title="Coursera - introduction to tensorflow">Next Post &rarr;</a>
+            </li>
           
         </ul>
       
