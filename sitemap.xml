@@ -3,24 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.codelooper.com/</loc>
-    <lastmod>2022-08-03T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/categories/</loc>
-    <lastmod>2022-08-03T00:00:00+00:00</lastmod>
+    <lastmod>2022-08-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/post/2022-08-04-completed--deeplearning-tensorflow-for-ai-course/</loc>
+    <lastmod>2022-08-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/ml/</loc>
+    <lastmod>2022-08-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/post/</loc>
+    <lastmod>2022-08-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/categories/programming/</loc>
+    <lastmod>2022-08-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/</loc>
+    <lastmod>2022-08-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/tensorflow/</loc>
+    <lastmod>2022-08-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/post/2022-08-03-coursera-introduction-to-tensorflow/</loc>
     <lastmod>2022-08-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.codelooper.com/tags/ml/</loc>
-    <lastmod>2022-08-03T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.codelooper.com/categories/ml/</loc>
-    <lastmod>2022-08-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/post/</loc>
-    <lastmod>2022-08-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/categories/programming/</loc>
     <lastmod>2022-08-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/python/</loc>
@@ -36,12 +45,6 @@
     <lastmod>2022-08-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/post/2022-08-03-python-neural-network/</loc>
-    <lastmod>2022-08-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/tags/</loc>
-    <lastmod>2022-08-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/tags/tensorflow/</loc>
     <lastmod>2022-08-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/post/2022-08-02-codecademy-pandas-continued/</loc>

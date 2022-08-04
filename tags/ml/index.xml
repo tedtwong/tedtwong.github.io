@@ -5,7 +5,20 @@
     <link>https://www.codelooper.com/tags/ml/</link>
     <description>Recent content in ML on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 03 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/ml/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/ml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Completed the Deeplearning.ai Tensorflow for AI course</title>
+      <link>https://www.codelooper.com/post/2022-08-04-completed--deeplearning-tensorflow-for-ai-course/</link>
+      <pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/2022-08-04-completed--deeplearning-tensorflow-for-ai-course/</guid>
+      <description>Finished the Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning course:
+Name:Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning Issuing Organization: Coursera Issue Date: August 2022 Expiration Date: This certification does not expire Credential ID: A4ZDPDW5PC42 Credential URL:https://www.coursera.org/account/accomplishments/certificate/A4ZDPDW5PC42 coursera-deeplearning-tensorflow-certificate
+Useful worksheet:
+https://github.com/https-deeplearning-ai/tensorflow-1-public/blob/main/C1/W4/ungraded_labs/C1_W4_Lab_1_image_generator_no_validation.ipynb
+use https://pixabay.com/ for finding additional images to test model.</description>
+    </item>
+    
     <item>
       <title>Coursera - introduction to tensorflow</title>
       <link>https://www.codelooper.com/post/2022-08-03-coursera-introduction-to-tensorflow/</link>
