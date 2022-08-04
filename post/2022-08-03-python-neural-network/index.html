@@ -8,8 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Python Neural Network Basics - Teddy&#39;s online desktop</title>
-  <meta name="description" content="import numpy as np sigmoid function def nonlin(x,deriv=False): if(deriv==True): return x*(1-x) return 1/(1&#43;np.exp(-x)) input dataset X = np.array([ [0,0,1], [0,1,1], [1,0,1], [1,1,1] ]) output dataset y = np.array([[0,0,1,1]]).T seed random numbers to make calculation deterministic (just a good practice)
-np.random.seed(1) initialize weights randomly with mean 0 syn0 = 2*np.random.random((3,1)) - 1 print(syn0) ## [[-0.16595599] ## [ 0.44064899] ## [-0.99977125]] l0 is input layer l1 is output layer l1_error is the loss function l1_delta is the gradient descent function for calculating the back-propagation syn0 is how the weights are updated.">
+  <meta name="description" content="From https://iamtrask.github.io/2015/07/12/basic-python-network/
+import numpy as np sigmoid function def nonlin(x,deriv=False): if(deriv==True): return x*(1-x) return 1/(1&#43;np.exp(-x)) input dataset X = np.array([ [0,0,1], [0,1,1], [1,0,1], [1,1,1] ]) output dataset y = np.array([[0,0,1,1]]).T seed random numbers to make calculation deterministic (just a good practice)
+np.random.seed(1) initialize weights randomly with mean 0 syn0 = 2*np.random.random((3,1)) - 1 print(syn0) ## [[-0.16595599] ## [ 0.44064899] ## [-0.99977125]] variables l0 is input layer l1 is hidden layer l1_error is the loss function l1_delta is the gradient descent function for calculating the back-propagation syn0 are synapses, weights between l0 and l1, and also how the weights are updated are shown.">
   <meta name="author" content="Teddy Wong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -58,9 +59,9 @@ np.random.seed(1) initialize weights randomly with mean 0 syn0 = 2*np.random.ran
     "name" : "Teddy Wong"
   },
   "headline": "Python Neural Network Basics",
-  "description" : "import numpy as np sigmoid function def nonlin(x,deriv=False): if(deriv==True): return x*(1-x) return 1\/(1\u002bnp.exp(-x)) input dataset X = np.array([ [0,0,1], [0,1,1], [1,0,1], [1,1,1] ]) output dataset y = np.array([[0,0,1,1]]).T seed random numbers to make calculation deterministic (just a good practice)\nnp.random.seed(1) initialize weights randomly with mean 0 syn0 = 2*np.random.random((3,1)) - 1 print(syn0) ## [[-0.16595599] ## [ 0.44064899] ## [-0.99977125]] l0 is input layer l1 is output layer l1_error is the loss function l1_delta is the gradient descent function for calculating the back-propagation syn0 is how the weights are updated.",
+  "description" : "From https:\/\/iamtrask.github.io\/2015\/07\/12\/basic-python-network\/\nimport numpy as np sigmoid function def nonlin(x,deriv=False): if(deriv==True): return x*(1-x) return 1\/(1\u002bnp.exp(-x)) input dataset X = np.array([ [0,0,1], [0,1,1], [1,0,1], [1,1,1] ]) output dataset y = np.array([[0,0,1,1]]).T seed random numbers to make calculation deterministic (just a good practice)\nnp.random.seed(1) initialize weights randomly with mean 0 syn0 = 2*np.random.random((3,1)) - 1 print(syn0) ## [[-0.16595599] ## [ 0.44064899] ## [-0.99977125]] variables l0 is input layer l1 is hidden layer l1_error is the loss function l1_delta is the gradient descent function for calculating the back-propagation syn0 are synapses, weights between l0 and l1, and also how the weights are updated are shown.",
   "inLanguage" : "en",
-  "wordCount":  164 ,
+  "wordCount":  177 ,
   "datePublished" : "2022-08-03T00:00:00",
   "dateModified" : "2022-08-03T00:00:00",
   "image" : "https:\/\/www.codelooper.com\/img\/redplane.png",
@@ -80,15 +81,17 @@ np.random.seed(1) initialize weights randomly with mean 0 syn0 = 2*np.random.ran
 </script>
 
 <meta property="og:title" content="Python Neural Network Basics" />
-<meta property="og:description" content="import numpy as np sigmoid function def nonlin(x,deriv=False): if(deriv==True): return x*(1-x) return 1/(1&#43;np.exp(-x)) input dataset X = np.array([ [0,0,1], [0,1,1], [1,0,1], [1,1,1] ]) output dataset y = np.array([[0,0,1,1]]).T seed random numbers to make calculation deterministic (just a good practice)
-np.random.seed(1) initialize weights randomly with mean 0 syn0 = 2*np.random.random((3,1)) - 1 print(syn0) ## [[-0.16595599] ## [ 0.44064899] ## [-0.99977125]] l0 is input layer l1 is output layer l1_error is the loss function l1_delta is the gradient descent function for calculating the back-propagation syn0 is how the weights are updated.">
+<meta property="og:description" content="From https://iamtrask.github.io/2015/07/12/basic-python-network/
+import numpy as np sigmoid function def nonlin(x,deriv=False): if(deriv==True): return x*(1-x) return 1/(1&#43;np.exp(-x)) input dataset X = np.array([ [0,0,1], [0,1,1], [1,0,1], [1,1,1] ]) output dataset y = np.array([[0,0,1,1]]).T seed random numbers to make calculation deterministic (just a good practice)
+np.random.seed(1) initialize weights randomly with mean 0 syn0 = 2*np.random.random((3,1)) - 1 print(syn0) ## [[-0.16595599] ## [ 0.44064899] ## [-0.99977125]] variables l0 is input layer l1 is hidden layer l1_error is the loss function l1_delta is the gradient descent function for calculating the back-propagation syn0 are synapses, weights between l0 and l1, and also how the weights are updated are shown.">
 <meta property="og:image" content="https://www.codelooper.com/img/redplane.png" />
 <meta property="og:url" content="https://www.codelooper.com/post/2022-08-03-python-neural-network/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Teddy&#39;s online desktop" />
 
   <meta name="twitter:title" content="Python Neural Network Basics" />
-  <meta name="twitter:description" content="import numpy as np sigmoid function def nonlin(x,deriv=False): if(deriv==True): return x*(1-x) return 1/(1&#43;np.exp(-x)) input dataset X = np.array([ [0,0,1], [0,1,1], [1,0,1], [1,1,1] ]) output dataset …">
+  <meta name="twitter:description" content="From https://iamtrask.github.io/2015/07/12/basic-python-network/
+import numpy as np sigmoid function def nonlin(x,deriv=False): if(deriv==True): return x*(1-x) return 1/(1&#43;np.exp(-x)) input dataset X …">
   <meta name="twitter:image" content="https://www.codelooper.com/img/redplane.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link href='https://www.codelooper.com/img/redplane.png' rel='icon' type='image/x-icon'/>
@@ -275,7 +278,7 @@ if (!doNotTrack) {
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;164&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;177&nbsp;words
   
   
     
@@ -304,6 +307,7 @@ if (!doNotTrack) {
         
 
 
+<p>From <a href="https://iamtrask.github.io/2015/07/12/basic-python-network/" class="uri">https://iamtrask.github.io/2015/07/12/basic-python-network/</a></p>
 <pre class="python"><code>import numpy as np</code></pre>
 <div id="sigmoid-function" class="section level1">
 <h1>sigmoid function</h1>
@@ -333,11 +337,16 @@ print(syn0)</code></pre>
 <pre><code>## [[-0.16595599]
 ##  [ 0.44064899]
 ##  [-0.99977125]]</code></pre>
-<p>l0 is input layer
-l1 is output layer
-l1_error is the loss function
-l1_delta is the gradient descent function for calculating the back-propagation
-syn0 is how the weights are updated.</p>
+<ul>
+<li>variables
+<ul>
+<li>l0 is input layer</li>
+<li>l1 is hidden layer</li>
+<li>l1_error is the loss function</li>
+<li>l1_delta is the gradient descent function for calculating the back-propagation</li>
+<li>syn0 are synapses, weights between l0 and l1, and also how the weights are updated are shown.</li>
+</ul></li>
+</ul>
 <pre class="python"><code>for iter in range(100000):
 # forward propagation
     l0 = X
