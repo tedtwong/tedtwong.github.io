@@ -440,6 +440,54 @@ f = open(&#39;somefiles.txt&#39;,&#39;w&#39;) # creates a file f.write(&#39;Line
 </article>
           
             <article class="post-preview">
+    <a href="https://www.codelooper.com/post/2022-08-03-python-neural-network/">
+        <h2 class="post-title">Python Neural Network Basics</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 3, 2022
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;164&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Teddy Wong
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        import numpy as np sigmoid function def nonlin(x,deriv=False): if(deriv==True): return x*(1-x) return 1/(1+np.exp(-x)) input dataset X = np.array([ [0,0,1], [0,1,1], [1,0,1], [1,1,1] ]) output dataset y = np.array([[0,0,1,1]]).T seed random numbers to make calculation deterministic (just a good practice)
+np.random.seed(1) initialize weights randomly with mean 0 syn0 = 2*np.random.random((3,1)) - 1 print(syn0) ## [[-0.16595599] ## [ 0.44064899] ## [-0.99977125]] l0 is input layer l1 is output layer l1_error is the loss function l1_delta is the gradient descent function for calculating the back-propagation syn0 is how the weights are updated.
+        <a href="https://www.codelooper.com/post/2022-08-03-python-neural-network/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://www.codelooper.com/tags/python/">Python</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://www.codelooper.com/post/2022-08-02-codecademy-pandas-continued/">
         <h2 class="post-title">Codecademy Pandas Continued...</h2>
         
@@ -684,61 +732,6 @@ Roman Shynkarenko provided the post below on Linkedin for the agriculture insura
         <a href="https://www.codelooper.com/tags/agriculture/">Agriculture</a>&nbsp;
         
         <a href="https://www.codelooper.com/tags/reinsurance/">Reinsurance</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://www.codelooper.com/post/google-data-analytics-certificate/">
-        <h2 class="post-title">Google Data Analytics Certificate</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 18, 2022
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;174&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Teddy Wong
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        I&rsquo;ve finally completed the Coursera Google Data Analytics Certificate.
-I think the course is great for beginners in data analytics. For me it was a great refresher on SQL and R but the other sections were not all that useful. The course did motivate me to learn R (again) and this blog site is probably a result of that.
-I think the course could use more on statistical thinking and spending more time on probability since data analysts could really use that in their work.
-        <a href="https://www.codelooper.com/post/google-data-analytics-certificate/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://www.codelooper.com/tags/education/">Education</a>&nbsp;
-        
-        <a href="https://www.codelooper.com/tags/data-analytics/">Data Analytics</a>&nbsp;
-        
-        <a href="https://www.codelooper.com/tags/r/">R</a>&nbsp;
-        
-        <a href="https://www.codelooper.com/tags/google/">Google</a>&nbsp;
         
     </div>
     

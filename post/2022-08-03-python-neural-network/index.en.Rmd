@@ -1,0 +1,72 @@
+---
+title: Python Neural Network Basics
+author: Teddy Wong
+date: '2022-08-03'
+slug: 2022-08-03-python-neural-network
+categories:
+  - Programming
+tags:
+  - Python
+type: ''
+subtitle: ''
+image: ''
+---
+```{python}
+import numpy as np
+```
+
+# sigmoid function
+```{python}
+def nonlin(x,deriv=False):
+    if(deriv==True):
+        return x*(1-x)
+    return 1/(1+np.exp(-x))
+```    
+# input dataset
+```{python}
+X = np.array([  [0,0,1],
+                [0,1,1],
+                [1,0,1],
+                [1,1,1] ])
+```    
+# output dataset            
+```{python}
+y = np.array([[0,0,1,1]]).T
+```
+seed random numbers to make calculation
+deterministic (just a good practice)
+```{python}
+np.random.seed(1)
+```
+# initialize weights randomly with mean 0
+```{python}
+syn0 = 2*np.random.random((3,1)) - 1
+print(syn0)
+```
+
+l0 is input layer
+l1 is output layer
+l1_error is the loss function
+l1_delta is the gradient descent function for calculating the back-propagation
+syn0 is how the weights are updated.
+```{python}
+for iter in range(100000):
+# forward propagation
+    l0 = X
+    l1 = nonlin(np.dot(l0,syn0))
+# how much did we miss 
+    l1_error = y - l1
+# multiply how much we missed by the 
+# slope of the sigmoid at the values in l1
+    l1_delta = l1_error * nonlin(l1,True)
+# update weights
+    syn0 += np.dot(l0.T,l1_delta)
+
+```
+
+check l1, which is output layer:
+
+```{python}
+print("Output After Training:")
+print(l1)
+```
