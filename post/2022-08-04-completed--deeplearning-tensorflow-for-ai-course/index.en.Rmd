@@ -13,7 +13,7 @@ subtitle: ''
 image: ''
 ---
 
-In 2015, I took Andrew Ng's ML course on Coursera in 2015, but everything has changed since then. The 2015 course had us build a neural network from scratch using matrix multiplication using Octave (open-source Matlab). Now in 2022 it's taught using python, tensorflow, and Keras API rather than using matrix multiplication. This course is better if you just want to apply machine learning or learn what's involved. This course allows you to do more in less time, but you come away with a fuzzier idea of what's happening in the neural network. However, it does a good job of teaching what's happening generally involved in convolutions and max pooling steps of the neural network.
+I took Andrew Ng's ML course on Coursera in 2015, but the landscape has changed since then. The 2015 course had us build a neural network from scratch using matrix multiplication using Octave (open-source Matlab). Now in 2022 it's taught using python, tensorflow, and Keras API rather than using matrix multiplication. This course is better if you just want to apply machine learning or learn what's involved. This course allows you to do more in less time, but you come away with a fuzzier idea of what's happening in the neural network. However, it does a good job of teaching what's happening generally involved in convolutions and max pooling steps of the neural network.
 
 It's great how easy this has gotten in the last seven years but seven years with the new tools. I started this new course/specialization earlier this week and today I finished the Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning course. The other three courses in the specialization look interesting as well.
 

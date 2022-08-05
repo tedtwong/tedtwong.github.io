@@ -12,7 +12,7 @@
       <pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.codelooper.com/post/2022-08-04-completed--deeplearning-tensorflow-for-ai-course/</guid>
-      <description>In 2015, I took Andrew Ng’s ML course on Coursera in 2015, but everything has changed since then. The 2015 course had us build a neural network from scratch using matrix multiplication using Octave (open-source Matlab). Now in 2022 it’s taught using python, tensorflow, and Keras API rather than using matrix multiplication. This course is better if you just want to apply machine learning or learn what’s involved. This course allows you to do more in less time, but you come away with a fuzzier idea of what’s happening in the neural network.</description>
+      <description>I took Andrew Ng’s ML course on Coursera in 2015, but the landscape has changed since then. The 2015 course had us build a neural network from scratch using matrix multiplication using Octave (open-source Matlab). Now in 2022 it’s taught using python, tensorflow, and Keras API rather than using matrix multiplication. This course is better if you just want to apply machine learning or learn what’s involved. This course allows you to do more in less time, but you come away with a fuzzier idea of what’s happening in the neural network.</description>
     </item>
     
     <item>
