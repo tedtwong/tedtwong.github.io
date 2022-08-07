@@ -61,7 +61,7 @@ Complete a random Training and Test set from one Data source using both an R fun
   "headline": "Coursera Guided Project - Predicting Diabetes",
   "description" : "Most people have better things to do on a Saturday night after the kids are asleep. Well, this is my idea of a fun evening… Signing up for the guided project in predicting diabetes by using random forests. Here we go…\nCourse Objectives In this course, we are going to focus on four learning objectives:\nComplete a random Training and Test set from one Data source using both an R function and using Base R.",
   "inLanguage" : "en",
-  "wordCount":  3681 ,
+  "wordCount":  3687 ,
   "datePublished" : "2022-08-06T00:00:00",
   "dateModified" : "2022-08-06T00:00:00",
   "image" : "https:\/\/www.codelooper.com\/img\/redplane.png",
@@ -277,7 +277,7 @@ if (!doNotTrack) {
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;18&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;3681&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;3687&nbsp;words
   
   
     
@@ -414,40 +414,40 @@ dim(train)</code></pre>
 ## 
 ## No pre-processing
 ## Resampling: Cross-Validated (2 fold, repeated 2 times) 
-## Summary of sample sizes: 270, 268, 269, 269 
+## Summary of sample sizes: 269, 269, 269, 269 
 ## Resampling results across tuning parameters:
 ## 
 ##   mtry  splitrule   Accuracy   Kappa    
-##   2     gini        0.7583419  0.4470709
-##   2     extratrees  0.7490516  0.4123644
-##   5     gini        0.7592920  0.4558368
-##   5     extratrees  0.7648544  0.4571218
-##   8     gini        0.7630130  0.4622016
-##   8     extratrees  0.7620594  0.4508937
+##   2     gini        0.7732342  0.4933621
+##   2     extratrees  0.7760223  0.4823507
+##   5     gini        0.7685874  0.4847245
+##   5     extratrees  0.7723048  0.4874880
+##   8     gini        0.7620818  0.4726192
+##   8     extratrees  0.7797398  0.5034950
 ## 
 ## Tuning parameter &#39;min.node.size&#39; was held constant at a value of 1
 ## Accuracy was used to select the optimal model using the largest value.
-## The final values used for the model were mtry = 5, splitrule = extratrees
+## The final values used for the model were mtry = 8, splitrule = extratrees
 ##  and min.node.size = 1.</code></pre>
 <pre class="r"><code>pred_train &lt;- predict(model, train)
 pred_test &lt;- predict(model, test)
 
 pred_train</code></pre>
-<pre><code>##   [1] 0 1 0 1 0 1 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0
-##  [38] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 1 1 0 0 0 0 0
-##  [75] 0 1 1 0 0 1 1 1 0 0 1 0 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0
-## [112] 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 0 0 1 1 1 1 0 0 1 0 1 1 0 0 0 0 1 1 1 0
-## [149] 1 1 1 1 0 0 0 0 1 0 1 0 0 1 1 1 0 0 1 1 0 0 0 0 1 1 0 0 1 0 1 1 1 0 1 0 0
-## [186] 0 0 0 0 0 1 0 1 0 0 0 1 1 1 0 1 0 1 0 1 1 0 0 0 1 1 0 0 1 0 1 0 1 0 1 0 1
-## [223] 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 1 1 0 1 1 0 1 0 0 1 0 0 0
-## [260] 0 0 1 0 0 1 0 0 0 0 0 1 1 0 0 0 0 1 1 1 0 1 1 0 1 0 1 0 0 0 1 0 1 0 1 0 0
-## [297] 1 1 0 0 0 0 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1
-## [334] 0 0 0 0 1 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
-## [371] 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 1 1 0 0 0 0
-## [408] 1 1 1 0 1 0 1 0 1 0 1 0 1 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0
-## [445] 1 0 1 0 1 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 1 0 1 0 0 1 0
-## [482] 1 0 0 0 1 0 0 1 0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 1
-## [519] 0 0 1 0 1 1 1 0 0 1 1 1 0 1 1 0 0 0 1 0
+<pre><code>##   [1] 1 0 1 0 1 0 0 1 1 1 1 1 1 0 1 0 0 1 1 1 1 0 0 0 0 0 0 1 1 1 0 0 1 0 1 0 0
+##  [38] 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0
+##  [75] 1 1 0 0 0 0 0 1 1 0 0 1 1 0 0 0 1 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 1 0 0 0 0
+## [112] 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 1 0 0 1 0 0 1 1 0 1 0 0 1 1 1
+## [149] 0 0 0 0 1 1 0 1 0 0 1 1 1 0 1 1 0 0 0 0 0 1 0 0 1 1 1 1 0 1 1 0 1 0 0 0 0
+## [186] 0 1 0 0 1 0 1 1 0 0 1 0 0 0 1 0 0 0 0 1 0 1 0 1 1 1 0 1 0 0 1 0 1 0 1 1 0
+## [223] 0 1 0 0 0 0 0 1 1 0 0 1 0 1 0 0 0 1 0 0 0 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0 1
+## [260] 1 1 0 1 1 0 0 1 0 0 1 0 0 1 1 0 1 1 0 0 0 0 0 0 1 1 1 0 0 1 0 0 1 0 0 1 1
+## [297] 0 1 0 1 0 1 0 1 1 0 0 0 1 0 1 1 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0
+## [334] 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0
+## [371] 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 1 1 0 1 0 0 0 0 0 0 0 0 0 0
+## [408] 0 1 1 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1 0 1 0 1 0 0 1 0 1 0 0 0 0 1 1 0 1 0
+## [445] 0 0 1 0 1 0 1 0 0 0 1 0 1 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 1 1 0 1 1 0 0 0
+## [482] 1 0 1 0 1 0 1 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 1 0 1 0 1 0 0 0 0 0 0 0 0 0
+## [519] 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 0 1 0 1
 ## Levels: 0 1</code></pre>
 <pre class="r"><code>#create confusion matrix
 
@@ -456,12 +456,12 @@ confusionMatrix(pred_train, as.factor(train$binary))</code></pre>
 ## 
 ##           Reference
 ## Prediction   0   1
-##          0 349   0
-##          1   0 189
+##          0 348   0
+##          1   0 190
 ##                                      
 ##                Accuracy : 1          
 ##                  95% CI : (0.9932, 1)
-##     No Information Rate : 0.6487     
+##     No Information Rate : 0.6468     
 ##     P-Value [Acc &gt; NIR] : &lt; 2.2e-16  
 ##                                      
 ##                   Kappa : 1          
@@ -472,9 +472,9 @@ confusionMatrix(pred_train, as.factor(train$binary))</code></pre>
 ##             Specificity : 1.0000     
 ##          Pos Pred Value : 1.0000     
 ##          Neg Pred Value : 1.0000     
-##              Prevalence : 0.6487     
-##          Detection Rate : 0.6487     
-##    Detection Prevalence : 0.6487     
+##              Prevalence : 0.6468     
+##          Detection Rate : 0.6468     
+##    Detection Prevalence : 0.6468     
 ##       Balanced Accuracy : 1.0000     
 ##                                      
 ##        &#39;Positive&#39; Class : 0          
@@ -484,26 +484,26 @@ confusionMatrix(pred_train, as.factor(train$binary))</code></pre>
 ## 
 ##           Reference
 ## Prediction   0   1
-##          0 127  34
-##          1  24  45
+##          0 130  37
+##          1  22  41
 ##                                           
-##                Accuracy : 0.7478          
-##                  95% CI : (0.6865, 0.8026)
-##     No Information Rate : 0.6565          
-##     P-Value [Acc &gt; NIR] : 0.001809        
+##                Accuracy : 0.7435          
+##                  95% CI : (0.6819, 0.7986)
+##     No Information Rate : 0.6609          
+##     P-Value [Acc &gt; NIR] : 0.004303        
 ##                                           
-##                   Kappa : 0.4235          
+##                   Kappa : 0.3996          
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 0.237302        
+##  Mcnemar&#39;s Test P-Value : 0.068357        
 ##                                           
-##             Sensitivity : 0.8411          
-##             Specificity : 0.5696          
-##          Pos Pred Value : 0.7888          
-##          Neg Pred Value : 0.6522          
-##              Prevalence : 0.6565          
-##          Detection Rate : 0.5522          
-##    Detection Prevalence : 0.7000          
-##       Balanced Accuracy : 0.7053          
+##             Sensitivity : 0.8553          
+##             Specificity : 0.5256          
+##          Pos Pred Value : 0.7784          
+##          Neg Pred Value : 0.6508          
+##              Prevalence : 0.6609          
+##          Detection Rate : 0.5652          
+##    Detection Prevalence : 0.7261          
+##       Balanced Accuracy : 0.6905          
 ##                                           
 ##        &#39;Positive&#39; Class : 0               
 ## </code></pre>
@@ -521,15 +521,15 @@ confusionMatrix(pred_train, as.factor(train$binary))</code></pre>
 ## Resampling results across tuning parameters:
 ## 
 ##   size  decay  Accuracy   Kappa     
-##   1     0e+00  0.6649972  0.07491146
-##   1     1e-04  0.6518029  0.03316832
-##   1     1e-01  0.6963457  0.22618859
-##   3     0e+00  0.6819810  0.22722906
-##   3     1e-04  0.6757637  0.16924591
-##   3     1e-01  0.7194863  0.35214537
-##   5     0e+00  0.6958526  0.24170336
-##   5     1e-04  0.6918023  0.27767565
-##   5     1e-01  0.7248788  0.37166399
+##   1     0e+00  0.6533921  0.03991917
+##   1     1e-04  0.6544011  0.03372244
+##   1     1e-01  0.6864057  0.22408791
+##   3     0e+00  0.6848037  0.19336322
+##   3     1e-04  0.6841490  0.17327882
+##   3     1e-01  0.7293233  0.37041855
+##   5     0e+00  0.6930665  0.27239646
+##   5     1e-04  0.6919568  0.21527396
+##   5     1e-01  0.7310063  0.38653882
 ## 
 ## Accuracy was used to select the optimal model using the largest value.
 ## The final values used for the model were size = 5 and decay = 0.1.</code></pre>
@@ -537,21 +537,21 @@ confusionMatrix(pred_train, as.factor(train$binary))</code></pre>
 pred_test &lt;- predict(model2, test)
 
 pred_train</code></pre>
-<pre><code>##   [1] 0 1 0 1 0 0 1 1 0 1 1 1 0 0 0 0 1 0 1 1 1 0 1 0 0 0 0 1 1 0 0 1 1 1 1 0 0
-##  [38] 0 0 1 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0
-##  [75] 1 1 1 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 1 1
-## [112] 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1
-## [149] 0 1 0 1 0 1 0 0 1 0 0 0 0 1 1 1 0 0 1 1 1 0 0 0 0 0 0 1 1 1 0 0 1 0 0 0 0
-## [186] 0 0 0 1 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
-## [223] 1 0 1 0 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0 0 0 0 0 0 0
-## [260] 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0
-## [297] 1 1 0 0 0 0 1 1 0 0 1 0 0 0 0 1 0 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 1 0 1 0 0
-## [334] 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
-## [371] 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 1 1 1 0 1 0 0
-## [408] 1 1 0 0 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0
-## [445] 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 0 1 0 1 1 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0
-## [482] 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
-## [519] 1 0 0 0 1 1 0 0 0 1 1 0 1 0 1 0 0 0 0 0
+<pre><code>##   [1] 1 0 1 0 1 0 0 1 1 1 1 1 0 0 0 0 0 0 1 1 1 0 1 0 0 1 1 0 0 0 1 0 1 1 1 1 0
+##  [38] 0 0 0 0 1 1 0 1 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0
+##  [75] 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0
+## [112] 1 0 0 1 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0 1 0 0 0 0 1
+## [149] 0 0 0 0 1 1 0 1 1 1 1 0 1 0 0 1 1 0 0 1 0 0 0 0 1 1 1 1 0 0 0 0 1 1 0 1 0
+## [186] 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 0 0 0 1 1 1 1 0 0 0
+## [223] 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 1 0 1 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 1
+## [260] 0 1 0 1 1 1 0 1 1 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 1 0
+## [297] 0 0 0 1 0 0 0 1 1 0 0 0 1 0 1 0 0 0 1 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0
+## [334] 0 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0
+## [371] 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 0
+## [408] 0 0 1 0 0 1 0 0 0 0 0 0 1 1 0 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 1 1 0 1 0
+## [445] 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 1 1 1 0 1 0 0 1 0
+## [482] 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 1 0 1 1 0 1 1 0 0 0 1 0 0 1 0 0 0 0 0 0
+## [519] 0 1 0 0 1 1 0 1 0 0 0 1 0 1 0 0 0 1 0 0
 ## Levels: 0 1</code></pre>
 <pre class="r"><code>#create confusion matrix
 
@@ -560,26 +560,26 @@ confusionMatrix(pred_train, as.factor(train$binary))</code></pre>
 ## 
 ##           Reference
 ## Prediction   0   1
-##          0 301  89
-##          1  48 100
+##          0 297  82
+##          1  51 108
 ##                                           
-##                Accuracy : 0.7454          
-##                  95% CI : (0.7063, 0.7817)
-##     No Information Rate : 0.6487          
-##     P-Value [Acc &gt; NIR] : 9.389e-07       
+##                Accuracy : 0.7528          
+##                  95% CI : (0.7141, 0.7887)
+##     No Information Rate : 0.6468          
+##     P-Value [Acc &gt; NIR] : 8.159e-08       
 ##                                           
-##                   Kappa : 0.4121          
+##                   Kappa : 0.4381          
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 0.0006322       
+##  Mcnemar&#39;s Test P-Value : 0.009286        
 ##                                           
-##             Sensitivity : 0.8625          
-##             Specificity : 0.5291          
-##          Pos Pred Value : 0.7718          
-##          Neg Pred Value : 0.6757          
-##              Prevalence : 0.6487          
-##          Detection Rate : 0.5595          
-##    Detection Prevalence : 0.7249          
-##       Balanced Accuracy : 0.6958          
+##             Sensitivity : 0.8534          
+##             Specificity : 0.5684          
+##          Pos Pred Value : 0.7836          
+##          Neg Pred Value : 0.6792          
+##              Prevalence : 0.6468          
+##          Detection Rate : 0.5520          
+##    Detection Prevalence : 0.7045          
+##       Balanced Accuracy : 0.7109          
 ##                                           
 ##        &#39;Positive&#39; Class : 0               
 ## </code></pre>
@@ -588,28 +588,28 @@ confusionMatrix(pred_train, as.factor(train$binary))</code></pre>
 ## 
 ##           Reference
 ## Prediction   0   1
-##          0 132  32
-##          1  19  47
-##                                          
-##                Accuracy : 0.7783         
-##                  95% CI : (0.719, 0.8302)
-##     No Information Rate : 0.6565         
-##     P-Value [Acc &gt; NIR] : 3.939e-05      
-##                                          
-##                   Kappa : 0.4883         
-##                                          
-##  Mcnemar&#39;s Test P-Value : 0.09289        
-##                                          
-##             Sensitivity : 0.8742         
-##             Specificity : 0.5949         
-##          Pos Pred Value : 0.8049         
-##          Neg Pred Value : 0.7121         
-##              Prevalence : 0.6565         
-##          Detection Rate : 0.5739         
-##    Detection Prevalence : 0.7130         
-##       Balanced Accuracy : 0.7346         
-##                                          
-##        &#39;Positive&#39; Class : 0              
+##          0 132  36
+##          1  20  42
+##                                           
+##                Accuracy : 0.7565          
+##                  95% CI : (0.6958, 0.8105)
+##     No Information Rate : 0.6609          
+##     P-Value [Acc &gt; NIR] : 0.001077        
+##                                           
+##                   Kappa : 0.4283          
+##                                           
+##  Mcnemar&#39;s Test P-Value : 0.045021        
+##                                           
+##             Sensitivity : 0.8684          
+##             Specificity : 0.5385          
+##          Pos Pred Value : 0.7857          
+##          Neg Pred Value : 0.6774          
+##              Prevalence : 0.6609          
+##          Detection Rate : 0.5739          
+##    Detection Prevalence : 0.7304          
+##       Balanced Accuracy : 0.7034          
+##                                           
+##        &#39;Positive&#39; Class : 0               
 ## </code></pre>
 <pre class="r"><code>model2</code></pre>
 <pre><code>## Neural Network 
@@ -624,15 +624,15 @@ confusionMatrix(pred_train, as.factor(train$binary))</code></pre>
 ## Resampling results across tuning parameters:
 ## 
 ##   size  decay  Accuracy   Kappa     
-##   1     0e+00  0.6649972  0.07491146
-##   1     1e-04  0.6518029  0.03316832
-##   1     1e-01  0.6963457  0.22618859
-##   3     0e+00  0.6819810  0.22722906
-##   3     1e-04  0.6757637  0.16924591
-##   3     1e-01  0.7194863  0.35214537
-##   5     0e+00  0.6958526  0.24170336
-##   5     1e-04  0.6918023  0.27767565
-##   5     1e-01  0.7248788  0.37166399
+##   1     0e+00  0.6533921  0.03991917
+##   1     1e-04  0.6544011  0.03372244
+##   1     1e-01  0.6864057  0.22408791
+##   3     0e+00  0.6848037  0.19336322
+##   3     1e-04  0.6841490  0.17327882
+##   3     1e-01  0.7293233  0.37041855
+##   5     0e+00  0.6930665  0.27239646
+##   5     1e-04  0.6919568  0.21527396
+##   5     1e-01  0.7310063  0.38653882
 ## 
 ## Accuracy was used to select the optimal model using the largest value.
 ## The final values used for the model were size = 5 and decay = 0.1.</code></pre>
@@ -640,21 +640,21 @@ confusionMatrix(pred_train, as.factor(train$binary))</code></pre>
 pred_test &lt;- predict(model3, test)
 
 pred_train</code></pre>
-<pre><code>##   [1] 0 1 0 0 0 0 1 1 0 1 1 1 0 0 0 0 1 0 1 1 1 0 1 0 0 0 0 0 1 0 0 1 1 1 1 0 0
-##  [38] 0 0 1 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0
-##  [75] 1 1 1 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 1 1
-## [112] 0 0 0 0 1 0 0 1 0 0 0 1 0 0 1 0 0 0 1 1 1 0 1 0 0 1 0 1 0 0 0 0 0 1 1 1 0
-## [149] 0 1 0 1 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 1 1 0 0 0 0 0 0 1 1 1 1 0 1 0 0 0 0
-## [186] 0 0 0 1 1 0 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 1 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0
-## [223] 1 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 1 0 1 1 0 0 0 0 0
-## [260] 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0
-## [297] 1 1 0 0 0 0 1 1 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 1 0 1 0 0
-## [334] 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
-## [371] 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 1 0 0
-## [408] 1 1 0 0 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
-## [445] 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0 1 1 1 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0
-## [482] 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
-## [519] 1 0 0 0 1 1 0 0 0 1 1 0 1 0 1 0 0 0 0 0
+<pre><code>##   [1] 1 0 1 0 0 0 0 1 0 1 1 1 0 0 0 0 0 0 1 1 1 0 1 0 0 1 1 0 0 0 1 0 1 1 1 1 0
+##  [38] 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0
+##  [75] 0 1 0 0 0 1 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 1 0 0 0
+## [112] 1 0 0 1 1 1 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 1 1 0 1 1 0 0 0 0 1
+## [149] 0 0 0 0 1 1 0 1 0 1 0 0 1 0 0 1 1 0 0 1 0 1 0 0 1 1 1 1 0 0 0 1 1 1 0 0 0
+## [186] 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0
+## [223] 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 1 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1
+## [260] 0 1 0 1 1 1 0 1 1 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 1 0
+## [297] 1 1 0 1 0 0 0 1 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0
+## [334] 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0
+## [371] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 0
+## [408] 0 0 1 0 0 1 0 0 0 0 0 0 1 1 0 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 1 1 0 1 0
+## [445] 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 1 1 1 0 1 0 0 1 0
+## [482] 1 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 1 0 1 0 0 1 1 0 0 0 1 0 0 1 0 0 0 0 0 0
+## [519] 0 1 0 0 1 1 0 1 0 0 0 1 0 1 0 0 0 1 0 0
 ## Levels: 0 1</code></pre>
 <pre class="r"><code>#create confusion matrix
 
@@ -663,26 +663,26 @@ confusionMatrix(pred_train, as.factor(train$binary))</code></pre>
 ## 
 ##           Reference
 ## Prediction   0   1
-##          0 300  88
-##          1  49 101
+##          0 299  86
+##          1  49 104
 ##                                           
-##                Accuracy : 0.7454          
-##                  95% CI : (0.7063, 0.7817)
-##     No Information Rate : 0.6487          
-##     P-Value [Acc &gt; NIR] : 9.389e-07       
+##                Accuracy : 0.7491          
+##                  95% CI : (0.7102, 0.7852)
+##     No Information Rate : 0.6468          
+##     P-Value [Acc &gt; NIR] : 2.264e-07       
 ##                                           
-##                   Kappa : 0.4136          
+##                   Kappa : 0.4254          
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 0.001168        
+##  Mcnemar&#39;s Test P-Value : 0.001946        
 ##                                           
-##             Sensitivity : 0.8596          
-##             Specificity : 0.5344          
-##          Pos Pred Value : 0.7732          
-##          Neg Pred Value : 0.6733          
-##              Prevalence : 0.6487          
-##          Detection Rate : 0.5576          
-##    Detection Prevalence : 0.7212          
-##       Balanced Accuracy : 0.6970          
+##             Sensitivity : 0.8592          
+##             Specificity : 0.5474          
+##          Pos Pred Value : 0.7766          
+##          Neg Pred Value : 0.6797          
+##              Prevalence : 0.6468          
+##          Detection Rate : 0.5558          
+##    Detection Prevalence : 0.7156          
+##       Balanced Accuracy : 0.7033          
 ##                                           
 ##        &#39;Positive&#39; Class : 0               
 ## </code></pre>
@@ -691,29 +691,33 @@ confusionMatrix(pred_train, as.factor(train$binary))</code></pre>
 ## 
 ##           Reference
 ## Prediction   0   1
-##          0 132  33
-##          1  19  46
+##          0 129  34
+##          1  23  44
 ##                                           
-##                Accuracy : 0.7739          
-##                  95% CI : (0.7143, 0.8263)
-##     No Information Rate : 0.6565          
-##     P-Value [Acc &gt; NIR] : 7.291e-05       
+##                Accuracy : 0.7522          
+##                  95% CI : (0.6912, 0.8066)
+##     No Information Rate : 0.6609          
+##     P-Value [Acc &gt; NIR] : 0.001746        
 ##                                           
-##                   Kappa : 0.4766          
+##                   Kappa : 0.4275          
 ##                                           
-##  Mcnemar&#39;s Test P-Value : 0.07142         
+##  Mcnemar&#39;s Test P-Value : 0.185326        
 ##                                           
-##             Sensitivity : 0.8742          
-##             Specificity : 0.5823          
-##          Pos Pred Value : 0.8000          
-##          Neg Pred Value : 0.7077          
-##              Prevalence : 0.6565          
-##          Detection Rate : 0.5739          
-##    Detection Prevalence : 0.7174          
-##       Balanced Accuracy : 0.7282          
+##             Sensitivity : 0.8487          
+##             Specificity : 0.5641          
+##          Pos Pred Value : 0.7914          
+##          Neg Pred Value : 0.6567          
+##              Prevalence : 0.6609          
+##          Detection Rate : 0.5609          
+##    Detection Prevalence : 0.7087          
+##       Balanced Accuracy : 0.7064          
 ##                                           
 ##        &#39;Positive&#39; Class : 0               
 ## </code></pre>
+<div class="figure">
+<img src="images/Screen%20Shot%202022-08-06%20at%2011.50.41%20PM.png" style="width:80.0%" alt="" />
+<p class="caption">predicting diabetes using R Carets package</p>
+</div>
 </div>
 
 
