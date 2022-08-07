@@ -30,9 +30,9 @@ By the end of this course, you will be able to apply and examine your own Machin
 
 # Course Structure
 
-This course is divided into 4 parts:
+This course is divided into 3 parts:
 
-1.Course Overview: This introductory reading material.
+1. Course Overview: This introductory reading material.
 
 2. Machine Learning:  Predict Diabetes using Pima Indians Data Set: This is the hands on project that we will work on in Rhyme.
 
@@ -118,7 +118,13 @@ confusionMatrix(pred_test, as.factor(test$binary))
 
 ```
 
-So accuracy isn't terrible, being able to predict around 79% accuracy in the test set.
+So accuracy isn't terrible, being able to predict around 74% accuracy in the test set.
+
+That's the end of the course. It's quite short and didn't have much technical explanation of what's happening, just a guided homework assignment basically.
+
+Let's see if we can improve upon the results by trying a different algorithm or by normalizing the variables.
+
+Let's try a neural net.
 
 ```{r include=FALSE}
 model2 <- train(as.factor(binary) ~ pregnant + glucose + pressure,
@@ -141,6 +147,8 @@ confusionMatrix(pred_train, as.factor(train$binary))
 confusionMatrix(pred_test, as.factor(test$binary))
 ```
 
+Normalizing variables using the scale function.
+
 ```{r include=FALSE}
 df2 <- df %>% mutate_at(c("pregnant", "glucose","pressure","triceps","insulin","mass","pedigree","age"), ~(scale(.) %>% as.vector))
 
@@ -153,7 +161,7 @@ model3 <- train(as.factor(binary) ~ pregnant + glucose + pressure,
                )
 ```
 ```{r}
-model2
+model3
 ```
 ```{r}
 pred_train <- predict(model3, train)
