@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Coursera Guided Project - Predicting Diabetes - Teddy&#39;s online desktop</title>
+  <meta name="description" content="Most people have better things to do on a Saturday night after the kids are asleep. Well, this is my idea of a fun evening… Signing up for the guided project in predicting diabetes by using random forests. Here we go…
+Course Objectives In this course, we are going to focus on four learning objectives:
+Complete a random Training and Test set from one Data source using both an R function and using Base R.">
+  <meta name="author" content="Teddy Wong"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Teddy\u0027s online desktop",
+    
+    "url": "https:\/\/www.codelooper.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/www.codelooper.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/www.codelooper.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/www.codelooper.com\/post\/2022-08-06-coursera-guided-project-predicting-diabetes\/",
+          "name": "Coursera guided project predicting diabetes"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Teddy Wong"
+  },
+  "headline": "Coursera Guided Project - Predicting Diabetes",
+  "description" : "Most people have better things to do on a Saturday night after the kids are asleep. Well, this is my idea of a fun evening… Signing up for the guided project in predicting diabetes by using random forests. Here we go…\nCourse Objectives In this course, we are going to focus on four learning objectives:\nComplete a random Training and Test set from one Data source using both an R function and using Base R.",
+  "inLanguage" : "en",
+  "wordCount":  3681 ,
+  "datePublished" : "2022-08-06T00:00:00",
+  "dateModified" : "2022-08-06T00:00:00",
+  "image" : "https:\/\/www.codelooper.com\/img\/redplane.png",
+  "keywords" : [ "R, Random Forest" ],
+  "mainEntityOfPage" : "https:\/\/www.codelooper.com\/post\/2022-08-06-coursera-guided-project-predicting-diabetes\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/www.codelooper.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/www.codelooper.com\/img\/redplane.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Coursera Guided Project - Predicting Diabetes" />
+<meta property="og:description" content="Most people have better things to do on a Saturday night after the kids are asleep. Well, this is my idea of a fun evening… Signing up for the guided project in predicting diabetes by using random forests. Here we go…
+Course Objectives In this course, we are going to focus on four learning objectives:
+Complete a random Training and Test set from one Data source using both an R function and using Base R.">
+<meta property="og:image" content="https://www.codelooper.com/img/redplane.png" />
+<meta property="og:url" content="https://www.codelooper.com/post/2022-08-06-coursera-guided-project-predicting-diabetes/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Teddy&#39;s online desktop" />
+
+  <meta name="twitter:title" content="Coursera Guided Project - Predicting Diabetes" />
+  <meta name="twitter:description" content="Most people have better things to do on a Saturday night after the kids are asleep. Well, this is my idea of a fun evening… Signing up for the guided project in predicting diabetes by using random …">
+  <meta name="twitter:image" content="https://www.codelooper.com/img/redplane.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link href='https://www.codelooper.com/img/redplane.png' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.101.0" />
+  <link rel="alternate" href="https://www.codelooper.com/index.xml" type="application/rss+xml" title="Teddy&#39;s online desktop"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://www.codelooper.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://www.codelooper.com/css/highlight.min.css" /><link rel="stylesheet" href="https://www.codelooper.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GLKN47MC8J"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-GLKN47MC8J', { 'anonymize_ip': false });
+}
+</script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://www.codelooper.com">Teddy&#39;s online desktop</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li class="navlinks-container">
+              <a class="navlinks-parent">Samples</a>
+              <div class="navlinks-children">
+                
+                  <a href="https://twong.shinyapps.io/implied_rol">Implied_ROL</a>
+                
+                  <a href="/post/2017-03-07-bigimg-sample">Big Image Sample</a>
+                
+                  <a href="/post/2017-03-05-math-sample">Math Sample</a>
+                
+                  <a href="/post/2016-03-08-code-sample">Code Sample</a>
+                
+              </div>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Resume" href="/page/resume.html">Resume</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Teddy&#39;s online desktop" href="https://www.codelooper.com">
+            <img class="avatar-img" src="https://www.codelooper.com/img/redplane.png" alt="Teddy&#39;s online desktop" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Coursera Guided Project - Predicting Diabetes</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 6, 2022
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;18&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;3681&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Teddy Wong
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+
+<p>Most people have better things to do on a Saturday night after the kids are asleep. Well, this is my idea of a fun evening… Signing up for the guided project in predicting diabetes by using random forests. Here we go…</p>
+<div id="course-objectives" class="section level1">
+<h1>Course Objectives</h1>
+<p>In this course, we are going to focus on four learning objectives:</p>
+<p>Complete a random Training and Test set from one Data source using both an R function and using Base R.</p>
+<p>Practice exploratory data analysis using ggplot2</p>
+<p>Apply a Linear Model, GBM, Random Forest model to a data set.</p>
+<p>Examine the results using RMSE and a Confusion Matrix.</p>
+<p>By the end of this course, you will be able to apply and examine your own Machine Learning algorithms.</p>
+</div>
+<div id="course-structure" class="section level1">
+<h1>Course Structure</h1>
+<p>This course is divided into 4 parts:</p>
+<p>1.Course Overview: This introductory reading material.</p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Machine Learning: Predict Diabetes using Pima Indians Data Set: This is the hands on project that we will work on in Rhyme.</p></li>
+<li><p>Graded Quiz: This is the final assignment that you need to pass in order to finish the course successfully.</p></li>
+</ol>
+</div>
+<div id="project-structure" class="section level1">
+<h1>Project Structure</h1>
+<p>The hands on project on Predict Diabetes using Pima Indians Data Set: is divided into following tasks:</p>
+<ul>
+<li><p>Task 1: In this task the Learner will be introduced to the Course Objectives, which is to how to execute a Random Forest Model using R and the Pima Indians Data set. There will be a short discussion about the Interface and an Instructor Bio.</p></li>
+<li><p>Task 2: The Learners will get practice doing Exploratory Analysis using ggplot2. This is important in order for the practitioner to see the balance of the data, especially as it relates to the Response Variable.</p></li>
+<li><p>Task 3: The Learner will get experience creating Testing and Training Data Sets. There are multiple ways to do this in R. The Instructor will show the Learner how to do it using the Base R way and also using a function from the caret package.</p></li>
+<li><p>Task 4: The Learner will get experience with the syntax of the Caret, an R package. Then the Learner will create a Random Forest Model in one function call.</p></li>
+<li><p>Task 5: The Learner will get practice looking and comparing multiple models using RMSE among other metrics.</p></li>
+</ul>
+</div>
+<div id="meet-the-instructor" class="section level1">
+<h1>Meet the Instructor</h1>
+<p>My name is Chris Shockley. I use R every day for work. I like building quick machine learning models to answer questions. For fun I like Astronomy and working out. And of course teaching. I look forward to helping you by providing some fun projects that will assist you in your R journey.</p>
+<pre class="r"><code>library(neuralnet)
+library(caret)</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre><code>## Loading required package: lattice</code></pre>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
+<pre><code>## ✔ tibble  3.1.7     ✔ dplyr   1.0.9
+## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
+## ✔ readr   2.1.2     ✔ forcats 0.5.1
+## ✔ purrr   0.3.4</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::compute() masks neuralnet::compute()
+## ✖ dplyr::filter()  masks stats::filter()
+## ✖ dplyr::lag()     masks stats::lag()
+## ✖ purrr::lift()    masks caret::lift()</code></pre>
+<pre class="r"><code>library(mlbench)
+library(e1071)</code></pre>
+<pre class="r"><code>data(&quot;PimaIndiansDiabetes&quot;)
+df &lt;- PimaIndiansDiabetes
+str(df)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    768 obs. of  9 variables:
+##  $ pregnant: num  6 1 8 1 0 5 3 10 2 8 ...
+##  $ glucose : num  148 85 183 89 137 116 78 115 197 125 ...
+##  $ pressure: num  72 66 64 66 40 74 50 0 70 96 ...
+##  $ triceps : num  35 29 0 23 35 0 32 0 45 0 ...
+##  $ insulin : num  0 0 0 94 168 0 88 0 543 0 ...
+##  $ mass    : num  33.6 26.6 23.3 28.1 43.1 25.6 31 35.3 30.5 0 ...
+##  $ pedigree: num  0.627 0.351 0.672 0.167 2.288 ...
+##  $ age     : num  50 31 32 21 33 30 26 29 53 54 ...
+##  $ diabetes: Factor w/ 2 levels &quot;neg&quot;,&quot;pos&quot;: 2 1 2 1 2 1 2 1 2 2 ...</code></pre>
+<pre class="r"><code>?PimaIndiansDiabetes
+ggplot(df,aes(diabetes, fill = factor(diabetes))) + geom_bar()</code></pre>
+<p><img src="https://www.codelooper.com/post/2022-08-06-coursera-guided-project-predicting-diabetes/index.en_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+create binary variable</p>
+<pre class="r"><code>df$binary &lt;- ifelse(df$diabetes == &quot;neg&quot;, 0, 1)
+str(df)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    768 obs. of  10 variables:
+##  $ pregnant: num  6 1 8 1 0 5 3 10 2 8 ...
+##  $ glucose : num  148 85 183 89 137 116 78 115 197 125 ...
+##  $ pressure: num  72 66 64 66 40 74 50 0 70 96 ...
+##  $ triceps : num  35 29 0 23 35 0 32 0 45 0 ...
+##  $ insulin : num  0 0 0 94 168 0 88 0 543 0 ...
+##  $ mass    : num  33.6 26.6 23.3 28.1 43.1 25.6 31 35.3 30.5 0 ...
+##  $ pedigree: num  0.627 0.351 0.672 0.167 2.288 ...
+##  $ age     : num  50 31 32 21 33 30 26 29 53 54 ...
+##  $ diabetes: Factor w/ 2 levels &quot;neg&quot;,&quot;pos&quot;: 2 1 2 1 2 1 2 1 2 2 ...
+##  $ binary  : num  1 0 1 0 1 0 1 0 1 1 ...</code></pre>
+<pre class="r"><code>rows &lt;- createDataPartition(df$binary,times=1, p=.7,list=FALSE)
+# remove diabetes variable since it&#39;s collinear with binary variable.
+df&lt;-df[,-9]
+
+names(df)</code></pre>
+<pre><code>## [1] &quot;pregnant&quot; &quot;glucose&quot;  &quot;pressure&quot; &quot;triceps&quot;  &quot;insulin&quot;  &quot;mass&quot;     &quot;pedigree&quot;
+## [8] &quot;age&quot;      &quot;binary&quot;</code></pre>
+<pre class="r"><code>train &lt;- df[rows,]
+test &lt;- df[-rows,]
+
+dim(train)</code></pre>
+<pre><code>## [1] 538   9</code></pre>
+<pre class="r"><code>dim(test)</code></pre>
+<pre><code>## [1] 230   9</code></pre>
+<p>random forest so response variable is a factor. “ranger” is random forest in caret.</p>
+<pre class="r"><code>model &lt;- train(as.factor(binary) ~ .,
+               data = train,
+               method = &quot;ranger&quot;,
+               trControl = trainControl(method = &quot;repeatedcv&quot;, number = 2, repeats = 2))</code></pre>
+<pre class="r"><code>model</code></pre>
+<pre><code>## Random Forest 
+## 
+## 538 samples
+##   8 predictor
+##   2 classes: &#39;0&#39;, &#39;1&#39; 
+## 
+## No pre-processing
+## Resampling: Cross-Validated (2 fold, repeated 2 times) 
+## Summary of sample sizes: 270, 268, 269, 269 
+## Resampling results across tuning parameters:
+## 
+##   mtry  splitrule   Accuracy   Kappa    
+##   2     gini        0.7583419  0.4470709
+##   2     extratrees  0.7490516  0.4123644
+##   5     gini        0.7592920  0.4558368
+##   5     extratrees  0.7648544  0.4571218
+##   8     gini        0.7630130  0.4622016
+##   8     extratrees  0.7620594  0.4508937
+## 
+## Tuning parameter &#39;min.node.size&#39; was held constant at a value of 1
+## Accuracy was used to select the optimal model using the largest value.
+## The final values used for the model were mtry = 5, splitrule = extratrees
+##  and min.node.size = 1.</code></pre>
+<pre class="r"><code>pred_train &lt;- predict(model, train)
+pred_test &lt;- predict(model, test)
+
+pred_train</code></pre>
+<pre><code>##   [1] 0 1 0 1 0 1 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0
+##  [38] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 1 1 0 0 0 0 0
+##  [75] 0 1 1 0 0 1 1 1 0 0 1 0 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0
+## [112] 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 1 0 0 0 1 1 1 1 0 0 1 0 1 1 0 0 0 0 1 1 1 0
+## [149] 1 1 1 1 0 0 0 0 1 0 1 0 0 1 1 1 0 0 1 1 0 0 0 0 1 1 0 0 1 0 1 1 1 0 1 0 0
+## [186] 0 0 0 0 0 1 0 1 0 0 0 1 1 1 0 1 0 1 0 1 1 0 0 0 1 1 0 0 1 0 1 0 1 0 1 0 1
+## [223] 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 1 1 0 1 1 0 1 0 0 1 0 0 0
+## [260] 0 0 1 0 0 1 0 0 0 0 0 1 1 0 0 0 0 1 1 1 0 1 1 0 1 0 1 0 0 0 1 0 1 0 1 0 0
+## [297] 1 1 0 0 0 0 1 0 0 0 1 0 0 1 1 1 0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1
+## [334] 0 0 0 0 1 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+## [371] 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 1 1 0 0 0 0
+## [408] 1 1 1 0 1 0 1 0 1 0 1 0 1 0 0 0 0 1 1 0 1 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0
+## [445] 1 0 1 0 1 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 1 0 1 0 0 1 0
+## [482] 1 0 0 0 1 0 0 1 0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 1
+## [519] 0 0 1 0 1 1 1 0 0 1 1 1 0 1 1 0 0 0 1 0
+## Levels: 0 1</code></pre>
+<pre class="r"><code>#create confusion matrix
+
+confusionMatrix(pred_train, as.factor(train$binary))</code></pre>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction   0   1
+##          0 349   0
+##          1   0 189
+##                                      
+##                Accuracy : 1          
+##                  95% CI : (0.9932, 1)
+##     No Information Rate : 0.6487     
+##     P-Value [Acc &gt; NIR] : &lt; 2.2e-16  
+##                                      
+##                   Kappa : 1          
+##                                      
+##  Mcnemar&#39;s Test P-Value : NA         
+##                                      
+##             Sensitivity : 1.0000     
+##             Specificity : 1.0000     
+##          Pos Pred Value : 1.0000     
+##          Neg Pred Value : 1.0000     
+##              Prevalence : 0.6487     
+##          Detection Rate : 0.6487     
+##    Detection Prevalence : 0.6487     
+##       Balanced Accuracy : 1.0000     
+##                                      
+##        &#39;Positive&#39; Class : 0          
+## </code></pre>
+<pre class="r"><code>confusionMatrix(pred_test, as.factor(test$binary))</code></pre>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction   0   1
+##          0 127  34
+##          1  24  45
+##                                           
+##                Accuracy : 0.7478          
+##                  95% CI : (0.6865, 0.8026)
+##     No Information Rate : 0.6565          
+##     P-Value [Acc &gt; NIR] : 0.001809        
+##                                           
+##                   Kappa : 0.4235          
+##                                           
+##  Mcnemar&#39;s Test P-Value : 0.237302        
+##                                           
+##             Sensitivity : 0.8411          
+##             Specificity : 0.5696          
+##          Pos Pred Value : 0.7888          
+##          Neg Pred Value : 0.6522          
+##              Prevalence : 0.6565          
+##          Detection Rate : 0.5522          
+##    Detection Prevalence : 0.7000          
+##       Balanced Accuracy : 0.7053          
+##                                           
+##        &#39;Positive&#39; Class : 0               
+## </code></pre>
+<p>So accuracy isn’t terrible, being able to predict around 79% accuracy in the test set.</p>
+<pre class="r"><code>model2</code></pre>
+<pre><code>## Neural Network 
+## 
+## 538 samples
+##   3 predictor
+##   2 classes: &#39;0&#39;, &#39;1&#39; 
+## 
+## No pre-processing
+## Resampling: Bootstrapped (25 reps) 
+## Summary of sample sizes: 538, 538, 538, 538, 538, 538, ... 
+## Resampling results across tuning parameters:
+## 
+##   size  decay  Accuracy   Kappa     
+##   1     0e+00  0.6649972  0.07491146
+##   1     1e-04  0.6518029  0.03316832
+##   1     1e-01  0.6963457  0.22618859
+##   3     0e+00  0.6819810  0.22722906
+##   3     1e-04  0.6757637  0.16924591
+##   3     1e-01  0.7194863  0.35214537
+##   5     0e+00  0.6958526  0.24170336
+##   5     1e-04  0.6918023  0.27767565
+##   5     1e-01  0.7248788  0.37166399
+## 
+## Accuracy was used to select the optimal model using the largest value.
+## The final values used for the model were size = 5 and decay = 0.1.</code></pre>
+<pre class="r"><code>pred_train &lt;- predict(model2, train)
+pred_test &lt;- predict(model2, test)
+
+pred_train</code></pre>
+<pre><code>##   [1] 0 1 0 1 0 0 1 1 0 1 1 1 0 0 0 0 1 0 1 1 1 0 1 0 0 0 0 1 1 0 0 1 1 1 1 0 0
+##  [38] 0 0 1 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0
+##  [75] 1 1 1 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 1 1
+## [112] 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 1 0 1 0 0 0 0 0 1 1 1 1
+## [149] 0 1 0 1 0 1 0 0 1 0 0 0 0 1 1 1 0 0 1 1 1 0 0 0 0 0 0 1 1 1 0 0 1 0 0 0 0
+## [186] 0 0 0 1 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+## [223] 1 0 1 0 0 0 0 1 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 1 1 0 0 0 0 0 0 0 0
+## [260] 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0
+## [297] 1 1 0 0 0 0 1 1 0 0 1 0 0 0 0 1 0 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 1 0 1 0 0
+## [334] 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+## [371] 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 1 1 1 0 1 0 0
+## [408] 1 1 0 0 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0
+## [445] 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 0 1 0 1 1 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0
+## [482] 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+## [519] 1 0 0 0 1 1 0 0 0 1 1 0 1 0 1 0 0 0 0 0
+## Levels: 0 1</code></pre>
+<pre class="r"><code>#create confusion matrix
+
+confusionMatrix(pred_train, as.factor(train$binary))</code></pre>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction   0   1
+##          0 301  89
+##          1  48 100
+##                                           
+##                Accuracy : 0.7454          
+##                  95% CI : (0.7063, 0.7817)
+##     No Information Rate : 0.6487          
+##     P-Value [Acc &gt; NIR] : 9.389e-07       
+##                                           
+##                   Kappa : 0.4121          
+##                                           
+##  Mcnemar&#39;s Test P-Value : 0.0006322       
+##                                           
+##             Sensitivity : 0.8625          
+##             Specificity : 0.5291          
+##          Pos Pred Value : 0.7718          
+##          Neg Pred Value : 0.6757          
+##              Prevalence : 0.6487          
+##          Detection Rate : 0.5595          
+##    Detection Prevalence : 0.7249          
+##       Balanced Accuracy : 0.6958          
+##                                           
+##        &#39;Positive&#39; Class : 0               
+## </code></pre>
+<pre class="r"><code>confusionMatrix(pred_test, as.factor(test$binary))</code></pre>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction   0   1
+##          0 132  32
+##          1  19  47
+##                                          
+##                Accuracy : 0.7783         
+##                  95% CI : (0.719, 0.8302)
+##     No Information Rate : 0.6565         
+##     P-Value [Acc &gt; NIR] : 3.939e-05      
+##                                          
+##                   Kappa : 0.4883         
+##                                          
+##  Mcnemar&#39;s Test P-Value : 0.09289        
+##                                          
+##             Sensitivity : 0.8742         
+##             Specificity : 0.5949         
+##          Pos Pred Value : 0.8049         
+##          Neg Pred Value : 0.7121         
+##              Prevalence : 0.6565         
+##          Detection Rate : 0.5739         
+##    Detection Prevalence : 0.7130         
+##       Balanced Accuracy : 0.7346         
+##                                          
+##        &#39;Positive&#39; Class : 0              
+## </code></pre>
+<pre class="r"><code>model2</code></pre>
+<pre><code>## Neural Network 
+## 
+## 538 samples
+##   3 predictor
+##   2 classes: &#39;0&#39;, &#39;1&#39; 
+## 
+## No pre-processing
+## Resampling: Bootstrapped (25 reps) 
+## Summary of sample sizes: 538, 538, 538, 538, 538, 538, ... 
+## Resampling results across tuning parameters:
+## 
+##   size  decay  Accuracy   Kappa     
+##   1     0e+00  0.6649972  0.07491146
+##   1     1e-04  0.6518029  0.03316832
+##   1     1e-01  0.6963457  0.22618859
+##   3     0e+00  0.6819810  0.22722906
+##   3     1e-04  0.6757637  0.16924591
+##   3     1e-01  0.7194863  0.35214537
+##   5     0e+00  0.6958526  0.24170336
+##   5     1e-04  0.6918023  0.27767565
+##   5     1e-01  0.7248788  0.37166399
+## 
+## Accuracy was used to select the optimal model using the largest value.
+## The final values used for the model were size = 5 and decay = 0.1.</code></pre>
+<pre class="r"><code>pred_train &lt;- predict(model3, train)
+pred_test &lt;- predict(model3, test)
+
+pred_train</code></pre>
+<pre><code>##   [1] 0 1 0 0 0 0 1 1 0 1 1 1 0 0 0 0 1 0 1 1 1 0 1 0 0 0 0 0 1 0 0 1 1 1 1 0 0
+##  [38] 0 0 1 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0
+##  [75] 1 1 1 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 1 1
+## [112] 0 0 0 0 1 0 0 1 0 0 0 1 0 0 1 0 0 0 1 1 1 0 1 0 0 1 0 1 0 0 0 0 0 1 1 1 0
+## [149] 0 1 0 1 1 1 0 0 1 0 1 0 0 1 1 1 0 0 0 1 1 0 0 0 0 0 0 1 1 1 1 0 1 0 0 0 0
+## [186] 0 0 0 1 1 0 1 0 0 0 0 0 0 0 1 1 0 0 0 1 0 1 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0
+## [223] 1 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 1 0 1 1 0 0 0 0 0
+## [260] 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0
+## [297] 1 1 0 0 0 0 1 1 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 1 0 1 0 0
+## [334] 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+## [371] 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 1 0 0
+## [408] 1 1 0 0 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+## [445] 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0 1 1 1 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0
+## [482] 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+## [519] 1 0 0 0 1 1 0 0 0 1 1 0 1 0 1 0 0 0 0 0
+## Levels: 0 1</code></pre>
+<pre class="r"><code>#create confusion matrix
+
+confusionMatrix(pred_train, as.factor(train$binary))</code></pre>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction   0   1
+##          0 300  88
+##          1  49 101
+##                                           
+##                Accuracy : 0.7454          
+##                  95% CI : (0.7063, 0.7817)
+##     No Information Rate : 0.6487          
+##     P-Value [Acc &gt; NIR] : 9.389e-07       
+##                                           
+##                   Kappa : 0.4136          
+##                                           
+##  Mcnemar&#39;s Test P-Value : 0.001168        
+##                                           
+##             Sensitivity : 0.8596          
+##             Specificity : 0.5344          
+##          Pos Pred Value : 0.7732          
+##          Neg Pred Value : 0.6733          
+##              Prevalence : 0.6487          
+##          Detection Rate : 0.5576          
+##    Detection Prevalence : 0.7212          
+##       Balanced Accuracy : 0.6970          
+##                                           
+##        &#39;Positive&#39; Class : 0               
+## </code></pre>
+<pre class="r"><code>confusionMatrix(pred_test, as.factor(test$binary))</code></pre>
+<pre><code>## Confusion Matrix and Statistics
+## 
+##           Reference
+## Prediction   0   1
+##          0 132  33
+##          1  19  46
+##                                           
+##                Accuracy : 0.7739          
+##                  95% CI : (0.7143, 0.8263)
+##     No Information Rate : 0.6565          
+##     P-Value [Acc &gt; NIR] : 7.291e-05       
+##                                           
+##                   Kappa : 0.4766          
+##                                           
+##  Mcnemar&#39;s Test P-Value : 0.07142         
+##                                           
+##             Sensitivity : 0.8742          
+##             Specificity : 0.5823          
+##          Pos Pred Value : 0.8000          
+##          Neg Pred Value : 0.7077          
+##              Prevalence : 0.6565          
+##          Detection Rate : 0.5739          
+##    Detection Prevalence : 0.7174          
+##       Balanced Accuracy : 0.7282          
+##                                           
+##        &#39;Positive&#39; Class : 0               
+## </code></pre>
+</div>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://www.codelooper.com/tags/r/">R</a>&nbsp;
+            
+              <a href="https://www.codelooper.com/tags/random-forest/">Random Forest</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-08-06-coursera-guided-project-predicting-diabetes%2f&amp;text=Coursera%20Guided%20Project%20-%20Predicting%20Diabetes&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-08-06-coursera-guided-project-predicting-diabetes%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-08-06-coursera-guided-project-predicting-diabetes%2f&amp;title=Coursera%20Guided%20Project%20-%20Predicting%20Diabetes" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-08-06-coursera-guided-project-predicting-diabetes%2f&amp;title=Coursera%20Guided%20Project%20-%20Predicting%20Diabetes" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-08-06-coursera-guided-project-predicting-diabetes%2f&amp;title=Coursera%20Guided%20Project%20-%20Predicting%20Diabetes" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.codelooper.com%2fpost%2f2022-08-06-coursera-guided-project-predicting-diabetes%2f&amp;description=Coursera%20Guided%20Project%20-%20Predicting%20Diabetes" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="/post/2022-07-19-datacamp-s-tidyverse-course-using-gapminder-dataset/">Datacamp&#39;s tidyverse course using gapminder dataset</a></li>
+                
+                    <li><a href="/post/google-data-analytics-certificate/">Google Data Analytics Certificate</a></li>
+                
+                    <li><a href="/post/running-shiny-within-blogdown/">Running Shiny R within blogdown</a></li>
+                
+                    <li><a href="/post/2022-07-15-quarto/">Quarto</a></li>
+                
+                    <li><a href="/post/2022-07-14-blogdown-github/2022-07-14-blogdown-github/">R blogdown/pagedown and Github</a></li>
+                
+              </ul>
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://www.codelooper.com/post/2022-08-04-completed--deeplearning-tensorflow-for-ai-course/" data-toggle="tooltip" data-placement="top" title="Completed the Deeplearning.ai Tensorflow for AI course">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">                  
+            <button id="show-comments" class="btn btn-default" type="button">Show <span class="disqus-comment-count" data-disqus-url="https://www.codelooper.com/post/2022-08-06-coursera-guided-project-predicting-diabetes">comments</span></button>
+            <div id="disqus_thread"></div>
+
+            <script type="text/javascript">
+              var disqus_config = function () {
+              this.page.url = 'https:\/\/www.codelooper.com\/post\/2022-08-06-coursera-guided-project-predicting-diabetes';
+            };
+
+          </script>
+          </div>
+          
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="https://www.facebook.com/tedtwong" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/tedtwong" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/tedtwong" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/tedtwong" title="Instagram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-instagram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.kaggle.com/tedtwong" title="kaggle">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-kaggle fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Teddy Wong
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2022
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://www.codelooper.com">Teddy&#39;s online desktop</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.101.0</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://www.codelooper.com/js/main.js"></script>
+<script src="https://www.codelooper.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://www.codelooper.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function(){
+  $('#show-comments').on('click', function(){
+    var disqus_shortname = 'codelooper-com';
+      
+    (function() {
+      var disqus = document.createElement('script'); 
+      disqus.type = 'text/javascript'; 
+      disqus.async = true;
+      disqus.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(disqus);
+    })();
+      
+    $(this).hide(); 
+    });
+  });
+      
+</script>
+<script id="dsq-count-scr" src="//codelooper-com.disqus.com/count.js" async></script>
+
+
+
+
+    
+  </body>
+</html>
+

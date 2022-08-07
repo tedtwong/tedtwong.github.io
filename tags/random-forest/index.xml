@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Random Forest on Teddy&#39;s online desktop</title>
+    <link>https://www.codelooper.com/tags/random-forest/</link>
+    <description>Recent content in Random Forest on Teddy&#39;s online desktop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 06 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/random-forest/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coursera Guided Project - Predicting Diabetes</title>
+      <link>https://www.codelooper.com/post/2022-08-06-coursera-guided-project-predicting-diabetes/</link>
+      <pubDate>Sat, 06 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/2022-08-06-coursera-guided-project-predicting-diabetes/</guid>
+      <description>Most people have better things to do on a Saturday night after the kids are asleep. Well, this is my idea of a fun evening… Signing up for the guided project in predicting diabetes by using random forests. Here we go…
+Course Objectives In this course, we are going to focus on four learning objectives:
+Complete a random Training and Test set from one Data source using both an R function and using Base R.</description>
+    </item>
+    
+  </channel>
+</rss>
