@@ -59,7 +59,7 @@
   "headline": "Cat XL pricing using rate on line (ROL) curves",
   "description" : "When I was working with stop loss reinsurance contracts the usual way to perform the pricing exercise would be to gather all the loss data, fit a loss distribution to that data, make adjustments based on seasonal outlook or other variables, and apply the limits and retentions asked by the clients\/brokers.\nAlthough this is standard practice and almost second nature, another way to look at the pricing problem is from the point of view that you, as an underwriter, do not have all the information and perhaps should take into consideration market pricing.",
   "inLanguage" : "en",
-  "wordCount":  431 ,
+  "wordCount":  482 ,
   "datePublished" : "2022-07-15T00:00:00",
   "dateModified" : "2022-07-15T00:00:00",
   "image" : "https:\/\/www.codelooper.com\/img\/redplane.png",
@@ -277,7 +277,7 @@ if (!doNotTrack) {
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;431&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;482&nbsp;words
   
   
     
@@ -309,6 +309,11 @@ if (!doNotTrack) {
 <p>When I was working with stop loss reinsurance contracts the usual way to perform the pricing exercise would be to gather all the loss data, fit a loss distribution to that data, make adjustments based on seasonal outlook or other variables, and apply the limits and retentions asked by the clients/brokers.</p>
 <p>Although this is standard practice and almost second nature, another way to look at the pricing problem is from the point of view that you, as an underwriter, do not have all the information and perhaps should take into consideration market pricing. Reinsurance is often a market that suffers from what in auction theory is called “winner’s curse”, that you’ll get the business if you offer a lower price than the competition but that just means you may have mis-priced the risk in order to gain the business!</p>
 <p>To prevent going too astray from market pricing then, it’s helpful to look at the market price graphically as a curve. I’ve called it the ‘implied rol’ curve previously. I have used a spreadsheet to draw this curve from pricing data, either prior years, or similar risks, to do this. But it was cumbersome to wrestle all the columns and rows used in the calculations. So, I decided to create a R Shiny app to make the process a lot easier and as a way to learn the programming needed to implement it. The app is live now at <a href="https://twong.shinyapps.io/Implied_rol/" class="uri">https://twong.shinyapps.io/Implied_rol/</a></p>
+<blockquote>
+<p>update: My friend and ex-colleague Glauco asked if I could make dynamic tabs since he had a project that needed to compare 5 and 7 programs. I haven’t had time to delve into it yet but I made static versions of what he needed and they are available here:
+<a href="https://twong.shinyapps.io/Implied_rol_5tabs/" class="uri">https://twong.shinyapps.io/Implied_rol_5tabs/</a><br />
+<a href="https://twong.shinyapps.io/Implied_rol_7tabs/" class="uri">https://twong.shinyapps.io/Implied_rol_7tabs/</a></p>
+</blockquote>
 <p>As can be seen in the image file below, this app allows you to input stop loss layer pricing information and will fit the power curve to the layers.</p>
 <div class="figure">
 <img src="images/Screen%20Shot%202022-07-15%20at%2012.05.12%20PM.png" style="width:80.0%" alt="" />

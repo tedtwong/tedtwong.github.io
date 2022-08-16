@@ -20,6 +20,10 @@ Although this is standard practice and almost second nature, another way to look
 
 To prevent going too astray from market pricing then, it's helpful to look at the market price graphically as a curve. I've called it the 'implied rol' curve previously. I have used a spreadsheet to draw this curve from pricing data, either prior years, or similar risks, to do this. But it was cumbersome to wrestle all the columns and rows used in the calculations. So, I decided to create a R Shiny app to make the process a lot easier and as a way to learn the programming needed to implement it. The app is live now at https://twong.shinyapps.io/Implied_rol/  
 
+> update: My friend and ex-colleague Glauco asked if I could make dynamic tabs since he had a project that needed to compare 5 and 7 programs. I haven't had time to delve into it yet but I made static versions of what he needed and they are available here:
+https://twong.shinyapps.io/Implied_rol_5tabs/  
+https://twong.shinyapps.io/Implied_rol_7tabs/  
+
 As can be seen in the image file below, this app allows you to input stop loss layer pricing information and will fit the power curve to the layers. 
 
 ![implied_rol](images/Screen Shot 2022-07-15 at 12.05.12 PM.png){width=80%}
