@@ -12,13 +12,12 @@ output:
 # uncomment this line to produce HTML and PDF in RStudio:
 knit: pagedown::chrome_print
 ---
-
 # Aside {#aside}
-It's easy to understand something once you understand it.
+<!-- It's easy to understand something once you understand it. -->
 
-<center>
-![Teddy Wong](teddywong.jpg){width="90%"}
-</center>
+<!-- <center> -->
+<!-- ![Teddy Wong](teddywong.jpg){width="90%"} -->
+<!-- </center> -->
 
 ## Contact Info {#contact}
 
@@ -36,7 +35,7 @@ It's easy to understand something once you understand it.
 
 -   <i class="fa fa-calculator"></i> Applied statistical analysis, models, and optimization methods.
 
--   <i class="fa fa-code"></i> R, Python, SQL, Tableau, Matlab, GitHub, Quarto.
+-   <i class="fa fa-code"></i> R, Python, SQL, Tableau, Matlab, GitHub, Quarto, TensorFlow.
 
 -   <i class="fa fa-handshake"></i> Collaboration, communication, problem-solving, presentation, research, and adaptability.
 
@@ -131,7 +130,8 @@ Berkeley, CA
 
 ### Certificates
 
-Google Data Analytics 
+- Google Data Analytics Professional Certificate (8 Courses)
+- Introduction to TensorFlow for AI/Machine Learning. 
 
 Online
 
@@ -212,13 +212,13 @@ Washington, D.C.
 
 September 2008
 
-### Chair of Contributed Papers Session
+<!-- ### Chair of Contributed Papers Session -->
 
-"FDI, Firms, Geography, Exchange Rates, and Policy" at International Agricultural Trade Research Consortium (IATRC)
+<!-- "FDI, Firms, Geography, Exchange Rates, and Policy" at International Agricultural Trade Research Consortium (IATRC) -->
 
-Beijing, China
+<!-- Beijing, China -->
 
-July 2007
+<!-- July 2007 -->
 
 
 ```{js move_disclaim, echo=FALSE}
