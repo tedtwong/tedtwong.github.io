@@ -5,7 +5,20 @@
     <link>https://www.codelooper.com/post/</link>
     <description>Recent content in Posts on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coursera - Generative AI </title>
+      <link>https://www.codelooper.com/post/2023-07-06-coursera-generative-ai/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/2023-07-06-coursera-generative-ai/</guid>
+      <description>Encoder Models - Sentiment analysis
+Encoder - Decoder Models
+Decoder Only Models - GPT family of models
+The paper “Attention is all you need” replaced recurrent neural networks (RNN) and convolutional neural networks (CNN) with transformer models (or attention-based models).
+The Transformer architecture consists of an encoder and a decoder, each of which is composed of several layers. Each layer consists of two sub-layers: a multi-head self-attention mechanism and a feed-forward neural network.</description>
+    </item>
+    
     <item>
       <title>Duck DB and Pandas Profiling</title>
       <link>https://www.codelooper.com/post/2022-09-19-duck-db-pandas-profiling/</link>
