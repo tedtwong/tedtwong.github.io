@@ -3,13 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.codelooper.com/</loc>
-    <lastmod>2023-07-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/page/</loc>
-    <lastmod>2023-07-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/page/resume/</loc>
-    <lastmod>2023-07-12T00:00:00+00:00</lastmod>
+    <lastmod>2023-07-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/ai/</loc>
     <lastmod>2023-07-06T00:00:00+00:00</lastmod>
@@ -213,5 +207,7 @@
     <lastmod>2017-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/page/about/</loc>
+  </url><url>
+    <loc>https://www.codelooper.com/page/</loc>
   </url>
 </urlset>
