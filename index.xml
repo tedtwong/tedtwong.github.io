@@ -5,7 +5,24 @@
     <link>https://www.codelooper.com/</link>
     <description>Recent content on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Teddy Wong&#39;s resume</title>
+      <link>https://www.codelooper.com/page/resume/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/page/resume/</guid>
+      <description>Aside Contact Info teddy.t.wong@gmail.com tedtwong.github.io +1 510.684.6176 Skills Insurance/insurtech business development.
+Reinsurance treaty underwriting. Agriculture, weather, and parametric risks.
+Global crop insurance market and public/private partnerships.
+Applied statistical analysis, models, and optimization methods.
+R, Python, SQL, Tableau, Matlab, GitHub, Quarto, TensorFlow.
+Collaboration, communication, problem-solving, presentation, research, and adaptability.
+Disclaimer This resume was made with the R package pagedown.
+Last updated on 2023-07-12.
+Main Teddy Wong Professional Experience Agi3 Risk Services Chief Underwriting Officer</description>
+    </item>
+    
     <item>
       <title>Coursera - Generative AI </title>
       <link>https://www.codelooper.com/post/2023-07-06-coursera-generative-ai/</link>

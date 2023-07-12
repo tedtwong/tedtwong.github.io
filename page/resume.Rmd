@@ -53,13 +53,21 @@ Last updated on `r Sys.Date()`.
 
 ## Professional Experience {data-icon="suitcase"}
 
+### Agi3 Risk Services
+
+Chief Underwriting Officer
+
+Long Beach, CA
+
+2023 - Current
+
 ### AIRM Consulting
 
 Reinsurance and Strategic Partnerships
 
-Los Angeles, CA
+Long Beach, CA
 
-Current - 2021
+2021 - 2023
 
 -   Business planning
 -   Reinsurance consulting
