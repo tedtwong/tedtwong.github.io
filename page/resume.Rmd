@@ -13,11 +13,11 @@ output:
 knit: pagedown::chrome_print
 ---
 # Aside {#aside}
-<!-- It's easy to understand something once you understand it. -->
+It's easy to understand something once you understand it.
 
-<!-- <center> -->
-<!-- ![Teddy Wong](teddywong.jpg){width="90%"} -->
-<!-- </center> -->
+<center>
+![Teddy Wong](teddywong.jpg){width="90%"}
+</center>
 
 ## Contact Info {#contact}
 
