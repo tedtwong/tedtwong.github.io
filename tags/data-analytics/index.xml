@@ -5,7 +5,16 @@
     <link>https://www.codelooper.com/tags/data-analytics/</link>
     <description>Recent content in Data Analytics on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/data-analytics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/data-analytics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Random number generator</title>
+      <link>https://www.codelooper.com/post/random-number-generator-20231108/</link>
+      <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/random-number-generator-20231108/</guid>
+      <description>I wanted to generate a set of random numbers without resorting to the rand() function in excel. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley: https://research.ssl.berkeley.edu/~mlampton/RandomSpreadsheet4.pdf Here is an excel file that generates random uniform [0,1] values from a seed using the formula within that paper: https://docs.google.com/spreadsheets/d/1_B94NiVy5mWPN-rX6z250NfoHedOerXSnY8M5GeTLv4/edit?usp=sharing</description>
+    </item>
+    
     <item>
       <title>Google Data Analytics Certificate</title>
       <link>https://www.codelooper.com/post/google-data-analytics-certificate/</link>

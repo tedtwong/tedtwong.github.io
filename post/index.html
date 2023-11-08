@@ -216,7 +216,7 @@ if (!doNotTrack) {
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 19, 2023
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 8, 2023
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
@@ -249,6 +249,56 @@ if (!doNotTrack) {
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+    <a href="https://www.codelooper.com/post/random-number-generator-20231108/">
+        <h2 class="post-title">Random number generator</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 8, 2023
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;51&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Package Build
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        <p>I wanted to generate a set of random numbers without resorting to the rand() function in excel. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley: <a href="https://research.ssl.berkeley.edu/~mlampton/RandomSpreadsheet4.pdf">https://research.ssl.berkeley.edu/~mlampton/RandomSpreadsheet4.pdf</a>
+Here is an excel file that generates random uniform [0,1] values from a seed using the formula within that paper: <a href="https://docs.google.com/spreadsheets/d/1_B94NiVy5mWPN-rX6z250NfoHedOerXSnY8M5GeTLv4/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1_B94NiVy5mWPN-rX6z250NfoHedOerXSnY8M5GeTLv4/edit?usp=sharing</a></p>
+
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://www.codelooper.com/tags/math/">math</a>&nbsp;
+        
+        <a href="https://www.codelooper.com/tags/data-analytics/">Data Analytics</a>&nbsp;
+        
+    </div>
+    
+
+</article>
           
             <article class="post-preview">
     <a href="https://www.codelooper.com/post/2023-07-19-ergodicity-and-insurance/">
@@ -680,56 +730,6 @@ import time as time def causeError(): start = time.time() #set start timer try: 
 import threading import time Threads
 def longSquare(num): time.sleep(1) return num**2 [longSquare(n) for n in range(0, 5)] ## [0, 1, 4, 9, 16] t1 = threading.Thread(target=longSquare, args=(1,)) #args is tuple t2 = threading.Thread(target=longSquare, args=(2,)) t1.start() t2.start() t1.join() t2.join() def longSquare(num, results): time.sleep(1) results[num] = num**2 results = {} t1 = threading.Thread(target=longSquare, args=(1, results)) #args are tuples t2 = threading.Thread(target=longSquare, args=(2, results)) t1.
         <a href="https://www.codelooper.com/post/2022-08-03-python-multithreading-multiprocessing/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://www.codelooper.com/tags/python/">Python</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://www.codelooper.com/post/2022-08-03-python-opening-reading-writing-files/">
-        <h2 class="post-title">Python - opening reading writing files</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 3, 2022
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;362&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Teddy Wong
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        From: LinkedIn course ‘Python Essential Training’ by Ryan Mitchell https://www.linkedin.com/learning/python-essential-training-14898805
-reading files
-f = open(&#39;some_file.txt&#39;,&#39;r&#39;) print(f) #gets file type, need to read the file f.readline() f.readlines() #puts lines into list of strings for line in f.readlines(): print(line.strip()) # strips leading and trailing spaces writing files
-f = open(&#39;somefiles.txt&#39;,&#39;w&#39;) # creates a file f.write(&#39;Line 1\n&#39;) f.write(&#39;Line 2\n&#39;) f.close() # python doesn&#39;t write until you close or run out of buffer and will overwrite existing text appending files
-        <a href="https://www.codelooper.com/post/2022-08-03-python-opening-reading-writing-files/" class="post-read-more">[Read More]</a>
         
     </div>
 

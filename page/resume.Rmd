@@ -57,7 +57,7 @@ Last updated on `r Sys.Date()`.
 
 Chief Underwriting Officer
 
-Long Beach, CA
+Laguna Beach, CA
 
 - Develop underwriting standards
 - Underwrite policy and portfolio risks
@@ -78,7 +78,7 @@ Long Beach, CA
 -   Capital/cash flow/loss modeling
 -   Regulatory requirements, ratings, domicile consulting
 
-### Ironshore/Pembroke/Liberty/Hamilton
+### Ironshore/Pembroke/Liberty Mutual/Hamilton
 
 Regional Agriculture Reinsurance Manager
 
@@ -86,7 +86,7 @@ Los Angeles, CA
 
 2021 - 2015
 
--   Manage and underwrite global agriculture treaty risk portfolio.
+-   Manage and underwrite global agriculture treaty risk portfolio as our company transitioned through a number of M&A deals.
 -   Lead reinsurance binder for India and manage delegated underwriting authority in Australia.
 -   Lead data science projects involving yield estimation and portfolio optimization.
 -   Liaise with clients, brokers, government and academic partners.

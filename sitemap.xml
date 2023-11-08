@@ -3,18 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.codelooper.com/</loc>
-    <lastmod>2023-07-19T00:00:00+00:00</lastmod>
+    <lastmod>2023-11-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/categories/</loc>
-    <lastmod>2023-07-19T00:00:00+00:00</lastmod>
+    <lastmod>2023-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/data-analytics/</loc>
+    <lastmod>2023-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/categories/data-analytics/</loc>
+    <lastmod>2023-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/math/</loc>
+    <lastmod>2023-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/post/</loc>
+    <lastmod>2023-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/post/random-number-generator-20231108/</loc>
+    <lastmod>2023-11-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/</loc>
+    <lastmod>2023-11-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/categories/economics/</loc>
     <lastmod>2023-07-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/post/2023-07-19-ergodicity-and-insurance/</loc>
-    <lastmod>2023-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/post/</loc>
     <lastmod>2023-07-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/ai/</loc>
@@ -25,12 +40,6 @@
   </url><url>
     <loc>https://www.codelooper.com/post/2023-07-06-coursera-generative-ai/</loc>
     <lastmod>2023-07-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/tags/</loc>
-    <lastmod>2023-07-06T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/categories/data-analytics/</loc>
-    <lastmod>2022-09-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/database/</loc>
     <lastmod>2022-09-19T00:00:00+00:00</lastmod>
@@ -108,9 +117,6 @@
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/categories/agriculture/</loc>
-    <lastmod>2022-07-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/tags/data-analytics/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/education/</loc>
@@ -204,9 +210,6 @@
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/example/</loc>
-    <lastmod>2017-03-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/tags/math/</loc>
     <lastmod>2017-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/post/2017-03-05-math-sample/</loc>
