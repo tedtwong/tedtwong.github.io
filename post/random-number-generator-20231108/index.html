@@ -8,9 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>Random Number Generator - Teddy&#39;s online desktop</title>
-  <meta name="description" content="I wanted to generate a set of random numbers without resorting to the rand() function in excel. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley:
+  <meta name="description" content="I wanted to generate a set of random numbers without resorting to the rand() function in excel. I didn&rsquo;t want results to change each time I opened the file but I wanted a way to seed different values when needed. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley:
 https://research.ssl.berkeley.edu/~mlampton/RandomSpreadsheet4.pdf
-The paper has a formula for calculating a random value using a modulus function on a large number, but is also concerned with how portable such randomly generated numbers are between different software and hardware platforms. Here&rsquo;s my attempt at a summary of the formulas used within that paper:">
+The paper has a formula for producing a set of random values using a modulus function on a large number while maintaining portability of such randomly generated numbers between different software and hardware platforms.">
   <meta name="author" content="Teddy Wong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -59,9 +59,9 @@ The paper has a formula for calculating a random value using a modulus function 
     "name" : "Package Build"
   },
   "headline": "Random Number Generator",
-  "description" : "I wanted to generate a set of random numbers without resorting to the rand() function in excel. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley:\nhttps:\/\/research.ssl.berkeley.edu\/~mlampton\/RandomSpreadsheet4.pdf\nThe paper has a formula for calculating a random value using a modulus function on a large number, but is also concerned with how portable such randomly generated numbers are between different software and hardware platforms. Here\u0026rsquo;s my attempt at a summary of the formulas used within that paper:",
+  "description" : "I wanted to generate a set of random numbers without resorting to the rand() function in excel. I didn\u0026rsquo;t want results to change each time I opened the file but I wanted a way to seed different values when needed. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley:\nhttps:\/\/research.ssl.berkeley.edu\/~mlampton\/RandomSpreadsheet4.pdf\nThe paper has a formula for producing a set of random values using a modulus function on a large number while maintaining portability of such randomly generated numbers between different software and hardware platforms.",
   "inLanguage" : "en",
-  "wordCount":  107 ,
+  "wordCount":  158 ,
   "datePublished" : "2023-11-08T00:00:00",
   "dateModified" : "2023-11-08T00:00:00",
   "image" : "https:\/\/www.codelooper.com\/img\/redplane.png",
@@ -81,16 +81,16 @@ The paper has a formula for calculating a random value using a modulus function 
 </script>
 
 <meta property="og:title" content="Random Number Generator" />
-<meta property="og:description" content="I wanted to generate a set of random numbers without resorting to the rand() function in excel. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley:
+<meta property="og:description" content="I wanted to generate a set of random numbers without resorting to the rand() function in excel. I didn&rsquo;t want results to change each time I opened the file but I wanted a way to seed different values when needed. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley:
 https://research.ssl.berkeley.edu/~mlampton/RandomSpreadsheet4.pdf
-The paper has a formula for calculating a random value using a modulus function on a large number, but is also concerned with how portable such randomly generated numbers are between different software and hardware platforms. Here&rsquo;s my attempt at a summary of the formulas used within that paper:">
+The paper has a formula for producing a set of random values using a modulus function on a large number while maintaining portability of such randomly generated numbers between different software and hardware platforms.">
 <meta property="og:image" content="https://www.codelooper.com/img/redplane.png" />
 <meta property="og:url" content="https://www.codelooper.com/post/random-number-generator-20231108/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Teddy&#39;s online desktop" />
 
   <meta name="twitter:title" content="Random Number Generator" />
-  <meta name="twitter:description" content="I wanted to generate a set of random numbers without resorting to the rand() function in excel. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley: …">
+  <meta name="twitter:description" content="I wanted to generate a set of random numbers without resorting to the rand() function in excel. I didn&rsquo;t want results to change each time I opened the file but I wanted a way to seed different …">
   <meta name="twitter:image" content="https://www.codelooper.com/img/redplane.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link href='https://www.codelooper.com/img/redplane.png' rel='icon' type='image/x-icon'/>
@@ -277,7 +277,7 @@ if (!doNotTrack) {
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;107&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;158&nbsp;words
   
   
     
@@ -303,11 +303,11 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>I wanted to generate a set of random numbers without resorting to the rand() function in excel. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley:</p>
+        <p>I wanted to generate a set of random numbers without resorting to the rand() function in excel. I didn&rsquo;t want results to change each time I opened the file but I wanted a way to seed different values when needed. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley:</p>
 <p><a href="https://research.ssl.berkeley.edu/~mlampton/RandomSpreadsheet4.pdf">https://research.ssl.berkeley.edu/~mlampton/RandomSpreadsheet4.pdf</a></p>
-<p>The paper has a formula for calculating a random value using a modulus function on a large number, but is also concerned with how portable such randomly generated numbers are between different software and hardware platforms. Here&rsquo;s my attempt at a summary of the formulas used within that paper:</p>
-<p><a href="https://docs.google.com/spreadsheets/d/1_B94NiVy5mWPN-rX6z250NfoHedOerXSnY8M5GeTLv4/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1_B94NiVy5mWPN-rX6z250NfoHedOerXSnY8M5GeTLv4/edit?usp=sharing</a></p>
-<p>It&rsquo;s a useful excel file for anyone looking for a way to generate random uniform [0,1] values from a seed value without resorting to the rand() command.</p>
+<p>The paper has a formula for producing a set of random values using a modulus function on a large number while maintaining portability of such randomly generated numbers between different software and hardware platforms. Here&rsquo;s my attempt at a summary of the formulas used within that paper:</p>
+<p><a href="https://docs.google.com/spreadsheets/d/1_B94NiVy5mWPN-rX6z250NfoHedOerXSnY8M5GeTLv4/edit?usp=sharing">random number generator spreadsheet</a></p>
+<p>It&rsquo;s a useful set of calculations for anyone looking for a way to generate random uniform [0,1] values from a seed value without resorting to the rand() command. I haven&rsquo;t tested the portability aspect of it but the paper suggests that it is indeed portable with any spreadsheet capable of having 15 digit accuracy.</p>
 
 
         

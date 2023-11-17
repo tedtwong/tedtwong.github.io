@@ -12,9 +12,9 @@
       <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://www.codelooper.com/post/random-number-generator-20231108/</guid>
-      <description>I wanted to generate a set of random numbers without resorting to the rand() function in excel. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley:
+      <description>I wanted to generate a set of random numbers without resorting to the rand() function in excel. I didn&amp;rsquo;t want results to change each time I opened the file but I wanted a way to seed different values when needed. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley:
 https://research.ssl.berkeley.edu/~mlampton/RandomSpreadsheet4.pdf
-The paper has a formula for calculating a random value using a modulus function on a large number, but is also concerned with how portable such randomly generated numbers are between different software and hardware platforms. Here&amp;rsquo;s my attempt at a summary of the formulas used within that paper:</description>
+The paper has a formula for producing a set of random values using a modulus function on a large number while maintaining portability of such randomly generated numbers between different software and hardware platforms.</description>
     </item>
     
     <item>
