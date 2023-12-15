@@ -216,7 +216,7 @@ if (!doNotTrack) {
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 8, 2023
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 12, 2023
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
@@ -249,6 +249,108 @@ if (!doNotTrack) {
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+    <a href="https://www.codelooper.com/post/2023-12-12-chatgpt-python-code-for-distribution-fitting/">
+        <h2 class="post-title">ChatGPT python code for distribution fitting</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 12, 2023
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;234&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Package Build
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        import numpy as np import scipy.stats as stats import matplotlib.pyplot as plt from scipy.stats import norm, expon, lognorm, weibull_min, gamma, beta, gumbel_r # Your data data = np.array([0.1026, 0.284, 0.0259, 0.0364, 0.0401, 0.0297, 0.1035, 0.0533, 0.0742, 0.0246, 0.089, 0.1215, 0.1729, 0.0212, 0.0273, 0.065, 0.0853, 0.0399, 0.1926, 0.1238, 0.4324, 0.1324, 0.0486, 0.0411, 0.0414, 0.0329, 0.02, 0.0749, 0.0688, 0.1432, 0.1769, 0.0415, 0.0939, 0.2315, 0.4017, 0.0751, 0.0669, 0.242, 0.1931, 0.0839, 0.0601, 0.0794, 0.
+        <a href="https://www.codelooper.com/post/2023-12-12-chatgpt-python-code-for-distribution-fitting/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://www.codelooper.com/tags/data-analytics/">Data Analytics</a>&nbsp;
+        
+        <a href="https://www.codelooper.com/tags/python/">Python</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
+    <a href="https://www.codelooper.com/post/copula-example/">
+        <h2 class="post-title">Copula Example</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 8, 2023
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;654&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Package Build
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Trying an introduction to copulas exercise, from (R-excerises), using the dataset (https://www.kaggle.com/datasets/gtouzin/samplestocksreturn)
+Exercise 1 We’ll start by fitting the margin. First, do a histogram of both Apple and Microsoft returns to see the shape of both distributions.
+returns &lt;- read.csv(&quot;returns_00_17.csv&quot;) hist(returns$Apple) hist(returns$Microsoft) Exercise 2 Both distributions seems symmetric and have a domain which contain positive and negative values. Knowing those facts, use the fitdist() function to see how the normal, logistic and Cauchy distribution fit the Apple returns dataset.
+        <a href="https://www.codelooper.com/post/copula-example/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://www.codelooper.com/tags/math/">math</a>&nbsp;
+        
+        <a href="https://www.codelooper.com/tags/data-analytics/">Data Analytics</a>&nbsp;
+        
+        <a href="https://www.codelooper.com/tags/r/">R</a>&nbsp;
+        
+    </div>
+    
+
+</article>
           
             <article class="post-preview">
     <a href="https://www.codelooper.com/post/random-number-generator-20231108/">
@@ -640,104 +742,6 @@ How would you create a neural network that learns this relationship so that it w
         <a href="https://www.codelooper.com/tags/tensorflow/">Tensorflow</a>&nbsp;
         
         <a href="https://www.codelooper.com/tags/ml/">ML</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://www.codelooper.com/post/2022-08-03-python-handling-exceptions/">
-        <h2 class="post-title">Python - Handling Exceptions</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 3, 2022
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;205&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Teddy Wong
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        From: LinkedIn course ‘Python Essential Training’ by Ryan Mitchell https://www.linkedin.com/learning/python-essential-training-14898805
-Try, except, finally
-import time as time def causeError(): start = time.time() #set start timer try: #delay run by 0.5 secs time.sleep(0.5) return 1/0 except Exception: print(&#39;There was some sort of error!&#39;) finally: print(f&#39;Function took {time.time() - start} seconds to execute&#39;) causeError() ## There was some sort of error! ## Function took 0.5048558712005615 seconds to execute Custom Decorators *args **kwargs are multiple arguments or string arguments.
-        <a href="https://www.codelooper.com/post/2022-08-03-python-handling-exceptions/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://www.codelooper.com/tags/python/">Python</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://www.codelooper.com/post/2022-08-03-python-multithreading-multiprocessing/">
-        <h2 class="post-title">Python - Multithreading/Multiprocessing</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 3, 2022
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;3&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;589&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Teddy Wong
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        From: LinkedIn course ‘Python Essential Training’ by Ryan Mitchell https://www.linkedin.com/learning/python-essential-training-14898805
-import threading import time Threads
-def longSquare(num): time.sleep(1) return num**2 [longSquare(n) for n in range(0, 5)] ## [0, 1, 4, 9, 16] t1 = threading.Thread(target=longSquare, args=(1,)) #args is tuple t2 = threading.Thread(target=longSquare, args=(2,)) t1.start() t2.start() t1.join() t2.join() def longSquare(num, results): time.sleep(1) results[num] = num**2 results = {} t1 = threading.Thread(target=longSquare, args=(1, results)) #args are tuples t2 = threading.Thread(target=longSquare, args=(2, results)) t1.
-        <a href="https://www.codelooper.com/post/2022-08-03-python-multithreading-multiprocessing/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://www.codelooper.com/tags/python/">Python</a>&nbsp;
         
     </div>
     

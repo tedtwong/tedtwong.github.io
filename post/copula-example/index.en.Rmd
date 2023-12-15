@@ -1,0 +1,129 @@
+---
+title: Copula Example
+author: Package Build
+date: '2023-12-08'
+slug: copula-example
+categories:
+  - Data Analytics
+tags:
+  - math
+  - Data Analytics
+  - R
+type: ''
+subtitle: ''
+image: ''
+---
+
+Trying an introduction to copulas exercise, from ([R-excerises](https://www.r-exercises.com/2017/05/17/introduction-to-copulas-solutions-part-1-2/){.uri}), using the dataset (<https://www.kaggle.com/datasets/gtouzin/samplestocksreturn>)
+
+Exercise 1 We'll start by fitting the margin. First, do a histogram of both Apple and Microsoft returns to see the shape of both distributions.
+
+```{r}
+returns <- read.csv("returns_00_17.csv")
+hist(returns$Apple)
+hist(returns$Microsoft)
+
+```
+
+Exercise 2 Both distributions seems symmetric and have a domain which contain positive and negative values. Knowing those facts, use the fitdist() function to see how the normal, logistic and Cauchy distribution fit the Apple returns dataset. Which of those three distributions is best suited to simulate the Apple return dataset and what are the parameter of this distribution?
+
+```{r}
+library(fitdistrplus)
+
+apple.norm <- fitdist(returns$Apple,"norm")
+plotdist(returns$Apple,"norm", para=list(mean=apple.norm$estimate[1],sd=apple.norm$estimate[2]))
+```
+
+```{r}
+apple.norm$aic
+apple.norm$estimate
+```
+
+Exercise 3 Repeat exercise 2 with the Microsoft return.
+
+```{r}
+msft.norm <- fitdist(returns$Microsoft,"norm")
+plotdist(returns$Microsoft,"norm", para=list(mean=msft.norm$estimate[1],sd=msft.norm$estimate[2]))
+
+```
+
+```{r}
+msft.norm$aic
+msft.norm$estimate
+```
+
+```{r}
+msft.log <- fitdist(returns$Microsoft,"logis")
+plotdist(returns$Microsoft,"logis",para=list(location=msft.log$estimate[1],scale=msft.log$estimate[2]))
+```
+
+```{r}
+msft.log$aic
+```
+
+Exercise 4 Plot the joint distribution of the Apple and Microsoft daily returns. Add the regression line to the plot and compute the correlation of both variables.
+
+```{r}
+plot(returns$Apple,returns$Microsoft)
+abline(lm(returns$Apple~returns$Microsoft),col="red")
+```
+
+```{r}
+cor(returns$Apple,returns$Microsoft)
+```
+
+Exercise 5 Use the pobs() from the VineCopula() package to compute the pseudo-observations for both returns values, then use the BiCopSelect() function to select the copula which minimize the AIC on the dataset. Which copula is selected and what are his parameters.
+
+```{r}
+#install.packages("VineCopula")
+library(VineCopula)
+
+x.1 <- pobs(as.matrix(returns[,2:3]))[,1]
+x.2 <- pobs(as.matrix(returns[,2:3]))[,2]
+
+apriori.copula <- BiCopSelect(x.1,x.2)
+
+summary(apriori.copula)
+```
+
+Learn more about MultiVariate analysis in the online course Case Studies in Data Mining with R. In this course you will work thru a case study related to multivariate analysis and how to work with forecasting in the S&P 500.
+
+Exercise 6 Use the appropriate function from the VineCopula() package to create a copula object with the parameter computed in the last exercise. Then, do a three dimensional plot and a contour plot of the copula.
+
+```{r}
+set.seed(42)
+bi.cop <- BiCop(20,apriori.copula$par,apriori.copula$par2)
+
+plot(bi.cop, type="contour",size=25,margins="norm")
+plot(bi.cop, type="surface")
+
+
+
+
+```
+
+Exercise 7 Set the seed to 42 and generate a sample of 1000 points from this copula. Plot the sample and calculate the correlation of this sample. Does the correlation of the sample is similar to the correlation between the Apple and Microsoft returns?
+
+```{r}
+#install.packages("copula")
+library(copula)
+
+simCopula <- BiCopSim(1000,20,apriori.copula$par,apriori.copula$par2)
+plot(simCopula)
+```
+
+```{r}
+cor(simCopula[,1],simCopula[,2])
+```
+
+Exercise 8 Create a distribution from the copula you selected and the margins you fitted in the exercise 2 and 3.
+
+```{r}
+#t.cop <- tCopula(c(0.55,0.77), dim = 2, dispstr = "norm", df = 4,df.fixed = FALSE, df.min = 0.01)
+
+#mjd <- mvdc(copula=t.cop,margins=c("norm","norm"),paramMargins=list(list(mean=apple.norm$estimate[1], sd=apple.norm$estimate[2]),list(mean=msft.norm$estimate[1], sd=msft.norm$estimate[2])))
+```
+
+Exercise 9 Generate 1000 points from the distribution of exercise 8 and plot those points, with the Apple and Microsoft returns, in the same plot.
+
+Exercise 10 Having made a model, let's make some crude estimation with it! Imagine that this model has been proven to be effective to describe the relation between the apple return and the Microsoft return for a considerable amound of time and there's a spike in the price of Apple stock. Suppose you have another model who describe the Apple stock and who lead you to believe that the daily return on this stock has a 90% chance to be between 0.038 and 0.045. Using only this information, compute the range containing the possible daily return of the Microsoft stock at the end of the day and the mean of the possible values.

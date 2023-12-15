@@ -5,22 +5,40 @@
     <link>https://www.codelooper.com/tags/</link>
     <description>Recent content in Tags on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 08 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data Analytics</title>
       <link>https://www.codelooper.com/tags/data-analytics/</link>
-      <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://www.codelooper.com/tags/data-analytics/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Python</title>
+      <link>https://www.codelooper.com/tags/python/</link>
+      <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>math</title>
       <link>https://www.codelooper.com/tags/math/</link>
-      <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://www.codelooper.com/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>https://www.codelooper.com/tags/r/</link>
+      <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/tags/r/</guid>
       <description></description>
     </item>
     
@@ -39,15 +57,6 @@
       <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.codelooper.com/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>https://www.codelooper.com/tags/r/</link>
-      <pubDate>Sat, 06 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.codelooper.com/tags/r/</guid>
       <description></description>
     </item>
     
@@ -75,15 +84,6 @@
       <pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate>
       
       <guid>https://www.codelooper.com/tags/tensorflow/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://www.codelooper.com/tags/python/</link>
-      <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.codelooper.com/tags/python/</guid>
       <description></description>
     </item>
     
