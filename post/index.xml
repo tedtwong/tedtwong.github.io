@@ -12,7 +12,8 @@
       <pubDate>Fri, 15 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://www.codelooper.com/post/distribution-fitting-r-shiny/</guid>
-      <description> </description>
+      <description>This page is made using code from: https://github.com/semanzi/fitting_distributions_with_R_NHSR_2021/tree/main
+The app is hosted at: https://twong.shinyapps.io/HSMA_distr_tool/</description>
     </item>
     
     <item>
