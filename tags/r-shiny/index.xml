@@ -5,7 +5,16 @@
     <link>https://www.codelooper.com/tags/r-shiny/</link>
     <description>Recent content in R Shiny on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/r-shiny/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/r-shiny/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Distribution fitting</title>
+      <link>https://www.codelooper.com/post/distribution-fitting-r-shiny/</link>
+      <pubDate>Fri, 15 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/distribution-fitting-r-shiny/</guid>
+      <description> </description>
+    </item>
+    
     <item>
       <title>Running Shiny R within blogdown</title>
       <link>https://www.codelooper.com/post/running-shiny-within-blogdown/</link>

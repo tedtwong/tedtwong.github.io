@@ -1,0 +1,16 @@
+---
+title: Distribution fitting
+author: Package Build
+date: '2023-12-15'
+slug: distribution-fitting-R-shiny
+categories:
+  - Data Analytics
+tags:
+  - R
+  - R Shiny
+type: ''
+subtitle: ''
+image: ''
+output: html_document
+---
+<iframe height="800" width="100%" frameborder="no" src="https://twong.shinyapps.io/HSMA_distr_tool/"> </iframe>

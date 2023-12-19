@@ -36,8 +36,8 @@ data = np.array([0.1026, 0.284, 0.0259, 0.0364, 0.0401, 0.0297, 0.1035, 0.0533, 
                  0.0601, 0.0794, 0.145, 0.1439, 0.0415, 0.0523, 0.0413, 0.0701, 0.1141, 0.055])
 
 # Fit different distributions and compare them
-distribution_names = ['norm', 'expon', 'lognorm', 'weibull_min', 'gamma', 'beta', 'gumbel_r']
-#distribution_names = ['expon','weibull_min','gumbel_r','lognorm']
+#distribution_names = ['norm', 'expon', 'lognorm', 'weibull_min', 'gamma', 'beta', 'gumbel_r']
+distribution_names = ['expon','norm','lognorm','gamma']
 params = {}
 
 for distribution_name in distribution_names:

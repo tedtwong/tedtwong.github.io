@@ -3,10 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.codelooper.com/</loc>
-    <lastmod>2023-12-12T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/categories/</loc>
-    <lastmod>2023-12-12T00:00:00+00:00</lastmod>
+    <lastmod>2023-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/categories/data-analytics/</loc>
+    <lastmod>2023-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/post/distribution-fitting-r-shiny/</loc>
+    <lastmod>2023-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/post/</loc>
+    <lastmod>2023-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/r/</loc>
+    <lastmod>2023-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/r-shiny/</loc>
+    <lastmod>2023-12-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.codelooper.com/tags/</loc>
+    <lastmod>2023-12-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/post/2023-12-12-chatgpt-python-code-for-distribution-fitting/</loc>
     <lastmod>2023-12-12T00:00:00+00:00</lastmod>
@@ -14,13 +32,7 @@
     <loc>https://www.codelooper.com/tags/data-analytics/</loc>
     <lastmod>2023-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.codelooper.com/categories/data-analytics/</loc>
-    <lastmod>2023-12-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.codelooper.com/categories/ml/</loc>
-    <lastmod>2023-12-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/post/</loc>
     <lastmod>2023-12-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/categories/programming/</loc>
@@ -29,16 +41,10 @@
     <loc>https://www.codelooper.com/tags/python/</loc>
     <lastmod>2023-12-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.codelooper.com/tags/</loc>
-    <lastmod>2023-12-12T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.codelooper.com/post/copula-example/</loc>
     <lastmod>2023-12-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/math/</loc>
-    <lastmod>2023-12-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/tags/r/</loc>
     <lastmod>2023-12-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/post/random-number-generator-20231108/</loc>
@@ -150,9 +156,6 @@
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/tags/programming/</loc>
-    <lastmod>2022-07-18T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.codelooper.com/tags/r-shiny/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.codelooper.com/categories/r-shiny/</loc>
