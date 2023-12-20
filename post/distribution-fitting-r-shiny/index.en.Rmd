@@ -21,6 +21,6 @@ This page is made using code from: <https://github.com/semanzi/fitting_distribut
 The app is hosted at:
 <https://twong.shinyapps.io/HSMA_distr_tool/>
 
-<iframe height="800" width="100%" frameborder="no" src="https://twong.shinyapps.io/HSMA_distr_tool/">
+<iframe height="400" width="100%" frameborder="no" src="https://twong.shinyapps.io/HSMA_distr_tool/">
 
 </iframe>
