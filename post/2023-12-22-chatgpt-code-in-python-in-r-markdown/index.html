@@ -8,9 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>ChatGPT Shiny R app - Teddy&#39;s online desktop</title>
-  <meta name="description" content="Simple integration of ChatGPT into shiny R. No longer using Python in this.
+  <meta name="description" content="Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r
 The app is hosted at: https://twong.shinyapps.io/chat_bot/
-library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textAreaInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), textOutput(&quot;chat_output&quot;), p(&quot;&quot;), uiOutput(&quot;tab&quot;) ) server &lt;- function(input, output, session) { conversation_history &lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &lt;- isolate(input$user_input) conversation &lt;- isolate(conversation_history()) conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;))) conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message))) # Make a request to the OpenAI API response &lt;- httr::POST( url = &quot;https://api.">
+library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), textOutput(&quot;chat_output&quot;), p(&quot;&quot;), p(&quot;Code for this page is at https://codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown&quot;), tags$head(tags$style(&quot;#chat_output{color: blue; font-size: 15px; font-style: italic; font-styel: bold; }&quot; ) ) ) server &lt;- function(input, output, session) { conversation_history &lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &lt;- isolate(input$user_input) conversation &lt;- isolate(conversation_history()) conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;))) conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message))) # Make a request to the OpenAI API response &lt;- httr::POST( url = &quot;https://api.">
   <meta name="author" content="Teddy Wong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -59,9 +59,9 @@ library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny 
     "name" : "Package Build"
   },
   "headline": "ChatGPT Shiny R app",
-  "description" : "Simple integration of ChatGPT into shiny R. No longer using Python in this.\nThe app is hosted at: https:\/\/twong.shinyapps.io\/chat_bot\/\nlibrary(shiny) library(httr) ui \u0026lt;- fluidPage( titlePanel(\u0026quot;ChatGPT Shiny App\u0026quot;), textAreaInput(\u0026quot;user_input\u0026quot;, \u0026quot;Enter your message:\u0026quot;), actionButton(\u0026quot;submit_btn\u0026quot;, \u0026quot;Submit\u0026quot;), textOutput(\u0026quot;chat_output\u0026quot;), p(\u0026quot;\u0026quot;), uiOutput(\u0026quot;tab\u0026quot;) ) server \u0026lt;- function(input, output, session) { conversation_history \u0026lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message \u0026lt;- isolate(input$user_input) conversation \u0026lt;- isolate(conversation_history()) conversation \u0026lt;- c(conversation, list(list(role = \u0026quot;system\u0026quot;, content = \u0026quot;You:\u0026quot;))) conversation \u0026lt;- c(conversation, list(list(role = \u0026quot;user\u0026quot;, content = user_message))) # Make a request to the OpenAI API response \u0026lt;- httr::POST( url = \u0026quot;https:\/\/api.",
+  "description" : "Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: https:\/\/www.listendata.com\/2023\/05\/chatgpt-in-r.html#steps_to_run_chatgpt_in_r\nThe app is hosted at: https:\/\/twong.shinyapps.io\/chat_bot\/\nlibrary(shiny) library(httr) ui \u0026lt;- fluidPage( titlePanel(\u0026quot;ChatGPT Shiny App\u0026quot;), textInput(\u0026quot;user_input\u0026quot;, \u0026quot;Enter your message:\u0026quot;), actionButton(\u0026quot;submit_btn\u0026quot;, \u0026quot;Submit\u0026quot;), textOutput(\u0026quot;chat_output\u0026quot;), p(\u0026quot;\u0026quot;), p(\u0026quot;Code for this page is at https:\/\/codelooper.com\/post\/2023-12-22-chatgpt-code-in-python-in-r-markdown\u0026quot;), tags$head(tags$style(\u0026quot;#chat_output{color: blue; font-size: 15px; font-style: italic; font-styel: bold; }\u0026quot; ) ) ) server \u0026lt;- function(input, output, session) { conversation_history \u0026lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message \u0026lt;- isolate(input$user_input) conversation \u0026lt;- isolate(conversation_history()) conversation \u0026lt;- c(conversation, list(list(role = \u0026quot;system\u0026quot;, content = \u0026quot;You:\u0026quot;))) conversation \u0026lt;- c(conversation, list(list(role = \u0026quot;user\u0026quot;, content = user_message))) # Make a request to the OpenAI API response \u0026lt;- httr::POST( url = \u0026quot;https:\/\/api.",
   "inLanguage" : "en",
-  "wordCount":  161 ,
+  "wordCount":  185 ,
   "datePublished" : "2023-12-22T00:00:00",
   "dateModified" : "2023-12-22T00:00:00",
   "image" : "https:\/\/www.codelooper.com\/img\/redplane.png",
@@ -81,18 +81,17 @@ library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny 
 </script>
 
 <meta property="og:title" content="ChatGPT Shiny R app" />
-<meta property="og:description" content="Simple integration of ChatGPT into shiny R. No longer using Python in this.
+<meta property="og:description" content="Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r
 The app is hosted at: https://twong.shinyapps.io/chat_bot/
-library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textAreaInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), textOutput(&quot;chat_output&quot;), p(&quot;&quot;), uiOutput(&quot;tab&quot;) ) server &lt;- function(input, output, session) { conversation_history &lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &lt;- isolate(input$user_input) conversation &lt;- isolate(conversation_history()) conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;))) conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message))) # Make a request to the OpenAI API response &lt;- httr::POST( url = &quot;https://api.">
+library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), textOutput(&quot;chat_output&quot;), p(&quot;&quot;), p(&quot;Code for this page is at https://codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown&quot;), tags$head(tags$style(&quot;#chat_output{color: blue; font-size: 15px; font-style: italic; font-styel: bold; }&quot; ) ) ) server &lt;- function(input, output, session) { conversation_history &lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &lt;- isolate(input$user_input) conversation &lt;- isolate(conversation_history()) conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;))) conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message))) # Make a request to the OpenAI API response &lt;- httr::POST( url = &quot;https://api.">
 <meta property="og:image" content="https://www.codelooper.com/img/redplane.png" />
 <meta property="og:url" content="https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Teddy&#39;s online desktop" />
 
   <meta name="twitter:title" content="ChatGPT Shiny R app" />
-  <meta name="twitter:description" content="Simple integration of ChatGPT into shiny R. No longer using Python in this.
-The app is hosted at: https://twong.shinyapps.io/chat_bot/
-library(shiny) library(httr) ui &lt;- fluidPage( …">
+  <meta name="twitter:description" content="Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r
+The …">
   <meta name="twitter:image" content="https://www.codelooper.com/img/redplane.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link href='https://www.codelooper.com/img/redplane.png' rel='icon' type='image/x-icon'/>
@@ -279,7 +278,7 @@ if (!doNotTrack) {
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;161&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;185&nbsp;words
   
   
     
@@ -308,7 +307,7 @@ if (!doNotTrack) {
         
 
 
-<p>Simple integration of ChatGPT into shiny R. No longer using Python in this.</p>
+<p>Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: <a href="https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r" class="uri">https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r</a></p>
 <p>The app is hosted at: <a href="https://twong.shinyapps.io/chat_bot/" class="uri">https://twong.shinyapps.io/chat_bot/</a></p>
 <iframe height="250" width="100%" frameborder="no" src="https://twong.shinyapps.io/chat_bot/">
 </iframe>
@@ -317,55 +316,64 @@ library(httr)
 
 ui &lt;- fluidPage(
   titlePanel(&quot;ChatGPT Shiny App&quot;),
-  textAreaInput(&quot;user_input&quot;, &quot;Enter your message:&quot;),
+  textInput(&quot;user_input&quot;, &quot;Enter your message:&quot;),
   actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;),
   textOutput(&quot;chat_output&quot;),
   p(&quot;&quot;),
-  uiOutput(&quot;tab&quot;)
+  p(&quot;Code for this page is at https://codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown&quot;),
+  
+  tags$head(tags$style(&quot;#chat_output{color: blue;
+                                 font-size: 15px;
+                                 font-style: italic; 
+                                 font-styel: bold;
+                                 }&quot;
+  )
+  )
   
 )
 
 server &lt;- function(input, output, session) {
-
-    conversation_history &lt;- reactiveVal(list())
-    
-    observeEvent(input$submit_btn, {
-      user_message &lt;- isolate(input$user_input)
-      conversation &lt;- isolate(conversation_history())
-      conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;)))
-      conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message)))
-      
-      # Make a request to the OpenAI API
-      response &lt;- httr::POST(
-        url = &quot;https://api.openai.com/v1/chat/completions&quot;,
-        add_headers(
-          &quot;Content-Type&quot; = &quot;application/json&quot;,
-          &quot;Authorization&quot; = paste(&quot;Bearer&quot;, &quot;API_KEY&quot;, sep = &quot; &quot;)
-        ),
-        body = list(
-          model = &quot;gpt-3.5-turbo&quot;,
-          messages = conversation
-        ),
-        encode = &quot;json&quot;
-      )
-      
-      # Extract the bot&#39;s message from the API response
-      #bot_message &lt;- httr::content(response, &quot;text&quot;)
-      bot_message &lt;- trimws(content(response)$choices[[1]]$message$content)
-      conversation &lt;- c(conversation, list(list(role = &quot;assistant&quot;, content = bot_message)))
-      
-      conversation_history(conversation)
-      output$chat_output &lt;- renderText({
-        bot_message})
-        
-
-      })
-    url &lt;- a(&quot;Code for this page&quot;, href=&quot;https://codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown&quot;)
-    output$tab &lt;- renderUI({
-      tagList(&quot;URL link:&quot;, url)
-    })
-  }
+  conversation_history &lt;- reactiveVal(list())
   
+  observeEvent(input$submit_btn, {
+    user_message &lt;- isolate(input$user_input)
+    conversation &lt;- isolate(conversation_history())
+    conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;)))
+    conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message)))
+    
+    # Make a request to the OpenAI API
+    response &lt;- httr::POST(
+      url = &quot;https://api.openai.com/v1/chat/completions&quot;,
+      add_headers(
+        &quot;Content-Type&quot; = &quot;application/json&quot;,
+        &quot;Authorization&quot; = paste(&quot;Bearer&quot;, &quot;API_KEY&quot;, sep = &quot; &quot;)
+      ),
+      body = list(
+        model = &quot;gpt-3.5-turbo&quot;,
+        messages = conversation
+      ),
+      encode = &quot;json&quot;
+    )
+    
+    # Extract the bot&#39;s message from the API response
+    bot_message &lt;- httr::content(response, &quot;text&quot;)
+    bot_message &lt;- content(response)$choices[[1]]$message$content
+    
+    
+
+    print(conversation)
+    conversation &lt;- c(conversation, list(list(role = &quot;assistant&quot;, content = bot_message)))
+   
+    conversation_history(conversation)
+    output$chat_output &lt;- renderText({
+      # Display only the assistant&#39;s reply
+      assistant_reply &lt;- tail(conversation, 1)[[1]]$content
+      assistant_reply
+      })
+  
+    })
+  
+}
 
 shinyApp(ui, server)</code></pre>
 
