@@ -21,6 +21,7 @@ The app is hosted at: <https://twong.shinyapps.io/chat_bot/>
 
 </iframe>
 
+The code for this shiny app is below. Replace API_KEY with your own API key to run.
 ```
 library(shiny)
 library(httr)
