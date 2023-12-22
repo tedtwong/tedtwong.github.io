@@ -8,9 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>ChatGPT Shiny R app - Teddy&#39;s online desktop</title>
-  <meta name="description" content="Simple integration of chatgpt into shiny R.
-{The app is hosted at:} https://twong.shinyapps.io/chat_bot/
-library(shiny) ## Warning: package &#39;shiny&#39; was built under R version 4.2.3 library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), textOutput(&quot;chat_output&quot;) ) server &lt;- function(input, output, session) { conversation_history &lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &lt;- isolate(input$user_input) conversation &lt;- isolate(conversation_history()) conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;))) conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message))) # Make a request to the OpenAI API response &lt;- httr::POST( url = &quot;https://api.">
+  <meta name="description" content="Simple integration of chatgpt into shiny R. No longer using Python in this.
+The app is hosted at: https://twong.shinyapps.io/chat_bot/
+library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textAreaInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), textOutput(&quot;chat_output&quot;), p(&quot;&quot;), uiOutput(&quot;tab&quot;) ) server &lt;- function(input, output, session) { conversation_history &lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &lt;- isolate(input$user_input) conversation &lt;- isolate(conversation_history()) conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;))) conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message))) # Make a request to the OpenAI API response &lt;- httr::POST( url = &quot;https://api.">
   <meta name="author" content="Teddy Wong"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -59,9 +59,9 @@ library(shiny) ## Warning: package &#39;shiny&#39; was built under R version 4.2
     "name" : "Package Build"
   },
   "headline": "ChatGPT Shiny R app",
-  "description" : "Simple integration of chatgpt into shiny R.\n{The app is hosted at:} https:\/\/twong.shinyapps.io\/chat_bot\/\nlibrary(shiny) ## Warning: package \u0026#39;shiny\u0026#39; was built under R version 4.2.3 library(httr) ui \u0026lt;- fluidPage( titlePanel(\u0026quot;ChatGPT Shiny App\u0026quot;), textInput(\u0026quot;user_input\u0026quot;, \u0026quot;Enter your message:\u0026quot;), actionButton(\u0026quot;submit_btn\u0026quot;, \u0026quot;Submit\u0026quot;), textOutput(\u0026quot;chat_output\u0026quot;) ) server \u0026lt;- function(input, output, session) { conversation_history \u0026lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message \u0026lt;- isolate(input$user_input) conversation \u0026lt;- isolate(conversation_history()) conversation \u0026lt;- c(conversation, list(list(role = \u0026quot;system\u0026quot;, content = \u0026quot;You:\u0026quot;))) conversation \u0026lt;- c(conversation, list(list(role = \u0026quot;user\u0026quot;, content = user_message))) # Make a request to the OpenAI API response \u0026lt;- httr::POST( url = \u0026quot;https:\/\/api.",
+  "description" : "Simple integration of chatgpt into shiny R. No longer using Python in this.\nThe app is hosted at: https:\/\/twong.shinyapps.io\/chat_bot\/\nlibrary(shiny) library(httr) ui \u0026lt;- fluidPage( titlePanel(\u0026quot;ChatGPT Shiny App\u0026quot;), textAreaInput(\u0026quot;user_input\u0026quot;, \u0026quot;Enter your message:\u0026quot;), actionButton(\u0026quot;submit_btn\u0026quot;, \u0026quot;Submit\u0026quot;), textOutput(\u0026quot;chat_output\u0026quot;), p(\u0026quot;\u0026quot;), uiOutput(\u0026quot;tab\u0026quot;) ) server \u0026lt;- function(input, output, session) { conversation_history \u0026lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message \u0026lt;- isolate(input$user_input) conversation \u0026lt;- isolate(conversation_history()) conversation \u0026lt;- c(conversation, list(list(role = \u0026quot;system\u0026quot;, content = \u0026quot;You:\u0026quot;))) conversation \u0026lt;- c(conversation, list(list(role = \u0026quot;user\u0026quot;, content = user_message))) # Make a request to the OpenAI API response \u0026lt;- httr::POST( url = \u0026quot;https:\/\/api.",
   "inLanguage" : "en",
-  "wordCount":  159 ,
+  "wordCount":  161 ,
   "datePublished" : "2023-12-22T00:00:00",
   "dateModified" : "2023-12-22T00:00:00",
   "image" : "https:\/\/www.codelooper.com\/img\/redplane.png",
@@ -81,18 +81,18 @@ library(shiny) ## Warning: package &#39;shiny&#39; was built under R version 4.2
 </script>
 
 <meta property="og:title" content="ChatGPT Shiny R app" />
-<meta property="og:description" content="Simple integration of chatgpt into shiny R.
-{The app is hosted at:} https://twong.shinyapps.io/chat_bot/
-library(shiny) ## Warning: package &#39;shiny&#39; was built under R version 4.2.3 library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), textOutput(&quot;chat_output&quot;) ) server &lt;- function(input, output, session) { conversation_history &lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &lt;- isolate(input$user_input) conversation &lt;- isolate(conversation_history()) conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;))) conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message))) # Make a request to the OpenAI API response &lt;- httr::POST( url = &quot;https://api.">
+<meta property="og:description" content="Simple integration of chatgpt into shiny R. No longer using Python in this.
+The app is hosted at: https://twong.shinyapps.io/chat_bot/
+library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textAreaInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), textOutput(&quot;chat_output&quot;), p(&quot;&quot;), uiOutput(&quot;tab&quot;) ) server &lt;- function(input, output, session) { conversation_history &lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &lt;- isolate(input$user_input) conversation &lt;- isolate(conversation_history()) conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;))) conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message))) # Make a request to the OpenAI API response &lt;- httr::POST( url = &quot;https://api.">
 <meta property="og:image" content="https://www.codelooper.com/img/redplane.png" />
 <meta property="og:url" content="https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Teddy&#39;s online desktop" />
 
   <meta name="twitter:title" content="ChatGPT Shiny R app" />
-  <meta name="twitter:description" content="Simple integration of chatgpt into shiny R.
-{The app is hosted at:} https://twong.shinyapps.io/chat_bot/
-library(shiny) ## Warning: package &#39;shiny&#39; was built under R version 4.2.3 …">
+  <meta name="twitter:description" content="Simple integration of chatgpt into shiny R. No longer using Python in this.
+The app is hosted at: https://twong.shinyapps.io/chat_bot/
+library(shiny) library(httr) ui &lt;- fluidPage( …">
   <meta name="twitter:image" content="https://www.codelooper.com/img/redplane.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link href='https://www.codelooper.com/img/redplane.png' rel='icon' type='image/x-icon'/>
@@ -279,7 +279,7 @@ if (!doNotTrack) {
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;159&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;161&nbsp;words
   
   
     
@@ -308,19 +308,21 @@ if (!doNotTrack) {
         
 
 
-<p>Simple integration of chatgpt into shiny R.</p>
-<p>{The app is hosted at:} <a href="https://twong.shinyapps.io/chat_bot/" class="uri">https://twong.shinyapps.io/chat_bot/</a></p>
+<p>Simple integration of chatgpt into shiny R. No longer using Python in this.</p>
+<p>The app is hosted at: <a href="https://twong.shinyapps.io/chat_bot/" class="uri">https://twong.shinyapps.io/chat_bot/</a></p>
 <iframe height="400" width="100%" frameborder="no" src="https://twong.shinyapps.io/chat_bot/">
 </iframe>
-<pre class="r"><code>library(shiny)</code></pre>
-<pre><code>## Warning: package &#39;shiny&#39; was built under R version 4.2.3</code></pre>
-<pre class="r"><code>library(httr)
+<pre><code>library(shiny)
+library(httr)
 
 ui &lt;- fluidPage(
   titlePanel(&quot;ChatGPT Shiny App&quot;),
-  textInput(&quot;user_input&quot;, &quot;Enter your message:&quot;),
+  textAreaInput(&quot;user_input&quot;, &quot;Enter your message:&quot;),
   actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;),
-  textOutput(&quot;chat_output&quot;)
+  textOutput(&quot;chat_output&quot;),
+  p(&quot;&quot;),
+  uiOutput(&quot;tab&quot;)
+  
 )
 
 server &lt;- function(input, output, session) {
@@ -338,7 +340,7 @@ server &lt;- function(input, output, session) {
         url = &quot;https://api.openai.com/v1/chat/completions&quot;,
         add_headers(
           &quot;Content-Type&quot; = &quot;application/json&quot;,
-          &quot;Authorization&quot; = paste(&quot;Bearer&quot;, &quot;api_key&quot;, sep = &quot; &quot;)
+          &quot;Authorization&quot; = paste(&quot;Bearer&quot;, &quot;API_KEY&quot;, sep = &quot; &quot;)
         ),
         body = list(
           model = &quot;gpt-3.5-turbo&quot;,
@@ -354,14 +356,18 @@ server &lt;- function(input, output, session) {
       
       conversation_history(conversation)
       output$chat_output &lt;- renderText({
-        bot_message
+        bot_message})
+        
+
       })
+    url &lt;- a(&quot;Code for this page&quot;, href=&quot;https://codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown&quot;)
+    output$tab &lt;- renderUI({
+      tagList(&quot;URL link:&quot;, url)
     })
   }
   
 
 shinyApp(ui, server)</code></pre>
-<div style="width: 100% ; height: 400px ; text-align: center; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;" class="muted well">Shiny applications not supported in static R Markdown documents</div>
 
 
         

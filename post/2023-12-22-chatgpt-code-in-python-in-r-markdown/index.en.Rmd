@@ -13,66 +13,67 @@ subtitle: ''
 image: ''
 ---
 
-Simple integration of chatgpt into shiny R.
+Simple integration of chatgpt into shiny R. No longer using Python in this.
 
-{The app is hosted at:} <https://twong.shinyapps.io/chat_bot/>
+The app is hosted at: <https://twong.shinyapps.io/chat_bot/>
 
-
-
-<iframe height="400" width="100%" frameborder="no" 
-
-src="https://twong.shinyapps.io/chat_bot/">
+<iframe height="400" width="100%" frameborder="no" src="https://twong.shinyapps.io/chat_bot/">
 
 </iframe>
 
+    library(shiny)
+    library(httr)
 
-```{r}
-library(shiny)
-library(httr)
-
-ui <- fluidPage(
-  titlePanel("ChatGPT Shiny App"),
-  textInput("user_input", "Enter your message:"),
-  actionButton("submit_btn", "Submit"),
-  textOutput("chat_output")
-)
-
-server <- function(input, output, session) {
-
-    conversation_history <- reactiveVal(list())
-    
-    observeEvent(input$submit_btn, {
-      user_message <- isolate(input$user_input)
-      conversation <- isolate(conversation_history())
-      conversation <- c(conversation, list(list(role = "system", content = "You:")))
-      conversation <- c(conversation, list(list(role = "user", content = user_message)))
+    ui <- fluidPage(
+      titlePanel("ChatGPT Shiny App"),
+      textAreaInput("user_input", "Enter your message:"),
+      actionButton("submit_btn", "Submit"),
+      textOutput("chat_output"),
+      p(""),
+      uiOutput("tab")
       
-      # Make a request to the OpenAI API
-      response <- httr::POST(
-        url = "https://api.openai.com/v1/chat/completions",
-        add_headers(
-          "Content-Type" = "application/json",
-          "Authorization" = paste("Bearer", "api_key", sep = " ")
-        ),
-        body = list(
-          model = "gpt-3.5-turbo",
-          messages = conversation
-        ),
-        encode = "json"
-      )
-      
-      # Extract the bot's message from the API response
-      #bot_message <- httr::content(response, "text")
-      bot_message <- trimws(content(response)$choices[[1]]$message$content)
-      conversation <- c(conversation, list(list(role = "assistant", content = bot_message)))
-      
-      conversation_history(conversation)
-      output$chat_output <- renderText({
-        bot_message
-      })
-    })
-  }
-  
+    )
 
-shinyApp(ui, server)
-```
+    server <- function(input, output, session) {
+
+        conversation_history <- reactiveVal(list())
+        
+        observeEvent(input$submit_btn, {
+          user_message <- isolate(input$user_input)
+          conversation <- isolate(conversation_history())
+          conversation <- c(conversation, list(list(role = "system", content = "You:")))
+          conversation <- c(conversation, list(list(role = "user", content = user_message)))
+          
+          # Make a request to the OpenAI API
+          response <- httr::POST(
+            url = "https://api.openai.com/v1/chat/completions",
+            add_headers(
+              "Content-Type" = "application/json",
+              "Authorization" = paste("Bearer", "API_KEY", sep = " ")
+            ),
+            body = list(
+              model = "gpt-3.5-turbo",
+              messages = conversation
+            ),
+            encode = "json"
+          )
+          
+          # Extract the bot's message from the API response
+          #bot_message <- httr::content(response, "text")
+          bot_message <- trimws(content(response)$choices[[1]]$message$content)
+          conversation <- c(conversation, list(list(role = "assistant", content = bot_message)))
+          
+          conversation_history(conversation)
+          output$chat_output <- renderText({
+            bot_message})
+            
+
+          })
+        url <- a("Code for this page", href="https://codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown")
+        output$tab <- renderUI({
+          tagList("URL link:", url)
+        })
+      }
+      
+
+    shinyApp(ui, server)
