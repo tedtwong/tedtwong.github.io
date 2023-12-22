@@ -5,7 +5,16 @@
     <link>https://www.codelooper.com/categories/</link>
     <description>Recent content in Categories on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 15 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Programming</title>
+      <link>https://www.codelooper.com/categories/programming/</link>
+      <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/categories/programming/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Data Analytics</title>
       <link>https://www.codelooper.com/categories/data-analytics/</link>
@@ -21,15 +30,6 @@
       <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
       
       <guid>https://www.codelooper.com/categories/ml/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
-      <link>https://www.codelooper.com/categories/programming/</link>
-      <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.codelooper.com/categories/programming/</guid>
       <description></description>
     </item>
     

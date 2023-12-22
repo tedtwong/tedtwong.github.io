@@ -232,6 +232,57 @@ if (!doNotTrack) {
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/">
+        <h2 class="post-title">ChatGPT Shiny R app</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 22, 2023
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;159&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Package Build
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Simple integration of chatgpt into shiny R.
+{The app is hosted at:} https://twong.shinyapps.io/chat_bot/
+library(shiny) ## Warning: package &#39;shiny&#39; was built under R version 4.2.3 library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), textOutput(&quot;chat_output&quot;) ) server &lt;- function(input, output, session) { conversation_history &lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &lt;- isolate(input$user_input) conversation &lt;- isolate(conversation_history()) conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;))) conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message))) # Make a request to the OpenAI API response &lt;- httr::POST( url = &quot;https://api.
+        <a href="https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://www.codelooper.com/tags/programming/">Programming</a>&nbsp;
+        
+        <a href="https://www.codelooper.com/tags/r-markdown/">R Markdown</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://www.codelooper.com/post/2023-12-12-chatgpt-python-code-for-distribution-fitting/">
         <h2 class="post-title">ChatGPT python code for distribution fitting</h2>
         
@@ -667,55 +718,6 @@ np.random.seed(1) initialize weights randomly with mean 0 syn0 = 2*np.random.ran
 
 
 
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://www.codelooper.com/tags/python/">Python</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://www.codelooper.com/post/2022-07-28-codecademy-pandas-lesson/">
-        <h2 class="post-title">Codecademy - Pandas Lesson</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 28, 2022
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;25&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;5258&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Teddy Wong
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.
-Write a command that will produce a Series made up of the March data from df from all four clinic sites and save it to the variable march.
-#import /;../,codecademylib3 import pandas as pd df = pd.DataFrame([ [&#39;January&#39;, 100, 100, 23, 100], [&#39;February&#39;, 51, 45, 145, 45], [&#39;March&#39;, 81, 96, 65, 96], [&#39;April&#39;, 80, 80, 54, 180], [&#39;May&#39;, 51, 54, 54, 154], [&#39;June&#39;, 112, 109, 79, 129]], columns=[&#39;month&#39;, &#39;clinic_east&#39;, &#39;clinic_north&#39;, &#39;clinic_south&#39;, &#39;clinic_west&#39;]) print(df) ## month clinic_east clinic_north clinic_south clinic_west ## 0 January 100 100 23 100 ## 1 February 51 45 145 45 ## 2 March 81 96 65 96 ## 3 April 80 80 54 180 ## 4 May 51 54 54 154 ## 5 June 112 109 79 129 # integer location within dataframe # locations are zero indexed and doesn&#39;t include the ending integer march = df.
-        <a href="https://www.codelooper.com/post/2022-07-28-codecademy-pandas-lesson/" class="post-read-more">[Read More]</a>
         
     </div>
 

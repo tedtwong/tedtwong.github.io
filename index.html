@@ -238,6 +238,57 @@ if (!doNotTrack) {
           
           
             <article class="post-preview">
+    <a href="https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/">
+        <h2 class="post-title">ChatGPT Shiny R app</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 22, 2023
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;159&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Package Build
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Simple integration of chatgpt into shiny R.
+{The app is hosted at:} https://twong.shinyapps.io/chat_bot/
+library(shiny) ## Warning: package &#39;shiny&#39; was built under R version 4.2.3 library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), textOutput(&quot;chat_output&quot;) ) server &lt;- function(input, output, session) { conversation_history &lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &lt;- isolate(input$user_input) conversation &lt;- isolate(conversation_history()) conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;))) conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message))) # Make a request to the OpenAI API response &lt;- httr::POST( url = &quot;https://api.
+        <a href="https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://www.codelooper.com/tags/programming/">Programming</a>&nbsp;
+        
+        <a href="https://www.codelooper.com/tags/r-markdown/">R Markdown</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://www.codelooper.com/post/distribution-fitting-r-shiny/">
         <h2 class="post-title">Distribution fitting</h2>
         
@@ -682,55 +733,6 @@ Complete a random Training and Test set from one Data source using both an R fun
         <a href="https://www.codelooper.com/tags/r/">R</a>&nbsp;
         
         <a href="https://www.codelooper.com/tags/random-forest/">Random Forest</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://www.codelooper.com/post/2022-08-04-completed--deeplearning-tensorflow-for-ai-course/">
-        <h2 class="post-title">Completed the Deeplearning.ai Tensorflow for AI course</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 4, 2022
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;212&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Teddy
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        I took Andrew Ng’s ML course on Coursera in 2015, but the landscape has changed since then. The 2015 course had us build a neural network from scratch using matrix multiplication using Octave (open-source Matlab). Now in 2022 it’s taught using python, tensorflow, and Keras API rather than using matrix multiplication. This course is better if you just want to apply machine learning or learn what’s involved. This course allows you to do more in less time, but you come away with a fuzzier idea of what’s happening in the neural network.
-        <a href="https://www.codelooper.com/post/2022-08-04-completed--deeplearning-tensorflow-for-ai-course/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://www.codelooper.com/tags/ml/">ML</a>&nbsp;
-        
-        <a href="https://www.codelooper.com/tags/tensorflow/">Tensorflow</a>&nbsp;
         
     </div>
     

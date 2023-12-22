@@ -5,7 +5,18 @@
     <link>https://www.codelooper.com/categories/programming/</link>
     <description>Recent content in Programming on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ChatGPT Shiny R app</title>
+      <link>https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/</link>
+      <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/</guid>
+      <description>Simple integration of chatgpt into shiny R.
+{The app is hosted at:} https://twong.shinyapps.io/chat_bot/
+library(shiny) ## Warning: package &amp;#39;shiny&amp;#39; was built under R version 4.2.3 library(httr) ui &amp;lt;- fluidPage( titlePanel(&amp;quot;ChatGPT Shiny App&amp;quot;), textInput(&amp;quot;user_input&amp;quot;, &amp;quot;Enter your message:&amp;quot;), actionButton(&amp;quot;submit_btn&amp;quot;, &amp;quot;Submit&amp;quot;), textOutput(&amp;quot;chat_output&amp;quot;) ) server &amp;lt;- function(input, output, session) { conversation_history &amp;lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &amp;lt;- isolate(input$user_input) conversation &amp;lt;- isolate(conversation_history()) conversation &amp;lt;- c(conversation, list(list(role = &amp;quot;system&amp;quot;, content = &amp;quot;You:&amp;quot;))) conversation &amp;lt;- c(conversation, list(list(role = &amp;quot;user&amp;quot;, content = user_message))) # Make a request to the OpenAI API response &amp;lt;- httr::POST( url = &amp;quot;https://api.</description>
+    </item>
+    
     <item>
       <title>ChatGPT python code for distribution fitting</title>
       <link>https://www.codelooper.com/post/2023-12-12-chatgpt-python-code-for-distribution-fitting/</link>
