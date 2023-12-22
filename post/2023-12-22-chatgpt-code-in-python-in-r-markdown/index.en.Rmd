@@ -17,7 +17,7 @@ Simple integration of ChatGPT into shiny R. No longer using Python in this. Used
 
 The app is hosted at: <https://twong.shinyapps.io/chat_bot/>
 
-<iframe height="250" width="100%" frameborder="no" src="https://twong.shinyapps.io/chat_bot/">
+<iframe height="250" width="100%" style="border:2px solid black;" src="https://twong.shinyapps.io/chat_bot/">
 
 </iframe>
 
