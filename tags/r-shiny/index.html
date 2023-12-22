@@ -249,7 +249,7 @@ if (!doNotTrack) {
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;156&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;14&nbsp;words
   
   
     
@@ -263,10 +263,15 @@ if (!doNotTrack) {
     </p>
     <div class="post-entry">
         
-        This page is made using code from: https://github.com/semanzi/fitting_distributions_with_R_NHSR_2021/tree/main
-The app is hosted at: https://twong.shinyapps.io/HSMA_distr_tool/
-library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textAreaInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), textOutput(&quot;chat_output&quot;), p(&quot;&quot;), uiOutput(&quot;tab&quot;) ) server &lt;- function(input, output, session) { conversation_history &lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &lt;- isolate(input$user_input) conversation &lt;- isolate(conversation_history()) conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;))) conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message))) # Make a request to the OpenAI API response &lt;- httr::POST( url = &quot;https://api.
-        <a href="https://www.codelooper.com/post/distribution-fitting-r-shiny/" class="post-read-more">[Read More]</a>
+        
+
+
+<p>This page is made using code from: <a href="https://github.com/semanzi/fitting_distributions_with_R_NHSR_2021/tree/main" class="uri">https://github.com/semanzi/fitting_distributions_with_R_NHSR_2021/tree/main</a></p>
+<p>The app is hosted at:
+<a href="https://twong.shinyapps.io/HSMA_distr_tool/" class="uri">https://twong.shinyapps.io/HSMA_distr_tool/</a></p>
+<iframe height="400" width="100%" frameborder="yes" src="https://twong.shinyapps.io/HSMA_distr_tool/">
+</iframe>
+
         
     </div>
 

@@ -13,8 +13,7 @@
       
       <guid>https://www.codelooper.com/post/distribution-fitting-r-shiny/</guid>
       <description>This page is made using code from: https://github.com/semanzi/fitting_distributions_with_R_NHSR_2021/tree/main
-The app is hosted at: https://twong.shinyapps.io/HSMA_distr_tool/
-library(shiny) library(httr) ui &amp;lt;- fluidPage( titlePanel(&amp;quot;ChatGPT Shiny App&amp;quot;), textAreaInput(&amp;quot;user_input&amp;quot;, &amp;quot;Enter your message:&amp;quot;), actionButton(&amp;quot;submit_btn&amp;quot;, &amp;quot;Submit&amp;quot;), textOutput(&amp;quot;chat_output&amp;quot;), p(&amp;quot;&amp;quot;), uiOutput(&amp;quot;tab&amp;quot;) ) server &amp;lt;- function(input, output, session) { conversation_history &amp;lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &amp;lt;- isolate(input$user_input) conversation &amp;lt;- isolate(conversation_history()) conversation &amp;lt;- c(conversation, list(list(role = &amp;quot;system&amp;quot;, content = &amp;quot;You:&amp;quot;))) conversation &amp;lt;- c(conversation, list(list(role = &amp;quot;user&amp;quot;, content = user_message))) # Make a request to the OpenAI API response &amp;lt;- httr::POST( url = &amp;quot;https://api.</description>
+The app is hosted at: https://twong.shinyapps.io/HSMA_distr_tool/</description>
     </item>
     
     <item>

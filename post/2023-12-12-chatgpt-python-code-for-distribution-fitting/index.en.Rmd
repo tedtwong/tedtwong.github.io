@@ -15,11 +15,17 @@ subtitle: ''
 image: ''
 ---
 
-```{r setup, include=FALSE}
+I asked ChatGPT for some python code to do distribution fitting and this is what it provided. I think I needed to edit it to fix some errors but it's a nice solution.
+
+First, I wanted to put in some R code that will allow me to display the results in blogdown, which is what I'm using to post to this site.
+
+```{r setup, include=TRUE}
 library(knitr)  
 library(reticulate)  
 knitr::knit_engines$set(python = reticulate::eng_python)  
 ```
+
+The following python code was used for distribution fitting. Note the fitted distribution is exponential with location and scale. When using fitdist function in R, it fits a one parameter exponential distribution and would give a different result.
 
 ```{python}
 
@@ -65,6 +71,7 @@ plt.show()
 
 
 ```
+
 ```{r}
 
 ```
