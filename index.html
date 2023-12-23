@@ -238,6 +238,62 @@ if (!doNotTrack) {
           
           
             <article class="post-preview">
+    <a href="https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/">
+        <h2 class="post-title">ChatGPT Shiny R app</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 22, 2023
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;204&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Package Build
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r
+The app is hosted at: https://twong.shinyapps.io/chat_bot/
+The code for this shiny app is below.
+library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), p(&quot;&quot;), textOutput(&quot;chat_output&quot;), p(&quot;&quot;), p(&quot;Code for this page is at https://codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown&quot;), tags$head(tags$style(&quot;#chat_output{color: #C24A53; font-size: 25px; #font-style: italic; font-family: Georgia; padding-left: 25px; }&quot; ) ) ) server &lt;- function(input, output, session) { conversation_history &lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &lt;- isolate(input$user_input) conversation &lt;- isolate(conversation_history()) conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;))) conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message))) # Make a request to the OpenAI API response &lt;- httr::POST( url = &quot;https://api.
+        <a href="https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://www.codelooper.com/tags/programming/">Programming</a>&nbsp;
+        
+        <a href="https://www.codelooper.com/tags/r-markdownblog/">R Markdownblog</a>&nbsp;
+        
+        <a href="https://www.codelooper.com/tags/chatgpt/">ChatGPT</a>&nbsp;
+        
+        <a href="https://www.codelooper.com/tags/r-shiny/">R Shiny</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://www.codelooper.com/post/2023-12-22-kuminga-dunks/">
         <h2 class="post-title">Kuminga Dunks</h2>
         
@@ -249,7 +305,7 @@ if (!doNotTrack) {
         <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 23, 2023
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 22, 2023
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
@@ -269,7 +325,9 @@ if (!doNotTrack) {
     </p>
     <div class="post-entry">
         
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/-NdlnWGHZPQ?si=pFXA0WbH7AYbd_yE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="560" height="315" style="border:5px solid #C2AAAB;" src="https://www.youtube.com/embed/-NdlnWGHZPQ?si=pFXA0WbH7AYbd_yE" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+
         
     </div>
 
@@ -281,62 +339,6 @@ if (!doNotTrack) {
         <a href="https://www.codelooper.com/tags/basketball/">Basketball</a>&nbsp;
         
         <a href="https://www.codelooper.com/tags/warriors/">Warriors</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/">
-        <h2 class="post-title">ChatGPT Shiny R app</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 22, 2023
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;205&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Package Build
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r
-The app is hosted at: https://twong.shinyapps.io/chat_bot/
-The code for this shiny app is below. Replace API_KEY with your own API key to run.
-library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), p(&quot;&quot;), textOutput(&quot;chat_output&quot;), p(&quot;&quot;), p(&quot;Code for this page is at https://codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown&quot;), tags$head(tags$style(&quot;#chat_output{color: #C24A53; font-size: 25px; #font-style: italic; font-family: Georgia; padding-left: 25px; }&quot; ) ) ) server &lt;- function(input, output, session) { conversation_history &lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &lt;- isolate(input$user_input) conversation &lt;- isolate(conversation_history()) conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;))) conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message))) # Make a request to the OpenAI API response &lt;- httr::POST( url = &quot;https://api.
-        <a href="https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://www.codelooper.com/tags/programming/">Programming</a>&nbsp;
-        
-        <a href="https://www.codelooper.com/tags/r-markdownblog/">R Markdownblog</a>&nbsp;
-        
-        <a href="https://www.codelooper.com/tags/chatgpt/">ChatGPT</a>&nbsp;
-        
-        <a href="https://www.codelooper.com/tags/r-shiny/">R Shiny</a>&nbsp;
         
     </div>
     
@@ -417,7 +419,7 @@ library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny 
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;275&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;291&nbsp;words
   
   
     

@@ -13,7 +13,7 @@
       <link>https://www.codelooper.com/post/2022-07-19-datacamp-s-tidyverse-course-using-gapminder-dataset/</link>
       <pubDate>Tue, 19 Jul 2022 00:00:00 +0000</pubDate>
       <guid>https://www.codelooper.com/post/2022-07-19-datacamp-s-tidyverse-course-using-gapminder-dataset/</guid>
-      <description>Datacamp’s Tidyverse course using Gapminder dataset&#xA;library(gapminder) library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union head(gapminder) ## # A tibble: 6 × 6 ## country continent year lifeExp pop gdpPercap ## &amp;lt;fct&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; ## 1 Afghanistan Asia 1952 28.8 8425333 779. ## 2 Afghanistan Asia 1957 30.</description>
+      <description>Datacamp’s Tidyverse course using Gapminder dataset&#xA;library(gapminder) library(dplyr) ## Warning: package &amp;#39;dplyr&amp;#39; was built under R version 4.2.3 ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union head(gapminder) ## # A tibble: 6 × 6 ## country continent year lifeExp pop gdpPercap ## &amp;lt;fct&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; ## 1 Afghanistan Asia 1952 28.</description>
     </item>
     <item>
       <title>Cat XL pricing using rate on line (ROL) curves</title>
@@ -25,7 +25,7 @@
     <item>
       <title>Hello R Markdown</title>
       <link>https://www.codelooper.com/post/2020-12-01-r-rmarkdown/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
       <guid>https://www.codelooper.com/post/2020-12-01-r-rmarkdown/</guid>
       <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.&#xA;You can embed an R code chunk like this:&#xA;summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
     </item>

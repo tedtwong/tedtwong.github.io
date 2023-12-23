@@ -308,15 +308,13 @@ if (!doNotTrack) {
 
 
 <p>Trying an introduction to copulas exercise, from (<a href="https://www.r-exercises.com/2017/05/17/introduction-to-copulas-solutions-part-1-2/" class="uri">R-excerises</a>), using the dataset (<a href="https://www.kaggle.com/datasets/gtouzin/samplestocksreturn" class="uri">https://www.kaggle.com/datasets/gtouzin/samplestocksreturn</a>)</p>
-<p>Exercise 1
-We’ll start by fitting the margin. First, do a histogram of both Apple and Microsoft returns to see the shape of both distributions.</p>
+<p>Exercise 1 We’ll start by fitting the margin. First, do a histogram of both Apple and Microsoft returns to see the shape of both distributions.</p>
 <pre class="r"><code>returns &lt;- read.csv(&quot;returns_00_17.csv&quot;)
 hist(returns$Apple)</code></pre>
 <p><img src="https://www.codelooper.com/post/copula-example/index.en_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 <pre class="r"><code>hist(returns$Microsoft)</code></pre>
 <p><img src="https://www.codelooper.com/post/copula-example/index.en_files/figure-html/unnamed-chunk-1-2.png" width="672" /></p>
-<p>Exercise 2
-Both distributions seems symmetric and have a domain which contain positive and negative values. Knowing those facts, use the fitdist() function to see how the normal, logistic and Cauchy distribution fit the Apple returns dataset. Which of those three distributions is best suited to simulate the Apple return dataset and what are the parameter of this distribution?</p>
+<p>Exercise 2 Both distributions seems symmetric and have a domain which contain positive and negative values. Knowing those facts, use the fitdist() function to see how the normal, logistic and Cauchy distribution fit the Apple returns dataset. Which of those three distributions is best suited to simulate the Apple return dataset and what are the parameter of this distribution?</p>
 <pre class="r"><code>library(fitdistrplus)</code></pre>
 <pre><code>## Loading required package: MASS</code></pre>
 <pre><code>## Loading required package: survival</code></pre>
@@ -328,8 +326,7 @@ plotdist(returns$Apple,&quot;norm&quot;, para=list(mean=apple.norm$estimate[1],s
 <pre class="r"><code>apple.norm$estimate</code></pre>
 <pre><code>##       mean         sd 
 ## 0.00113756 0.01785252</code></pre>
-<p>Exercise 3
-Repeat exercise 2 with the Microsoft return.</p>
+<p>Exercise 3 Repeat exercise 2 with the Microsoft return.</p>
 <pre class="r"><code>msft.norm &lt;- fitdist(returns$Microsoft,&quot;norm&quot;)
 plotdist(returns$Microsoft,&quot;norm&quot;, para=list(mean=msft.norm$estimate[1],sd=msft.norm$estimate[2]))</code></pre>
 <p><img src="https://www.codelooper.com/post/copula-example/index.en_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
@@ -343,15 +340,13 @@ plotdist(returns$Microsoft,&quot;logis&quot;,para=list(location=msft.log$estimat
 <p><img src="https://www.codelooper.com/post/copula-example/index.en_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <pre class="r"><code>msft.log$aic</code></pre>
 <pre><code>## [1] -22687.25</code></pre>
-<p>Exercise 4
-Plot the joint distribution of the Apple and Microsoft daily returns. Add the regression line to the plot and compute the correlation of both variables.</p>
+<p>Exercise 4 Plot the joint distribution of the Apple and Microsoft daily returns. Add the regression line to the plot and compute the correlation of both variables.</p>
 <pre class="r"><code>plot(returns$Apple,returns$Microsoft)
 abline(lm(returns$Apple~returns$Microsoft),col=&quot;red&quot;)</code></pre>
 <p><img src="https://www.codelooper.com/post/copula-example/index.en_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <pre class="r"><code>cor(returns$Apple,returns$Microsoft)</code></pre>
 <pre><code>## [1] 0.3786614</code></pre>
-<p>Exercise 5
-Use the pobs() from the VineCopula() package to compute the pseudo-observations for both returns values, then use the BiCopSelect() function to select the copula which minimize the AIC on the dataset. Which copula is selected and what are his parameters.</p>
+<p>Exercise 5 Use the pobs() from the VineCopula() package to compute the pseudo-observations for both returns values, then use the BiCopSelect() function to select the copula which minimize the AIC on the dataset. Which copula is selected and what are his parameters.</p>
 <pre class="r"><code>#install.packages(&quot;VineCopula&quot;)
 library(VineCopula)
 
@@ -382,8 +377,7 @@ summary(apriori.copula)</code></pre>
 ## AIC:    -666.82 
 ## BIC:    -654.32</code></pre>
 <p>Learn more about MultiVariate analysis in the online course Case Studies in Data Mining with R. In this course you will work thru a case study related to multivariate analysis and how to work with forecasting in the S&amp;P 500.</p>
-<p>Exercise 6
-Use the appropriate function from the VineCopula() package to create a copula object with the parameter computed in the last exercise. Then, do a three dimensional plot and a contour plot of the copula.</p>
+<p>Exercise 6 Use the appropriate function from the VineCopula() package to create a copula object with the parameter computed in the last exercise. Then, do a three dimensional plot and a contour plot of the copula.</p>
 <pre class="r"><code>set.seed(42)
 bi.cop &lt;- BiCop(20,apriori.copula$par,apriori.copula$par2)
 

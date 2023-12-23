@@ -6,21 +6,21 @@
     <description>Recent content in Posts on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 23 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Dec 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.codelooper.com/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Kuminga Dunks</title>
-      <link>https://www.codelooper.com/post/2023-12-22-kuminga-dunks/</link>
-      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://www.codelooper.com/post/2023-12-22-kuminga-dunks/</guid>
-      <description></description>
-    </item>
     <item>
       <title>ChatGPT Shiny R app</title>
       <link>https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/</link>
       <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/</guid>
-      <description>Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r&#xA;The app is hosted at: https://twong.shinyapps.io/chat_bot/&#xA;The code for this shiny app is below. Replace API_KEY with your own API key to run.&#xA;library(shiny) library(httr) ui &amp;lt;- fluidPage( titlePanel(&amp;quot;ChatGPT Shiny App&amp;quot;), textInput(&amp;quot;user_input&amp;quot;, &amp;quot;Enter your message:&amp;quot;), actionButton(&amp;quot;submit_btn&amp;quot;, &amp;quot;Submit&amp;quot;), p(&amp;quot;&amp;quot;), textOutput(&amp;quot;chat_output&amp;quot;), p(&amp;quot;&amp;quot;), p(&amp;quot;Code for this page is at https://codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown&amp;quot;), tags$head(tags$style(&amp;quot;#chat_output{color: #C24A53; font-size: 25px; #font-style: italic; font-family: Georgia; padding-left: 25px; }&amp;quot; ) ) ) server &amp;lt;- function(input, output, session) { conversation_history &amp;lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &amp;lt;- isolate(input$user_input) conversation &amp;lt;- isolate(conversation_history()) conversation &amp;lt;- c(conversation, list(list(role = &amp;quot;system&amp;quot;, content = &amp;quot;You:&amp;quot;))) conversation &amp;lt;- c(conversation, list(list(role = &amp;quot;user&amp;quot;, content = user_message))) # Make a request to the OpenAI API response &amp;lt;- httr::POST( url = &amp;quot;https://api.</description>
+      <description>Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r&#xA;The app is hosted at: https://twong.shinyapps.io/chat_bot/&#xA;The code for this shiny app is below.&#xA;library(shiny) library(httr) ui &amp;lt;- fluidPage( titlePanel(&amp;quot;ChatGPT Shiny App&amp;quot;), textInput(&amp;quot;user_input&amp;quot;, &amp;quot;Enter your message:&amp;quot;), actionButton(&amp;quot;submit_btn&amp;quot;, &amp;quot;Submit&amp;quot;), p(&amp;quot;&amp;quot;), textOutput(&amp;quot;chat_output&amp;quot;), p(&amp;quot;&amp;quot;), p(&amp;quot;Code for this page is at https://codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown&amp;quot;), tags$head(tags$style(&amp;quot;#chat_output{color: #C24A53; font-size: 25px; #font-style: italic; font-family: Georgia; padding-left: 25px; }&amp;quot; ) ) ) server &amp;lt;- function(input, output, session) { conversation_history &amp;lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &amp;lt;- isolate(input$user_input) conversation &amp;lt;- isolate(conversation_history()) conversation &amp;lt;- c(conversation, list(list(role = &amp;quot;system&amp;quot;, content = &amp;quot;You:&amp;quot;))) conversation &amp;lt;- c(conversation, list(list(role = &amp;quot;user&amp;quot;, content = user_message))) # Make a request to the OpenAI API response &amp;lt;- httr::POST( url = &amp;quot;https://api.</description>
+    </item>
+    <item>
+      <title>Kuminga Dunks</title>
+      <link>https://www.codelooper.com/post/2023-12-22-kuminga-dunks/</link>
+      <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://www.codelooper.com/post/2023-12-22-kuminga-dunks/</guid>
+      <description> </description>
     </item>
     <item>
       <title>Distribution fitting</title>
@@ -153,7 +153,7 @@
       <link>https://www.codelooper.com/post/2022-07-19-datacamp-s-tidyverse-course-using-gapminder-dataset/</link>
       <pubDate>Tue, 19 Jul 2022 00:00:00 +0000</pubDate>
       <guid>https://www.codelooper.com/post/2022-07-19-datacamp-s-tidyverse-course-using-gapminder-dataset/</guid>
-      <description>Datacamp’s Tidyverse course using Gapminder dataset&#xA;library(gapminder) library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union head(gapminder) ## # A tibble: 6 × 6 ## country continent year lifeExp pop gdpPercap ## &amp;lt;fct&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; ## 1 Afghanistan Asia 1952 28.8 8425333 779. ## 2 Afghanistan Asia 1957 30.</description>
+      <description>Datacamp’s Tidyverse course using Gapminder dataset&#xA;library(gapminder) library(dplyr) ## Warning: package &amp;#39;dplyr&amp;#39; was built under R version 4.2.3 ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union head(gapminder) ## # A tibble: 6 × 6 ## country continent year lifeExp pop gdpPercap ## &amp;lt;fct&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; ## 1 Afghanistan Asia 1952 28.</description>
     </item>
     <item>
       <title>Global size of agriculture insurance market in 2020 and beyond</title>
@@ -207,7 +207,7 @@
     <item>
       <title>Hello R Markdown</title>
       <link>https://www.codelooper.com/post/2020-12-01-r-rmarkdown/</link>
-      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      <pubDate>Tue, 01 Dec 2020 00:00:00 +0000</pubDate>
       <guid>https://www.codelooper.com/post/2020-12-01-r-rmarkdown/</guid>
       <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.&#xA;You can embed an R code chunk like this:&#xA;summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
     </item>

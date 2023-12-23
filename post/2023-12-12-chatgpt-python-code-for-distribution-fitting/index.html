@@ -61,7 +61,7 @@ library(knitr) library(reticulate) knitr::knit_engines$set(python = reticulate::
   "headline": "ChatGPT python code for distribution fitting",
   "description" : "I asked ChatGPT for some python code to do distribution fitting and this is what it provided. I think I needed to edit it to fix some errors but it’s a nice solution.\nFirst, I wanted to put in some R code that will allow me to display the results in blogdown, which is what I’m using to post to this site.\nlibrary(knitr) library(reticulate) knitr::knit_engines$set(python = reticulate::eng_python) The following python code was used for distribution fitting.",
   "inLanguage" : "en",
-  "wordCount":  275 ,
+  "wordCount":  291 ,
   "datePublished" : "2023-12-12T00:00:00",
   "dateModified" : "2023-12-12T00:00:00",
   "image" : "https:\/\/www.codelooper.com\/img\/redplane.png",
@@ -278,7 +278,7 @@ if (!doNotTrack) {
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;275&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;291&nbsp;words
   
   
     
@@ -312,7 +312,7 @@ if (!doNotTrack) {
 <pre class="r"><code>library(knitr)  
 library(reticulate)  
 knitr::knit_engines$set(python = reticulate::eng_python)  </code></pre>
-<p>The following python code was used for distribution fitting. Not the fitted distribution is exponential with location and scale. When using dist</p>
+<p>The following python code was used for distribution fitting. Note the fitted distribution is exponential with location and scale. When using fitdist function in R, it fits a one parameter exponential distribution and would give a different result.</p>
 <pre class="python"><code>import numpy as np
 import scipy.stats as stats
 import matplotlib.pyplot as plt
