@@ -252,10 +252,10 @@ if (!doNotTrack) {
   <i class="fas fa-calendar"></i>&nbsp;Posted on December 22, 2023
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;204&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;224&nbsp;words
   
   
     
@@ -269,10 +269,11 @@ if (!doNotTrack) {
     </p>
     <div class="post-entry">
         
-        Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r
+        This is a simple integration of ChatGPT into shiny R. At first I wanted to do this in Python but it was easier to do a web app in R Shiny. I used code from this site to get started:
+https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r
 The app is hosted at: https://twong.shinyapps.io/chat_bot/
-The code for this shiny app is below.
-library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), p(&quot;&quot;), textOutput(&quot;chat_output&quot;), p(&quot;&quot;), p(&quot;Code for this page is at https://codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown&quot;), tags$head(tags$style(&quot;#chat_output{color: #C24A53; font-size: 25px; #font-style: italic; font-family: Georgia; padding-left: 25px; }&quot; ) ) ) server &lt;- function(input, output, session) { conversation_history &lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &lt;- isolate(input$user_input) conversation &lt;- isolate(conversation_history()) conversation &lt;- c(conversation, list(list(role = &quot;system&quot;, content = &quot;You:&quot;))) conversation &lt;- c(conversation, list(list(role = &quot;user&quot;, content = user_message))) # Make a request to the OpenAI API response &lt;- httr::POST( url = &quot;https://api.
+The R code for this shiny app is below.
+library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny App&quot;), textInput(&quot;user_input&quot;, &quot;Enter your message:&quot;), actionButton(&quot;submit_btn&quot;, &quot;Submit&quot;), p(&quot;&quot;), textOutput(&quot;chat_output&quot;), p(&quot;&quot;), p(&quot;Code for this page is at https://codelooper.
         <a href="https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/" class="post-read-more">[Read More]</a>
         
     </div>

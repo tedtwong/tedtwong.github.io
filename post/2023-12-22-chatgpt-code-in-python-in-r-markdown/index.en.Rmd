@@ -17,19 +17,19 @@ output: html_document
 
 ---
 
-Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: <https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r>
+This is a simple integration of ChatGPT into shiny R. At first I wanted to do this in Python but it was easier to do a web app in R Shiny. I used code from this site to get started:
 
-The app is hosted at: <https://twong.shinyapps.io/chat_bot/>
+[https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r](https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r)
 
+The app is hosted at: [https://twong.shinyapps.io/chat_bot/](https://twong.shinyapps.io/chat_bot/)
 
-<iframe height="400" width="100%" style="border:5px solid #C2AAAB;" src="https://twong.shinyapps.io/chat_bot/">
+<iframe height="300" width="100%" style="border:5px solid #C2AAAB;" src="https://twong.shinyapps.io/chat_bot/">
 
 </iframe>
 
+The R code for this shiny app is below. 
 
-The code for this shiny app is below. 
-
-````
+```
 library(shiny)
 library(httr)
 
@@ -97,7 +97,7 @@ server <- function(input, output, session) {
 }
 
 shinyApp(ui, server)
+```
 
-````
 
 Note: Replace API_KEY with your own API key.
