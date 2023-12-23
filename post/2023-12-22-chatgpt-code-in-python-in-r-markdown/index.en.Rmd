@@ -8,20 +8,29 @@ categories:
 tags:
   - Programming
   - R Markdown
+  - ChatGPT
+  - R Shiny
 type: ''
 subtitle: ''
 image: ''
+output: html_document
+
 ---
 
 Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: <https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r>
 
 The app is hosted at: <https://twong.shinyapps.io/chat_bot/>
 
-<iframe height="250" width="100%" style="border:5px solid #C2AAAB;" src="https://twong.shinyapps.io/chat_bot/">
+
+<iframe height="400" width="100%" style="border:5px solid #C2AAAB;" 
+src="https://twong.shinyapps.io/chat_bot/">
 
 </iframe>
 
+
 The code for this shiny app is below. Replace API_KEY with your own API key to run.
+
+<p>
 ```
 library(shiny)
 library(httr)

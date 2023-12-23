@@ -66,7 +66,7 @@ library(shiny) library(httr) ui &lt;- fluidPage( titlePanel(&quot;ChatGPT Shiny 
   "datePublished" : "2023-12-22T00:00:00",
   "dateModified" : "2023-12-22T00:00:00",
   "image" : "https:\/\/www.codelooper.com\/img\/redplane.png",
-  "keywords" : [ "Programming, R Markdown" ],
+  "keywords" : [ "Programming, R Markdown, ChatGPT, R Shiny" ],
   "mainEntityOfPage" : "https:\/\/www.codelooper.com\/post\/2023-12-22-chatgpt-code-in-python-in-r-markdown\/",
   "publisher" : {
     "@type": "Organization",
@@ -311,9 +311,10 @@ if (!doNotTrack) {
 
 <p>Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: <a href="https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r" class="uri">https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r</a></p>
 <p>The app is hosted at: <a href="https://twong.shinyapps.io/chat_bot/" class="uri">https://twong.shinyapps.io/chat_bot/</a></p>
-<iframe height="250" width="100%" style="border:5px solid #C2AAAB;" src="https://twong.shinyapps.io/chat_bot/">
+<iframe height="400" width="100%" style="border:5px solid #C2AAAB;" src="https://twong.shinyapps.io/chat_bot/">
 </iframe>
 <p>The code for this shiny app is below. Replace API_KEY with your own API key to run.</p>
+<p>
 <pre><code>library(shiny)
 library(httr)
 
@@ -390,6 +391,10 @@ shinyApp(ui, server)</code></pre>
             
               <a href="https://www.codelooper.com/tags/r-markdown/">R Markdown</a>&nbsp;
             
+              <a href="https://www.codelooper.com/tags/chatgpt/">ChatGPT</a>&nbsp;
+            
+              <a href="https://www.codelooper.com/tags/r-shiny/">R Shiny</a>&nbsp;
+            
           </div>
         
 
@@ -460,7 +465,13 @@ shinyApp(ui, server)</code></pre>
                   <ul>
                 
                 
+                    <li><a href="/post/distribution-fitting-r-shiny/">Distribution fitting</a></li>
+                
                     <li><a href="/post/ideas-from-programming/">Ideas from programming</a></li>
+                
+                    <li><a href="/post/running-shiny-within-blogdown/">Running Shiny R within blogdown</a></li>
+                
+                    <li><a href="/post/cat-xl-pricing-using-rate-on-line-curves/">Cat XL pricing using rate on line (ROL) curves</a></li>
                 
                     <li><a href="/post/2020-12-01-r-rmarkdown/">Hello R Markdown</a></li>
                 
