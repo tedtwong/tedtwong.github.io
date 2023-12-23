@@ -6,8 +6,29 @@
     <description>Recent content in Tags on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Dec 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.codelooper.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basketball</title>
+      <link>https://www.codelooper.com/tags/basketball/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://www.codelooper.com/tags/basketball/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>NBA</title>
+      <link>https://www.codelooper.com/tags/nba/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://www.codelooper.com/tags/nba/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Warriors</title>
+      <link>https://www.codelooper.com/tags/warriors/</link>
+      <pubDate>Sat, 23 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://www.codelooper.com/tags/warriors/</guid>
+      <description></description>
+    </item>
     <item>
       <title>ChatGPT</title>
       <link>https://www.codelooper.com/tags/chatgpt/</link>
@@ -23,10 +44,10 @@
       <description></description>
     </item>
     <item>
-      <title>R Markdown</title>
-      <link>https://www.codelooper.com/tags/r-markdown/</link>
+      <title>R Markdownblog</title>
+      <link>https://www.codelooper.com/tags/r-markdownblog/</link>
       <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
-      <guid>https://www.codelooper.com/tags/r-markdown/</guid>
+      <guid>https://www.codelooper.com/tags/r-markdownblog/</guid>
       <description></description>
     </item>
     <item>
@@ -202,6 +223,13 @@
       <link>https://www.codelooper.com/tags/plot/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       <guid>https://www.codelooper.com/tags/plot/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>R Markdown</title>
+      <link>https://www.codelooper.com/tags/r-markdown/</link>
+      <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
+      <guid>https://www.codelooper.com/tags/r-markdown/</guid>
       <description></description>
     </item>
     <item>

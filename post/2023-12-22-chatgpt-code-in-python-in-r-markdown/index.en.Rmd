@@ -7,7 +7,7 @@ categories:
   - Programming
 tags:
   - Programming
-  - R Markdown
+  - R Markdownblog
   - ChatGPT
   - R Shiny
 type: ''
