@@ -5,87 +5,64 @@
     <link>https://www.codelooper.com/tags/r/</link>
     <description>Recent content in R on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 15 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 15 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.codelooper.com/tags/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Distribution fitting</title>
       <link>https://www.codelooper.com/post/distribution-fitting-r-shiny/</link>
       <pubDate>Fri, 15 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/distribution-fitting-r-shiny/</guid>
-      <description>This page is made using code from: https://github.com/semanzi/fitting_distributions_with_R_NHSR_2021/tree/main
-The app is hosted at: https://twong.shinyapps.io/HSMA_distr_tool/</description>
+      <description>This page is made using code from: https://github.com/semanzi/fitting_distributions_with_R_NHSR_2021/tree/main&#xA;The app is hosted at: https://twong.shinyapps.io/HSMA_distr_tool/</description>
     </item>
-    
     <item>
       <title>Copula Example</title>
       <link>https://www.codelooper.com/post/copula-example/</link>
       <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/copula-example/</guid>
-      <description>Trying an introduction to copulas exercise, from (R-excerises), using the dataset (https://www.kaggle.com/datasets/gtouzin/samplestocksreturn)
-Exercise 1 We’ll start by fitting the margin. First, do a histogram of both Apple and Microsoft returns to see the shape of both distributions.
-returns &amp;lt;- read.csv(&amp;quot;returns_00_17.csv&amp;quot;) hist(returns$Apple) hist(returns$Microsoft) Exercise 2 Both distributions seems symmetric and have a domain which contain positive and negative values. Knowing those facts, use the fitdist() function to see how the normal, logistic and Cauchy distribution fit the Apple returns dataset.</description>
+      <description>Trying an introduction to copulas exercise, from (R-excerises), using the dataset (https://www.kaggle.com/datasets/gtouzin/samplestocksreturn)&#xA;Exercise 1 We’ll start by fitting the margin. First, do a histogram of both Apple and Microsoft returns to see the shape of both distributions.&#xA;returns &amp;lt;- read.csv(&amp;quot;returns_00_17.csv&amp;quot;) hist(returns$Apple) hist(returns$Microsoft) Exercise 2 Both distributions seems symmetric and have a domain which contain positive and negative values. Knowing those facts, use the fitdist() function to see how the normal, logistic and Cauchy distribution fit the Apple returns dataset.</description>
     </item>
-    
     <item>
       <title>Coursera Guided Project - Predicting Diabetes</title>
       <link>https://www.codelooper.com/post/2022-08-06-coursera-guided-project-predicting-diabetes/</link>
       <pubDate>Sat, 06 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2022-08-06-coursera-guided-project-predicting-diabetes/</guid>
-      <description>Most people have better things to do on a Saturday night after the kids are asleep. Well, this is my idea of a fun evening… Signing up for the guided project in predicting diabetes by using random forests. Here we go…
-Course Objectives In this course, we are going to focus on four learning objectives:
-Complete a random Training and Test set from one Data source using both an R function and using Base R.</description>
+      <description>Most people have better things to do on a Saturday night after the kids are asleep. Well, this is my idea of a fun evening… Signing up for the guided project in predicting diabetes by using random forests. Here we go…&#xA;Course Objectives In this course, we are going to focus on four learning objectives:&#xA;Complete a random Training and Test set from one Data source using both an R function and using Base R.</description>
     </item>
-    
     <item>
       <title>Datacamp&#39;s tidyverse course using gapminder dataset</title>
       <link>https://www.codelooper.com/post/2022-07-19-datacamp-s-tidyverse-course-using-gapminder-dataset/</link>
       <pubDate>Tue, 19 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2022-07-19-datacamp-s-tidyverse-course-using-gapminder-dataset/</guid>
-      <description>Datacamp’s Tidyverse course using Gapminder dataset
-library(gapminder) library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union head(gapminder) ## # A tibble: 6 × 6 ## country continent year lifeExp pop gdpPercap ## &amp;lt;fct&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; ## 1 Afghanistan Asia 1952 28.8 8425333 779. ## 2 Afghanistan Asia 1957 30.</description>
+      <description>Datacamp’s Tidyverse course using Gapminder dataset&#xA;library(gapminder) library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union head(gapminder) ## # A tibble: 6 × 6 ## country continent year lifeExp pop gdpPercap ## &amp;lt;fct&amp;gt; &amp;lt;fct&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;int&amp;gt; &amp;lt;dbl&amp;gt; ## 1 Afghanistan Asia 1952 28.8 8425333 779. ## 2 Afghanistan Asia 1957 30.</description>
     </item>
-    
     <item>
       <title>Google Data Analytics Certificate</title>
       <link>https://www.codelooper.com/post/google-data-analytics-certificate/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/google-data-analytics-certificate/</guid>
-      <description>I&amp;rsquo;ve finally completed the Coursera Google Data Analytics Certificate.
-I think the course is great for beginners in data analytics. For me it was a great refresher on SQL and R but the other sections were not all that useful. The course did motivate me to learn R (again) and this blog site is probably a result of that.
-I think the course could use more on statistical thinking and spending more time on probability since data analysts could really use that in their work.</description>
+      <description>I&amp;rsquo;ve finally completed the Coursera Google Data Analytics Certificate.&#xA;I think the course is great for beginners in data analytics. For me it was a great refresher on SQL and R but the other sections were not all that useful. The course did motivate me to learn R (again) and this blog site is probably a result of that.&#xA;I think the course could use more on statistical thinking and spending more time on probability since data analysts could really use that in their work.</description>
     </item>
-    
     <item>
       <title>Running Shiny R within blogdown</title>
       <link>https://www.codelooper.com/post/running-shiny-within-blogdown/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/running-shiny-within-blogdown/</guid>
       <description>I just learned that I could embed the R Shiny app into blogdown from this post. So here’s an attempt at that.</description>
     </item>
-    
     <item>
       <title>Quarto</title>
       <link>https://www.codelooper.com/post/2022-07-15-quarto/</link>
       <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2022-07-15-quarto/</guid>
       <description>Checking out Quarto today. It looks like a more comprehensive tool than R Markdown though it does a lot of similar things like being able to write text and include code cells (like Jupyter), but then also able to render the output into many formats (pdf, html, word, etc) using Pandoc. I guess that makes sense since it’s published by the same folks behind R Markdown and R Studio:</description>
     </item>
-    
     <item>
       <title>R blogdown/pagedown and Github</title>
       <link>https://www.codelooper.com/post/2022-07-14-blogdown-github/2022-07-14-blogdown-github/</link>
       <pubDate>Thu, 14 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2022-07-14-blogdown-github/2022-07-14-blogdown-github/</guid>
-      <description>It’s taken all day to get blogdown to sync with Github. I already had a repo set up at https://tedtwong.github.io/ and I had set up a blogdown folder in R Studio, let’s call it: R/blogdown.
-I wasn’t too familiar with how to set up git to sync the R/blogdown/public folder with https://tedtwong.github.io/ repo so that I can version control blogdown files and host the files on Github at the same time.</description>
+      <description>It’s taken all day to get blogdown to sync with Github. I already had a repo set up at https://tedtwong.github.io/ and I had set up a blogdown folder in R Studio, let’s call it: R/blogdown.&#xA;I wasn’t too familiar with how to set up git to sync the R/blogdown/public folder with https://tedtwong.github.io/ repo so that I can version control blogdown files and host the files on Github at the same time.</description>
     </item>
-    
   </channel>
 </rss>

@@ -5,46 +5,29 @@
     <link>https://www.codelooper.com/tags/math/</link>
     <description>Recent content in math on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 08 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/math/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 08 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.codelooper.com/tags/math/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Copula Example</title>
       <link>https://www.codelooper.com/post/copula-example/</link>
       <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/copula-example/</guid>
-      <description>Trying an introduction to copulas exercise, from (R-excerises), using the dataset (https://www.kaggle.com/datasets/gtouzin/samplestocksreturn)
-Exercise 1 We’ll start by fitting the margin. First, do a histogram of both Apple and Microsoft returns to see the shape of both distributions.
-returns &amp;lt;- read.csv(&amp;quot;returns_00_17.csv&amp;quot;) hist(returns$Apple) hist(returns$Microsoft) Exercise 2 Both distributions seems symmetric and have a domain which contain positive and negative values. Knowing those facts, use the fitdist() function to see how the normal, logistic and Cauchy distribution fit the Apple returns dataset.</description>
+      <description>Trying an introduction to copulas exercise, from (R-excerises), using the dataset (https://www.kaggle.com/datasets/gtouzin/samplestocksreturn)&#xA;Exercise 1 We’ll start by fitting the margin. First, do a histogram of both Apple and Microsoft returns to see the shape of both distributions.&#xA;returns &amp;lt;- read.csv(&amp;quot;returns_00_17.csv&amp;quot;) hist(returns$Apple) hist(returns$Microsoft) Exercise 2 Both distributions seems symmetric and have a domain which contain positive and negative values. Knowing those facts, use the fitdist() function to see how the normal, logistic and Cauchy distribution fit the Apple returns dataset.</description>
     </item>
-    
     <item>
       <title>Random Number Generator</title>
       <link>https://www.codelooper.com/post/random-number-generator-20231108/</link>
       <pubDate>Wed, 08 Nov 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/random-number-generator-20231108/</guid>
-      <description>I wanted to generate a set of random numbers without resorting to the rand() function in excel. I didn&amp;rsquo;t want results to change each time I opened the file but I wanted a way to seed different values when needed. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley:
-https://research.ssl.berkeley.edu/~mlampton/RandomSpreadsheet4.pdf
-The paper has a formula for producing a set of random values using a modulus function on a large number while maintaining portability of such randomly generated numbers between different software and hardware platforms.</description>
+      <description>I wanted to generate a set of random numbers without resorting to the rand() function in excel. I didn&amp;rsquo;t want results to change each time I opened the file but I wanted a way to seed different values when needed. I found this paper by Michael Lampton, Space Sciences Lab, UC Berkeley:&#xA;https://research.ssl.berkeley.edu/~mlampton/RandomSpreadsheet4.pdf&#xA;The paper has a formula for producing a set of random values using a modulus function on a large number while maintaining portability of such randomly generated numbers between different software and hardware platforms.</description>
     </item>
-    
     <item>
       <title>Math Sample</title>
       <link>https://www.codelooper.com/post/2017-03-05-math-sample/</link>
       <pubDate>Sun, 05 Mar 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2017-03-05-math-sample/</guid>
-      <description>&lt;p&gt;KaTeX can be used to generate complex math formulas server-side.&lt;/p&gt;
-&lt;p&gt;$$
-\phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots
-$$&lt;/p&gt;
-&lt;p&gt;$$
-e^{i\pi} = -1
-$$&lt;/p&gt;
-&lt;p&gt;Additional details can be found on
-&lt;a href=&#34;https://github.com/Khan/KaTeX&#34;&gt;GitHub&lt;/a&gt; or on the
-&lt;a href=&#34;http://tiddlywiki.com/plugins/tiddlywiki/katex/&#34;&gt;Wiki&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;KaTeX can be used to generate complex math formulas server-side.&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;\phi = \frac{(1+\sqrt{5})}{2} = 1.6180339887\cdots&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;$$&#xA;e^{i\pi} = -1&#xA;$$&lt;/p&gt;&#xA;&lt;p&gt;Additional details can be found on&#xA;&lt;a href=&#34;https://github.com/Khan/KaTeX&#34;&gt;GitHub&lt;/a&gt; or on the&#xA;&lt;a href=&#34;http://tiddlywiki.com/plugins/tiddlywiki/katex/&#34;&gt;Wiki&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

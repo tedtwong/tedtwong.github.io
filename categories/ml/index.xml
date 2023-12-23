@@ -5,29 +5,22 @@
     <link>https://www.codelooper.com/categories/ml/</link>
     <description>Recent content in ML on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/categories/ml/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.codelooper.com/categories/ml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ChatGPT python code for distribution fitting</title>
       <link>https://www.codelooper.com/post/2023-12-12-chatgpt-python-code-for-distribution-fitting/</link>
       <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2023-12-12-chatgpt-python-code-for-distribution-fitting/</guid>
-      <description>I asked ChatGPT for some python code to do distribution fitting and this is what it provided. I think I needed to edit it to fix some errors but it’s a nice solution.
-First, I wanted to put in some R code that will allow me to display the results in blogdown, which is what I’m using to post to this site.
-library(knitr) library(reticulate) knitr::knit_engines$set(python = reticulate::eng_python) The following python code was used for distribution fitting.</description>
+      <description>I asked ChatGPT for some python code to do distribution fitting and this is what it provided. I think I needed to edit it to fix some errors but it’s a nice solution.&#xA;First, I wanted to put in some R code that will allow me to display the results in blogdown, which is what I’m using to post to this site.&#xA;library(knitr) library(reticulate) knitr::knit_engines$set(python = reticulate::eng_python) The following python code was used for distribution fitting.</description>
     </item>
-    
     <item>
       <title>Coursera - introduction to tensorflow</title>
       <link>https://www.codelooper.com/post/2022-08-03-coursera-introduction-to-tensorflow/</link>
       <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2022-08-03-coursera-introduction-to-tensorflow/</guid>
-      <description>Week 1 Assignment: Housing Prices In this exercise you’ll try to build a neural network that predicts the price of a house according to a simple formula.
-Imagine that house pricing is as easy as:
-A house has a base cost of 50k, and every additional bedroom adds a cost of 50k. This will make a 1 bedroom house cost 100k, a 2 bedroom house cost 150k etc.
-How would you create a neural network that learns this relationship so that it would predict a 7 bedroom house as costing close to 400k etc.</description>
+      <description>Week 1 Assignment: Housing Prices In this exercise you’ll try to build a neural network that predicts the price of a house according to a simple formula.&#xA;Imagine that house pricing is as easy as:&#xA;A house has a base cost of 50k, and every additional bedroom adds a cost of 50k. This will make a 1 bedroom house cost 100k, a 2 bedroom house cost 150k etc.&#xA;How would you create a neural network that learns this relationship so that it would predict a 7 bedroom house as costing close to 400k etc.</description>
     </item>
-    
   </channel>
 </rss>

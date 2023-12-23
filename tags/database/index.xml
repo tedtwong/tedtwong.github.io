@@ -5,18 +5,15 @@
     <link>https://www.codelooper.com/tags/database/</link>
     <description>Recent content in Database on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.codelooper.com/tags/database/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Duck DB and Pandas Profiling</title>
       <link>https://www.codelooper.com/post/2022-09-19-duck-db-pandas-profiling/</link>
       <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2022-09-19-duck-db-pandas-profiling/</guid>
-      <description>Saw a nice introduction to Duck DB:
-https://shekhargulati.com/2019/12/15/the-5-minute-introduction-to-duckdb-the-sqlite-for-analytics/
-Pandas Profiling for generating automatic data summary reports:
-https://github.com/ydataai/pandas-profiling</description>
+      <description>Saw a nice introduction to Duck DB:&#xA;https://shekhargulati.com/2019/12/15/the-5-minute-introduction-to-duckdb-the-sqlite-for-analytics/&#xA;Pandas Profiling for generating automatic data summary reports:&#xA;https://github.com/ydataai/pandas-profiling</description>
     </item>
-    
   </channel>
 </rss>

@@ -5,17 +5,15 @@
     <link>https://www.codelooper.com/categories/google/</link>
     <description>Recent content in Google on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/categories/google/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.codelooper.com/categories/google/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Google Data Analytics Certificate</title>
       <link>https://www.codelooper.com/post/google-data-analytics-certificate/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/google-data-analytics-certificate/</guid>
-      <description>I&amp;rsquo;ve finally completed the Coursera Google Data Analytics Certificate.
-I think the course is great for beginners in data analytics. For me it was a great refresher on SQL and R but the other sections were not all that useful. The course did motivate me to learn R (again) and this blog site is probably a result of that.
-I think the course could use more on statistical thinking and spending more time on probability since data analysts could really use that in their work.</description>
+      <description>I&amp;rsquo;ve finally completed the Coursera Google Data Analytics Certificate.&#xA;I think the course is great for beginners in data analytics. For me it was a great refresher on SQL and R but the other sections were not all that useful. The course did motivate me to learn R (again) and this blog site is probably a result of that.&#xA;I think the course could use more on statistical thinking and spending more time on probability since data analysts could really use that in their work.</description>
     </item>
-    
   </channel>
 </rss>

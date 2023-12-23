@@ -5,29 +5,22 @@
     <link>https://www.codelooper.com/tags/ai/</link>
     <description>Recent content in AI on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Thu, 06 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.codelooper.com/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Coursera - Generative AI </title>
       <link>https://www.codelooper.com/post/2023-07-06-coursera-generative-ai/</link>
       <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2023-07-06-coursera-generative-ai/</guid>
-      <description>Encoder Models - Sentiment analysis
-Encoder - Decoder Models
-Decoder Only Models - GPT family of models
-The paper “Attention is all you need” replaced recurrent neural networks (RNN) and convolutional neural networks (CNN) with transformer models (or attention-based models).
-The Transformer architecture consists of an encoder and a decoder, each of which is composed of several layers. Each layer consists of two sub-layers: a multi-head self-attention mechanism and a feed-forward neural network.</description>
+      <description>Encoder Models - Sentiment analysis&#xA;Encoder - Decoder Models&#xA;Decoder Only Models - GPT family of models&#xA;The paper “Attention is all you need” replaced recurrent neural networks (RNN) and convolutional neural networks (CNN) with transformer models (or attention-based models).&#xA;The Transformer architecture consists of an encoder and a decoder, each of which is composed of several layers. Each layer consists of two sub-layers: a multi-head self-attention mechanism and a feed-forward neural network.</description>
     </item>
-    
     <item>
       <title>Progress in AI - Natural Language Processing Edition</title>
       <link>https://www.codelooper.com/post/progress-in-natural-language-processing/</link>
       <pubDate>Mon, 29 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/progress-in-natural-language-processing/</guid>
-      <description>Even if we are not surrounded by self-driving cars (yet), AI is advancing in many domains. It reminds me of the spread of computers and internet in the last few decades where the cumulative progress looking back on the past few decades seem like huge leaps while new technology seem so incremental.
-When looking at the history of AI, there have been several paradigm shifts which have led to exponential gains in AI capabilities.</description>
+      <description>Even if we are not surrounded by self-driving cars (yet), AI is advancing in many domains. It reminds me of the spread of computers and internet in the last few decades where the cumulative progress looking back on the past few decades seem like huge leaps while new technology seem so incremental.&#xA;When looking at the history of AI, there have been several paradigm shifts which have led to exponential gains in AI capabilities.</description>
     </item>
-    
   </channel>
 </rss>

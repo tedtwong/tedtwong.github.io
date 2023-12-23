@@ -5,16 +5,15 @@
     <link>https://www.codelooper.com/categories/economics/</link>
     <description>Recent content in Economics on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 19 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/categories/economics/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Wed, 19 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.codelooper.com/categories/economics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ergodicity and Insurance</title>
       <link>https://www.codelooper.com/post/2023-07-19-ergodicity-and-insurance/</link>
       <pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2023-07-19-ergodicity-and-insurance/</guid>
-      <description>I read this post on LinkedIn by Andreas Tsanakas that referenced a paper by Ole Peters titled Insurance as an Ergodicity Problem.
-It seems intuitive that an equal chance bet that would allow you to win 50% or lose 40% of the value of the bet would have a positive expected value, but in the long run such a bet will bankrupt you if you bet it all each time.</description>
+      <description>I read this post on LinkedIn by Andreas Tsanakas that referenced a paper by Ole Peters titled Insurance as an Ergodicity Problem.&#xA;It seems intuitive that an equal chance bet that would allow you to win 50% or lose 40% of the value of the bet would have a positive expected value, but in the long run such a bet will bankrupt you if you bet it all each time.</description>
     </item>
-    
   </channel>
 </rss>

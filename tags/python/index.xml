@@ -5,103 +5,71 @@
     <link>https://www.codelooper.com/tags/python/</link>
     <description>Recent content in Python on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Tue, 12 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.codelooper.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ChatGPT python code for distribution fitting</title>
       <link>https://www.codelooper.com/post/2023-12-12-chatgpt-python-code-for-distribution-fitting/</link>
       <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2023-12-12-chatgpt-python-code-for-distribution-fitting/</guid>
-      <description>I asked ChatGPT for some python code to do distribution fitting and this is what it provided. I think I needed to edit it to fix some errors but it’s a nice solution.
-First, I wanted to put in some R code that will allow me to display the results in blogdown, which is what I’m using to post to this site.
-library(knitr) library(reticulate) knitr::knit_engines$set(python = reticulate::eng_python) The following python code was used for distribution fitting.</description>
+      <description>I asked ChatGPT for some python code to do distribution fitting and this is what it provided. I think I needed to edit it to fix some errors but it’s a nice solution.&#xA;First, I wanted to put in some R code that will allow me to display the results in blogdown, which is what I’m using to post to this site.&#xA;library(knitr) library(reticulate) knitr::knit_engines$set(python = reticulate::eng_python) The following python code was used for distribution fitting.</description>
     </item>
-    
     <item>
       <title>Coursera - introduction to tensorflow</title>
       <link>https://www.codelooper.com/post/2022-08-03-coursera-introduction-to-tensorflow/</link>
       <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2022-08-03-coursera-introduction-to-tensorflow/</guid>
-      <description>Week 1 Assignment: Housing Prices In this exercise you’ll try to build a neural network that predicts the price of a house according to a simple formula.
-Imagine that house pricing is as easy as:
-A house has a base cost of 50k, and every additional bedroom adds a cost of 50k. This will make a 1 bedroom house cost 100k, a 2 bedroom house cost 150k etc.
-How would you create a neural network that learns this relationship so that it would predict a 7 bedroom house as costing close to 400k etc.</description>
+      <description>Week 1 Assignment: Housing Prices In this exercise you’ll try to build a neural network that predicts the price of a house according to a simple formula.&#xA;Imagine that house pricing is as easy as:&#xA;A house has a base cost of 50k, and every additional bedroom adds a cost of 50k. This will make a 1 bedroom house cost 100k, a 2 bedroom house cost 150k etc.&#xA;How would you create a neural network that learns this relationship so that it would predict a 7 bedroom house as costing close to 400k etc.</description>
     </item>
-    
     <item>
       <title>Python - Handling Exceptions</title>
       <link>https://www.codelooper.com/post/2022-08-03-python-handling-exceptions/</link>
       <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2022-08-03-python-handling-exceptions/</guid>
-      <description>From: LinkedIn course ‘Python Essential Training’ by Ryan Mitchell https://www.linkedin.com/learning/python-essential-training-14898805
-Try, except, finally
-import time as time def causeError(): start = time.time() #set start timer try: #delay run by 0.5 secs time.sleep(0.5) return 1/0 except Exception: print(&amp;#39;There was some sort of error!&amp;#39;) finally: print(f&amp;#39;Function took {time.time() - start} seconds to execute&amp;#39;) causeError() ## There was some sort of error! ## Function took 0.5048558712005615 seconds to execute Custom Decorators *args **kwargs are multiple arguments or string arguments.</description>
+      <description>From: LinkedIn course ‘Python Essential Training’ by Ryan Mitchell https://www.linkedin.com/learning/python-essential-training-14898805&#xA;Try, except, finally&#xA;import time as time def causeError(): start = time.time() #set start timer try: #delay run by 0.5 secs time.sleep(0.5) return 1/0 except Exception: print(&amp;#39;There was some sort of error!&amp;#39;) finally: print(f&amp;#39;Function took {time.time() - start} seconds to execute&amp;#39;) causeError() ## There was some sort of error! ## Function took 0.5048558712005615 seconds to execute Custom Decorators *args **kwargs are multiple arguments or string arguments.</description>
     </item>
-    
     <item>
       <title>Python - Multithreading/Multiprocessing</title>
       <link>https://www.codelooper.com/post/2022-08-03-python-multithreading-multiprocessing/</link>
       <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2022-08-03-python-multithreading-multiprocessing/</guid>
-      <description>From: LinkedIn course ‘Python Essential Training’ by Ryan Mitchell https://www.linkedin.com/learning/python-essential-training-14898805
-import threading import time Threads
-def longSquare(num): time.sleep(1) return num**2 [longSquare(n) for n in range(0, 5)] ## [0, 1, 4, 9, 16] t1 = threading.Thread(target=longSquare, args=(1,)) #args is tuple t2 = threading.Thread(target=longSquare, args=(2,)) t1.start() t2.start() t1.join() t2.join() def longSquare(num, results): time.sleep(1) results[num] = num**2 results = {} t1 = threading.Thread(target=longSquare, args=(1, results)) #args are tuples t2 = threading.Thread(target=longSquare, args=(2, results)) t1.</description>
+      <description>From: LinkedIn course ‘Python Essential Training’ by Ryan Mitchell https://www.linkedin.com/learning/python-essential-training-14898805&#xA;import threading import time Threads&#xA;def longSquare(num): time.sleep(1) return num**2 [longSquare(n) for n in range(0, 5)] ## [0, 1, 4, 9, 16] t1 = threading.Thread(target=longSquare, args=(1,)) #args is tuple t2 = threading.Thread(target=longSquare, args=(2,)) t1.start() t2.start() t1.join() t2.join() def longSquare(num, results): time.sleep(1) results[num] = num**2 results = {} t1 = threading.Thread(target=longSquare, args=(1, results)) #args are tuples t2 = threading.Thread(target=longSquare, args=(2, results)) t1.</description>
     </item>
-    
     <item>
       <title>Python - opening reading writing files</title>
       <link>https://www.codelooper.com/post/2022-08-03-python-opening-reading-writing-files/</link>
       <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2022-08-03-python-opening-reading-writing-files/</guid>
-      <description>From: LinkedIn course ‘Python Essential Training’ by Ryan Mitchell https://www.linkedin.com/learning/python-essential-training-14898805
-reading files
-f = open(&amp;#39;some_file.txt&amp;#39;,&amp;#39;r&amp;#39;) print(f) #gets file type, need to read the file f.readline() f.readlines() #puts lines into list of strings for line in f.readlines(): print(line.strip()) # strips leading and trailing spaces writing files
-f = open(&amp;#39;somefiles.txt&amp;#39;,&amp;#39;w&amp;#39;) # creates a file f.write(&amp;#39;Line 1\n&amp;#39;) f.write(&amp;#39;Line 2\n&amp;#39;) f.close() # python doesn&amp;#39;t write until you close or run out of buffer and will overwrite existing text appending files</description>
+      <description>From: LinkedIn course ‘Python Essential Training’ by Ryan Mitchell https://www.linkedin.com/learning/python-essential-training-14898805&#xA;reading files&#xA;f = open(&amp;#39;some_file.txt&amp;#39;,&amp;#39;r&amp;#39;) print(f) #gets file type, need to read the file f.readline() f.readlines() #puts lines into list of strings for line in f.readlines(): print(line.strip()) # strips leading and trailing spaces writing files&#xA;f = open(&amp;#39;somefiles.txt&amp;#39;,&amp;#39;w&amp;#39;) # creates a file f.write(&amp;#39;Line 1\n&amp;#39;) f.write(&amp;#39;Line 2\n&amp;#39;) f.close() # python doesn&amp;#39;t write until you close or run out of buffer and will overwrite existing text appending files</description>
     </item>
-    
     <item>
       <title>Python Neural Network Basics</title>
       <link>https://www.codelooper.com/post/2022-08-03-python-neural-network/</link>
       <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2022-08-03-python-neural-network/</guid>
-      <description>From https://iamtrask.github.io/2015/07/12/basic-python-network/
-import numpy as np sigmoid function def nonlin(x,deriv=False): if(deriv==True): return x*(1-x) return 1/(1+np.exp(-x)) input dataset X = np.array([ [0,0,1], [0,1,1], [1,0,1], [1,1,1] ]) output dataset y = np.array([[0,0,1,1]]).T seed random numbers to make calculation deterministic (just a good practice)
-np.random.seed(1) initialize weights randomly with mean 0 syn0 = 2*np.random.random((3,1)) - 1 print(syn0) ## [[-0.16595599] ## [ 0.44064899] ## [-0.99977125]] variables l0 is input layer l1 is hidden layer l1_error is the loss function l1_delta is the gradient descent function for calculating the back-propagation syn0 are synapses, weights between l0 and l1, and also how the weights are updated are shown.</description>
+      <description>From https://iamtrask.github.io/2015/07/12/basic-python-network/&#xA;import numpy as np sigmoid function def nonlin(x,deriv=False): if(deriv==True): return x*(1-x) return 1/(1+np.exp(-x)) input dataset X = np.array([ [0,0,1], [0,1,1], [1,0,1], [1,1,1] ]) output dataset y = np.array([[0,0,1,1]]).T seed random numbers to make calculation deterministic (just a good practice)&#xA;np.random.seed(1) initialize weights randomly with mean 0 syn0 = 2*np.random.random((3,1)) - 1 print(syn0) ## [[-0.16595599] ## [ 0.44064899] ## [-0.99977125]] variables l0 is input layer l1 is hidden layer l1_error is the loss function l1_delta is the gradient descent function for calculating the back-propagation syn0 are synapses, weights between l0 and l1, and also how the weights are updated are shown.</description>
     </item>
-    
     <item>
       <title>Codecademy Pandas Continued...</title>
       <link>https://www.codelooper.com/post/2022-08-02-codecademy-pandas-continued/</link>
       <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2022-08-02-codecademy-pandas-continued/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Codecademy - Pandas Lesson</title>
       <link>https://www.codelooper.com/post/2022-07-28-codecademy-pandas-lesson/</link>
       <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2022-07-28-codecademy-pandas-lesson/</guid>
-      <description>You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.
-Write a command that will produce a Series made up of the March data from df from all four clinic sites and save it to the variable march.
-#import /;../,codecademylib3 import pandas as pd df = pd.DataFrame([ [&amp;#39;January&amp;#39;, 100, 100, 23, 100], [&amp;#39;February&amp;#39;, 51, 45, 145, 45], [&amp;#39;March&amp;#39;, 81, 96, 65, 96], [&amp;#39;April&amp;#39;, 80, 80, 54, 180], [&amp;#39;May&amp;#39;, 51, 54, 54, 154], [&amp;#39;June&amp;#39;, 112, 109, 79, 129]], columns=[&amp;#39;month&amp;#39;, &amp;#39;clinic_east&amp;#39;, &amp;#39;clinic_north&amp;#39;, &amp;#39;clinic_south&amp;#39;, &amp;#39;clinic_west&amp;#39;]) print(df) ## month clinic_east clinic_north clinic_south clinic_west ## 0 January 100 100 23 100 ## 1 February 51 45 145 45 ## 2 March 81 96 65 96 ## 3 April 80 80 54 180 ## 4 May 51 54 54 154 ## 5 June 112 109 79 129 # integer location within dataframe # locations are zero indexed and doesn&amp;#39;t include the ending integer march = df.</description>
+      <description>You’re getting ready to staff the clinic for March this year. You want to know how many visits took place in March last year, to help you prepare.&#xA;Write a command that will produce a Series made up of the March data from df from all four clinic sites and save it to the variable march.&#xA;#import /;../,codecademylib3 import pandas as pd df = pd.DataFrame([ [&amp;#39;January&amp;#39;, 100, 100, 23, 100], [&amp;#39;February&amp;#39;, 51, 45, 145, 45], [&amp;#39;March&amp;#39;, 81, 96, 65, 96], [&amp;#39;April&amp;#39;, 80, 80, 54, 180], [&amp;#39;May&amp;#39;, 51, 54, 54, 154], [&amp;#39;June&amp;#39;, 112, 109, 79, 129]], columns=[&amp;#39;month&amp;#39;, &amp;#39;clinic_east&amp;#39;, &amp;#39;clinic_north&amp;#39;, &amp;#39;clinic_south&amp;#39;, &amp;#39;clinic_west&amp;#39;]) print(df) ## month clinic_east clinic_north clinic_south clinic_west ## 0 January 100 100 23 100 ## 1 February 51 45 145 45 ## 2 March 81 96 65 96 ## 3 April 80 80 54 180 ## 4 May 51 54 54 154 ## 5 June 112 109 79 129 # integer location within dataframe # locations are zero indexed and doesn&amp;#39;t include the ending integer march = df.</description>
     </item>
-    
     <item>
       <title>Quarto</title>
       <link>https://www.codelooper.com/post/2022-07-15-quarto/</link>
       <pubDate>Fri, 15 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2022-07-15-quarto/</guid>
       <description>Checking out Quarto today. It looks like a more comprehensive tool than R Markdown though it does a lot of similar things like being able to write text and include code cells (like Jupyter), but then also able to render the output into many formats (pdf, html, word, etc) using Pandoc. I guess that makes sense since it’s published by the same folks behind R Markdown and R Studio:</description>
     </item>
-    
   </channel>
 </rss>

@@ -5,123 +5,99 @@
     <link>https://www.codelooper.com/categories/</link>
     <description>Recent content in Categories on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 22 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 22 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.codelooper.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Programming</title>
       <link>https://www.codelooper.com/categories/programming/</link>
       <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/categories/programming/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Data Analytics</title>
       <link>https://www.codelooper.com/categories/data-analytics/</link>
       <pubDate>Fri, 15 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/categories/data-analytics/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>ML</title>
       <link>https://www.codelooper.com/categories/ml/</link>
       <pubDate>Tue, 12 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/categories/ml/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Economics</title>
       <link>https://www.codelooper.com/categories/economics/</link>
       <pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/categories/economics/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>AI</title>
       <link>https://www.codelooper.com/categories/ai/</link>
       <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/categories/ai/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>computers</title>
       <link>https://www.codelooper.com/categories/computers/</link>
       <pubDate>Sun, 24 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/categories/computers/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>R</title>
       <link>https://www.codelooper.com/categories/r/</link>
       <pubDate>Tue, 19 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/categories/r/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Agriculture</title>
       <link>https://www.codelooper.com/categories/agriculture/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/categories/agriculture/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Education</title>
       <link>https://www.codelooper.com/categories/education/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/categories/education/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Google</title>
       <link>https://www.codelooper.com/categories/google/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/categories/google/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Insurance</title>
       <link>https://www.codelooper.com/categories/insurance/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/categories/insurance/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>R Shiny</title>
       <link>https://www.codelooper.com/categories/r-shiny/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/categories/r-shiny/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Reinsurance</title>
       <link>https://www.codelooper.com/categories/reinsurance/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/categories/reinsurance/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

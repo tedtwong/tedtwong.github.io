@@ -5,29 +5,22 @@
     <link>https://www.codelooper.com/tags/r-markdown/</link>
     <description>Recent content in R Markdown on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 22 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.codelooper.com/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 22 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.codelooper.com/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ChatGPT Shiny R app</title>
       <link>https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/</link>
       <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/</guid>
-      <description>Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r
-The app is hosted at: https://twong.shinyapps.io/chat_bot/
-The code for this shiny app is below. Replace API_KEY with your own API key to run.
-library(shiny) library(httr) ui &amp;lt;- fluidPage( titlePanel(&amp;quot;ChatGPT Shiny App&amp;quot;), textInput(&amp;quot;user_input&amp;quot;, &amp;quot;Enter your message:&amp;quot;), actionButton(&amp;quot;submit_btn&amp;quot;, &amp;quot;Submit&amp;quot;), p(&amp;quot;&amp;quot;), textOutput(&amp;quot;chat_output&amp;quot;), p(&amp;quot;&amp;quot;), p(&amp;quot;Code for this page is at https://codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown&amp;quot;), tags$head(tags$style(&amp;quot;#chat_output{color: #C24A53; font-size: 25px; #font-style: italic; font-family: Georgia; padding-left: 25px; }&amp;quot; ) ) ) server &amp;lt;- function(input, output, session) { conversation_history &amp;lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &amp;lt;- isolate(input$user_input) conversation &amp;lt;- isolate(conversation_history()) conversation &amp;lt;- c(conversation, list(list(role = &amp;quot;system&amp;quot;, content = &amp;quot;You:&amp;quot;))) conversation &amp;lt;- c(conversation, list(list(role = &amp;quot;user&amp;quot;, content = user_message))) # Make a request to the OpenAI API response &amp;lt;- httr::POST( url = &amp;quot;https://api.</description>
+      <description>Simple integration of ChatGPT into shiny R. No longer using Python in this. Used code from this site to get started: https://www.listendata.com/2023/05/chatgpt-in-r.html#steps_to_run_chatgpt_in_r&#xA;The app is hosted at: https://twong.shinyapps.io/chat_bot/&#xA;The code for this shiny app is below. Replace API_KEY with your own API key to run.&#xA;library(shiny) library(httr) ui &amp;lt;- fluidPage( titlePanel(&amp;quot;ChatGPT Shiny App&amp;quot;), textInput(&amp;quot;user_input&amp;quot;, &amp;quot;Enter your message:&amp;quot;), actionButton(&amp;quot;submit_btn&amp;quot;, &amp;quot;Submit&amp;quot;), p(&amp;quot;&amp;quot;), textOutput(&amp;quot;chat_output&amp;quot;), p(&amp;quot;&amp;quot;), p(&amp;quot;Code for this page is at https://codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown&amp;quot;), tags$head(tags$style(&amp;quot;#chat_output{color: #C24A53; font-size: 25px; #font-style: italic; font-family: Georgia; padding-left: 25px; }&amp;quot; ) ) ) server &amp;lt;- function(input, output, session) { conversation_history &amp;lt;- reactiveVal(list()) observeEvent(input$submit_btn, { user_message &amp;lt;- isolate(input$user_input) conversation &amp;lt;- isolate(conversation_history()) conversation &amp;lt;- c(conversation, list(list(role = &amp;quot;system&amp;quot;, content = &amp;quot;You:&amp;quot;))) conversation &amp;lt;- c(conversation, list(list(role = &amp;quot;user&amp;quot;, content = user_message))) # Make a request to the OpenAI API response &amp;lt;- httr::POST( url = &amp;quot;https://api.</description>
     </item>
-    
     <item>
       <title>Hello R Markdown</title>
       <link>https://www.codelooper.com/post/2020-12-01-r-rmarkdown/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
-      
       <guid>https://www.codelooper.com/post/2020-12-01-r-rmarkdown/</guid>
-      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.&#xA;You can embed an R code chunk like this:&#xA;summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
     </item>
-    
   </channel>
 </rss>
