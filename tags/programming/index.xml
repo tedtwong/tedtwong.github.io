@@ -6,8 +6,15 @@
     <description>Recent content in Programming on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.codelooper.com/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Code2Flow</title>
+      <link>https://www.codelooper.com/post/2024-02-01-code2flow/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://www.codelooper.com/post/2024-02-01-code2flow/</guid>
+      <description>Site to programmatically design flow charts. https://app.code2flow.com/ </description>
+    </item>
     <item>
       <title>ChatGPT Shiny R app</title>
       <link>https://www.codelooper.com/post/2023-12-22-chatgpt-code-in-python-in-r-markdown/</link>
