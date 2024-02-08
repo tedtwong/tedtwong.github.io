@@ -12,11 +12,11 @@ subtitle: ''
 image: ''
 ---
 
-I was told by a JD Long at a recent conference where I brought up Code2Flow that Mermaid could be used just like Code2Flow within R/Github/etc to draw flowcharts, but it also has other functions that makes it a more generally useful program. Thanks James! 
+I was told by a JD Long at a recent conference where I brought up Code2Flow that Mermaid could be used just like Code2Flow within R/Github/etc to draw flowcharts, but it also has other functions that makes it a more generally useful program. Thanks James!
 
 Mermaid is also accessible within R Studio so I can try it here.
 
-[Mermaid Live Editor](https://mermaid.live/edit#)
+[Mermaid Live Editor at https://mermaid.live/edit#](https://mermaid.live/edit#)
 
 # Simple Mermaid diagram
 
@@ -64,3 +64,5 @@ graph TD
     C -->|Three| F[fa:fa-car Car]"
 )
 ```
+
+For Python, see: <https://pypi.org/project/python-mermaid/>

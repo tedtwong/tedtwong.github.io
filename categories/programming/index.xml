@@ -13,7 +13,7 @@
       <link>https://www.codelooper.com/post/2024-02-08-mermaid/</link>
       <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
       <guid>https://www.codelooper.com/post/2024-02-08-mermaid/</guid>
-      <description>I was told by a JD Long at a recent conference where I brought up Code2Flow that Mermaid could be used just like Code2Flow within R/Github/etc to draw flowcharts, but it also has other functions that makes it a more generally useful program. Thanks James!&#xA;Mermaid is also accessible within R Studio so I can try it here.&#xA;Mermaid Live Editor&#xA;Simple Mermaid diagram In R Studio, DiagrammeR would be the package to install for producing Mermaid graphics.</description>
+      <description>I was told by a JD Long at a recent conference where I brought up Code2Flow that Mermaid could be used just like Code2Flow within R/Github/etc to draw flowcharts, but it also has other functions that makes it a more generally useful program. Thanks James!&#xA;Mermaid is also accessible within R Studio so I can try it here.&#xA;Mermaid Live Editor at https://mermaid.live/edit#&#xA;Simple Mermaid diagram In R Studio, DiagrammeR would be the package to install for producing Mermaid graphics.</description>
     </item>
     <item>
       <title>Code2Flow</title>
