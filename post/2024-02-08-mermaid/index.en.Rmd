@@ -1,0 +1,66 @@
+---
+title: 'Mermaid '
+author: Package Build
+date: '2024-02-08'
+slug: []
+categories:
+  - Programming
+tags:
+  - Programming
+type: ''
+subtitle: ''
+image: ''
+---
+
+I was told by a JD Long at a recent conference where I brought up Code2Flow that Mermaid could be used just like Code2Flow within R/Github/etc to draw flowcharts, but it also has other functions that makes it a more generally useful program. Thanks James! 
+
+Mermaid is also accessible within R Studio so I can try it here.
+
+[Mermaid Live Editor](https://mermaid.live/edit#)
+
+# Simple Mermaid diagram
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In R Studio, DiagrammeR would be the package to install for producing Mermaid graphics.
+
+```{r}
+library(DiagrammeR)
+mermaid("
+graph LR
+    A-->B
+    ")
+```
+
+#Gantt Chart
+
+```{r}
+mermaid("
+gantt
+    title A Gantt Diagram
+    dateFormat  YYYY-MM-DD
+    section Section
+    A task           :a1, 2014-01-01, 30d
+    Another task     :after a1  , 20d
+    section Another
+    Task in sec      :2014-01-12  , 12d
+    another task      : 24d",
+    height = '100%', width = '100%'
+)
+```
+
+#Flowchart but called Graph in the R package.
+
+```{r}
+mermaid("
+
+graph TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[fa:fa-car Car]"
+)
+```
