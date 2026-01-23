@@ -55,7 +55,9 @@ gantt
 
 ```{r}
 mermaid("
-
+---
+title: Example Git diagram
+---
 graph TD
     A[Christmas] -->|Get money| B(Go shopping)
     B --> C{Let me think}
@@ -63,6 +65,24 @@ graph TD
     C -->|Two| E[iPhone]
     C -->|Three| F[fa:fa-car Car]"
 )
+```
+```{r}
+mermaid("
+---
+title: Example Git diagram
+---
+gitGraph
+   commit
+   commit
+   branch develop
+   checkout develop
+   commit
+   commit
+   checkout main
+   merge develop
+   commit
+   commit
+   ")
 ```
 
 For Python, see: <https://pypi.org/project/python-mermaid/>

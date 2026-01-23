@@ -6,12 +6,19 @@
     <description>Recent content in Tags on Teddy&#39;s online desktop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 08 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jan 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.codelooper.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI</title>
+      <link>https://www.codelooper.com/tags/ai/</link>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.codelooper.com/tags/ai/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Programming</title>
       <link>https://www.codelooper.com/tags/programming/</link>
-      <pubDate>Thu, 08 Feb 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 23 Jan 2026 00:00:00 +0000</pubDate>
       <guid>https://www.codelooper.com/tags/programming/</guid>
       <description></description>
     </item>
@@ -83,13 +90,6 @@
       <link>https://www.codelooper.com/tags/math/</link>
       <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://www.codelooper.com/tags/math/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>AI</title>
-      <link>https://www.codelooper.com/tags/ai/</link>
-      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
-      <guid>https://www.codelooper.com/tags/ai/</guid>
       <description></description>
     </item>
     <item>
