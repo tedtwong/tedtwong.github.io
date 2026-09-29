@@ -1,7 +1,7 @@
 {
   "alerts": [
     {
-      "alert_id": 28,
+      "alert_id": 37,
       "alert_type": "TREND_BREAK",
       "calculation": {
         "actual": 75166.0,
@@ -30,7 +30,7 @@
       "summary": "Latest value 75,166.000 millions of dollars; model forecast 72,200.000. This is a trend break, not a consensus surprise."
     },
     {
-      "alert_id": 21,
+      "alert_id": 30,
       "alert_type": "TREND_BREAK",
       "calculation": {
         "actual": 334.131,
@@ -59,7 +59,7 @@
       "summary": "Latest value 334.131 index 1982-84=100; model forecast 333.726. This is a trend break, not a consensus surprise."
     },
     {
-      "alert_id": 23,
+      "alert_id": 32,
       "alert_type": "TREND_BREAK",
       "calculation": {
         "actual": 159075.0,
@@ -88,7 +88,7 @@
       "summary": "Latest value 159,075.000 thousands of jobs; model forecast 158,949.000. This is a trend break, not a consensus surprise."
     },
     {
-      "alert_id": 27,
+      "alert_id": 36,
       "alert_type": "TREND_BREAK",
       "calculation": {
         "actual": 1614171.0,
@@ -117,7 +117,7 @@
       "summary": "Latest value 1,614,171.000 millions of dollars; model forecast 1,619,833.500. This is a trend break, not a consensus surprise."
     },
     {
-      "alert_id": 24,
+      "alert_id": 33,
       "alert_type": "TREND_BREAK",
       "calculation": {
         "actual": 37.75,
@@ -146,7 +146,7 @@
       "summary": "Latest value 37.750 dollars per hour; model forecast 37.740. This is a trend break, not a consensus surprise."
     },
     {
-      "alert_id": 26,
+      "alert_id": 35,
       "alert_type": "TREND_BREAK",
       "calculation": {
         "actual": 96.41,
@@ -175,7 +175,7 @@
       "summary": "Latest value 96.410 dollars per barrel; model forecast 97.240. This is a trend break, not a consensus surprise."
     },
     {
-      "alert_id": 29,
+      "alert_id": 38,
       "alert_type": "TREND_BREAK",
       "calculation": {
         "actual": 51304.0,
@@ -204,7 +204,7 @@
       "summary": "Latest value 51,304.000 millions of dollars; model forecast 49,092.500. This is a trend break, not a consensus surprise."
     },
     {
-      "alert_id": 22,
+      "alert_id": 31,
       "alert_type": "TREND_BREAK",
       "calculation": {
         "actual": 4.1,
@@ -233,7 +233,7 @@
       "summary": "Latest value 4.100 percent; model forecast 4.100. This is a trend break, not a consensus surprise."
     },
     {
-      "alert_id": 25,
+      "alert_id": 34,
       "alert_type": "TREND_BREAK",
       "calculation": {
         "actual": 3.96,
@@ -262,7 +262,7 @@
       "summary": "Latest value 3.960 percent; model forecast 3.960. This is a trend break, not a consensus surprise."
     }
   ],
-  "generated_at": "2026-09-29T05:26:00.678633+00:00",
+  "generated_at": "2026-09-29T07:55:37.518609+00:00",
   "observations": [
     {
       "as_of": "2026-07-01T00:00:00+00:00",
@@ -382,6 +382,221 @@
       "value": 37.75
     }
   ],
-  "schema_version": "macro-public-v1",
+  "prediction_markets": {
+    "price_history": [],
+    "prices_published": false,
+    "products": [
+      {
+        "category": "Economic Indicators",
+        "product_code": "ECFD",
+        "product_name": "FOMC decision",
+        "source_url": "https://www.cmegroup.com/markets/prediction-markets/event-contract-detail.html",
+        "status": "UNAVAILABLE",
+        "venue": "CME"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "ECCPI",
+        "product_name": "US CPI",
+        "source_url": "https://www.cmegroup.com/markets/prediction-markets/event-contract-detail.html",
+        "status": "UNAVAILABLE",
+        "venue": "CME"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "ECPCE",
+        "product_name": "US core PCE",
+        "source_url": "https://www.cmegroup.com/markets/prediction-markets/event-contract-detail.html",
+        "status": "UNAVAILABLE",
+        "venue": "CME"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "ECNFP",
+        "product_name": "US nonfarm payroll",
+        "source_url": "https://www.cmegroup.com/markets/prediction-markets/event-contract-detail.html",
+        "status": "UNAVAILABLE",
+        "venue": "CME"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "ECGDP",
+        "product_name": "US real GDP",
+        "source_url": "https://www.cmegroup.com/markets/prediction-markets/event-contract-detail.html",
+        "status": "UNAVAILABLE",
+        "venue": "CME"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "ECUNE",
+        "product_name": "US unemployment rate",
+        "source_url": "https://www.cmegroup.com/markets/prediction-markets/event-contract-detail.html",
+        "status": "UNAVAILABLE",
+        "venue": "CME"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "CPIY",
+        "product_name": "US CPI year over year",
+        "source_url": "https://forecastex.com/markets/",
+        "status": "AVAILABLE",
+        "venue": "FORECASTX"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "CPIC",
+        "product_name": "US Core CPI",
+        "source_url": "https://forecastex.com/markets/",
+        "status": "AVAILABLE",
+        "venue": "FORECASTX"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "FF",
+        "product_name": "US Fed Funds Target Rate",
+        "source_url": "https://forecastex.com/markets/",
+        "status": "AVAILABLE",
+        "venue": "FORECASTX"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "PCEY",
+        "product_name": "US PCE inflation",
+        "source_url": "https://forecastex.com/markets/",
+        "status": "AVAILABLE",
+        "venue": "FORECASTX"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "PREMP",
+        "product_name": "US Payroll Employment",
+        "source_url": "https://forecastex.com/markets/",
+        "status": "AVAILABLE",
+        "venue": "FORECASTX"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "RGDP",
+        "product_name": "US Real GDP",
+        "source_url": "https://forecastex.com/markets/",
+        "status": "AVAILABLE",
+        "venue": "FORECASTX"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "UNR",
+        "product_name": "US Unemployment Rate",
+        "source_url": "https://forecastex.com/markets/",
+        "status": "AVAILABLE",
+        "venue": "FORECASTX"
+      },
+      {
+        "category": "Financial Markets",
+        "product_code": "USEUR",
+        "product_name": "Euro to US dollar exchange rate",
+        "source_url": "https://forecastex.com/markets/",
+        "status": "AVAILABLE",
+        "venue": "FORECASTX"
+      },
+      {
+        "category": "Financial Markets",
+        "product_code": "METLG",
+        "product_name": "Gold price",
+        "source_url": "https://forecastex.com/markets/",
+        "status": "AVAILABLE",
+        "venue": "FORECASTX"
+      },
+      {
+        "category": "Financial Markets",
+        "product_code": "FNQ",
+        "product_name": "Nasdaq 100 futures price",
+        "source_url": "https://forecastex.com/markets/",
+        "status": "UNAVAILABLE",
+        "venue": "FORECASTX"
+      },
+      {
+        "category": "Financial Markets",
+        "product_code": "FES",
+        "product_name": "S&P 500 futures price",
+        "source_url": "https://forecastex.com/markets/",
+        "status": "UNAVAILABLE",
+        "venue": "FORECASTX"
+      },
+      {
+        "category": "Financial Markets",
+        "product_code": "JPUSD",
+        "product_name": "US dollar to Japanese yen exchange rate",
+        "source_url": "https://forecastex.com/markets/",
+        "status": "AVAILABLE",
+        "venue": "FORECASTX"
+      },
+      {
+        "category": "Financial Markets",
+        "product_code": "COMCO",
+        "product_name": "WTI crude oil price",
+        "source_url": "https://forecastex.com/markets/",
+        "status": "UNAVAILABLE",
+        "venue": "FORECASTX"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "KXFEDDECISION",
+        "product_name": "Federal Reserve decision",
+        "source_url": "https://kalshi.com/category/economics",
+        "status": "AVAILABLE",
+        "venue": "KALSHI"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "KXCPI",
+        "product_name": "US CPI",
+        "source_url": "https://kalshi.com/category/economics",
+        "status": "UNAVAILABLE",
+        "venue": "KALSHI"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "KXPAYROLLS",
+        "product_name": "US payroll employment",
+        "source_url": "https://kalshi.com/category/economics",
+        "status": "AVAILABLE",
+        "venue": "KALSHI"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "KXGDP",
+        "product_name": "US real GDP",
+        "source_url": "https://kalshi.com/category/economics",
+        "status": "UNAVAILABLE",
+        "venue": "KALSHI"
+      },
+      {
+        "category": "Economic Indicators",
+        "product_code": "KXU3",
+        "product_name": "US unemployment rate",
+        "source_url": "https://kalshi.com/category/economics",
+        "status": "AVAILABLE",
+        "venue": "KALSHI"
+      },
+      {
+        "category": "Financial Markets",
+        "product_code": "KXNASDAQ100",
+        "product_name": "Nasdaq 100 level",
+        "source_url": "https://kalshi.com/category/economics",
+        "status": "UNAVAILABLE",
+        "venue": "KALSHI"
+      },
+      {
+        "category": "Financial Markets",
+        "product_code": "KXWTI",
+        "product_name": "WTI crude oil price",
+        "source_url": "https://kalshi.com/category/economics",
+        "status": "AVAILABLE",
+        "venue": "KALSHI"
+      }
+    ],
+    "publication_note": "Product metadata is public. Licensed broker-derived prices are withheld pending explicit redistribution permission."
+  },
+  "schema_version": "macro-public-v2",
   "scope": "Approved official-source daily summary. No licensed market data."
 }
