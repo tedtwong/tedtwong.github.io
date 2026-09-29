@@ -1,7 +1,7 @@
 {
   "alerts": [
     {
-      "alert_id": 436,
+      "alert_id": 535,
       "alert_pts": 77.0,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -2040,7 +2040,7 @@
       "summary": "Latest reported value 11.446 billions of U.S. dollars; reported-scale forecast 0.829 billions of U.S. dollars. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 355,
+      "alert_id": 454,
       "alert_pts": 66.4,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -3871,7 +3871,7 @@
       "summary": "Latest reported value 4.130 percent; reported-scale forecast 3.960 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 359,
+      "alert_id": 458,
       "alert_pts": 54.65,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -5923,7 +5923,7 @@
       "summary": "Latest reported value 157.180 Japanese yen per U.S. dollar; reported-scale forecast 159.035 Japanese yen per U.S. dollar. The model uses log percent change. Status: forecast deviation."
     },
     {
-      "alert_id": 416,
+      "alert_id": 515,
       "alert_pts": 54.5,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -6455,7 +6455,7 @@
       "summary": "Latest reported value 2,945.052 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 2,893.604 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 415,
+      "alert_id": 514,
       "alert_pts": 50.75,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -7547,7 +7547,7 @@
       "summary": "Latest reported value 19,568.400 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 19,683.898 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 356,
+      "alert_id": 455,
       "alert_pts": 49.26,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -9587,7 +9587,7 @@
       "summary": "Latest reported value 4.920 percent; reported-scale forecast 4.810 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 408,
+      "alert_id": 507,
       "alert_pts": 48.21,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -10679,7 +10679,7 @@
       "summary": "Latest reported value -0.555 index; reported-scale forecast -0.558 index. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 410,
+      "alert_id": 509,
       "alert_pts": 48.21,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -12819,7 +12819,7 @@
       "summary": "Latest reported value 3.020 percent; reported-scale forecast 2.930 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 411,
+      "alert_id": 510,
       "alert_pts": 46.43,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -14959,7 +14959,7 @@
       "summary": "Latest reported value 11.460 percent; reported-scale forecast 11.290 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 413,
+      "alert_id": 512,
       "alert_pts": 45.25,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -16999,7 +16999,7 @@
       "summary": "Latest reported value 2.900 percent; reported-scale forecast 2.830 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 397,
+      "alert_id": 496,
       "alert_pts": 45.21,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -17527,7 +17527,7 @@
       "summary": "Latest reported value 7.700 percent, seasonally adjusted; reported-scale forecast 7.900 percent, seasonally adjusted. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 412,
+      "alert_id": 511,
       "alert_pts": 45.21,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -19667,7 +19667,7 @@
       "summary": "Latest reported value 1.020 percent; reported-scale forecast 0.990 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 350,
+      "alert_id": 449,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19701,7 +19701,7 @@
       "summary": "Latest reported value 334.131 index 1982-84=100; reported-scale forecast 333.058 index 1982-84=100. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 351,
+      "alert_id": 450,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19735,7 +19735,7 @@
       "summary": "Latest reported value 334.980 index 1982-84=100; reported-scale forecast 334.422 index 1982-84=100. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 352,
+      "alert_id": 451,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19770,7 +19770,7 @@
       "summary": "Latest reported value 4.100 percent; reported-scale forecast 4.100 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 353,
+      "alert_id": 452,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19805,7 +19805,7 @@
       "summary": "Latest reported value 159,075.000 thousands of jobs; reported-scale forecast 159,070.500 thousands of jobs. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 354,
+      "alert_id": 453,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19840,7 +19840,7 @@
       "summary": "Latest reported value 37.750 dollars per hour; reported-scale forecast 37.783 dollars per hour. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 357,
+      "alert_id": 456,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19875,7 +19875,7 @@
       "summary": "Latest reported value 5.240 percent; reported-scale forecast 5.180 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 358,
+      "alert_id": 457,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19910,7 +19910,7 @@
       "summary": "Latest reported value 1.140 U.S. dollars per euro; reported-scale forecast 1.137 U.S. dollars per euro. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 360,
+      "alert_id": 459,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19943,7 +19943,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 361,
+      "alert_id": 460,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19978,7 +19978,7 @@
       "summary": "Latest reported value 1,614,171.000 millions of dollars; reported-scale forecast 1,628,321.419 millions of dollars. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 362,
+      "alert_id": 461,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20013,7 +20013,7 @@
       "summary": "Latest reported value 75,166.000 millions of dollars; reported-scale forecast 72,204.836 millions of dollars. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 363,
+      "alert_id": 462,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20048,7 +20048,7 @@
       "summary": "Latest reported value 51,304.000 millions of dollars; reported-scale forecast 50,931.273 millions of dollars. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 364,
+      "alert_id": 463,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20083,7 +20083,7 @@
       "summary": "Latest reported value 663,616.000 millions of dollars, seasonally adjusted; reported-scale forecast 660,059.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 365,
+      "alert_id": 464,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20118,7 +20118,7 @@
       "summary": "Latest reported value 338,604.000 millions of dollars, seasonally adjusted; reported-scale forecast 339,509.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 366,
+      "alert_id": 465,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20153,7 +20153,7 @@
       "summary": "Latest reported value 324,224.000 millions of dollars, seasonally adjusted; reported-scale forecast 323,035.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 367,
+      "alert_id": 466,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20188,7 +20188,7 @@
       "summary": "Latest reported value 966,871.000 millions of dollars, seasonally adjusted; reported-scale forecast 964,677.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 368,
+      "alert_id": 467,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20223,7 +20223,7 @@
       "summary": "Latest reported value 608,082.000 millions of dollars, seasonally adjusted; reported-scale forecast 607,847.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 369,
+      "alert_id": 468,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20258,7 +20258,7 @@
       "summary": "Latest reported value 362,202.000 millions of dollars, seasonally adjusted; reported-scale forecast 360,147.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 370,
+      "alert_id": 469,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20293,7 +20293,7 @@
       "summary": "Latest reported value 333,825.000 millions of dollars, seasonally adjusted; reported-scale forecast 335,856.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 371,
+      "alert_id": 470,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20328,7 +20328,7 @@
       "summary": "Latest reported value 324,224.000 millions of dollars, seasonally adjusted; reported-scale forecast 323,035.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 372,
+      "alert_id": 471,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20363,7 +20363,7 @@
       "summary": "Latest reported value 3.030 index; reported-scale forecast 3.055 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 373,
+      "alert_id": 472,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20398,7 +20398,7 @@
       "summary": "Latest reported value -0.040 index; reported-scale forecast 0.055 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 374,
+      "alert_id": 473,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20433,7 +20433,7 @@
       "summary": "Latest reported value 24,269.613 billions of chained 2017 dollars, seasonally adjusted annual rate; reported-scale forecast 24,367.648 billions of chained 2017 dollars, seasonally adjusted annual rate. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 375,
+      "alert_id": 474,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20468,7 +20468,7 @@
       "summary": "Latest reported value 103.068 index 2017=100, seasonally adjusted; reported-scale forecast 103.083 index 2017=100, seasonally adjusted. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 376,
+      "alert_id": 475,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20503,7 +20503,7 @@
       "summary": "Latest reported value 76.272 percent, seasonally adjusted; reported-scale forecast 76.277 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 377,
+      "alert_id": 476,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20538,7 +20538,7 @@
       "summary": "Latest reported value 231,630.000 millions of 1982-84 CPI-adjusted dollars, seasonally adjusted; reported-scale forecast 229,987.616 millions of 1982-84 CPI-adjusted dollars, seasonally adjusted. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 378,
+      "alert_id": 477,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20571,7 +20571,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 379,
+      "alert_id": 478,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20604,7 +20604,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 380,
+      "alert_id": 479,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20637,7 +20637,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 381,
+      "alert_id": 480,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20672,7 +20672,7 @@
       "summary": "Latest reported value 1.300 ratio, seasonally adjusted; reported-scale forecast 1.300 ratio, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 382,
+      "alert_id": 481,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20706,7 +20706,7 @@
       "summary": "Latest reported value 334.131 index 1982-1984=100, seasonally adjusted; reported-scale forecast 333.573 index 1982-1984=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 383,
+      "alert_id": 482,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20740,7 +20740,7 @@
       "summary": "Latest reported value 337.765 index 1982-1984=100, seasonally adjusted; reported-scale forecast 337.842 index 1982-1984=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 384,
+      "alert_id": 483,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20775,7 +20775,7 @@
       "summary": "Latest reported value 131.659 index 2017=100, seasonally adjusted; reported-scale forecast 131.679 index 2017=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 385,
+      "alert_id": 484,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20809,7 +20809,7 @@
       "summary": "Latest reported value 130.658 index 2017=100, seasonally adjusted; reported-scale forecast 130.657 index 2017=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 386,
+      "alert_id": 485,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20843,7 +20843,7 @@
       "summary": "Latest reported value 157.411 index November 2009=100, seasonally adjusted; reported-scale forecast 156.501 index November 2009=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 387,
+      "alert_id": 486,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20878,7 +20878,7 @@
       "summary": "Latest reported value 2.104 percent change at annual rate, seasonally adjusted; reported-scale forecast 3.102 percent change at annual rate, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 388,
+      "alert_id": 487,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20912,7 +20912,7 @@
       "summary": "Latest reported value 339.202 index December 1982=100, seasonally adjusted; reported-scale forecast 339.317 index December 1982=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 389,
+      "alert_id": 488,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20946,7 +20946,7 @@
       "summary": "Latest reported value 2.340 percent; reported-scale forecast 2.330 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 390,
+      "alert_id": 489,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20980,7 +20980,7 @@
       "summary": "Latest reported value 2.360 percent; reported-scale forecast 2.350 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 391,
+      "alert_id": 490,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21015,7 +21015,7 @@
       "summary": "Latest reported value 197,000.000 number, seasonally adjusted; reported-scale forecast 198,000.000 number, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 392,
+      "alert_id": 491,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21050,7 +21050,7 @@
       "summary": "Latest reported value 1,719,000.000 number, seasonally adjusted; reported-scale forecast 1,712,000.000 number, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 393,
+      "alert_id": 492,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21085,7 +21085,7 @@
       "summary": "Latest reported value 1.100 percent, seasonally adjusted; reported-scale forecast 1.100 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 394,
+      "alert_id": 493,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21120,7 +21120,7 @@
       "summary": "Latest reported value -0.070 percentage points, seasonally adjusted; reported-scale forecast -0.130 percentage points, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 395,
+      "alert_id": 494,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21155,7 +21155,7 @@
       "summary": "Latest reported value 159,075.000 thousands of persons, seasonally adjusted; reported-scale forecast 159,070.500 thousands of persons, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 396,
+      "alert_id": 495,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21190,7 +21190,7 @@
       "summary": "Latest reported value 4.100 percent, seasonally adjusted; reported-scale forecast 4.100 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 398,
+      "alert_id": 497,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21225,7 +21225,7 @@
       "summary": "Latest reported value 34.400 hours, seasonally adjusted; reported-scale forecast 34.300 hours, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 399,
+      "alert_id": 498,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21260,7 +21260,7 @@
       "summary": "Latest reported value 2,519.500 thousands of persons, seasonally adjusted; reported-scale forecast 2,502.050 thousands of persons, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 400,
+      "alert_id": 499,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21295,7 +21295,7 @@
       "summary": "Latest reported value 7,079.000 thousands, seasonally adjusted; reported-scale forecast 7,270.000 thousands, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 401,
+      "alert_id": 500,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21330,7 +21330,7 @@
       "summary": "Latest reported value 3.300 rate, seasonally adjusted; reported-scale forecast 3.200 rate, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 402,
+      "alert_id": 501,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21365,7 +21365,7 @@
       "summary": "Latest reported value 1.900 rate, seasonally adjusted; reported-scale forecast 1.900 rate, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 403,
+      "alert_id": 502,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21400,7 +21400,7 @@
       "summary": "Latest reported value 0.358 percentage points; reported-scale forecast 0.130 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 404,
+      "alert_id": 503,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21435,7 +21435,7 @@
       "summary": "Latest reported value 0.396 percentage points; reported-scale forecast -0.460 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 405,
+      "alert_id": 504,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21470,7 +21470,7 @@
       "summary": "Latest reported value 0.001 percentage points; reported-scale forecast 0.003 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 406,
+      "alert_id": 505,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21505,7 +21505,7 @@
       "summary": "Latest reported value 16.070 index; reported-scale forecast 14.750 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 407,
+      "alert_id": 506,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21540,7 +21540,7 @@
       "summary": "Latest reported value 7,683.690 index; reported-scale forecast 7,748.241 index. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 409,
+      "alert_id": 508,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21575,7 +21575,7 @@
       "summary": "Latest reported value -0.907 index; reported-scale forecast -0.834 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 414,
+      "alert_id": 513,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21610,7 +21610,7 @@
       "summary": "Latest reported value 19,876.326 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 19,891.094 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 417,
+      "alert_id": 516,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21645,7 +21645,7 @@
       "summary": "Latest reported value 5,826.899 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 5,820.203 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 418,
+      "alert_id": 517,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21680,7 +21680,7 @@
       "summary": "Latest reported value 1,917.563 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 1,922.361 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 419,
+      "alert_id": 518,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21715,7 +21715,7 @@
       "summary": "Latest reported value 0.000 net percent; reported-scale forecast 9.250 net percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 420,
+      "alert_id": 519,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21750,7 +21750,7 @@
       "summary": "Latest reported value 1.800 net percent; reported-scale forecast 7.450 net percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 421,
+      "alert_id": 520,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21785,7 +21785,7 @@
       "summary": "Latest reported value -11.300 net percent; reported-scale forecast -7.450 net percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 422,
+      "alert_id": 521,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21820,7 +21820,7 @@
       "summary": "Latest reported value 1.530 percent, seasonally adjusted; reported-scale forecast 1.540 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 423,
+      "alert_id": 522,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21855,7 +21855,7 @@
       "summary": "Latest reported value 3.880 percent; reported-scale forecast 3.880 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 424,
+      "alert_id": 523,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21890,7 +21890,7 @@
       "summary": "Latest reported value 3.880 percent; reported-scale forecast 3.880 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 425,
+      "alert_id": 524,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21925,7 +21925,7 @@
       "summary": "Latest reported value 3.900 percent; reported-scale forecast 3.900 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 426,
+      "alert_id": 525,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21960,7 +21960,7 @@
       "summary": "Latest reported value 0.370 percent; reported-scale forecast 0.320 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 427,
+      "alert_id": 526,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21995,7 +21995,7 @@
       "summary": "Latest reported value 1.010 percent; reported-scale forecast 0.960 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 428,
+      "alert_id": 527,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22030,7 +22030,7 @@
       "summary": "Latest reported value 3.900 percent; reported-scale forecast 3.900 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 429,
+      "alert_id": 528,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22065,7 +22065,7 @@
       "summary": "Latest reported value 3.890 percent; reported-scale forecast 3.890 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 430,
+      "alert_id": 529,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22100,7 +22100,7 @@
       "summary": "Latest reported value 1,172.000 billions of U.S. dollars; reported-scale forecast 1,190.000 billions of U.S. dollars. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 431,
+      "alert_id": 530,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22135,7 +22135,7 @@
       "summary": "Latest reported value 3.790 percent; reported-scale forecast 3.800 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 432,
+      "alert_id": 531,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22170,7 +22170,7 @@
       "summary": "Latest reported value 3.890 percent; reported-scale forecast 3.890 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 433,
+      "alert_id": 532,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22205,7 +22205,7 @@
       "summary": "Latest reported value 3.890 percent; reported-scale forecast 3.900 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 434,
+      "alert_id": 533,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22240,7 +22240,7 @@
       "summary": "Latest reported value 3.910 percent; reported-scale forecast 3.910 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 435,
+      "alert_id": 534,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22275,7 +22275,7 @@
       "summary": "Latest reported value 3.750 percent; reported-scale forecast 3.750 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 437,
+      "alert_id": 536,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22310,7 +22310,7 @@
       "summary": "Latest reported value 2,930,193.000 millions of U.S. dollars; reported-scale forecast 3,013,329.500 millions of U.S. dollars. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 438,
+      "alert_id": 537,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22345,7 +22345,7 @@
       "summary": "Latest reported value 947,317.000 millions of U.S. dollars; reported-scale forecast 994,637.000 millions of U.S. dollars. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 439,
+      "alert_id": 538,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22380,7 +22380,7 @@
       "summary": "Latest reported value 1,403.000 thousands of units, seasonally adjusted annual rate; reported-scale forecast 1,428.000 thousands of units, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 440,
+      "alert_id": 539,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22415,7 +22415,7 @@
       "summary": "Latest reported value 1,275.000 thousands of units, seasonally adjusted annual rate; reported-scale forecast 1,301.500 thousands of units, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 441,
+      "alert_id": 540,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22450,7 +22450,7 @@
       "summary": "Latest reported value 684.000 thousands of units, seasonally adjusted annual rate; reported-scale forecast 653.000 thousands of units, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 442,
+      "alert_id": 541,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22485,7 +22485,7 @@
       "summary": "Latest reported value 8.500 months supply; reported-scale forecast 8.850 months supply. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 443,
+      "alert_id": 542,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22520,7 +22520,7 @@
       "summary": "Latest reported value 7.030 percent; reported-scale forecast 6.955 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 444,
+      "alert_id": 543,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22546,7 +22546,7 @@
       "summary": "Insufficient transformed observations for rolling calibration"
     },
     {
-      "alert_id": 445,
+      "alert_id": 544,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22579,7 +22579,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 446,
+      "alert_id": 545,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22614,7 +22614,7 @@
       "summary": "Latest reported value 410,700.000 U.S. dollars; reported-scale forecast 411,400.000 U.S. dollars. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 447,
+      "alert_id": 546,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22649,7 +22649,7 @@
       "summary": "Latest reported value 859,002.000 millions of U.S. dollars, seasonally adjusted annual rate; reported-scale forecast 866,443.000 millions of U.S. dollars, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 448,
+      "alert_id": 547,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22684,7 +22684,7 @@
       "summary": "Latest reported value 755,169.000 millions of U.S. dollars, seasonally adjusted annual rate; reported-scale forecast 756,103.500 millions of U.S. dollars, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     }
   ],
-  "generated_at": "2026-09-29T23:08:56.855913+00:00",
+  "generated_at": "2026-09-29T23:13:34.791443+00:00",
   "observations": [
     {
       "as_of": "2026-07-01T00:00:00+00:00",
@@ -23328,7 +23328,7 @@
       "series_name": "Existing-home sales",
       "source_name": "FRED",
       "source_url": "https://fred.stlouisfed.org/series/EXHOSLUSM495S",
-      "units": "thousands of units, seasonally adjusted annual rate",
+      "units": "units, seasonally adjusted annual rate",
       "value": 3980000.0
     },
     {
