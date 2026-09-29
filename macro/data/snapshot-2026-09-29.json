@@ -1,8 +1,2047 @@
 {
   "alerts": [
     {
-      "alert_id": 282,
-      "alert_pts": 61.4,
+      "alert_id": 436,
+      "alert_pts": 77.0,
+      "alert_type": "FORECAST_DEVIATION",
+      "calculation": {
+        "actual": 11.446,
+        "chart_actual": {
+          "observation_time": "2026-09-29T00:00:00+00:00",
+          "value": 11.446
+        },
+        "chart_forecast": {
+          "observation_time": "2026-09-29T00:00:00+00:00",
+          "value": 0.8285
+        },
+        "chart_history": [
+          {
+            "observation_time": "2024-09-30T00:00:00+00:00",
+            "value": 465.638
+          },
+          {
+            "observation_time": "2024-10-01T00:00:00+00:00",
+            "value": 375.221
+          },
+          {
+            "observation_time": "2024-10-02T00:00:00+00:00",
+            "value": 383.398
+          },
+          {
+            "observation_time": "2024-10-03T00:00:00+00:00",
+            "value": 341.248
+          },
+          {
+            "observation_time": "2024-10-04T00:00:00+00:00",
+            "value": 330.012
+          },
+          {
+            "observation_time": "2024-10-07T00:00:00+00:00",
+            "value": 322.948
+          },
+          {
+            "observation_time": "2024-10-08T00:00:00+00:00",
+            "value": 325.355
+          },
+          {
+            "observation_time": "2024-10-09T00:00:00+00:00",
+            "value": 343.448
+          },
+          {
+            "observation_time": "2024-10-10T00:00:00+00:00",
+            "value": 322.587
+          },
+          {
+            "observation_time": "2024-10-11T00:00:00+00:00",
+            "value": 331.735
+          },
+          {
+            "observation_time": "2024-10-15T00:00:00+00:00",
+            "value": 286.398
+          },
+          {
+            "observation_time": "2024-10-16T00:00:00+00:00",
+            "value": 272.028
+          },
+          {
+            "observation_time": "2024-10-17T00:00:00+00:00",
+            "value": 262.21
+          },
+          {
+            "observation_time": "2024-10-18T00:00:00+00:00",
+            "value": 259.892
+          },
+          {
+            "observation_time": "2024-10-21T00:00:00+00:00",
+            "value": 261.044
+          },
+          {
+            "observation_time": "2024-10-22T00:00:00+00:00",
+            "value": 237.76
+          },
+          {
+            "observation_time": "2024-10-23T00:00:00+00:00",
+            "value": 270.839
+          },
+          {
+            "observation_time": "2024-10-24T00:00:00+00:00",
+            "value": 202.798
+          },
+          {
+            "observation_time": "2024-10-25T00:00:00+00:00",
+            "value": 227.0
+          },
+          {
+            "observation_time": "2024-10-28T00:00:00+00:00",
+            "value": 251.032
+          },
+          {
+            "observation_time": "2024-10-29T00:00:00+00:00",
+            "value": 244.841
+          },
+          {
+            "observation_time": "2024-10-30T00:00:00+00:00",
+            "value": 228.946
+          },
+          {
+            "observation_time": "2024-10-31T00:00:00+00:00",
+            "value": 201.278
+          },
+          {
+            "observation_time": "2024-11-01T00:00:00+00:00",
+            "value": 155.476
+          },
+          {
+            "observation_time": "2024-11-04T00:00:00+00:00",
+            "value": 171.885
+          },
+          {
+            "observation_time": "2024-11-05T00:00:00+00:00",
+            "value": 144.243
+          },
+          {
+            "observation_time": "2024-11-06T00:00:00+00:00",
+            "value": 177.871
+          },
+          {
+            "observation_time": "2024-11-07T00:00:00+00:00",
+            "value": 159.002
+          },
+          {
+            "observation_time": "2024-11-08T00:00:00+00:00",
+            "value": 163.621
+          },
+          {
+            "observation_time": "2024-11-12T00:00:00+00:00",
+            "value": 178.814
+          },
+          {
+            "observation_time": "2024-11-13T00:00:00+00:00",
+            "value": 238.106
+          },
+          {
+            "observation_time": "2024-11-14T00:00:00+00:00",
+            "value": 214.509
+          },
+          {
+            "observation_time": "2024-11-15T00:00:00+00:00",
+            "value": 172.4
+          },
+          {
+            "observation_time": "2024-11-18T00:00:00+00:00",
+            "value": 200.03
+          },
+          {
+            "observation_time": "2024-11-19T00:00:00+00:00",
+            "value": 200.664
+          },
+          {
+            "observation_time": "2024-11-20T00:00:00+00:00",
+            "value": 217.793
+          },
+          {
+            "observation_time": "2024-11-21T00:00:00+00:00",
+            "value": 188.567
+          },
+          {
+            "observation_time": "2024-11-22T00:00:00+00:00",
+            "value": 204.254
+          },
+          {
+            "observation_time": "2024-11-25T00:00:00+00:00",
+            "value": 186.749
+          },
+          {
+            "observation_time": "2024-11-26T00:00:00+00:00",
+            "value": 148.823
+          },
+          {
+            "observation_time": "2024-11-27T00:00:00+00:00",
+            "value": 169.815
+          },
+          {
+            "observation_time": "2024-11-29T00:00:00+00:00",
+            "value": 197.627
+          },
+          {
+            "observation_time": "2024-12-02T00:00:00+00:00",
+            "value": 135.858
+          },
+          {
+            "observation_time": "2024-12-03T00:00:00+00:00",
+            "value": 161.572
+          },
+          {
+            "observation_time": "2024-12-04T00:00:00+00:00",
+            "value": 162.866
+          },
+          {
+            "observation_time": "2024-12-05T00:00:00+00:00",
+            "value": 131.964
+          },
+          {
+            "observation_time": "2024-12-06T00:00:00+00:00",
+            "value": 130.014
+          },
+          {
+            "observation_time": "2024-12-09T00:00:00+00:00",
+            "value": 153.029
+          },
+          {
+            "observation_time": "2024-12-10T00:00:00+00:00",
+            "value": 174.842
+          },
+          {
+            "observation_time": "2024-12-11T00:00:00+00:00",
+            "value": 180.12
+          },
+          {
+            "observation_time": "2024-12-12T00:00:00+00:00",
+            "value": 165.025
+          },
+          {
+            "observation_time": "2024-12-13T00:00:00+00:00",
+            "value": 135.777
+          },
+          {
+            "observation_time": "2024-12-16T00:00:00+00:00",
+            "value": 110.753
+          },
+          {
+            "observation_time": "2024-12-17T00:00:00+00:00",
+            "value": 118.093
+          },
+          {
+            "observation_time": "2024-12-18T00:00:00+00:00",
+            "value": 131.651
+          },
+          {
+            "observation_time": "2024-12-19T00:00:00+00:00",
+            "value": 112.417
+          },
+          {
+            "observation_time": "2024-12-20T00:00:00+00:00",
+            "value": 98.356
+          },
+          {
+            "observation_time": "2024-12-23T00:00:00+00:00",
+            "value": 116.004
+          },
+          {
+            "observation_time": "2024-12-24T00:00:00+00:00",
+            "value": 180.989
+          },
+          {
+            "observation_time": "2024-12-26T00:00:00+00:00",
+            "value": 196.818
+          },
+          {
+            "observation_time": "2024-12-27T00:00:00+00:00",
+            "value": 268.739
+          },
+          {
+            "observation_time": "2024-12-30T00:00:00+00:00",
+            "value": 260.743
+          },
+          {
+            "observation_time": "2024-12-31T00:00:00+00:00",
+            "value": 473.46
+          },
+          {
+            "observation_time": "2025-01-02T00:00:00+00:00",
+            "value": 239.858
+          },
+          {
+            "observation_time": "2025-01-03T00:00:00+00:00",
+            "value": 237.377
+          },
+          {
+            "observation_time": "2025-01-06T00:00:00+00:00",
+            "value": 231.926
+          },
+          {
+            "observation_time": "2025-01-07T00:00:00+00:00",
+            "value": 208.296
+          },
+          {
+            "observation_time": "2025-01-08T00:00:00+00:00",
+            "value": 185.144
+          },
+          {
+            "observation_time": "2025-01-09T00:00:00+00:00",
+            "value": 168.225
+          },
+          {
+            "observation_time": "2025-01-10T00:00:00+00:00",
+            "value": 178.8
+          },
+          {
+            "observation_time": "2025-01-13T00:00:00+00:00",
+            "value": 183.669
+          },
+          {
+            "observation_time": "2025-01-14T00:00:00+00:00",
+            "value": 160.219
+          },
+          {
+            "observation_time": "2025-01-15T00:00:00+00:00",
+            "value": 119.977
+          },
+          {
+            "observation_time": "2025-01-16T00:00:00+00:00",
+            "value": 94.489
+          },
+          {
+            "observation_time": "2025-01-17T00:00:00+00:00",
+            "value": 118.327
+          },
+          {
+            "observation_time": "2025-01-21T00:00:00+00:00",
+            "value": 96.015
+          },
+          {
+            "observation_time": "2025-01-22T00:00:00+00:00",
+            "value": 123.981
+          },
+          {
+            "observation_time": "2025-01-23T00:00:00+00:00",
+            "value": 132.031
+          },
+          {
+            "observation_time": "2025-01-24T00:00:00+00:00",
+            "value": 104.972
+          },
+          {
+            "observation_time": "2025-01-27T00:00:00+00:00",
+            "value": 92.863
+          },
+          {
+            "observation_time": "2025-01-28T00:00:00+00:00",
+            "value": 112.76
+          },
+          {
+            "observation_time": "2025-01-29T00:00:00+00:00",
+            "value": 121.842
+          },
+          {
+            "observation_time": "2025-01-30T00:00:00+00:00",
+            "value": 125.965
+          },
+          {
+            "observation_time": "2025-01-31T00:00:00+00:00",
+            "value": 187.913
+          },
+          {
+            "observation_time": "2025-02-03T00:00:00+00:00",
+            "value": 97.781
+          },
+          {
+            "observation_time": "2025-02-04T00:00:00+00:00",
+            "value": 85.654
+          },
+          {
+            "observation_time": "2025-02-05T00:00:00+00:00",
+            "value": 78.788
+          },
+          {
+            "observation_time": "2025-02-06T00:00:00+00:00",
+            "value": 79.983
+          },
+          {
+            "observation_time": "2025-02-07T00:00:00+00:00",
+            "value": 95.248
+          },
+          {
+            "observation_time": "2025-02-10T00:00:00+00:00",
+            "value": 99.653
+          },
+          {
+            "observation_time": "2025-02-11T00:00:00+00:00",
+            "value": 76.446
+          },
+          {
+            "observation_time": "2025-02-12T00:00:00+00:00",
+            "value": 67.67
+          },
+          {
+            "observation_time": "2025-02-13T00:00:00+00:00",
+            "value": 67.82
+          },
+          {
+            "observation_time": "2025-02-14T00:00:00+00:00",
+            "value": 58.77
+          },
+          {
+            "observation_time": "2025-02-18T00:00:00+00:00",
+            "value": 77.817
+          },
+          {
+            "observation_time": "2025-02-19T00:00:00+00:00",
+            "value": 73.196
+          },
+          {
+            "observation_time": "2025-02-20T00:00:00+00:00",
+            "value": 63.207
+          },
+          {
+            "observation_time": "2025-02-21T00:00:00+00:00",
+            "value": 68.983
+          },
+          {
+            "observation_time": "2025-02-24T00:00:00+00:00",
+            "value": 76.818
+          },
+          {
+            "observation_time": "2025-02-25T00:00:00+00:00",
+            "value": 96.0
+          },
+          {
+            "observation_time": "2025-02-26T00:00:00+00:00",
+            "value": 126.058
+          },
+          {
+            "observation_time": "2025-02-27T00:00:00+00:00",
+            "value": 182.148
+          },
+          {
+            "observation_time": "2025-02-28T00:00:00+00:00",
+            "value": 234.422
+          },
+          {
+            "observation_time": "2025-03-03T00:00:00+00:00",
+            "value": 119.987
+          },
+          {
+            "observation_time": "2025-03-04T00:00:00+00:00",
+            "value": 135.257
+          },
+          {
+            "observation_time": "2025-03-05T00:00:00+00:00",
+            "value": 139.493
+          },
+          {
+            "observation_time": "2025-03-06T00:00:00+00:00",
+            "value": 129.269
+          },
+          {
+            "observation_time": "2025-03-07T00:00:00+00:00",
+            "value": 136.305
+          },
+          {
+            "observation_time": "2025-03-10T00:00:00+00:00",
+            "value": 129.054
+          },
+          {
+            "observation_time": "2025-03-11T00:00:00+00:00",
+            "value": 137.31
+          },
+          {
+            "observation_time": "2025-03-12T00:00:00+00:00",
+            "value": 131.055
+          },
+          {
+            "observation_time": "2025-03-13T00:00:00+00:00",
+            "value": 113.435
+          },
+          {
+            "observation_time": "2025-03-14T00:00:00+00:00",
+            "value": 126.234
+          },
+          {
+            "observation_time": "2025-03-17T00:00:00+00:00",
+            "value": 89.496
+          },
+          {
+            "observation_time": "2025-03-18T00:00:00+00:00",
+            "value": 149.503
+          },
+          {
+            "observation_time": "2025-03-19T00:00:00+00:00",
+            "value": 193.378
+          },
+          {
+            "observation_time": "2025-03-20T00:00:00+00:00",
+            "value": 192.64
+          },
+          {
+            "observation_time": "2025-03-21T00:00:00+00:00",
+            "value": 200.85
+          },
+          {
+            "observation_time": "2025-03-24T00:00:00+00:00",
+            "value": 196.565
+          },
+          {
+            "observation_time": "2025-03-25T00:00:00+00:00",
+            "value": 214.786
+          },
+          {
+            "observation_time": "2025-03-26T00:00:00+00:00",
+            "value": 241.371
+          },
+          {
+            "observation_time": "2025-03-27T00:00:00+00:00",
+            "value": 291.785
+          },
+          {
+            "observation_time": "2025-03-28T00:00:00+00:00",
+            "value": 286.575
+          },
+          {
+            "observation_time": "2025-03-31T00:00:00+00:00",
+            "value": 399.167
+          },
+          {
+            "observation_time": "2025-04-01T00:00:00+00:00",
+            "value": 230.063
+          },
+          {
+            "observation_time": "2025-04-02T00:00:00+00:00",
+            "value": 233.488
+          },
+          {
+            "observation_time": "2025-04-03T00:00:00+00:00",
+            "value": 196.265
+          },
+          {
+            "observation_time": "2025-04-04T00:00:00+00:00",
+            "value": 184.499
+          },
+          {
+            "observation_time": "2025-04-07T00:00:00+00:00",
+            "value": 148.146
+          },
+          {
+            "observation_time": "2025-04-08T00:00:00+00:00",
+            "value": 156.911
+          },
+          {
+            "observation_time": "2025-04-09T00:00:00+00:00",
+            "value": 168.115
+          },
+          {
+            "observation_time": "2025-04-10T00:00:00+00:00",
+            "value": 129.95
+          },
+          {
+            "observation_time": "2025-04-11T00:00:00+00:00",
+            "value": 98.531
+          },
+          {
+            "observation_time": "2025-04-14T00:00:00+00:00",
+            "value": 102.838
+          },
+          {
+            "observation_time": "2025-04-15T00:00:00+00:00",
+            "value": 88.878
+          },
+          {
+            "observation_time": "2025-04-16T00:00:00+00:00",
+            "value": 54.772
+          },
+          {
+            "observation_time": "2025-04-17T00:00:00+00:00",
+            "value": 58.6
+          },
+          {
+            "observation_time": "2025-04-21T00:00:00+00:00",
+            "value": 114.114
+          },
+          {
+            "observation_time": "2025-04-22T00:00:00+00:00",
+            "value": 137.951
+          },
+          {
+            "observation_time": "2025-04-23T00:00:00+00:00",
+            "value": 171.78
+          },
+          {
+            "observation_time": "2025-04-24T00:00:00+00:00",
+            "value": 130.004
+          },
+          {
+            "observation_time": "2025-04-25T00:00:00+00:00",
+            "value": 94.021
+          },
+          {
+            "observation_time": "2025-04-28T00:00:00+00:00",
+            "value": 148.649
+          },
+          {
+            "observation_time": "2025-04-29T00:00:00+00:00",
+            "value": 157.537
+          },
+          {
+            "observation_time": "2025-04-30T00:00:00+00:00",
+            "value": 250.601
+          },
+          {
+            "observation_time": "2025-05-01T00:00:00+00:00",
+            "value": 157.353
+          },
+          {
+            "observation_time": "2025-05-02T00:00:00+00:00",
+            "value": 147.882
+          },
+          {
+            "observation_time": "2025-05-05T00:00:00+00:00",
+            "value": 124.69
+          },
+          {
+            "observation_time": "2025-05-06T00:00:00+00:00",
+            "value": 129.858
+          },
+          {
+            "observation_time": "2025-05-07T00:00:00+00:00",
+            "value": 154.859
+          },
+          {
+            "observation_time": "2025-05-08T00:00:00+00:00",
+            "value": 139.768
+          },
+          {
+            "observation_time": "2025-05-09T00:00:00+00:00",
+            "value": 142.272
+          },
+          {
+            "observation_time": "2025-05-12T00:00:00+00:00",
+            "value": 147.505
+          },
+          {
+            "observation_time": "2025-05-13T00:00:00+00:00",
+            "value": 144.214
+          },
+          {
+            "observation_time": "2025-05-14T00:00:00+00:00",
+            "value": 165.024
+          },
+          {
+            "observation_time": "2025-05-15T00:00:00+00:00",
+            "value": 109.436
+          },
+          {
+            "observation_time": "2025-05-16T00:00:00+00:00",
+            "value": 136.799
+          },
+          {
+            "observation_time": "2025-05-19T00:00:00+00:00",
+            "value": 180.417
+          },
+          {
+            "observation_time": "2025-05-20T00:00:00+00:00",
+            "value": 136.033
+          },
+          {
+            "observation_time": "2025-05-21T00:00:00+00:00",
+            "value": 162.802
+          },
+          {
+            "observation_time": "2025-05-22T00:00:00+00:00",
+            "value": 173.018
+          },
+          {
+            "observation_time": "2025-05-23T00:00:00+00:00",
+            "value": 154.841
+          },
+          {
+            "observation_time": "2025-05-27T00:00:00+00:00",
+            "value": 138.066
+          },
+          {
+            "observation_time": "2025-05-28T00:00:00+00:00",
+            "value": 173.641
+          },
+          {
+            "observation_time": "2025-05-29T00:00:00+00:00",
+            "value": 165.66
+          },
+          {
+            "observation_time": "2025-05-30T00:00:00+00:00",
+            "value": 315.657
+          },
+          {
+            "observation_time": "2025-06-02T00:00:00+00:00",
+            "value": 135.841
+          },
+          {
+            "observation_time": "2025-06-03T00:00:00+00:00",
+            "value": 153.177
+          },
+          {
+            "observation_time": "2025-06-04T00:00:00+00:00",
+            "value": 168.882
+          },
+          {
+            "observation_time": "2025-06-05T00:00:00+00:00",
+            "value": 152.727
+          },
+          {
+            "observation_time": "2025-06-06T00:00:00+00:00",
+            "value": 149.284
+          },
+          {
+            "observation_time": "2025-06-09T00:00:00+00:00",
+            "value": 179.315
+          },
+          {
+            "observation_time": "2025-06-10T00:00:00+00:00",
+            "value": 182.725
+          },
+          {
+            "observation_time": "2025-06-11T00:00:00+00:00",
+            "value": 204.625
+          },
+          {
+            "observation_time": "2025-06-12T00:00:00+00:00",
+            "value": 181.417
+          },
+          {
+            "observation_time": "2025-06-13T00:00:00+00:00",
+            "value": 168.645
+          },
+          {
+            "observation_time": "2025-06-16T00:00:00+00:00",
+            "value": 140.759
+          },
+          {
+            "observation_time": "2025-06-17T00:00:00+00:00",
+            "value": 168.939
+          },
+          {
+            "observation_time": "2025-06-18T00:00:00+00:00",
+            "value": 205.05
+          },
+          {
+            "observation_time": "2025-06-20T00:00:00+00:00",
+            "value": 138.283
+          },
+          {
+            "observation_time": "2025-06-23T00:00:00+00:00",
+            "value": 165.319
+          },
+          {
+            "observation_time": "2025-06-24T00:00:00+00:00",
+            "value": 187.367
+          },
+          {
+            "observation_time": "2025-06-25T00:00:00+00:00",
+            "value": 210.879
+          },
+          {
+            "observation_time": "2025-06-26T00:00:00+00:00",
+            "value": 252.432
+          },
+          {
+            "observation_time": "2025-06-27T00:00:00+00:00",
+            "value": 285.742
+          },
+          {
+            "observation_time": "2025-06-30T00:00:00+00:00",
+            "value": 460.731
+          },
+          {
+            "observation_time": "2025-07-01T00:00:00+00:00",
+            "value": 245.53
+          },
+          {
+            "observation_time": "2025-07-02T00:00:00+00:00",
+            "value": 237.307
+          },
+          {
+            "observation_time": "2025-07-03T00:00:00+00:00",
+            "value": 214.665
+          },
+          {
+            "observation_time": "2025-07-07T00:00:00+00:00",
+            "value": 218.03
+          },
+          {
+            "observation_time": "2025-07-08T00:00:00+00:00",
+            "value": 219.415
+          },
+          {
+            "observation_time": "2025-07-09T00:00:00+00:00",
+            "value": 227.273
+          },
+          {
+            "observation_time": "2025-07-10T00:00:00+00:00",
+            "value": 183.339
+          },
+          {
+            "observation_time": "2025-07-11T00:00:00+00:00",
+            "value": 181.637
+          },
+          {
+            "observation_time": "2025-07-14T00:00:00+00:00",
+            "value": 217.841
+          },
+          {
+            "observation_time": "2025-07-15T00:00:00+00:00",
+            "value": 198.277
+          },
+          {
+            "observation_time": "2025-07-16T00:00:00+00:00",
+            "value": 197.086
+          },
+          {
+            "observation_time": "2025-07-17T00:00:00+00:00",
+            "value": 193.66
+          },
+          {
+            "observation_time": "2025-07-18T00:00:00+00:00",
+            "value": 199.298
+          },
+          {
+            "observation_time": "2025-07-21T00:00:00+00:00",
+            "value": 213.666
+          },
+          {
+            "observation_time": "2025-07-22T00:00:00+00:00",
+            "value": 196.374
+          },
+          {
+            "observation_time": "2025-07-23T00:00:00+00:00",
+            "value": 189.632
+          },
+          {
+            "observation_time": "2025-07-24T00:00:00+00:00",
+            "value": 132.186
+          },
+          {
+            "observation_time": "2025-07-25T00:00:00+00:00",
+            "value": 150.509
+          },
+          {
+            "observation_time": "2025-07-28T00:00:00+00:00",
+            "value": 170.463
+          },
+          {
+            "observation_time": "2025-07-29T00:00:00+00:00",
+            "value": 171.018
+          },
+          {
+            "observation_time": "2025-07-30T00:00:00+00:00",
+            "value": 155.481
+          },
+          {
+            "observation_time": "2025-07-31T00:00:00+00:00",
+            "value": 214.445
+          },
+          {
+            "observation_time": "2025-08-01T00:00:00+00:00",
+            "value": 97.426
+          },
+          {
+            "observation_time": "2025-08-04T00:00:00+00:00",
+            "value": 125.73
+          },
+          {
+            "observation_time": "2025-08-05T00:00:00+00:00",
+            "value": 84.356
+          },
+          {
+            "observation_time": "2025-08-06T00:00:00+00:00",
+            "value": 91.966
+          },
+          {
+            "observation_time": "2025-08-07T00:00:00+00:00",
+            "value": 77.961
+          },
+          {
+            "observation_time": "2025-08-08T00:00:00+00:00",
+            "value": 80.303
+          },
+          {
+            "observation_time": "2025-08-11T00:00:00+00:00",
+            "value": 82.214
+          },
+          {
+            "observation_time": "2025-08-12T00:00:00+00:00",
+            "value": 57.492
+          },
+          {
+            "observation_time": "2025-08-13T00:00:00+00:00",
+            "value": 57.202
+          },
+          {
+            "observation_time": "2025-08-14T00:00:00+00:00",
+            "value": 28.818
+          },
+          {
+            "observation_time": "2025-08-15T00:00:00+00:00",
+            "value": 33.757
+          },
+          {
+            "observation_time": "2025-08-18T00:00:00+00:00",
+            "value": 38.24
+          },
+          {
+            "observation_time": "2025-08-19T00:00:00+00:00",
+            "value": 22.344
+          },
+          {
+            "observation_time": "2025-08-20T00:00:00+00:00",
+            "value": 34.999
+          },
+          {
+            "observation_time": "2025-08-21T00:00:00+00:00",
+            "value": 25.358
+          },
+          {
+            "observation_time": "2025-08-22T00:00:00+00:00",
+            "value": 36.275
+          },
+          {
+            "observation_time": "2025-08-25T00:00:00+00:00",
+            "value": 47.567
+          },
+          {
+            "observation_time": "2025-08-26T00:00:00+00:00",
+            "value": 28.574
+          },
+          {
+            "observation_time": "2025-08-27T00:00:00+00:00",
+            "value": 34.744
+          },
+          {
+            "observation_time": "2025-08-28T00:00:00+00:00",
+            "value": 31.966
+          },
+          {
+            "observation_time": "2025-08-29T00:00:00+00:00",
+            "value": 77.898
+          },
+          {
+            "observation_time": "2025-09-02T00:00:00+00:00",
+            "value": 21.066
+          },
+          {
+            "observation_time": "2025-09-03T00:00:00+00:00",
+            "value": 17.923
+          },
+          {
+            "observation_time": "2025-09-04T00:00:00+00:00",
+            "value": 20.128
+          },
+          {
+            "observation_time": "2025-09-05T00:00:00+00:00",
+            "value": 20.997
+          },
+          {
+            "observation_time": "2025-09-08T00:00:00+00:00",
+            "value": 19.416
+          },
+          {
+            "observation_time": "2025-09-09T00:00:00+00:00",
+            "value": 22.915
+          },
+          {
+            "observation_time": "2025-09-10T00:00:00+00:00",
+            "value": 29.4
+          },
+          {
+            "observation_time": "2025-09-11T00:00:00+00:00",
+            "value": 26.897
+          },
+          {
+            "observation_time": "2025-09-12T00:00:00+00:00",
+            "value": 17.331
+          },
+          {
+            "observation_time": "2025-09-15T00:00:00+00:00",
+            "value": 16.954
+          },
+          {
+            "observation_time": "2025-09-16T00:00:00+00:00",
+            "value": 18.817
+          },
+          {
+            "observation_time": "2025-09-17T00:00:00+00:00",
+            "value": 13.963
+          },
+          {
+            "observation_time": "2025-09-18T00:00:00+00:00",
+            "value": 13.707
+          },
+          {
+            "observation_time": "2025-09-19T00:00:00+00:00",
+            "value": 11.363
+          },
+          {
+            "observation_time": "2025-09-22T00:00:00+00:00",
+            "value": 14.173
+          },
+          {
+            "observation_time": "2025-09-23T00:00:00+00:00",
+            "value": 14.402
+          },
+          {
+            "observation_time": "2025-09-24T00:00:00+00:00",
+            "value": 29.172
+          },
+          {
+            "observation_time": "2025-09-25T00:00:00+00:00",
+            "value": 25.369
+          },
+          {
+            "observation_time": "2025-09-26T00:00:00+00:00",
+            "value": 48.073
+          },
+          {
+            "observation_time": "2025-09-29T00:00:00+00:00",
+            "value": 56.22
+          },
+          {
+            "observation_time": "2025-09-30T00:00:00+00:00",
+            "value": 49.071
+          },
+          {
+            "observation_time": "2025-10-01T00:00:00+00:00",
+            "value": 10.179
+          },
+          {
+            "observation_time": "2025-10-02T00:00:00+00:00",
+            "value": 8.436
+          },
+          {
+            "observation_time": "2025-10-03T00:00:00+00:00",
+            "value": 25.392
+          },
+          {
+            "observation_time": "2025-10-06T00:00:00+00:00",
+            "value": 21.776
+          },
+          {
+            "observation_time": "2025-10-07T00:00:00+00:00",
+            "value": 4.622
+          },
+          {
+            "observation_time": "2025-10-08T00:00:00+00:00",
+            "value": 5.231
+          },
+          {
+            "observation_time": "2025-10-09T00:00:00+00:00",
+            "value": 4.496
+          },
+          {
+            "observation_time": "2025-10-10T00:00:00+00:00",
+            "value": 4.124
+          },
+          {
+            "observation_time": "2025-10-14T00:00:00+00:00",
+            "value": 3.516
+          },
+          {
+            "observation_time": "2025-10-15T00:00:00+00:00",
+            "value": 5.484
+          },
+          {
+            "observation_time": "2025-10-16T00:00:00+00:00",
+            "value": 6.96
+          },
+          {
+            "observation_time": "2025-10-17T00:00:00+00:00",
+            "value": 4.102
+          },
+          {
+            "observation_time": "2025-10-20T00:00:00+00:00",
+            "value": 5.931
+          },
+          {
+            "observation_time": "2025-10-21T00:00:00+00:00",
+            "value": 4.699
+          },
+          {
+            "observation_time": "2025-10-22T00:00:00+00:00",
+            "value": 4.005
+          },
+          {
+            "observation_time": "2025-10-23T00:00:00+00:00",
+            "value": 6.941
+          },
+          {
+            "observation_time": "2025-10-24T00:00:00+00:00",
+            "value": 2.435
+          },
+          {
+            "observation_time": "2025-10-27T00:00:00+00:00",
+            "value": 10.642
+          },
+          {
+            "observation_time": "2025-10-28T00:00:00+00:00",
+            "value": 14.096
+          },
+          {
+            "observation_time": "2025-10-29T00:00:00+00:00",
+            "value": 19.504
+          },
+          {
+            "observation_time": "2025-10-30T00:00:00+00:00",
+            "value": 19.166
+          },
+          {
+            "observation_time": "2025-10-31T00:00:00+00:00",
+            "value": 51.802
+          },
+          {
+            "observation_time": "2025-11-03T00:00:00+00:00",
+            "value": 23.792
+          },
+          {
+            "observation_time": "2025-11-04T00:00:00+00:00",
+            "value": 16.983
+          },
+          {
+            "observation_time": "2025-11-05T00:00:00+00:00",
+            "value": 12.814
+          },
+          {
+            "observation_time": "2025-11-06T00:00:00+00:00",
+            "value": 10.754
+          },
+          {
+            "observation_time": "2025-11-07T00:00:00+00:00",
+            "value": 4.903
+          },
+          {
+            "observation_time": "2025-11-10T00:00:00+00:00",
+            "value": 7.152
+          },
+          {
+            "observation_time": "2025-11-12T00:00:00+00:00",
+            "value": 5.886
+          },
+          {
+            "observation_time": "2025-11-13T00:00:00+00:00",
+            "value": 3.761
+          },
+          {
+            "observation_time": "2025-11-14T00:00:00+00:00",
+            "value": 1.559
+          },
+          {
+            "observation_time": "2025-11-17T00:00:00+00:00",
+            "value": 3.172
+          },
+          {
+            "observation_time": "2025-11-18T00:00:00+00:00",
+            "value": 0.905
+          },
+          {
+            "observation_time": "2025-11-19T00:00:00+00:00",
+            "value": 1.129
+          },
+          {
+            "observation_time": "2025-11-20T00:00:00+00:00",
+            "value": 6.52
+          },
+          {
+            "observation_time": "2025-11-21T00:00:00+00:00",
+            "value": 2.503
+          },
+          {
+            "observation_time": "2025-11-24T00:00:00+00:00",
+            "value": 1.077
+          },
+          {
+            "observation_time": "2025-11-25T00:00:00+00:00",
+            "value": 2.314
+          },
+          {
+            "observation_time": "2025-11-26T00:00:00+00:00",
+            "value": 2.217
+          },
+          {
+            "observation_time": "2025-11-28T00:00:00+00:00",
+            "value": 7.561
+          },
+          {
+            "observation_time": "2025-12-01T00:00:00+00:00",
+            "value": 3.24
+          },
+          {
+            "observation_time": "2025-12-02T00:00:00+00:00",
+            "value": 5.62
+          },
+          {
+            "observation_time": "2025-12-03T00:00:00+00:00",
+            "value": 2.514
+          },
+          {
+            "observation_time": "2025-12-04T00:00:00+00:00",
+            "value": 2.233
+          },
+          {
+            "observation_time": "2025-12-05T00:00:00+00:00",
+            "value": 1.485
+          },
+          {
+            "observation_time": "2025-12-08T00:00:00+00:00",
+            "value": 1.703
+          },
+          {
+            "observation_time": "2025-12-09T00:00:00+00:00",
+            "value": 3.211
+          },
+          {
+            "observation_time": "2025-12-10T00:00:00+00:00",
+            "value": 5.045
+          },
+          {
+            "observation_time": "2025-12-11T00:00:00+00:00",
+            "value": 2.874
+          },
+          {
+            "observation_time": "2025-12-12T00:00:00+00:00",
+            "value": 0.838
+          },
+          {
+            "observation_time": "2025-12-15T00:00:00+00:00",
+            "value": 2.601
+          },
+          {
+            "observation_time": "2025-12-16T00:00:00+00:00",
+            "value": 1.554
+          },
+          {
+            "observation_time": "2025-12-17T00:00:00+00:00",
+            "value": 10.361
+          },
+          {
+            "observation_time": "2025-12-18T00:00:00+00:00",
+            "value": 11.708
+          },
+          {
+            "observation_time": "2025-12-19T00:00:00+00:00",
+            "value": 3.047
+          },
+          {
+            "observation_time": "2025-12-22T00:00:00+00:00",
+            "value": 1.523
+          },
+          {
+            "observation_time": "2025-12-23T00:00:00+00:00",
+            "value": 5.893
+          },
+          {
+            "observation_time": "2025-12-24T00:00:00+00:00",
+            "value": 4.803
+          },
+          {
+            "observation_time": "2025-12-26T00:00:00+00:00",
+            "value": 20.339
+          },
+          {
+            "observation_time": "2025-12-29T00:00:00+00:00",
+            "value": 10.551
+          },
+          {
+            "observation_time": "2025-12-30T00:00:00+00:00",
+            "value": 12.605
+          },
+          {
+            "observation_time": "2025-12-31T00:00:00+00:00",
+            "value": 105.993
+          },
+          {
+            "observation_time": "2026-01-02T00:00:00+00:00",
+            "value": 5.667
+          },
+          {
+            "observation_time": "2026-01-05T00:00:00+00:00",
+            "value": 6.485
+          },
+          {
+            "observation_time": "2026-01-06T00:00:00+00:00",
+            "value": 2.582
+          },
+          {
+            "observation_time": "2026-01-07T00:00:00+00:00",
+            "value": 4.582
+          },
+          {
+            "observation_time": "2026-01-08T00:00:00+00:00",
+            "value": 3.083
+          },
+          {
+            "observation_time": "2026-01-09T00:00:00+00:00",
+            "value": 3.28
+          },
+          {
+            "observation_time": "2026-01-12T00:00:00+00:00",
+            "value": 3.402
+          },
+          {
+            "observation_time": "2026-01-13T00:00:00+00:00",
+            "value": 3.277
+          },
+          {
+            "observation_time": "2026-01-14T00:00:00+00:00",
+            "value": 3.223
+          },
+          {
+            "observation_time": "2026-01-15T00:00:00+00:00",
+            "value": 2.003
+          },
+          {
+            "observation_time": "2026-01-16T00:00:00+00:00",
+            "value": 1.222
+          },
+          {
+            "observation_time": "2026-01-20T00:00:00+00:00",
+            "value": 3.506
+          },
+          {
+            "observation_time": "2026-01-21T00:00:00+00:00",
+            "value": 3.344
+          },
+          {
+            "observation_time": "2026-01-22T00:00:00+00:00",
+            "value": 2.058
+          },
+          {
+            "observation_time": "2026-01-23T00:00:00+00:00",
+            "value": 0.927
+          },
+          {
+            "observation_time": "2026-01-26T00:00:00+00:00",
+            "value": 1.489
+          },
+          {
+            "observation_time": "2026-01-27T00:00:00+00:00",
+            "value": 1.253
+          },
+          {
+            "observation_time": "2026-01-28T00:00:00+00:00",
+            "value": 1.103
+          },
+          {
+            "observation_time": "2026-01-29T00:00:00+00:00",
+            "value": 2.852
+          },
+          {
+            "observation_time": "2026-01-30T00:00:00+00:00",
+            "value": 9.629
+          },
+          {
+            "observation_time": "2026-02-02T00:00:00+00:00",
+            "value": 10.415
+          },
+          {
+            "observation_time": "2026-02-03T00:00:00+00:00",
+            "value": 1.785
+          },
+          {
+            "observation_time": "2026-02-04T00:00:00+00:00",
+            "value": 2.414
+          },
+          {
+            "observation_time": "2026-02-05T00:00:00+00:00",
+            "value": 1.748
+          },
+          {
+            "observation_time": "2026-02-06T00:00:00+00:00",
+            "value": 3.111
+          },
+          {
+            "observation_time": "2026-02-09T00:00:00+00:00",
+            "value": 1.306
+          },
+          {
+            "observation_time": "2026-02-10T00:00:00+00:00",
+            "value": 1.447
+          },
+          {
+            "observation_time": "2026-02-11T00:00:00+00:00",
+            "value": 1.048
+          },
+          {
+            "observation_time": "2026-02-12T00:00:00+00:00",
+            "value": 2.844
+          },
+          {
+            "observation_time": "2026-02-13T00:00:00+00:00",
+            "value": 0.377
+          },
+          {
+            "observation_time": "2026-02-17T00:00:00+00:00",
+            "value": 0.441
+          },
+          {
+            "observation_time": "2026-02-18T00:00:00+00:00",
+            "value": 0.856
+          },
+          {
+            "observation_time": "2026-02-19T00:00:00+00:00",
+            "value": 0.632
+          },
+          {
+            "observation_time": "2026-02-20T00:00:00+00:00",
+            "value": 0.496
+          },
+          {
+            "observation_time": "2026-02-23T00:00:00+00:00",
+            "value": 0.877
+          },
+          {
+            "observation_time": "2026-02-24T00:00:00+00:00",
+            "value": 0.917
+          },
+          {
+            "observation_time": "2026-02-25T00:00:00+00:00",
+            "value": 1.159
+          },
+          {
+            "observation_time": "2026-02-26T00:00:00+00:00",
+            "value": 3.796
+          },
+          {
+            "observation_time": "2026-02-27T00:00:00+00:00",
+            "value": 16.318
+          },
+          {
+            "observation_time": "2026-03-02T00:00:00+00:00",
+            "value": 0.627
+          },
+          {
+            "observation_time": "2026-03-03T00:00:00+00:00",
+            "value": 1.203
+          },
+          {
+            "observation_time": "2026-03-04T00:00:00+00:00",
+            "value": 0.877
+          },
+          {
+            "observation_time": "2026-03-05T00:00:00+00:00",
+            "value": 2.793
+          },
+          {
+            "observation_time": "2026-03-06T00:00:00+00:00",
+            "value": 1.512
+          },
+          {
+            "observation_time": "2026-03-09T00:00:00+00:00",
+            "value": 0.332
+          },
+          {
+            "observation_time": "2026-03-10T00:00:00+00:00",
+            "value": 0.278
+          },
+          {
+            "observation_time": "2026-03-11T00:00:00+00:00",
+            "value": 0.552
+          },
+          {
+            "observation_time": "2026-03-12T00:00:00+00:00",
+            "value": 0.137
+          },
+          {
+            "observation_time": "2026-03-13T00:00:00+00:00",
+            "value": 0.427
+          },
+          {
+            "observation_time": "2026-03-16T00:00:00+00:00",
+            "value": 0.582
+          },
+          {
+            "observation_time": "2026-03-17T00:00:00+00:00",
+            "value": 0.797
+          },
+          {
+            "observation_time": "2026-03-18T00:00:00+00:00",
+            "value": 0.698
+          },
+          {
+            "observation_time": "2026-03-19T00:00:00+00:00",
+            "value": 0.637
+          },
+          {
+            "observation_time": "2026-03-20T00:00:00+00:00",
+            "value": 0.822
+          },
+          {
+            "observation_time": "2026-03-23T00:00:00+00:00",
+            "value": 0.857
+          },
+          {
+            "observation_time": "2026-03-24T00:00:00+00:00",
+            "value": 1.123
+          },
+          {
+            "observation_time": "2026-03-25T00:00:00+00:00",
+            "value": 0.777
+          },
+          {
+            "observation_time": "2026-03-26T00:00:00+00:00",
+            "value": 0.885
+          },
+          {
+            "observation_time": "2026-03-27T00:00:00+00:00",
+            "value": 0.992
+          },
+          {
+            "observation_time": "2026-03-30T00:00:00+00:00",
+            "value": 0.752
+          },
+          {
+            "observation_time": "2026-03-31T00:00:00+00:00",
+            "value": 15.782
+          },
+          {
+            "observation_time": "2026-04-01T00:00:00+00:00",
+            "value": 2.107
+          },
+          {
+            "observation_time": "2026-04-02T00:00:00+00:00",
+            "value": 0.327
+          },
+          {
+            "observation_time": "2026-04-06T00:00:00+00:00",
+            "value": 0.227
+          },
+          {
+            "observation_time": "2026-04-07T00:00:00+00:00",
+            "value": 15.345
+          },
+          {
+            "observation_time": "2026-04-08T00:00:00+00:00",
+            "value": 0.177
+          },
+          {
+            "observation_time": "2026-04-09T00:00:00+00:00",
+            "value": 0.402
+          },
+          {
+            "observation_time": "2026-04-10T00:00:00+00:00",
+            "value": 0.507
+          },
+          {
+            "observation_time": "2026-04-13T00:00:00+00:00",
+            "value": 0.227
+          },
+          {
+            "observation_time": "2026-04-14T00:00:00+00:00",
+            "value": 0.306
+          },
+          {
+            "observation_time": "2026-04-15T00:00:00+00:00",
+            "value": 0.223
+          },
+          {
+            "observation_time": "2026-04-16T00:00:00+00:00",
+            "value": 0.158
+          },
+          {
+            "observation_time": "2026-04-17T00:00:00+00:00",
+            "value": 0.137
+          },
+          {
+            "observation_time": "2026-04-20T00:00:00+00:00",
+            "value": 0.503
+          },
+          {
+            "observation_time": "2026-04-21T00:00:00+00:00",
+            "value": 0.807
+          },
+          {
+            "observation_time": "2026-04-22T00:00:00+00:00",
+            "value": 0.538
+          },
+          {
+            "observation_time": "2026-04-23T00:00:00+00:00",
+            "value": 0.114
+          },
+          {
+            "observation_time": "2026-04-24T00:00:00+00:00",
+            "value": 0.082
+          },
+          {
+            "observation_time": "2026-04-27T00:00:00+00:00",
+            "value": 0.363
+          },
+          {
+            "observation_time": "2026-04-28T00:00:00+00:00",
+            "value": 0.643
+          },
+          {
+            "observation_time": "2026-04-29T00:00:00+00:00",
+            "value": 0.747
+          },
+          {
+            "observation_time": "2026-04-30T00:00:00+00:00",
+            "value": 8.261
+          },
+          {
+            "observation_time": "2026-05-01T00:00:00+00:00",
+            "value": 0.607
+          },
+          {
+            "observation_time": "2026-05-04T00:00:00+00:00",
+            "value": 0.618
+          },
+          {
+            "observation_time": "2026-05-05T00:00:00+00:00",
+            "value": 1.122
+          },
+          {
+            "observation_time": "2026-05-06T00:00:00+00:00",
+            "value": 1.633
+          },
+          {
+            "observation_time": "2026-05-07T00:00:00+00:00",
+            "value": 0.773
+          },
+          {
+            "observation_time": "2026-05-08T00:00:00+00:00",
+            "value": 0.787
+          },
+          {
+            "observation_time": "2026-05-11T00:00:00+00:00",
+            "value": 1.133
+          },
+          {
+            "observation_time": "2026-05-12T00:00:00+00:00",
+            "value": 1.199
+          },
+          {
+            "observation_time": "2026-05-13T00:00:00+00:00",
+            "value": 3.719
+          },
+          {
+            "observation_time": "2026-05-14T00:00:00+00:00",
+            "value": 2.034
+          },
+          {
+            "observation_time": "2026-05-15T00:00:00+00:00",
+            "value": 0.647
+          },
+          {
+            "observation_time": "2026-05-18T00:00:00+00:00",
+            "value": 7.193
+          },
+          {
+            "observation_time": "2026-05-19T00:00:00+00:00",
+            "value": 12.911
+          },
+          {
+            "observation_time": "2026-05-20T00:00:00+00:00",
+            "value": 24.867
+          },
+          {
+            "observation_time": "2026-05-21T00:00:00+00:00",
+            "value": 3.281
+          },
+          {
+            "observation_time": "2026-05-22T00:00:00+00:00",
+            "value": 0.965
+          },
+          {
+            "observation_time": "2026-05-26T00:00:00+00:00",
+            "value": 1.787
+          },
+          {
+            "observation_time": "2026-05-27T00:00:00+00:00",
+            "value": 1.853
+          },
+          {
+            "observation_time": "2026-05-28T00:00:00+00:00",
+            "value": 1.163
+          },
+          {
+            "observation_time": "2026-05-29T00:00:00+00:00",
+            "value": 11.677
+          },
+          {
+            "observation_time": "2026-06-01T00:00:00+00:00",
+            "value": 1.302
+          },
+          {
+            "observation_time": "2026-06-02T00:00:00+00:00",
+            "value": 2.502
+          },
+          {
+            "observation_time": "2026-06-03T00:00:00+00:00",
+            "value": 2.062
+          },
+          {
+            "observation_time": "2026-06-04T00:00:00+00:00",
+            "value": 1.122
+          },
+          {
+            "observation_time": "2026-06-05T00:00:00+00:00",
+            "value": 0.761
+          },
+          {
+            "observation_time": "2026-06-08T00:00:00+00:00",
+            "value": 1.832
+          },
+          {
+            "observation_time": "2026-06-09T00:00:00+00:00",
+            "value": 0.577
+          },
+          {
+            "observation_time": "2026-06-10T00:00:00+00:00",
+            "value": 0.387
+          },
+          {
+            "observation_time": "2026-06-11T00:00:00+00:00",
+            "value": 0.46
+          },
+          {
+            "observation_time": "2026-06-12T00:00:00+00:00",
+            "value": 0.454
+          },
+          {
+            "observation_time": "2026-06-15T00:00:00+00:00",
+            "value": 0.581
+          },
+          {
+            "observation_time": "2026-06-16T00:00:00+00:00",
+            "value": 10.721
+          },
+          {
+            "observation_time": "2026-06-17T00:00:00+00:00",
+            "value": 6.828
+          },
+          {
+            "observation_time": "2026-06-18T00:00:00+00:00",
+            "value": 0.251
+          },
+          {
+            "observation_time": "2026-06-22T00:00:00+00:00",
+            "value": 3.925
+          },
+          {
+            "observation_time": "2026-06-23T00:00:00+00:00",
+            "value": 6.484
+          },
+          {
+            "observation_time": "2026-06-24T00:00:00+00:00",
+            "value": 4.534
+          },
+          {
+            "observation_time": "2026-06-25T00:00:00+00:00",
+            "value": 5.718
+          },
+          {
+            "observation_time": "2026-06-26T00:00:00+00:00",
+            "value": 6.426
+          },
+          {
+            "observation_time": "2026-06-29T00:00:00+00:00",
+            "value": 3.546
+          },
+          {
+            "observation_time": "2026-06-30T00:00:00+00:00",
+            "value": 26.9
+          },
+          {
+            "observation_time": "2026-07-01T00:00:00+00:00",
+            "value": 1.001
+          },
+          {
+            "observation_time": "2026-07-02T00:00:00+00:00",
+            "value": 2.175
+          },
+          {
+            "observation_time": "2026-07-06T00:00:00+00:00",
+            "value": 2.719
+          },
+          {
+            "observation_time": "2026-07-07T00:00:00+00:00",
+            "value": 4.484
+          },
+          {
+            "observation_time": "2026-07-08T00:00:00+00:00",
+            "value": 3.347
+          },
+          {
+            "observation_time": "2026-07-09T00:00:00+00:00",
+            "value": 5.772
+          },
+          {
+            "observation_time": "2026-07-10T00:00:00+00:00",
+            "value": 0.545
+          },
+          {
+            "observation_time": "2026-07-13T00:00:00+00:00",
+            "value": 0.795
+          },
+          {
+            "observation_time": "2026-07-14T00:00:00+00:00",
+            "value": 0.278
+          },
+          {
+            "observation_time": "2026-07-15T00:00:00+00:00",
+            "value": 0.151
+          },
+          {
+            "observation_time": "2026-07-16T00:00:00+00:00",
+            "value": 0.125
+          },
+          {
+            "observation_time": "2026-07-17T00:00:00+00:00",
+            "value": 0.1
+          },
+          {
+            "observation_time": "2026-07-20T00:00:00+00:00",
+            "value": 0.03
+          },
+          {
+            "observation_time": "2026-07-21T00:00:00+00:00",
+            "value": 0.275
+          },
+          {
+            "observation_time": "2026-07-22T00:00:00+00:00",
+            "value": 0.376
+          },
+          {
+            "observation_time": "2026-07-23T00:00:00+00:00",
+            "value": 0.904
+          },
+          {
+            "observation_time": "2026-07-24T00:00:00+00:00",
+            "value": 0.675
+          },
+          {
+            "observation_time": "2026-07-27T00:00:00+00:00",
+            "value": 1.38
+          },
+          {
+            "observation_time": "2026-07-28T00:00:00+00:00",
+            "value": 1.126
+          },
+          {
+            "observation_time": "2026-07-29T00:00:00+00:00",
+            "value": 2.576
+          },
+          {
+            "observation_time": "2026-07-30T00:00:00+00:00",
+            "value": 1.076
+          },
+          {
+            "observation_time": "2026-07-31T00:00:00+00:00",
+            "value": 2.151
+          },
+          {
+            "observation_time": "2026-08-03T00:00:00+00:00",
+            "value": 2.127
+          },
+          {
+            "observation_time": "2026-08-04T00:00:00+00:00",
+            "value": 2.251
+          },
+          {
+            "observation_time": "2026-08-05T00:00:00+00:00",
+            "value": 1.65
+          },
+          {
+            "observation_time": "2026-08-06T00:00:00+00:00",
+            "value": 1.429
+          },
+          {
+            "observation_time": "2026-08-07T00:00:00+00:00",
+            "value": 1.45
+          },
+          {
+            "observation_time": "2026-08-10T00:00:00+00:00",
+            "value": 0.975
+          },
+          {
+            "observation_time": "2026-08-11T00:00:00+00:00",
+            "value": 1.25
+          },
+          {
+            "observation_time": "2026-08-12T00:00:00+00:00",
+            "value": 0.725
+          },
+          {
+            "observation_time": "2026-08-13T00:00:00+00:00",
+            "value": 0.45
+          },
+          {
+            "observation_time": "2026-08-14T00:00:00+00:00",
+            "value": 0.25
+          },
+          {
+            "observation_time": "2026-08-17T00:00:00+00:00",
+            "value": 0.255
+          },
+          {
+            "observation_time": "2026-08-18T00:00:00+00:00",
+            "value": 0.155
+          },
+          {
+            "observation_time": "2026-08-19T00:00:00+00:00",
+            "value": 0.317
+          },
+          {
+            "observation_time": "2026-08-20T00:00:00+00:00",
+            "value": 0.225
+          },
+          {
+            "observation_time": "2026-08-21T00:00:00+00:00",
+            "value": 0.2
+          },
+          {
+            "observation_time": "2026-08-24T00:00:00+00:00",
+            "value": 0.38
+          },
+          {
+            "observation_time": "2026-08-25T00:00:00+00:00",
+            "value": 0.405
+          },
+          {
+            "observation_time": "2026-08-26T00:00:00+00:00",
+            "value": 0.702
+          },
+          {
+            "observation_time": "2026-08-27T00:00:00+00:00",
+            "value": 0.456
+          },
+          {
+            "observation_time": "2026-08-28T00:00:00+00:00",
+            "value": 0.175
+          },
+          {
+            "observation_time": "2026-08-31T00:00:00+00:00",
+            "value": 6.726
+          },
+          {
+            "observation_time": "2026-09-01T00:00:00+00:00",
+            "value": 0.725
+          },
+          {
+            "observation_time": "2026-09-02T00:00:00+00:00",
+            "value": 0.525
+          },
+          {
+            "observation_time": "2026-09-03T00:00:00+00:00",
+            "value": 0.702
+          },
+          {
+            "observation_time": "2026-09-04T00:00:00+00:00",
+            "value": 0.675
+          },
+          {
+            "observation_time": "2026-09-08T00:00:00+00:00",
+            "value": 0.626
+          },
+          {
+            "observation_time": "2026-09-09T00:00:00+00:00",
+            "value": 0.432
+          },
+          {
+            "observation_time": "2026-09-10T00:00:00+00:00",
+            "value": 4.736
+          },
+          {
+            "observation_time": "2026-09-11T00:00:00+00:00",
+            "value": 5.255
+          },
+          {
+            "observation_time": "2026-09-14T00:00:00+00:00",
+            "value": 1.42
+          },
+          {
+            "observation_time": "2026-09-15T00:00:00+00:00",
+            "value": 0.7
+          },
+          {
+            "observation_time": "2026-09-16T00:00:00+00:00",
+            "value": 5.375
+          },
+          {
+            "observation_time": "2026-09-17T00:00:00+00:00",
+            "value": 0.276
+          },
+          {
+            "observation_time": "2026-09-18T00:00:00+00:00",
+            "value": 0.576
+          },
+          {
+            "observation_time": "2026-09-21T00:00:00+00:00",
+            "value": 0.582
+          },
+          {
+            "observation_time": "2026-09-22T00:00:00+00:00",
+            "value": 0.453
+          },
+          {
+            "observation_time": "2026-09-23T00:00:00+00:00",
+            "value": 0.461
+          },
+          {
+            "observation_time": "2026-09-24T00:00:00+00:00",
+            "value": 0.63
+          },
+          {
+            "observation_time": "2026-09-25T00:00:00+00:00",
+            "value": 0.576
+          },
+          {
+            "observation_time": "2026-09-28T00:00:00+00:00",
+            "value": 0.851
+          },
+          {
+            "observation_time": "2026-09-29T00:00:00+00:00",
+            "value": 11.446
+          }
+        ],
+        "chart_history_years": 2,
+        "chart_scale": "REPORTED_VALUE",
+        "chart_units": "billions of U.S. dollars",
+        "forecast": 0.8285,
+        "forecast_error": 10.6175,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "ALERT",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 7.6170723118911345
+      },
+      "category": "funding markets and system liquidity",
+      "confirmation_score": 0.5,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively"
+      ],
+      "headline": "Overnight reverse-repo usage is 7.6\u03c3 above its model forecast",
+      "importance_score": 0.9,
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "magnitude_score": 1.0,
+      "persistence_score": 0.0,
+      "rank_score": 77.0,
+      "series_id": "RRPONTSYD",
+      "series_name": "Overnight reverse-repo usage",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/RRPONTSYD",
+      "status": "FORECAST_DEVIATION",
+      "summary": "Latest reported value 11.446 billions of U.S. dollars; reported-scale forecast 0.829 billions of U.S. dollars. The model uses absolute change. Status: forecast deviation."
+    },
+    {
+      "alert_id": 355,
+      "alert_pts": 66.4,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
         "actual": 4.13,
@@ -1812,19 +3851,18 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": 3.82211430370073
       },
-      "category": "funding",
-      "confirmation_score": 0.0,
+      "category": "funding markets and system liquidity",
+      "confirmation_score": 0.5,
       "conflicting_evidence": [
-        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
-        "No same-direction confirmation from an independent source"
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively"
       ],
       "headline": "DVP repo average rate, tenor over 30 days, preliminary is 3.8\u03c3 above its model forecast",
       "importance_score": 0.9,
-      "macro_category": "funding",
-      "macro_category_title": "Rates, funding and liquidity",
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
       "magnitude_score": 0.7644,
       "persistence_score": 0.0,
-      "rank_score": 61.4,
+      "rank_score": 66.4,
       "series_id": "REPO-DVP_AR_G30-P",
       "series_name": "DVP repo average rate, tenor over 30 days, preliminary",
       "source_name": "OFR",
@@ -1833,7 +3871,7 @@
       "summary": "Latest reported value 4.130 percent; reported-scale forecast 3.960 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 286,
+      "alert_id": 359,
       "alert_pts": 54.65,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -3885,7 +5923,7 @@
       "summary": "Latest reported value 157.180 Japanese yen per U.S. dollar; reported-scale forecast 159.035 Japanese yen per U.S. dollar. The model uses log percent change. Status: forecast deviation."
     },
     {
-      "alert_id": 343,
+      "alert_id": 416,
       "alert_pts": 54.5,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -4396,7 +6434,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": 3.389045548685768
       },
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -4404,8 +6442,8 @@
       ],
       "headline": "Commercial and industrial loans at all commercial banks is 3.4\u03c3 above its model forecast",
       "importance_score": 0.8,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "magnitude_score": 0.6778,
       "persistence_score": 0.0,
       "rank_score": 54.5,
@@ -4417,7 +6455,7 @@
       "summary": "Latest reported value 2,945.052 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 2,893.604 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 342,
+      "alert_id": 415,
       "alert_pts": 50.75,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -5488,7 +7526,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": -2.6387773348651518
       },
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -5496,8 +7534,8 @@
       ],
       "headline": "Deposits at all commercial banks is 2.6\u03c3 below its model forecast",
       "importance_score": 0.9,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "magnitude_score": 0.5278,
       "persistence_score": 0.0,
       "rank_score": 50.75,
@@ -5509,7 +7547,7 @@
       "summary": "Latest reported value 19,568.400 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 19,683.898 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 283,
+      "alert_id": 356,
       "alert_pts": 49.26,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -7528,7 +9566,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": 2.4731327847475026
       },
-      "category": "rates",
+      "category": "interest rates and yield curve",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -7536,8 +9574,8 @@
       ],
       "headline": "2-year Treasury constant-maturity yield is 2.5\u03c3 above its model forecast",
       "importance_score": 0.9,
-      "macro_category": "funding",
-      "macro_category_title": "Rates, funding and liquidity",
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
       "magnitude_score": 0.4946,
       "persistence_score": 0.0,
       "rank_score": 49.26,
@@ -7549,7 +9587,7 @@
       "summary": "Latest reported value 4.920 percent; reported-scale forecast 4.810 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 335,
+      "alert_id": 408,
       "alert_pts": 48.21,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -8620,7 +10658,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": 2.023472278429786
       },
-      "category": "financial conditions",
+      "category": "market risk and financial conditions",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -8628,8 +10666,8 @@
       ],
       "headline": "Chicago Fed National Financial Conditions Index is 2.0\u03c3 above its model forecast",
       "importance_score": 1.0,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "market_risk",
+      "macro_category_title": "Market risk and financial conditions",
       "magnitude_score": 0.4047,
       "persistence_score": 0.0,
       "rank_score": 48.21,
@@ -8641,7 +10679,7 @@
       "summary": "Latest reported value -0.555 index; reported-scale forecast -0.558 index. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 337,
+      "alert_id": 410,
       "alert_pts": 48.21,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -10760,7 +12798,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": 2.0234722784297956
       },
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -10768,8 +12806,8 @@
       ],
       "headline": "ICE BofA US High Yield Option-Adjusted Spread is 2.0\u03c3 above its model forecast",
       "importance_score": 1.0,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "magnitude_score": 0.4047,
       "persistence_score": 0.0,
       "rank_score": 48.21,
@@ -10781,7 +12819,7 @@
       "summary": "Latest reported value 3.020 percent; reported-scale forecast 2.930 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 338,
+      "alert_id": 411,
       "alert_pts": 46.43,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -12900,7 +14938,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": 2.1583704303250997
       },
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -12908,8 +14946,8 @@
       ],
       "headline": "ICE BofA CCC and Lower US High Yield Option-Adjusted Spread is 2.2\u03c3 above its model forecast",
       "importance_score": 0.9,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "magnitude_score": 0.4317,
       "persistence_score": 0.0,
       "rank_score": 46.43,
@@ -12921,7 +14959,7 @@
       "summary": "Latest reported value 11.460 percent; reported-scale forecast 11.290 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 340,
+      "alert_id": 413,
       "alert_pts": 45.25,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -14940,7 +16978,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": 2.3607176581680758
       },
-      "category": "rates",
+      "category": "interest rates and yield curve",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -14948,8 +16986,8 @@
       ],
       "headline": "10-year inflation-indexed Treasury yield is 2.4\u03c3 above its model forecast",
       "importance_score": 0.8,
-      "macro_category": "funding",
-      "macro_category_title": "Rates, funding and liquidity",
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
       "magnitude_score": 0.4721,
       "persistence_score": 0.0,
       "rank_score": 45.25,
@@ -14961,7 +16999,7 @@
       "summary": "Latest reported value 2.900 percent; reported-scale forecast 2.830 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 324,
+      "alert_id": 397,
       "alert_pts": 45.21,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -15489,7 +17527,7 @@
       "summary": "Latest reported value 7.700 percent, seasonally adjusted; reported-scale forecast 7.900 percent, seasonally adjusted. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 339,
+      "alert_id": 412,
       "alert_pts": 45.21,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -17608,7 +19646,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": 2.0234722784297854
       },
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -17616,8 +19654,8 @@
       ],
       "headline": "ICE BofA BBB US Corporate Option-Adjusted Spread is 2.0\u03c3 above its model forecast",
       "importance_score": 0.9,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "magnitude_score": 0.4047,
       "persistence_score": 0.0,
       "rank_score": 45.21,
@@ -17629,7 +19667,7 @@
       "summary": "Latest reported value 1.020 percent; reported-scale forecast 0.990 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 277,
+      "alert_id": 350,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -17663,7 +19701,7 @@
       "summary": "Latest reported value 334.131 index 1982-84=100; reported-scale forecast 333.058 index 1982-84=100. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 278,
+      "alert_id": 351,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -17697,7 +19735,7 @@
       "summary": "Latest reported value 334.980 index 1982-84=100; reported-scale forecast 334.422 index 1982-84=100. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 279,
+      "alert_id": 352,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -17732,7 +19770,7 @@
       "summary": "Latest reported value 4.100 percent; reported-scale forecast 4.100 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 280,
+      "alert_id": 353,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -17767,7 +19805,7 @@
       "summary": "Latest reported value 159,075.000 thousands of jobs; reported-scale forecast 159,070.500 thousands of jobs. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 281,
+      "alert_id": 354,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -17802,7 +19840,7 @@
       "summary": "Latest reported value 37.750 dollars per hour; reported-scale forecast 37.783 dollars per hour. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 284,
+      "alert_id": 357,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -17816,7 +19854,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": 1.3489815189532104
       },
-      "category": "rates",
+      "category": "interest rates and yield curve",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -17824,8 +19862,8 @@
       ],
       "headline": "10-year Treasury constant-maturity yield is 1.3\u03c3 above its model forecast",
       "importance_score": 0.9,
-      "macro_category": "funding",
-      "macro_category_title": "Rates, funding and liquidity",
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
       "magnitude_score": 0.2698,
       "persistence_score": 0.0,
       "rank_score": 0.0,
@@ -17837,7 +19875,7 @@
       "summary": "Latest reported value 5.240 percent; reported-scale forecast 5.180 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 285,
+      "alert_id": 358,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -17872,7 +19910,7 @@
       "summary": "Latest reported value 1.140 U.S. dollars per euro; reported-scale forecast 1.137 U.S. dollars per euro. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 287,
+      "alert_id": 360,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -17905,7 +19943,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 288,
+      "alert_id": 361,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -17940,7 +19978,7 @@
       "summary": "Latest reported value 1,614,171.000 millions of dollars; reported-scale forecast 1,628,321.419 millions of dollars. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 289,
+      "alert_id": 362,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -17975,7 +20013,7 @@
       "summary": "Latest reported value 75,166.000 millions of dollars; reported-scale forecast 72,204.836 millions of dollars. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 290,
+      "alert_id": 363,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18010,7 +20048,7 @@
       "summary": "Latest reported value 51,304.000 millions of dollars; reported-scale forecast 50,931.273 millions of dollars. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 291,
+      "alert_id": 364,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18045,7 +20083,7 @@
       "summary": "Latest reported value 663,616.000 millions of dollars, seasonally adjusted; reported-scale forecast 660,059.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 292,
+      "alert_id": 365,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18080,7 +20118,7 @@
       "summary": "Latest reported value 338,604.000 millions of dollars, seasonally adjusted; reported-scale forecast 339,509.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 293,
+      "alert_id": 366,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18115,7 +20153,7 @@
       "summary": "Latest reported value 324,224.000 millions of dollars, seasonally adjusted; reported-scale forecast 323,035.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 294,
+      "alert_id": 367,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18150,7 +20188,7 @@
       "summary": "Latest reported value 966,871.000 millions of dollars, seasonally adjusted; reported-scale forecast 964,677.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 295,
+      "alert_id": 368,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18185,7 +20223,7 @@
       "summary": "Latest reported value 608,082.000 millions of dollars, seasonally adjusted; reported-scale forecast 607,847.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 296,
+      "alert_id": 369,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18220,7 +20258,7 @@
       "summary": "Latest reported value 362,202.000 millions of dollars, seasonally adjusted; reported-scale forecast 360,147.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 297,
+      "alert_id": 370,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18255,7 +20293,7 @@
       "summary": "Latest reported value 333,825.000 millions of dollars, seasonally adjusted; reported-scale forecast 335,856.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 298,
+      "alert_id": 371,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18290,7 +20328,7 @@
       "summary": "Latest reported value 324,224.000 millions of dollars, seasonally adjusted; reported-scale forecast 323,035.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 299,
+      "alert_id": 372,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18325,7 +20363,7 @@
       "summary": "Latest reported value 3.030 index; reported-scale forecast 3.055 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 300,
+      "alert_id": 373,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18360,7 +20398,7 @@
       "summary": "Latest reported value -0.040 index; reported-scale forecast 0.055 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 301,
+      "alert_id": 374,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18395,7 +20433,7 @@
       "summary": "Latest reported value 24,269.613 billions of chained 2017 dollars, seasonally adjusted annual rate; reported-scale forecast 24,367.648 billions of chained 2017 dollars, seasonally adjusted annual rate. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 302,
+      "alert_id": 375,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18430,7 +20468,7 @@
       "summary": "Latest reported value 103.068 index 2017=100, seasonally adjusted; reported-scale forecast 103.083 index 2017=100, seasonally adjusted. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 303,
+      "alert_id": 376,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18465,7 +20503,7 @@
       "summary": "Latest reported value 76.272 percent, seasonally adjusted; reported-scale forecast 76.277 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 304,
+      "alert_id": 377,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18500,7 +20538,7 @@
       "summary": "Latest reported value 231,630.000 millions of 1982-84 CPI-adjusted dollars, seasonally adjusted; reported-scale forecast 229,987.616 millions of 1982-84 CPI-adjusted dollars, seasonally adjusted. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 305,
+      "alert_id": 378,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18533,7 +20571,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 306,
+      "alert_id": 379,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18566,7 +20604,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 307,
+      "alert_id": 380,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18599,7 +20637,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 308,
+      "alert_id": 381,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18634,7 +20672,7 @@
       "summary": "Latest reported value 1.300 ratio, seasonally adjusted; reported-scale forecast 1.300 ratio, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 309,
+      "alert_id": 382,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18668,7 +20706,7 @@
       "summary": "Latest reported value 334.131 index 1982-1984=100, seasonally adjusted; reported-scale forecast 333.573 index 1982-1984=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 310,
+      "alert_id": 383,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18702,7 +20740,7 @@
       "summary": "Latest reported value 337.765 index 1982-1984=100, seasonally adjusted; reported-scale forecast 337.842 index 1982-1984=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 311,
+      "alert_id": 384,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18737,7 +20775,7 @@
       "summary": "Latest reported value 131.659 index 2017=100, seasonally adjusted; reported-scale forecast 131.679 index 2017=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 312,
+      "alert_id": 385,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18771,7 +20809,7 @@
       "summary": "Latest reported value 130.658 index 2017=100, seasonally adjusted; reported-scale forecast 130.657 index 2017=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 313,
+      "alert_id": 386,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18805,7 +20843,7 @@
       "summary": "Latest reported value 157.411 index November 2009=100, seasonally adjusted; reported-scale forecast 156.501 index November 2009=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 314,
+      "alert_id": 387,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18840,7 +20878,7 @@
       "summary": "Latest reported value 2.104 percent change at annual rate, seasonally adjusted; reported-scale forecast 3.102 percent change at annual rate, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 315,
+      "alert_id": 388,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18874,7 +20912,7 @@
       "summary": "Latest reported value 339.202 index December 1982=100, seasonally adjusted; reported-scale forecast 339.317 index December 1982=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 316,
+      "alert_id": 389,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18908,7 +20946,7 @@
       "summary": "Latest reported value 2.340 percent; reported-scale forecast 2.330 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 317,
+      "alert_id": 390,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18942,7 +20980,7 @@
       "summary": "Latest reported value 2.360 percent; reported-scale forecast 2.350 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 318,
+      "alert_id": 391,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18977,7 +21015,7 @@
       "summary": "Latest reported value 197,000.000 number, seasonally adjusted; reported-scale forecast 198,000.000 number, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 319,
+      "alert_id": 392,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19012,7 +21050,7 @@
       "summary": "Latest reported value 1,719,000.000 number, seasonally adjusted; reported-scale forecast 1,712,000.000 number, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 320,
+      "alert_id": 393,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19047,7 +21085,7 @@
       "summary": "Latest reported value 1.100 percent, seasonally adjusted; reported-scale forecast 1.100 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 321,
+      "alert_id": 394,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19082,7 +21120,7 @@
       "summary": "Latest reported value -0.070 percentage points, seasonally adjusted; reported-scale forecast -0.130 percentage points, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 322,
+      "alert_id": 395,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19117,7 +21155,7 @@
       "summary": "Latest reported value 159,075.000 thousands of persons, seasonally adjusted; reported-scale forecast 159,070.500 thousands of persons, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 323,
+      "alert_id": 396,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19152,7 +21190,7 @@
       "summary": "Latest reported value 4.100 percent, seasonally adjusted; reported-scale forecast 4.100 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 325,
+      "alert_id": 398,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19187,7 +21225,7 @@
       "summary": "Latest reported value 34.400 hours, seasonally adjusted; reported-scale forecast 34.300 hours, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 326,
+      "alert_id": 399,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19222,7 +21260,7 @@
       "summary": "Latest reported value 2,519.500 thousands of persons, seasonally adjusted; reported-scale forecast 2,502.050 thousands of persons, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 327,
+      "alert_id": 400,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19257,7 +21295,7 @@
       "summary": "Latest reported value 7,079.000 thousands, seasonally adjusted; reported-scale forecast 7,270.000 thousands, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 328,
+      "alert_id": 401,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19292,7 +21330,7 @@
       "summary": "Latest reported value 3.300 rate, seasonally adjusted; reported-scale forecast 3.200 rate, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 329,
+      "alert_id": 402,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19327,7 +21365,7 @@
       "summary": "Latest reported value 1.900 rate, seasonally adjusted; reported-scale forecast 1.900 rate, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 330,
+      "alert_id": 403,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19341,7 +21379,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": 0.32275689391908435
       },
-      "category": "risk",
+      "category": "market risk and financial conditions",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -19349,8 +21387,8 @@
       ],
       "headline": "Risk-On Risk-Off Index is 0.3\u03c3 above its model forecast",
       "importance_score": 1.0,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "market_risk",
+      "macro_category_title": "Market risk and financial conditions",
       "magnitude_score": 0.0646,
       "persistence_score": 0.0,
       "rank_score": 0.0,
@@ -19362,7 +21400,7 @@
       "summary": "Latest reported value 0.358 percentage points; reported-scale forecast 0.130 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 331,
+      "alert_id": 404,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19376,7 +21414,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": 0.9542636285489152
       },
-      "category": "risk",
+      "category": "market risk and financial conditions",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -19384,8 +21422,8 @@
       ],
       "headline": "Risk-On Risk-Off Index: equities is 1.0\u03c3 above its model forecast",
       "importance_score": 0.9,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "market_risk",
+      "macro_category_title": "Market risk and financial conditions",
       "magnitude_score": 0.1909,
       "persistence_score": 0.0,
       "rank_score": 0.0,
@@ -19397,7 +21435,7 @@
       "summary": "Latest reported value 0.396 percentage points; reported-scale forecast -0.460 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 332,
+      "alert_id": 405,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19411,7 +21449,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": -0.06252020994204652
       },
-      "category": "risk",
+      "category": "market risk and financial conditions",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -19419,8 +21457,8 @@
       ],
       "headline": "Risk-On Risk-Off Index: liquidity is 0.1\u03c3 below its model forecast",
       "importance_score": 0.9,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "market_risk",
+      "macro_category_title": "Market risk and financial conditions",
       "magnitude_score": 0.0125,
       "persistence_score": 0.0,
       "rank_score": 0.0,
@@ -19432,7 +21470,7 @@
       "summary": "Latest reported value 0.001 percentage points; reported-scale forecast 0.003 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 333,
+      "alert_id": 406,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19446,7 +21484,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": 1.2652516315698883
       },
-      "category": "risk",
+      "category": "market risk and financial conditions",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -19454,8 +21492,8 @@
       ],
       "headline": "CBOE Volatility Index: VIX is 1.3\u03c3 above its model forecast",
       "importance_score": 0.9,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "market_risk",
+      "macro_category_title": "Market risk and financial conditions",
       "magnitude_score": 0.2531,
       "persistence_score": 0.0,
       "rank_score": 0.0,
@@ -19467,7 +21505,7 @@
       "summary": "Latest reported value 16.070 index; reported-scale forecast 14.750 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 334,
+      "alert_id": 407,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19481,7 +21519,7 @@
         "transformation": "LOG_PERCENT_CHANGE",
         "z_score": -1.0776537812541311
       },
-      "category": "risk",
+      "category": "market risk and financial conditions",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -19489,8 +21527,8 @@
       ],
       "headline": "S&P 500 is 1.1\u03c3 below its model forecast",
       "importance_score": 0.9,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "market_risk",
+      "macro_category_title": "Market risk and financial conditions",
       "magnitude_score": 0.2155,
       "persistence_score": 0.0,
       "rank_score": 0.0,
@@ -19502,7 +21540,7 @@
       "summary": "Latest reported value 7,683.690 index; reported-scale forecast 7,748.241 index. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 336,
+      "alert_id": 409,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19516,7 +21554,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": -0.5617948290838916
       },
-      "category": "financial conditions",
+      "category": "market risk and financial conditions",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -19524,8 +21562,8 @@
       ],
       "headline": "St. Louis Fed Financial Stress Index is 0.6\u03c3 below its model forecast",
       "importance_score": 0.9,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "market_risk",
+      "macro_category_title": "Market risk and financial conditions",
       "magnitude_score": 0.1124,
       "persistence_score": 0.0,
       "rank_score": 0.0,
@@ -19537,7 +21575,7 @@
       "summary": "Latest reported value -0.907 index; reported-scale forecast -0.834 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 341,
+      "alert_id": 414,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19551,7 +21589,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": -1.101739167475614
       },
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -19559,8 +21597,8 @@
       ],
       "headline": "Bank credit at all commercial banks is 1.1\u03c3 below its model forecast",
       "importance_score": 0.9,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "magnitude_score": 0.2203,
       "persistence_score": 0.0,
       "rank_score": 0.0,
@@ -19572,7 +21610,7 @@
       "summary": "Latest reported value 19,876.326 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 19,891.094 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 344,
+      "alert_id": 417,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19586,7 +21624,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": 1.0463108501777816
       },
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -19594,8 +21632,8 @@
       ],
       "headline": "Real-estate loans at all commercial banks is 1.0\u03c3 above its model forecast",
       "importance_score": 0.7,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "magnitude_score": 0.2093,
       "persistence_score": 0.0,
       "rank_score": 0.0,
@@ -19607,7 +21645,7 @@
       "summary": "Latest reported value 5,826.899 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 5,820.203 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 345,
+      "alert_id": 418,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19621,7 +21659,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": -0.8204248347377977
       },
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -19629,8 +21667,8 @@
       ],
       "headline": "Consumer loans at all commercial banks is 0.8\u03c3 below its model forecast",
       "importance_score": 0.7,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "magnitude_score": 0.1641,
       "persistence_score": 0.0,
       "rank_score": 0.0,
@@ -19642,7 +21680,7 @@
       "summary": "Latest reported value 1,917.563 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 1,922.361 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 346,
+      "alert_id": 419,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19656,7 +21694,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": -0.5967224235724201
       },
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -19664,8 +21702,8 @@
       ],
       "headline": "Banks tightening C&I standards for large and middle-market firms is 0.6\u03c3 below its model forecast",
       "importance_score": 0.9,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "magnitude_score": 0.1193,
       "persistence_score": 0.0,
       "rank_score": 0.0,
@@ -19677,7 +21715,7 @@
       "summary": "Latest reported value 0.000 net percent; reported-scale forecast 9.250 net percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 347,
+      "alert_id": 420,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19691,7 +21729,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": -0.2886334331093537
       },
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -19699,8 +21737,8 @@
       ],
       "headline": "Banks tightening C&I standards for small firms is 0.3\u03c3 below its model forecast",
       "importance_score": 0.9,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "magnitude_score": 0.0577,
       "persistence_score": 0.0,
       "rank_score": 0.0,
@@ -19712,7 +21750,7 @@
       "summary": "Latest reported value 1.800 net percent; reported-scale forecast 7.450 net percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 348,
+      "alert_id": 421,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19726,7 +21764,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": -1.2814291697417322e-16
       },
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -19734,8 +21772,8 @@
       ],
       "headline": "Banks tightening commercial real-estate lending standards is 0.0\u03c3 below its model forecast",
       "importance_score": 0.9,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "magnitude_score": 0.0,
       "persistence_score": 0.0,
       "rank_score": 0.0,
@@ -19747,7 +21785,7 @@
       "summary": "Latest reported value -11.300 net percent; reported-scale forecast -7.450 net percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 349,
+      "alert_id": 422,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -19761,7 +21799,7 @@
         "transformation": "ABSOLUTE_CHANGE",
         "z_score": -0.07494341771962124
       },
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
         "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
@@ -19769,8 +21807,8 @@
       ],
       "headline": "Commercial real-estate loan delinquency rate is 0.1\u03c3 below its model forecast",
       "importance_score": 0.9,
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "magnitude_score": 0.015,
       "persistence_score": 0.0,
       "rank_score": 0.0,
@@ -19780,9 +21818,873 @@
       "source_url": "https://fred.stlouisfed.org/series/DRCRELEXFACBS",
       "status": "NORMAL",
       "summary": "Latest reported value 1.530 percent, seasonally adjusted; reported-scale forecast 1.540 percent, seasonally adjusted. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 423,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 3.88,
+        "forecast": 3.88,
+        "forecast_error": 0.0,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 0.0
+      },
+      "category": "interest rates and yield curve",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "Effective federal funds rate is 0.0\u03c3 below its model forecast",
+      "importance_score": 1.0,
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
+      "magnitude_score": 0.0,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "EFFR",
+      "series_name": "Effective federal funds rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/EFFR",
+      "status": "NORMAL",
+      "summary": "Latest reported value 3.880 percent; reported-scale forecast 3.880 percent. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 424,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 3.88,
+        "forecast": 3.88,
+        "forecast_error": 0.0,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 0.0
+      },
+      "category": "interest rates and yield curve",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "Overnight bank funding rate is 0.0\u03c3 below its model forecast",
+      "importance_score": 0.9,
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
+      "magnitude_score": 0.0,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "OBFR",
+      "series_name": "Overnight bank funding rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/OBFR",
+      "status": "NORMAL",
+      "summary": "Latest reported value 3.880 percent; reported-scale forecast 3.880 percent. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 425,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 3.9,
+        "forecast": 3.9,
+        "forecast_error": 0.0,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 0.0
+      },
+      "category": "interest rates and yield curve",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "Interest on reserve balances is 0.0\u03c3 below its model forecast",
+      "importance_score": 0.9,
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
+      "magnitude_score": 0.0,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "IORB",
+      "series_name": "Interest on reserve balances",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/IORB",
+      "status": "NORMAL",
+      "summary": "Latest reported value 3.900 percent; reported-scale forecast 3.900 percent. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 426,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 0.37,
+        "forecast": 0.32,
+        "forecast_error": 0.04999999999999999,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "WATCH",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 1.6862268986914957
+      },
+      "category": "interest rates and yield curve",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "10-year minus 2-year Treasury spread is 1.7\u03c3 above its model forecast",
+      "importance_score": 0.9,
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
+      "magnitude_score": 0.3372,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "T10Y2Y",
+      "series_name": "10-year minus 2-year Treasury spread",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/T10Y2Y",
+      "status": "NORMAL",
+      "summary": "Latest reported value 0.370 percent; reported-scale forecast 0.320 percent. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 427,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 1.01,
+        "forecast": 0.96,
+        "forecast_error": 0.050000000000000044,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NOTICE",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 1.1241512657943264
+      },
+      "category": "interest rates and yield curve",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "10-year minus 3-month Treasury spread is 1.1\u03c3 above its model forecast",
+      "importance_score": 0.9,
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
+      "magnitude_score": 0.2248,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "T10Y3M",
+      "series_name": "10-year minus 3-month Treasury spread",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/T10Y3M",
+      "status": "NORMAL",
+      "summary": "Latest reported value 1.010 percent; reported-scale forecast 0.960 percent. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 428,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 3.9,
+        "forecast": 3.9,
+        "forecast_error": 0.0,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 0.0
+      },
+      "category": "funding markets and system liquidity",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "Secured Overnight Financing Rate is 0.0\u03c3 below its model forecast",
+      "importance_score": 1.0,
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "magnitude_score": 0.0,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "SOFR",
+      "series_name": "Secured Overnight Financing Rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/SOFR",
+      "status": "NORMAL",
+      "summary": "Latest reported value 3.900 percent; reported-scale forecast 3.900 percent. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 429,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 3.89,
+        "forecast": 3.89,
+        "forecast_error": 0.0,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 0.0
+      },
+      "category": "funding markets and system liquidity",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "Tri-party general collateral rate is 0.0\u03c3 below its model forecast",
+      "importance_score": 0.9,
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "magnitude_score": 0.0,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "TGCRRATE",
+      "series_name": "Tri-party general collateral rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/TGCRRATE",
+      "status": "NORMAL",
+      "summary": "Latest reported value 3.890 percent; reported-scale forecast 3.890 percent. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 430,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 1172.0,
+        "forecast": 1190.0,
+        "forecast_error": -18.0,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NOTICE",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": -1.433292863887765
+      },
+      "category": "funding markets and system liquidity",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "Tri-party general collateral transaction volume is 1.4\u03c3 below its model forecast",
+      "importance_score": 0.8,
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "magnitude_score": 0.2867,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "TGCRVOLUME",
+      "series_name": "Tri-party general collateral transaction volume",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/TGCRVOLUME",
+      "status": "NORMAL",
+      "summary": "Latest reported value 1,172.000 billions of U.S. dollars; reported-scale forecast 1,190.000 billions of U.S. dollars. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 431,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 3.79,
+        "forecast": 3.8,
+        "forecast_error": -0.009999999999999787,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": -0.6744907594765652
+      },
+      "category": "funding markets and system liquidity",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "TGCR 1st percentile rate is 0.7\u03c3 below its model forecast",
+      "importance_score": 0.7,
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "magnitude_score": 0.1349,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "TGCR1STPERCENTILE",
+      "series_name": "TGCR 1st percentile rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/TGCR1STPERCENTILE",
+      "status": "NORMAL",
+      "summary": "Latest reported value 3.790 percent; reported-scale forecast 3.800 percent. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 432,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 3.89,
+        "forecast": 3.89,
+        "forecast_error": 0.0,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 0.0
+      },
+      "category": "funding markets and system liquidity",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "TGCR 25th percentile rate is 0.0\u03c3 below its model forecast",
+      "importance_score": 0.7,
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "magnitude_score": 0.0,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "TGCR25THPERCENTILE",
+      "series_name": "TGCR 25th percentile rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/TGCR25THPERCENTILE",
+      "status": "NORMAL",
+      "summary": "Latest reported value 3.890 percent; reported-scale forecast 3.890 percent. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 433,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 3.89,
+        "forecast": 3.9,
+        "forecast_error": -0.009999999999999787,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": -0.3372453797382901
+      },
+      "category": "funding markets and system liquidity",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "TGCR 75th percentile rate is 0.3\u03c3 below its model forecast",
+      "importance_score": 0.7,
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "magnitude_score": 0.0674,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "TGCR75THPERCENTILE",
+      "series_name": "TGCR 75th percentile rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/TGCR75THPERCENTILE",
+      "status": "NORMAL",
+      "summary": "Latest reported value 3.890 percent; reported-scale forecast 3.900 percent. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 434,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 3.91,
+        "forecast": 3.91,
+        "forecast_error": 0.0,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 0.0
+      },
+      "category": "funding markets and system liquidity",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "TGCR 99th percentile rate is 0.0\u03c3 below its model forecast",
+      "importance_score": 0.8,
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "magnitude_score": 0.0,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "TGCR99THPERCENTILE",
+      "series_name": "TGCR 99th percentile rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/TGCR99THPERCENTILE",
+      "status": "NORMAL",
+      "summary": "Latest reported value 3.910 percent; reported-scale forecast 3.910 percent. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 435,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 3.75,
+        "forecast": 3.75,
+        "forecast_error": 0.0,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 0.0
+      },
+      "category": "funding markets and system liquidity",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "Overnight reverse-repo award rate is 0.0\u03c3 below its model forecast",
+      "importance_score": 0.8,
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "magnitude_score": 0.0,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "RRPONTSYAWARD",
+      "series_name": "Overnight reverse-repo award rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/RRPONTSYAWARD",
+      "status": "NORMAL",
+      "summary": "Latest reported value 3.750 percent; reported-scale forecast 3.750 percent. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 437,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 2930193.0,
+        "forecast": 3013329.5,
+        "forecast_error": -83136.5,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "WATCH",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": -1.708920919145538
+      },
+      "category": "funding markets and system liquidity",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "Reserve balances with Federal Reserve Banks is 1.7\u03c3 below its model forecast",
+      "importance_score": 1.0,
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "magnitude_score": 0.3418,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "WRESBAL",
+      "series_name": "Reserve balances with Federal Reserve Banks",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/WRESBAL",
+      "status": "NORMAL",
+      "summary": "Latest reported value 2,930,193.000 millions of U.S. dollars; reported-scale forecast 3,013,329.500 millions of U.S. dollars. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 438,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 947317.0,
+        "forecast": 994637.0,
+        "forecast_error": -47320.0,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": -0.6351340983618602
+      },
+      "category": "funding markets and system liquidity",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "Treasury General Account balance is 0.6\u03c3 below its model forecast",
+      "importance_score": 0.9,
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "magnitude_score": 0.127,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "WDTGAL",
+      "series_name": "Treasury General Account balance",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/WDTGAL",
+      "status": "NORMAL",
+      "summary": "Latest reported value 947,317.000 millions of U.S. dollars; reported-scale forecast 994,637.000 millions of U.S. dollars. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 439,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 1403.0,
+        "forecast": 1428.0,
+        "forecast_error": -25.0,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": -0.20267948930084878
+      },
+      "category": "housing and construction",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "New private housing units authorized by building permits is 0.2\u03c3 below its model forecast",
+      "importance_score": 0.9,
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "magnitude_score": 0.0405,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "PERMIT",
+      "series_name": "New private housing units authorized by building permits",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/PERMIT",
+      "status": "NORMAL",
+      "summary": "Latest reported value 1,403.000 thousands of units, seasonally adjusted annual rate; reported-scale forecast 1,428.000 thousands of units, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 440,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 1275.0,
+        "forecast": 1301.5,
+        "forecast_error": -26.5,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": -0.09074966582048735
+      },
+      "category": "housing and construction",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "New privately owned housing units started is 0.1\u03c3 below its model forecast",
+      "importance_score": 1.0,
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "magnitude_score": 0.0181,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "HOUST",
+      "series_name": "New privately owned housing units started",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/HOUST",
+      "status": "NORMAL",
+      "summary": "Latest reported value 1,275.000 thousands of units, seasonally adjusted annual rate; reported-scale forecast 1,301.500 thousands of units, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 441,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 684.0,
+        "forecast": 653.0,
+        "forecast_error": 31.0,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 0.438172829149029
+      },
+      "category": "housing and construction",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "New one-family houses sold is 0.4\u03c3 above its model forecast",
+      "importance_score": 0.9,
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "magnitude_score": 0.0876,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "HSN1F",
+      "series_name": "New one-family houses sold",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/HSN1F",
+      "status": "NORMAL",
+      "summary": "Latest reported value 684.000 thousands of units, seasonally adjusted annual rate; reported-scale forecast 653.000 thousands of units, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 442,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 8.5,
+        "forecast": 8.849999999999998,
+        "forecast_error": -0.34999999999999876,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": -0.3372453797382957
+      },
+      "category": "housing and construction",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "Monthly supply of new houses is 0.3\u03c3 below its model forecast",
+      "importance_score": 0.8,
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "magnitude_score": 0.0674,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "MSACSR",
+      "series_name": "Monthly supply of new houses",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/MSACSR",
+      "status": "NORMAL",
+      "summary": "Latest reported value 8.500 months supply; reported-scale forecast 8.850 months supply. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 443,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 7.03,
+        "forecast": 6.955,
+        "forecast_error": 0.07500000000000018,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NOTICE",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 1.0117361392149002
+      },
+      "category": "housing and construction",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "30-year fixed-rate mortgage average is 1.0\u03c3 above its model forecast",
+      "importance_score": 1.0,
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "magnitude_score": 0.2023,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "MORTGAGE30US",
+      "series_name": "30-year fixed-rate mortgage average",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/MORTGAGE30US",
+      "status": "NORMAL",
+      "summary": "Latest reported value 7.030 percent; reported-scale forecast 6.955 percent. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 444,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "model_version": "macro_trend_v2",
+        "reason": "Insufficient transformed observations for rolling calibration",
+        "transformation": "ABSOLUTE_CHANGE"
+      },
+      "category": "housing and construction",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [],
+      "headline": "Existing-home sales: Insufficient History",
+      "importance_score": 0.9,
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "magnitude_score": 0.0,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "EXHOSLUSM495S",
+      "series_name": "Existing-home sales",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/EXHOSLUSM495S",
+      "status": "INSUFFICIENT_HISTORY",
+      "summary": "Insufficient transformed observations for rolling calibration"
+    },
+    {
+      "alert_id": 445,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 331.893,
+        "forecast": 331.527,
+        "forecast_error": 0.36599999999998545,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "LAST_VALUE",
+        "model_version": "macro_trend_v2",
+        "reason": "Latest observation exceeds the configured freshness limit",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 0.720506287053112
+      },
+      "category": "housing and construction",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [],
+      "headline": "S&P CoreLogic Case-Shiller U.S. National Home Price Index: Data Stale",
+      "importance_score": 0.9,
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "magnitude_score": 0.0,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "CSUSHPISA",
+      "series_name": "S&P CoreLogic Case-Shiller U.S. National Home Price Index",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/CSUSHPISA",
+      "status": "DATA_STALE",
+      "summary": "Latest observation exceeds the configured freshness limit"
+    },
+    {
+      "alert_id": 446,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 410700.0,
+        "forecast": 411400.0,
+        "forecast_error": -700.0,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": 0.0534250106516115
+      },
+      "category": "housing and construction",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "Median sales price of houses sold is 0.1\u03c3 above its model forecast",
+      "importance_score": 0.7,
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "magnitude_score": 0.0107,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "MSPUS",
+      "series_name": "Median sales price of houses sold",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/MSPUS",
+      "status": "NORMAL",
+      "summary": "Latest reported value 410,700.000 U.S. dollars; reported-scale forecast 411,400.000 U.S. dollars. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 447,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 859002.0,
+        "forecast": 866443.0,
+        "forecast_error": -7441.0,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "LAST_VALUE",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": -0.8387726672303005
+      },
+      "category": "housing and construction",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "Private residential construction spending is 0.8\u03c3 below its model forecast",
+      "importance_score": 0.9,
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "magnitude_score": 0.1678,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "PRRESCONS",
+      "series_name": "Private residential construction spending",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/PRRESCONS",
+      "status": "NORMAL",
+      "summary": "Latest reported value 859,002.000 millions of U.S. dollars, seasonally adjusted annual rate; reported-scale forecast 866,443.000 millions of U.S. dollars, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
+    },
+    {
+      "alert_id": 448,
+      "alert_pts": 0.0,
+      "alert_type": "TREND_ASSESSMENT",
+      "calculation": {
+        "actual": 755169.0,
+        "forecast": 756103.5,
+        "forecast_error": -934.5,
+        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "model_name": "RECENT_MEDIAN",
+        "model_version": "macro_trend_v2",
+        "surprise_severity": "NORMAL",
+        "transformation": "ABSOLUTE_CHANGE",
+        "z_score": -0.09913724417634141
+      },
+      "category": "housing and construction",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No same-direction confirmation from an independent source"
+      ],
+      "headline": "Private nonresidential construction spending is 0.1\u03c3 below its model forecast",
+      "importance_score": 0.9,
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "magnitude_score": 0.0198,
+      "persistence_score": 0.0,
+      "rank_score": 0.0,
+      "series_id": "PNRESCONS",
+      "series_name": "Private nonresidential construction spending",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/PNRESCONS",
+      "status": "NORMAL",
+      "summary": "Latest reported value 755,169.000 millions of U.S. dollars, seasonally adjusted annual rate; reported-scale forecast 756,103.500 millions of U.S. dollars, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     }
   ],
-  "generated_at": "2026-09-29T22:58:29.710921+00:00",
+  "generated_at": "2026-09-29T23:08:56.855913+00:00",
   "observations": [
     {
       "as_of": "2026-07-01T00:00:00+00:00",
@@ -19861,10 +22763,10 @@
     },
     {
       "as_of": "2026-09-28T00:00:00+00:00",
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "collection_time": "2026-09-29T21:48:08.272155+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "observation_time": "2026-09-28T00:00:00+00:00",
       "revision": null,
       "series_id": "BAMLC0A4CBBB",
@@ -19876,10 +22778,10 @@
     },
     {
       "as_of": "2026-09-28T00:00:00+00:00",
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "collection_time": "2026-09-29T21:48:07.439422+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "observation_time": "2026-09-28T00:00:00+00:00",
       "revision": null,
       "series_id": "BAMLH0A0HYM2",
@@ -19891,10 +22793,10 @@
     },
     {
       "as_of": "2026-09-28T00:00:00+00:00",
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "collection_time": "2026-09-29T21:48:07.783852+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "observation_time": "2026-09-28T00:00:00+00:00",
       "revision": null,
       "series_id": "BAMLH0A3HYC",
@@ -19906,10 +22808,10 @@
     },
     {
       "as_of": "2026-08-01T00:00:00+00:00",
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "collection_time": "2026-09-29T21:48:10.289850+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "observation_time": "2026-08-01T00:00:00+00:00",
       "revision": null,
       "series_id": "BUSLOANS",
@@ -19921,10 +22823,10 @@
     },
     {
       "as_of": "2026-08-01T00:00:00+00:00",
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "collection_time": "2026-09-29T21:48:11.027178+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "observation_time": "2026-08-01T00:00:00+00:00",
       "revision": null,
       "series_id": "CONSUMER",
@@ -19936,10 +22838,10 @@
     },
     {
       "as_of": "2026-09-16T00:00:00+00:00",
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "collection_time": "2026-09-29T21:48:09.687762+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "observation_time": "2026-09-16T00:00:00+00:00",
       "revision": null,
       "series_id": "DPSACBW027SBOG",
@@ -19951,10 +22853,10 @@
     },
     {
       "as_of": "2026-04-01T00:00:00+00:00",
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "collection_time": "2026-09-29T21:48:12.520359+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "observation_time": "2026-04-01T00:00:00+00:00",
       "revision": null,
       "series_id": "DRCRELEXFACBS",
@@ -19966,10 +22868,10 @@
     },
     {
       "as_of": "2026-07-01T00:00:00+00:00",
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "collection_time": "2026-09-29T21:48:11.431192+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "observation_time": "2026-07-01T00:00:00+00:00",
       "revision": null,
       "series_id": "DRTSCILM",
@@ -19981,10 +22883,10 @@
     },
     {
       "as_of": "2026-07-01T00:00:00+00:00",
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "collection_time": "2026-09-29T21:48:11.905468+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "observation_time": "2026-07-01T00:00:00+00:00",
       "revision": null,
       "series_id": "DRTSCIS",
@@ -19996,10 +22898,10 @@
     },
     {
       "as_of": "2026-08-01T00:00:00+00:00",
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "collection_time": "2026-09-29T21:48:10.671621+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "observation_time": "2026-08-01T00:00:00+00:00",
       "revision": null,
       "series_id": "REALLN",
@@ -20011,10 +22913,10 @@
     },
     {
       "as_of": "2026-07-01T00:00:00+00:00",
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "collection_time": "2026-09-29T21:48:12.219899+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "observation_time": "2026-07-01T00:00:00+00:00",
       "revision": null,
       "series_id": "SUBLPDRCSN",
@@ -20026,10 +22928,10 @@
     },
     {
       "as_of": "2026-09-16T00:00:00+00:00",
-      "category": "credit",
+      "category": "credit markets and bank lending",
       "collection_time": "2026-09-29T21:48:09.183365+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
+      "macro_category": "credit",
+      "macro_category_title": "Credit markets and bank lending",
       "observation_time": "2026-09-16T00:00:00+00:00",
       "revision": null,
       "series_id": "TOTBKCR",
@@ -20085,41 +22987,11 @@
       "value": 96.41
     },
     {
-      "as_of": "2026-09-18T00:00:00+00:00",
-      "category": "financial conditions",
-      "collection_time": "2026-09-29T21:48:06.704442+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
-      "observation_time": "2026-09-18T00:00:00+00:00",
-      "revision": null,
-      "series_id": "NFCI",
-      "series_name": "Chicago Fed National Financial Conditions Index",
-      "source_name": "FRED",
-      "source_url": "https://fred.stlouisfed.org/series/NFCI",
-      "units": "index",
-      "value": -0.555
-    },
-    {
-      "as_of": "2026-09-18T00:00:00+00:00",
-      "category": "financial conditions",
-      "collection_time": "2026-09-29T21:48:07.021366+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
-      "observation_time": "2026-09-18T00:00:00+00:00",
-      "revision": null,
-      "series_id": "STLFSI4",
-      "series_name": "St. Louis Fed Financial Stress Index",
-      "source_name": "FRED",
-      "source_url": "https://fred.stlouisfed.org/series/STLFSI4",
-      "units": "index",
-      "value": -0.9075
-    },
-    {
       "as_of": "2026-09-28T00:00:00+00:00",
-      "category": "funding",
+      "category": "funding markets and system liquidity",
       "collection_time": "2026-09-29T20:20:37.917302+00:00",
-      "macro_category": "funding",
-      "macro_category_title": "Rates, funding and liquidity",
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
       "observation_time": "2026-09-28T00:00:00+00:00",
       "revision": null,
       "series_id": "REPO-DVP_AR_G30-P",
@@ -20128,6 +23000,171 @@
       "source_url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-DVP_AR_G30-P",
       "units": "percent",
       "value": 4.13
+    },
+    {
+      "as_of": "2026-09-29T00:00:00+00:00",
+      "category": "funding markets and system liquidity",
+      "collection_time": "2026-09-29T23:05:35.870094+00:00",
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "observation_time": "2026-09-29T00:00:00+00:00",
+      "revision": null,
+      "series_id": "RRPONTSYAWARD",
+      "series_name": "Overnight reverse-repo award rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/RRPONTSYAWARD",
+      "units": "percent",
+      "value": 3.75
+    },
+    {
+      "as_of": "2026-09-29T00:00:00+00:00",
+      "category": "funding markets and system liquidity",
+      "collection_time": "2026-09-29T23:05:36.889339+00:00",
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "observation_time": "2026-09-29T00:00:00+00:00",
+      "revision": null,
+      "series_id": "RRPONTSYD",
+      "series_name": "Overnight reverse-repo usage",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/RRPONTSYD",
+      "units": "billions of U.S. dollars",
+      "value": 11.446
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "funding markets and system liquidity",
+      "collection_time": "2026-09-29T23:05:30.707444+00:00",
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "SOFR",
+      "series_name": "Secured Overnight Financing Rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/SOFR",
+      "units": "percent",
+      "value": 3.9
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "funding markets and system liquidity",
+      "collection_time": "2026-09-29T23:05:32.944443+00:00",
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "TGCR1STPERCENTILE",
+      "series_name": "TGCR 1st percentile rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/TGCR1STPERCENTILE",
+      "units": "percent",
+      "value": 3.79
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "funding markets and system liquidity",
+      "collection_time": "2026-09-29T23:05:33.662858+00:00",
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "TGCR25THPERCENTILE",
+      "series_name": "TGCR 25th percentile rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/TGCR25THPERCENTILE",
+      "units": "percent",
+      "value": 3.89
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "funding markets and system liquidity",
+      "collection_time": "2026-09-29T23:05:34.451349+00:00",
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "TGCR75THPERCENTILE",
+      "series_name": "TGCR 75th percentile rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/TGCR75THPERCENTILE",
+      "units": "percent",
+      "value": 3.89
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "funding markets and system liquidity",
+      "collection_time": "2026-09-29T23:05:35.149599+00:00",
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "TGCR99THPERCENTILE",
+      "series_name": "TGCR 99th percentile rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/TGCR99THPERCENTILE",
+      "units": "percent",
+      "value": 3.91
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "funding markets and system liquidity",
+      "collection_time": "2026-09-29T23:05:31.625343+00:00",
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "TGCRRATE",
+      "series_name": "Tri-party general collateral rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/TGCRRATE",
+      "units": "percent",
+      "value": 3.89
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "funding markets and system liquidity",
+      "collection_time": "2026-09-29T23:05:32.393343+00:00",
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "TGCRVOLUME",
+      "series_name": "Tri-party general collateral transaction volume",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/TGCRVOLUME",
+      "units": "billions of U.S. dollars",
+      "value": 1172.0
+    },
+    {
+      "as_of": "2026-09-23T00:00:00+00:00",
+      "category": "funding markets and system liquidity",
+      "collection_time": "2026-09-29T23:05:38.404655+00:00",
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "observation_time": "2026-09-23T00:00:00+00:00",
+      "revision": null,
+      "series_id": "WDTGAL",
+      "series_name": "Treasury General Account balance",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/WDTGAL",
+      "units": "millions of U.S. dollars",
+      "value": 947317.0
+    },
+    {
+      "as_of": "2026-09-23T00:00:00+00:00",
+      "category": "funding markets and system liquidity",
+      "collection_time": "2026-09-29T23:05:37.431876+00:00",
+      "macro_category": "funding_liquidity",
+      "macro_category_title": "Funding markets and system liquidity",
+      "observation_time": "2026-09-23T00:00:00+00:00",
+      "revision": null,
+      "series_id": "WRESBAL",
+      "series_name": "Reserve balances with Federal Reserve Banks",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/WRESBAL",
+      "units": "millions of U.S. dollars",
+      "value": 2930193.0
     },
     {
       "as_of": "2026-08-29T00:00:00+00:00",
@@ -20263,6 +23300,156 @@
       "source_url": "https://fred.stlouisfed.org/series/WEI",
       "units": "index",
       "value": 3.03
+    },
+    {
+      "as_of": "2026-06-01T00:00:00+00:00",
+      "category": "housing and construction",
+      "collection_time": "2026-09-29T23:05:42.614004+00:00",
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "observation_time": "2026-06-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "CSUSHPISA",
+      "series_name": "S&P CoreLogic Case-Shiller U.S. National Home Price Index",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/CSUSHPISA",
+      "units": "index Jan 2000=100, seasonally adjusted",
+      "value": 331.893
+    },
+    {
+      "as_of": "2026-08-01T00:00:00+00:00",
+      "category": "housing and construction",
+      "collection_time": "2026-09-29T23:05:41.657813+00:00",
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "observation_time": "2026-08-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "EXHOSLUSM495S",
+      "series_name": "Existing-home sales",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/EXHOSLUSM495S",
+      "units": "thousands of units, seasonally adjusted annual rate",
+      "value": 3980000.0
+    },
+    {
+      "as_of": "2026-08-01T00:00:00+00:00",
+      "category": "housing and construction",
+      "collection_time": "2026-09-29T23:05:39.381611+00:00",
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "observation_time": "2026-08-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "HOUST",
+      "series_name": "New privately owned housing units started",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/HOUST",
+      "units": "thousands of units, seasonally adjusted annual rate",
+      "value": 1275.0
+    },
+    {
+      "as_of": "2026-08-01T00:00:00+00:00",
+      "category": "housing and construction",
+      "collection_time": "2026-09-29T23:05:39.895272+00:00",
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "observation_time": "2026-08-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "HSN1F",
+      "series_name": "New one-family houses sold",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/HSN1F",
+      "units": "thousands of units, seasonally adjusted annual rate",
+      "value": 684.0
+    },
+    {
+      "as_of": "2026-09-24T00:00:00+00:00",
+      "category": "housing and construction",
+      "collection_time": "2026-09-29T23:05:41.107209+00:00",
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "observation_time": "2026-09-24T00:00:00+00:00",
+      "revision": null,
+      "series_id": "MORTGAGE30US",
+      "series_name": "30-year fixed-rate mortgage average",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/MORTGAGE30US",
+      "units": "percent",
+      "value": 7.03
+    },
+    {
+      "as_of": "2026-08-01T00:00:00+00:00",
+      "category": "housing and construction",
+      "collection_time": "2026-09-29T23:05:40.639150+00:00",
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "observation_time": "2026-08-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "MSACSR",
+      "series_name": "Monthly supply of new houses",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/MSACSR",
+      "units": "months supply",
+      "value": 8.5
+    },
+    {
+      "as_of": "2026-04-01T00:00:00+00:00",
+      "category": "housing and construction",
+      "collection_time": "2026-09-29T23:05:43.108208+00:00",
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "observation_time": "2026-04-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "MSPUS",
+      "series_name": "Median sales price of houses sold",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/MSPUS",
+      "units": "U.S. dollars",
+      "value": 410700.0
+    },
+    {
+      "as_of": "2026-08-01T00:00:00+00:00",
+      "category": "housing and construction",
+      "collection_time": "2026-09-29T23:05:38.893299+00:00",
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "observation_time": "2026-08-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "PERMIT",
+      "series_name": "New private housing units authorized by building permits",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/PERMIT",
+      "units": "thousands of units, seasonally adjusted annual rate",
+      "value": 1403.0
+    },
+    {
+      "as_of": "2026-07-01T00:00:00+00:00",
+      "category": "housing and construction",
+      "collection_time": "2026-09-29T23:05:43.957782+00:00",
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "observation_time": "2026-07-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "PNRESCONS",
+      "series_name": "Private nonresidential construction spending",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/PNRESCONS",
+      "units": "millions of U.S. dollars, seasonally adjusted annual rate",
+      "value": 755169.0
+    },
+    {
+      "as_of": "2026-07-01T00:00:00+00:00",
+      "category": "housing and construction",
+      "collection_time": "2026-09-29T23:05:43.629627+00:00",
+      "macro_category": "housing",
+      "macro_category_title": "Housing and construction",
+      "observation_time": "2026-07-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "PRRESCONS",
+      "series_name": "Private residential construction spending",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/PRRESCONS",
+      "units": "millions of U.S. dollars, seasonally adjusted annual rate",
+      "value": 859002.0
     },
     {
       "as_of": "2026-08-01T00:00:00+00:00",
@@ -20428,6 +23615,126 @@
       "source_url": "https://fred.stlouisfed.org/series/TRMMEANCPIM094SFRBCLE",
       "units": "index December 1982=100, seasonally adjusted",
       "value": 339.2019040961
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "interest rates and yield curve",
+      "collection_time": "2026-09-29T21:48:08.733267+00:00",
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "DFII10",
+      "series_name": "10-year inflation-indexed Treasury yield",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/DFII10",
+      "units": "percent",
+      "value": 2.9
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "interest rates and yield curve",
+      "collection_time": "2026-09-29T20:20:39.676685+00:00",
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "DGS10",
+      "series_name": "10-year Treasury constant-maturity yield",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/DGS10",
+      "units": "percent",
+      "value": 5.24
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "interest rates and yield curve",
+      "collection_time": "2026-09-29T20:20:38.496989+00:00",
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "DGS2",
+      "series_name": "2-year Treasury constant-maturity yield",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/DGS2",
+      "units": "percent",
+      "value": 4.92
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "interest rates and yield curve",
+      "collection_time": "2026-09-29T23:05:25.430113+00:00",
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "EFFR",
+      "series_name": "Effective federal funds rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/EFFR",
+      "units": "percent",
+      "value": 3.88
+    },
+    {
+      "as_of": "2026-09-30T00:00:00+00:00",
+      "category": "interest rates and yield curve",
+      "collection_time": "2026-09-29T23:05:28.858002+00:00",
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
+      "observation_time": "2026-09-30T00:00:00+00:00",
+      "revision": null,
+      "series_id": "IORB",
+      "series_name": "Interest on reserve balances",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/IORB",
+      "units": "percent",
+      "value": 3.9
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "interest rates and yield curve",
+      "collection_time": "2026-09-29T23:05:27.960636+00:00",
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "OBFR",
+      "series_name": "Overnight bank funding rate",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/OBFR",
+      "units": "percent",
+      "value": 3.88
+    },
+    {
+      "as_of": "2026-09-29T00:00:00+00:00",
+      "category": "interest rates and yield curve",
+      "collection_time": "2026-09-29T23:05:29.617799+00:00",
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
+      "observation_time": "2026-09-29T00:00:00+00:00",
+      "revision": null,
+      "series_id": "T10Y2Y",
+      "series_name": "10-year minus 2-year Treasury spread",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/T10Y2Y",
+      "units": "percent",
+      "value": 0.37
+    },
+    {
+      "as_of": "2026-09-29T00:00:00+00:00",
+      "category": "interest rates and yield curve",
+      "collection_time": "2026-09-29T23:05:30.172326+00:00",
+      "macro_category": "interest_rates",
+      "macro_category_title": "Interest rates and yield curve",
+      "observation_time": "2026-09-29T00:00:00+00:00",
+      "revision": null,
+      "series_id": "T10Y3M",
+      "series_name": "10-year minus 3-month Treasury spread",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/T10Y3M",
+      "units": "percent",
+      "value": 1.01
     },
     {
       "as_of": "2026-08-01T00:00:00+00:00",
@@ -20730,6 +24037,111 @@
       "value": 338604.0
     },
     {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "market risk and financial conditions",
+      "collection_time": "2026-09-29T21:55:02.178389+00:00",
+      "macro_category": "market_risk",
+      "macro_category_title": "Market risk and financial conditions",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "KCRORO",
+      "series_name": "Risk-On Risk-Off Index",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/KCRORO",
+      "units": "percentage points",
+      "value": 0.3584
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "market risk and financial conditions",
+      "collection_time": "2026-09-29T21:55:04.265349+00:00",
+      "macro_category": "market_risk",
+      "macro_category_title": "Market risk and financial conditions",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "KCROROE",
+      "series_name": "Risk-On Risk-Off Index: equities",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/KCROROE",
+      "units": "percentage points",
+      "value": 0.3959
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "market risk and financial conditions",
+      "collection_time": "2026-09-29T21:55:06.263517+00:00",
+      "macro_category": "market_risk",
+      "macro_category_title": "Market risk and financial conditions",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "KCROROL",
+      "series_name": "Risk-On Risk-Off Index: liquidity",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/KCROROL",
+      "units": "percentage points",
+      "value": 0.0007
+    },
+    {
+      "as_of": "2026-09-18T00:00:00+00:00",
+      "category": "market risk and financial conditions",
+      "collection_time": "2026-09-29T21:48:06.704442+00:00",
+      "macro_category": "market_risk",
+      "macro_category_title": "Market risk and financial conditions",
+      "observation_time": "2026-09-18T00:00:00+00:00",
+      "revision": null,
+      "series_id": "NFCI",
+      "series_name": "Chicago Fed National Financial Conditions Index",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/NFCI",
+      "units": "index",
+      "value": -0.555
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "market risk and financial conditions",
+      "collection_time": "2026-09-29T21:48:06.159341+00:00",
+      "macro_category": "market_risk",
+      "macro_category_title": "Market risk and financial conditions",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "SP500",
+      "series_name": "S&P 500",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/SP500",
+      "units": "index",
+      "value": 7683.69
+    },
+    {
+      "as_of": "2026-09-18T00:00:00+00:00",
+      "category": "market risk and financial conditions",
+      "collection_time": "2026-09-29T21:48:07.021366+00:00",
+      "macro_category": "market_risk",
+      "macro_category_title": "Market risk and financial conditions",
+      "observation_time": "2026-09-18T00:00:00+00:00",
+      "revision": null,
+      "series_id": "STLFSI4",
+      "series_name": "St. Louis Fed Financial Stress Index",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/STLFSI4",
+      "units": "index",
+      "value": -0.9075
+    },
+    {
+      "as_of": "2026-09-28T00:00:00+00:00",
+      "category": "market risk and financial conditions",
+      "collection_time": "2026-09-29T21:48:05.699729+00:00",
+      "macro_category": "market_risk",
+      "macro_category_title": "Market risk and financial conditions",
+      "observation_time": "2026-09-28T00:00:00+00:00",
+      "revision": null,
+      "series_id": "VIXCLS",
+      "series_name": "CBOE Volatility Index: VIX",
+      "source_name": "FRED",
+      "source_url": "https://fred.stlouisfed.org/series/VIXCLS",
+      "units": "index",
+      "value": 16.07
+    },
+    {
       "as_of": "2026-07-01T00:00:00+00:00",
       "category": "private investment",
       "collection_time": "2026-09-29T05:13:14.309767+00:00",
@@ -20743,126 +24155,6 @@
       "source_url": "https://www.census.gov/construction/c30/xlsx/privsatime.xlsx",
       "units": "millions of dollars",
       "value": 1614171.0
-    },
-    {
-      "as_of": "2026-09-28T00:00:00+00:00",
-      "category": "rates",
-      "collection_time": "2026-09-29T21:48:08.733267+00:00",
-      "macro_category": "funding",
-      "macro_category_title": "Rates, funding and liquidity",
-      "observation_time": "2026-09-28T00:00:00+00:00",
-      "revision": null,
-      "series_id": "DFII10",
-      "series_name": "10-year inflation-indexed Treasury yield",
-      "source_name": "FRED",
-      "source_url": "https://fred.stlouisfed.org/series/DFII10",
-      "units": "percent",
-      "value": 2.9
-    },
-    {
-      "as_of": "2026-09-28T00:00:00+00:00",
-      "category": "rates",
-      "collection_time": "2026-09-29T20:20:39.676685+00:00",
-      "macro_category": "funding",
-      "macro_category_title": "Rates, funding and liquidity",
-      "observation_time": "2026-09-28T00:00:00+00:00",
-      "revision": null,
-      "series_id": "DGS10",
-      "series_name": "10-year Treasury constant-maturity yield",
-      "source_name": "FRED",
-      "source_url": "https://fred.stlouisfed.org/series/DGS10",
-      "units": "percent",
-      "value": 5.24
-    },
-    {
-      "as_of": "2026-09-28T00:00:00+00:00",
-      "category": "rates",
-      "collection_time": "2026-09-29T20:20:38.496989+00:00",
-      "macro_category": "funding",
-      "macro_category_title": "Rates, funding and liquidity",
-      "observation_time": "2026-09-28T00:00:00+00:00",
-      "revision": null,
-      "series_id": "DGS2",
-      "series_name": "2-year Treasury constant-maturity yield",
-      "source_name": "FRED",
-      "source_url": "https://fred.stlouisfed.org/series/DGS2",
-      "units": "percent",
-      "value": 4.92
-    },
-    {
-      "as_of": "2026-09-28T00:00:00+00:00",
-      "category": "risk",
-      "collection_time": "2026-09-29T21:55:02.178389+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
-      "observation_time": "2026-09-28T00:00:00+00:00",
-      "revision": null,
-      "series_id": "KCRORO",
-      "series_name": "Risk-On Risk-Off Index",
-      "source_name": "FRED",
-      "source_url": "https://fred.stlouisfed.org/series/KCRORO",
-      "units": "percentage points",
-      "value": 0.3584
-    },
-    {
-      "as_of": "2026-09-28T00:00:00+00:00",
-      "category": "risk",
-      "collection_time": "2026-09-29T21:55:04.265349+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
-      "observation_time": "2026-09-28T00:00:00+00:00",
-      "revision": null,
-      "series_id": "KCROROE",
-      "series_name": "Risk-On Risk-Off Index: equities",
-      "source_name": "FRED",
-      "source_url": "https://fred.stlouisfed.org/series/KCROROE",
-      "units": "percentage points",
-      "value": 0.3959
-    },
-    {
-      "as_of": "2026-09-28T00:00:00+00:00",
-      "category": "risk",
-      "collection_time": "2026-09-29T21:55:06.263517+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
-      "observation_time": "2026-09-28T00:00:00+00:00",
-      "revision": null,
-      "series_id": "KCROROL",
-      "series_name": "Risk-On Risk-Off Index: liquidity",
-      "source_name": "FRED",
-      "source_url": "https://fred.stlouisfed.org/series/KCROROL",
-      "units": "percentage points",
-      "value": 0.0007
-    },
-    {
-      "as_of": "2026-09-28T00:00:00+00:00",
-      "category": "risk",
-      "collection_time": "2026-09-29T21:48:06.159341+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
-      "observation_time": "2026-09-28T00:00:00+00:00",
-      "revision": null,
-      "series_id": "SP500",
-      "series_name": "S&P 500",
-      "source_name": "FRED",
-      "source_url": "https://fred.stlouisfed.org/series/SP500",
-      "units": "index",
-      "value": 7683.69
-    },
-    {
-      "as_of": "2026-09-28T00:00:00+00:00",
-      "category": "risk",
-      "collection_time": "2026-09-29T21:48:05.699729+00:00",
-      "macro_category": "risk",
-      "macro_category_title": "Risk-on, risk-off and credit",
-      "observation_time": "2026-09-28T00:00:00+00:00",
-      "revision": null,
-      "series_id": "VIXCLS",
-      "series_name": "CBOE Volatility Index: VIX",
-      "source_name": "FRED",
-      "source_url": "https://fred.stlouisfed.org/series/VIXCLS",
-      "units": "index",
-      "value": 16.07
     },
     {
       "as_of": "2026-08-01T00:00:00+00:00",
