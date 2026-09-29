@@ -1,0 +1,387 @@
+{
+  "alerts": [
+    {
+      "alert_id": 28,
+      "alert_type": "TREND_BREAK",
+      "calculation": {
+        "actual": 75166.0,
+        "forecast": 72200.0,
+        "forecast_error_sd": 1154.8642931824031,
+        "history_count": 150,
+        "method": "median historical change using pre-release observations",
+        "status": "CALCULATED",
+        "z_score": 2.5682671267173207
+      },
+      "category": "AI infrastructure",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "No timestamped pre-release consensus is available"
+      ],
+      "headline": "Private data-center construction spending, seasonally adjusted annual rate is 2.6\u03c3 above its pre-observation trend forecast",
+      "importance_score": 0.8,
+      "magnitude_score": 0.5137,
+      "persistence_score": 1.0,
+      "rank_score": 62.11,
+      "series_id": "VIP_DATA_CENTER_SA",
+      "series_name": "Private data-center construction spending, seasonally adjusted annual rate",
+      "source_name": "CENSUS",
+      "source_url": "https://www.census.gov/construction/c30/xlsx/privsatime.xlsx",
+      "status": "ALERT",
+      "summary": "Latest value 75,166.000 millions of dollars; model forecast 72,200.000. This is a trend break, not a consensus surprise."
+    },
+    {
+      "alert_id": 21,
+      "alert_type": "TREND_BREAK",
+      "calculation": {
+        "actual": 334.131,
+        "forecast": 333.726,
+        "forecast_error_sd": 0.7741075308280404,
+        "history_count": 102,
+        "method": "median historical change using pre-release observations",
+        "status": "CALCULATED",
+        "z_score": 0.5231831287918823
+      },
+      "category": "inflation",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "No timestamped pre-release consensus is available"
+      ],
+      "headline": "CPI-U all items, seasonally adjusted is 0.5\u03c3 above its pre-observation trend forecast",
+      "importance_score": 1.0,
+      "magnitude_score": 0.1046,
+      "persistence_score": 1.0,
+      "rank_score": 49.71,
+      "series_id": "CUSR0000SA0",
+      "series_name": "CPI-U all items, seasonally adjusted",
+      "source_name": "BLS",
+      "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+      "status": "NORMAL",
+      "summary": "Latest value 334.131 index 1982-84=100; model forecast 333.726. This is a trend break, not a consensus surprise."
+    },
+    {
+      "alert_id": 23,
+      "alert_type": "TREND_BREAK",
+      "calculation": {
+        "actual": 159075.0,
+        "forecast": 158949.0,
+        "forecast_error_sd": 2154.9127233668382,
+        "history_count": 103,
+        "method": "median historical change using pre-release observations",
+        "status": "CALCULATED",
+        "z_score": 0.058471045548024535
+      },
+      "category": "employment",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "No timestamped pre-release consensus is available"
+      ],
+      "headline": "Total nonfarm payroll employment is 0.1\u03c3 above its pre-observation trend forecast",
+      "importance_score": 1.0,
+      "magnitude_score": 0.0117,
+      "persistence_score": 1.0,
+      "rank_score": 45.53,
+      "series_id": "CES0000000001",
+      "series_name": "Total nonfarm payroll employment",
+      "source_name": "BLS",
+      "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+      "status": "NORMAL",
+      "summary": "Latest value 159,075.000 thousands of jobs; model forecast 158,949.000. This is a trend break, not a consensus surprise."
+    },
+    {
+      "alert_id": 27,
+      "alert_type": "TREND_BREAK",
+      "calculation": {
+        "actual": 1614171.0,
+        "forecast": 1619833.5,
+        "forecast_error_sd": 11651.473533331617,
+        "history_count": 299,
+        "method": "median historical change using pre-release observations",
+        "status": "CALCULATED",
+        "z_score": -0.4859900324024396
+      },
+      "category": "private investment",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "No timestamped pre-release consensus is available"
+      ],
+      "headline": "Private construction spending, seasonally adjusted annual rate is 0.5\u03c3 below its pre-observation trend forecast",
+      "importance_score": 0.8,
+      "magnitude_score": 0.0972,
+      "persistence_score": 1.0,
+      "rank_score": 43.37,
+      "series_id": "VIP_PRIVATE_SA",
+      "series_name": "Private construction spending, seasonally adjusted annual rate",
+      "source_name": "CENSUS",
+      "source_url": "https://www.census.gov/construction/c30/xlsx/privsatime.xlsx",
+      "status": "NORMAL",
+      "summary": "Latest value 1,614,171.000 millions of dollars; model forecast 1,619,833.500. This is a trend break, not a consensus surprise."
+    },
+    {
+      "alert_id": 24,
+      "alert_type": "TREND_BREAK",
+      "calculation": {
+        "actual": 37.75,
+        "forecast": 37.74,
+        "forecast_error_sd": 0.1468187486307352,
+        "history_count": 103,
+        "method": "median historical change using pre-release observations",
+        "status": "CALCULATED",
+        "z_score": 0.06811119215536345
+      },
+      "category": "wages",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "No timestamped pre-release consensus is available"
+      ],
+      "headline": "Average hourly earnings, total private is 0.1\u03c3 above its pre-observation trend forecast",
+      "importance_score": 0.9,
+      "magnitude_score": 0.0136,
+      "persistence_score": 1.0,
+      "rank_score": 42.61,
+      "series_id": "CES0500000003",
+      "series_name": "Average hourly earnings, total private",
+      "source_name": "BLS",
+      "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+      "status": "NORMAL",
+      "summary": "Latest value 37.750 dollars per hour; model forecast 37.740. This is a trend break, not a consensus surprise."
+    },
+    {
+      "alert_id": 26,
+      "alert_type": "TREND_BREAK",
+      "calculation": {
+        "actual": 96.41,
+        "forecast": 97.24,
+        "forecast_error_sd": 3.028019107410315,
+        "history_count": 299,
+        "method": "median historical change using pre-release observations",
+        "status": "CALCULATED",
+        "z_score": -0.2741065926462558
+      },
+      "category": "energy",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "No timestamped pre-release consensus is available"
+      ],
+      "headline": "Cushing WTI spot price FOB is 0.3\u03c3 below its pre-observation trend forecast",
+      "importance_score": 0.8,
+      "magnitude_score": 0.0548,
+      "persistence_score": 1.0,
+      "rank_score": 41.47,
+      "series_id": "RWTC",
+      "series_name": "Cushing WTI spot price FOB",
+      "source_name": "EIA",
+      "source_url": "https://www.eia.gov/dnav/pet/hist/RWTCd.htm",
+      "status": "NORMAL",
+      "summary": "Latest value 96.410 dollars per barrel; model forecast 97.240. This is a trend break, not a consensus surprise."
+    },
+    {
+      "alert_id": 29,
+      "alert_type": "TREND_BREAK",
+      "calculation": {
+        "actual": 51304.0,
+        "forecast": 49092.5,
+        "forecast_error_sd": 1784.4500515270438,
+        "history_count": 299,
+        "method": "median historical change using pre-release observations",
+        "status": "CALCULATED",
+        "z_score": 1.2393174009591963
+      },
+      "category": "AI infrastructure",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "No timestamped pre-release consensus is available"
+      ],
+      "headline": "Private computer/electronic/electrical manufacturing construction is 1.2\u03c3 above its pre-observation trend forecast",
+      "importance_score": 0.8,
+      "magnitude_score": 0.2479,
+      "persistence_score": 0.0,
+      "rank_score": 35.15,
+      "series_id": "VIP_COMPUTER_ELECTRONIC_SA",
+      "series_name": "Private computer/electronic/electrical manufacturing construction",
+      "source_name": "CENSUS",
+      "source_url": "https://www.census.gov/construction/c30/xlsx/privsatime.xlsx",
+      "status": "NORMAL",
+      "summary": "Latest value 51,304.000 millions of dollars; model forecast 49,092.500. This is a trend break, not a consensus surprise."
+    },
+    {
+      "alert_id": 22,
+      "alert_type": "TREND_BREAK",
+      "calculation": {
+        "actual": 4.1,
+        "forecast": 4.1,
+        "forecast_error_sd": 1.119267501654426,
+        "history_count": 102,
+        "method": "median historical change using pre-release observations",
+        "status": "CALCULATED",
+        "z_score": 0.0
+      },
+      "category": "employment",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "No timestamped pre-release consensus is available"
+      ],
+      "headline": "Civilian unemployment rate is 0.0\u03c3 below its pre-observation trend forecast",
+      "importance_score": 1.0,
+      "magnitude_score": 0.0,
+      "persistence_score": 0.0,
+      "rank_score": 30.0,
+      "series_id": "LNS14000000",
+      "series_name": "Civilian unemployment rate",
+      "source_name": "BLS",
+      "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+      "status": "NORMAL",
+      "summary": "Latest value 4.100 percent; model forecast 4.100. This is a trend break, not a consensus surprise."
+    },
+    {
+      "alert_id": 25,
+      "alert_type": "TREND_BREAK",
+      "calculation": {
+        "actual": 3.96,
+        "forecast": 3.96,
+        "forecast_error_sd": 0.0603545577472091,
+        "history_count": 299,
+        "method": "median historical change using pre-release observations",
+        "status": "CALCULATED",
+        "z_score": 0.0
+      },
+      "category": "funding",
+      "confirmation_score": 0.0,
+      "conflicting_evidence": [
+        "No timestamped pre-release consensus is available"
+      ],
+      "headline": "DVP repo average rate, tenor over 30 days, preliminary is 0.0\u03c3 below its pre-observation trend forecast",
+      "importance_score": 0.9,
+      "magnitude_score": 0.0,
+      "persistence_score": 0.0,
+      "rank_score": 27.0,
+      "series_id": "REPO-DVP_AR_G30-P",
+      "series_name": "DVP repo average rate, tenor over 30 days, preliminary",
+      "source_name": "OFR",
+      "source_url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-DVP_AR_G30-P",
+      "status": "NORMAL",
+      "summary": "Latest value 3.960 percent; model forecast 3.960. This is a trend break, not a consensus surprise."
+    }
+  ],
+  "generated_at": "2026-09-29T05:26:00.678633+00:00",
+  "observations": [
+    {
+      "as_of": "2026-07-01T00:00:00+00:00",
+      "category": "AI infrastructure",
+      "collection_time": "2026-09-29T05:15:15.633343+00:00",
+      "observation_time": "2026-07-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "VIP_COMPUTER_ELECTRONIC_SA",
+      "series_name": "Private computer/electronic/electrical manufacturing construction",
+      "source_name": "CENSUS",
+      "source_url": "https://www.census.gov/construction/c30/xlsx/privsatime.xlsx",
+      "units": "millions of dollars",
+      "value": 51304.0
+    },
+    {
+      "as_of": "2026-07-01T00:00:00+00:00",
+      "category": "AI infrastructure",
+      "collection_time": "2026-09-29T05:15:13.541029+00:00",
+      "observation_time": "2026-07-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "VIP_DATA_CENTER_SA",
+      "series_name": "Private data-center construction spending, seasonally adjusted annual rate",
+      "source_name": "CENSUS",
+      "source_url": "https://www.census.gov/construction/c30/xlsx/privsatime.xlsx",
+      "units": "millions of dollars",
+      "value": 75166.0
+    },
+    {
+      "as_of": "2026-08-01T00:00:00+00:00",
+      "category": "employment",
+      "collection_time": "2026-09-29T05:14:54.315418+00:00",
+      "observation_time": "2026-08-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "CES0000000001",
+      "series_name": "Total nonfarm payroll employment",
+      "source_name": "BLS",
+      "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+      "units": "thousands of jobs",
+      "value": 159075.0
+    },
+    {
+      "as_of": "2026-08-01T00:00:00+00:00",
+      "category": "employment",
+      "collection_time": "2026-09-29T05:14:54.037066+00:00",
+      "observation_time": "2026-08-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "LNS14000000",
+      "series_name": "Civilian unemployment rate",
+      "source_name": "BLS",
+      "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+      "units": "percent",
+      "value": 4.1
+    },
+    {
+      "as_of": "2026-09-22T00:00:00+00:00",
+      "category": "energy",
+      "collection_time": "2026-09-29T05:10:53.347813+00:00",
+      "observation_time": "2026-09-22T00:00:00+00:00",
+      "revision": null,
+      "series_id": "RWTC",
+      "series_name": "Cushing WTI spot price FOB",
+      "source_name": "EIA",
+      "source_url": "https://www.eia.gov/dnav/pet/hist/RWTCd.htm",
+      "units": "dollars per barrel",
+      "value": 96.41
+    },
+    {
+      "as_of": "2026-09-25T00:00:00+00:00",
+      "category": "funding",
+      "collection_time": "2026-09-29T05:10:52.806008+00:00",
+      "observation_time": "2026-09-25T00:00:00+00:00",
+      "revision": null,
+      "series_id": "REPO-DVP_AR_G30-P",
+      "series_name": "DVP repo average rate, tenor over 30 days, preliminary",
+      "source_name": "OFR",
+      "source_url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-DVP_AR_G30-P",
+      "units": "percent",
+      "value": 3.96
+    },
+    {
+      "as_of": "2026-08-01T00:00:00+00:00",
+      "category": "inflation",
+      "collection_time": "2026-09-29T05:11:21.227820+00:00",
+      "observation_time": "2026-08-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "CUSR0000SA0",
+      "series_name": "CPI-U all items, seasonally adjusted",
+      "source_name": "BLS",
+      "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+      "units": "index 1982-84=100",
+      "value": 334.131
+    },
+    {
+      "as_of": "2026-07-01T00:00:00+00:00",
+      "category": "private investment",
+      "collection_time": "2026-09-29T05:13:14.309767+00:00",
+      "observation_time": "2026-07-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "VIP_PRIVATE_SA",
+      "series_name": "Private construction spending, seasonally adjusted annual rate",
+      "source_name": "CENSUS",
+      "source_url": "https://www.census.gov/construction/c30/xlsx/privsatime.xlsx",
+      "units": "millions of dollars",
+      "value": 1614171.0
+    },
+    {
+      "as_of": "2026-08-01T00:00:00+00:00",
+      "category": "wages",
+      "collection_time": "2026-09-29T05:14:54.603022+00:00",
+      "observation_time": "2026-08-01T00:00:00+00:00",
+      "revision": null,
+      "series_id": "CES0500000003",
+      "series_name": "Average hourly earnings, total private",
+      "source_name": "BLS",
+      "source_url": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+      "units": "dollars per hour",
+      "value": 37.75
+    }
+  ],
+  "schema_version": "macro-public-v1",
+  "scope": "Approved official-source daily summary. No licensed market data."
+}
