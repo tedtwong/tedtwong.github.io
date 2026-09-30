@@ -1,7 +1,7 @@
 {
   "alerts": [
     {
-      "alert_id": 1206,
+      "alert_id": 1331,
       "alert_pts": 65.45,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -1477,7 +1477,7 @@
       "summary": "Latest reported value 0.230 percentage points; reported-scale forecast 0.040 percentage points. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 1205,
+      "alert_id": 1330,
       "alert_pts": 61.4,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -2728,7 +2728,7 @@
       "summary": "Latest reported value 4.130 percent; reported-scale forecast 3.960 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 1261,
+      "alert_id": 1386,
       "alert_pts": 57.97,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -3545,7 +3545,7 @@
       "summary": "Latest reported value 130.455 index 2017=100, seasonally adjusted; reported-scale forecast 130.881 index 2017=100, seasonally adjusted. The model uses year over year percent. Status: forecast deviation."
     },
     {
-      "alert_id": 1292,
+      "alert_id": 1417,
       "alert_pts": 54.5,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -4275,7 +4275,7 @@
       "summary": "Latest reported value 2,945.052 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 2,893.604 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 1207,
+      "alert_id": 1332,
       "alert_pts": 52.71,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -5750,7 +5750,7 @@
       "summary": "Latest reported value -0.020 percentage points; reported-scale forecast 0.010 percentage points. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 1291,
+      "alert_id": 1416,
       "alert_pts": 50.75,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -7036,7 +7036,7 @@
       "summary": "Latest reported value 19,568.400 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 19,683.898 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 1236,
+      "alert_id": 1361,
       "alert_pts": 50.25,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -7819,7 +7819,7 @@
       "summary": "Latest reported value 4,587.000 millions of dollars, seasonally adjusted; reported-scale forecast 5,156.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 1246,
+      "alert_id": 1371,
       "alert_pts": 50.01,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -8585,7 +8585,7 @@
       "summary": "Latest reported value 453.300 thousands of persons, seasonally adjusted; reported-scale forecast 461.400 thousands of persons, seasonally adjusted. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 1273,
+      "alert_id": 1398,
       "alert_pts": 48.28,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -9347,7 +9347,7 @@
       "summary": "Latest reported value 7.700 percent, seasonally adjusted; reported-scale forecast 7.900 percent, seasonally adjusted. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 1307,
+      "alert_id": 1432,
       "alert_pts": 46.71,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -10597,7 +10597,7 @@
       "summary": "Latest reported value 3.760 percent; reported-scale forecast 3.790 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 1228,
+      "alert_id": 1353,
       "alert_pts": 46.2,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -11363,7 +11363,7 @@
       "summary": "Latest reported value 44,972.000 millions of dollars, seasonally adjusted; reported-scale forecast 45,747.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 1200,
+      "alert_id": 1325,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -12110,7 +12110,7 @@
       "summary": "Latest reported value 334.131 index 1982-84=100; reported-scale forecast 333.058 index 1982-84=100. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 1201,
+      "alert_id": 1326,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -12857,7 +12857,7 @@
       "summary": "Latest reported value 334.980 index 1982-84=100; reported-scale forecast 334.422 index 1982-84=100. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 1202,
+      "alert_id": 1327,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -13551,7 +13551,7 @@
       "summary": "Latest reported value 4.100 percent; reported-scale forecast 4.100 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1203,
+      "alert_id": 1328,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -14249,7 +14249,7 @@
       "summary": "Latest reported value 159,075.000 thousands of jobs; reported-scale forecast 159,070.500 thousands of jobs. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1204,
+      "alert_id": 1329,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -14947,7 +14947,7 @@
       "summary": "Latest reported value 37.750 dollars per hour; reported-scale forecast 37.783 dollars per hour. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 1208,
+      "alert_id": 1333,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -16441,7 +16441,7 @@
       "summary": "Latest reported value 0.150 percentage points; reported-scale forecast 0.120 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1209,
+      "alert_id": 1334,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -17540,14 +17540,14 @@
           },
           {
             "adjusted_z": -0.0,
-            "alignment_days": 1.0,
+            "alignment_days": 2.0,
             "alignment_limit_days": 7,
             "base_comparability_weight": 1.0,
-            "effective_comparability_weight": 1.0,
+            "effective_comparability_weight": 0.75,
             "evidence_family": "administered_policy_rate",
             "evidence_role": "directional",
-            "freshness_weight": 1.0,
-            "observation_time": "2026-09-30T00:00:00+00:00",
+            "freshness_weight": 0.75,
+            "observation_time": "2026-10-01T00:00:00+00:00",
             "origin_agency": "Federal Reserve Board",
             "raw_adjusted_z": -0.0,
             "relationship": "same",
@@ -17743,7 +17743,7 @@
       "summary": "Latest reported value 4.890 percent; reported-scale forecast 4.920 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1210,
+      "alert_id": 1335,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18842,14 +18842,14 @@
           },
           {
             "adjusted_z": 0.0,
-            "alignment_days": 1.0,
+            "alignment_days": 2.0,
             "alignment_limit_days": 7,
             "base_comparability_weight": 1.0,
-            "effective_comparability_weight": 1.0,
+            "effective_comparability_weight": 0.75,
             "evidence_family": "administered_policy_rate",
             "evidence_role": "directional",
-            "freshness_weight": 1.0,
-            "observation_time": "2026-09-30T00:00:00+00:00",
+            "freshness_weight": 0.75,
+            "observation_time": "2026-10-01T00:00:00+00:00",
             "origin_agency": "Federal Reserve Board",
             "raw_adjusted_z": 0.0,
             "relationship": "same",
@@ -19045,7 +19045,7 @@
       "summary": "Latest reported value 5.260 percent; reported-scale forecast 5.250 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1211,
+      "alert_id": 1336,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20294,7 +20294,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 1212,
+      "alert_id": 1337,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21543,7 +21543,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 1213,
+      "alert_id": 1338,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22794,7 +22794,7 @@
       "summary": "Latest reported value 96.160 dollars per barrel; reported-scale forecast 99.535 dollars per barrel. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 1214,
+      "alert_id": 1339,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -23353,6 +23353,23 @@
             "z_score": -0.3372
           },
           {
+            "adjusted_z": -0.9871,
+            "alignment_days": 0.0,
+            "alignment_limit_days": 62,
+            "base_comparability_weight": 1.0,
+            "effective_comparability_weight": 1.0,
+            "evidence_family": "home_prices",
+            "evidence_role": "directional",
+            "freshness_weight": 1.0,
+            "observation_time": "2026-07-01T00:00:00+00:00",
+            "origin_agency": "S&P CoreLogic",
+            "raw_adjusted_z": -0.9871,
+            "relationship": "same",
+            "series_id": "CSUSHPISA",
+            "series_name": "S&P CoreLogic Case-Shiller U.S. National Home Price Index",
+            "z_score": 0.9871
+          },
+          {
             "adjusted_z": -0.0267,
             "alignment_days": 91.0,
             "alignment_limit_days": 120,
@@ -23558,7 +23575,7 @@
       "summary": "Latest reported value 1,614,171.000 millions of dollars; reported-scale forecast 1,628,321.419 millions of dollars. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 1215,
+      "alert_id": 1340,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -24359,7 +24376,7 @@
       "summary": "Latest reported value 75,166.000 millions of dollars; reported-scale forecast 72,204.836 millions of dollars. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 1216,
+      "alert_id": 1341,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -25160,7 +25177,7 @@
       "summary": "Latest reported value 51,304.000 millions of dollars; reported-scale forecast 50,931.273 millions of dollars. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 1217,
+      "alert_id": 1342,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -25943,7 +25960,7 @@
       "summary": "Latest reported value 663,616.000 millions of dollars, seasonally adjusted; reported-scale forecast 660,059.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1218,
+      "alert_id": 1343,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -26709,7 +26726,7 @@
       "summary": "Latest reported value 338,604.000 millions of dollars, seasonally adjusted; reported-scale forecast 339,509.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1219,
+      "alert_id": 1344,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -27492,7 +27509,7 @@
       "summary": "Latest reported value 324,224.000 millions of dollars, seasonally adjusted; reported-scale forecast 323,035.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1220,
+      "alert_id": 1345,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -28187,7 +28204,7 @@
       "summary": "Latest reported value 966,871.000 millions of dollars, seasonally adjusted; reported-scale forecast 964,677.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1221,
+      "alert_id": 1346,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -28882,7 +28899,7 @@
       "summary": "Latest reported value 608,082.000 millions of dollars, seasonally adjusted; reported-scale forecast 607,847.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1222,
+      "alert_id": 1347,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -29577,7 +29594,7 @@
       "summary": "Latest reported value 362,202.000 millions of dollars, seasonally adjusted; reported-scale forecast 360,147.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1223,
+      "alert_id": 1348,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -30343,7 +30360,7 @@
       "summary": "Latest reported value 333,825.000 millions of dollars, seasonally adjusted; reported-scale forecast 335,856.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1224,
+      "alert_id": 1349,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -31126,7 +31143,7 @@
       "summary": "Latest reported value 324,224.000 millions of dollars, seasonally adjusted; reported-scale forecast 323,035.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1225,
+      "alert_id": 1350,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -31821,7 +31838,7 @@
       "summary": "Latest reported value 100,519.000 millions of dollars, seasonally adjusted; reported-scale forecast 99,374.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1226,
+      "alert_id": 1351,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -32516,7 +32533,7 @@
       "summary": "Latest reported value 87,629.000 millions of dollars, seasonally adjusted; reported-scale forecast 86,553.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1227,
+      "alert_id": 1352,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -33282,7 +33299,7 @@
       "summary": "Latest reported value 32,609.000 millions of dollars, seasonally adjusted; reported-scale forecast 32,378.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1229,
+      "alert_id": 1354,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -34048,7 +34065,7 @@
       "summary": "Latest reported value 45,494.000 millions of dollars, seasonally adjusted; reported-scale forecast 45,169.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1230,
+      "alert_id": 1355,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -34814,7 +34831,7 @@
       "summary": "Latest reported value 30,855.000 millions of dollars, seasonally adjusted; reported-scale forecast 30,989.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1231,
+      "alert_id": 1356,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -35580,7 +35597,7 @@
       "summary": "Latest reported value 19,021.000 millions of dollars, seasonally adjusted; reported-scale forecast 18,936.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1232,
+      "alert_id": 1357,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -36346,7 +36363,7 @@
       "summary": "Latest reported value 114,126.000 millions of dollars, seasonally adjusted; reported-scale forecast 115,460.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1233,
+      "alert_id": 1358,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -37112,7 +37129,7 @@
       "summary": "Latest reported value 73,347.000 millions of dollars, seasonally adjusted; reported-scale forecast 74,300.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1234,
+      "alert_id": 1359,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -37878,7 +37895,7 @@
       "summary": "Latest reported value 18,825.000 millions of dollars, seasonally adjusted; reported-scale forecast 19,172.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1235,
+      "alert_id": 1360,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -38644,7 +38661,7 @@
       "summary": "Latest reported value 6,092.000 millions of dollars, seasonally adjusted; reported-scale forecast 5,789.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1237,
+      "alert_id": 1362,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -39427,7 +39444,7 @@
       "summary": "Latest reported value 5,592.000 millions of dollars, seasonally adjusted; reported-scale forecast 5,165.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1238,
+      "alert_id": 1363,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -40210,7 +40227,7 @@
       "summary": "Latest reported value 1,828.000 millions of dollars, seasonally adjusted; reported-scale forecast 1,873.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1239,
+      "alert_id": 1364,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -40993,7 +41010,7 @@
       "summary": "Latest reported value 4,891.000 millions of dollars, seasonally adjusted; reported-scale forecast 4,886.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1240,
+      "alert_id": 1365,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -41776,7 +41793,7 @@
       "summary": "Latest reported value 5,644.000 millions of dollars, seasonally adjusted; reported-scale forecast 5,659.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1241,
+      "alert_id": 1366,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -42559,7 +42576,7 @@
       "summary": "Latest reported value 6,187.000 millions of dollars, seasonally adjusted; reported-scale forecast 5,841.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1242,
+      "alert_id": 1367,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -43254,7 +43271,7 @@
       "summary": "Latest reported value 2,543.000 millions of dollars, seasonally adjusted; reported-scale forecast 2,430.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1243,
+      "alert_id": 1368,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -43949,7 +43966,7 @@
       "summary": "Latest reported value 5,571.000 millions of dollars, seasonally adjusted; reported-scale forecast 5,586.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1244,
+      "alert_id": 1369,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -44732,7 +44749,7 @@
       "summary": "Latest reported value 111.792 index 2017=100, seasonally adjusted; reported-scale forecast 113.487 index 2017=100, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1245,
+      "alert_id": 1370,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -45515,7 +45532,7 @@
       "summary": "Latest reported value 190.099 index 2017=100, seasonally adjusted; reported-scale forecast 191.075 index 2017=100, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1247,
+      "alert_id": 1372,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -46092,7 +46109,7 @@
       "summary": "Latest reported value 1,758.194 billions of chained 2017 dollars, seasonally adjusted annual rate; reported-scale forecast 1,741.981 billions of chained 2017 dollars, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1248,
+      "alert_id": 1373,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -47395,7 +47412,7 @@
       "summary": "Latest reported value 3.030 index; reported-scale forecast 3.055 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1249,
+      "alert_id": 1374,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -48178,7 +48195,7 @@
       "summary": "Latest reported value -0.040 index; reported-scale forecast 0.055 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1250,
+      "alert_id": 1375,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -48731,7 +48748,7 @@
       "summary": "Latest reported value 24,408.011 billions of chained 2017 dollars, seasonally adjusted annual rate; reported-scale forecast 24,463.669 billions of chained 2017 dollars, seasonally adjusted annual rate. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 1251,
+      "alert_id": 1376,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -49514,7 +49531,7 @@
       "summary": "Latest reported value 103.068 index 2017=100, seasonally adjusted; reported-scale forecast 103.083 index 2017=100, seasonally adjusted. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 1252,
+      "alert_id": 1377,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -50297,7 +50314,7 @@
       "summary": "Latest reported value 76.272 percent, seasonally adjusted; reported-scale forecast 76.277 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1253,
+      "alert_id": 1378,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -51057,7 +51074,7 @@
       "summary": "Latest reported value 231,630.000 millions of 1982-84 CPI-adjusted dollars, seasonally adjusted; reported-scale forecast 229,987.616 millions of 1982-84 CPI-adjusted dollars, seasonally adjusted. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 1254,
+      "alert_id": 1379,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -52306,7 +52323,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 1255,
+      "alert_id": 1380,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -53555,7 +53572,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 1256,
+      "alert_id": 1381,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -54804,7 +54821,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 1257,
+      "alert_id": 1382,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -55499,7 +55516,7 @@
       "summary": "Latest reported value 1.300 ratio, seasonally adjusted; reported-scale forecast 1.300 ratio, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1258,
+      "alert_id": 1383,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -56314,7 +56331,7 @@
       "summary": "Latest reported value 334.131 index 1982-1984=100, seasonally adjusted; reported-scale forecast 333.573 index 1982-1984=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 1259,
+      "alert_id": 1384,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -57129,7 +57146,7 @@
       "summary": "Latest reported value 337.765 index 1982-1984=100, seasonally adjusted; reported-scale forecast 337.842 index 1982-1984=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 1260,
+      "alert_id": 1385,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -57946,7 +57963,7 @@
       "summary": "Latest reported value 131.579 index 2017=100, seasonally adjusted; reported-scale forecast 131.938 index 2017=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 1262,
+      "alert_id": 1387,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -58765,7 +58782,7 @@
       "summary": "Latest reported value 157.411 index November 2009=100, seasonally adjusted; reported-scale forecast 156.501 index November 2009=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 1263,
+      "alert_id": 1388,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -59602,7 +59619,7 @@
       "summary": "Latest reported value 2.104 percent change at annual rate, seasonally adjusted; reported-scale forecast 3.102 percent change at annual rate, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1264,
+      "alert_id": 1389,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -60439,7 +60456,7 @@
       "summary": "Latest reported value 339.202 index December 1982=100, seasonally adjusted; reported-scale forecast 339.317 index December 1982=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 1265,
+      "alert_id": 1390,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -61795,7 +61812,7 @@
       "summary": "Latest reported value 2.340 percent; reported-scale forecast 2.330 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1266,
+      "alert_id": 1391,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -63151,7 +63168,7 @@
       "summary": "Latest reported value 2.360 percent; reported-scale forecast 2.350 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1267,
+      "alert_id": 1392,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -64473,7 +64490,7 @@
       "summary": "Latest reported value 197,000.000 number, seasonally adjusted; reported-scale forecast 198,000.000 number, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1268,
+      "alert_id": 1393,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -65795,7 +65812,7 @@
       "summary": "Latest reported value 1,719,000.000 number, seasonally adjusted; reported-scale forecast 1,712,000.000 number, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1269,
+      "alert_id": 1394,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -67046,7 +67063,7 @@
       "summary": "Latest reported value 1.100 percent, seasonally adjusted; reported-scale forecast 1.100 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1270,
+      "alert_id": 1395,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -67808,7 +67825,7 @@
       "summary": "Latest reported value -0.070 percentage points, seasonally adjusted; reported-scale forecast -0.130 percentage points, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1271,
+      "alert_id": 1396,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -68574,7 +68591,7 @@
       "summary": "Latest reported value 159,075.000 thousands of persons, seasonally adjusted; reported-scale forecast 159,070.500 thousands of persons, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1272,
+      "alert_id": 1397,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -69336,7 +69353,7 @@
       "summary": "Latest reported value 4.100 percent, seasonally adjusted; reported-scale forecast 4.100 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1274,
+      "alert_id": 1399,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -70102,7 +70119,7 @@
       "summary": "Latest reported value 34.400 hours, seasonally adjusted; reported-scale forecast 34.300 hours, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1275,
+      "alert_id": 1400,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -70868,7 +70885,7 @@
       "summary": "Latest reported value 2,519.500 thousands of persons, seasonally adjusted; reported-scale forecast 2,502.050 thousands of persons, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1276,
+      "alert_id": 1401,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -71652,7 +71669,7 @@
       "summary": "Latest reported value 7,079.000 thousands, seasonally adjusted; reported-scale forecast 7,270.000 thousands, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1277,
+      "alert_id": 1402,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -72435,7 +72452,7 @@
       "summary": "Latest reported value 3.300 rate, seasonally adjusted; reported-scale forecast 3.200 rate, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1278,
+      "alert_id": 1403,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -73130,7 +73147,7 @@
       "summary": "Latest reported value 1.900 rate, seasonally adjusted; reported-scale forecast 1.900 rate, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1279,
+      "alert_id": 1404,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -74380,7 +74397,7 @@
       "summary": "Latest reported value 0.025 percentage points; reported-scale forecast 0.555 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1280,
+      "alert_id": 1405,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -75630,7 +75647,7 @@
       "summary": "Latest reported value 0.066 percentage points; reported-scale forecast 0.438 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1281,
+      "alert_id": 1406,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -76880,7 +76897,7 @@
       "summary": "Latest reported value 0.001 percentage points; reported-scale forecast 0.003 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1282,
+      "alert_id": 1407,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -78182,7 +78199,7 @@
       "summary": "Latest reported value 16.040 index; reported-scale forecast 15.950 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1283,
+      "alert_id": 1408,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -79484,7 +79501,7 @@
       "summary": "Latest reported value 7,670.840 index; reported-scale forecast 7,688.484 index. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 1284,
+      "alert_id": 1409,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -80735,7 +80752,7 @@
       "summary": "Latest reported value -0.548 index; reported-scale forecast -0.548 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1285,
+      "alert_id": 1410,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -82038,7 +82055,7 @@
       "summary": "Latest reported value -0.807 index; reported-scale forecast -0.685 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1286,
+      "alert_id": 1411,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -83342,7 +83359,7 @@
       "summary": "Latest reported value 3.080 percent; reported-scale forecast 3.020 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1287,
+      "alert_id": 1412,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -84646,7 +84663,7 @@
       "summary": "Latest reported value 11.570 percent; reported-scale forecast 11.470 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1288,
+      "alert_id": 1413,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -85896,7 +85913,7 @@
       "summary": "Latest reported value 1.020 percent; reported-scale forecast 1.020 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1289,
+      "alert_id": 1414,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -86995,14 +87012,14 @@
           },
           {
             "adjusted_z": 0.0,
-            "alignment_days": 1.0,
+            "alignment_days": 2.0,
             "alignment_limit_days": 7,
             "base_comparability_weight": 1.0,
-            "effective_comparability_weight": 1.0,
+            "effective_comparability_weight": 0.75,
             "evidence_family": "administered_policy_rate",
             "evidence_role": "directional",
-            "freshness_weight": 1.0,
-            "observation_time": "2026-09-30T00:00:00+00:00",
+            "freshness_weight": 0.75,
+            "observation_time": "2026-10-01T00:00:00+00:00",
             "origin_agency": "Federal Reserve Board",
             "raw_adjusted_z": 0.0,
             "relationship": "same",
@@ -87198,7 +87215,7 @@
       "summary": "Latest reported value 2.910 percent; reported-scale forecast 2.900 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1290,
+      "alert_id": 1415,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -88484,7 +88501,7 @@
       "summary": "Latest reported value 19,876.326 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 19,891.094 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1293,
+      "alert_id": 1418,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -89214,7 +89231,7 @@
       "summary": "Latest reported value 5,826.899 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 5,820.203 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1294,
+      "alert_id": 1419,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -89944,7 +89961,7 @@
       "summary": "Latest reported value 1,917.563 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 1,922.361 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1295,
+      "alert_id": 1420,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -90550,7 +90567,7 @@
       "summary": "Latest reported value 0.000 net percent; reported-scale forecast 9.250 net percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1296,
+      "alert_id": 1421,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -91156,7 +91173,7 @@
       "summary": "Latest reported value 1.800 net percent; reported-scale forecast 7.450 net percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1297,
+      "alert_id": 1422,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -91646,7 +91663,7 @@
       "summary": "Latest reported value -11.300 net percent; reported-scale forecast -7.450 net percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1298,
+      "alert_id": 1423,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -92199,7 +92216,7 @@
       "summary": "Latest reported value 1.530 percent, seasonally adjusted; reported-scale forecast 1.540 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1299,
+      "alert_id": 1424,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -93449,7 +93466,7 @@
       "summary": "Latest reported value 3.880 percent; reported-scale forecast 3.880 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1300,
+      "alert_id": 1425,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -94699,7 +94716,7 @@
       "summary": "Latest reported value 3.880 percent; reported-scale forecast 3.880 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1301,
+      "alert_id": 1426,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -94707,1052 +94724,1052 @@
         "calendar_adjustment_considered": false,
         "calendar_bucket": null,
         "chart_actual": {
-          "observation_time": "2026-09-30T00:00:00+00:00",
+          "observation_time": "2026-10-01T00:00:00+00:00",
           "value": 3.9
         },
         "chart_forecast": {
-          "observation_time": "2026-09-30T00:00:00+00:00",
+          "observation_time": "2026-10-01T00:00:00+00:00",
           "value": 3.9
         },
         "chart_history": [
           {
-            "observation_time": "2024-09-30T00:00:00+00:00",
+            "observation_time": "2024-10-01T00:00:00+00:00",
             "value": 4.9
           },
           {
-            "observation_time": "2024-10-03T00:00:00+00:00",
+            "observation_time": "2024-10-04T00:00:00+00:00",
             "value": 4.9
           },
           {
-            "observation_time": "2024-10-06T00:00:00+00:00",
+            "observation_time": "2024-10-07T00:00:00+00:00",
             "value": 4.9
           },
           {
-            "observation_time": "2024-10-08T00:00:00+00:00",
+            "observation_time": "2024-10-09T00:00:00+00:00",
             "value": 4.9
           },
           {
-            "observation_time": "2024-10-11T00:00:00+00:00",
+            "observation_time": "2024-10-12T00:00:00+00:00",
             "value": 4.9
           },
           {
-            "observation_time": "2024-10-14T00:00:00+00:00",
+            "observation_time": "2024-10-15T00:00:00+00:00",
             "value": 4.9
           },
           {
-            "observation_time": "2024-10-17T00:00:00+00:00",
+            "observation_time": "2024-10-18T00:00:00+00:00",
             "value": 4.9
           },
           {
-            "observation_time": "2024-10-20T00:00:00+00:00",
+            "observation_time": "2024-10-21T00:00:00+00:00",
             "value": 4.9
           },
           {
-            "observation_time": "2024-10-23T00:00:00+00:00",
+            "observation_time": "2024-10-24T00:00:00+00:00",
             "value": 4.9
           },
           {
-            "observation_time": "2024-10-25T00:00:00+00:00",
+            "observation_time": "2024-10-26T00:00:00+00:00",
             "value": 4.9
           },
           {
-            "observation_time": "2024-10-28T00:00:00+00:00",
+            "observation_time": "2024-10-29T00:00:00+00:00",
             "value": 4.9
           },
           {
-            "observation_time": "2024-10-31T00:00:00+00:00",
+            "observation_time": "2024-11-01T00:00:00+00:00",
             "value": 4.9
           },
           {
-            "observation_time": "2024-11-03T00:00:00+00:00",
+            "observation_time": "2024-11-04T00:00:00+00:00",
             "value": 4.9
           },
           {
-            "observation_time": "2024-11-06T00:00:00+00:00",
+            "observation_time": "2024-11-07T00:00:00+00:00",
             "value": 4.9
           },
           {
-            "observation_time": "2024-11-08T00:00:00+00:00",
+            "observation_time": "2024-11-09T00:00:00+00:00",
             "value": 4.65
           },
           {
-            "observation_time": "2024-11-11T00:00:00+00:00",
+            "observation_time": "2024-11-12T00:00:00+00:00",
             "value": 4.65
           },
           {
-            "observation_time": "2024-11-14T00:00:00+00:00",
+            "observation_time": "2024-11-15T00:00:00+00:00",
             "value": 4.65
           },
           {
-            "observation_time": "2024-11-17T00:00:00+00:00",
+            "observation_time": "2024-11-18T00:00:00+00:00",
             "value": 4.65
           },
           {
-            "observation_time": "2024-11-20T00:00:00+00:00",
+            "observation_time": "2024-11-21T00:00:00+00:00",
             "value": 4.65
           },
           {
-            "observation_time": "2024-11-23T00:00:00+00:00",
+            "observation_time": "2024-11-24T00:00:00+00:00",
             "value": 4.65
           },
           {
-            "observation_time": "2024-11-25T00:00:00+00:00",
+            "observation_time": "2024-11-26T00:00:00+00:00",
             "value": 4.65
           },
           {
-            "observation_time": "2024-11-28T00:00:00+00:00",
+            "observation_time": "2024-11-29T00:00:00+00:00",
             "value": 4.65
           },
           {
-            "observation_time": "2024-12-01T00:00:00+00:00",
+            "observation_time": "2024-12-02T00:00:00+00:00",
             "value": 4.65
           },
           {
-            "observation_time": "2024-12-04T00:00:00+00:00",
+            "observation_time": "2024-12-05T00:00:00+00:00",
             "value": 4.65
           },
           {
-            "observation_time": "2024-12-07T00:00:00+00:00",
+            "observation_time": "2024-12-08T00:00:00+00:00",
             "value": 4.65
           },
           {
-            "observation_time": "2024-12-09T00:00:00+00:00",
+            "observation_time": "2024-12-10T00:00:00+00:00",
             "value": 4.65
           },
           {
-            "observation_time": "2024-12-12T00:00:00+00:00",
+            "observation_time": "2024-12-13T00:00:00+00:00",
             "value": 4.65
           },
           {
-            "observation_time": "2024-12-15T00:00:00+00:00",
+            "observation_time": "2024-12-16T00:00:00+00:00",
             "value": 4.65
           },
           {
-            "observation_time": "2024-12-18T00:00:00+00:00",
-            "value": 4.65
-          },
-          {
-            "observation_time": "2024-12-21T00:00:00+00:00",
+            "observation_time": "2024-12-19T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2024-12-24T00:00:00+00:00",
+            "observation_time": "2024-12-22T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2024-12-26T00:00:00+00:00",
+            "observation_time": "2024-12-25T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2024-12-29T00:00:00+00:00",
+            "observation_time": "2024-12-27T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-01-01T00:00:00+00:00",
+            "observation_time": "2024-12-30T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-01-04T00:00:00+00:00",
+            "observation_time": "2025-01-02T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-01-07T00:00:00+00:00",
+            "observation_time": "2025-01-05T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-01-09T00:00:00+00:00",
+            "observation_time": "2025-01-08T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-01-12T00:00:00+00:00",
+            "observation_time": "2025-01-10T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-01-15T00:00:00+00:00",
+            "observation_time": "2025-01-13T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-01-18T00:00:00+00:00",
+            "observation_time": "2025-01-16T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-01-21T00:00:00+00:00",
+            "observation_time": "2025-01-19T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-01-24T00:00:00+00:00",
+            "observation_time": "2025-01-22T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-01-26T00:00:00+00:00",
+            "observation_time": "2025-01-25T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-01-29T00:00:00+00:00",
+            "observation_time": "2025-01-27T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-02-01T00:00:00+00:00",
+            "observation_time": "2025-01-30T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-02-04T00:00:00+00:00",
+            "observation_time": "2025-02-02T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-02-07T00:00:00+00:00",
+            "observation_time": "2025-02-05T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-02-09T00:00:00+00:00",
+            "observation_time": "2025-02-08T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-02-12T00:00:00+00:00",
+            "observation_time": "2025-02-10T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-02-15T00:00:00+00:00",
+            "observation_time": "2025-02-13T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-02-18T00:00:00+00:00",
+            "observation_time": "2025-02-16T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-02-21T00:00:00+00:00",
+            "observation_time": "2025-02-19T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-02-24T00:00:00+00:00",
+            "observation_time": "2025-02-22T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-02-26T00:00:00+00:00",
+            "observation_time": "2025-02-25T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-03-01T00:00:00+00:00",
+            "observation_time": "2025-02-27T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-03-04T00:00:00+00:00",
+            "observation_time": "2025-03-02T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-03-07T00:00:00+00:00",
+            "observation_time": "2025-03-05T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-03-10T00:00:00+00:00",
+            "observation_time": "2025-03-08T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-03-12T00:00:00+00:00",
+            "observation_time": "2025-03-11T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-03-15T00:00:00+00:00",
+            "observation_time": "2025-03-13T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-03-18T00:00:00+00:00",
+            "observation_time": "2025-03-16T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-03-21T00:00:00+00:00",
+            "observation_time": "2025-03-19T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-03-24T00:00:00+00:00",
+            "observation_time": "2025-03-22T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-03-27T00:00:00+00:00",
+            "observation_time": "2025-03-25T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-03-29T00:00:00+00:00",
+            "observation_time": "2025-03-28T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-04-01T00:00:00+00:00",
+            "observation_time": "2025-03-30T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-04-04T00:00:00+00:00",
+            "observation_time": "2025-04-02T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-04-07T00:00:00+00:00",
+            "observation_time": "2025-04-05T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-04-10T00:00:00+00:00",
+            "observation_time": "2025-04-08T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-04-12T00:00:00+00:00",
+            "observation_time": "2025-04-11T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-04-15T00:00:00+00:00",
+            "observation_time": "2025-04-13T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-04-18T00:00:00+00:00",
+            "observation_time": "2025-04-16T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-04-21T00:00:00+00:00",
+            "observation_time": "2025-04-19T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-04-24T00:00:00+00:00",
+            "observation_time": "2025-04-22T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-04-27T00:00:00+00:00",
+            "observation_time": "2025-04-25T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-04-29T00:00:00+00:00",
+            "observation_time": "2025-04-28T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-05-02T00:00:00+00:00",
+            "observation_time": "2025-04-30T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-05-05T00:00:00+00:00",
+            "observation_time": "2025-05-03T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-05-08T00:00:00+00:00",
+            "observation_time": "2025-05-06T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-05-11T00:00:00+00:00",
+            "observation_time": "2025-05-09T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-05-13T00:00:00+00:00",
+            "observation_time": "2025-05-12T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-05-16T00:00:00+00:00",
+            "observation_time": "2025-05-14T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-05-19T00:00:00+00:00",
+            "observation_time": "2025-05-17T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-05-22T00:00:00+00:00",
+            "observation_time": "2025-05-20T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-05-25T00:00:00+00:00",
+            "observation_time": "2025-05-23T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-05-28T00:00:00+00:00",
+            "observation_time": "2025-05-26T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-05-30T00:00:00+00:00",
+            "observation_time": "2025-05-29T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-06-02T00:00:00+00:00",
+            "observation_time": "2025-05-31T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-06-05T00:00:00+00:00",
+            "observation_time": "2025-06-03T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-06-08T00:00:00+00:00",
+            "observation_time": "2025-06-06T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-06-11T00:00:00+00:00",
+            "observation_time": "2025-06-09T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-06-13T00:00:00+00:00",
+            "observation_time": "2025-06-12T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-06-16T00:00:00+00:00",
+            "observation_time": "2025-06-14T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-06-19T00:00:00+00:00",
+            "observation_time": "2025-06-17T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-06-22T00:00:00+00:00",
+            "observation_time": "2025-06-20T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-06-25T00:00:00+00:00",
+            "observation_time": "2025-06-23T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-06-28T00:00:00+00:00",
+            "observation_time": "2025-06-26T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-06-30T00:00:00+00:00",
+            "observation_time": "2025-06-29T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-07-03T00:00:00+00:00",
+            "observation_time": "2025-07-01T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-07-06T00:00:00+00:00",
+            "observation_time": "2025-07-04T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-07-09T00:00:00+00:00",
+            "observation_time": "2025-07-07T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-07-12T00:00:00+00:00",
+            "observation_time": "2025-07-10T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-07-14T00:00:00+00:00",
+            "observation_time": "2025-07-13T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-07-17T00:00:00+00:00",
+            "observation_time": "2025-07-15T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-07-20T00:00:00+00:00",
+            "observation_time": "2025-07-18T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-07-23T00:00:00+00:00",
+            "observation_time": "2025-07-21T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-07-26T00:00:00+00:00",
+            "observation_time": "2025-07-24T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-07-29T00:00:00+00:00",
+            "observation_time": "2025-07-27T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-07-31T00:00:00+00:00",
+            "observation_time": "2025-07-30T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-08-03T00:00:00+00:00",
+            "observation_time": "2025-08-01T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-08-06T00:00:00+00:00",
+            "observation_time": "2025-08-04T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-08-09T00:00:00+00:00",
+            "observation_time": "2025-08-07T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-08-12T00:00:00+00:00",
+            "observation_time": "2025-08-10T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-08-14T00:00:00+00:00",
+            "observation_time": "2025-08-13T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-08-17T00:00:00+00:00",
+            "observation_time": "2025-08-15T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-08-20T00:00:00+00:00",
+            "observation_time": "2025-08-18T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-08-23T00:00:00+00:00",
+            "observation_time": "2025-08-21T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-08-26T00:00:00+00:00",
+            "observation_time": "2025-08-24T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-08-29T00:00:00+00:00",
+            "observation_time": "2025-08-27T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-08-31T00:00:00+00:00",
+            "observation_time": "2025-08-30T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-09-03T00:00:00+00:00",
+            "observation_time": "2025-09-01T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-09-06T00:00:00+00:00",
+            "observation_time": "2025-09-04T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-09-09T00:00:00+00:00",
+            "observation_time": "2025-09-07T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-09-12T00:00:00+00:00",
+            "observation_time": "2025-09-10T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-09-14T00:00:00+00:00",
+            "observation_time": "2025-09-13T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-09-17T00:00:00+00:00",
+            "observation_time": "2025-09-15T00:00:00+00:00",
             "value": 4.4
           },
           {
-            "observation_time": "2025-09-20T00:00:00+00:00",
+            "observation_time": "2025-09-18T00:00:00+00:00",
             "value": 4.15
           },
           {
-            "observation_time": "2025-09-23T00:00:00+00:00",
+            "observation_time": "2025-09-21T00:00:00+00:00",
             "value": 4.15
           },
           {
-            "observation_time": "2025-09-26T00:00:00+00:00",
+            "observation_time": "2025-09-24T00:00:00+00:00",
             "value": 4.15
           },
           {
-            "observation_time": "2025-09-29T00:00:00+00:00",
+            "observation_time": "2025-09-27T00:00:00+00:00",
             "value": 4.15
           },
           {
-            "observation_time": "2025-10-01T00:00:00+00:00",
+            "observation_time": "2025-09-30T00:00:00+00:00",
             "value": 4.15
           },
           {
-            "observation_time": "2025-10-04T00:00:00+00:00",
+            "observation_time": "2025-10-02T00:00:00+00:00",
             "value": 4.15
           },
           {
-            "observation_time": "2025-10-07T00:00:00+00:00",
+            "observation_time": "2025-10-05T00:00:00+00:00",
             "value": 4.15
           },
           {
-            "observation_time": "2025-10-10T00:00:00+00:00",
+            "observation_time": "2025-10-08T00:00:00+00:00",
             "value": 4.15
           },
           {
-            "observation_time": "2025-10-13T00:00:00+00:00",
+            "observation_time": "2025-10-11T00:00:00+00:00",
             "value": 4.15
           },
           {
-            "observation_time": "2025-10-16T00:00:00+00:00",
+            "observation_time": "2025-10-14T00:00:00+00:00",
             "value": 4.15
           },
           {
-            "observation_time": "2025-10-18T00:00:00+00:00",
+            "observation_time": "2025-10-17T00:00:00+00:00",
             "value": 4.15
           },
           {
-            "observation_time": "2025-10-21T00:00:00+00:00",
+            "observation_time": "2025-10-19T00:00:00+00:00",
             "value": 4.15
           },
           {
-            "observation_time": "2025-10-24T00:00:00+00:00",
+            "observation_time": "2025-10-22T00:00:00+00:00",
             "value": 4.15
           },
           {
-            "observation_time": "2025-10-27T00:00:00+00:00",
+            "observation_time": "2025-10-25T00:00:00+00:00",
             "value": 4.15
           },
           {
-            "observation_time": "2025-10-30T00:00:00+00:00",
+            "observation_time": "2025-10-28T00:00:00+00:00",
+            "value": 4.15
+          },
+          {
+            "observation_time": "2025-10-31T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-11-01T00:00:00+00:00",
+            "observation_time": "2025-11-02T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-11-04T00:00:00+00:00",
+            "observation_time": "2025-11-05T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-11-07T00:00:00+00:00",
+            "observation_time": "2025-11-08T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-11-10T00:00:00+00:00",
+            "observation_time": "2025-11-11T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-11-13T00:00:00+00:00",
+            "observation_time": "2025-11-14T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-11-16T00:00:00+00:00",
+            "observation_time": "2025-11-17T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-11-18T00:00:00+00:00",
+            "observation_time": "2025-11-19T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-11-21T00:00:00+00:00",
+            "observation_time": "2025-11-22T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-11-24T00:00:00+00:00",
+            "observation_time": "2025-11-25T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-11-27T00:00:00+00:00",
+            "observation_time": "2025-11-28T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-11-30T00:00:00+00:00",
+            "observation_time": "2025-12-01T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-12-02T00:00:00+00:00",
+            "observation_time": "2025-12-03T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-12-05T00:00:00+00:00",
+            "observation_time": "2025-12-06T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-12-08T00:00:00+00:00",
+            "observation_time": "2025-12-09T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2025-12-11T00:00:00+00:00",
+            "observation_time": "2025-12-12T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2025-12-14T00:00:00+00:00",
+            "observation_time": "2025-12-15T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2025-12-17T00:00:00+00:00",
+            "observation_time": "2025-12-18T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2025-12-19T00:00:00+00:00",
+            "observation_time": "2025-12-20T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2025-12-22T00:00:00+00:00",
+            "observation_time": "2025-12-23T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2025-12-25T00:00:00+00:00",
+            "observation_time": "2025-12-26T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2025-12-28T00:00:00+00:00",
+            "observation_time": "2025-12-29T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2025-12-31T00:00:00+00:00",
+            "observation_time": "2026-01-01T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-01-02T00:00:00+00:00",
+            "observation_time": "2026-01-03T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-01-05T00:00:00+00:00",
+            "observation_time": "2026-01-06T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-01-08T00:00:00+00:00",
+            "observation_time": "2026-01-09T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-01-11T00:00:00+00:00",
+            "observation_time": "2026-01-12T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-01-14T00:00:00+00:00",
+            "observation_time": "2026-01-15T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-01-17T00:00:00+00:00",
+            "observation_time": "2026-01-18T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-01-19T00:00:00+00:00",
+            "observation_time": "2026-01-20T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-01-22T00:00:00+00:00",
+            "observation_time": "2026-01-23T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-01-25T00:00:00+00:00",
+            "observation_time": "2026-01-26T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-01-28T00:00:00+00:00",
+            "observation_time": "2026-01-29T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-01-31T00:00:00+00:00",
+            "observation_time": "2026-02-01T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-02-02T00:00:00+00:00",
+            "observation_time": "2026-02-03T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-02-05T00:00:00+00:00",
+            "observation_time": "2026-02-06T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-02-08T00:00:00+00:00",
+            "observation_time": "2026-02-09T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-02-11T00:00:00+00:00",
+            "observation_time": "2026-02-12T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-02-14T00:00:00+00:00",
+            "observation_time": "2026-02-15T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-02-17T00:00:00+00:00",
+            "observation_time": "2026-02-18T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-02-19T00:00:00+00:00",
+            "observation_time": "2026-02-20T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-02-22T00:00:00+00:00",
+            "observation_time": "2026-02-23T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-02-25T00:00:00+00:00",
+            "observation_time": "2026-02-26T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-02-28T00:00:00+00:00",
+            "observation_time": "2026-03-01T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-03-03T00:00:00+00:00",
+            "observation_time": "2026-03-04T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-03-05T00:00:00+00:00",
+            "observation_time": "2026-03-06T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-03-08T00:00:00+00:00",
+            "observation_time": "2026-03-09T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-03-11T00:00:00+00:00",
+            "observation_time": "2026-03-12T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-03-14T00:00:00+00:00",
+            "observation_time": "2026-03-15T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-03-17T00:00:00+00:00",
+            "observation_time": "2026-03-18T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-03-20T00:00:00+00:00",
+            "observation_time": "2026-03-21T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-03-22T00:00:00+00:00",
+            "observation_time": "2026-03-23T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-03-25T00:00:00+00:00",
+            "observation_time": "2026-03-26T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-03-28T00:00:00+00:00",
+            "observation_time": "2026-03-29T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-03-31T00:00:00+00:00",
+            "observation_time": "2026-04-01T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-04-03T00:00:00+00:00",
+            "observation_time": "2026-04-04T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-04-05T00:00:00+00:00",
+            "observation_time": "2026-04-06T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-04-08T00:00:00+00:00",
+            "observation_time": "2026-04-09T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-04-11T00:00:00+00:00",
+            "observation_time": "2026-04-12T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-04-14T00:00:00+00:00",
+            "observation_time": "2026-04-15T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-04-17T00:00:00+00:00",
+            "observation_time": "2026-04-18T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-04-20T00:00:00+00:00",
+            "observation_time": "2026-04-21T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-04-22T00:00:00+00:00",
+            "observation_time": "2026-04-23T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-04-25T00:00:00+00:00",
+            "observation_time": "2026-04-26T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-04-28T00:00:00+00:00",
+            "observation_time": "2026-04-29T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-05-01T00:00:00+00:00",
+            "observation_time": "2026-05-02T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-05-04T00:00:00+00:00",
+            "observation_time": "2026-05-05T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-05-06T00:00:00+00:00",
+            "observation_time": "2026-05-07T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-05-09T00:00:00+00:00",
+            "observation_time": "2026-05-10T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-05-12T00:00:00+00:00",
+            "observation_time": "2026-05-13T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-05-15T00:00:00+00:00",
+            "observation_time": "2026-05-16T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-05-18T00:00:00+00:00",
+            "observation_time": "2026-05-19T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-05-21T00:00:00+00:00",
+            "observation_time": "2026-05-22T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-05-23T00:00:00+00:00",
+            "observation_time": "2026-05-24T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-05-26T00:00:00+00:00",
+            "observation_time": "2026-05-27T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-05-29T00:00:00+00:00",
+            "observation_time": "2026-05-30T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-06-01T00:00:00+00:00",
+            "observation_time": "2026-06-02T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-06-04T00:00:00+00:00",
+            "observation_time": "2026-06-05T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-06-06T00:00:00+00:00",
+            "observation_time": "2026-06-07T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-06-09T00:00:00+00:00",
+            "observation_time": "2026-06-10T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-06-12T00:00:00+00:00",
+            "observation_time": "2026-06-13T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-06-15T00:00:00+00:00",
+            "observation_time": "2026-06-16T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-06-18T00:00:00+00:00",
+            "observation_time": "2026-06-19T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-06-21T00:00:00+00:00",
+            "observation_time": "2026-06-22T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-06-23T00:00:00+00:00",
+            "observation_time": "2026-06-24T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-06-26T00:00:00+00:00",
+            "observation_time": "2026-06-27T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-06-29T00:00:00+00:00",
+            "observation_time": "2026-06-30T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-07-02T00:00:00+00:00",
+            "observation_time": "2026-07-03T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-07-05T00:00:00+00:00",
+            "observation_time": "2026-07-06T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-07-07T00:00:00+00:00",
+            "observation_time": "2026-07-08T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-07-10T00:00:00+00:00",
+            "observation_time": "2026-07-11T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-07-13T00:00:00+00:00",
+            "observation_time": "2026-07-14T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-07-16T00:00:00+00:00",
+            "observation_time": "2026-07-17T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-07-19T00:00:00+00:00",
+            "observation_time": "2026-07-20T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-07-22T00:00:00+00:00",
+            "observation_time": "2026-07-23T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-07-24T00:00:00+00:00",
+            "observation_time": "2026-07-25T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-07-27T00:00:00+00:00",
+            "observation_time": "2026-07-28T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-07-30T00:00:00+00:00",
+            "observation_time": "2026-07-31T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-08-02T00:00:00+00:00",
+            "observation_time": "2026-08-03T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-08-05T00:00:00+00:00",
+            "observation_time": "2026-08-06T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-08-07T00:00:00+00:00",
+            "observation_time": "2026-08-08T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-08-10T00:00:00+00:00",
+            "observation_time": "2026-08-11T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-08-13T00:00:00+00:00",
+            "observation_time": "2026-08-14T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-08-16T00:00:00+00:00",
+            "observation_time": "2026-08-17T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-08-19T00:00:00+00:00",
+            "observation_time": "2026-08-20T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-08-22T00:00:00+00:00",
+            "observation_time": "2026-08-23T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-08-24T00:00:00+00:00",
+            "observation_time": "2026-08-25T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-08-27T00:00:00+00:00",
+            "observation_time": "2026-08-28T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-08-30T00:00:00+00:00",
+            "observation_time": "2026-08-31T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-09-02T00:00:00+00:00",
+            "observation_time": "2026-09-03T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-09-05T00:00:00+00:00",
+            "observation_time": "2026-09-06T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-09-07T00:00:00+00:00",
+            "observation_time": "2026-09-08T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-09-10T00:00:00+00:00",
+            "observation_time": "2026-09-11T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-09-13T00:00:00+00:00",
+            "observation_time": "2026-09-14T00:00:00+00:00",
             "value": 3.65
           },
           {
-            "observation_time": "2026-09-16T00:00:00+00:00",
-            "value": 3.65
-          },
-          {
-            "observation_time": "2026-09-19T00:00:00+00:00",
+            "observation_time": "2026-09-17T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2026-09-22T00:00:00+00:00",
+            "observation_time": "2026-09-20T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2026-09-24T00:00:00+00:00",
+            "observation_time": "2026-09-23T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2026-09-27T00:00:00+00:00",
+            "observation_time": "2026-09-25T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2026-09-30T00:00:00+00:00",
+            "observation_time": "2026-09-28T00:00:00+00:00",
+            "value": 3.9
+          },
+          {
+            "observation_time": "2026-10-01T00:00:00+00:00",
             "value": 3.9
           }
         ],
@@ -95775,16 +95792,10 @@
         },
         "forecast": 3.9,
         "forecast_error": 0.0,
-        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "forecast_origin": "PROSPECTIVE_STORED",
         "model_name": "RECENT_MEDIAN",
         "model_version": "macro_trend_v2",
         "surprise_history": [
-          {
-            "forecast_error": 0.0,
-            "model_name": "RECENT_MEDIAN",
-            "observation_time": "2026-09-07T00:00:00+00:00",
-            "z_score": 0.0
-          },
           {
             "forecast_error": 0.0,
             "model_name": "RECENT_MEDIAN",
@@ -95922,6 +95933,12 @@
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-09-30T00:00:00+00:00",
             "z_score": 0.0
+          },
+          {
+            "forecast_error": 0.0,
+            "model_name": "RECENT_MEDIAN",
+            "observation_time": "2026-10-01T00:00:00+00:00",
+            "z_score": 0.0
           }
         ],
         "surprise_history_standardization": "current calibration-window center and scale",
@@ -95932,7 +95949,6 @@
       "category": "interest rates and yield curve",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
-        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
         "No eligible independent evidence family is available for confirmation"
       ],
       "headline": "Interest on reserve balances is 0.0\u03c3 below its model forecast",
@@ -95950,7 +95966,7 @@
       "summary": "Latest reported value 3.900 percent; reported-scale forecast 3.900 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1302,
+      "alert_id": 1427,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -97201,7 +97217,7 @@
       "summary": "Latest reported value 0.370 percent; reported-scale forecast 0.320 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1303,
+      "alert_id": 1428,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -98452,7 +98468,7 @@
       "summary": "Latest reported value 1.010 percent; reported-scale forecast 0.960 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1304,
+      "alert_id": 1429,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -99702,7 +99718,7 @@
       "summary": "Latest reported value 3.880 percent; reported-scale forecast 3.900 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1305,
+      "alert_id": 1430,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -100952,7 +100968,7 @@
       "summary": "Latest reported value 3.870 percent; reported-scale forecast 3.890 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1306,
+      "alert_id": 1431,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -102202,7 +102218,7 @@
       "summary": "Latest reported value 1,161.000 billions of U.S. dollars; reported-scale forecast 1,171.000 billions of U.S. dollars. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1308,
+      "alert_id": 1433,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -103452,7 +103468,7 @@
       "summary": "Latest reported value 3.860 percent; reported-scale forecast 3.890 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1309,
+      "alert_id": 1434,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -104702,7 +104718,7 @@
       "summary": "Latest reported value 3.870 percent; reported-scale forecast 3.890 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1310,
+      "alert_id": 1435,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -105952,7 +105968,7 @@
       "summary": "Latest reported value 3.910 percent; reported-scale forecast 3.910 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1311,
+      "alert_id": 1436,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -107202,7 +107218,7 @@
       "summary": "Latest reported value 3.750 percent; reported-scale forecast 3.750 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1312,
+      "alert_id": 1437,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -108452,7 +108468,7 @@
       "summary": "Latest reported value 11.539 billions of U.S. dollars; reported-scale forecast 11.423 billions of U.S. dollars. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1313,
+      "alert_id": 1438,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -109947,7 +109963,7 @@
       "summary": "Latest reported value 2,930,193.000 millions of U.S. dollars; reported-scale forecast 3,013,329.500 millions of U.S. dollars. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1314,
+      "alert_id": 1439,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -111442,7 +111458,7 @@
       "summary": "Latest reported value 947,317.000 millions of U.S. dollars; reported-scale forecast 994,637.000 millions of U.S. dollars. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1315,
+      "alert_id": 1440,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -112016,6 +112032,23 @@
             "series_id": "MORTGAGE30US",
             "series_name": "30-year fixed-rate mortgage average",
             "z_score": 1.0117
+          },
+          {
+            "adjusted_z": -0.4936,
+            "alignment_days": 31.0,
+            "alignment_limit_days": 62,
+            "base_comparability_weight": 1.0,
+            "effective_comparability_weight": 0.5,
+            "evidence_family": "home_prices",
+            "evidence_role": "directional",
+            "freshness_weight": 0.5,
+            "observation_time": "2026-07-01T00:00:00+00:00",
+            "origin_agency": "S&P CoreLogic",
+            "raw_adjusted_z": -0.9871,
+            "relationship": "same",
+            "series_id": "CSUSHPISA",
+            "series_name": "S&P CoreLogic Case-Shiller U.S. National Home Price Index",
+            "z_score": 0.9871
           }
         ],
         "confirmation_group": "housing_strength",
@@ -112206,7 +112239,7 @@
       "summary": "Latest reported value 1,403.000 thousands of units, seasonally adjusted annual rate; reported-scale forecast 1,428.000 thousands of units, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1316,
+      "alert_id": 1441,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -112780,6 +112813,23 @@
             "series_id": "MORTGAGE30US",
             "series_name": "30-year fixed-rate mortgage average",
             "z_score": 1.0117
+          },
+          {
+            "adjusted_z": -0.4936,
+            "alignment_days": 31.0,
+            "alignment_limit_days": 62,
+            "base_comparability_weight": 1.0,
+            "effective_comparability_weight": 0.5,
+            "evidence_family": "home_prices",
+            "evidence_role": "directional",
+            "freshness_weight": 0.5,
+            "observation_time": "2026-07-01T00:00:00+00:00",
+            "origin_agency": "S&P CoreLogic",
+            "raw_adjusted_z": -0.9871,
+            "relationship": "same",
+            "series_id": "CSUSHPISA",
+            "series_name": "S&P CoreLogic Case-Shiller U.S. National Home Price Index",
+            "z_score": 0.9871
           }
         ],
         "confirmation_group": "housing_strength",
@@ -112970,7 +113020,7 @@
       "summary": "Latest reported value 1,275.000 thousands of units, seasonally adjusted annual rate; reported-scale forecast 1,301.500 thousands of units, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1317,
+      "alert_id": 1442,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -113544,6 +113594,23 @@
             "series_id": "MORTGAGE30US",
             "series_name": "30-year fixed-rate mortgage average",
             "z_score": 1.0117
+          },
+          {
+            "adjusted_z": 0.4936,
+            "alignment_days": 31.0,
+            "alignment_limit_days": 62,
+            "base_comparability_weight": 1.0,
+            "effective_comparability_weight": 0.5,
+            "evidence_family": "home_prices",
+            "evidence_role": "directional",
+            "freshness_weight": 0.5,
+            "observation_time": "2026-07-01T00:00:00+00:00",
+            "origin_agency": "S&P CoreLogic",
+            "raw_adjusted_z": 0.9871,
+            "relationship": "same",
+            "series_id": "CSUSHPISA",
+            "series_name": "S&P CoreLogic Case-Shiller U.S. National Home Price Index",
+            "z_score": 0.9871
           }
         ],
         "confirmation_group": "housing_strength",
@@ -113734,7 +113801,7 @@
       "summary": "Latest reported value 684.000 thousands of units, seasonally adjusted annual rate; reported-scale forecast 653.000 thousands of units, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1318,
+      "alert_id": 1443,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -114308,6 +114375,23 @@
             "series_id": "MORTGAGE30US",
             "series_name": "30-year fixed-rate mortgage average",
             "z_score": 1.0117
+          },
+          {
+            "adjusted_z": 0.4936,
+            "alignment_days": 31.0,
+            "alignment_limit_days": 62,
+            "base_comparability_weight": 1.0,
+            "effective_comparability_weight": 0.5,
+            "evidence_family": "home_prices",
+            "evidence_role": "directional",
+            "freshness_weight": 0.5,
+            "observation_time": "2026-07-01T00:00:00+00:00",
+            "origin_agency": "S&P CoreLogic",
+            "raw_adjusted_z": 0.9871,
+            "relationship": "inverse",
+            "series_id": "CSUSHPISA",
+            "series_name": "S&P CoreLogic Case-Shiller U.S. National Home Price Index",
+            "z_score": 0.9871
           }
         ],
         "confirmation_group": "housing_strength",
@@ -114498,7 +114582,7 @@
       "summary": "Latest reported value 8.500 months supply; reported-scale forecast 8.850 months supply. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1319,
+      "alert_id": 1444,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -115801,7 +115885,7 @@
       "summary": "Latest reported value 7.030 percent; reported-scale forecast 6.955 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1320,
+      "alert_id": 1445,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -115903,45 +115987,41 @@
       "summary": "Insufficient transformed observations for rolling calibration"
     },
     {
-      "alert_id": 1321,
+      "alert_id": 1446,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
-        "actual": 331.893,
+        "actual": 333.235,
         "calendar_adjustment_considered": false,
         "calendar_bucket": null,
         "chart_actual": {
-          "observation_time": "2026-06-01T00:00:00+00:00",
-          "value": 331.893
+          "observation_time": "2026-07-01T00:00:00+00:00",
+          "value": 333.235
         },
         "chart_forecast": {
-          "observation_time": "2026-06-01T00:00:00+00:00",
-          "value": 331.527
+          "observation_time": "2026-07-01T00:00:00+00:00",
+          "value": 332.73699999999997
         },
         "chart_history": [
           {
-            "observation_time": "2016-06-01T00:00:00+00:00",
-            "value": 180.058
-          },
-          {
             "observation_time": "2016-07-01T00:00:00+00:00",
-            "value": 180.835
+            "value": 180.836
           },
           {
             "observation_time": "2016-08-01T00:00:00+00:00",
-            "value": 181.823
+            "value": 181.824
           },
           {
             "observation_time": "2016-09-01T00:00:00+00:00",
-            "value": 182.796
+            "value": 182.797
           },
           {
             "observation_time": "2016-10-01T00:00:00+00:00",
-            "value": 183.72
+            "value": 183.721
           },
           {
             "observation_time": "2016-11-01T00:00:00+00:00",
-            "value": 184.728
+            "value": 184.729
           },
           {
             "observation_time": "2016-12-01T00:00:00+00:00",
@@ -115949,19 +116029,19 @@
           },
           {
             "observation_time": "2017-01-01T00:00:00+00:00",
-            "value": 186.774
+            "value": 186.773
           },
           {
             "observation_time": "2017-02-01T00:00:00+00:00",
-            "value": 187.289
+            "value": 187.288
           },
           {
             "observation_time": "2017-03-01T00:00:00+00:00",
-            "value": 187.968
+            "value": 187.967
           },
           {
             "observation_time": "2017-04-01T00:00:00+00:00",
-            "value": 188.698
+            "value": 188.697
           },
           {
             "observation_time": "2017-05-01T00:00:00+00:00",
@@ -115973,7 +116053,7 @@
           },
           {
             "observation_time": "2017-07-01T00:00:00+00:00",
-            "value": 191.435
+            "value": 191.436
           },
           {
             "observation_time": "2017-08-01T00:00:00+00:00",
@@ -115989,7 +116069,7 @@
           },
           {
             "observation_time": "2017-11-01T00:00:00+00:00",
-            "value": 195.91
+            "value": 195.911
           },
           {
             "observation_time": "2017-12-01T00:00:00+00:00",
@@ -116005,71 +116085,71 @@
           },
           {
             "observation_time": "2018-03-01T00:00:00+00:00",
-            "value": 199.94
+            "value": 199.939
           },
           {
             "observation_time": "2018-04-01T00:00:00+00:00",
-            "value": 200.628
+            "value": 200.627
           },
           {
             "observation_time": "2018-05-01T00:00:00+00:00",
-            "value": 201.39
+            "value": 201.389
           },
           {
             "observation_time": "2018-06-01T00:00:00+00:00",
-            "value": 202.161
+            "value": 202.162
           },
           {
             "observation_time": "2018-07-01T00:00:00+00:00",
-            "value": 202.874
+            "value": 202.876
           },
           {
             "observation_time": "2018-08-01T00:00:00+00:00",
-            "value": 203.634
+            "value": 203.633
           },
           {
             "observation_time": "2018-09-01T00:00:00+00:00",
-            "value": 204.294
+            "value": 204.292
           },
           {
             "observation_time": "2018-10-01T00:00:00+00:00",
-            "value": 205.063
+            "value": 205.06
           },
           {
             "observation_time": "2018-11-01T00:00:00+00:00",
-            "value": 205.637
+            "value": 205.635
           },
           {
             "observation_time": "2018-12-01T00:00:00+00:00",
-            "value": 206.131
+            "value": 206.128
           },
           {
             "observation_time": "2019-01-01T00:00:00+00:00",
-            "value": 206.515
+            "value": 206.512
           },
           {
             "observation_time": "2019-02-01T00:00:00+00:00",
-            "value": 206.83
+            "value": 206.827
           },
           {
             "observation_time": "2019-03-01T00:00:00+00:00",
-            "value": 207.046
+            "value": 207.043
           },
           {
             "observation_time": "2019-04-01T00:00:00+00:00",
-            "value": 207.498
+            "value": 207.496
           },
           {
             "observation_time": "2019-05-01T00:00:00+00:00",
-            "value": 208.105
+            "value": 208.103
           },
           {
             "observation_time": "2019-06-01T00:00:00+00:00",
-            "value": 208.545
+            "value": 208.547
           },
           {
             "observation_time": "2019-07-01T00:00:00+00:00",
-            "value": 209.205
+            "value": 209.21
           },
           {
             "observation_time": "2019-08-01T00:00:00+00:00",
@@ -116081,31 +116161,31 @@
           },
           {
             "observation_time": "2019-10-01T00:00:00+00:00",
-            "value": 211.717
+            "value": 211.715
           },
           {
             "observation_time": "2019-11-01T00:00:00+00:00",
-            "value": 212.755
+            "value": 212.749
           },
           {
             "observation_time": "2019-12-01T00:00:00+00:00",
-            "value": 213.917
+            "value": 213.91
           },
           {
             "observation_time": "2020-01-01T00:00:00+00:00",
-            "value": 214.996
+            "value": 214.99
           },
           {
             "observation_time": "2020-02-01T00:00:00+00:00",
-            "value": 215.842
+            "value": 215.837
           },
           {
             "observation_time": "2020-03-01T00:00:00+00:00",
-            "value": 216.39
+            "value": 216.386
           },
           {
             "observation_time": "2020-04-01T00:00:00+00:00",
-            "value": 216.793
+            "value": 216.79
           },
           {
             "observation_time": "2020-05-01T00:00:00+00:00",
@@ -116113,15 +116193,15 @@
           },
           {
             "observation_time": "2020-06-01T00:00:00+00:00",
-            "value": 217.462
+            "value": 217.465
           },
           {
             "observation_time": "2020-07-01T00:00:00+00:00",
-            "value": 219.242
+            "value": 219.248
           },
           {
             "observation_time": "2020-08-01T00:00:00+00:00",
-            "value": 222.275
+            "value": 222.274
           },
           {
             "observation_time": "2020-09-01T00:00:00+00:00",
@@ -116129,31 +116209,31 @@
           },
           {
             "observation_time": "2020-10-01T00:00:00+00:00",
-            "value": 229.657
+            "value": 229.654
           },
           {
             "observation_time": "2020-11-01T00:00:00+00:00",
-            "value": 233.207
+            "value": 233.201
           },
           {
             "observation_time": "2020-12-01T00:00:00+00:00",
-            "value": 236.521
+            "value": 236.513
           },
           {
             "observation_time": "2021-01-01T00:00:00+00:00",
-            "value": 239.617
+            "value": 239.609
           },
           {
             "observation_time": "2021-02-01T00:00:00+00:00",
-            "value": 242.328
+            "value": 242.323
           },
           {
             "observation_time": "2021-03-01T00:00:00+00:00",
-            "value": 245.418
+            "value": 245.417
           },
           {
             "observation_time": "2021-04-01T00:00:00+00:00",
-            "value": 249.0
+            "value": 248.999
           },
           {
             "observation_time": "2021-05-01T00:00:00+00:00",
@@ -116161,47 +116241,47 @@
           },
           {
             "observation_time": "2021-06-01T00:00:00+00:00",
-            "value": 258.07
+            "value": 258.071
           },
           {
             "observation_time": "2021-07-01T00:00:00+00:00",
-            "value": 262.549
+            "value": 262.554
           },
           {
             "observation_time": "2021-08-01T00:00:00+00:00",
-            "value": 266.635
+            "value": 266.631
           },
           {
             "observation_time": "2021-09-01T00:00:00+00:00",
-            "value": 270.208
+            "value": 270.212
           },
           {
             "observation_time": "2021-10-01T00:00:00+00:00",
-            "value": 273.619
+            "value": 273.62
           },
           {
             "observation_time": "2021-11-01T00:00:00+00:00",
-            "value": 277.302
+            "value": 277.296
           },
           {
             "observation_time": "2021-12-01T00:00:00+00:00",
-            "value": 281.506
+            "value": 281.49
           },
           {
             "observation_time": "2022-01-01T00:00:00+00:00",
-            "value": 286.069
+            "value": 286.047
           },
           {
             "observation_time": "2022-02-01T00:00:00+00:00",
-            "value": 291.041
+            "value": 291.031
           },
           {
             "observation_time": "2022-03-01T00:00:00+00:00",
-            "value": 296.254
+            "value": 296.245
           },
           {
             "observation_time": "2022-04-01T00:00:00+00:00",
-            "value": 300.279
+            "value": 300.275
           },
           {
             "observation_time": "2022-05-01T00:00:00+00:00",
@@ -116213,195 +116293,199 @@
           },
           {
             "observation_time": "2022-07-01T00:00:00+00:00",
-            "value": 303.376
+            "value": 303.383
           },
           {
             "observation_time": "2022-08-01T00:00:00+00:00",
-            "value": 301.126
+            "value": 301.123
           },
           {
             "observation_time": "2022-09-01T00:00:00+00:00",
-            "value": 299.126
+            "value": 299.136
           },
           {
             "observation_time": "2022-10-01T00:00:00+00:00",
-            "value": 298.759
+            "value": 298.766
           },
           {
             "observation_time": "2022-11-01T00:00:00+00:00",
-            "value": 298.411
+            "value": 298.398
           },
           {
             "observation_time": "2022-12-01T00:00:00+00:00",
-            "value": 297.68
+            "value": 297.637
           },
           {
             "observation_time": "2023-01-01T00:00:00+00:00",
-            "value": 297.287
+            "value": 297.228
           },
           {
             "observation_time": "2023-02-01T00:00:00+00:00",
-            "value": 297.572
+            "value": 297.533
           },
           {
             "observation_time": "2023-03-01T00:00:00+00:00",
-            "value": 298.665
+            "value": 298.629
           },
           {
             "observation_time": "2023-04-01T00:00:00+00:00",
-            "value": 300.074
+            "value": 300.068
           },
           {
             "observation_time": "2023-05-01T00:00:00+00:00",
-            "value": 302.064
+            "value": 302.075
           },
           {
             "observation_time": "2023-06-01T00:00:00+00:00",
-            "value": 304.155
+            "value": 304.181
           },
           {
             "observation_time": "2023-07-01T00:00:00+00:00",
-            "value": 306.563
+            "value": 306.548
           },
           {
             "observation_time": "2023-08-01T00:00:00+00:00",
-            "value": 309.217
+            "value": 309.216
           },
           {
             "observation_time": "2023-09-01T00:00:00+00:00",
-            "value": 311.332
+            "value": 311.35
           },
           {
             "observation_time": "2023-10-01T00:00:00+00:00",
-            "value": 313.228
+            "value": 313.24
           },
           {
             "observation_time": "2023-11-01T00:00:00+00:00",
-            "value": 314.02
+            "value": 313.995
           },
           {
             "observation_time": "2023-12-01T00:00:00+00:00",
-            "value": 314.766
+            "value": 314.691
           },
           {
             "observation_time": "2024-01-01T00:00:00+00:00",
-            "value": 315.754
+            "value": 315.651
           },
           {
             "observation_time": "2024-02-01T00:00:00+00:00",
-            "value": 316.987
+            "value": 316.919
           },
           {
             "observation_time": "2024-03-01T00:00:00+00:00",
-            "value": 318.121
+            "value": 318.057
           },
           {
             "observation_time": "2024-04-01T00:00:00+00:00",
-            "value": 319.144
+            "value": 319.137
           },
           {
             "observation_time": "2024-05-01T00:00:00+00:00",
-            "value": 319.994
+            "value": 320.02
           },
           {
             "observation_time": "2024-06-01T00:00:00+00:00",
-            "value": 320.737
+            "value": 320.8
           },
           {
             "observation_time": "2024-07-01T00:00:00+00:00",
-            "value": 321.682
+            "value": 321.645
           },
           {
             "observation_time": "2024-08-01T00:00:00+00:00",
-            "value": 322.557
+            "value": 322.559
           },
           {
             "observation_time": "2024-09-01T00:00:00+00:00",
-            "value": 323.558
+            "value": 323.579
           },
           {
             "observation_time": "2024-10-01T00:00:00+00:00",
-            "value": 324.501
+            "value": 324.505
           },
           {
             "observation_time": "2024-11-01T00:00:00+00:00",
-            "value": 325.844
+            "value": 325.791
           },
           {
             "observation_time": "2024-12-01T00:00:00+00:00",
-            "value": 327.471
+            "value": 327.359
           },
           {
             "observation_time": "2025-01-01T00:00:00+00:00",
-            "value": 328.925
+            "value": 328.788
           },
           {
             "observation_time": "2025-02-01T00:00:00+00:00",
-            "value": 329.555
+            "value": 329.472
           },
           {
             "observation_time": "2025-03-01T00:00:00+00:00",
-            "value": 329.031
+            "value": 328.944
           },
           {
             "observation_time": "2025-04-01T00:00:00+00:00",
-            "value": 328.172
+            "value": 328.157
           },
           {
             "observation_time": "2025-05-01T00:00:00+00:00",
-            "value": 327.504
+            "value": 327.53
           },
           {
             "observation_time": "2025-06-01T00:00:00+00:00",
-            "value": 326.912
+            "value": 327.011
           },
           {
             "observation_time": "2025-07-01T00:00:00+00:00",
-            "value": 326.992
+            "value": 326.924
           },
           {
             "observation_time": "2025-08-01T00:00:00+00:00",
-            "value": 327.38
+            "value": 327.388
           },
           {
             "observation_time": "2025-09-01T00:00:00+00:00",
-            "value": 327.829
+            "value": 327.862
           },
           {
             "observation_time": "2025-10-01T00:00:00+00:00",
-            "value": 328.822
+            "value": 328.837
           },
           {
             "observation_time": "2025-11-01T00:00:00+00:00",
-            "value": 330.099
+            "value": 330.06
           },
           {
             "observation_time": "2025-12-01T00:00:00+00:00",
-            "value": 331.288
+            "value": 331.19
           },
           {
             "observation_time": "2026-01-01T00:00:00+00:00",
-            "value": 332.05
+            "value": 331.947
           },
           {
             "observation_time": "2026-02-01T00:00:00+00:00",
-            "value": 332.192
+            "value": 332.171
           },
           {
             "observation_time": "2026-03-01T00:00:00+00:00",
-            "value": 331.58
+            "value": 331.655
           },
           {
             "observation_time": "2026-04-01T00:00:00+00:00",
-            "value": 331.373
+            "value": 331.451
           },
           {
             "observation_time": "2026-05-01T00:00:00+00:00",
-            "value": 331.45
+            "value": 331.689
           },
           {
             "observation_time": "2026-06-01T00:00:00+00:00",
-            "value": 331.893
+            "value": 332.294
+          },
+          {
+            "observation_time": "2026-07-01T00:00:00+00:00",
+            "value": 333.235
           }
         ],
         "chart_history_years": 10,
@@ -116409,11 +116493,97 @@
         "chart_units": "index Jan 2000=100, seasonally adjusted",
         "confirmation_conflicting": [],
         "confirmation_contextual": [],
-        "confirmation_eligible": [],
+        "confirmation_eligible": [
+          {
+            "adjusted_z": -0.8388,
+            "alignment_days": 0.0,
+            "alignment_limit_days": 62,
+            "base_comparability_weight": 1.0,
+            "effective_comparability_weight": 1.0,
+            "evidence_family": "construction_spending",
+            "evidence_role": "directional",
+            "freshness_weight": 1.0,
+            "observation_time": "2026-07-01T00:00:00+00:00",
+            "origin_agency": "Census Bureau",
+            "raw_adjusted_z": -0.8388,
+            "relationship": "same",
+            "series_id": "PRRESCONS",
+            "series_name": "Private residential construction spending",
+            "z_score": -0.8388
+          },
+          {
+            "adjusted_z": -0.1013,
+            "alignment_days": 31.0,
+            "alignment_limit_days": 62,
+            "base_comparability_weight": 1.0,
+            "effective_comparability_weight": 0.5,
+            "evidence_family": "residential_construction_pipeline",
+            "evidence_role": "directional",
+            "freshness_weight": 0.5,
+            "observation_time": "2026-08-01T00:00:00+00:00",
+            "origin_agency": "Census Bureau",
+            "raw_adjusted_z": -0.2027,
+            "relationship": "same",
+            "series_id": "PERMIT",
+            "series_name": "New private housing units authorized by building permits",
+            "z_score": -0.2027
+          },
+          {
+            "adjusted_z": 0.2191,
+            "alignment_days": 31.0,
+            "alignment_limit_days": 62,
+            "base_comparability_weight": 1.0,
+            "effective_comparability_weight": 0.5,
+            "evidence_family": "new_home_sales",
+            "evidence_role": "directional",
+            "freshness_weight": 0.5,
+            "observation_time": "2026-08-01T00:00:00+00:00",
+            "origin_agency": "Census Bureau",
+            "raw_adjusted_z": 0.4382,
+            "relationship": "same",
+            "series_id": "HSN1F",
+            "series_name": "New one-family houses sold",
+            "z_score": 0.4382
+          },
+          {
+            "adjusted_z": 0.1686,
+            "alignment_days": 31.0,
+            "alignment_limit_days": 62,
+            "base_comparability_weight": 1.0,
+            "effective_comparability_weight": 0.5,
+            "evidence_family": "new_home_inventory",
+            "evidence_role": "directional",
+            "freshness_weight": 0.5,
+            "observation_time": "2026-08-01T00:00:00+00:00",
+            "origin_agency": "Census Bureau",
+            "raw_adjusted_z": 0.3372,
+            "relationship": "inverse",
+            "series_id": "MSACSR",
+            "series_name": "Monthly supply of new houses",
+            "z_score": -0.3372
+          },
+          {
+            "adjusted_z": 0.0267,
+            "alignment_days": 91.0,
+            "alignment_limit_days": 120,
+            "base_comparability_weight": 1.0,
+            "effective_comparability_weight": 0.5,
+            "evidence_family": "new_home_prices",
+            "evidence_role": "directional",
+            "freshness_weight": 0.5,
+            "observation_time": "2026-04-01T00:00:00+00:00",
+            "origin_agency": "Census Bureau",
+            "raw_adjusted_z": 0.0534,
+            "relationship": "same",
+            "series_id": "MSPUS",
+            "series_name": "Median sales price of houses sold",
+            "z_score": 0.0534
+          }
+        ],
         "confirmation_group": "housing_strength",
-        "confirmation_reason": "No confirmation profile or usable target surprise is available",
+        "confirmation_reason": "0 supporting and 0 conflicting independent evidence families",
         "confirmation_score": 0.0,
-        "confirmation_status": "NOT_AVAILABLE",
+        "confirmation_status": "UNCONFIRMED",
         "confirmation_supporting": [],
         "confirmation_thresholds": {
           "confirmed_minimum_families": 2,
@@ -116421,182 +116591,183 @@
           "maximum_families": 2,
           "minimum_adjusted_z": 1.0
         },
-        "forecast": 331.527,
-        "forecast_error": 0.36599999999998545,
-        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "forecast": 332.73699999999997,
+        "forecast_error": 0.4980000000000473,
+        "forecast_origin": "PROSPECTIVE_STORED",
         "model_name": "LAST_VALUE",
         "model_version": "macro_trend_v2",
-        "reason": "Latest observation exceeds the configured freshness limit",
         "surprise_history": [
           {
-            "forecast_error": 0.20199999999999818,
-            "model_name": "LAST_VALUE",
-            "observation_time": "2024-07-01T00:00:00+00:00",
-            "z_score": 0.32331962797174374
-          },
-          {
-            "forecast_error": -0.06999999999999318,
+            "forecast_error": 0.06900000000007367,
             "model_name": "LAST_VALUE",
             "observation_time": "2024-08-01T00:00:00+00:00",
-            "z_score": -0.3354289773339705
+            "z_score": 0.004580582407463413
           },
           {
-            "forecast_error": 0.12599999999997635,
+            "forecast_error": 0.1059999999999377,
             "model_name": "LAST_VALUE",
             "observation_time": "2024-09-01T00:00:00+00:00",
-            "z_score": 0.13925751766567662
+            "z_score": 0.08932135694241204
           },
           {
-            "forecast_error": -0.057999999999992724,
+            "forecast_error": -0.09399999999999409,
             "model_name": "LAST_VALUE",
             "observation_time": "2024-10-01T00:00:00+00:00",
-            "z_score": -0.3063665388645987
+            "z_score": -0.36873688378856706
           },
           {
-            "forecast_error": 0.4000000000000341,
+            "forecast_error": 0.36000000000001364,
             "model_name": "LAST_VALUE",
             "observation_time": "2024-11-01T00:00:00+00:00",
-            "z_score": 0.8028498627164468
+            "z_score": 0.6710553226711279
           },
           {
-            "forecast_error": 0.2839999999999918,
+            "forecast_error": 0.28199999999998226,
             "model_name": "LAST_VALUE",
             "observation_time": "2024-12-01T00:00:00+00:00",
-            "z_score": 0.5219129575124278
+            "z_score": 0.4924126087859132
           },
           {
-            "forecast_error": -0.17300000000000182,
+            "forecast_error": -0.13899999999995316,
             "model_name": "LAST_VALUE",
             "observation_time": "2025-01-01T00:00:00+00:00",
-            "z_score": -0.5848815741960897
+            "z_score": -0.4717999879529788
           },
           {
-            "forecast_error": -0.8240000000000123,
+            "forecast_error": -0.7450000000000614,
             "model_name": "LAST_VALUE",
             "observation_time": "2025-02-01T00:00:00+00:00",
-            "z_score": -2.1615188611594736
+            "z_score": -1.8597164573685667
           },
           {
-            "forecast_error": -1.1539999999999964,
+            "forecast_error": -1.2119999999999322,
             "model_name": "LAST_VALUE",
             "observation_time": "2025-03-01T00:00:00+00:00",
-            "z_score": -2.9607359190671283
+            "z_score": -2.929282449475472
           },
           {
-            "forecast_error": -0.33499999999997954,
+            "forecast_error": -0.2590000000000714,
             "model_name": "LAST_VALUE",
             "observation_time": "2025-04-01T00:00:00+00:00",
-            "z_score": -0.9772244935325397
+            "z_score": -0.7466349323919308
           },
           {
-            "forecast_error": 0.19099999999997408,
+            "forecast_error": 0.160000000000025,
             "model_name": "LAST_VALUE",
             "observation_time": "2025-05-01T00:00:00+00:00",
-            "z_score": 0.29667905937476224
+            "z_score": 0.21299708194001854
           },
           {
-            "forecast_error": 0.07599999999996498,
+            "forecast_error": 0.10800000000006094,
             "model_name": "LAST_VALUE",
             "observation_time": "2025-06-01T00:00:00+00:00",
-            "z_score": 0.018164024043271314
+            "z_score": 0.09390193935000564
           },
           {
-            "forecast_error": 0.6720000000000823,
+            "forecast_error": 0.4319999999999027,
             "model_name": "LAST_VALUE",
             "observation_time": "2025-07-01T00:00:00+00:00",
-            "z_score": 1.4615984680222986
+            "z_score": 0.8359562893340825
           },
           {
-            "forecast_error": 0.3079999999999359,
+            "forecast_error": 0.5510000000000446,
             "model_name": "LAST_VALUE",
             "observation_time": "2025-08-01T00:00:00+00:00",
-            "z_score": 0.5800378344510337
+            "z_score": 1.108500942569433
           },
           {
-            "forecast_error": 0.06100000000003547,
+            "forecast_error": 0.010000000000047748,
             "model_name": "LAST_VALUE",
             "observation_time": "2025-09-01T00:00:00+00:00",
-            "z_score": -0.018164024043271314
+            "z_score": -0.13054659860828088
           },
           {
-            "forecast_error": 0.5439999999999827,
+            "forecast_error": 0.5009999999999195,
             "model_name": "LAST_VALUE",
             "observation_time": "2025-10-01T00:00:00+00:00",
-            "z_score": 1.1515991243487702
+            "z_score": 0.9939863823863627
           },
           {
-            "forecast_error": 0.2839999999999918,
+            "forecast_error": 0.2480000000000473,
             "model_name": "LAST_VALUE",
             "observation_time": "2025-11-01T00:00:00+00:00",
-            "z_score": 0.5219129575124278
+            "z_score": 0.4145427078617691
           },
           {
-            "forecast_error": -0.08799999999996544,
+            "forecast_error": -0.09300000000001774,
             "model_name": "LAST_VALUE",
             "observation_time": "2025-12-01T00:00:00+00:00",
-            "z_score": -0.3790226350379593
+            "z_score": -0.36644659258496554
           },
           {
-            "forecast_error": -0.4270000000000209,
+            "forecast_error": -0.37299999999999045,
             "model_name": "LAST_VALUE",
             "observation_time": "2026-01-01T00:00:00+00:00",
-            "z_score": -1.200036521797815
+            "z_score": -1.0077281296084926
           },
           {
-            "forecast_error": -0.6200000000000045,
+            "forecast_error": -0.5330000000000155,
             "model_name": "LAST_VALUE",
             "observation_time": "2026-02-01T00:00:00+00:00",
-            "z_score": -1.6674574071801536
+            "z_score": -1.3741747221934582
           },
           {
-            "forecast_error": -0.7540000000000191,
+            "forecast_error": -0.7400000000000091,
             "model_name": "LAST_VALUE",
             "observation_time": "2026-03-01T00:00:00+00:00",
-            "z_score": -1.9919879700881613
+            "z_score": -1.8482650013501687
           },
           {
-            "forecast_error": 0.40500000000002956,
+            "forecast_error": 0.31200000000006867,
             "model_name": "LAST_VALUE",
             "observation_time": "2026-04-01T00:00:00+00:00",
-            "z_score": 0.8149592120786735
+            "z_score": 0.5611213448957814
           },
           {
-            "forecast_error": 0.2839999999999918,
+            "forecast_error": 0.44199999999995043,
             "model_name": "LAST_VALUE",
             "observation_time": "2026-05-01T00:00:00+00:00",
-            "z_score": 0.5219129575124278
+            "z_score": 0.8588592013707486
           },
           {
-            "forecast_error": 0.36599999999998545,
+            "forecast_error": 0.3669999999999618,
             "model_name": "LAST_VALUE",
             "observation_time": "2026-06-01T00:00:00+00:00",
-            "z_score": 0.720506287053112
+            "z_score": 0.6870873610965988
+          },
+          {
+            "forecast_error": 0.3360000000000696,
+            "model_name": "LAST_VALUE",
+            "observation_time": "2026-07-01T00:00:00+00:00",
+            "z_score": 0.6160883337835197
           }
         ],
         "surprise_history_standardization": "current calibration-window center and scale",
         "surprise_severity": "NORMAL",
         "transformation": "ABSOLUTE_CHANGE",
-        "z_score": 0.720506287053112
+        "z_score": 0.9871155087756883
       },
       "category": "housing and construction",
       "confirmation_score": 0.0,
-      "conflicting_evidence": [],
-      "headline": "S&P CoreLogic Case-Shiller U.S. National Home Price Index: Data Stale",
+      "conflicting_evidence": [
+        "Eligible independent evidence does not reach the confirmation threshold"
+      ],
+      "headline": "S&P CoreLogic Case-Shiller U.S. National Home Price Index is 1.0\u03c3 above its model forecast",
       "importance_score": 0.9,
       "macro_category": "housing",
       "macro_category_title": "Housing and construction",
-      "magnitude_score": 0.0,
+      "magnitude_score": 0.1974,
       "persistence_score": 0.0,
       "rank_score": 0.0,
       "series_id": "CSUSHPISA",
       "series_name": "S&P CoreLogic Case-Shiller U.S. National Home Price Index",
       "source_name": "FRED",
       "source_url": "https://fred.stlouisfed.org/series/CSUSHPISA",
-      "status": "DATA_STALE",
-      "summary": "Latest observation exceeds the configured freshness limit"
+      "status": "NORMAL",
+      "summary": "Latest reported value 333.235 index Jan 2000=100, seasonally adjusted; reported-scale forecast 332.737 index Jan 2000=100, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1322,
+      "alert_id": 1447,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -116959,6 +117130,23 @@
             "series_id": "PRRESCONS",
             "series_name": "Private residential construction spending",
             "z_score": -0.8388
+          },
+          {
+            "adjusted_z": 0.4936,
+            "alignment_days": 91.0,
+            "alignment_limit_days": 120,
+            "base_comparability_weight": 1.0,
+            "effective_comparability_weight": 0.5,
+            "evidence_family": "home_prices",
+            "evidence_role": "directional",
+            "freshness_weight": 0.5,
+            "observation_time": "2026-07-01T00:00:00+00:00",
+            "origin_agency": "S&P CoreLogic",
+            "raw_adjusted_z": 0.9871,
+            "relationship": "same",
+            "series_id": "CSUSHPISA",
+            "series_name": "S&P CoreLogic Case-Shiller U.S. National Home Price Index",
+            "z_score": 0.9871
           }
         ],
         "confirmation_group": "housing_strength",
@@ -117149,7 +117337,7 @@
       "summary": "Latest reported value 410,700.000 U.S. dollars; reported-scale forecast 411,400.000 U.S. dollars. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1323,
+      "alert_id": 1448,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -117708,6 +117896,23 @@
             "z_score": -0.3372
           },
           {
+            "adjusted_z": -0.9871,
+            "alignment_days": 0.0,
+            "alignment_limit_days": 62,
+            "base_comparability_weight": 1.0,
+            "effective_comparability_weight": 1.0,
+            "evidence_family": "home_prices",
+            "evidence_role": "directional",
+            "freshness_weight": 1.0,
+            "observation_time": "2026-07-01T00:00:00+00:00",
+            "origin_agency": "S&P CoreLogic",
+            "raw_adjusted_z": -0.9871,
+            "relationship": "same",
+            "series_id": "CSUSHPISA",
+            "series_name": "S&P CoreLogic Case-Shiller U.S. National Home Price Index",
+            "z_score": 0.9871
+          },
+          {
             "adjusted_z": -0.0267,
             "alignment_days": 91.0,
             "alignment_limit_days": 120,
@@ -117913,7 +118118,7 @@
       "summary": "Latest reported value 859,002.000 millions of U.S. dollars, seasonally adjusted annual rate; reported-scale forecast 866,443.000 millions of U.S. dollars, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 1324,
+      "alert_id": 1449,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -118472,6 +118677,23 @@
             "z_score": -0.3372
           },
           {
+            "adjusted_z": -0.9871,
+            "alignment_days": 0.0,
+            "alignment_limit_days": 62,
+            "base_comparability_weight": 1.0,
+            "effective_comparability_weight": 1.0,
+            "evidence_family": "home_prices",
+            "evidence_role": "directional",
+            "freshness_weight": 1.0,
+            "observation_time": "2026-07-01T00:00:00+00:00",
+            "origin_agency": "S&P CoreLogic",
+            "raw_adjusted_z": -0.9871,
+            "relationship": "same",
+            "series_id": "CSUSHPISA",
+            "series_name": "S&P CoreLogic Case-Shiller U.S. National Home Price Index",
+            "z_score": 0.9871
+          },
+          {
             "adjusted_z": -0.0267,
             "alignment_days": 91.0,
             "alignment_limit_days": 120,
@@ -118677,7 +118899,7 @@
       "summary": "Latest reported value 755,169.000 millions of U.S. dollars, seasonally adjusted annual rate; reported-scale forecast 756,103.500 millions of U.S. dollars, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     }
   ],
-  "generated_at": "2026-09-30T20:35:33.798171+00:00",
+  "generated_at": "2026-09-30T23:00:33.860574+00:00",
   "macro_heatmap": {
     "categories": [
       {
@@ -118801,7 +119023,7 @@
         "usable": 1
       }
     ],
-    "generated_at": "2026-09-30T20:35:33.991549+00:00",
+    "generated_at": "2026-09-30T23:00:34.063483+00:00",
     "method_version": "macro_heatmap_v1",
     "notes": [
       "Colors use directionally normalized model surprises, not raw changes.",
@@ -123839,7 +124061,7 @@
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
-            "observation_time": "2026-09-19T00:00:00+00:00",
+            "observation_time": "2026-09-20T00:00:00+00:00",
             "release": "t-11",
             "state": "NEUTRAL",
             "z_score": 0.0
@@ -123848,7 +124070,7 @@
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
-            "observation_time": "2026-09-20T00:00:00+00:00",
+            "observation_time": "2026-09-21T00:00:00+00:00",
             "release": "t-10",
             "state": "NEUTRAL",
             "z_score": 0.0
@@ -123857,7 +124079,7 @@
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
-            "observation_time": "2026-09-21T00:00:00+00:00",
+            "observation_time": "2026-09-22T00:00:00+00:00",
             "release": "t-9",
             "state": "NEUTRAL",
             "z_score": 0.0
@@ -123866,7 +124088,7 @@
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
-            "observation_time": "2026-09-22T00:00:00+00:00",
+            "observation_time": "2026-09-23T00:00:00+00:00",
             "release": "t-8",
             "state": "NEUTRAL",
             "z_score": 0.0
@@ -123875,7 +124097,7 @@
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
-            "observation_time": "2026-09-23T00:00:00+00:00",
+            "observation_time": "2026-09-24T00:00:00+00:00",
             "release": "t-7",
             "state": "NEUTRAL",
             "z_score": 0.0
@@ -123884,7 +124106,7 @@
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
-            "observation_time": "2026-09-24T00:00:00+00:00",
+            "observation_time": "2026-09-25T00:00:00+00:00",
             "release": "t-6",
             "state": "NEUTRAL",
             "z_score": 0.0
@@ -123893,7 +124115,7 @@
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
-            "observation_time": "2026-09-25T00:00:00+00:00",
+            "observation_time": "2026-09-26T00:00:00+00:00",
             "release": "t-5",
             "state": "NEUTRAL",
             "z_score": 0.0
@@ -123902,7 +124124,7 @@
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
-            "observation_time": "2026-09-26T00:00:00+00:00",
+            "observation_time": "2026-09-27T00:00:00+00:00",
             "release": "t-4",
             "state": "NEUTRAL",
             "z_score": 0.0
@@ -123911,7 +124133,7 @@
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
-            "observation_time": "2026-09-27T00:00:00+00:00",
+            "observation_time": "2026-09-28T00:00:00+00:00",
             "release": "t-3",
             "state": "NEUTRAL",
             "z_score": 0.0
@@ -123920,7 +124142,7 @@
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
-            "observation_time": "2026-09-28T00:00:00+00:00",
+            "observation_time": "2026-09-29T00:00:00+00:00",
             "release": "t-2",
             "state": "NEUTRAL",
             "z_score": 0.0
@@ -123929,7 +124151,7 @@
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
-            "observation_time": "2026-09-29T00:00:00+00:00",
+            "observation_time": "2026-09-30T00:00:00+00:00",
             "release": "t-1",
             "state": "NEUTRAL",
             "z_score": 0.0
@@ -123938,14 +124160,14 @@
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
-            "observation_time": "2026-09-30T00:00:00+00:00",
+            "observation_time": "2026-10-01T00:00:00+00:00",
             "release": "t",
             "state": "NEUTRAL",
             "z_score": 0.0
           }
         ],
         "name": "Interest on reserve balances",
-        "observation_time": "2026-09-30T00:00:00+00:00",
+        "observation_time": "2026-10-01T00:00:00+00:00",
         "persistence": 0.0,
         "polarity": 0,
         "polarity_label": "direction is contextual",
@@ -129792,134 +130014,134 @@
       {
         "category": "housing",
         "category_title": "Housing and construction",
-        "color": "#62686c",
-        "confidence": 0.25,
-        "confirmation_status": "NOT_AVAILABLE",
-        "favorable_z": null,
+        "color": "#d8d5cc",
+        "confidence": 0.8,
+        "confirmation_status": "UNCONFIRMED",
+        "favorable_z": 0.0,
         "heat_score": 0.0,
         "history": [
           {
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
-            "observation_time": "2025-07-01T00:00:00+00:00",
+            "observation_time": "2025-08-01T00:00:00+00:00",
             "release": "t-11",
             "state": "NEUTRAL",
-            "z_score": 1.4615984680222986
-          },
-          {
-            "color": "#d8d5cc",
-            "favorable_z": 0.0,
-            "heat_score": 0.0,
-            "observation_time": "2025-08-01T00:00:00+00:00",
-            "release": "t-10",
-            "state": "NEUTRAL",
-            "z_score": 0.5800378344510337
+            "z_score": 1.108500942569433
           },
           {
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2025-09-01T00:00:00+00:00",
-            "release": "t-9",
+            "release": "t-10",
             "state": "NEUTRAL",
-            "z_score": -0.018164024043271314
+            "z_score": -0.13054659860828088
           },
           {
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2025-10-01T00:00:00+00:00",
-            "release": "t-8",
+            "release": "t-9",
             "state": "NEUTRAL",
-            "z_score": 1.1515991243487702
+            "z_score": 0.9939863823863627
           },
           {
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2025-11-01T00:00:00+00:00",
-            "release": "t-7",
+            "release": "t-8",
             "state": "NEUTRAL",
-            "z_score": 0.5219129575124278
+            "z_score": 0.4145427078617691
           },
           {
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2025-12-01T00:00:00+00:00",
-            "release": "t-6",
+            "release": "t-7",
             "state": "NEUTRAL",
-            "z_score": -0.3790226350379593
+            "z_score": -0.36644659258496554
           },
           {
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-01-01T00:00:00+00:00",
-            "release": "t-5",
+            "release": "t-6",
             "state": "NEUTRAL",
-            "z_score": -1.200036521797815
+            "z_score": -1.0077281296084926
           },
           {
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-02-01T00:00:00+00:00",
-            "release": "t-4",
+            "release": "t-5",
             "state": "NEUTRAL",
-            "z_score": -1.6674574071801536
+            "z_score": -1.3741747221934582
           },
           {
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-03-01T00:00:00+00:00",
-            "release": "t-3",
+            "release": "t-4",
             "state": "NEUTRAL",
-            "z_score": -1.9919879700881613
+            "z_score": -1.8482650013501687
           },
           {
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-04-01T00:00:00+00:00",
-            "release": "t-2",
+            "release": "t-3",
             "state": "NEUTRAL",
-            "z_score": 0.8149592120786735
+            "z_score": 0.5611213448957814
           },
           {
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-05-01T00:00:00+00:00",
-            "release": "t-1",
+            "release": "t-2",
             "state": "NEUTRAL",
-            "z_score": 0.5219129575124278
+            "z_score": 0.8588592013707486
           },
           {
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-06-01T00:00:00+00:00",
+            "release": "t-1",
+            "state": "NEUTRAL",
+            "z_score": 0.6870873610965988
+          },
+          {
+            "color": "#d8d5cc",
+            "favorable_z": 0.0,
+            "heat_score": 0.0,
+            "observation_time": "2026-07-01T00:00:00+00:00",
             "release": "t",
             "state": "NEUTRAL",
-            "z_score": 0.720506287053112
+            "z_score": 0.6160883337835197
           }
         ],
         "name": "S&P CoreLogic Case-Shiller U.S. National Home Price Index",
-        "observation_time": "2026-06-01T00:00:00+00:00",
+        "observation_time": "2026-07-01T00:00:00+00:00",
         "persistence": 0.0,
         "polarity": 0,
         "polarity_label": "direction is contextual",
         "profile_note": "Contextual or ambiguous without a paired indicator",
         "series_id": "CSUSHPISA",
         "stage": "Financing \u2192 permits \u2192 construction \u2192 sales \u2192 prices",
-        "state": "UNAVAILABLE",
-        "status": "DATA_STALE",
+        "state": "NEUTRAL",
+        "status": "NORMAL",
         "units": "index Jan 2000=100, seasonally adjusted",
-        "value": 331.893,
-        "z_score": 0.720506287053112
+        "value": 333.235,
+        "z_score": 0.9871155087756883
       },
       {
         "category": "housing",
@@ -135895,19 +136117,19 @@
       "value": 3.03
     },
     {
-      "as_of": "2026-06-01T00:00:00+00:00",
+      "as_of": "2026-07-01T00:00:00+00:00",
       "category": "housing and construction",
-      "collection_time": "2026-09-29T23:05:42.614004+00:00",
+      "collection_time": "2026-09-30T21:02:29.893626+00:00",
       "macro_category": "housing",
       "macro_category_title": "Housing and construction",
-      "observation_time": "2026-06-01T00:00:00+00:00",
+      "observation_time": "2026-07-01T00:00:00+00:00",
       "revision": null,
       "series_id": "CSUSHPISA",
       "series_name": "S&P CoreLogic Case-Shiller U.S. National Home Price Index",
       "source_name": "FRED",
       "source_url": "https://fred.stlouisfed.org/series/CSUSHPISA",
       "units": "index Jan 2000=100, seasonally adjusted",
-      "value": 331.893
+      "value": 333.235
     },
     {
       "as_of": "2026-08-01T00:00:00+00:00",
@@ -136270,12 +136492,12 @@
       "value": 3.88
     },
     {
-      "as_of": "2026-09-30T00:00:00+00:00",
+      "as_of": "2026-10-01T00:00:00+00:00",
       "category": "interest rates and yield curve",
-      "collection_time": "2026-09-29T23:05:28.858002+00:00",
+      "collection_time": "2026-09-30T21:02:21.715980+00:00",
       "macro_category": "interest_rates",
       "macro_category_title": "Interest rates and yield curve",
-      "observation_time": "2026-09-30T00:00:00+00:00",
+      "observation_time": "2026-10-01T00:00:00+00:00",
       "revision": null,
       "series_id": "IORB",
       "series_name": "Interest on reserve balances",
