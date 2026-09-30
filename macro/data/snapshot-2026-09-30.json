@@ -118717,7 +118717,7 @@
       "summary": "Latest reported value 755,169.000 millions of U.S. dollars, seasonally adjusted annual rate; reported-scale forecast 756,103.500 millions of U.S. dollars, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     }
   ],
-  "generated_at": "2026-09-30T18:02:05.926487+00:00",
+  "generated_at": "2026-09-30T18:06:36.873201+00:00",
   "macro_heatmap": {
     "categories": [
       {
@@ -118841,7 +118841,7 @@
         "usable": 0
       }
     ],
-    "generated_at": "2026-09-30T18:02:06.705049+00:00",
+    "generated_at": "2026-09-30T18:06:38.423559+00:00",
     "method_version": "macro_heatmap_v1",
     "notes": [
       "Colors use directionally normalized model surprises, not raw changes.",
@@ -135251,7 +135251,27 @@
       "SEVERE_DOWNSIDE": "#8b1e1e",
       "STRONG_FAVORABLE": "#2f6fa3",
       "UNAVAILABLE": "#62686c"
-    }
+    },
+    "state_labels": {
+      "CONFLICTED": "Conflicted",
+      "DOWNSIDE": "Downside",
+      "FAVORABLE": "Favorable",
+      "NEUTRAL": "Neutral",
+      "OVERHEATED": "Overheated",
+      "SEVERE_DOWNSIDE": "Severe Downside",
+      "STRONG_FAVORABLE": "Strongly Favorable",
+      "UNAVAILABLE": "Unavailable"
+    },
+    "state_order": [
+      "SEVERE_DOWNSIDE",
+      "DOWNSIDE",
+      "NEUTRAL",
+      "FAVORABLE",
+      "STRONG_FAVORABLE",
+      "OVERHEATED",
+      "CONFLICTED",
+      "UNAVAILABLE"
+    ]
   },
   "observations": [
     {
