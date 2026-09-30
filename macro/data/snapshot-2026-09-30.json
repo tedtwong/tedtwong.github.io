@@ -118717,7 +118717,7 @@
       "summary": "Latest reported value 755,169.000 millions of U.S. dollars, seasonally adjusted annual rate; reported-scale forecast 756,103.500 millions of U.S. dollars, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     }
   ],
-  "generated_at": "2026-09-30T17:58:11.128424+00:00",
+  "generated_at": "2026-09-30T18:02:05.926487+00:00",
   "macro_heatmap": {
     "categories": [
       {
@@ -118841,7 +118841,7 @@
         "usable": 0
       }
     ],
-    "generated_at": "2026-09-30T17:58:11.897234+00:00",
+    "generated_at": "2026-09-30T18:02:06.705049+00:00",
     "method_version": "macro_heatmap_v1",
     "notes": [
       "Colors use directionally normalized model surprises, not raw changes.",
