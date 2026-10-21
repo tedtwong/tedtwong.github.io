@@ -1,0 +1,370 @@
+{
+  "daily": {
+    "funnel": {
+      "available_daily_capacity": 1510.77,
+      "candidates_examined": 3445,
+      "completed_scan_decisions": 11,
+      "current_capital_allocated": 7239.23,
+      "current_unrealized_pnl": -62.0,
+      "eligible_candidates": 0,
+      "orders_submitted": 7,
+      "path_confirmed_candidates": 23,
+      "quadrature_survivors": 52,
+      "terminal_positive_candidates": 268,
+      "trades_closed": 0,
+      "trades_filled": 5,
+      "trades_open": 5
+    },
+    "portfolio_pnl": [
+      {
+        "net_pnl": -70.2,
+        "time_et": "2026-10-21T13:07:28.143881-04:00"
+      },
+      {
+        "net_pnl": -192.6,
+        "time_et": "2026-10-21T13:54:59.645116-04:00"
+      },
+      {
+        "net_pnl": -91.8,
+        "time_et": "2026-10-21T13:59:59.937476-04:00"
+      },
+      {
+        "net_pnl": -67.8,
+        "time_et": "2026-10-21T14:04:48.568748-04:00"
+      },
+      {
+        "net_pnl": -67.8,
+        "time_et": "2026-10-21T14:05:03.582111-04:00"
+      },
+      {
+        "net_pnl": -442.0,
+        "time_et": "2026-10-21T14:19:59.599233-04:00"
+      },
+      {
+        "net_pnl": -317.0,
+        "time_et": "2026-10-21T14:24:59.976741-04:00"
+      },
+      {
+        "net_pnl": -496.0,
+        "time_et": "2026-10-21T14:29:59.994514-04:00"
+      },
+      {
+        "net_pnl": -423.0,
+        "time_et": "2026-10-21T14:34:50.761582-04:00"
+      },
+      {
+        "net_pnl": -344.0,
+        "time_et": "2026-10-21T14:39:51.226336-04:00"
+      },
+      {
+        "net_pnl": -373.0,
+        "time_et": "2026-10-21T14:44:51.652881-04:00"
+      },
+      {
+        "net_pnl": -82.0,
+        "time_et": "2026-10-21T14:49:52.102509-04:00"
+      },
+      {
+        "net_pnl": -62.0,
+        "time_et": "2026-10-21T14:53:52.496466-04:00"
+      }
+    ],
+    "trades": [
+      {
+        "allocation": 1554.59,
+        "base_expected_net_pnl": 107.47218782875363,
+        "base_lower_95": 79.39133060860554,
+        "dte": 2,
+        "entry_time_et": null,
+        "exit_reason": null,
+        "exit_time_et": null,
+        "planned_loss": 1373.8,
+        "position": 1,
+        "profit_target_fraction": 0.7,
+        "q_minus_p_wedge": null,
+        "realized_net_pnl": null,
+        "status": "NO_FILL",
+        "strategy": "IRON_CONDOR",
+        "unrealized_net_pnl": null
+      },
+      {
+        "allocation": 1345.17,
+        "base_expected_net_pnl": 87.10380295409828,
+        "base_lower_95": 61.72285286932007,
+        "dte": 7,
+        "entry_time_et": "2026-10-21T13:07:03.991200-04:00",
+        "exit_reason": null,
+        "exit_time_et": null,
+        "planned_loss": 1266.8,
+        "position": 2,
+        "profit_target_fraction": 0.7,
+        "q_minus_p_wedge": null,
+        "realized_net_pnl": null,
+        "status": "OPEN",
+        "strategy": "IRON_CONDOR",
+        "unrealized_net_pnl": -81.2
+      },
+      {
+        "allocation": 1545.5,
+        "base_expected_net_pnl": 108.97287189860965,
+        "base_lower_95": 81.34358244279024,
+        "dte": 2,
+        "entry_time_et": null,
+        "exit_reason": null,
+        "exit_time_et": null,
+        "planned_loss": 1358.8,
+        "position": 3,
+        "profit_target_fraction": 0.7,
+        "q_minus_p_wedge": null,
+        "realized_net_pnl": null,
+        "status": "NO_FILL",
+        "strategy": "IRON_CONDOR",
+        "unrealized_net_pnl": null
+      },
+      {
+        "allocation": 1599.94,
+        "base_expected_net_pnl": 91.57314605007127,
+        "base_lower_95": 66.5828287813652,
+        "dte": 1,
+        "entry_time_et": "2026-10-21T13:22:27.073957-04:00",
+        "exit_reason": null,
+        "exit_time_et": null,
+        "planned_loss": 1356.8,
+        "position": 4,
+        "profit_target_fraction": 0.7,
+        "q_minus_p_wedge": null,
+        "realized_net_pnl": null,
+        "status": "OPEN",
+        "strategy": "IRON_CONDOR",
+        "unrealized_net_pnl": 89.8
+      },
+      {
+        "allocation": 1264.55,
+        "base_expected_net_pnl": 71.84689932765629,
+        "base_lower_95": 49.50154677652185,
+        "dte": 7,
+        "entry_time_et": "2026-10-21T13:27:48.451231-04:00",
+        "exit_reason": null,
+        "exit_time_et": null,
+        "planned_loss": 1096.8,
+        "position": 5,
+        "profit_target_fraction": 0.7,
+        "q_minus_p_wedge": null,
+        "realized_net_pnl": null,
+        "status": "OPEN",
+        "strategy": "IRON_CONDOR",
+        "unrealized_net_pnl": -55.2
+      },
+      {
+        "allocation": 1419.1,
+        "base_expected_net_pnl": 83.39667961559027,
+        "base_lower_95": 59.74407801937514,
+        "dte": 2,
+        "entry_time_et": "2026-10-21T13:56:22.844149-04:00",
+        "exit_reason": null,
+        "exit_time_et": null,
+        "planned_loss": 1121.8,
+        "position": 6,
+        "profit_target_fraction": 0.7,
+        "q_minus_p_wedge": null,
+        "realized_net_pnl": null,
+        "status": "OPEN",
+        "strategy": "IRON_CONDOR",
+        "unrealized_net_pnl": 19.8
+      },
+      {
+        "allocation": 1610.47,
+        "base_expected_net_pnl": 119.66107555453712,
+        "base_lower_95": 94.62791123925572,
+        "dte": 1,
+        "entry_time_et": "2026-10-21T14:07:21.575180-04:00",
+        "exit_reason": null,
+        "exit_time_et": null,
+        "planned_loss": 1421.8,
+        "position": 7,
+        "profit_target_fraction": 0.7,
+        "q_minus_p_wedge": null,
+        "realized_net_pnl": null,
+        "status": "OPEN",
+        "strategy": "IRON_CONDOR",
+        "unrealized_net_pnl": -35.2
+      }
+    ]
+  },
+  "ledger": {
+    "calibration_periods": [
+      {
+        "base_expected_net_pnl": 0,
+        "calibration_ratio": null,
+        "closed_trades": 0,
+        "expected_return_on_allocation": null,
+        "forecast_error": 0,
+        "forecast_error_standard_deviation": null,
+        "frequency": "Daily",
+        "gross_risk_deployed": 0,
+        "mean_forecast_error": null,
+        "normalized_error_standard_deviation": null,
+        "normalized_error_standard_error": null,
+        "outperformance_rate": null,
+        "period": "2026-10-21",
+        "realized_net_pnl": 0,
+        "realized_return_on_allocation": null,
+        "return_calibration_difference": null
+      },
+      {
+        "base_expected_net_pnl": 0,
+        "calibration_ratio": null,
+        "closed_trades": 0,
+        "expected_return_on_allocation": null,
+        "forecast_error": 0,
+        "forecast_error_standard_deviation": null,
+        "frequency": "Weekly",
+        "gross_risk_deployed": 0,
+        "mean_forecast_error": null,
+        "normalized_error_standard_deviation": null,
+        "normalized_error_standard_error": null,
+        "outperformance_rate": null,
+        "period": "2026-10-19 to 2026-10-21",
+        "realized_net_pnl": 0,
+        "realized_return_on_allocation": null,
+        "return_calibration_difference": null
+      },
+      {
+        "base_expected_net_pnl": 0,
+        "calibration_ratio": null,
+        "closed_trades": 0,
+        "expected_return_on_allocation": null,
+        "forecast_error": 0,
+        "forecast_error_standard_deviation": null,
+        "frequency": "Monthly",
+        "gross_risk_deployed": 0,
+        "mean_forecast_error": null,
+        "normalized_error_standard_deviation": null,
+        "normalized_error_standard_error": null,
+        "outperformance_rate": null,
+        "period": "2026-10",
+        "realized_net_pnl": 0,
+        "realized_return_on_allocation": null,
+        "return_calibration_difference": null
+      },
+      {
+        "base_expected_net_pnl": 0,
+        "calibration_ratio": null,
+        "closed_trades": 0,
+        "expected_return_on_allocation": null,
+        "forecast_error": 0,
+        "forecast_error_standard_deviation": null,
+        "frequency": "Yearly",
+        "gross_risk_deployed": 0,
+        "mean_forecast_error": null,
+        "normalized_error_standard_deviation": null,
+        "normalized_error_standard_error": null,
+        "outperformance_rate": null,
+        "period": "2026",
+        "realized_net_pnl": 0,
+        "realized_return_on_allocation": null,
+        "return_calibration_difference": null
+      }
+    ],
+    "capacity": {
+      "accepted_allocations": 5,
+      "available_capacity": 1510.77,
+      "consumed_capacity": 7239.23,
+      "eligible_recycled_allocations": 0,
+      "recycled_capacity": 0,
+      "released_allocations": 2,
+      "released_capacity": 3100.09,
+      "starting_capacity": 8750.0,
+      "trade_date": "2026-10-21"
+    },
+    "cumulative_expected_realized": [],
+    "performance": {
+      "average_loss": null,
+      "average_win": null,
+      "by_dte": [],
+      "by_strategy": [],
+      "expectancy_per_trade": null,
+      "maximum_daily_drawdown": 0.0,
+      "profit_factor": null,
+      "settled_trades": 0,
+      "total_net_pnl": 0,
+      "trade_win_rate": null,
+      "trading_days": 0
+    },
+    "portfolio_pnl": [
+      {
+        "net_pnl": -70.2,
+        "time_et": "2026-10-21T13:07:28.143881-04:00"
+      },
+      {
+        "net_pnl": -192.6,
+        "time_et": "2026-10-21T13:54:59.645116-04:00"
+      },
+      {
+        "net_pnl": -91.8,
+        "time_et": "2026-10-21T13:59:59.937476-04:00"
+      },
+      {
+        "net_pnl": -67.8,
+        "time_et": "2026-10-21T14:04:48.568748-04:00"
+      },
+      {
+        "net_pnl": -67.8,
+        "time_et": "2026-10-21T14:05:03.582111-04:00"
+      },
+      {
+        "net_pnl": -442.0,
+        "time_et": "2026-10-21T14:19:59.599233-04:00"
+      },
+      {
+        "net_pnl": -317.0,
+        "time_et": "2026-10-21T14:24:59.976741-04:00"
+      },
+      {
+        "net_pnl": -496.0,
+        "time_et": "2026-10-21T14:29:59.994514-04:00"
+      },
+      {
+        "net_pnl": -423.0,
+        "time_et": "2026-10-21T14:34:50.761582-04:00"
+      },
+      {
+        "net_pnl": -344.0,
+        "time_et": "2026-10-21T14:39:51.226336-04:00"
+      },
+      {
+        "net_pnl": -373.0,
+        "time_et": "2026-10-21T14:44:51.652881-04:00"
+      },
+      {
+        "net_pnl": -82.0,
+        "time_et": "2026-10-21T14:49:52.102509-04:00"
+      },
+      {
+        "net_pnl": -62.0,
+        "time_et": "2026-10-21T14:53:52.496466-04:00"
+      }
+    ],
+    "summary": {
+      "additional_loss_to_contractual_max": 8208.0,
+      "available_equity": 241668.0,
+      "cash": 250000.0,
+      "closed_trades": 0,
+      "contractual_stress_loss": 8270.0,
+      "equity": 249938.0,
+      "open_positions": 5,
+      "realized_pnl": 0.0,
+      "reserved_risk": 8270.0,
+      "starting_cash": 250000.0,
+      "unrealized_pnl": -62.0
+    }
+  },
+  "publication": {
+    "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
+    "paper_trading_only": true,
+    "published_at_et": "2026-10-21T14:53:55.323155-04:00",
+    "status": "PRELIMINARY_SESSION_ACTIVE",
+    "trade_date": "2026-10-21"
+  },
+  "schema_version": "xdte-public-v1"
+}
