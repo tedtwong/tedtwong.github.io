@@ -122,6 +122,11 @@ async function load() {
   table("#calendar-alerts", [
     ["Date (ET)", "date"], ["Flag", "flag"], ["Event", "event"],
   ], tradingStatus.calendar_flags || []);
+  table("#operational-alerts", [
+    ["Severity", "severity"], ["State", "state"], ["Category", "category"],
+    ["Alert", "title"], ["First observed (ET)", "first_seen_at_et", null, shortTime],
+    ["Last observed (ET)", "last_seen_at_et", null, shortTime],
+  ], tradingStatus.alerts || []);
   metrics("#daily-metrics", [
     ["Candidates examined", value(funnel.candidates_examined)], ["Terminal positive", value(funnel.terminal_positive_candidates)],
     ["Quadrature survivors", value(funnel.quadrature_survivors)], ["Path confirmed", value(funnel.path_confirmed_candidates)],

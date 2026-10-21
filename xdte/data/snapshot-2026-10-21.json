@@ -955,6 +955,80 @@
       }
     ],
     "trading_status_and_alerts": {
+      "alerts": [
+        {
+          "category": "Calendar",
+          "first_seen_at_et": null,
+          "last_seen_at_et": "2026-10-21T16:20:04.501809-04:00",
+          "rule_id": "CALENDAR_REFRESH_FAILED",
+          "severity": "WARNING",
+          "state": "ACTIVE",
+          "title": "Economic-calendar refresh failed"
+        },
+        {
+          "category": "Scanner",
+          "first_seen_at_et": "2026-10-21T09:45:00-04:00",
+          "last_seen_at_et": "2026-10-21T09:55:00-04:00",
+          "rule_id": "SCANNER_HEARTBEAT_MISSING_1",
+          "severity": "CRITICAL",
+          "state": "RESOLVED",
+          "title": "Scheduled scanner cycle missing"
+        },
+        {
+          "category": "Scanner",
+          "first_seen_at_et": "2026-10-21T10:50:00-04:00",
+          "last_seen_at_et": "2026-10-21T12:20:00-04:00",
+          "rule_id": "SCANNER_HEARTBEAT_MISSING_2",
+          "severity": "CRITICAL",
+          "state": "RESOLVED",
+          "title": "Scheduled scanner cycle missing"
+        },
+        {
+          "category": "Execution",
+          "first_seen_at_et": "2026-10-21T12:25:09.636447-04:00",
+          "last_seen_at_et": "2026-10-21T13:45:29.774825-04:00",
+          "rule_id": "PAPER_EXECUTION_FAILED",
+          "severity": "CRITICAL",
+          "state": "RESOLVED",
+          "title": "Paper-order execution failed"
+        },
+        {
+          "category": "Candidate evaluation",
+          "first_seen_at_et": "2026-10-21T14:30:00-04:00",
+          "last_seen_at_et": "2026-10-21T15:30:00-04:00",
+          "rule_id": "CANDIDATE_DATA_UNAVAILABLE_1",
+          "severity": "CRITICAL",
+          "state": "RESOLVED",
+          "title": "Candidate inputs unavailable"
+        },
+        {
+          "category": "Candidate evaluation",
+          "first_seen_at_et": "2026-10-21T12:30:00-04:00",
+          "last_seen_at_et": "2026-10-21T12:30:00-04:00",
+          "rule_id": "CANDIDATE_EVALUATION_INCOMPLETE",
+          "severity": "WARNING",
+          "state": "RESOLVED",
+          "title": "Expected strategy or DTE evaluation missing"
+        },
+        {
+          "category": "Scanner",
+          "first_seen_at_et": "2026-10-21T12:50:00-04:00",
+          "last_seen_at_et": "2026-10-21T12:50:00-04:00",
+          "rule_id": "SCANNER_HEARTBEAT_MISSING_3",
+          "severity": "WARNING",
+          "state": "RESOLVED",
+          "title": "Scheduled scanner cycle missing"
+        },
+        {
+          "category": "Scanner",
+          "first_seen_at_et": "2026-10-21T15:45:46.726682-04:00",
+          "last_seen_at_et": "2026-10-21T15:55:46.213488-04:00",
+          "rule_id": "RESEARCH_ONLY_AFTER_ENTRY_CUTOFF",
+          "severity": "INFO",
+          "state": "RESOLVED",
+          "title": "Post-cutoff evaluation retained for research"
+        }
+      ],
       "calendar_as_of_date": "2026-10-21",
       "calendar_coverage_complete": true,
       "calendar_flags": [
@@ -1195,7 +1269,7 @@
   "publication": {
     "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-21T17:58:28.955826-04:00",
+    "published_at_et": "2026-10-21T18:17:15.728071-04:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-21"
   },
