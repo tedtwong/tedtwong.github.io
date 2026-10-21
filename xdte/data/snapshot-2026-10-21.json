@@ -5,7 +5,7 @@
       "candidates_examined": 3445,
       "completed_scan_decisions": 11,
       "current_capital_allocated": 7239.23,
-      "current_unrealized_pnl": 291.0,
+      "current_unrealized_pnl": 278.0,
       "eligible_candidates": 0,
       "orders_submitted": 7,
       "path_confirmed_candidates": 23,
@@ -73,8 +73,20 @@
         "time_et": "2026-10-21T14:59:52.930056-04:00"
       },
       {
-        "net_pnl": 291.0,
-        "time_et": "2026-10-21T15:02:02.889463-04:00"
+        "net_pnl": 207.0,
+        "time_et": "2026-10-21T15:04:53.425058-04:00"
+      },
+      {
+        "net_pnl": 345.0,
+        "time_et": "2026-10-21T15:09:53.788204-04:00"
+      },
+      {
+        "net_pnl": 340.0,
+        "time_et": "2026-10-21T15:14:54.127224-04:00"
+      },
+      {
+        "net_pnl": 278.0,
+        "time_et": "2026-10-21T15:18:09.373541-04:00"
       }
     ],
     "position_pnl": [
@@ -162,8 +174,23 @@
           },
           {
             "event": null,
-            "net_pnl": -31.2,
-            "time_et": "2026-10-21T15:01:53.210857-04:00"
+            "net_pnl": 18.8,
+            "time_et": "2026-10-21T15:04:53.425058-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 18.8,
+            "time_et": "2026-10-21T15:09:53.788204-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 19.8,
+            "time_et": "2026-10-21T15:14:54.127224-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -0.2,
+            "time_et": "2026-10-21T15:18:09.373541-04:00"
           }
         ],
         "position": "Position 1"
@@ -267,8 +294,23 @@
           },
           {
             "event": null,
-            "net_pnl": 139.8,
-            "time_et": "2026-10-21T15:02:02.889463-04:00"
+            "net_pnl": 84.8,
+            "time_et": "2026-10-21T15:04:48.079098-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 138.8,
+            "time_et": "2026-10-21T15:09:48.390798-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 138.8,
+            "time_et": "2026-10-21T15:14:48.728895-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 154.8,
+            "time_et": "2026-10-21T15:18:04.023317-04:00"
           }
         ],
         "position": "Position 2"
@@ -368,7 +410,22 @@
           {
             "event": null,
             "net_pnl": 14.8,
-            "time_et": "2026-10-21T15:02:02.705394-04:00"
+            "time_et": "2026-10-21T15:04:47.897237-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 14.8,
+            "time_et": "2026-10-21T15:09:48.219307-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 13.8,
+            "time_et": "2026-10-21T15:14:48.612809-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -5.2,
+            "time_et": "2026-10-21T15:18:03.880538-04:00"
           }
         ],
         "position": "Position 3"
@@ -437,8 +494,23 @@
           },
           {
             "event": null,
+            "net_pnl": 133.8,
+            "time_et": "2026-10-21T15:04:47.784601-04:00"
+          },
+          {
+            "event": null,
             "net_pnl": 163.8,
-            "time_et": "2026-10-21T15:02:02.581918-04:00"
+            "time_et": "2026-10-21T15:09:48.111294-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 153.8,
+            "time_et": "2026-10-21T15:14:48.490132-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 123.8,
+            "time_et": "2026-10-21T15:18:03.771887-04:00"
           }
         ],
         "position": "Position 4"
@@ -507,8 +579,23 @@
           },
           {
             "event": null,
-            "net_pnl": 3.8,
-            "time_et": "2026-10-21T15:02:02.634246-04:00"
+            "net_pnl": -45.2,
+            "time_et": "2026-10-21T15:04:47.828224-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 8.8,
+            "time_et": "2026-10-21T15:09:48.166845-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 13.8,
+            "time_et": "2026-10-21T15:14:48.540042-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 4.8,
+            "time_et": "2026-10-21T15:18:03.843405-04:00"
           }
         ],
         "position": "Position 5"
@@ -547,7 +634,7 @@
         "realized_net_pnl": null,
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": -31.2
+        "unrealized_net_pnl": -0.2
       },
       {
         "allocation": 1545.5,
@@ -581,7 +668,7 @@
         "realized_net_pnl": null,
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 139.8
+        "unrealized_net_pnl": 154.8
       },
       {
         "allocation": 1264.55,
@@ -598,7 +685,7 @@
         "realized_net_pnl": null,
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 14.8
+        "unrealized_net_pnl": -5.2
       },
       {
         "allocation": 1419.1,
@@ -615,7 +702,7 @@
         "realized_net_pnl": null,
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 163.8
+        "unrealized_net_pnl": 123.8
       },
       {
         "allocation": 1610.47,
@@ -632,7 +719,7 @@
         "realized_net_pnl": null,
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 3.8
+        "unrealized_net_pnl": 4.8
       }
     ]
   },
@@ -794,28 +881,40 @@
         "time_et": "2026-10-21T14:59:52.930056-04:00"
       },
       {
-        "net_pnl": 291.0,
-        "time_et": "2026-10-21T15:02:02.889463-04:00"
+        "net_pnl": 207.0,
+        "time_et": "2026-10-21T15:04:53.425058-04:00"
+      },
+      {
+        "net_pnl": 345.0,
+        "time_et": "2026-10-21T15:09:53.788204-04:00"
+      },
+      {
+        "net_pnl": 340.0,
+        "time_et": "2026-10-21T15:14:54.127224-04:00"
+      },
+      {
+        "net_pnl": 278.0,
+        "time_et": "2026-10-21T15:18:09.373541-04:00"
       }
     ],
     "summary": {
-      "additional_loss_to_contractual_max": 8561.0,
-      "available_equity": 242021.0,
+      "additional_loss_to_contractual_max": 8548.0,
+      "available_equity": 242008.0,
       "cash": 250000.0,
       "closed_trades": 0,
       "contractual_stress_loss": 8270.0,
-      "equity": 250291.0,
+      "equity": 250278.0,
       "open_positions": 5,
       "realized_pnl": 0.0,
       "reserved_risk": 8270.0,
       "starting_cash": 250000.0,
-      "unrealized_pnl": 291.0
+      "unrealized_pnl": 278.0
     }
   },
   "publication": {
     "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-21T15:02:03.031703-04:00",
+    "published_at_et": "2026-10-21T15:18:13.881502-04:00",
     "status": "PRELIMINARY_SESSION_ACTIVE",
     "trade_date": "2026-10-21"
   },

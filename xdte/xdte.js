@@ -5,6 +5,9 @@ const percent = new Intl.NumberFormat("en-US", { style: "percent", maximumFracti
 const value = (v, formatter = number) => v === null || v === undefined || Number.isNaN(Number(v)) ? "—" : formatter.format(Number(v));
 const pnlClass = v => Number(v) > 0 ? "positive" : Number(v) < 0 ? "negative" : "";
 const shortTime = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }).format(new Date(v)) : "—";
+const liveFeedUrl = "https://storage.googleapis.com/ibkr-steamroller-coins-xdte-feed/latest.json";
+const refreshCooldownMilliseconds = 5 * 60 * 1000;
+let refreshAvailableAt = 0;
 
 function metrics(target, items) {
   document.querySelector(target).innerHTML = items.map(([label, display, className = ""]) =>
@@ -53,16 +56,35 @@ function lineChart(target, series, options = {}) {
   </svg><div class="chart-legend">${series.map(s => `<span class="legend-key" style="--key:${s.color}">${s.label}</span>`).join("")}</div>`;
 }
 
+async function retrieveSnapshot() {
+  try {
+    const response = await fetch(`${liveFeedUrl}?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`live feed ${response.status}`);
+    return { data: await response.json(), source: "Live five-minute feed" };
+  } catch (error) {
+    const response = await fetch(`data/latest.json?v=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Snapshot request failed (${response.status})`);
+    return { data: await response.json(), source: `After-close fallback (${error.message})` };
+  }
+}
+
+function updateRefreshButton() {
+  const button = document.querySelector("#refresh-feed");
+  const remaining = Math.max(0, refreshAvailableAt - Date.now());
+  button.disabled = remaining > 0;
+  button.textContent = remaining > 0 ? `Refresh in ${Math.ceil(remaining / 60000)}m` : "Refresh P&L";
+}
+
 async function load() {
-  const response = await fetch(`data/latest.json?v=${Date.now()}`, { cache: "no-store" });
-  if (!response.ok) throw new Error(`Snapshot request failed (${response.status})`);
-  const data = await response.json();
+  const retrieved = await retrieveSnapshot();
+  const data = retrieved.data;
   const pub = data.publication, daily = data.daily, ledger = data.ledger, funnel = daily.funnel, summary = ledger.summary;
   const badge = document.querySelector("#status-badge");
   badge.textContent = pub.status.replaceAll("_", " ");
   badge.classList.add(pub.status === "FINAL_AFTER_CLOSE" ? "badge--final" : "badge--preliminary");
   document.querySelector("#as-of").textContent = `Trading date ${pub.trade_date} · published ${shortTime(pub.published_at_et)} ET`;
   document.querySelector("#footer-date").textContent = `Snapshot ${pub.trade_date}`;
+  document.querySelector("#feed-status").textContent = `${retrieved.source} · observation published ${shortTime(pub.published_at_et)} ET`;
   if (pub.status !== "FINAL_AFTER_CLOSE") {
     const warning = document.querySelector("#data-warning"); warning.classList.remove("hidden");
     warning.textContent = pub.status === "PRELIMINARY_SESSION_ACTIVE" ? "This snapshot was generated during the trading session and remains preliminary. The scheduled after-close publication will replace it." : "No completed-session activity was available for this publication date.";
@@ -123,9 +145,27 @@ async function load() {
   ], groups);
 }
 
-load().catch(error => {
+async function refresh() {
+  const button = document.querySelector("#refresh-feed");
+  button.disabled = true;
+  button.textContent = "Refreshing…";
+  await load();
+  refreshAvailableAt = Date.now() + refreshCooldownMilliseconds;
+  updateRefreshButton();
+}
+
+document.querySelector("#refresh-feed").addEventListener("click", () => {
+  if (Date.now() >= refreshAvailableAt) refresh().catch(showLoadError);
+});
+setInterval(updateRefreshButton, 1000);
+
+function showLoadError(error) {
   const warning = document.querySelector("#data-warning"); warning.classList.remove("hidden");
   warning.textContent = `The public snapshot could not be loaded: ${error.message}`;
   document.querySelector("#status-badge").textContent = "DATA UNAVAILABLE";
-});
+  refreshAvailableAt = Date.now() + refreshCooldownMilliseconds;
+  updateRefreshButton();
+}
+
+refresh().catch(showLoadError);
 
