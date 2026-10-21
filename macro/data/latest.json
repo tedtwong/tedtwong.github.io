@@ -1,20 +1,20 @@
 {
   "alerts": [
     {
-      "alert_id": 2955,
-      "alert_pts": 59.38,
+      "alert_id": 3080,
+      "alert_pts": 60.21,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
-        "actual": 4.02,
+        "actual": 4.11,
         "calendar_adjustment_considered": false,
         "calendar_bucket": null,
         "chart_actual": {
-          "observation_time": "2026-10-19T00:00:00+00:00",
-          "value": 4.02
+          "observation_time": "2026-10-20T00:00:00+00:00",
+          "value": 4.11
         },
         "chart_forecast": {
-          "observation_time": "2026-10-19T00:00:00+00:00",
-          "value": 4.18
+          "observation_time": "2026-10-20T00:00:00+00:00",
+          "value": 4.02
         },
         "chart_history": [
           {
@@ -82,8 +82,8 @@
             "value": 4.73
           },
           {
-            "observation_time": "2024-12-03T00:00:00+00:00",
-            "value": 4.69
+            "observation_time": "2024-12-04T00:00:00+00:00",
+            "value": 4.67
           },
           {
             "observation_time": "2024-12-05T00:00:00+00:00",
@@ -154,7 +154,7 @@
             "value": 4.4
           },
           {
-            "observation_time": "2025-01-29T00:00:00+00:00",
+            "observation_time": "2025-01-30T00:00:00+00:00",
             "value": 4.42
           },
           {
@@ -182,8 +182,8 @@
             "value": 4.43
           },
           {
-            "observation_time": "2025-02-18T00:00:00+00:00",
-            "value": 4.36
+            "observation_time": "2025-02-19T00:00:00+00:00",
+            "value": 4.39
           },
           {
             "observation_time": "2025-02-20T00:00:00+00:00",
@@ -210,8 +210,8 @@
             "value": 4.4
           },
           {
-            "observation_time": "2025-03-07T00:00:00+00:00",
-            "value": 4.43
+            "observation_time": "2025-03-11T00:00:00+00:00",
+            "value": 4.39
           },
           {
             "observation_time": "2025-03-12T00:00:00+00:00",
@@ -226,8 +226,8 @@
             "value": 4.41
           },
           {
-            "observation_time": "2025-03-20T00:00:00+00:00",
-            "value": 4.41
+            "observation_time": "2025-03-21T00:00:00+00:00",
+            "value": 4.4
           },
           {
             "observation_time": "2025-03-24T00:00:00+00:00",
@@ -238,8 +238,8 @@
             "value": 4.41
           },
           {
-            "observation_time": "2025-03-28T00:00:00+00:00",
-            "value": 4.31
+            "observation_time": "2025-03-31T00:00:00+00:00",
+            "value": 4.38
           },
           {
             "observation_time": "2025-04-01T00:00:00+00:00",
@@ -254,8 +254,8 @@
             "value": 4.4
           },
           {
-            "observation_time": "2025-04-09T00:00:00+00:00",
-            "value": 4.4
+            "observation_time": "2025-04-10T00:00:00+00:00",
+            "value": 4.46
           },
           {
             "observation_time": "2025-04-11T00:00:00+00:00",
@@ -282,8 +282,8 @@
             "value": 4.44
           },
           {
-            "observation_time": "2025-04-28T00:00:00+00:00",
-            "value": 4.45
+            "observation_time": "2025-04-29T00:00:00+00:00",
+            "value": 4.4
           },
           {
             "observation_time": "2025-04-30T00:00:00+00:00",
@@ -298,8 +298,8 @@
             "value": 4.43
           },
           {
-            "observation_time": "2025-05-08T00:00:00+00:00",
-            "value": 4.42
+            "observation_time": "2025-05-09T00:00:00+00:00",
+            "value": 4.37
           },
           {
             "observation_time": "2025-05-12T00:00:00+00:00",
@@ -310,8 +310,8 @@
             "value": 4.44
           },
           {
-            "observation_time": "2025-05-15T00:00:00+00:00",
-            "value": 4.39
+            "observation_time": "2025-05-16T00:00:00+00:00",
+            "value": 4.41
           },
           {
             "observation_time": "2025-05-19T00:00:00+00:00",
@@ -326,8 +326,8 @@
             "value": 4.44
           },
           {
-            "observation_time": "2025-05-27T00:00:00+00:00",
-            "value": 4.45
+            "observation_time": "2025-05-29T00:00:00+00:00",
+            "value": 4.44
           },
           {
             "observation_time": "2025-05-30T00:00:00+00:00",
@@ -338,8 +338,8 @@
             "value": 4.42
           },
           {
-            "observation_time": "2025-06-04T00:00:00+00:00",
-            "value": 4.38
+            "observation_time": "2025-06-05T00:00:00+00:00",
+            "value": 4.43
           },
           {
             "observation_time": "2025-06-06T00:00:00+00:00",
@@ -354,8 +354,8 @@
             "value": 4.42
           },
           {
-            "observation_time": "2025-06-13T00:00:00+00:00",
-            "value": 4.39
+            "observation_time": "2025-06-16T00:00:00+00:00",
+            "value": 4.43
           },
           {
             "observation_time": "2025-06-17T00:00:00+00:00",
@@ -366,12 +366,12 @@
             "value": 4.44
           },
           {
-            "observation_time": "2025-06-23T00:00:00+00:00",
-            "value": 4.42
+            "observation_time": "2025-06-25T00:00:00+00:00",
+            "value": 4.43
           },
           {
-            "observation_time": "2025-06-26T00:00:00+00:00",
-            "value": 4.43
+            "observation_time": "2025-06-27T00:00:00+00:00",
+            "value": 4.46
           },
           {
             "observation_time": "2025-06-30T00:00:00+00:00",
@@ -382,8 +382,8 @@
             "value": 4.39
           },
           {
-            "observation_time": "2025-07-07T00:00:00+00:00",
-            "value": 4.42
+            "observation_time": "2025-07-08T00:00:00+00:00",
+            "value": 4.44
           },
           {
             "observation_time": "2025-07-09T00:00:00+00:00",
@@ -398,8 +398,8 @@
             "value": 4.43
           },
           {
-            "observation_time": "2025-07-16T00:00:00+00:00",
-            "value": 4.44
+            "observation_time": "2025-07-17T00:00:00+00:00",
+            "value": 4.45
           },
           {
             "observation_time": "2025-07-18T00:00:00+00:00",
@@ -410,8 +410,8 @@
             "value": 4.44
           },
           {
-            "observation_time": "2025-07-24T00:00:00+00:00",
-            "value": 4.43
+            "observation_time": "2025-07-25T00:00:00+00:00",
+            "value": 4.39
           },
           {
             "observation_time": "2025-07-28T00:00:00+00:00",
@@ -426,8 +426,8 @@
             "value": 4.38
           },
           {
-            "observation_time": "2025-08-04T00:00:00+00:00",
-            "value": 4.39
+            "observation_time": "2025-08-07T00:00:00+00:00",
+            "value": 4.41
           },
           {
             "observation_time": "2025-08-08T00:00:00+00:00",
@@ -438,12 +438,12 @@
             "value": 4.43
           },
           {
-            "observation_time": "2025-08-13T00:00:00+00:00",
-            "value": 4.4
+            "observation_time": "2025-08-14T00:00:00+00:00",
+            "value": 4.37
           },
           {
-            "observation_time": "2025-08-15T00:00:00+00:00",
-            "value": 4.31
+            "observation_time": "2025-08-18T00:00:00+00:00",
+            "value": 4.36
           },
           {
             "observation_time": "2025-08-19T00:00:00+00:00",
@@ -454,8 +454,8 @@
             "value": 4.39
           },
           {
-            "observation_time": "2025-08-22T00:00:00+00:00",
-            "value": 4.41
+            "observation_time": "2025-08-26T00:00:00+00:00",
+            "value": 4.38
           },
           {
             "observation_time": "2025-08-27T00:00:00+00:00",
@@ -466,12 +466,12 @@
             "value": 4.38
           },
           {
-            "observation_time": "2025-09-02T00:00:00+00:00",
-            "value": 4.16
+            "observation_time": "2025-09-03T00:00:00+00:00",
+            "value": 4.32
           },
           {
-            "observation_time": "2025-09-04T00:00:00+00:00",
-            "value": 4.32
+            "observation_time": "2025-09-05T00:00:00+00:00",
+            "value": 4.34
           },
           {
             "observation_time": "2025-09-08T00:00:00+00:00",
@@ -482,8 +482,8 @@
             "value": 4.21
           },
           {
-            "observation_time": "2025-09-11T00:00:00+00:00",
-            "value": 4.32
+            "observation_time": "2025-09-12T00:00:00+00:00",
+            "value": 4.26
           },
           {
             "observation_time": "2025-09-15T00:00:00+00:00",
@@ -494,12 +494,12 @@
             "value": 4.22
           },
           {
-            "observation_time": "2025-09-18T00:00:00+00:00",
-            "value": 4.24
+            "observation_time": "2025-09-19T00:00:00+00:00",
+            "value": 4.2
           },
           {
-            "observation_time": "2025-09-22T00:00:00+00:00",
-            "value": 4.24
+            "observation_time": "2025-09-23T00:00:00+00:00",
+            "value": 4.19
           },
           {
             "observation_time": "2025-09-25T00:00:00+00:00",
@@ -510,24 +510,24 @@
             "value": 4.22
           },
           {
-            "observation_time": "2025-10-01T00:00:00+00:00",
-            "value": 4.2
+            "observation_time": "2025-10-02T00:00:00+00:00",
+            "value": 4.21
           },
           {
-            "observation_time": "2025-10-03T00:00:00+00:00",
-            "value": 4.01
+            "observation_time": "2025-10-06T00:00:00+00:00",
+            "value": 4.19
           },
           {
             "observation_time": "2025-10-08T00:00:00+00:00",
             "value": 4.13
           },
           {
-            "observation_time": "2025-10-10T00:00:00+00:00",
-            "value": 4.15
+            "observation_time": "2025-10-14T00:00:00+00:00",
+            "value": 4.07
           },
           {
-            "observation_time": "2025-10-15T00:00:00+00:00",
-            "value": 4.13
+            "observation_time": "2025-10-16T00:00:00+00:00",
+            "value": 4.07
           },
           {
             "observation_time": "2025-10-17T00:00:00+00:00",
@@ -538,12 +538,12 @@
             "value": 4.03
           },
           {
-            "observation_time": "2025-10-22T00:00:00+00:00",
-            "value": 4.11
+            "observation_time": "2025-10-27T00:00:00+00:00",
+            "value": 4.08
           },
           {
-            "observation_time": "2025-10-28T00:00:00+00:00",
-            "value": 4.09
+            "observation_time": "2025-10-29T00:00:00+00:00",
+            "value": 4.11
           },
           {
             "observation_time": "2025-10-30T00:00:00+00:00",
@@ -554,8 +554,8 @@
             "value": 4.06
           },
           {
-            "observation_time": "2025-11-04T00:00:00+00:00",
-            "value": 4.06
+            "observation_time": "2025-11-05T00:00:00+00:00",
+            "value": 4.02
           },
           {
             "observation_time": "2025-11-06T00:00:00+00:00",
@@ -566,12 +566,12 @@
             "value": 4.02
           },
           {
-            "observation_time": "2025-11-12T00:00:00+00:00",
-            "value": 4.02
+            "observation_time": "2025-11-13T00:00:00+00:00",
+            "value": 3.98
           },
           {
-            "observation_time": "2025-11-14T00:00:00+00:00",
-            "value": 4.03
+            "observation_time": "2025-11-17T00:00:00+00:00",
+            "value": 3.92
           },
           {
             "observation_time": "2025-11-18T00:00:00+00:00",
@@ -582,23 +582,23 @@
             "value": 4.01
           },
           {
-            "observation_time": "2025-11-21T00:00:00+00:00",
-            "value": 4.05
+            "observation_time": "2025-11-24T00:00:00+00:00",
+            "value": 4.02
           },
           {
-            "observation_time": "2025-11-25T00:00:00+00:00",
-            "value": 4.03
+            "observation_time": "2025-11-26T00:00:00+00:00",
+            "value": 4.02
           },
           {
             "observation_time": "2025-11-28T00:00:00+00:00",
             "value": 3.99
           },
           {
-            "observation_time": "2025-12-01T00:00:00+00:00",
-            "value": 4.03
+            "observation_time": "2025-12-02T00:00:00+00:00",
+            "value": 3.98
           },
           {
-            "observation_time": "2025-12-03T00:00:00+00:00",
+            "observation_time": "2025-12-04T00:00:00+00:00",
             "value": 3.95
           },
           {
@@ -610,24 +610,24 @@
             "value": 3.92
           },
           {
-            "observation_time": "2025-12-10T00:00:00+00:00",
-            "value": 3.86
+            "observation_time": "2025-12-11T00:00:00+00:00",
+            "value": 3.81
           },
           {
-            "observation_time": "2025-12-12T00:00:00+00:00",
-            "value": 3.71
+            "observation_time": "2025-12-15T00:00:00+00:00",
+            "value": 3.84
           },
           {
             "observation_time": "2025-12-16T00:00:00+00:00",
             "value": 3.81
           },
           {
-            "observation_time": "2025-12-17T00:00:00+00:00",
-            "value": 3.86
+            "observation_time": "2025-12-18T00:00:00+00:00",
+            "value": 3.88
           },
           {
-            "observation_time": "2025-12-19T00:00:00+00:00",
-            "value": 3.87
+            "observation_time": "2025-12-22T00:00:00+00:00",
+            "value": 3.95
           },
           {
             "observation_time": "2025-12-23T00:00:00+00:00",
@@ -638,68 +638,68 @@
             "value": 3.84
           },
           {
-            "observation_time": "2026-01-02T00:00:00+00:00",
-            "value": 3.9
+            "observation_time": "2026-01-05T00:00:00+00:00",
+            "value": 3.75
           },
           {
-            "observation_time": "2026-01-06T00:00:00+00:00",
-            "value": 3.74
+            "observation_time": "2026-01-07T00:00:00+00:00",
+            "value": 3.72
           },
           {
             "observation_time": "2026-01-08T00:00:00+00:00",
             "value": 3.76
           },
           {
-            "observation_time": "2026-01-09T00:00:00+00:00",
-            "value": 3.7
+            "observation_time": "2026-01-13T00:00:00+00:00",
+            "value": 3.77
           },
           {
-            "observation_time": "2026-01-14T00:00:00+00:00",
-            "value": 3.69
+            "observation_time": "2026-01-15T00:00:00+00:00",
+            "value": 3.74
           },
           {
-            "observation_time": "2026-01-16T00:00:00+00:00",
-            "value": 3.73
+            "observation_time": "2026-01-20T00:00:00+00:00",
+            "value": 3.75
           },
           {
             "observation_time": "2026-01-21T00:00:00+00:00",
             "value": 3.75
           },
           {
-            "observation_time": "2026-01-22T00:00:00+00:00",
+            "observation_time": "2026-01-23T00:00:00+00:00",
             "value": 3.76
           },
           {
-            "observation_time": "2026-01-26T00:00:00+00:00",
-            "value": 3.77
+            "observation_time": "2026-01-27T00:00:00+00:00",
+            "value": 3.76
           },
           {
             "observation_time": "2026-01-29T00:00:00+00:00",
             "value": 3.75
           },
           {
-            "observation_time": "2026-01-30T00:00:00+00:00",
-            "value": 3.76
+            "observation_time": "2026-02-03T00:00:00+00:00",
+            "value": 3.77
           },
           {
-            "observation_time": "2026-02-04T00:00:00+00:00",
-            "value": 3.75
+            "observation_time": "2026-02-05T00:00:00+00:00",
+            "value": 3.74
           },
           {
-            "observation_time": "2026-02-06T00:00:00+00:00",
-            "value": 3.69
+            "observation_time": "2026-02-09T00:00:00+00:00",
+            "value": 3.73
           },
           {
             "observation_time": "2026-02-10T00:00:00+00:00",
             "value": 3.74
           },
           {
-            "observation_time": "2026-02-11T00:00:00+00:00",
-            "value": 3.74
+            "observation_time": "2026-02-12T00:00:00+00:00",
+            "value": 3.76
           },
           {
-            "observation_time": "2026-02-13T00:00:00+00:00",
-            "value": 3.72
+            "observation_time": "2026-02-17T00:00:00+00:00",
+            "value": 3.64
           },
           {
             "observation_time": "2026-02-18T00:00:00+00:00",
@@ -710,83 +710,83 @@
             "value": 3.7
           },
           {
-            "observation_time": "2026-02-23T00:00:00+00:00",
-            "value": 3.68
+            "observation_time": "2026-02-25T00:00:00+00:00",
+            "value": 3.76
           },
           {
-            "observation_time": "2026-02-26T00:00:00+00:00",
-            "value": 3.73
+            "observation_time": "2026-02-27T00:00:00+00:00",
+            "value": 3.75
           },
           {
             "observation_time": "2026-03-02T00:00:00+00:00",
             "value": 3.74
           },
           {
-            "observation_time": "2026-03-03T00:00:00+00:00",
-            "value": 3.75
-          },
-          {
-            "observation_time": "2026-03-05T00:00:00+00:00",
+            "observation_time": "2026-03-04T00:00:00+00:00",
             "value": 3.73
           },
           {
-            "observation_time": "2026-03-09T00:00:00+00:00",
-            "value": 3.73
+            "observation_time": "2026-03-06T00:00:00+00:00",
+            "value": 3.74
+          },
+          {
+            "observation_time": "2026-03-10T00:00:00+00:00",
+            "value": 3.71
           },
           {
             "observation_time": "2026-03-11T00:00:00+00:00",
             "value": 3.75
           },
           {
-            "observation_time": "2026-03-12T00:00:00+00:00",
+            "observation_time": "2026-03-13T00:00:00+00:00",
             "value": 3.73
           },
           {
-            "observation_time": "2026-03-16T00:00:00+00:00",
-            "value": 3.75
+            "observation_time": "2026-03-17T00:00:00+00:00",
+            "value": 3.74
           },
           {
             "observation_time": "2026-03-18T00:00:00+00:00",
             "value": 3.74
           },
           {
-            "observation_time": "2026-03-19T00:00:00+00:00",
-            "value": 3.74
-          },
-          {
-            "observation_time": "2026-03-23T00:00:00+00:00",
+            "observation_time": "2026-03-20T00:00:00+00:00",
             "value": 3.77
           },
           {
-            "observation_time": "2026-03-25T00:00:00+00:00",
-            "value": 3.73
+            "observation_time": "2026-03-24T00:00:00+00:00",
+            "value": 3.78
+          },
+          {
+            "observation_time": "2026-03-26T00:00:00+00:00",
+            "value": 3.74
           },
           {
             "observation_time": "2026-03-27T00:00:00+00:00",
             "value": 3.76
           },
           {
-            "observation_time": "2026-03-30T00:00:00+00:00",
-            "value": 3.77
+            "observation_time": "2026-03-31T00:00:00+00:00",
+            "value": 3.75
           },
           {
-            "observation_time": "2026-04-01T00:00:00+00:00",
-            "value": 3.77
+            "observation_time": "2026-04-02T00:00:00+00:00",
+            "value": 3.73
           },
           {
             "observation_time": "2026-04-06T00:00:00+00:00",
             "value": 3.72
           },
           {
-            "observation_time": "2026-04-07T00:00:00+00:00",
-            "value": 3.74
+            "observation_time": "2026-04-08T00:00:00+00:00",
+            "value": 3.73
           },
           {
-            "observation_time": "2026-04-09T00:00:00+00:00",
-            "value": 3.71
+            "observation_time": "2026-04-10T00:00:00+00:00",
+            "value": 3.73
           },
           {
-            "observation_time": "2026-04-13T00:00:00+00:00",
+            "observation_time": "2026-04-14T00:00:00+00:00",
             "value": 3.73
           },
           {
@@ -794,55 +794,55 @@
             "value": 3.75
           },
           {
-            "observation_time": "2026-04-16T00:00:00+00:00",
-            "value": 3.77
-          },
-          {
-            "observation_time": "2026-04-21T00:00:00+00:00",
-            "value": 3.74
-          },
-          {
-            "observation_time": "2026-04-23T00:00:00+00:00",
+            "observation_time": "2026-04-17T00:00:00+00:00",
             "value": 3.73
+          },
+          {
+            "observation_time": "2026-04-22T00:00:00+00:00",
+            "value": 3.79
           },
           {
             "observation_time": "2026-04-24T00:00:00+00:00",
             "value": 3.72
           },
           {
-            "observation_time": "2026-04-30T00:00:00+00:00",
-            "value": 3.7
+            "observation_time": "2026-04-28T00:00:00+00:00",
+            "value": 3.71
           },
           {
-            "observation_time": "2026-05-04T00:00:00+00:00",
-            "value": 3.74
+            "observation_time": "2026-05-01T00:00:00+00:00",
+            "value": 3.75
+          },
+          {
+            "observation_time": "2026-05-06T00:00:00+00:00",
+            "value": 3.73
           },
           {
             "observation_time": "2026-05-07T00:00:00+00:00",
             "value": 3.72
           },
           {
-            "observation_time": "2026-05-08T00:00:00+00:00",
-            "value": 3.72
+            "observation_time": "2026-05-11T00:00:00+00:00",
+            "value": 3.78
           },
           {
-            "observation_time": "2026-05-12T00:00:00+00:00",
-            "value": 3.7
+            "observation_time": "2026-05-13T00:00:00+00:00",
+            "value": 3.74
           },
           {
-            "observation_time": "2026-05-14T00:00:00+00:00",
-            "value": 3.72
+            "observation_time": "2026-05-15T00:00:00+00:00",
+            "value": 3.6
           },
           {
             "observation_time": "2026-05-18T00:00:00+00:00",
             "value": 3.69
           },
           {
-            "observation_time": "2026-05-20T00:00:00+00:00",
+            "observation_time": "2026-05-21T00:00:00+00:00",
             "value": 3.68
           },
           {
-            "observation_time": "2026-05-22T00:00:00+00:00",
+            "observation_time": "2026-05-26T00:00:00+00:00",
             "value": 3.7
           },
           {
@@ -850,43 +850,43 @@
             "value": 3.71
           },
           {
-            "observation_time": "2026-05-29T00:00:00+00:00",
-            "value": 3.71
+            "observation_time": "2026-06-01T00:00:00+00:00",
+            "value": 3.81
           },
           {
-            "observation_time": "2026-06-02T00:00:00+00:00",
-            "value": 3.7
+            "observation_time": "2026-06-03T00:00:00+00:00",
+            "value": 3.73
           },
           {
-            "observation_time": "2026-06-04T00:00:00+00:00",
-            "value": 3.74
+            "observation_time": "2026-06-05T00:00:00+00:00",
+            "value": 3.72
           },
           {
             "observation_time": "2026-06-08T00:00:00+00:00",
             "value": 3.76
           },
           {
-            "observation_time": "2026-06-09T00:00:00+00:00",
+            "observation_time": "2026-06-10T00:00:00+00:00",
+            "value": 3.72
+          },
+          {
+            "observation_time": "2026-06-12T00:00:00+00:00",
             "value": 3.71
-          },
-          {
-            "observation_time": "2026-06-11T00:00:00+00:00",
-            "value": 3.72
-          },
-          {
-            "observation_time": "2026-06-15T00:00:00+00:00",
-            "value": 3.72
           },
           {
             "observation_time": "2026-06-16T00:00:00+00:00",
             "value": 3.71
           },
           {
-            "observation_time": "2026-06-18T00:00:00+00:00",
-            "value": 3.72
+            "observation_time": "2026-06-17T00:00:00+00:00",
+            "value": 3.7
           },
           {
-            "observation_time": "2026-06-23T00:00:00+00:00",
+            "observation_time": "2026-06-22T00:00:00+00:00",
+            "value": 3.71
+          },
+          {
+            "observation_time": "2026-06-24T00:00:00+00:00",
             "value": 3.82
           },
           {
@@ -894,168 +894,168 @@
             "value": 3.77
           },
           {
-            "observation_time": "2026-06-26T00:00:00+00:00",
+            "observation_time": "2026-06-29T00:00:00+00:00",
+            "value": 3.74
+          },
+          {
+            "observation_time": "2026-07-01T00:00:00+00:00",
             "value": 3.76
-          },
-          {
-            "observation_time": "2026-06-30T00:00:00+00:00",
-            "value": 3.79
-          },
-          {
-            "observation_time": "2026-07-02T00:00:00+00:00",
-            "value": 3.79
           },
           {
             "observation_time": "2026-07-06T00:00:00+00:00",
             "value": 3.7
           },
           {
-            "observation_time": "2026-07-10T00:00:00+00:00",
-            "value": 3.72
+            "observation_time": "2026-07-09T00:00:00+00:00",
+            "value": 3.74
           },
           {
-            "observation_time": "2026-07-14T00:00:00+00:00",
-            "value": 3.79
+            "observation_time": "2026-07-13T00:00:00+00:00",
+            "value": 3.73
+          },
+          {
+            "observation_time": "2026-07-15T00:00:00+00:00",
+            "value": 3.77
           },
           {
             "observation_time": "2026-07-16T00:00:00+00:00",
             "value": 3.77
           },
           {
-            "observation_time": "2026-07-17T00:00:00+00:00",
-            "value": 3.79
+            "observation_time": "2026-07-20T00:00:00+00:00",
+            "value": 3.81
           },
           {
-            "observation_time": "2026-07-21T00:00:00+00:00",
-            "value": 3.73
-          },
-          {
-            "observation_time": "2026-07-23T00:00:00+00:00",
-            "value": 3.75
+            "observation_time": "2026-07-22T00:00:00+00:00",
+            "value": 3.77
           },
           {
             "observation_time": "2026-07-24T00:00:00+00:00",
             "value": 3.88
           },
           {
-            "observation_time": "2026-07-28T00:00:00+00:00",
-            "value": 4.02
+            "observation_time": "2026-07-27T00:00:00+00:00",
+            "value": 4.06
           },
           {
-            "observation_time": "2026-07-30T00:00:00+00:00",
-            "value": 3.75
+            "observation_time": "2026-07-29T00:00:00+00:00",
+            "value": 3.89
           },
           {
-            "observation_time": "2026-08-03T00:00:00+00:00",
-            "value": 3.85
+            "observation_time": "2026-07-31T00:00:00+00:00",
+            "value": 3.92
           },
           {
             "observation_time": "2026-08-04T00:00:00+00:00",
             "value": 3.71
           },
           {
-            "observation_time": "2026-08-06T00:00:00+00:00",
-            "value": 3.69
+            "observation_time": "2026-08-05T00:00:00+00:00",
+            "value": 3.78
           },
           {
-            "observation_time": "2026-08-12T00:00:00+00:00",
-            "value": 3.8
+            "observation_time": "2026-08-10T00:00:00+00:00",
+            "value": 3.76
           },
           {
             "observation_time": "2026-08-13T00:00:00+00:00",
             "value": 3.71
           },
           {
-            "observation_time": "2026-08-17T00:00:00+00:00",
-            "value": 3.78
+            "observation_time": "2026-08-14T00:00:00+00:00",
+            "value": 3.76
           },
           {
-            "observation_time": "2026-08-19T00:00:00+00:00",
+            "observation_time": "2026-08-18T00:00:00+00:00",
             "value": 3.77
           },
           {
-            "observation_time": "2026-08-21T00:00:00+00:00",
-            "value": 3.77
+            "observation_time": "2026-08-20T00:00:00+00:00",
+            "value": 3.75
           },
           {
             "observation_time": "2026-08-24T00:00:00+00:00",
             "value": 3.78
           },
           {
-            "observation_time": "2026-08-26T00:00:00+00:00",
-            "value": 3.78
+            "observation_time": "2026-08-25T00:00:00+00:00",
+            "value": 3.8
           },
           {
-            "observation_time": "2026-08-31T00:00:00+00:00",
-            "value": 3.84
+            "observation_time": "2026-08-27T00:00:00+00:00",
+            "value": 3.85
+          },
+          {
+            "observation_time": "2026-09-01T00:00:00+00:00",
+            "value": 3.95
           },
           {
             "observation_time": "2026-09-02T00:00:00+00:00",
             "value": 3.8
           },
           {
-            "observation_time": "2026-09-03T00:00:00+00:00",
-            "value": 3.85
+            "observation_time": "2026-09-04T00:00:00+00:00",
+            "value": 3.89
           },
           {
-            "observation_time": "2026-09-08T00:00:00+00:00",
-            "value": 3.91
-          },
-          {
-            "observation_time": "2026-09-10T00:00:00+00:00",
-            "value": 3.8
+            "observation_time": "2026-09-09T00:00:00+00:00",
+            "value": 3.84
           },
           {
             "observation_time": "2026-09-11T00:00:00+00:00",
             "value": 3.9
           },
           {
-            "observation_time": "2026-09-16T00:00:00+00:00",
-            "value": 4.06
+            "observation_time": "2026-09-15T00:00:00+00:00",
+            "value": 4.09
           },
           {
-            "observation_time": "2026-09-18T00:00:00+00:00",
-            "value": 3.93
+            "observation_time": "2026-09-17T00:00:00+00:00",
+            "value": 3.95
           },
           {
-            "observation_time": "2026-09-24T00:00:00+00:00",
-            "value": 3.96
+            "observation_time": "2026-09-22T00:00:00+00:00",
+            "value": 4.18
           },
           {
             "observation_time": "2026-09-25T00:00:00+00:00",
             "value": 3.96
           },
           {
-            "observation_time": "2026-09-30T00:00:00+00:00",
-            "value": 3.83
+            "observation_time": "2026-09-28T00:00:00+00:00",
+            "value": 4.13
           },
           {
-            "observation_time": "2026-10-02T00:00:00+00:00",
-            "value": 3.98
+            "observation_time": "2026-10-01T00:00:00+00:00",
+            "value": 3.92
           },
           {
             "observation_time": "2026-10-05T00:00:00+00:00",
             "value": 3.88
           },
           {
-            "observation_time": "2026-10-07T00:00:00+00:00",
-            "value": 4.0
+            "observation_time": "2026-10-06T00:00:00+00:00",
+            "value": 3.97
           },
           {
-            "observation_time": "2026-10-09T00:00:00+00:00",
-            "value": 3.99
+            "observation_time": "2026-10-08T00:00:00+00:00",
+            "value": 3.96
           },
           {
-            "observation_time": "2026-10-14T00:00:00+00:00",
-            "value": 4.01
+            "observation_time": "2026-10-13T00:00:00+00:00",
+            "value": 4.04
           },
           {
             "observation_time": "2026-10-15T00:00:00+00:00",
             "value": 4.04
           },
           {
-            "observation_time": "2026-10-19T00:00:00+00:00",
-            "value": 4.02
+            "observation_time": "2026-10-16T00:00:00+00:00",
+            "value": 4.18
+          },
+          {
+            "observation_time": "2026-10-20T00:00:00+00:00",
+            "value": 4.11
           }
         ],
         "chart_history_years": 2,
@@ -1075,18 +1075,12 @@
           "maximum_families": 2,
           "minimum_adjusted_z": 1.0
         },
-        "forecast": 4.18,
-        "forecast_error": -0.16000000000000014,
-        "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
+        "forecast": 4.02,
+        "forecast_error": 0.09000000000000075,
+        "forecast_origin": "PROSPECTIVE_STORED",
         "model_name": "RECENT_MEDIAN",
         "model_version": "macro_trend_v2",
         "surprise_history": [
-          {
-            "forecast_error": -0.07000000000000028,
-            "model_name": "RECENT_MEDIAN",
-            "observation_time": "2026-09-09T00:00:00+00:00",
-            "z_score": -1.5738117721120604
-          },
           {
             "forecast_error": -0.040000000000000036,
             "model_name": "RECENT_MEDIAN",
@@ -1224,35 +1218,40 @@
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-10-19T00:00:00+00:00",
             "z_score": -3.597284050541841
+          },
+          {
+            "forecast_error": 0.09000000000000075,
+            "model_name": "RECENT_MEDIAN",
+            "observation_time": "2026-10-20T00:00:00+00:00",
+            "z_score": 2.0234722784298005
           }
         ],
         "surprise_history_standardization": "current calibration-window center and scale",
         "surprise_severity": "ALERT",
         "transformation": "ABSOLUTE_CHANGE",
-        "z_score": -3.597284050541841
+        "z_score": 2.0234722784298005
       },
       "category": "funding markets and system liquidity",
       "confirmation_score": 0.0,
       "conflicting_evidence": [
-        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
         "No eligible independent evidence family is available for confirmation"
       ],
-      "headline": "DVP repo average rate, tenor over 30 days, preliminary is 3.6\u03c3 below its model forecast",
+      "headline": "DVP repo average rate, tenor over 30 days, preliminary is 2.0\u03c3 above its model forecast",
       "importance_score": 0.9,
       "macro_category": "funding_liquidity",
       "macro_category_title": "Funding markets and system liquidity",
-      "magnitude_score": 0.7195,
-      "persistence_score": 0.0,
-      "rank_score": 59.38,
+      "magnitude_score": 0.4047,
+      "persistence_score": 1.0,
+      "rank_score": 60.21,
       "series_id": "REPO-DVP_AR_G30-P",
       "series_name": "DVP repo average rate, tenor over 30 days, preliminary",
       "source_name": "OFR",
       "source_url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-DVP_AR_G30-P",
       "status": "FORECAST_DEVIATION",
-      "summary": "Latest reported value 4.020 percent; reported-scale forecast 4.180 percent. The model uses absolute change. Status: forecast deviation."
+      "summary": "Latest reported value 4.110 percent; reported-scale forecast 4.020 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 3011,
+      "alert_id": 3136,
       "alert_pts": 57.97,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -2015,7 +2014,7 @@
       "summary": "Latest reported value 130.455 index 2017=100, seasonally adjusted; reported-scale forecast 130.881 index 2017=100, seasonally adjusted. The model uses year over year percent. Status: forecast deviation."
     },
     {
-      "alert_id": 2956,
+      "alert_id": 3081,
       "alert_pts": 55.02,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -3078,21 +3077,21 @@
         "confirmation_conflicting": [],
         "confirmation_contextual": [
           {
-            "adjusted_z": 3.5973,
-            "alignment_days": 0.0,
+            "adjusted_z": -2.0235,
+            "alignment_days": 1.0,
             "alignment_limit_days": 7,
             "base_comparability_weight": 1.0,
             "effective_comparability_weight": 1.0,
             "evidence_family": "raw_term_repo_rate",
             "evidence_role": "raw rate context",
             "freshness_weight": 1.0,
-            "observation_time": "2026-10-19T00:00:00+00:00",
+            "observation_time": "2026-10-20T00:00:00+00:00",
             "origin_agency": "OFR",
-            "raw_adjusted_z": 3.5973,
+            "raw_adjusted_z": -2.0235,
             "relationship": "ambiguous",
             "series_id": "REPO-DVP_AR_G30-P",
             "series_name": "DVP repo average rate, tenor over 30 days, preliminary",
-            "z_score": -3.5973
+            "z_score": 2.0235
           },
           {
             "adjusted_z": 0.6745,
@@ -3472,7 +3471,7 @@
       "summary": "Latest reported value 0.150 percentage points; reported-scale forecast 0.300 percentage points. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 3073,
+      "alert_id": 3198,
       "alert_pts": 53.1,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -4218,7 +4217,7 @@
       "summary": "Latest reported value 882,270.000 millions of U.S. dollars, seasonally adjusted annual rate; reported-scale forecast 861,135.000 millions of U.S. dollars, seasonally adjusted annual rate. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 2964,
+      "alert_id": 3089,
       "alert_pts": 53.05,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -4964,7 +4963,7 @@
       "summary": "Latest reported value 1,655,280.000 millions of dollars; reported-scale forecast 1,613,395.197 millions of dollars. The model uses year over year percent. Status: forecast deviation."
     },
     {
-      "alert_id": 3039,
+      "alert_id": 3164,
       "alert_pts": 45.02,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -6286,7 +6285,7 @@
       "summary": "Latest reported value 2.800 percent; reported-scale forecast 2.740 percent. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 2978,
+      "alert_id": 3103,
       "alert_pts": 42.17,
       "alert_type": "FORECAST_DEVIATION",
       "calculation": {
@@ -7052,7 +7051,7 @@
       "summary": "Latest reported value 44,985.000 millions of dollars, seasonally adjusted; reported-scale forecast 45,800.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: forecast deviation."
     },
     {
-      "alert_id": 2950,
+      "alert_id": 3075,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -7802,7 +7801,7 @@
       "summary": "Latest reported value 336.298 index 1982-84=100; reported-scale forecast 335.454 index 1982-84=100. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 2951,
+      "alert_id": 3076,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -8552,7 +8551,7 @@
       "summary": "Latest reported value 336.940 index 1982-84=100; reported-scale forecast 335.942 index 1982-84=100. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 2952,
+      "alert_id": 3077,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -9249,7 +9248,7 @@
       "summary": "Latest reported value 4.200 percent; reported-scale forecast 4.100 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2953,
+      "alert_id": 3078,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -9950,7 +9949,7 @@
       "summary": "Latest reported value 159,044.000 thousands of jobs; reported-scale forecast 159,172.500 thousands of jobs. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2954,
+      "alert_id": 3079,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -10651,7 +10650,7 @@
       "summary": "Latest reported value 37.810 dollars per hour; reported-scale forecast 37.893 dollars per hour. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 2957,
+      "alert_id": 3082,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -11714,21 +11713,21 @@
         "confirmation_conflicting": [],
         "confirmation_contextual": [
           {
-            "adjusted_z": 3.5973,
-            "alignment_days": 0.0,
+            "adjusted_z": -2.0235,
+            "alignment_days": 1.0,
             "alignment_limit_days": 7,
             "base_comparability_weight": 1.0,
             "effective_comparability_weight": 1.0,
             "evidence_family": "raw_term_repo_rate",
             "evidence_role": "raw rate context",
             "freshness_weight": 1.0,
-            "observation_time": "2026-10-19T00:00:00+00:00",
+            "observation_time": "2026-10-20T00:00:00+00:00",
             "origin_agency": "OFR",
-            "raw_adjusted_z": 3.5973,
+            "raw_adjusted_z": -2.0235,
             "relationship": "ambiguous",
             "series_id": "REPO-DVP_AR_G30-P",
             "series_name": "DVP repo average rate, tenor over 30 days, preliminary",
-            "z_score": -3.5973
+            "z_score": 2.0235
           },
           {
             "adjusted_z": 0.6745,
@@ -12127,7 +12126,7 @@
       "summary": "Latest reported value -0.030 percentage points; reported-scale forecast -0.020 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2958,
+      "alert_id": 3083,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -13378,7 +13377,7 @@
       "summary": "Latest reported value 0.100 percentage points; reported-scale forecast 0.100 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2959,
+      "alert_id": 3084,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -14700,7 +14699,7 @@
       "summary": "Latest reported value 4.770 percent; reported-scale forecast 4.740 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2960,
+      "alert_id": 3085,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -16022,7 +16021,7 @@
       "summary": "Latest reported value 5.150 percent; reported-scale forecast 5.100 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2961,
+      "alert_id": 3086,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -17084,29 +17083,11 @@
         "chart_units": "U.S. dollars per euro",
         "confirmation_conflicting": [],
         "confirmation_contextual": [],
-        "confirmation_eligible": [
-          {
-            "adjusted_z": 0.6344,
-            "alignment_days": 0.0,
-            "alignment_limit_days": 7,
-            "base_comparability_weight": 1.0,
-            "effective_comparability_weight": 1.0,
-            "evidence_family": "yen_exchange_rate",
-            "evidence_role": "directional",
-            "freshness_weight": 1.0,
-            "observation_time": "2026-10-16T00:00:00+00:00",
-            "origin_agency": "Federal Reserve Board",
-            "raw_adjusted_z": 0.6344,
-            "relationship": "inverse",
-            "series_id": "DEXJPUS",
-            "series_name": "Japanese yen per U.S. dollar",
-            "z_score": -0.6344
-          }
-        ],
+        "confirmation_eligible": [],
         "confirmation_group": "dollar_strength",
-        "confirmation_reason": "0 supporting and 0 conflicting independent evidence families",
+        "confirmation_reason": "No confirmation profile or usable target surprise is available",
         "confirmation_score": 0.0,
-        "confirmation_status": "UNCONFIRMED",
+        "confirmation_status": "NOT_AVAILABLE",
         "confirmation_supporting": [],
         "confirmation_thresholds": {
           "confirmed_minimum_families": 2,
@@ -17119,6 +17100,7 @@
         "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
         "model_name": "RECENT_MEDIAN",
         "model_version": "macro_trend_v2",
+        "reason": "Latest observation exceeds the configured freshness limit",
         "surprise_history": [
           {
             "forecast_error": -0.4664998305669674,
@@ -17272,26 +17254,23 @@
       },
       "category": "FX",
       "confirmation_score": 0.0,
-      "conflicting_evidence": [
-        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
-        "Eligible independent evidence does not reach the confirmation threshold"
-      ],
-      "headline": "U.S. dollars per euro is 0.9\u03c3 above its model forecast",
+      "conflicting_evidence": [],
+      "headline": "U.S. dollars per euro: Data Stale",
       "importance_score": 0.8,
       "macro_category": "external",
       "macro_category_title": "Currencies, trade and real assets",
-      "magnitude_score": 0.1776,
+      "magnitude_score": 0.0,
       "persistence_score": 0.0,
       "rank_score": 0.0,
       "series_id": "DEXUSEU",
       "series_name": "U.S. dollars per euro",
       "source_name": "FRED",
       "source_url": "https://fred.stlouisfed.org/series/DEXUSEU",
-      "status": "NORMAL",
-      "summary": "Latest reported value 1.123 U.S. dollars per euro; reported-scale forecast 1.120 U.S. dollars per euro. The model uses log percent change. Status: normal."
+      "status": "DATA_STALE",
+      "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 2962,
+      "alert_id": 3087,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -18353,29 +18332,11 @@
         "chart_units": "Japanese yen per U.S. dollar",
         "confirmation_conflicting": [],
         "confirmation_contextual": [],
-        "confirmation_eligible": [
-          {
-            "adjusted_z": 0.8882,
-            "alignment_days": 0.0,
-            "alignment_limit_days": 7,
-            "base_comparability_weight": 1.0,
-            "effective_comparability_weight": 1.0,
-            "evidence_family": "euro_exchange_rate",
-            "evidence_role": "directional",
-            "freshness_weight": 1.0,
-            "observation_time": "2026-10-16T00:00:00+00:00",
-            "origin_agency": "Federal Reserve Board",
-            "raw_adjusted_z": 0.8882,
-            "relationship": "inverse",
-            "series_id": "DEXUSEU",
-            "series_name": "U.S. dollars per euro",
-            "z_score": 0.8882
-          }
-        ],
+        "confirmation_eligible": [],
         "confirmation_group": "dollar_strength",
-        "confirmation_reason": "0 supporting and 0 conflicting independent evidence families",
+        "confirmation_reason": "No confirmation profile or usable target surprise is available",
         "confirmation_score": 0.0,
-        "confirmation_status": "UNCONFIRMED",
+        "confirmation_status": "NOT_AVAILABLE",
         "confirmation_supporting": [],
         "confirmation_thresholds": {
           "confirmed_minimum_families": 2,
@@ -18388,6 +18349,7 @@
         "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
         "model_name": "RECENT_MEDIAN",
         "model_version": "macro_trend_v2",
+        "reason": "Latest observation exceeds the configured freshness limit",
         "surprise_history": [
           {
             "forecast_error": 0.3937788795156715,
@@ -18541,49 +18503,38 @@
       },
       "category": "FX",
       "confirmation_score": 0.0,
-      "conflicting_evidence": [
-        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
-        "Eligible independent evidence does not reach the confirmation threshold"
-      ],
-      "headline": "Japanese yen per U.S. dollar is 0.6\u03c3 below its model forecast",
+      "conflicting_evidence": [],
+      "headline": "Japanese yen per U.S. dollar: Data Stale",
       "importance_score": 0.8,
       "macro_category": "external",
       "macro_category_title": "Currencies, trade and real assets",
-      "magnitude_score": 0.1269,
+      "magnitude_score": 0.0,
       "persistence_score": 0.0,
       "rank_score": 0.0,
       "series_id": "DEXJPUS",
       "series_name": "Japanese yen per U.S. dollar",
       "source_name": "FRED",
       "source_url": "https://fred.stlouisfed.org/series/DEXJPUS",
-      "status": "NORMAL",
-      "summary": "Latest reported value 158.000 Japanese yen per U.S. dollar; reported-scale forecast 158.294 Japanese yen per U.S. dollar. The model uses log percent change. Status: normal."
+      "status": "DATA_STALE",
+      "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 2963,
+      "alert_id": 3088,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
-        "actual": 101.91,
+        "actual": 107.89,
         "calendar_adjustment_considered": false,
         "calendar_bucket": null,
         "chart_actual": {
-          "observation_time": "2026-10-14T00:00:00+00:00",
-          "value": 101.91
+          "observation_time": "2026-10-20T00:00:00+00:00",
+          "value": 107.89
         },
         "chart_forecast": {
-          "observation_time": "2026-10-14T00:00:00+00:00",
-          "value": 101.01860632455865
+          "observation_time": "2026-10-20T00:00:00+00:00",
+          "value": 110.34838980914766
         },
         "chart_history": [
-          {
-            "observation_time": "2024-10-15T00:00:00+00:00",
-            "value": 71.22
-          },
-          {
-            "observation_time": "2024-10-17T00:00:00+00:00",
-            "value": 71.26
-          },
           {
             "observation_time": "2024-10-21T00:00:00+00:00",
             "value": 71.16
@@ -18605,12 +18556,12 @@
             "value": 69.58
           },
           {
-            "observation_time": "2024-11-01T00:00:00+00:00",
-            "value": 69.81
+            "observation_time": "2024-11-04T00:00:00+00:00",
+            "value": 71.83
           },
           {
-            "observation_time": "2024-11-05T00:00:00+00:00",
-            "value": 72.26
+            "observation_time": "2024-11-06T00:00:00+00:00",
+            "value": 71.98
           },
           {
             "observation_time": "2024-11-07T00:00:00+00:00",
@@ -18653,12 +18604,12 @@
             "value": 68.58
           },
           {
-            "observation_time": "2024-12-06T00:00:00+00:00",
-            "value": 68.58
+            "observation_time": "2024-12-09T00:00:00+00:00",
+            "value": 68.65
           },
           {
-            "observation_time": "2024-12-10T00:00:00+00:00",
-            "value": 68.85
+            "observation_time": "2024-12-11T00:00:00+00:00",
+            "value": 70.57
           },
           {
             "observation_time": "2024-12-12T00:00:00+00:00",
@@ -18701,12 +18652,12 @@
             "value": 77.27
           },
           {
-            "observation_time": "2025-01-13T00:00:00+00:00",
-            "value": 79.57
+            "observation_time": "2025-01-14T00:00:00+00:00",
+            "value": 78.2
           },
           {
-            "observation_time": "2025-01-15T00:00:00+00:00",
-            "value": 80.73
+            "observation_time": "2025-01-16T00:00:00+00:00",
+            "value": 79.35
           },
           {
             "observation_time": "2025-01-17T00:00:00+00:00",
@@ -18753,12 +18704,12 @@
             "value": 72.21
           },
           {
-            "observation_time": "2025-02-19T00:00:00+00:00",
-            "value": 72.58
+            "observation_time": "2025-02-20T00:00:00+00:00",
+            "value": 72.88
           },
           {
-            "observation_time": "2025-02-21T00:00:00+00:00",
-            "value": 70.72
+            "observation_time": "2025-02-24T00:00:00+00:00",
+            "value": 71.06
           },
           {
             "observation_time": "2025-02-25T00:00:00+00:00",
@@ -18801,12 +18752,12 @@
             "value": 68.52
           },
           {
-            "observation_time": "2025-03-24T00:00:00+00:00",
-            "value": 69.46
+            "observation_time": "2025-03-25T00:00:00+00:00",
+            "value": 69.48
           },
           {
-            "observation_time": "2025-03-26T00:00:00+00:00",
-            "value": 70.05
+            "observation_time": "2025-03-27T00:00:00+00:00",
+            "value": 70.3
           },
           {
             "observation_time": "2025-03-28T00:00:00+00:00",
@@ -18849,12 +18800,12 @@
             "value": 63.55
           },
           {
-            "observation_time": "2025-04-25T00:00:00+00:00",
-            "value": 63.85
+            "observation_time": "2025-04-28T00:00:00+00:00",
+            "value": 63.3
           },
           {
-            "observation_time": "2025-04-29T00:00:00+00:00",
-            "value": 61.84
+            "observation_time": "2025-04-30T00:00:00+00:00",
+            "value": 59.55
           },
           {
             "observation_time": "2025-05-01T00:00:00+00:00",
@@ -18901,12 +18852,12 @@
             "value": 61.46
           },
           {
-            "observation_time": "2025-06-02T00:00:00+00:00",
-            "value": 63.27
+            "observation_time": "2025-06-03T00:00:00+00:00",
+            "value": 64.1
           },
           {
-            "observation_time": "2025-06-04T00:00:00+00:00",
-            "value": 63.57
+            "observation_time": "2025-06-05T00:00:00+00:00",
+            "value": 64.06
           },
           {
             "observation_time": "2025-06-06T00:00:00+00:00",
@@ -18949,12 +18900,12 @@
             "value": 68.13
           },
           {
-            "observation_time": "2025-07-07T00:00:00+00:00",
-            "value": 69.16
+            "observation_time": "2025-07-08T00:00:00+00:00",
+            "value": 69.55
           },
           {
-            "observation_time": "2025-07-09T00:00:00+00:00",
-            "value": 69.61
+            "observation_time": "2025-07-10T00:00:00+00:00",
+            "value": 67.78
           },
           {
             "observation_time": "2025-07-11T00:00:00+00:00",
@@ -18997,12 +18948,12 @@
             "value": 65.38
           },
           {
-            "observation_time": "2025-08-07T00:00:00+00:00",
-            "value": 64.9
+            "observation_time": "2025-08-08T00:00:00+00:00",
+            "value": 64.94
           },
           {
-            "observation_time": "2025-08-11T00:00:00+00:00",
-            "value": 65.03
+            "observation_time": "2025-08-12T00:00:00+00:00",
+            "value": 64.22
           },
           {
             "observation_time": "2025-08-13T00:00:00+00:00",
@@ -19049,12 +19000,12 @@
             "value": 62.71
           },
           {
-            "observation_time": "2025-09-12T00:00:00+00:00",
-            "value": 63.02
+            "observation_time": "2025-09-15T00:00:00+00:00",
+            "value": 63.66
           },
           {
-            "observation_time": "2025-09-16T00:00:00+00:00",
-            "value": 64.89
+            "observation_time": "2025-09-17T00:00:00+00:00",
+            "value": 64.41
           },
           {
             "observation_time": "2025-09-18T00:00:00+00:00",
@@ -19097,12 +19048,12 @@
             "value": 59.08
           },
           {
-            "observation_time": "2025-10-16T00:00:00+00:00",
-            "value": 58.29
+            "observation_time": "2025-10-17T00:00:00+00:00",
+            "value": 58.3
           },
           {
-            "observation_time": "2025-10-20T00:00:00+00:00",
-            "value": 58.34
+            "observation_time": "2025-10-21T00:00:00+00:00",
+            "value": 58.66
           },
           {
             "observation_time": "2025-10-22T00:00:00+00:00",
@@ -19145,12 +19096,12 @@
             "value": 61.51
           },
           {
-            "observation_time": "2025-11-19T00:00:00+00:00",
-            "value": 60.27
+            "observation_time": "2025-11-20T00:00:00+00:00",
+            "value": 60.07
           },
           {
-            "observation_time": "2025-11-21T00:00:00+00:00",
-            "value": 58.86
+            "observation_time": "2025-11-24T00:00:00+00:00",
+            "value": 59.11
           },
           {
             "observation_time": "2025-11-25T00:00:00+00:00",
@@ -19197,12 +19148,12 @@
             "value": 58.72
           },
           {
-            "observation_time": "2025-12-26T00:00:00+00:00",
-            "value": 56.6
+            "observation_time": "2025-12-29T00:00:00+00:00",
+            "value": 57.89
           },
           {
-            "observation_time": "2025-12-30T00:00:00+00:00",
-            "value": 57.79
+            "observation_time": "2025-12-31T00:00:00+00:00",
+            "value": 57.26
           },
           {
             "observation_time": "2026-01-02T00:00:00+00:00",
@@ -19245,12 +19196,12 @@
             "value": 64.77
           },
           {
-            "observation_time": "2026-01-30T00:00:00+00:00",
-            "value": 64.5
+            "observation_time": "2026-02-02T00:00:00+00:00",
+            "value": 61.6
           },
           {
-            "observation_time": "2026-02-03T00:00:00+00:00",
-            "value": 62.62
+            "observation_time": "2026-02-04T00:00:00+00:00",
+            "value": 64.56
           },
           {
             "observation_time": "2026-02-05T00:00:00+00:00",
@@ -19293,12 +19244,12 @@
             "value": 74.58
           },
           {
-            "observation_time": "2026-03-05T00:00:00+00:00",
-            "value": 80.88
+            "observation_time": "2026-03-06T00:00:00+00:00",
+            "value": 90.77
           },
           {
-            "observation_time": "2026-03-09T00:00:00+00:00",
-            "value": 94.65
+            "observation_time": "2026-03-10T00:00:00+00:00",
+            "value": 83.71
           },
           {
             "observation_time": "2026-03-11T00:00:00+00:00",
@@ -19345,12 +19296,12 @@
             "value": 99.62
           },
           {
-            "observation_time": "2026-04-10T00:00:00+00:00",
-            "value": 98.34
+            "observation_time": "2026-04-13T00:00:00+00:00",
+            "value": 100.72
           },
           {
-            "observation_time": "2026-04-14T00:00:00+00:00",
-            "value": 93.07
+            "observation_time": "2026-04-15T00:00:00+00:00",
+            "value": 93.04
           },
           {
             "observation_time": "2026-04-16T00:00:00+00:00",
@@ -19393,12 +19344,12 @@
             "value": 105.78
           },
           {
-            "observation_time": "2026-05-13T00:00:00+00:00",
-            "value": 104.52
+            "observation_time": "2026-05-14T00:00:00+00:00",
+            "value": 104.66
           },
           {
-            "observation_time": "2026-05-15T00:00:00+00:00",
-            "value": 108.99
+            "observation_time": "2026-05-18T00:00:00+00:00",
+            "value": 112.25
           },
           {
             "observation_time": "2026-05-19T00:00:00+00:00",
@@ -19441,12 +19392,12 @@
             "value": 84.65
           },
           {
-            "observation_time": "2026-06-16T00:00:00+00:00",
-            "value": 79.8
+            "observation_time": "2026-06-17T00:00:00+00:00",
+            "value": 80.65
           },
           {
-            "observation_time": "2026-06-18T00:00:00+00:00",
-            "value": 80.35
+            "observation_time": "2026-06-22T00:00:00+00:00",
+            "value": 78.94
           },
           {
             "observation_time": "2026-06-23T00:00:00+00:00",
@@ -19493,12 +19444,12 @@
             "value": 87.66
           },
           {
-            "observation_time": "2026-07-23T00:00:00+00:00",
-            "value": 93.08
+            "observation_time": "2026-07-24T00:00:00+00:00",
+            "value": 91.74
           },
           {
-            "observation_time": "2026-07-27T00:00:00+00:00",
-            "value": 84.25
+            "observation_time": "2026-07-28T00:00:00+00:00",
+            "value": 80.91
           },
           {
             "observation_time": "2026-07-29T00:00:00+00:00",
@@ -19541,12 +19492,12 @@
             "value": 86.34
           },
           {
-            "observation_time": "2026-08-25T00:00:00+00:00",
-            "value": 83.9
+            "observation_time": "2026-08-26T00:00:00+00:00",
+            "value": 83.46
           },
           {
-            "observation_time": "2026-08-27T00:00:00+00:00",
-            "value": 84.81
+            "observation_time": "2026-08-28T00:00:00+00:00",
+            "value": 84.57
           },
           {
             "observation_time": "2026-08-31T00:00:00+00:00",
@@ -19589,12 +19540,12 @@
             "value": 85.23
           },
           {
-            "observation_time": "2026-09-28T00:00:00+00:00",
-            "value": 99.37
+            "observation_time": "2026-09-29T00:00:00+00:00",
+            "value": 96.16
           },
           {
-            "observation_time": "2026-09-30T00:00:00+00:00",
-            "value": 97.18
+            "observation_time": "2026-10-01T00:00:00+00:00",
+            "value": 99.77
           },
           {
             "observation_time": "2026-10-02T00:00:00+00:00",
@@ -19610,11 +19561,19 @@
           },
           {
             "observation_time": "2026-10-12T00:00:00+00:00",
-            "value": 98.73
+            "value": 94.99
           },
           {
             "observation_time": "2026-10-14T00:00:00+00:00",
-            "value": 101.91
+            "value": 96.34
+          },
+          {
+            "observation_time": "2026-10-16T00:00:00+00:00",
+            "value": 108.21
+          },
+          {
+            "observation_time": "2026-10-20T00:00:00+00:00",
+            "value": 107.89
           }
         ],
         "chart_history_years": 2,
@@ -19634,182 +19593,184 @@
           "maximum_families": 2,
           "minimum_adjusted_z": 1.0
         },
-        "forecast": 101.01860632455865,
-        "forecast_error": 0.8785349930719792,
+        "forecast": 110.34838980914766,
+        "forecast_error": -2.253035136242244,
         "forecast_origin": "RETROSPECTIVE_BACKTEST_ONLY",
         "model_name": "RECENT_MEDIAN",
         "model_version": "macro_trend_v2",
-        "reason": "Latest observation exceeds the configured freshness limit",
         "surprise_history": [
-          {
-            "forecast_error": -2.5242970059262952,
-            "model_name": "RECENT_MEDIAN",
-            "observation_time": "2026-09-11T00:00:00+00:00",
-            "z_score": -1.0213860551114367
-          },
-          {
-            "forecast_error": 0.8777687821240499,
-            "model_name": "RECENT_MEDIAN",
-            "observation_time": "2026-09-14T00:00:00+00:00",
-            "z_score": 0.2934966547107779
-          },
-          {
-            "forecast_error": 4.141962597978407,
-            "model_name": "RECENT_MEDIAN",
-            "observation_time": "2026-09-15T00:00:00+00:00",
-            "z_score": 1.5550924842362168
-          },
-          {
-            "forecast_error": -3.479947236548642,
-            "model_name": "RECENT_MEDIAN",
-            "observation_time": "2026-09-16T00:00:00+00:00",
-            "z_score": -1.3907404542228805
-          },
           {
             "forecast_error": -0.6478714677770647,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-09-17T00:00:00+00:00",
-            "z_score": -0.29615625354571934
+            "z_score": -0.3311581330632749
           },
           {
             "forecast_error": -1.9316802226809986,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-09-18T00:00:00+00:00",
-            "z_score": -0.7923424062270759
+            "z_score": -0.796716798419273
           },
           {
             "forecast_error": -4.67216383399626,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-09-21T00:00:00+00:00",
-            "z_score": -1.8515266611954735
+            "z_score": -1.7905220576842245
           },
           {
             "forecast_error": -0.7363025901468974,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-09-22T00:00:00+00:00",
-            "z_score": -0.3303344737972745
+            "z_score": -0.3632266753201884
           },
           {
             "forecast_error": -3.350404539480113,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-09-23T00:00:00+00:00",
-            "z_score": -1.3406728002823138
+            "z_score": -1.3112010601242188
           },
           {
             "forecast_error": 2.484891576208948,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-09-24T00:00:00+00:00",
-            "z_score": 0.9146421898517719
+            "z_score": 0.8049028075274121
           },
           {
             "forecast_error": -11.939972499947899,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-09-25T00:00:00+00:00",
-            "z_score": -4.660501133917941
+            "z_score": -4.426110333319869
           },
           {
             "forecast_error": 15.184097274156407,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-09-28T00:00:00+00:00",
-            "z_score": 5.822826522840855
+            "z_score": 5.4101255350045365
           },
           {
             "forecast_error": -3.449258642387633,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-09-29T00:00:00+00:00",
-            "z_score": -1.3788794543583873
+            "z_score": -1.3470493779042554
           },
           {
             "forecast_error": 0.8980153929556458,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-09-30T00:00:00+00:00",
-            "z_score": 0.301321876259542
+            "z_score": 0.22944018107421427
           },
           {
             "forecast_error": 2.473130368635567,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-10-01T00:00:00+00:00",
-            "z_score": 0.9100965374604549
+            "z_score": 0.8006377391674071
           },
           {
             "forecast_error": -2.059444191337988,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-10-02T00:00:00+00:00",
-            "z_score": -0.8417225898541588
+            "z_score": -0.8430489506976586
           },
           {
             "forecast_error": -1.9714261456917364,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-10-05T00:00:00+00:00",
-            "z_score": -0.8077040218478877
+            "z_score": -0.8111302060234343
           },
           {
             "forecast_error": -0.04276746726044389,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-10-06T00:00:00+00:00",
-            "z_score": -0.06228635287589053
+            "z_score": -0.1117240391563726
           },
           {
             "forecast_error": -1.4328980168951333,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-10-07T00:00:00+00:00",
-            "z_score": -0.5995653880228897
+            "z_score": -0.6158390959250534
           },
           {
             "forecast_error": 3.195832672042378,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-10-08T00:00:00+00:00",
-            "z_score": 1.189417638903024
+            "z_score": 1.062717522109032
           },
           {
             "forecast_error": 0.32005206215529014,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-10-09T00:00:00+00:00",
-            "z_score": 0.07794171904742679
+            "z_score": 0.019848342816143286
           },
           {
-            "forecast_error": -0.15713042613031264,
+            "forecast_error": -4.018853298257046,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-10-12T00:00:00+00:00",
-            "z_score": -0.10648710813179511
+            "z_score": -1.55360641123771
           },
           {
-            "forecast_error": 1.9773260763917826,
+            "forecast_error": 0.26308239937225314,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-10-13T00:00:00+00:00",
-            "z_score": 0.718470469082572
+            "z_score": -0.0008110584145615546
           },
           {
-            "forecast_error": 0.8785349930719792,
+            "forecast_error": 0.8338545783654983,
             "model_name": "RECENT_MEDIAN",
             "observation_time": "2026-10-14T00:00:00+00:00",
-            "z_score": 0.29379279170232214
+            "z_score": 0.20617299030717676
+          },
+          {
+            "forecast_error": 8.131722207254215,
+            "model_name": "RECENT_MEDIAN",
+            "observation_time": "2026-10-15T00:00:00+00:00",
+            "z_score": 2.8526618074865016
+          },
+          {
+            "forecast_error": 3.036505841521635,
+            "model_name": "RECENT_MEDIAN",
+            "observation_time": "2026-10-16T00:00:00+00:00",
+            "z_score": 1.0049394564202767
+          },
+          {
+            "forecast_error": 1.3712012365118014,
+            "model_name": "RECENT_MEDIAN",
+            "observation_time": "2026-10-19T00:00:00+00:00",
+            "z_score": 0.4010356534916308
+          },
+          {
+            "forecast_error": -2.253035136242244,
+            "model_name": "RECENT_MEDIAN",
+            "observation_time": "2026-10-20T00:00:00+00:00",
+            "z_score": -0.9132525083462244
           }
         ],
         "surprise_history_standardization": "current calibration-window center and scale",
         "surprise_severity": "NORMAL",
         "transformation": "LOG_PERCENT_CHANGE",
-        "z_score": 0.29379279170232214
+        "z_score": -0.9132525083462244
       },
       "category": "energy",
       "confirmation_score": 0.0,
-      "conflicting_evidence": [],
-      "headline": "Cushing WTI spot price FOB: Data Stale",
+      "conflicting_evidence": [
+        "Forecast was reconstructed retrospectively; the next forecast is now stored prospectively",
+        "No eligible independent evidence family is available for confirmation"
+      ],
+      "headline": "Cushing WTI spot price FOB is 0.9\u03c3 below its model forecast",
       "importance_score": 0.8,
       "macro_category": "external",
       "macro_category_title": "Currencies, trade and real assets",
-      "magnitude_score": 0.0,
+      "magnitude_score": 0.1827,
       "persistence_score": 0.0,
       "rank_score": 0.0,
       "series_id": "RWTC",
       "series_name": "Cushing WTI spot price FOB",
       "source_name": "EIA",
       "source_url": "https://www.eia.gov/dnav/pet/hist/RWTCd.htm",
-      "status": "DATA_STALE",
-      "summary": "Latest observation exceeds the configured freshness limit"
+      "status": "NORMAL",
+      "summary": "Latest reported value 107.890 dollars per barrel; reported-scale forecast 110.348 dollars per barrel. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 2965,
+      "alert_id": 3090,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -20574,7 +20535,7 @@
       "summary": "Latest reported value 84,950.000 millions of dollars; reported-scale forecast 77,118.649 millions of dollars. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 2966,
+      "alert_id": 3091,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -21339,7 +21300,7 @@
       "summary": "Latest reported value 52,298.000 millions of dollars; reported-scale forecast 50,608.867 millions of dollars. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 2967,
+      "alert_id": 3092,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22104,7 +22065,7 @@
       "summary": "Latest reported value 663,491.000 millions of dollars, seasonally adjusted; reported-scale forecast 665,106.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2968,
+      "alert_id": 3093,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -22870,7 +22831,7 @@
       "summary": "Latest reported value 338,458.000 millions of dollars, seasonally adjusted; reported-scale forecast 339,547.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2969,
+      "alert_id": 3094,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -23635,7 +23596,7 @@
       "summary": "Latest reported value 325,033.000 millions of dollars, seasonally adjusted; reported-scale forecast 325,161.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2970,
+      "alert_id": 3095,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -24329,7 +24290,7 @@
       "summary": "Latest reported value 972,382.000 millions of dollars, seasonally adjusted; reported-scale forecast 970,812.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2971,
+      "alert_id": 3096,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -25024,7 +24985,7 @@
       "summary": "Latest reported value 608,338.000 millions of dollars, seasonally adjusted; reported-scale forecast 607,929.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2972,
+      "alert_id": 3097,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -25718,7 +25679,7 @@
       "summary": "Latest reported value 364,044.000 millions of dollars, seasonally adjusted; reported-scale forecast 363,309.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2973,
+      "alert_id": 3098,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -26484,7 +26445,7 @@
       "summary": "Latest reported value 333,589.000 millions of dollars, seasonally adjusted; reported-scale forecast 335,805.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2974,
+      "alert_id": 3099,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -27249,7 +27210,7 @@
       "summary": "Latest reported value 325,033.000 millions of dollars, seasonally adjusted; reported-scale forecast 325,161.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2975,
+      "alert_id": 3100,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -27944,7 +27905,7 @@
       "summary": "Latest reported value 100,530.000 millions of dollars, seasonally adjusted; reported-scale forecast 99,408.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2976,
+      "alert_id": 3101,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -28639,7 +28600,7 @@
       "summary": "Latest reported value 87,640.000 millions of dollars, seasonally adjusted; reported-scale forecast 86,587.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2977,
+      "alert_id": 3102,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -29405,7 +29366,7 @@
       "summary": "Latest reported value 32,604.000 millions of dollars, seasonally adjusted; reported-scale forecast 32,378.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2979,
+      "alert_id": 3104,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -30171,7 +30132,7 @@
       "summary": "Latest reported value 45,481.000 millions of dollars, seasonally adjusted; reported-scale forecast 45,164.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2980,
+      "alert_id": 3105,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -30937,7 +30898,7 @@
       "summary": "Latest reported value 30,868.000 millions of dollars, seasonally adjusted; reported-scale forecast 31,004.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2981,
+      "alert_id": 3106,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -31703,7 +31664,7 @@
       "summary": "Latest reported value 19,020.000 millions of dollars, seasonally adjusted; reported-scale forecast 18,938.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2982,
+      "alert_id": 3107,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -32469,7 +32430,7 @@
       "summary": "Latest reported value 114,094.000 millions of dollars, seasonally adjusted; reported-scale forecast 115,476.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2983,
+      "alert_id": 3108,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -33235,7 +33196,7 @@
       "summary": "Latest reported value 73,294.000 millions of dollars, seasonally adjusted; reported-scale forecast 74,285.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2984,
+      "alert_id": 3109,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -34001,7 +33962,7 @@
       "summary": "Latest reported value 18,825.000 millions of dollars, seasonally adjusted; reported-scale forecast 19,172.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2985,
+      "alert_id": 3110,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -34767,7 +34728,7 @@
       "summary": "Latest reported value 6,093.000 millions of dollars, seasonally adjusted; reported-scale forecast 5,789.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2986,
+      "alert_id": 3111,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -35532,7 +35493,7 @@
       "summary": "Latest reported value 5,017.000 millions of dollars, seasonally adjusted; reported-scale forecast 4,715.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2987,
+      "alert_id": 3112,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -36297,7 +36258,7 @@
       "summary": "Latest reported value 5,174.000 millions of dollars, seasonally adjusted; reported-scale forecast 5,670.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2988,
+      "alert_id": 3113,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -37062,7 +37023,7 @@
       "summary": "Latest reported value 1,831.000 millions of dollars, seasonally adjusted; reported-scale forecast 1,832.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2989,
+      "alert_id": 3114,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -37827,7 +37788,7 @@
       "summary": "Latest reported value 4,997.000 millions of dollars, seasonally adjusted; reported-scale forecast 4,969.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2990,
+      "alert_id": 3115,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -38592,7 +38553,7 @@
       "summary": "Latest reported value 5,769.000 millions of dollars, seasonally adjusted; reported-scale forecast 5,702.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2991,
+      "alert_id": 3116,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -39357,7 +39318,7 @@
       "summary": "Latest reported value 6,081.000 millions of dollars, seasonally adjusted; reported-scale forecast 6,302.000 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2992,
+      "alert_id": 3117,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -40051,7 +40012,7 @@
       "summary": "Latest reported value 2,487.000 millions of dollars, seasonally adjusted; reported-scale forecast 2,518.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2993,
+      "alert_id": 3118,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -40745,7 +40706,7 @@
       "summary": "Latest reported value 5,696.000 millions of dollars, seasonally adjusted; reported-scale forecast 5,583.500 millions of dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2994,
+      "alert_id": 3119,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -41510,7 +41471,7 @@
       "summary": "Latest reported value 114.624 index 2017=100, seasonally adjusted; reported-scale forecast 110.646 index 2017=100, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2995,
+      "alert_id": 3120,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -42275,7 +42236,7 @@
       "summary": "Latest reported value 198.633 index 2017=100, seasonally adjusted; reported-scale forecast 195.336 index 2017=100, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2996,
+      "alert_id": 3121,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -43059,7 +43020,7 @@
       "summary": "Latest reported value 453.800 thousands of persons, seasonally adjusted; reported-scale forecast 455.700 thousands of persons, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2997,
+      "alert_id": 3122,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -43582,7 +43543,7 @@
       "summary": "Latest reported value 1,758.194 billions of chained 2017 dollars, seasonally adjusted annual rate; reported-scale forecast 1,741.981 billions of chained 2017 dollars, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2998,
+      "alert_id": 3123,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -44885,7 +44846,7 @@
       "summary": "Latest reported value 3.050 index; reported-scale forecast 2.705 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 2999,
+      "alert_id": 3124,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -45632,7 +45593,7 @@
       "summary": "Latest reported value -0.040 index; reported-scale forecast 0.055 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3000,
+      "alert_id": 3125,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -46167,7 +46128,7 @@
       "summary": "Latest reported value 24,408.011 billions of chained 2017 dollars, seasonally adjusted annual rate; reported-scale forecast 24,463.669 billions of chained 2017 dollars, seasonally adjusted annual rate. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 3001,
+      "alert_id": 3126,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -46947,7 +46908,7 @@
       "summary": "Latest reported value 103.951 index 2017=100, seasonally adjusted; reported-scale forecast 103.304 index 2017=100, seasonally adjusted. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 3002,
+      "alert_id": 3127,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -47727,7 +47688,7 @@
       "summary": "Latest reported value 76.850 percent, seasonally adjusted; reported-scale forecast 76.373 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3003,
+      "alert_id": 3128,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -48522,7 +48483,7 @@
       "summary": "Latest reported value 221,536.000 millions of 1982-84 CPI-adjusted dollars, seasonally adjusted; reported-scale forecast 221,580.719 millions of 1982-84 CPI-adjusted dollars, seasonally adjusted. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 3004,
+      "alert_id": 3129,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -49825,7 +49786,7 @@
       "summary": "Latest reported value 115,280.000 number, not seasonally adjusted; reported-scale forecast 103,217.367 number, not seasonally adjusted. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 3005,
+      "alert_id": 3130,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -51128,7 +51089,7 @@
       "summary": "Latest reported value 32,050.000 number, not seasonally adjusted; reported-scale forecast 27,797.722 number, not seasonally adjusted. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 3006,
+      "alert_id": 3131,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -52431,7 +52392,7 @@
       "summary": "Latest reported value 7,730.000 number, not seasonally adjusted; reported-scale forecast 6,797.141 number, not seasonally adjusted. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 3007,
+      "alert_id": 3132,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -53177,7 +53138,7 @@
       "summary": "Latest reported value 1.330 ratio, seasonally adjusted; reported-scale forecast 1.340 ratio, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3008,
+      "alert_id": 3133,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -53991,7 +53952,7 @@
       "summary": "Latest reported value 336.298 index 1982-1984=100, seasonally adjusted; reported-scale forecast 335.295 index 1982-1984=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 3009,
+      "alert_id": 3134,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -54805,7 +54766,7 @@
       "summary": "Latest reported value 338.896 index 1982-1984=100, seasonally adjusted; reported-scale forecast 338.811 index 1982-1984=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 3010,
+      "alert_id": 3135,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -55568,7 +55529,7 @@
       "summary": "Latest reported value 131.579 index 2017=100, seasonally adjusted; reported-scale forecast 131.938 index 2017=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 3012,
+      "alert_id": 3137,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -56386,7 +56347,7 @@
       "summary": "Latest reported value 159.780 index November 2009=100, seasonally adjusted; reported-scale forecast 158.379 index November 2009=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 3013,
+      "alert_id": 3138,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -57222,7 +57183,7 @@
       "summary": "Latest reported value 2.808 percent change at annual rate, seasonally adjusted; reported-scale forecast 2.073 percent change at annual rate, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3014,
+      "alert_id": 3139,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -58058,7 +58019,7 @@
       "summary": "Latest reported value 340.185 index December 1982=100, seasonally adjusted; reported-scale forecast 339.870 index December 1982=100, seasonally adjusted. The model uses year over year percent. Status: normal."
     },
     {
-      "alert_id": 3015,
+      "alert_id": 3140,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -59378,7 +59339,7 @@
       "summary": "Latest reported value 2.380 percent; reported-scale forecast 2.370 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3016,
+      "alert_id": 3141,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -60698,7 +60659,7 @@
       "summary": "Latest reported value 2.320 percent; reported-scale forecast 2.330 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3017,
+      "alert_id": 3142,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -61984,7 +61945,7 @@
       "summary": "Latest reported value 199,000.000 number, seasonally adjusted; reported-scale forecast 198,000.000 number, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3018,
+      "alert_id": 3143,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -63270,7 +63231,7 @@
       "summary": "Latest reported value 1,710,000.000 number, seasonally adjusted; reported-scale forecast 1,709,000.000 number, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3019,
+      "alert_id": 3144,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -64521,7 +64482,7 @@
       "summary": "Latest reported value 1.100 percent, seasonally adjusted; reported-scale forecast 1.100 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3020,
+      "alert_id": 3145,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -65282,7 +65243,7 @@
       "summary": "Latest reported value 0.000 percentage points, seasonally adjusted; reported-scale forecast -0.110 percentage points, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3021,
+      "alert_id": 3146,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -66047,7 +66008,7 @@
       "summary": "Latest reported value 159,044.000 thousands of persons, seasonally adjusted; reported-scale forecast 159,172.500 thousands of persons, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3022,
+      "alert_id": 3147,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -66808,7 +66769,7 @@
       "summary": "Latest reported value 4.200 percent, seasonally adjusted; reported-scale forecast 4.100 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3023,
+      "alert_id": 3148,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -67569,7 +67530,7 @@
       "summary": "Latest reported value 7.600 percent, seasonally adjusted; reported-scale forecast 7.700 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3024,
+      "alert_id": 3149,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -68263,7 +68224,7 @@
       "summary": "Latest reported value 34.400 hours, seasonally adjusted; reported-scale forecast 34.400 hours, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3025,
+      "alert_id": 3150,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -69028,7 +68989,7 @@
       "summary": "Latest reported value 2,486.800 thousands of persons, seasonally adjusted; reported-scale forecast 2,487.050 thousands of persons, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3026,
+      "alert_id": 3151,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -69758,7 +69719,7 @@
       "summary": "Latest reported value 7,079.000 thousands, seasonally adjusted; reported-scale forecast 7,270.000 thousands, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3027,
+      "alert_id": 3152,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -70488,7 +70449,7 @@
       "summary": "Latest reported value 3.300 rate, seasonally adjusted; reported-scale forecast 3.200 rate, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3028,
+      "alert_id": 3153,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -71183,7 +71144,7 @@
       "summary": "Latest reported value 1.900 rate, seasonally adjusted; reported-scale forecast 1.900 rate, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3029,
+      "alert_id": 3154,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -72434,7 +72395,7 @@
       "summary": "Latest reported value 0.181 percentage points; reported-scale forecast 0.090 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3030,
+      "alert_id": 3155,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -73685,7 +73646,7 @@
       "summary": "Latest reported value 0.199 percentage points; reported-scale forecast 0.023 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3031,
+      "alert_id": 3156,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -74936,7 +74897,7 @@
       "summary": "Latest reported value 0.001 percentage points; reported-scale forecast -0.328 percentage points. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3032,
+      "alert_id": 3157,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -76239,7 +76200,7 @@
       "summary": "Latest reported value 18.440 index; reported-scale forecast 19.900 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3033,
+      "alert_id": 3158,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -77561,7 +77522,7 @@
       "summary": "Latest reported value 7,690.730 index; reported-scale forecast 7,662.868 index. The model uses log percent change. Status: normal."
     },
     {
-      "alert_id": 3034,
+      "alert_id": 3159,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -78883,7 +78844,7 @@
       "summary": "Latest reported value -0.499 index; reported-scale forecast -0.497 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3035,
+      "alert_id": 3160,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -80186,7 +80147,7 @@
       "summary": "Latest reported value -0.721 index; reported-scale forecast -0.453 index. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3036,
+      "alert_id": 3161,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -81472,7 +81433,7 @@
       "summary": "Latest reported value 3.290 percent; reported-scale forecast 3.310 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3037,
+      "alert_id": 3162,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -82758,7 +82719,7 @@
       "summary": "Latest reported value 13.100 percent; reported-scale forecast 12.980 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3038,
+      "alert_id": 3163,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -84044,7 +84005,7 @@
       "summary": "Latest reported value 1.080 percent; reported-scale forecast 1.060 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3040,
+      "alert_id": 3165,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -85330,7 +85291,7 @@
       "summary": "Latest reported value 19,948.527 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 19,915.519 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3041,
+      "alert_id": 3166,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -86616,7 +86577,7 @@
       "summary": "Latest reported value 19,771.475 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 19,722.654 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3042,
+      "alert_id": 3167,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -87345,7 +87306,7 @@
       "summary": "Latest reported value 2,959.446 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 2,981.658 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3043,
+      "alert_id": 3168,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -88074,7 +88035,7 @@
       "summary": "Latest reported value 5,842.316 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 5,844.477 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3044,
+      "alert_id": 3169,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -88803,7 +88764,7 @@
       "summary": "Latest reported value 1,927.074 billions of U.S. dollars, seasonally adjusted; reported-scale forecast 1,927.019 billions of U.S. dollars, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3045,
+      "alert_id": 3170,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -89390,7 +89351,7 @@
       "summary": "Latest reported value 0.000 net percent; reported-scale forecast 9.250 net percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3046,
+      "alert_id": 3171,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -89977,7 +89938,7 @@
       "summary": "Latest reported value 1.800 net percent; reported-scale forecast 7.450 net percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3047,
+      "alert_id": 3172,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -90448,7 +90409,7 @@
       "summary": "Latest reported value -11.300 net percent; reported-scale forecast -7.450 net percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3048,
+      "alert_id": 3173,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -91001,7 +90962,7 @@
       "summary": "Latest reported value 1.530 percent, seasonally adjusted; reported-scale forecast 1.540 percent, seasonally adjusted. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3049,
+      "alert_id": 3174,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -92252,7 +92213,7 @@
       "summary": "Latest reported value 3.880 percent; reported-scale forecast 3.880 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3050,
+      "alert_id": 3175,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -93503,7 +93464,7 @@
       "summary": "Latest reported value 3.880 percent; reported-scale forecast 3.880 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3051,
+      "alert_id": 3176,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -94753,7 +94714,7 @@
       "summary": "Latest reported value 3.900 percent; reported-scale forecast 3.900 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3052,
+      "alert_id": 3177,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -96004,7 +95965,7 @@
       "summary": "Latest reported value 0.330 percent; reported-scale forecast 0.380 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3053,
+      "alert_id": 3178,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -97255,7 +97216,7 @@
       "summary": "Latest reported value 0.860 percent; reported-scale forecast 0.880 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3054,
+      "alert_id": 3179,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -98506,7 +98467,7 @@
       "summary": "Latest reported value 3.870 percent; reported-scale forecast 3.880 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3055,
+      "alert_id": 3180,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -99757,7 +99718,7 @@
       "summary": "Latest reported value 3.850 percent; reported-scale forecast 3.850 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3056,
+      "alert_id": 3181,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -101008,7 +100969,7 @@
       "summary": "Latest reported value 1,178.000 billions of U.S. dollars; reported-scale forecast 1,192.000 billions of U.S. dollars. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3057,
+      "alert_id": 3182,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -102259,7 +102220,7 @@
       "summary": "Latest reported value 3.790 percent; reported-scale forecast 3.800 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3058,
+      "alert_id": 3183,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -103510,7 +103471,7 @@
       "summary": "Latest reported value 3.850 percent; reported-scale forecast 3.850 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3059,
+      "alert_id": 3184,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -104761,7 +104722,7 @@
       "summary": "Latest reported value 3.860 percent; reported-scale forecast 3.860 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3060,
+      "alert_id": 3185,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -106012,7 +105973,7 @@
       "summary": "Latest reported value 3.890 percent; reported-scale forecast 3.900 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3061,
+      "alert_id": 3186,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -107262,7 +107223,7 @@
       "summary": "Latest reported value 3.750 percent; reported-scale forecast 3.750 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3062,
+      "alert_id": 3187,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -108512,7 +108473,7 @@
       "summary": "Latest reported value 0.227 billions of U.S. dollars; reported-scale forecast 0.317 billions of U.S. dollars. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3063,
+      "alert_id": 3188,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -109594,21 +109555,21 @@
         ],
         "confirmation_contextual": [
           {
-            "adjusted_z": -1.7986,
-            "alignment_days": 5.0,
+            "adjusted_z": 1.0117,
+            "alignment_days": 6.0,
             "alignment_limit_days": 21,
             "base_comparability_weight": 1.0,
             "effective_comparability_weight": 0.5,
             "evidence_family": "raw_term_repo_rate",
             "evidence_role": "raw rate context",
             "freshness_weight": 0.5,
-            "observation_time": "2026-10-19T00:00:00+00:00",
+            "observation_time": "2026-10-20T00:00:00+00:00",
             "origin_agency": "OFR",
-            "raw_adjusted_z": -3.5973,
+            "raw_adjusted_z": 2.0235,
             "relationship": "ambiguous",
             "series_id": "REPO-DVP_AR_G30-P",
             "series_name": "DVP repo average rate, tenor over 30 days, preliminary",
-            "z_score": -3.5973
+            "z_score": 2.0235
           },
           {
             "adjusted_z": -0.3372,
@@ -109988,7 +109949,7 @@
       "summary": "Latest reported value 3,022,140.000 millions of U.S. dollars; reported-scale forecast 3,038,020.000 millions of U.S. dollars. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3064,
+      "alert_id": 3189,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -111070,21 +111031,21 @@
         ],
         "confirmation_contextual": [
           {
-            "adjusted_z": -1.7986,
-            "alignment_days": 5.0,
+            "adjusted_z": 1.0117,
+            "alignment_days": 6.0,
             "alignment_limit_days": 21,
             "base_comparability_weight": 1.0,
             "effective_comparability_weight": 0.5,
             "evidence_family": "raw_term_repo_rate",
             "evidence_role": "raw rate context",
             "freshness_weight": 0.5,
-            "observation_time": "2026-10-19T00:00:00+00:00",
+            "observation_time": "2026-10-20T00:00:00+00:00",
             "origin_agency": "OFR",
-            "raw_adjusted_z": -3.5973,
+            "raw_adjusted_z": 2.0235,
             "relationship": "ambiguous",
             "series_id": "REPO-DVP_AR_G30-P",
             "series_name": "DVP repo average rate, tenor over 30 days, preliminary",
-            "z_score": -3.5973
+            "z_score": 2.0235
           },
           {
             "adjusted_z": -0.3372,
@@ -111464,7 +111425,7 @@
       "summary": "Latest reported value 885,823.000 millions of U.S. dollars; reported-scale forecast 885,428.500 millions of U.S. dollars. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3065,
+      "alert_id": 3190,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -112246,7 +112207,7 @@
       "summary": "Latest reported value 1,400.000 thousands of units, seasonally adjusted annual rate; reported-scale forecast 1,394.500 thousands of units, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3066,
+      "alert_id": 3191,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -113028,7 +112989,7 @@
       "summary": "Latest reported value 1,221.000 thousands of units, seasonally adjusted annual rate; reported-scale forecast 1,276.500 thousands of units, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3067,
+      "alert_id": 3192,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -113794,7 +113755,7 @@
       "summary": "Latest reported value 684.000 thousands of units, seasonally adjusted annual rate; reported-scale forecast 653.000 thousands of units, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3068,
+      "alert_id": 3193,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -114560,7 +114521,7 @@
       "summary": "Latest reported value 8.500 months supply; reported-scale forecast 8.850 months supply. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3069,
+      "alert_id": 3194,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -115829,7 +115790,7 @@
       "summary": "Latest reported value 7.400 percent; reported-scale forecast 7.410 percent. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3070,
+      "alert_id": 3195,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -115935,7 +115896,7 @@
       "summary": "Insufficient transformed observations for rolling calibration"
     },
     {
-      "alert_id": 3071,
+      "alert_id": 3196,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -116628,7 +116589,7 @@
       "summary": "Latest observation exceeds the configured freshness limit"
     },
     {
-      "alert_id": 3072,
+      "alert_id": 3197,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -117163,7 +117124,7 @@
       "summary": "Latest reported value 410,700.000 U.S. dollars; reported-scale forecast 411,400.000 U.S. dollars. The model uses absolute change. Status: normal."
     },
     {
-      "alert_id": 3074,
+      "alert_id": 3199,
       "alert_pts": 0.0,
       "alert_type": "TREND_ASSESSMENT",
       "calculation": {
@@ -117909,7 +117870,7 @@
       "summary": "Latest reported value 773,010.000 millions of U.S. dollars, seasonally adjusted annual rate; reported-scale forecast 768,707.500 millions of U.S. dollars, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     }
   ],
-  "generated_at": "2026-10-20T23:00:29.782103+00:00",
+  "generated_at": "2026-10-21T21:35:05.012479+00:00",
   "macro_heatmap": {
     "categories": [
       {
@@ -118024,16 +117985,16 @@
         "category": "external",
         "color": "#d8d5cc",
         "conflicted": 0,
-        "favorable_median": null,
+        "favorable_median": -0.9132525083462244,
         "overheated": 0,
         "stage": "Currency \u2192 trade \u2192 real assets \u2192 transportation",
         "state": "NEUTRAL",
         "title": "Currencies, trade and real assets",
         "total": 3,
-        "usable": 0
+        "usable": 1
       }
     ],
-    "generated_at": "2026-10-20T23:00:29.963115+00:00",
+    "generated_at": "2026-10-21T21:35:05.183837+00:00",
     "method_version": "macro_heatmap_v1",
     "notes": [
       "Colors use directionally normalized model surprises, not raw changes.",
@@ -125315,17 +125276,8 @@
             "color": "#d8d5cc",
             "favorable_z": 0.0,
             "heat_score": 0.0,
-            "observation_time": "2026-10-01T00:00:00+00:00",
-            "release": "t-11",
-            "state": "NEUTRAL",
-            "z_score": 2.0234722784297805
-          },
-          {
-            "color": "#d8d5cc",
-            "favorable_z": 0.0,
-            "heat_score": 0.0,
             "observation_time": "2026-10-02T00:00:00+00:00",
-            "release": "t-10",
+            "release": "t-11",
             "state": "NEUTRAL",
             "z_score": 1.3489815189531904
           },
@@ -125334,7 +125286,7 @@
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-10-05T00:00:00+00:00",
-            "release": "t-9",
+            "release": "t-10",
             "state": "NEUTRAL",
             "z_score": -2.2483025315886507
           },
@@ -125343,7 +125295,7 @@
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-10-06T00:00:00+00:00",
-            "release": "t-8",
+            "release": "t-9",
             "state": "NEUTRAL",
             "z_score": 2.0234722784297907
           },
@@ -125352,7 +125304,7 @@
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-10-07T00:00:00+00:00",
-            "release": "t-7",
+            "release": "t-8",
             "state": "NEUTRAL",
             "z_score": 0.6744907594765902
           },
@@ -125361,7 +125313,7 @@
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-10-08T00:00:00+00:00",
-            "release": "t-6",
+            "release": "t-7",
             "state": "NEUTRAL",
             "z_score": -0.8993210126354603
           },
@@ -125370,7 +125322,7 @@
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-10-09T00:00:00+00:00",
-            "release": "t-5",
+            "release": "t-6",
             "state": "NEUTRAL",
             "z_score": 0.6744907594766002
           },
@@ -125379,7 +125331,7 @@
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-10-13T00:00:00+00:00",
-            "release": "t-4",
+            "release": "t-5",
             "state": "NEUTRAL",
             "z_score": 1.1241512657943202
           },
@@ -125388,7 +125340,7 @@
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-10-14T00:00:00+00:00",
-            "release": "t-3",
+            "release": "t-4",
             "state": "NEUTRAL",
             "z_score": -0.6744907594766002
           },
@@ -125397,7 +125349,7 @@
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-10-15T00:00:00+00:00",
-            "release": "t-2",
+            "release": "t-3",
             "state": "NEUTRAL",
             "z_score": 0.6744907594766002
           },
@@ -125406,7 +125358,7 @@
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-10-16T00:00:00+00:00",
-            "release": "t-1",
+            "release": "t-2",
             "state": "NEUTRAL",
             "z_score": 3.1476235442241007
           },
@@ -125415,14 +125367,23 @@
             "favorable_z": 0.0,
             "heat_score": 0.0,
             "observation_time": "2026-10-19T00:00:00+00:00",
-            "release": "t",
+            "release": "t-1",
             "state": "NEUTRAL",
             "z_score": -3.597284050541841
+          },
+          {
+            "color": "#d8d5cc",
+            "favorable_z": 0.0,
+            "heat_score": 0.0,
+            "observation_time": "2026-10-20T00:00:00+00:00",
+            "release": "t",
+            "state": "NEUTRAL",
+            "z_score": 2.0234722784298005
           }
         ],
         "name": "DVP repo average rate, tenor over 30 days, preliminary",
-        "observation_time": "2026-10-19T00:00:00+00:00",
-        "persistence": 0.0,
+        "observation_time": "2026-10-20T00:00:00+00:00",
+        "persistence": 1.0,
         "polarity": 0,
         "polarity_label": "direction is contextual",
         "profile_note": "Contextual or ambiguous without a paired indicator",
@@ -125431,8 +125392,8 @@
         "state": "NEUTRAL",
         "status": "FORECAST_DEVIATION",
         "units": "percent",
-        "value": 4.02,
-        "z_score": -3.597284050541841
+        "value": 4.11,
+        "z_score": 2.0234722784298005
       },
       {
         "category": "funding_liquidity",
@@ -134040,10 +134001,10 @@
       {
         "category": "external",
         "category_title": "Currencies, trade and real assets",
-        "color": "#d8d5cc",
-        "confidence": 0.8,
-        "confirmation_status": "UNCONFIRMED",
-        "favorable_z": 0.0,
+        "color": "#62686c",
+        "confidence": 0.25,
+        "confirmation_status": "NOT_AVAILABLE",
+        "favorable_z": null,
         "heat_score": 0.0,
         "history": [
           {
@@ -134163,8 +134124,8 @@
         "profile_note": "Contextual or ambiguous without a paired indicator",
         "series_id": "DEXUSEU",
         "stage": "Currency \u2192 trade \u2192 real assets \u2192 transportation",
-        "state": "NEUTRAL",
-        "status": "NORMAL",
+        "state": "UNAVAILABLE",
+        "status": "DATA_STALE",
         "units": "U.S. dollars per euro",
         "value": 1.1231,
         "z_score": 0.8881909351812695
@@ -134172,10 +134133,10 @@
       {
         "category": "external",
         "category_title": "Currencies, trade and real assets",
-        "color": "#d8d5cc",
-        "confidence": 0.8,
-        "confirmation_status": "UNCONFIRMED",
-        "favorable_z": 0.0,
+        "color": "#62686c",
+        "confidence": 0.25,
+        "confirmation_status": "NOT_AVAILABLE",
+        "favorable_z": null,
         "heat_score": 0.0,
         "history": [
           {
@@ -134295,8 +134256,8 @@
         "profile_note": "Contextual or ambiguous without a paired indicator",
         "series_id": "DEXJPUS",
         "stage": "Currency \u2192 trade \u2192 real assets \u2192 transportation",
-        "state": "NEUTRAL",
-        "status": "NORMAL",
+        "state": "UNAVAILABLE",
+        "status": "DATA_STALE",
         "units": "Japanese yen per U.S. dollar",
         "value": 158.0,
         "z_score": -0.6344123156120131
@@ -134304,134 +134265,134 @@
       {
         "category": "external",
         "category_title": "Currencies, trade and real assets",
-        "color": "#62686c",
-        "confidence": 0.25,
+        "color": "#d8d5cc",
+        "confidence": 0.75,
         "confirmation_status": "NOT_AVAILABLE",
-        "favorable_z": null,
+        "favorable_z": -0.9132525083462244,
         "heat_score": 0.0,
         "history": [
           {
-            "color": "#d85b43",
-            "favorable_z": -1.3788794543583873,
-            "heat_score": 0.0,
-            "observation_time": "2026-09-29T00:00:00+00:00",
-            "release": "t-11",
-            "state": "DOWNSIDE",
-            "z_score": -1.3788794543583873
-          },
-          {
             "color": "#d8d5cc",
-            "favorable_z": 0.301321876259542,
-            "heat_score": 0.0753304690648855,
-            "observation_time": "2026-09-30T00:00:00+00:00",
-            "release": "t-10",
-            "state": "NEUTRAL",
-            "z_score": 0.301321876259542
-          },
-          {
-            "color": "#d8d5cc",
-            "favorable_z": 0.9100965374604549,
-            "heat_score": 0.22752413436511373,
-            "observation_time": "2026-10-01T00:00:00+00:00",
-            "release": "t-9",
-            "state": "NEUTRAL",
-            "z_score": 0.9100965374604549
-          },
-          {
-            "color": "#d8d5cc",
-            "favorable_z": -0.8417225898541588,
-            "heat_score": 0.0,
-            "observation_time": "2026-10-02T00:00:00+00:00",
-            "release": "t-8",
-            "state": "NEUTRAL",
-            "z_score": -0.8417225898541588
-          },
-          {
-            "color": "#d8d5cc",
-            "favorable_z": -0.8077040218478877,
+            "favorable_z": -0.8111302060234343,
             "heat_score": 0.0,
             "observation_time": "2026-10-05T00:00:00+00:00",
-            "release": "t-7",
+            "release": "t-11",
             "state": "NEUTRAL",
-            "z_score": -0.8077040218478877
+            "z_score": -0.8111302060234343
           },
           {
             "color": "#d8d5cc",
-            "favorable_z": -0.06228635287589053,
+            "favorable_z": -0.1117240391563726,
             "heat_score": 0.0,
             "observation_time": "2026-10-06T00:00:00+00:00",
-            "release": "t-6",
+            "release": "t-10",
             "state": "NEUTRAL",
-            "z_score": -0.06228635287589053
+            "z_score": -0.1117240391563726
           },
           {
             "color": "#d8d5cc",
-            "favorable_z": -0.5995653880228897,
+            "favorable_z": -0.6158390959250534,
             "heat_score": 0.0,
             "observation_time": "2026-10-07T00:00:00+00:00",
-            "release": "t-5",
+            "release": "t-9",
             "state": "NEUTRAL",
-            "z_score": -0.5995653880228897
+            "z_score": -0.6158390959250534
           },
           {
             "color": "#3f9b65",
-            "favorable_z": 1.189417638903024,
-            "heat_score": 0.297354409725756,
+            "favorable_z": 1.062717522109032,
+            "heat_score": 0.265679380527258,
             "observation_time": "2026-10-08T00:00:00+00:00",
-            "release": "t-4",
+            "release": "t-8",
             "state": "FAVORABLE",
-            "z_score": 1.189417638903024
+            "z_score": 1.062717522109032
           },
           {
             "color": "#d8d5cc",
-            "favorable_z": 0.07794171904742679,
-            "heat_score": 0.019485429761856698,
+            "favorable_z": 0.019848342816143286,
+            "heat_score": 0.004962085704035822,
             "observation_time": "2026-10-09T00:00:00+00:00",
-            "release": "t-3",
+            "release": "t-7",
             "state": "NEUTRAL",
-            "z_score": 0.07794171904742679
+            "z_score": 0.019848342816143286
           },
           {
-            "color": "#d8d5cc",
-            "favorable_z": -0.10648710813179511,
+            "color": "#d85b43",
+            "favorable_z": -1.55360641123771,
             "heat_score": 0.0,
             "observation_time": "2026-10-12T00:00:00+00:00",
-            "release": "t-2",
-            "state": "NEUTRAL",
-            "z_score": -0.10648710813179511
+            "release": "t-6",
+            "state": "DOWNSIDE",
+            "z_score": -1.55360641123771
           },
           {
             "color": "#d8d5cc",
-            "favorable_z": 0.718470469082572,
-            "heat_score": 0.179617617270643,
+            "favorable_z": -0.0008110584145615546,
+            "heat_score": 0.0,
             "observation_time": "2026-10-13T00:00:00+00:00",
+            "release": "t-5",
+            "state": "NEUTRAL",
+            "z_score": -0.0008110584145615546
+          },
+          {
+            "color": "#d8d5cc",
+            "favorable_z": 0.20617299030717676,
+            "heat_score": 0.05154324757679419,
+            "observation_time": "2026-10-14T00:00:00+00:00",
+            "release": "t-4",
+            "state": "NEUTRAL",
+            "z_score": 0.20617299030717676
+          },
+          {
+            "color": "#2f6fa3",
+            "favorable_z": 2.8526618074865016,
+            "heat_score": 0.7131654518716254,
+            "observation_time": "2026-10-15T00:00:00+00:00",
+            "release": "t-3",
+            "state": "STRONG_FAVORABLE",
+            "z_score": 2.8526618074865016
+          },
+          {
+            "color": "#3f9b65",
+            "favorable_z": 1.0049394564202767,
+            "heat_score": 0.2512348641050692,
+            "observation_time": "2026-10-16T00:00:00+00:00",
+            "release": "t-2",
+            "state": "FAVORABLE",
+            "z_score": 1.0049394564202767
+          },
+          {
+            "color": "#d8d5cc",
+            "favorable_z": 0.4010356534916308,
+            "heat_score": 0.1002589133729077,
+            "observation_time": "2026-10-19T00:00:00+00:00",
             "release": "t-1",
             "state": "NEUTRAL",
-            "z_score": 0.718470469082572
+            "z_score": 0.4010356534916308
           },
           {
             "color": "#d8d5cc",
-            "favorable_z": 0.29379279170232214,
-            "heat_score": 0.07344819792558054,
-            "observation_time": "2026-10-14T00:00:00+00:00",
+            "favorable_z": -0.9132525083462244,
+            "heat_score": 0.0,
+            "observation_time": "2026-10-20T00:00:00+00:00",
             "release": "t",
             "state": "NEUTRAL",
-            "z_score": 0.29379279170232214
+            "z_score": -0.9132525083462244
           }
         ],
         "name": "Cushing WTI spot price FOB",
-        "observation_time": "2026-10-14T00:00:00+00:00",
+        "observation_time": "2026-10-20T00:00:00+00:00",
         "persistence": 0.0,
         "polarity": 1,
         "polarity_label": "higher is generally favorable",
         "profile_note": "",
         "series_id": "RWTC",
         "stage": "Currency \u2192 trade \u2192 real assets \u2192 transportation",
-        "state": "UNAVAILABLE",
-        "status": "DATA_STALE",
+        "state": "NEUTRAL",
+        "status": "NORMAL",
         "units": "dollars per barrel",
-        "value": 101.91,
-        "z_score": 0.29379279170232214
+        "value": 107.89,
+        "z_score": -0.9132525083462244
       }
     ],
     "state_colors": {
@@ -134752,34 +134713,34 @@
       "value": 4.2
     },
     {
-      "as_of": "2026-10-14T00:00:00+00:00",
+      "as_of": "2026-10-20T00:00:00+00:00",
       "category": "energy",
-      "collection_time": "2026-10-15T21:00:55.034647+00:00",
+      "collection_time": "2026-10-21T21:00:13.902816+00:00",
       "macro_category": "external",
       "macro_category_title": "Currencies, trade and real assets",
-      "observation_time": "2026-10-14T00:00:00+00:00",
+      "observation_time": "2026-10-20T00:00:00+00:00",
       "revision": null,
       "series_id": "RWTC",
       "series_name": "Cushing WTI spot price FOB",
       "source_name": "EIA",
       "source_url": "https://www.eia.gov/dnav/pet/hist/RWTCd.htm",
       "units": "dollars per barrel",
-      "value": 101.91
+      "value": 107.89
     },
     {
-      "as_of": "2026-10-19T00:00:00+00:00",
+      "as_of": "2026-10-20T00:00:00+00:00",
       "category": "funding markets and system liquidity",
-      "collection_time": "2026-10-20T21:00:36.852298+00:00",
+      "collection_time": "2026-10-21T21:00:12.668247+00:00",
       "macro_category": "funding_liquidity",
       "macro_category_title": "Funding markets and system liquidity",
-      "observation_time": "2026-10-19T00:00:00+00:00",
+      "observation_time": "2026-10-20T00:00:00+00:00",
       "revision": null,
       "series_id": "REPO-DVP_AR_G30-P",
       "series_name": "DVP repo average rate, tenor over 30 days, preliminary",
       "source_name": "OFR",
       "source_url": "https://data.financialresearch.gov/v1/series/timeseries?mnemonic=REPO-DVP_AR_G30-P",
       "units": "percent",
-      "value": 4.02
+      "value": 4.11
     },
     {
       "as_of": "2026-10-20T00:00:00+00:00",
@@ -136407,7 +136368,7 @@
         "product_code": "CPIC",
         "product_name": "US Core CPI",
         "source_url": "https://forecastex.com/markets/",
-        "status": "AVAILABLE",
+        "status": "UNAVAILABLE",
         "venue": "FORECASTX"
       },
       {
@@ -136431,7 +136392,7 @@
         "product_code": "PREMP",
         "product_name": "US Payroll Employment",
         "source_url": "https://forecastex.com/markets/",
-        "status": "AVAILABLE",
+        "status": "UNAVAILABLE",
         "venue": "FORECASTX"
       },
       {
@@ -136455,7 +136416,7 @@
         "product_code": "USEUR",
         "product_name": "Euro to US dollar exchange rate",
         "source_url": "https://forecastex.com/markets/",
-        "status": "AVAILABLE",
+        "status": "UNAVAILABLE",
         "venue": "FORECASTX"
       },
       {
@@ -136487,7 +136448,7 @@
         "product_code": "JPUSD",
         "product_name": "US dollar to Japanese yen exchange rate",
         "source_url": "https://forecastex.com/markets/",
-        "status": "AVAILABLE",
+        "status": "UNAVAILABLE",
         "venue": "FORECASTX"
       },
       {
