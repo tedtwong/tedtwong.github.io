@@ -110,6 +110,18 @@ async function load() {
     const warning = document.querySelector("#data-warning"); warning.classList.remove("hidden");
     warning.textContent = pub.status === "PRELIMINARY_SESSION_ACTIVE" ? "This snapshot was generated during the trading session and remains preliminary. The scheduled after-close publication will replace it." : "No completed-session activity was available for this publication date.";
   }
+  const tradingStatus = daily.trading_status_and_alerts || {};
+  const statusSummary = document.querySelector("#trading-status-summary");
+  statusSummary.innerHTML = `<span class="alert-label">${tradingStatus.session_status?.replaceAll("_", " ") || "STATUS UNAVAILABLE"}</span><p>${tradingStatus.session_message || "Trading status is unavailable in this snapshot."}</p>`;
+  const coverage = document.querySelector("#calendar-coverage");
+  const coverageWindow = tradingStatus.calendar_as_of_date && tradingStatus.calendar_window_end_date
+    ? `${tradingStatus.calendar_as_of_date} through ${tradingStatus.calendar_window_end_date}` : "unavailable";
+  coverage.textContent = tradingStatus.calendar_coverage_complete
+    ? `Economic calendar window: ${coverageWindow}. Reviewed ${tradingStatus.calendar_reviewed_on || "—"}; valid through ${tradingStatus.calendar_valid_through || "—"}.`
+    : `Economic calendar coverage is incomplete for the seven-day window (${coverageWindow}).`;
+  table("#calendar-alerts", [
+    ["Date (ET)", "date"], ["Flag", "flag"], ["Event", "event"],
+  ], tradingStatus.calendar_flags || []);
   metrics("#daily-metrics", [
     ["Candidates examined", value(funnel.candidates_examined)], ["Terminal positive", value(funnel.terminal_positive_candidates)],
     ["Quadrature survivors", value(funnel.quadrature_survivors)], ["Path confirmed", value(funnel.path_confirmed_candidates)],

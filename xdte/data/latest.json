@@ -953,7 +953,24 @@
         "strategy": "IRON_CONDOR",
         "unrealized_net_pnl": -45.2
       }
-    ]
+    ],
+    "trading_status_and_alerts": {
+      "calendar_as_of_date": "2026-10-21",
+      "calendar_coverage_complete": true,
+      "calendar_flags": [
+        {
+          "date": "2026-10-27",
+          "event": "FOMC meeting day one",
+          "flag": "HIGH_IMPACT_EVENT"
+        }
+      ],
+      "calendar_reviewed_on": "2026-10-20",
+      "calendar_status": "CALENDAR_FLAGS_PRESENT",
+      "calendar_valid_through": "2026-10-27",
+      "calendar_window_end_date": "2026-10-27",
+      "session_message": "7 paper order submission(s) are recorded for this trading date.",
+      "session_status": "PAPER_ORDER_ACTIVITY"
+    }
   },
   "ledger": {
     "calibration_periods": [
@@ -1178,9 +1195,9 @@
   "publication": {
     "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-21T17:30:04.754447-04:00",
+    "published_at_et": "2026-10-21T17:58:28.955826-04:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-21"
   },
-  "schema_version": "xdte-public-v1"
+  "schema_version": "xdte-public-v2"
 }
