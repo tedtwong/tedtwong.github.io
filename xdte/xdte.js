@@ -122,11 +122,17 @@ async function load() {
   table("#calendar-alerts", [
     ["Date (ET)", "date"], ["Flag", "flag"], ["Event", "event"],
   ], tradingStatus.calendar_flags || []);
-  table("#operational-alerts", [
-    ["Severity", "severity"], ["State", "state"], ["Category", "category"],
-    ["Alert", "title"], ["First observed (ET)", "first_seen_at_et", null, shortTime],
-    ["Last observed (ET)", "last_seen_at_et", null, shortTime],
-  ], tradingStatus.alerts || []);
+  const activeAlerts = (tradingStatus.alerts || []).filter(row => row.state === "ACTIVE");
+  const recoveredAlerts = (tradingStatus.alerts || []).filter(row => row.state === "RESOLVED" && row.severity !== "INFO");
+  const informationalAlerts = (tradingStatus.alerts || []).filter(row => row.state === "RESOLVED" && row.severity === "INFO");
+  const alertColumns = [
+    ["Severity", "severity"], ["Category", "category"], ["Alert", "title"],
+    ["Details", "details"], ["First observed (ET)", "first_seen_at_et", null, shortTime],
+    ["Last affected (ET)", "last_seen_at_et", null, shortTime],
+  ];
+  table("#active-alerts", alertColumns, activeAlerts);
+  table("#recovered-alerts", alertColumns, recoveredAlerts);
+  table("#informational-alerts", alertColumns, informationalAlerts);
   metrics("#daily-metrics", [
     ["Candidates examined", value(funnel.candidates_examined)], ["Terminal positive", value(funnel.terminal_positive_candidates)],
     ["Quadrature survivors", value(funnel.quadrature_survivors)], ["Path confirmed", value(funnel.path_confirmed_candidates)],
