@@ -5,7 +5,7 @@
       "candidates_examined": 3445,
       "completed_scan_decisions": 11,
       "current_capital_allocated": 7239.23,
-      "current_unrealized_pnl": -62.0,
+      "current_unrealized_pnl": 291.0,
       "eligible_candidates": 0,
       "orders_submitted": 7,
       "path_confirmed_candidates": 23,
@@ -65,8 +65,453 @@
         "time_et": "2026-10-21T14:49:52.102509-04:00"
       },
       {
-        "net_pnl": -62.0,
-        "time_et": "2026-10-21T14:53:52.496466-04:00"
+        "net_pnl": -72.0,
+        "time_et": "2026-10-21T14:54:52.566492-04:00"
+      },
+      {
+        "net_pnl": 231.0,
+        "time_et": "2026-10-21T14:59:52.930056-04:00"
+      },
+      {
+        "net_pnl": 291.0,
+        "time_et": "2026-10-21T15:02:02.889463-04:00"
+      }
+    ],
+    "position_pnl": [
+      {
+        "points": [
+          {
+            "event": "Entry",
+            "net_pnl": -5.2,
+            "time_et": "2026-10-21T13:07:03.991200-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -70.2,
+            "time_et": "2026-10-21T13:07:28.143881-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -111.2,
+            "time_et": "2026-10-21T13:54:47.987506-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -80.2,
+            "time_et": "2026-10-21T13:59:48.272424-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -90.2,
+            "time_et": "2026-10-21T14:04:48.568748-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -90.2,
+            "time_et": "2026-10-21T14:09:48.894097-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -100.2,
+            "time_et": "2026-10-21T14:14:49.223675-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -110.2,
+            "time_et": "2026-10-21T14:19:49.693603-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -110.2,
+            "time_et": "2026-10-21T14:24:49.993916-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -120.2,
+            "time_et": "2026-10-21T14:29:50.375425-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -121.2,
+            "time_et": "2026-10-21T14:34:50.761582-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -101.2,
+            "time_et": "2026-10-21T14:39:51.226336-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -110.2,
+            "time_et": "2026-10-21T14:44:51.652881-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -70.2,
+            "time_et": "2026-10-21T14:49:52.102509-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -81.2,
+            "time_et": "2026-10-21T14:54:52.566492-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -1.2,
+            "time_et": "2026-10-21T14:59:52.930056-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -31.2,
+            "time_et": "2026-10-21T15:01:53.210857-04:00"
+          }
+        ],
+        "position": "Position 1"
+      },
+      {
+        "points": [
+          {
+            "event": "Entry",
+            "net_pnl": -5.2,
+            "time_et": "2026-10-21T13:22:27.073957-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -20.2,
+            "time_et": "2026-10-21T13:24:50.940656-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -0.2,
+            "time_et": "2026-10-21T13:29:51.223936-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 84.8,
+            "time_et": "2026-10-21T13:34:51.459162-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 79.8,
+            "time_et": "2026-10-21T13:39:51.769677-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 28.8,
+            "time_et": "2026-10-21T13:44:52.013252-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 44.8,
+            "time_et": "2026-10-21T13:49:52.367633-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 4.8,
+            "time_et": "2026-10-21T13:54:52.644517-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 69.8,
+            "time_et": "2026-10-21T13:59:52.919527-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 74.8,
+            "time_et": "2026-10-21T14:04:38.225681-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -15.2,
+            "time_et": "2026-10-21T14:19:59.599233-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 24.8,
+            "time_et": "2026-10-21T14:24:59.976741-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -40.2,
+            "time_et": "2026-10-21T14:29:45.325909-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -10.2,
+            "time_et": "2026-10-21T14:34:45.712178-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -1.2,
+            "time_et": "2026-10-21T14:39:46.086320-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -5.2,
+            "time_et": "2026-10-21T14:44:46.541935-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 69.8,
+            "time_et": "2026-10-21T14:49:46.878423-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 89.8,
+            "time_et": "2026-10-21T14:54:47.263183-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 128.8,
+            "time_et": "2026-10-21T14:59:47.640102-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 139.8,
+            "time_et": "2026-10-21T15:02:02.889463-04:00"
+          }
+        ],
+        "position": "Position 2"
+      },
+      {
+        "points": [
+          {
+            "event": "Entry",
+            "net_pnl": -5.2,
+            "time_et": "2026-10-21T13:27:48.451231-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -66.2,
+            "time_et": "2026-10-21T13:29:58.290805-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -45.2,
+            "time_et": "2026-10-21T13:34:58.523676-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -45.2,
+            "time_et": "2026-10-21T13:39:58.908749-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -75.2,
+            "time_et": "2026-10-21T13:44:59.133495-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -65.2,
+            "time_et": "2026-10-21T13:49:59.419951-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -86.2,
+            "time_et": "2026-10-21T13:54:59.645116-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -76.2,
+            "time_et": "2026-10-21T13:59:59.937476-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -56.2,
+            "time_et": "2026-10-21T14:04:30.176774-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -96.2,
+            "time_et": "2026-10-21T14:19:59.211732-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -76.2,
+            "time_et": "2026-10-21T14:24:59.628183-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -95.2,
+            "time_et": "2026-10-21T14:29:59.994514-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -95.2,
+            "time_et": "2026-10-21T14:34:45.390630-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -75.2,
+            "time_et": "2026-10-21T14:39:45.775219-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -86.2,
+            "time_et": "2026-10-21T14:44:46.334112-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -55.2,
+            "time_et": "2026-10-21T14:49:46.677231-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -45.2,
+            "time_et": "2026-10-21T14:54:47.070369-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -5.2,
+            "time_et": "2026-10-21T14:59:47.441594-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 14.8,
+            "time_et": "2026-10-21T15:02:02.705394-04:00"
+          }
+        ],
+        "position": "Position 3"
+      },
+      {
+        "points": [
+          {
+            "event": "Entry",
+            "net_pnl": -5.2,
+            "time_et": "2026-10-21T13:56:22.844149-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -5.2,
+            "time_et": "2026-10-21T13:59:48.811968-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 3.8,
+            "time_et": "2026-10-21T14:04:34.083431-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -70.2,
+            "time_et": "2026-10-21T14:19:59.008783-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -45.2,
+            "time_et": "2026-10-21T14:24:59.415828-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -80.2,
+            "time_et": "2026-10-21T14:29:59.815358-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -65.2,
+            "time_et": "2026-10-21T14:34:45.234032-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -45.2,
+            "time_et": "2026-10-21T14:39:45.648820-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -45.2,
+            "time_et": "2026-10-21T14:44:46.191852-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 29.8,
+            "time_et": "2026-10-21T14:49:46.535825-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 19.8,
+            "time_et": "2026-10-21T14:54:46.941515-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 113.8,
+            "time_et": "2026-10-21T14:59:47.341323-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 163.8,
+            "time_et": "2026-10-21T15:02:02.581918-04:00"
+          }
+        ],
+        "position": "Position 4"
+      },
+      {
+        "points": [
+          {
+            "event": "Entry",
+            "net_pnl": -5.2,
+            "time_et": "2026-10-21T14:07:21.575180-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -66.2,
+            "time_et": "2026-10-21T14:09:45.355667-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -100.2,
+            "time_et": "2026-10-21T14:14:45.671487-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -150.2,
+            "time_et": "2026-10-21T14:19:59.080074-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -110.2,
+            "time_et": "2026-10-21T14:24:59.455256-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -160.2,
+            "time_et": "2026-10-21T14:29:59.853416-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -131.2,
+            "time_et": "2026-10-21T14:34:45.247588-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -121.2,
+            "time_et": "2026-10-21T14:39:45.668952-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -126.2,
+            "time_et": "2026-10-21T14:44:46.236234-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -56.2,
+            "time_et": "2026-10-21T14:49:46.568863-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -55.2,
+            "time_et": "2026-10-21T14:54:47.007039-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -5.2,
+            "time_et": "2026-10-21T14:59:47.387036-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 3.8,
+            "time_et": "2026-10-21T15:02:02.634246-04:00"
+          }
+        ],
+        "position": "Position 5"
       }
     ],
     "trades": [
@@ -102,7 +547,7 @@
         "realized_net_pnl": null,
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": -81.2
+        "unrealized_net_pnl": -31.2
       },
       {
         "allocation": 1545.5,
@@ -136,7 +581,7 @@
         "realized_net_pnl": null,
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 89.8
+        "unrealized_net_pnl": 139.8
       },
       {
         "allocation": 1264.55,
@@ -153,7 +598,7 @@
         "realized_net_pnl": null,
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": -55.2
+        "unrealized_net_pnl": 14.8
       },
       {
         "allocation": 1419.1,
@@ -170,7 +615,7 @@
         "realized_net_pnl": null,
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 19.8
+        "unrealized_net_pnl": 163.8
       },
       {
         "allocation": 1610.47,
@@ -187,7 +632,7 @@
         "realized_net_pnl": null,
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": -35.2
+        "unrealized_net_pnl": 3.8
       }
     ]
   },
@@ -341,28 +786,36 @@
         "time_et": "2026-10-21T14:49:52.102509-04:00"
       },
       {
-        "net_pnl": -62.0,
-        "time_et": "2026-10-21T14:53:52.496466-04:00"
+        "net_pnl": -72.0,
+        "time_et": "2026-10-21T14:54:52.566492-04:00"
+      },
+      {
+        "net_pnl": 231.0,
+        "time_et": "2026-10-21T14:59:52.930056-04:00"
+      },
+      {
+        "net_pnl": 291.0,
+        "time_et": "2026-10-21T15:02:02.889463-04:00"
       }
     ],
     "summary": {
-      "additional_loss_to_contractual_max": 8208.0,
-      "available_equity": 241668.0,
+      "additional_loss_to_contractual_max": 8561.0,
+      "available_equity": 242021.0,
       "cash": 250000.0,
       "closed_trades": 0,
       "contractual_stress_loss": 8270.0,
-      "equity": 249938.0,
+      "equity": 250291.0,
       "open_positions": 5,
       "realized_pnl": 0.0,
       "reserved_risk": 8270.0,
       "starting_cash": 250000.0,
-      "unrealized_pnl": -62.0
+      "unrealized_pnl": 291.0
     }
   },
   "publication": {
     "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-21T14:53:55.323155-04:00",
+    "published_at_et": "2026-10-21T15:02:03.031703-04:00",
     "status": "PRELIMINARY_SESSION_ACTIVE",
     "trade_date": "2026-10-21"
   },

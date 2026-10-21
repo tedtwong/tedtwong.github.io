@@ -35,10 +35,19 @@ function lineChart(target, series, options = {}) {
     const points = s.rows.map(r => ({ t: new Date(r[s.x]).getTime(), y: Number(r[s.y]) })).filter(p => Number.isFinite(p.t) && Number.isFinite(p.y));
     return `<path d="${points.map((p, i) => `${i ? "L" : "M"}${x(p.t).toFixed(1)},${y(p.y).toFixed(1)}`).join(" ")}" fill="none" stroke="${s.color}" stroke-width="${s.width || 2.5}" vector-effect="non-scaling-stroke"/>`;
   }).join("");
+  const markers = (options.markers || []).map(marker => {
+    const t = new Date(marker.time_et).getTime(), v = Number(marker.net_pnl);
+    if (!Number.isFinite(t) || !Number.isFinite(v)) return "";
+    const cx = x(t), cy = y(v), color = marker.event === "Exit" ? "#c62828" : "#2e7d32";
+    if (marker.event === "Exit") {
+      return `<rect x="${(cx-5).toFixed(1)}" y="${(cy-5).toFixed(1)}" width="10" height="10" rx="1" fill="${color}" stroke="white" stroke-width="1.5"><title>${marker.position} Exit · ${money.format(v)}</title></rect>`;
+    }
+    return `<path d="M${cx.toFixed(1)},${(cy-6).toFixed(1)} L${(cx-6).toFixed(1)},${(cy+5).toFixed(1)} L${(cx+6).toFixed(1)},${(cy+5).toFixed(1)} Z" fill="${color}" stroke="white" stroke-width="1.5"><title>${marker.position} Entry · ${money.format(v)}</title></path>`;
+  }).join("");
   const zero = minY <= 0 && maxY >= 0 ? `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#a7a19a" stroke-dasharray="5 5"/>` : "";
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${options.label || "Time series"}">
     ${ticks.map(v => `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e4dfd6"/><text x="${pad.l-10}" y="${y(v)+4}" text-anchor="end" fill="#667085" font-size="12">${options.money ? money.format(v) : number.format(v)}</text>`).join("")}
-    ${zero}${paths}
+    ${zero}${paths}${markers}
     <text x="${pad.l}" y="${height-12}" fill="#667085" font-size="12">${shortTime(minT)}</text>
     <text x="${width-pad.r}" y="${height-12}" text-anchor="end" fill="#667085" font-size="12">${shortTime(maxT)}</text>
   </svg><div class="chart-legend">${series.map(s => `<span class="legend-key" style="--key:${s.color}">${s.label}</span>`).join("")}</div>`;
@@ -65,7 +74,18 @@ async function load() {
     ["Filled", value(funnel.trades_filled)], ["Open positions", value(funnel.trades_open)],
     ["Current unrealized P&L", value(funnel.current_unrealized_pnl, money), pnlClass(funnel.current_unrealized_pnl)],
   ]);
-  lineChart("#daily-chart", [{ rows: daily.portfolio_pnl, x: "time_et", y: "net_pnl", label: "Portfolio net P&L", color: "#333ed4", width: 3 }], { money: true, label: "Daily portfolio P&L" });
+  const positionColors = ["#f76915", "#eede04", "#a0d636", "#2fa236", "#fd0100", "#8a3ffc"];
+  const positionSeries = (daily.position_pnl || []).map((item, index) => ({
+    rows: item.points, x: "time_et", y: "net_pnl", label: item.position,
+    color: positionColors[index % positionColors.length], width: 2,
+  }));
+  const positionMarkers = (daily.position_pnl || []).flatMap(item => item.points
+    .filter(point => point.event === "Entry" || point.event === "Exit")
+    .map(point => ({ ...point, position: item.position })));
+  lineChart("#daily-chart", [
+    ...positionSeries,
+    { rows: daily.portfolio_pnl, x: "time_et", y: "net_pnl", label: "TOTAL", color: "#333ed4", width: 4 },
+  ], { money: true, label: "Daily position and portfolio P&L", markers: positionMarkers });
   table("#trade-table", [
     ["Position", "position"], ["Strategy", "strategy"], ["DTE", "dte"], ["Status", "status"],
     ["Entry (ET)", "entry_time_et", null, shortTime], ["Exit (ET)", "exit_time_et", null, shortTime],
