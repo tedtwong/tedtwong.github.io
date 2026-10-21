@@ -29,7 +29,9 @@ function lineChart(target, series, options = {}) {
   if (!all.length) { node.innerHTML = `<div class="chart-empty">No chart data are available for this period.</div>`; return; }
   const width = 1000, height = 310, pad = { l: 76, r: 24, t: 18, b: 42 };
   const minT = Math.min(...all.map(p => p.t)), maxT = Math.max(...all.map(p => p.t));
-  const minY0 = Math.min(...all.map(p => p.y)), maxY0 = Math.max(...all.map(p => p.y));
+  const observedMinY = Math.min(...all.map(p => p.y)), observedMaxY = Math.max(...all.map(p => p.y));
+  const minY0 = options.includeZero ? Math.min(observedMinY, 0) : observedMinY;
+  const maxY0 = options.includeZero ? Math.max(observedMaxY, 0) : observedMaxY;
   const range = Math.max(maxY0 - minY0, 1), minY = minY0 - range * .08, maxY = maxY0 + range * .08;
   const x = t => pad.l + (t - minT) / Math.max(maxT - minT, 1) * (width - pad.l - pad.r);
   const y = v => pad.t + (maxY - v) / Math.max(maxY - minY, 1) * (height - pad.t - pad.b);
@@ -47,7 +49,7 @@ function lineChart(target, series, options = {}) {
     }
     return `<path d="M${cx.toFixed(1)},${(cy-6).toFixed(1)} L${(cx-6).toFixed(1)},${(cy+5).toFixed(1)} L${(cx+6).toFixed(1)},${(cy+5).toFixed(1)} Z" fill="${color}" stroke="white" stroke-width="1.5"><title>${marker.position} Entry · ${money.format(v)}</title></path>`;
   }).join("");
-  const zero = minY <= 0 && maxY >= 0 ? `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#a7a19a" stroke-dasharray="5 5"/>` : "";
+  const zero = minY <= 0 && maxY >= 0 ? `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#7b8495" stroke-width="1.5"/><text x="${pad.l-10}" y="${y(0)+4}" text-anchor="end" fill="#4b5565" font-size="12">${options.money ? money.format(0) : number.format(0)}</text>` : "";
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${options.label || "Time series"}">
     ${ticks.map(v => `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e4dfd6"/><text x="${pad.l-10}" y="${y(v)+4}" text-anchor="end" fill="#667085" font-size="12">${options.money ? money.format(v) : number.format(v)}</text>`).join("")}
     ${zero}${paths}${markers}
@@ -107,7 +109,7 @@ async function load() {
   lineChart("#daily-chart", [
     ...positionSeries,
     { rows: daily.portfolio_pnl, x: "time_et", y: "net_pnl", label: "TOTAL", color: "#333ed4", width: 4 },
-  ], { money: true, label: "Daily position and portfolio P&L", markers: positionMarkers });
+  ], { money: true, includeZero: true, label: "Daily position and portfolio P&L", markers: positionMarkers });
   table("#trade-table", [
     ["Position", "position"], ["Strategy", "strategy"], ["DTE", "dte"], ["Status", "status"],
     ["Entry (ET)", "entry_time_et", null, shortTime], ["Exit (ET)", "exit_time_et", null, shortTime],
