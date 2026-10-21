@@ -58,16 +58,35 @@ function lineChart(target, series, options = {}) {
   </svg><div class="chart-legend">${series.map(s => `<span class="legend-key" style="--key:${s.color}">${s.label}</span>`).join("")}</div>`;
 }
 
+async function fetchSnapshot(url, source) {
+  const response = await fetch(url, { cache: "no-store" });
+  if (!response.ok) throw new Error(`${source} ${response.status}`);
+  return { data: await response.json(), source };
+}
+
+function selectNewestSnapshot(candidates) {
+  return [...candidates].sort((left, right) => {
+    const leftTime = Date.parse(left.data?.publication?.published_at_et || "") || 0;
+    const rightTime = Date.parse(right.data?.publication?.published_at_et || "") || 0;
+    if (leftTime !== rightTime) return rightTime - leftTime;
+    const leftFinal = left.data?.publication?.status === "FINAL_AFTER_CLOSE" ? 1 : 0;
+    const rightFinal = right.data?.publication?.status === "FINAL_AFTER_CLOSE" ? 1 : 0;
+    return rightFinal - leftFinal;
+  })[0];
+}
+
 async function retrieveSnapshot() {
-  try {
-    const response = await fetch(`${liveFeedUrl}?v=${Date.now()}`, { cache: "no-store" });
-    if (!response.ok) throw new Error(`live feed ${response.status}`);
-    return { data: await response.json(), source: "Live five-minute feed" };
-  } catch (error) {
-    const response = await fetch(`data/latest.json?v=${Date.now()}`, { cache: "no-store" });
-    if (!response.ok) throw new Error(`Snapshot request failed (${response.status})`);
-    return { data: await response.json(), source: `After-close fallback (${error.message})` };
+  const version = Date.now();
+  const results = await Promise.allSettled([
+    fetchSnapshot(`${liveFeedUrl}?v=${version}`, "Live five-minute feed"),
+    fetchSnapshot(`data/latest.json?v=${version}`, "After-close snapshot"),
+  ]);
+  const candidates = results.filter(result => result.status === "fulfilled").map(result => result.value);
+  if (!candidates.length) {
+    const errors = results.map(result => result.reason?.message || "unknown error").join("; ");
+    throw new Error(`Snapshot requests failed (${errors})`);
   }
+  return selectNewestSnapshot(candidates);
 }
 
 function updateRefreshButton() {
