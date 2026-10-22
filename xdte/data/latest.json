@@ -2449,8 +2449,8 @@
       "calendar_status": "CALENDAR_FLAGS_PRESENT",
       "calendar_valid_through": "2026-10-29",
       "calendar_window_end_date": "2026-10-28",
-      "session_message": "1 paper order submission(s) are recorded for this trading date.",
-      "session_status": "PAPER_ORDER_ACTIVITY"
+      "session_message": "1 paper entry-order submission is recorded for this trading date.",
+      "session_status": "PAPER_ENTRY_ORDER_ACTIVITY"
     }
   },
   "ledger": {
@@ -3046,7 +3046,7 @@
   "publication": {
     "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-22T17:35:48.991394-04:00",
+    "published_at_et": "2026-10-22T17:50:37.691819-04:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-22"
   },
