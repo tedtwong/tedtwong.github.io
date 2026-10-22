@@ -66,6 +66,11 @@ td { white-space: nowrap; }
 tr:last-child td { border-bottom: 0; }
 .positive { color: var(--green); }
 .negative { color: var(--red); }
+.position-zone { display: inline-flex; align-items: center; border-radius: 999px; padding: 4px 9px; color: #fff; font-size: .72rem; font-weight: 800; white-space: nowrap; }
+.position-zone--green { background: #237a3b; }
+.position-zone--orange { background: #c46813; }
+.position-zone--red { background: #b42318; }
+.position-zone--unavailable { background: #68727d; }
 .notice { margin: 24px 0 -34px; border-left: 4px solid var(--orange); background: #fff4e8; padding: 14px 18px; line-height: 1.45; }
 .status-section { padding-top: 46px; }
 .status-summary { border-left: 4px solid var(--orange); background: #fff4e8; padding: 14px 18px; }

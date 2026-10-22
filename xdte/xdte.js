@@ -5,6 +5,15 @@ const percent = new Intl.NumberFormat("en-US", { style: "percent", maximumFracti
 const value = (v, formatter = number) => v === null || v === undefined || Number.isNaN(Number(v)) ? "—" : formatter.format(Number(v));
 const pnlClass = v => Number(v) > 0 ? "positive" : Number(v) < 0 ? "negative" : "";
 const slippageClass = v => Number(v) < 0 ? "positive" : Number(v) > 0 ? "negative" : "";
+const positionZoneBadge = zone => {
+  const values = {
+    INSIDE_SHORTS: ["position-zone--green", "Inside short strikes"],
+    BETWEEN_SHORT_AND_LONG: ["position-zone--orange", "Between short and long"],
+    OUTSIDE_LONGS: ["position-zone--red", "Outside long strikes"],
+  };
+  const [className, label] = values[zone] || ["position-zone--unavailable", "Unavailable"];
+  return `<span class="position-zone ${className}">${label}</span>`;
+};
 const shortTime = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }).format(new Date(v)) : "—";
 const liveFeedUrl = "https://storage.googleapis.com/ibkr-steamroller-coins-xdte-feed/latest.json";
 const refreshCooldownMilliseconds = 5 * 60 * 1000;
@@ -204,6 +213,7 @@ async function load() {
   ], { money: true, includeZero: true, label: "Daily position and portfolio P&L", markers: positionMarkers });
   table("#trade-table", [
     ["Position", "position"], ["Record type", "record_type"], ["Strategy", "strategy"], ["DTE", "dte"], ["Status", "status"],
+    ["Current SPX location", "spx_position_zone", null, positionZoneBadge],
     ["Entry (ET)", "entry_time_et", null, shortTime], ["Exit (ET)", "exit_time_et", null, shortTime],
     ["Allocation", "allocation", null, v => value(v, money)], ["Base expected", "base_expected_net_pnl", pnlClass, v => value(v, money)],
     ["Unrealized", "unrealized_net_pnl", pnlClass, v => value(v, money)], ["Realized", "realized_net_pnl", pnlClass, v => value(v, money)],
