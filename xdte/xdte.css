@@ -39,6 +39,16 @@ section { padding: 68px 0 10px; }
 .metric { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 17px; box-shadow: var(--shadow); min-height: 112px; }
 .metric__label { color: var(--muted); font-size: .72rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
 .metric__value { display: block; font-family: Georgia, "Times New Roman", serif; font-size: 1.65rem; margin-top: 16px; font-variant-numeric: tabular-nums; }
+.daily-summary-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 24px; align-items: start; }
+.summary-group { background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); padding: 20px; }
+.summary-group h3, .capacity-heading { font-size: 1rem; margin: 0 0 14px; }
+.summary-metrics { display: grid; gap: 0; }
+.summary-metric { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 10px 0; border-bottom: 1px solid #e5e0d7; }
+.summary-metric:last-child { border-bottom: 0; }
+.summary-metric__label { color: var(--muted); font-size: .76rem; font-weight: 750; line-height: 1.35; }
+.summary-metric__value { font-family: Georgia, "Times New Roman", serif; font-size: 1.15rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.capacity-heading { margin-top: 0; }
+.capacity-metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .panel { background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); padding: 22px; margin: 18px 0; overflow: hidden; }
 .panel__heading { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
 .panel h3 { font-size: 1.12rem; margin: 0; }
@@ -73,6 +83,7 @@ footer { background: #e7e2d7; color: var(--muted); padding: 28px 18px; text-alig
   .hero__inner { padding: 42px 0; }
   .section-heading { align-items: start; flex-direction: column; }
   .method-grid { grid-template-columns: 1fr; }
+  .daily-summary-columns, .capacity-metrics { grid-template-columns: 1fr; }
   .panel { padding: 16px; }
   section { padding-top: 52px; }
 }

@@ -4,6 +4,7 @@ const percent = new Intl.NumberFormat("en-US", { style: "percent", maximumFracti
 
 const value = (v, formatter = number) => v === null || v === undefined || Number.isNaN(Number(v)) ? "—" : formatter.format(Number(v));
 const pnlClass = v => Number(v) > 0 ? "positive" : Number(v) < 0 ? "negative" : "";
+const slippageClass = v => Number(v) < 0 ? "positive" : Number(v) > 0 ? "negative" : "";
 const shortTime = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }).format(new Date(v)) : "—";
 const liveFeedUrl = "https://storage.googleapis.com/ibkr-steamroller-coins-xdte-feed/latest.json";
 const refreshCooldownMilliseconds = 5 * 60 * 1000;
@@ -15,6 +16,12 @@ let refreshInFlight = false;
 function metrics(target, items) {
   document.querySelector(target).innerHTML = items.map(([label, display, className = ""]) =>
     `<div class="metric"><span class="metric__label">${label}</span><span class="metric__value ${className}">${display}</span></div>`
+  ).join("");
+}
+
+function summaryMetrics(target, items) {
+  document.querySelector(target).innerHTML = items.map(([label, display, className = ""]) =>
+    `<div class="summary-metric"><span class="summary-metric__label">${label}</span><span class="summary-metric__value ${className}">${display}</span></div>`
   ).join("");
 }
 
@@ -159,19 +166,29 @@ async function load() {
   table("#active-alerts", alertColumns, activeAlerts);
   table("#recovered-alerts", alertColumns, recoveredAlerts);
   table("#informational-alerts", alertColumns, informationalAlerts);
-  metrics("#daily-metrics", [
+  summaryMetrics("#pnl-metrics", [
     ["Daily synchronized P&L", value(pnlSummary.daily_synchronized_pnl, money), pnlClass(pnlSummary.daily_synchronized_pnl)],
     ["Daily P&L (ledger change)", value(pnlSummary.daily_ledger_pnl, money), pnlClass(pnlSummary.daily_ledger_pnl)],
     ["Unrealized P&L", value(pnlSummary.unrealized_pnl, money), pnlClass(pnlSummary.unrealized_pnl)],
+    ["Realized P&L on exits", value(exitActivity.realized_pnl, money), pnlClass(exitActivity.realized_pnl)],
+  ]);
+  summaryMetrics("#evaluation-metrics", [
     ["Candidates examined", value(funnel.candidates_examined)], ["Terminal positive", value(funnel.terminal_positive_candidates)],
     ["Quadrature survivors", value(funnel.quadrature_survivors)], ["Path confirmed", value(funnel.path_confirmed_candidates)],
     ["Eligible", value(funnel.eligible_candidates)], ["Entry orders submitted", value(funnel.orders_submitted)],
     ["Entries filled", value(funnel.trades_filled)], ["Open positions", value(funnel.trades_open)],
   ]);
-  metrics("#exit-metrics", [
+  summaryMetrics("#exit-metrics", [
     ["Exits filled today", value(exitActivity.exits_filled)],
+    ["Net fill slippage", value(exitActivity.net_fill_slippage, money), slippageClass(exitActivity.net_fill_slippage)],
     ["Transaction costs on exits", value(exitActivity.transaction_costs, money)],
-    ["Realized P&L on exits", value(exitActivity.realized_pnl, money), pnlClass(exitActivity.realized_pnl)],
+    ["Capital released by exits", value(exitActivity.released_capital, money)],
+  ]);
+  metrics("#capacity-metrics", [
+    ["Reserved risk", value(summary.reserved_risk, money)],
+    ["Total capacity available", value(ledger.capacity.aggregate_available_capacity, money)],
+    ["Total daily capacity available", value(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity, money)],
+    ["Total 7DTE capacity available", value(ledger.capacity.seven_dte_available_capacity, money)],
   ]);
   const positionColors = ["#f76915", "#eede04", "#a0d636", "#2fa236", "#fd0100", "#8a3ffc"];
   const positionSeries = (daily.position_pnl || []).map((item, index) => ({

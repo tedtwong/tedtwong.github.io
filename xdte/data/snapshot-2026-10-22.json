@@ -2,7 +2,9 @@
   "daily": {
     "exit_activity": {
       "exits_filled": 3,
+      "net_fill_slippage": -100.0,
       "realized_pnl": -2210.6,
+      "released_capital": 4627.21,
       "transaction_costs": 15.6
     },
     "funnel": {
@@ -2528,12 +2530,15 @@
     ],
     "capacity": {
       "accepted_allocations": 1,
+      "aggregate_available_capacity": 44934.6,
       "available_capacity": 7338.2,
       "consumed_capacity": 1411.8,
+      "daily_new_capacity_available": 7338.2,
       "eligible_recycled_allocations": 0,
       "recycled_capacity": 0.0,
       "released_allocations": 0,
       "released_capacity": 0,
+      "seven_dte_available_capacity": 9486.4,
       "starting_capacity": 8750.0,
       "trade_date": "2026-10-22"
     },
@@ -3041,7 +3046,7 @@
   "publication": {
     "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-22T17:12:04.752024-04:00",
+    "published_at_et": "2026-10-22T17:24:20.109362-04:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-22"
   },

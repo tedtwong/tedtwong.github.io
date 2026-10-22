@@ -37,8 +37,22 @@
       <div class="section-heading">
         <div><p class="section-number">01</p><h2 id="daily-heading">Daily P&amp;L</h2></div>
       </div>
-      <div id="daily-metrics" class="metric-grid"></div>
-      <div id="exit-metrics" class="metric-grid" aria-label="Today's filled exits"></div>
+      <div class="daily-summary-columns">
+        <article class="summary-group">
+          <h3>P&amp;L</h3>
+          <div id="pnl-metrics" class="summary-metrics"></div>
+        </article>
+        <article class="summary-group">
+          <h3>Evaluation, entries and fills</h3>
+          <div id="evaluation-metrics" class="summary-metrics"></div>
+        </article>
+        <article class="summary-group">
+          <h3>Exits, slippage and released capital</h3>
+          <div id="exit-metrics" class="summary-metrics"></div>
+        </article>
+      </div>
+      <h3 class="capacity-heading">Capacity</h3>
+      <div id="capacity-metrics" class="metric-grid capacity-metrics"></div>
       <article class="panel chart-panel">
         <div class="panel__heading"><div><h3>Today’s position P&amp;L</h3><p>Individual paper positions after estimated costs, with green entry triangles, red exit squares, and the total as a thick blue line.</p></div></div>
         <div id="daily-chart" class="chart"></div>
