@@ -8,6 +8,7 @@ const slippageClass = v => Number(v) < 0 ? "positive" : Number(v) > 0 ? "negativ
 const positionZoneBadge = zone => {
   const values = {
     INSIDE_SHORTS: ["position-zone--green", "Inside short strikes"],
+    BETWEEN_SHORT_AND_LONG_PROFITABLE: ["position-zone--yellow", "Between strikes · profitable"],
     BETWEEN_SHORT_AND_LONG: ["position-zone--orange", "Between short and long"],
     OUTSIDE_LONGS: ["position-zone--red", "Outside long strikes"],
   };

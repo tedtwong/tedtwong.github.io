@@ -68,6 +68,7 @@ tr:last-child td { border-bottom: 0; }
 .negative { color: var(--red); }
 .position-zone { display: inline-flex; align-items: center; border-radius: 999px; padding: 4px 9px; color: #fff; font-size: .72rem; font-weight: 800; white-space: nowrap; }
 .position-zone--green { background: #237a3b; }
+.position-zone--yellow { background: #e4cd16; color: #292500; }
 .position-zone--orange { background: #c46813; }
 .position-zone--red { background: #b42318; }
 .position-zone--unavailable { background: #68727d; }
