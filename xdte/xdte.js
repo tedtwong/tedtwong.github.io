@@ -122,7 +122,7 @@ async function load() {
   }
   document.querySelector("#as-of").textContent = `Trading date ${pub.trade_date} · published ${shortTime(pub.published_at_et)} ET`;
   document.querySelector("#footer-date").textContent = `Snapshot ${pub.trade_date}`;
-  document.querySelector("#feed-status").textContent = `${retrieved.source} · observation published ${shortTime(pub.published_at_et)} ET`;
+  document.querySelector("#feed-status").textContent = `Source: ${retrieved.source}`;
   if (pub.status !== "FINAL_AFTER_CLOSE") {
     const warning = document.querySelector("#data-warning"); warning.classList.remove("hidden");
     warning.textContent = pub.status === "PRELIMINARY_SESSION_ACTIVE" ? "This snapshot was generated during the trading session and remains preliminary. The scheduled after-close publication will replace it." : "No completed-session activity was available for this publication date.";
