@@ -177,7 +177,7 @@ async function load() {
     { rows: daily.portfolio_pnl, x: "time_et", y: "net_pnl", label: "TOTAL", color: "#333ed4", width: 4 },
   ], { money: true, includeZero: true, label: "Daily position and portfolio P&L", markers: positionMarkers });
   table("#trade-table", [
-    ["Position", "position"], ["Strategy", "strategy"], ["DTE", "dte"], ["Status", "status"],
+    ["Position", "position"], ["Record type", "record_type"], ["Strategy", "strategy"], ["DTE", "dte"], ["Status", "status"],
     ["Entry (ET)", "entry_time_et", null, shortTime], ["Exit (ET)", "exit_time_et", null, shortTime],
     ["Allocation", "allocation", null, v => value(v, money)], ["Base expected", "base_expected_net_pnl", pnlClass, v => value(v, money)],
     ["Unrealized", "unrealized_net_pnl", pnlClass, v => value(v, money)], ["Realized", "realized_net_pnl", pnlClass, v => value(v, money)],
