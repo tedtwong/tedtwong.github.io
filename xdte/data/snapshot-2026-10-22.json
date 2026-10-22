@@ -294,7 +294,7 @@
   "publication": {
     "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-22T09:18:35.784071-04:00",
+    "published_at_et": "2026-10-22T09:24:22.513246-04:00",
     "status": "NO_SESSION_ACTIVITY",
     "trade_date": "2026-10-22"
   },

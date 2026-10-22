@@ -7,7 +7,10 @@ const pnlClass = v => Number(v) > 0 ? "positive" : Number(v) < 0 ? "negative" : 
 const shortTime = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }).format(new Date(v)) : "—";
 const liveFeedUrl = "https://storage.googleapis.com/ibkr-steamroller-coins-xdte-feed/latest.json";
 const refreshCooldownMilliseconds = 5 * 60 * 1000;
+const autoRefreshIntervalMilliseconds = 5 * 60 * 1000;
 let refreshAvailableAt = 0;
+let lastSuccessfulRefreshAt = 0;
+let refreshInFlight = false;
 
 function metrics(target, items) {
   document.querySelector(target).innerHTML = items.map(([label, display, className = ""]) =>
@@ -92,8 +95,8 @@ async function retrieveSnapshot() {
 function updateRefreshButton() {
   const button = document.querySelector("#refresh-feed");
   const remaining = Math.max(0, refreshAvailableAt - Date.now());
-  button.disabled = remaining > 0;
-  button.textContent = remaining > 0 ? `Refresh in ${Math.ceil(remaining / 60000)}m` : "Refresh P&L";
+  button.disabled = refreshInFlight || remaining > 0;
+  button.textContent = refreshInFlight ? "Refreshing…" : remaining > 0 ? `Refresh in ${Math.ceil(remaining / 60000)}m` : "Refresh P&L";
 }
 
 async function load() {
@@ -122,10 +125,14 @@ async function load() {
   }
   document.querySelector("#as-of").textContent = `Trading date ${pub.trade_date} · published ${shortTime(pub.published_at_et)} ET`;
   document.querySelector("#footer-date").textContent = `Snapshot ${pub.trade_date}`;
-  document.querySelector("#feed-status").textContent = `Source: ${retrieved.source}`;
+  document.querySelector("#feed-status").textContent = `Source: ${retrieved.source} · refreshes automatically every five minutes`;
+  const warning = document.querySelector("#data-warning");
   if (pub.status !== "FINAL_AFTER_CLOSE") {
-    const warning = document.querySelector("#data-warning"); warning.classList.remove("hidden");
+    warning.classList.remove("hidden");
     warning.textContent = pub.status === "PRELIMINARY_SESSION_ACTIVE" ? "This snapshot was generated during the trading session and remains preliminary. The scheduled after-close publication will replace it." : "No completed-session activity was available for this publication date.";
+  } else {
+    warning.classList.add("hidden");
+    warning.textContent = "";
   }
   const tradingStatus = daily.trading_status_and_alerts || {};
   const statusSummary = document.querySelector("#trading-status-summary");
@@ -206,28 +213,43 @@ async function load() {
   ], groups);
 }
 
-async function refresh() {
-  const button = document.querySelector("#refresh-feed");
-  button.disabled = true;
-  button.textContent = "Refreshing…";
-  await load();
-  refreshAvailableAt = Date.now() + refreshCooldownMilliseconds;
+async function refresh({ manual = false } = {}) {
+  if (refreshInFlight) return;
+  refreshInFlight = true;
   updateRefreshButton();
+  try {
+    await load();
+    lastSuccessfulRefreshAt = Date.now();
+  } catch (error) {
+    showLoadError(error, lastSuccessfulRefreshAt > 0);
+  } finally {
+    if (manual) refreshAvailableAt = Date.now() + refreshCooldownMilliseconds;
+    refreshInFlight = false;
+    updateRefreshButton();
+  }
 }
 
 document.querySelector("#refresh-feed").addEventListener("click", () => {
-  if (Date.now() >= refreshAvailableAt) refresh().catch(showLoadError);
+  if (Date.now() >= refreshAvailableAt) refresh({ manual: true });
 });
 setInterval(updateRefreshButton, 1000);
+setInterval(() => {
+  if (!document.hidden) refresh();
+}, autoRefreshIntervalMilliseconds);
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden && Date.now() - lastSuccessfulRefreshAt >= autoRefreshIntervalMilliseconds) refresh();
+});
 
-function showLoadError(error) {
+function showLoadError(error, preserveCurrent = false) {
   const warning = document.querySelector("#data-warning"); warning.classList.remove("hidden");
-  warning.textContent = `The public snapshot could not be loaded: ${error.message}`;
-  document.querySelector("#status-badge").textContent = "DATA UNAVAILABLE";
-  document.querySelector("#readiness-badge").textContent = "READINESS UNKNOWN";
-  document.querySelector("#readiness-badge").className = "badge badge--pending";
-  refreshAvailableAt = Date.now() + refreshCooldownMilliseconds;
-  updateRefreshButton();
+  warning.textContent = preserveCurrent
+    ? `Automatic refresh failed; the last successfully loaded snapshot remains displayed: ${error.message}`
+    : `The public snapshot could not be loaded: ${error.message}`;
+  if (!preserveCurrent) {
+    document.querySelector("#status-badge").textContent = "DATA UNAVAILABLE";
+    document.querySelector("#readiness-badge").textContent = "READINESS UNKNOWN";
+    document.querySelector("#readiness-badge").className = "badge badge--pending";
+  }
 }
 
-refresh().catch(showLoadError);
+refresh({ manual: true });
