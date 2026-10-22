@@ -103,6 +103,23 @@ async function load() {
   const badge = document.querySelector("#status-badge");
   badge.textContent = pub.status.replaceAll("_", " ");
   badge.classList.add(pub.status === "FINAL_AFTER_CLOSE" ? "badge--final" : "badge--preliminary");
+  const readiness = daily.system_readiness || { status: "PENDING" };
+  const readinessBadge = document.querySelector("#readiness-badge");
+  const readinessDetail = document.querySelector("#readiness-detail");
+  readinessBadge.classList.remove("badge--ready", "badge--failed", "badge--pending");
+  if (readiness.status === "READY") {
+    readinessBadge.textContent = "SYSTEM READY";
+    readinessBadge.classList.add("badge--ready");
+    readinessDetail.textContent = `Premarket readiness check passed · ${value(readiness.passed_checks)}/${value(readiness.total_checks)} checks · ${shortTime(readiness.checked_at_et)} ET`;
+  } else if (readiness.status === "NOT_READY") {
+    readinessBadge.textContent = "READINESS FAILED";
+    readinessBadge.classList.add("badge--failed");
+    readinessDetail.textContent = `Premarket readiness check failed · ${value(readiness.failed_checks)} of ${value(readiness.total_checks)} checks failed · ${shortTime(readiness.checked_at_et)} ET`;
+  } else {
+    readinessBadge.textContent = "CHECK PENDING";
+    readinessBadge.classList.add("badge--pending");
+    readinessDetail.textContent = "Today’s premarket readiness result is not yet available.";
+  }
   document.querySelector("#as-of").textContent = `Trading date ${pub.trade_date} · published ${shortTime(pub.published_at_et)} ET`;
   document.querySelector("#footer-date").textContent = `Snapshot ${pub.trade_date}`;
   document.querySelector("#feed-status").textContent = `${retrieved.source} · observation published ${shortTime(pub.published_at_et)} ET`;
@@ -207,9 +224,10 @@ function showLoadError(error) {
   const warning = document.querySelector("#data-warning"); warning.classList.remove("hidden");
   warning.textContent = `The public snapshot could not be loaded: ${error.message}`;
   document.querySelector("#status-badge").textContent = "DATA UNAVAILABLE";
+  document.querySelector("#readiness-badge").textContent = "READINESS UNKNOWN";
+  document.querySelector("#readiness-badge").className = "badge badge--pending";
   refreshAvailableAt = Date.now() + refreshCooldownMilliseconds;
   updateRefreshButton();
 }
 
 refresh().catch(showLoadError);
-

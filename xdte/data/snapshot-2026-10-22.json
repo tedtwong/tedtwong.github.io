@@ -1,0 +1,302 @@
+{
+  "daily": {
+    "funnel": {
+      "available_daily_capacity": null,
+      "candidates_examined": 0,
+      "completed_scan_decisions": 0,
+      "current_capital_allocated": 7239.23,
+      "current_unrealized_pnl": -76.0,
+      "eligible_candidates": 0,
+      "orders_submitted": 0,
+      "path_confirmed_candidates": 0,
+      "quadrature_survivors": 0,
+      "terminal_positive_candidates": 0,
+      "trades_closed": 0,
+      "trades_filled": 0,
+      "trades_open": 5
+    },
+    "portfolio_pnl": [],
+    "position_pnl": [],
+    "system_readiness": {
+      "checked_at_et": "2026-10-22T09:07:20.141000-04:00",
+      "failed_checks": 0,
+      "passed_checks": 18,
+      "status": "READY",
+      "total_checks": 18,
+      "trade_date": "2026-10-22"
+    },
+    "trades": [],
+    "trading_status_and_alerts": {
+      "alerts": [
+        {
+          "category": "Calendar",
+          "details": "Economic-calendar coverage unavailable or incomplete.",
+          "first_seen_at_et": null,
+          "last_seen_at_et": null,
+          "rule_id": "CALENDAR_COVERAGE_UNAVAILABLE",
+          "severity": "WARNING",
+          "state": "ACTIVE",
+          "title": "Economic-calendar coverage unavailable or incomplete"
+        },
+        {
+          "category": "Calendar",
+          "details": "The prior reviewed economic calendar remained in use after a refresh failure.",
+          "first_seen_at_et": null,
+          "last_seen_at_et": "2026-10-21T16:20:04.501809-04:00",
+          "rule_id": "CALENDAR_REFRESH_FAILED",
+          "severity": "WARNING",
+          "state": "ACTIVE",
+          "title": "Economic-calendar refresh failed"
+        }
+      ],
+      "calendar_as_of_date": "2026-10-22",
+      "calendar_coverage_complete": false,
+      "calendar_flags": [
+        {
+          "date": "2026-10-27",
+          "event": "FOMC meeting day one",
+          "flag": "HIGH_IMPACT_EVENT"
+        },
+        {
+          "date": "2026-10-28",
+          "event": "FOMC decision day",
+          "flag": "HIGH_IMPACT_EVENT"
+        }
+      ],
+      "calendar_reviewed_on": "2026-10-20",
+      "calendar_status": "CALENDAR_FLAGS_PRESENT",
+      "calendar_valid_through": "2026-10-27",
+      "calendar_window_end_date": "2026-10-28",
+      "session_message": "No completed opportunity scans are recorded for this trading date.",
+      "session_status": "NO_COMPLETED_SCANS"
+    }
+  },
+  "ledger": {
+    "calibration_periods": [
+      {
+        "base_expected_net_pnl": 0,
+        "calibration_ratio": null,
+        "closed_trades": 0,
+        "expected_return_on_allocation": null,
+        "forecast_error": 0,
+        "forecast_error_standard_deviation": null,
+        "frequency": "Daily",
+        "gross_risk_deployed": 0,
+        "mean_forecast_error": null,
+        "normalized_error_standard_deviation": null,
+        "normalized_error_standard_error": null,
+        "outperformance_rate": null,
+        "period": "2026-10-22",
+        "realized_net_pnl": 0,
+        "realized_return_on_allocation": null,
+        "return_calibration_difference": null
+      },
+      {
+        "base_expected_net_pnl": 0,
+        "calibration_ratio": null,
+        "closed_trades": 0,
+        "expected_return_on_allocation": null,
+        "forecast_error": 0,
+        "forecast_error_standard_deviation": null,
+        "frequency": "Weekly",
+        "gross_risk_deployed": 0,
+        "mean_forecast_error": null,
+        "normalized_error_standard_deviation": null,
+        "normalized_error_standard_error": null,
+        "outperformance_rate": null,
+        "period": "2026-10-19 to 2026-10-22",
+        "realized_net_pnl": 0,
+        "realized_return_on_allocation": null,
+        "return_calibration_difference": null
+      },
+      {
+        "base_expected_net_pnl": 0,
+        "calibration_ratio": null,
+        "closed_trades": 0,
+        "expected_return_on_allocation": null,
+        "forecast_error": 0,
+        "forecast_error_standard_deviation": null,
+        "frequency": "Monthly",
+        "gross_risk_deployed": 0,
+        "mean_forecast_error": null,
+        "normalized_error_standard_deviation": null,
+        "normalized_error_standard_error": null,
+        "outperformance_rate": null,
+        "period": "2026-10",
+        "realized_net_pnl": 0,
+        "realized_return_on_allocation": null,
+        "return_calibration_difference": null
+      },
+      {
+        "base_expected_net_pnl": 0,
+        "calibration_ratio": null,
+        "closed_trades": 0,
+        "expected_return_on_allocation": null,
+        "forecast_error": 0,
+        "forecast_error_standard_deviation": null,
+        "frequency": "Yearly",
+        "gross_risk_deployed": 0,
+        "mean_forecast_error": null,
+        "normalized_error_standard_deviation": null,
+        "normalized_error_standard_error": null,
+        "outperformance_rate": null,
+        "period": "2026",
+        "realized_net_pnl": 0,
+        "realized_return_on_allocation": null,
+        "return_calibration_difference": null
+      }
+    ],
+    "capacity": {
+      "accepted_allocations": 5,
+      "available_capacity": 2760.77,
+      "consumed_capacity": 7239.23,
+      "eligible_recycled_allocations": 0,
+      "recycled_capacity": 0,
+      "released_allocations": 2,
+      "released_capacity": 3100.09,
+      "starting_capacity": 10000.0,
+      "trade_date": "2026-10-21"
+    },
+    "cumulative_expected_realized": [],
+    "performance": {
+      "average_loss": null,
+      "average_win": null,
+      "by_dte": [],
+      "by_strategy": [],
+      "expectancy_per_trade": null,
+      "maximum_daily_drawdown": 0.0,
+      "profit_factor": null,
+      "settled_trades": 0,
+      "total_net_pnl": 0,
+      "trade_win_rate": null,
+      "trading_days": 0
+    },
+    "portfolio_pnl": [
+      {
+        "net_pnl": -70.2,
+        "time_et": "2026-10-21T13:07:28.143881-04:00"
+      },
+      {
+        "net_pnl": -192.6,
+        "time_et": "2026-10-21T13:54:59.645116-04:00"
+      },
+      {
+        "net_pnl": -91.8,
+        "time_et": "2026-10-21T13:59:59.937476-04:00"
+      },
+      {
+        "net_pnl": -67.8,
+        "time_et": "2026-10-21T14:04:48.568748-04:00"
+      },
+      {
+        "net_pnl": -67.8,
+        "time_et": "2026-10-21T14:05:03.582111-04:00"
+      },
+      {
+        "net_pnl": -442.0,
+        "time_et": "2026-10-21T14:19:59.599233-04:00"
+      },
+      {
+        "net_pnl": -317.0,
+        "time_et": "2026-10-21T14:24:59.976741-04:00"
+      },
+      {
+        "net_pnl": -496.0,
+        "time_et": "2026-10-21T14:29:59.994514-04:00"
+      },
+      {
+        "net_pnl": -423.0,
+        "time_et": "2026-10-21T14:34:50.761582-04:00"
+      },
+      {
+        "net_pnl": -344.0,
+        "time_et": "2026-10-21T14:39:51.226336-04:00"
+      },
+      {
+        "net_pnl": -373.0,
+        "time_et": "2026-10-21T14:44:51.652881-04:00"
+      },
+      {
+        "net_pnl": -82.0,
+        "time_et": "2026-10-21T14:49:52.102509-04:00"
+      },
+      {
+        "net_pnl": -72.0,
+        "time_et": "2026-10-21T14:54:52.566492-04:00"
+      },
+      {
+        "net_pnl": 231.0,
+        "time_et": "2026-10-21T14:59:52.930056-04:00"
+      },
+      {
+        "net_pnl": 207.0,
+        "time_et": "2026-10-21T15:04:53.425058-04:00"
+      },
+      {
+        "net_pnl": 345.0,
+        "time_et": "2026-10-21T15:09:53.788204-04:00"
+      },
+      {
+        "net_pnl": 340.0,
+        "time_et": "2026-10-21T15:14:54.127224-04:00"
+      },
+      {
+        "net_pnl": 301.0,
+        "time_et": "2026-10-21T15:19:54.478335-04:00"
+      },
+      {
+        "net_pnl": 362.0,
+        "time_et": "2026-10-21T15:24:54.839242-04:00"
+      },
+      {
+        "net_pnl": 132.0,
+        "time_et": "2026-10-21T15:29:55.158338-04:00"
+      },
+      {
+        "net_pnl": 76.0,
+        "time_et": "2026-10-21T15:34:55.499310-04:00"
+      },
+      {
+        "net_pnl": 122.0,
+        "time_et": "2026-10-21T15:39:55.877252-04:00"
+      },
+      {
+        "net_pnl": 187.0,
+        "time_et": "2026-10-21T15:44:56.267869-04:00"
+      },
+      {
+        "net_pnl": -132.0,
+        "time_et": "2026-10-21T15:49:56.643892-04:00"
+      },
+      {
+        "net_pnl": -193.0,
+        "time_et": "2026-10-21T15:54:56.962811-04:00"
+      },
+      {
+        "net_pnl": -76.0,
+        "time_et": "2026-10-21T15:59:57.316694-04:00"
+      }
+    ],
+    "summary": {
+      "additional_loss_to_contractual_max": 8194.0,
+      "available_equity": 241654.0,
+      "cash": 250000.0,
+      "closed_trades": 0,
+      "contractual_stress_loss": 8270.0,
+      "equity": 249924.0,
+      "open_positions": 5,
+      "realized_pnl": 0.0,
+      "reserved_risk": 8270.0,
+      "starting_cash": 250000.0,
+      "unrealized_pnl": -76.0
+    }
+  },
+  "publication": {
+    "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
+    "paper_trading_only": true,
+    "published_at_et": "2026-10-22T09:15:21.005747-04:00",
+    "status": "NO_SESSION_ACTIVITY",
+    "trade_date": "2026-10-22"
+  },
+  "schema_version": "xdte-public-v2"
+}

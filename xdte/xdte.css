@@ -26,6 +26,10 @@ h1 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.7rem, 8v
 .badge { display: inline-flex; border-radius: 999px; padding: 6px 10px; background: #3d4659; color: white; font-size: .72rem; font-weight: 800; letter-spacing: .06em; }
 .badge--final { background: #175f31; }
 .badge--preliminary { background: #8f4c13; }
+.badge--ready { background: #237a3b; }
+.badge--failed { background: #b42318; }
+.badge--pending { background: #59636b; }
+.readiness-detail { color: #c9cfdb; font-size: .78rem; margin: 12px 0 0; }
 main { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
 section { padding: 68px 0 10px; }
 .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 24px; }
@@ -72,4 +76,3 @@ footer { background: #e7e2d7; color: var(--muted); padding: 28px 18px; text-alig
   .panel { padding: 16px; }
   section { padding-top: 52px; }
 }
-
