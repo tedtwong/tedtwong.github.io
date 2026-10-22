@@ -18,12 +18,12 @@
     "pnl_summary": {
       "baseline_status": "PRIOR_SESSION_SYNCHRONIZED_CLOSE",
       "current_ledger_pnl_level": -1883.2,
-      "current_synchronized_pnl_level": -1872.2,
+      "current_synchronized_pnl_level": -1883.2,
       "daily_ledger_pnl": -1807.2,
-      "daily_synchronized_pnl": -1796.2,
+      "daily_synchronized_pnl": -1807.2,
       "prior_session_as_of_et": "2026-10-21T15:59:57.316694-04:00",
       "prior_session_pnl_level": -76.0,
-      "synchronized_as_of_et": "2026-10-22T16:31:56.906784-04:00",
+      "synchronized_as_of_et": "2026-10-22T16:59:52.046695-04:00",
       "unrealized_pnl": 327.4
     },
     "portfolio_pnl": [
@@ -342,6 +342,18 @@
       {
         "net_pnl": -1872.2,
         "time_et": "2026-10-22T16:31:56.906784-04:00"
+      },
+      {
+        "net_pnl": -1868.2,
+        "time_et": "2026-10-22T16:49:50.867047-04:00"
+      },
+      {
+        "net_pnl": -1841.2,
+        "time_et": "2026-10-22T16:54:51.498288-04:00"
+      },
+      {
+        "net_pnl": -1883.2,
+        "time_et": "2026-10-22T16:59:52.046695-04:00"
       }
     ],
     "position_pnl": [
@@ -1346,6 +1358,21 @@
             "event": null,
             "net_pnl": 84.8,
             "time_et": "2026-10-22T16:31:56.348832-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 93.8,
+            "time_et": "2026-10-22T16:49:50.131916-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 94.8,
+            "time_et": "2026-10-22T16:54:50.759171-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 73.8,
+            "time_et": "2026-10-22T16:59:51.241999-04:00"
           }
         ],
         "position": "Position 3"
@@ -1746,6 +1773,21 @@
             "event": null,
             "net_pnl": 299.8,
             "time_et": "2026-10-22T16:31:56.208316-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 254.8,
+            "time_et": "2026-10-22T16:49:50.303873-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 259.8,
+            "time_et": "2026-10-22T16:54:50.889569-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 278.8,
+            "time_et": "2026-10-22T16:59:51.355068-04:00"
           }
         ],
         "position": "Position 4"
@@ -2201,6 +2243,21 @@
             "event": null,
             "net_pnl": -46.2,
             "time_et": "2026-10-22T16:31:56.906784-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -6.2,
+            "time_et": "2026-10-22T16:49:50.867047-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 14.8,
+            "time_et": "2026-10-22T16:54:51.498288-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -25.2,
+            "time_et": "2026-10-22T16:59:52.046695-04:00"
           }
         ],
         "position": "Position 6"
@@ -2948,6 +3005,18 @@
       {
         "net_pnl": -1872.2,
         "time_et": "2026-10-22T16:31:56.906784-04:00"
+      },
+      {
+        "net_pnl": -1868.2,
+        "time_et": "2026-10-22T16:49:50.867047-04:00"
+      },
+      {
+        "net_pnl": -1841.2,
+        "time_et": "2026-10-22T16:54:51.498288-04:00"
+      },
+      {
+        "net_pnl": -1883.2,
+        "time_et": "2026-10-22T16:59:52.046695-04:00"
       }
     ],
     "summary": {
@@ -2967,7 +3036,7 @@
   "publication": {
     "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-22T17:04:50.425661-04:00",
+    "published_at_et": "2026-10-22T17:08:38.231367-04:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-22"
   },
