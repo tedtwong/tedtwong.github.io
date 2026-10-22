@@ -104,6 +104,7 @@ async function load() {
   const data = retrieved.data;
   const pub = data.publication, daily = data.daily, ledger = data.ledger, funnel = daily.funnel, summary = ledger.summary;
   const pnlSummary = daily.pnl_summary || {};
+  const exitActivity = daily.exit_activity || {};
   const badge = document.querySelector("#status-badge");
   badge.textContent = pub.status.replaceAll("_", " ");
   badge.classList.add(pub.status === "FINAL_AFTER_CLOSE" ? "badge--final" : "badge--preliminary");
@@ -164,8 +165,13 @@ async function load() {
     ["Unrealized P&L", value(pnlSummary.unrealized_pnl, money), pnlClass(pnlSummary.unrealized_pnl)],
     ["Candidates examined", value(funnel.candidates_examined)], ["Terminal positive", value(funnel.terminal_positive_candidates)],
     ["Quadrature survivors", value(funnel.quadrature_survivors)], ["Path confirmed", value(funnel.path_confirmed_candidates)],
-    ["Eligible", value(funnel.eligible_candidates)], ["Orders submitted", value(funnel.orders_submitted)],
-    ["Filled", value(funnel.trades_filled)], ["Open positions", value(funnel.trades_open)],
+    ["Eligible", value(funnel.eligible_candidates)], ["Entry orders submitted", value(funnel.orders_submitted)],
+    ["Entries filled", value(funnel.trades_filled)], ["Open positions", value(funnel.trades_open)],
+  ]);
+  metrics("#exit-metrics", [
+    ["Exits filled today", value(exitActivity.exits_filled)],
+    ["Transaction costs on exits", value(exitActivity.transaction_costs, money)],
+    ["Realized P&L on exits", value(exitActivity.realized_pnl, money), pnlClass(exitActivity.realized_pnl)],
   ]);
   const positionColors = ["#f76915", "#eede04", "#a0d636", "#2fa236", "#fd0100", "#8a3ffc"];
   const positionSeries = (daily.position_pnl || []).map((item, index) => ({

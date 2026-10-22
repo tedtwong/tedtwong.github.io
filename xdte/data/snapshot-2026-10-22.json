@@ -1,5 +1,10 @@
 {
   "daily": {
+    "exit_activity": {
+      "exits_filled": 3,
+      "realized_pnl": -2210.6,
+      "transaction_costs": 15.6
+    },
     "funnel": {
       "available_daily_capacity": 7338.2,
       "candidates_examined": 11945,
@@ -3036,7 +3041,7 @@
   "publication": {
     "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-22T17:08:38.231367-04:00",
+    "published_at_et": "2026-10-22T17:12:04.752024-04:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-22"
   },
