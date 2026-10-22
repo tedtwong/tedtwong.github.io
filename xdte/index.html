@@ -31,9 +31,25 @@
   <main>
     <div id="data-warning" class="notice hidden"></div>
 
+    <section aria-labelledby="daily-heading">
+      <div class="section-heading">
+        <div><p class="section-number">01</p><h2 id="daily-heading">Daily P&amp;L</h2></div>
+        <p>Today’s paper-trading funnel and aggregated position results.</p>
+      </div>
+      <div id="daily-metrics" class="metric-grid"></div>
+      <article class="panel chart-panel">
+        <div class="panel__heading"><div><h3>Today’s position P&amp;L</h3><p>Individual paper positions after estimated costs, with green entry triangles, red exit squares, and the total as a thick blue line.</p></div></div>
+        <div id="daily-chart" class="chart"></div>
+      </article>
+      <article class="panel">
+        <div class="panel__heading"><div><h3>Entries and exits</h3><p>Sanitized position summaries; option legs and raw quotes are excluded.</p></div></div>
+        <div id="trade-table" class="table-wrap"></div>
+      </article>
+    </section>
+
     <section class="status-section" aria-labelledby="trading-status-heading">
       <div class="section-heading">
-        <div><p class="section-number">01</p><h2 id="trading-status-heading">Trading status and alerts</h2></div>
+        <div><p class="section-number">02</p><h2 id="trading-status-heading">Trading status and alerts</h2></div>
         <p>Current paper-session status and high-impact economic-calendar flags during the next seven calendar days.</p>
       </div>
       <article class="panel">
@@ -47,22 +63,6 @@
         <div id="recovered-alerts" class="table-wrap"></div>
         <h3 class="subsection-heading">Session notes</h3>
         <div id="informational-alerts" class="table-wrap"></div>
-      </article>
-    </section>
-
-    <section aria-labelledby="daily-heading">
-      <div class="section-heading">
-        <div><p class="section-number">02</p><h2 id="daily-heading">Daily P&amp;L</h2></div>
-        <p>Today’s paper-trading funnel and aggregated position results.</p>
-      </div>
-      <div id="daily-metrics" class="metric-grid"></div>
-      <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>Today’s position P&amp;L</h3><p>Individual paper positions after estimated costs, with green entry triangles, red exit squares, and the total as a thick blue line.</p></div></div>
-        <div id="daily-chart" class="chart"></div>
-      </article>
-      <article class="panel">
-        <div class="panel__heading"><div><h3>Entries and exits</h3><p>Sanitized position summaries; option legs and raw quotes are excluded.</p></div></div>
-        <div id="trade-table" class="table-wrap"></div>
       </article>
     </section>
 
