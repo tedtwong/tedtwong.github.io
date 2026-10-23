@@ -2296,7 +2296,9 @@
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": -25.2
+        "unrealized_net_pnl": -25.2,
+        "maximum_unrealized_pnl": 124.8,
+        "minimum_unrealized_pnl": -246.2
       },
       {
         "allocation": 2051.8,
@@ -2315,7 +2317,9 @@
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 278.8
+        "unrealized_net_pnl": 278.8,
+        "maximum_unrealized_pnl": 504.8,
+        "minimum_unrealized_pnl": -100.2
       },
       {
         "allocation": 1601.8,
@@ -2334,7 +2338,9 @@
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 73.8
+        "unrealized_net_pnl": 73.8,
+        "maximum_unrealized_pnl": 184.8,
+        "minimum_unrealized_pnl": -165.2
       },
       {
         "allocation": 1610.47,
@@ -2353,7 +2359,9 @@
         "spx_position_zone": "OUTSIDE_LONGS",
         "status": "CLOSED",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 0.0
+        "unrealized_net_pnl": 0.0,
+        "maximum_unrealized_pnl": 64.8,
+        "minimum_unrealized_pnl": -1495.2
       },
       {
         "allocation": 1599.94,
@@ -2372,7 +2380,9 @@
         "spx_position_zone": "OUTSIDE_LONGS",
         "status": "CLOSED",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 0.0
+        "unrealized_net_pnl": 0.0,
+        "maximum_unrealized_pnl": 209.8,
+        "minimum_unrealized_pnl": -1275.2
       },
       {
         "allocation": 1416.8,
@@ -2391,7 +2401,9 @@
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "CLOSED",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 0.0
+        "unrealized_net_pnl": 0.0,
+        "maximum_unrealized_pnl": 319.8,
+        "minimum_unrealized_pnl": -131.2
       }
     ],
     "trading_status_and_alerts": {
