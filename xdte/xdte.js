@@ -179,6 +179,74 @@ function lineChart(target, series, options = {}) {
   </svg><div class="chart-legend">${series.map(s => `<span class="legend-key" style="--key:${s.color}">${s.label}</span>`).join("")}</div>`;
 }
 
+function positionOutcomeChart(target, rows) {
+  const node = document.querySelector(target);
+  const finite = value => value !== null && value !== undefined && value !== "" && Number.isFinite(Number(value));
+  const positions = (rows || []).filter(row => row.entry_time_et && [
+    row.allocation, row.maximum_profit, row.base_expected_net_pnl,
+    row.unrealized_net_pnl, row.realized_net_pnl,
+    row.maximum_unrealized_pnl, row.minimum_unrealized_pnl,
+  ].some(finite));
+  if (!positions.length) {
+    node.innerHTML = '<div class="chart-empty">No filled-position outcome data are available.</div>';
+    return;
+  }
+  const values = positions.flatMap(row => [
+    finite(row.allocation) ? -Number(row.allocation) : null,
+    row.maximum_profit, row.base_expected_net_pnl, row.unrealized_net_pnl,
+    row.realized_net_pnl, row.maximum_unrealized_pnl, row.minimum_unrealized_pnl,
+  ].filter(finite).map(Number));
+  const rawMin = Math.min(0, ...values), rawMax = Math.max(0, ...values);
+  const magnitude = Math.max(Math.abs(rawMin), Math.abs(rawMax), 1);
+  const tickStep = magnitude > 5000 ? 1000 : magnitude > 2000 ? 500 : magnitude > 750 ? 250 : magnitude > 300 ? 100 : 50;
+  let minValue = Math.floor(rawMin / tickStep) * tickStep;
+  let maxValue = Math.ceil(rawMax / tickStep) * tickStep;
+  if (minValue === maxValue) { minValue -= tickStep; maxValue += tickStep; }
+  const width = 1000, rowHeight = 52, height = 64 + positions.length * rowHeight;
+  const pad = { l: 118, r: 26, t: 24, b: 40 };
+  const x = value => pad.l + (Number(value) - minValue) / (maxValue - minValue) * (width - pad.l - pad.r);
+  const y = index => pad.t + index * rowHeight + rowHeight / 2;
+  const ticks = Array.from(
+    { length: Math.round((maxValue - minValue) / tickStep) + 1 },
+    (_, index) => minValue + index * tickStep,
+  );
+  const title = (row, label, value) => `${row.position} · ${row.strategy || "Strategy unavailable"} · ${label}: ${money.format(Number(value))}`;
+  const rowMarks = positions.map((row, index) => {
+    const cy = y(index);
+    const allocation = finite(row.allocation) ? -Number(row.allocation) : null;
+    const maximum = finite(row.maximum_profit) ? Number(row.maximum_profit) : null;
+    const observedMin = finite(row.minimum_unrealized_pnl) ? Number(row.minimum_unrealized_pnl) : null;
+    const observedMax = finite(row.maximum_unrealized_pnl) ? Number(row.maximum_unrealized_pnl) : null;
+    const envelope = allocation !== null && maximum !== null
+      ? `<line x1="${x(allocation)}" x2="${x(maximum)}" y1="${cy}" y2="${cy}" class="outcome-envelope"><title>${row.position} risk/reward range: ${money.format(allocation)} to ${money.format(maximum)}</title></line>
+         <line x1="${x(allocation)}" x2="${x(allocation)}" y1="${cy-9}" y2="${cy+9}" class="outcome-allocation"><title>${title(row, "Negative allocation", allocation)}</title></line>
+         <line x1="${x(maximum)}" x2="${x(maximum)}" y1="${cy-9}" y2="${cy+9}" class="outcome-maximum"><title>${title(row, "Maximum profit", maximum)}</title></line>`
+      : "";
+    const observed = observedMin !== null && observedMax !== null
+      ? `<line x1="${x(observedMin)}" x2="${x(observedMax)}" y1="${cy}" y2="${cy}" class="outcome-observed"><title>${row.position} observed P&amp;L: ${money.format(observedMin)} to ${money.format(observedMax)}</title></line>
+         <circle cx="${x(observedMin)}" cy="${cy}" r="3" class="outcome-observed-point"><title>${title(row, "Minimum unrealized", observedMin)}</title></circle>
+         <circle cx="${x(observedMax)}" cy="${cy}" r="3" class="outcome-observed-point"><title>${title(row, "Maximum unrealized", observedMax)}</title></circle>`
+      : "";
+    const base = finite(row.base_expected_net_pnl) ? Number(row.base_expected_net_pnl) : null;
+    const unrealized = finite(row.unrealized_net_pnl) ? Number(row.unrealized_net_pnl) : null;
+    const realized = finite(row.realized_net_pnl) ? Number(row.realized_net_pnl) : null;
+    const baseMark = base === null ? "" : `<path d="M${x(base)},${cy-6} L${x(base)+6},${cy} L${x(base)},${cy+6} L${x(base)-6},${cy} Z" class="outcome-base"><title>${title(row, "Base expected", base)}</title></path>`;
+    const unrealizedMark = unrealized === null ? "" : `<circle cx="${x(unrealized)}" cy="${cy}" r="5" class="outcome-unrealized"><title>${title(row, "Unrealized", unrealized)}</title></circle>`;
+    const realizedMark = realized === null ? "" : `<rect x="${x(realized)-5}" y="${cy-5}" width="10" height="10" rx="1" class="outcome-realized"><title>${title(row, "Realized", realized)}</title></rect>`;
+    return `<text x="${pad.l-12}" y="${cy+4}" text-anchor="end" class="outcome-row-label">${row.position}</text>${envelope}${observed}${baseMark}${unrealizedMark}${realizedMark}`;
+  }).join("");
+  node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Position risk, expected value, and observed profit and loss map">
+    ${ticks.map(value => `<line x1="${x(value)}" x2="${x(value)}" y1="${pad.t-8}" y2="${height-pad.b}" class="outcome-grid${value === 0 ? " outcome-zero" : ""}"/><text x="${x(value)}" y="${height-14}" text-anchor="middle" class="outcome-axis-label">${money.format(value)}</text>`).join("")}
+    ${rowMarks}
+  </svg><div class="chart-legend outcome-legend">
+    <span class="legend-key" style="--key:#d0d5dd">Allocation to maximum profit</span>
+    <span class="legend-key" style="--key:#333ed4">Observed min/max</span>
+    <span class="legend-symbol legend-symbol--base">Base expected</span>
+    <span class="legend-symbol legend-symbol--unrealized">Unrealized</span>
+    <span class="legend-symbol legend-symbol--realized">Realized</span>
+  </div>`;
+}
+
 async function fetchSnapshot(url, source) {
   const response = await fetch(url, { cache: "no-store" });
   if (!response.ok) throw new Error(`${source} ${response.status}`);
@@ -349,6 +417,7 @@ async function load() {
     ["Max unrealized", "maximum_unrealized_pnl", pnlClass, v => value(v, money)], ["Min unrealized", "minimum_unrealized_pnl", pnlClass, v => value(v, money)],
     ["Exit reason", "exit_reason"],
   ], daily.trades);
+  positionOutcomeChart("#position-outcome-chart", daily.trades);
   metrics("#ledger-metrics", [
     ["Starting cash", value(summary.starting_cash, money)], ["Equity", value(summary.equity, money)],
     ["Realized P&L", value(summary.realized_pnl, money), pnlClass(summary.realized_pnl)], ["Unrealized P&L", value(summary.unrealized_pnl, money), pnlClass(summary.unrealized_pnl)],

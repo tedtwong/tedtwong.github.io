@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
-  <link rel="stylesheet" href="xdte.css?v=20261023-maximum-profit">
-  <script defer src="xdte.js?v=20261023-maximum-profit"></script>
+  <link rel="stylesheet" href="xdte.css?v=20261023-position-outcome-map">
+  <script defer src="xdte.js?v=20261023-position-outcome-map"></script>
 </head>
 <body>
   <header class="hero">
@@ -65,6 +65,10 @@
       <article class="panel">
         <div class="panel__heading"><div><h3>Entries and exits</h3><p>Sanitized position summaries, including each position’s observed maximum and minimum unrealized P&amp;L over its holding period; option legs and raw quotes are excluded.</p></div></div>
         <div id="trade-table" class="table-wrap"></div>
+      </article>
+      <article class="panel chart-panel">
+        <div class="panel__heading"><div><h3>Position outcome map</h3><p>Risk/reward boundaries, expected value, and observed P&amp;L for each filled position. Allocation is shown as a negative loss boundary; maximum profit is net of modeled expenses.</p></div></div>
+        <div id="position-outcome-chart" class="chart position-outcome-chart"></div>
       </article>
     </section>
 

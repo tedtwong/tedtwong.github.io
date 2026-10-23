@@ -135,6 +135,26 @@ tr:last-child td { border-bottom: 0; }
 .position-map .boundary-label { font-weight: 800; text-anchor: middle; }
 .position-map .axis-end-label { font-size: 4.5px; }
 .position-map--unavailable { color: var(--muted); }
+.position-outcome-chart { min-height: 240px; }
+.outcome-envelope { stroke: #d0d5dd; stroke-width: 9; stroke-linecap: round; }
+.outcome-allocation { stroke: #c93b32; stroke-width: 3; }
+.outcome-maximum { stroke: #2fa236; stroke-width: 3; }
+.outcome-observed { stroke: #333ed4; stroke-width: 5; stroke-linecap: round; }
+.outcome-observed-point { fill: #333ed4; stroke: #fff; stroke-width: 1; }
+.outcome-base { fill: #f76915; stroke: #fff; stroke-width: 1; }
+.outcome-unrealized { fill: #333ed4; stroke: #fff; stroke-width: 1.5; }
+.outcome-realized { fill: #2fa236; stroke: #fff; stroke-width: 1.5; }
+.outcome-grid { stroke: #e4dfd6; stroke-width: 1; }
+.outcome-zero { stroke: #667085; stroke-width: 1.75; }
+.outcome-row-label, .outcome-axis-label { fill: #667085; font-size: 12px; }
+.outcome-row-label { font-weight: 750; }
+.legend-symbol { display: inline-flex; align-items: center; gap: 7px; }
+.legend-symbol::before { content: ""; display: inline-block; width: 10px; height: 10px; background: var(--symbol); }
+.legend-symbol--base { --symbol: #f76915; }
+.legend-symbol--base::before { transform: rotate(45deg); }
+.legend-symbol--unrealized { --symbol: #333ed4; }
+.legend-symbol--unrealized::before { border-radius: 50%; }
+.legend-symbol--realized { --symbol: #2fa236; }
 .notice { margin: 24px 0 -34px; border-left: 4px solid var(--orange); background: #fff4e8; padding: 14px 18px; line-height: 1.45; }
 .status-section { padding-top: 46px; }
 .status-summary { border-left: 4px solid var(--orange); background: #fff4e8; padding: 14px 18px; }
