@@ -249,6 +249,102 @@ function positionOutcomeChart(target, rows) {
   </div>`;
 }
 
+const escapeText = value => String(value ?? "").replace(/[&<>"']/g, character => ({
+  "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+}[character]));
+
+function funnelHeatmap(target, rows) {
+  const node = document.querySelector(target);
+  if (!rows.length) {
+    node.innerHTML = '<div class="chart-empty">No funnel observations are available for this period.</div>';
+    return;
+  }
+  const stages = ["Candidates examined", "Terminal positive", "Quadrature survivors", "Path confirmed", "Eligible", "Entry orders submitted", "Entries filled", "Open positions"];
+  const labels = [...new Set(rows.map(row => {
+    const strategy = String(row.strategy || "UNATTRIBUTED").replaceAll("_", " ");
+    const dte = /^\d+$/.test(String(row.dte)) ? `${row.dte}DTE` : "Unattributed";
+    return `${strategy} · ${dte}`;
+  }))].sort((left, right) => left.localeCompare(right, undefined, { numeric: true }));
+  const lookup = new Map(rows.map(row => {
+    const strategy = String(row.strategy || "UNATTRIBUTED").replaceAll("_", " ");
+    const dte = /^\d+$/.test(String(row.dte)) ? `${row.dte}DTE` : "Unattributed";
+    return [[row.stage, `${strategy} · ${dte}`].join("||"), Number(row.count) || 0];
+  }));
+  const width = 1200, cellWidth = 122, cellHeight = 34;
+  const pad = { l: 248, r: 18, t: 104, b: 26 };
+  const height = pad.t + labels.length * cellHeight + pad.b;
+  const maximum = Math.max(1, ...rows.map(row => Number(row.count) || 0));
+  const cells = labels.flatMap((label, rowIndex) => stages.map((stage, columnIndex) => {
+    const count = lookup.get([stage, label].join("||")) || 0;
+    const intensity = count ? .14 + .86 * Math.log1p(count) / Math.log1p(maximum) : 0;
+    const x = pad.l + columnIndex * cellWidth, y = pad.t + rowIndex * cellHeight;
+    return `<rect x="${x}" y="${y}" width="${cellWidth-3}" height="${cellHeight-3}" rx="3" fill="#333ed4" fill-opacity="${intensity.toFixed(3)}"><title>${escapeText(stage)} · ${escapeText(label)}: ${number.format(count)}</title></rect>${count ? `<text x="${x+(cellWidth-3)/2}" y="${y+21}" text-anchor="middle" fill="${intensity > .56 ? "white" : "#172033"}" font-size="11" font-weight="700">${number.format(count)}</text>` : ""}`;
+  })).join("");
+  node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Candidate funnel counts by strategy and DTE">
+    ${stages.map((stage, index) => `<text transform="translate(${pad.l + index*cellWidth + 16},${pad.t-12}) rotate(-38)" font-size="12" font-weight="700" fill="#667085">${escapeText(stage)}</text>`).join("")}
+    ${labels.map((label, index) => `<text x="${pad.l-10}" y="${pad.t+index*cellHeight+21}" text-anchor="end" font-size="11" font-weight="700" fill="#667085">${escapeText(label)}</text>`).join("")}
+    ${cells}
+  </svg>`;
+}
+
+function rejectionBarChart(target, rows) {
+  const node = document.querySelector(target);
+  if (!rows.length) {
+    node.innerHTML = '<div class="chart-empty">No recorded rejection reasons are available for this period.</div>';
+    return;
+  }
+  const aggregated = new Map();
+  rows.forEach(row => {
+    const key = `${row.reason}||${row.category}`;
+    aggregated.set(key, (aggregated.get(key) || 0) + (Number(row.count) || 0));
+  });
+  const reasonTotals = new Map();
+  aggregated.forEach((count, key) => {
+    const reason = key.split("||")[0];
+    reasonTotals.set(reason, (reasonTotals.get(reason) || 0) + count);
+  });
+  const reasons = [...reasonTotals].sort((a, b) => b[1] - a[1]).slice(0, 20).map(item => item[0]);
+  const categories = ["Scanner decision", "Path confirmation"];
+  const colors = { "Scanner decision": "#333ed4", "Path confirmation": "#f76915" };
+  const maximum = Math.max(1, ...reasons.map(reason => reasonTotals.get(reason) || 0));
+  const width = 1000, rowHeight = 34, height = 38 + reasons.length * rowHeight;
+  const pad = { l: 350, r: 58, t: 16, b: 22 };
+  const plotWidth = width - pad.l - pad.r;
+  const marks = reasons.map((reason, index) => {
+    let cursor = pad.l;
+    const bars = categories.map(category => {
+      const count = aggregated.get(`${reason}||${category}`) || 0;
+      const segmentWidth = count / maximum * plotWidth;
+      const mark = count ? `<rect x="${cursor}" y="${pad.t+index*rowHeight}" width="${segmentWidth}" height="22" rx="2" fill="${colors[category]}"><title>${escapeText(reason)} · ${category}: ${number.format(count)}</title></rect>` : "";
+      cursor += segmentWidth;
+      return mark;
+    }).join("");
+    const total = reasonTotals.get(reason) || 0;
+    return `<text x="${pad.l-10}" y="${pad.t+index*rowHeight+16}" text-anchor="end" font-size="11" fill="#667085">${escapeText(reason)}</text>${bars}<text x="${cursor+7}" y="${pad.t+index*rowHeight+16}" font-size="11" font-weight="700" fill="#172033">${number.format(total)}</text>`;
+  }).join("");
+  node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Recorded rejection reasons">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:${colors["Scanner decision"]}">Scanner decision</span><span class="legend-key" style="--key:${colors["Path confirmation"]}">Path confirmation</span></div>`;
+}
+
+let selectedFunnelPeriod = "day";
+function renderFunnelHistory(history) {
+  const selected = history?.[selectedFunnelPeriod] || { funnel: [], rejections: [] };
+  funnelHeatmap("#funnel-history-chart", selected.funnel || []);
+  rejectionBarChart("#rejection-history-chart", selected.rejections || []);
+  const hasUnattributed = (selected.funnel || []).some(row => row.detail_status === "HISTORICAL_DETAIL_UNAVAILABLE");
+  document.querySelector("#funnel-history-note").textContent = hasUnattributed
+    ? "Unattributed cells preserve totals from older aggregate-only scans. New scans persist exact strategy/DTE detail at every funnel stage."
+    : "All displayed funnel observations include strategy and DTE attribution.";
+  document.querySelectorAll("[data-funnel-period]").forEach(button => {
+    const active = button.dataset.funnelPeriod === selectedFunnelPeriod;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+    button.onclick = () => {
+      selectedFunnelPeriod = button.dataset.funnelPeriod;
+      renderFunnelHistory(history);
+    };
+  });
+}
+
 async function fetchSnapshot(url, source) {
   const response = await fetch(url, { cache: "no-store" });
   if (!response.ok) throw new Error(`${source} ${response.status}`);
@@ -294,8 +390,10 @@ async function load() {
   const pnlSummary = daily.pnl_summary || {};
   const exitActivity = daily.exit_activity || {};
   const badge = document.querySelector("#status-badge");
-  badge.textContent = pub.status.replaceAll("_", " ");
-  badge.classList.add(pub.status === "FINAL_AFTER_CLOSE" ? "badge--final" : "badge--preliminary");
+  const marketDataStatus = pub.market_data_status || (pub.status === "PRELIMINARY_SESSION_ACTIVE" ? "MARKET_OPEN" : "MARKET_CLOSED");
+  badge.textContent = marketDataStatus.replaceAll("_", " ");
+  badge.classList.remove("badge--final", "badge--preliminary");
+  badge.classList.add(marketDataStatus === "MARKET_CLOSED" ? "badge--final" : "badge--preliminary");
   const readiness = daily.system_readiness || { status: "PENDING" };
   const readinessBadge = document.querySelector("#readiness-badge");
   const readinessDetail = document.querySelector("#readiness-detail");
@@ -317,9 +415,12 @@ async function load() {
   document.querySelector("#footer-date").textContent = `Snapshot ${pub.trade_date}`;
   document.querySelector("#feed-status").textContent = `Source: ${retrieved.source} · refreshes automatically every five minutes`;
   const warning = document.querySelector("#data-warning");
-  if (pub.status !== "FINAL_AFTER_CLOSE") {
+  if (marketDataStatus === "MARKET_CLOSED") {
     warning.classList.remove("hidden");
-    warning.textContent = pub.status === "PRELIMINARY_SESSION_ACTIVE" ? "This snapshot was generated during the trading session and remains preliminary. The scheduled after-close publication will replace it." : "No completed-session activity was available for this publication date.";
+    warning.textContent = `Market Closed — retaining Daily P&L for ${pub.trade_date} until the next regular trading session opens. Values are not live market data.`;
+  } else if (pub.status !== "FINAL_AFTER_CLOSE") {
+    warning.classList.remove("hidden");
+    warning.textContent = "This snapshot was generated during the trading session and remains preliminary. The scheduled after-close publication will replace it.";
   } else {
     warning.classList.add("hidden");
     warning.textContent = "";
@@ -371,6 +472,7 @@ async function load() {
     ["Eligible", value(funnel.eligible_candidates)], ["Entry orders submitted", value(funnel.orders_submitted)],
     ["Entries filled", value(funnel.trades_filled)], ["Open positions", value(funnel.trades_open)],
   ]);
+  renderFunnelHistory(daily.funnel_history || {});
   summaryMetrics("#exit-metrics", [
     ["Exits filled today", value(exitActivity.exits_filled)],
     ["Net fill slippage", value(exitActivity.net_fill_slippage, money), slippageClass(exitActivity.net_fill_slippage)],

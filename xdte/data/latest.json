@@ -1,41 +1,1779 @@
 {
   "daily": {
     "exit_activity": {
-      "exits_filled": 0,
-      "net_fill_slippage": 0,
-      "realized_pnl": 0,
-      "released_capital": 0,
-      "transaction_costs": 0
+      "exits_filled": 1,
+      "net_fill_slippage": null,
+      "realized_pnl": 410.8,
+      "released_capital": 2051.8,
+      "transaction_costs": 5.2
     },
     "funnel": {
       "available_daily_capacity": 1113.16,
-      "candidates_examined": 148637,
-      "completed_scan_decisions": 55,
-      "current_capital_allocated": 14452.08,
-      "current_unrealized_pnl": 877.48,
+      "candidates_examined": 164829,
+      "completed_scan_decisions": 60,
+      "current_capital_allocated": 12400.28,
+      "current_unrealized_pnl": 157.68,
       "daily_capacity_released": 10499.84,
       "daily_capacity_total": 20000.0,
-      "eligible_candidates": 73,
+      "eligible_candidates": 88,
       "next_capacity_release_amount": null,
       "next_capacity_release_time": null,
       "orders_submitted": 5,
-      "path_confirmed_candidates": 102,
-      "quadrature_survivors": 7193,
-      "terminal_positive_candidates": 10367,
-      "trades_closed": 0,
+      "path_confirmed_candidates": 117,
+      "quadrature_survivors": 10005,
+      "terminal_positive_candidates": 13473,
+      "trades_closed": 1,
       "trades_filled": 5,
-      "trades_open": 8
+      "trades_open": 7
+    },
+    "funnel_history": {
+      "day": {
+        "funnel": [
+          {
+            "count": 411,
+            "detail_status": "ATTRIBUTED",
+            "dte": "0",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 397,
+            "detail_status": "ATTRIBUTED",
+            "dte": "0",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 6852,
+            "detail_status": "ATTRIBUTED",
+            "dte": "0",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 1994,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 2587,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 35392,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 2418,
+            "detail_status": "ATTRIBUTED",
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 2749,
+            "detail_status": "ATTRIBUTED",
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 43287,
+            "detail_status": "ATTRIBUTED",
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 1411,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 2866,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 23993,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 2155,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 2919,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 35398,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 13473,
+            "detail_status": "HISTORICAL_DETAIL_UNAVAILABLE",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Terminal positive",
+            "stage_key": "terminal_positive_candidates",
+            "strategy": "UNATTRIBUTED"
+          },
+          {
+            "count": 10005,
+            "detail_status": "HISTORICAL_DETAIL_UNAVAILABLE",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Quadrature survivors",
+            "stage_key": "quadrature_shortlist",
+            "strategy": "UNATTRIBUTED"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 69,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 9,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 36,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 52,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 9,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 27,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 1,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Entry orders submitted",
+            "stage_key": "orders_submitted",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Entry orders submitted",
+            "stage_key": "orders_submitted",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 1,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Entry orders submitted",
+            "stage_key": "orders_submitted",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 4,
+            "detail_status": "ATTRIBUTED",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Entries filled",
+            "stage_key": "trades_filled",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 1,
+            "detail_status": "ATTRIBUTED",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Entries filled",
+            "stage_key": "trades_filled",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 4,
+            "detail_status": "ATTRIBUTED",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Open positions",
+            "stage_key": "trades_open",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "stage": "Open positions",
+            "stage_key": "trades_open",
+            "strategy": "IRON_CONDOR"
+          }
+        ],
+        "period_days": 1,
+        "rejections": [
+          {
+            "category": "Scanner decision",
+            "count": 19,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "reason": "MINIMUM_ENTRY_SPACING_NOT_MET",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 18,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "reason": "INSUFFICIENT_DAILY_NEW_CAPITAL",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 17,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "reason": "BASE_EDGE_RETURN_BELOW_DURATION_HURDLE",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 9,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "reason": "PORTFOLIO_CONCENTRATION_OVERLAP",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 6,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "reason": "NO_TRADE_COMPUTATION_EXCEEDED_FRESHNESS_WINDOW",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 5,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "reason": "PAPER_ORDER_EXECUTION_FAILED",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 4,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "reason": "NO_TRADE_POSITIVE_EDGE_NOT_CONFIRMED",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 3,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "reason": "BASE_EDGE_RETURN_BELOW_DURATION_HURDLE",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 1,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "reason": "DATA_STALE",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 1,
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "reason": "PAPER_ORDER_EXECUTION_FAILED",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 1,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-23",
+            "reason": "PAPER_ORDER_EXECUTION_FAILED",
+            "strategy": "IRON_CONDOR"
+          }
+        ]
+      },
+      "month": {
+        "funnel": [
+          {
+            "count": 644,
+            "detail_status": "ATTRIBUTED",
+            "dte": "0",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 709,
+            "detail_status": "ATTRIBUTED",
+            "dte": "0",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 7595,
+            "detail_status": "ATTRIBUTED",
+            "dte": "0",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 2738,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 3535,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 40464,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 2785,
+            "detail_status": "ATTRIBUTED",
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 3255,
+            "detail_status": "ATTRIBUTED",
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 46441,
+            "detail_status": "ATTRIBUTED",
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 1411,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 2866,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 23993,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 2491,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 3472,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 38973,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 17755,
+            "detail_status": "HISTORICAL_DETAIL_UNAVAILABLE",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Terminal positive",
+            "stage_key": "terminal_positive_candidates",
+            "strategy": "UNATTRIBUTED"
+          },
+          {
+            "count": 13038,
+            "detail_status": "HISTORICAL_DETAIL_UNAVAILABLE",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Quadrature survivors",
+            "stage_key": "quadrature_shortlist",
+            "strategy": "UNATTRIBUTED"
+          },
+          {
+            "count": 8,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 153,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 27,
+            "detail_status": "ATTRIBUTED",
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 9,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 45,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 22,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 29,
+            "detail_status": "HISTORICAL_DETAIL_UNAVAILABLE",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "UNATTRIBUTED"
+          },
+          {
+            "count": 1,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 57,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 9,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 27,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 2,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 11,
+            "detail_status": "HISTORICAL_DETAIL_UNAVAILABLE",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "UNATTRIBUTED"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Entry orders submitted",
+            "stage_key": "orders_submitted",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Entry orders submitted",
+            "stage_key": "orders_submitted",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Entry orders submitted",
+            "stage_key": "orders_submitted",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 1,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Entry orders submitted",
+            "stage_key": "orders_submitted",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Entry orders submitted",
+            "stage_key": "orders_submitted",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 4,
+            "detail_status": "ATTRIBUTED",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Entries filled",
+            "stage_key": "trades_filled",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 5,
+            "detail_status": "ATTRIBUTED",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Entries filled",
+            "stage_key": "trades_filled",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 2,
+            "detail_status": "HISTORICAL_DETAIL_UNAVAILABLE",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Entries filled",
+            "stage_key": "trades_filled",
+            "strategy": "UNATTRIBUTED"
+          },
+          {
+            "count": 4,
+            "detail_status": "ATTRIBUTED",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Open positions",
+            "stage_key": "trades_open",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "stage": "Open positions",
+            "stage_key": "trades_open",
+            "strategy": "IRON_CONDOR"
+          }
+        ],
+        "period_days": 30,
+        "rejections": [
+          {
+            "category": "Path confirmation",
+            "count": 146,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "PATH_CONFIRMATION_OTHER",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 64,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "NO_TRADE_POSITIVE_EDGE_NOT_CONFIRMED",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 53,
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "PATH_CONFIRMATION_OTHER",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 38,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "BASE_EDGE_RETURN_BELOW_DURATION_HURDLE",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 30,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "PATH_CONFIRMATION_OTHER",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 19,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "MINIMUM_ENTRY_SPACING_NOT_MET",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 18,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "INSUFFICIENT_DAILY_NEW_CAPITAL",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 17,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "DATA_STALE",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 10,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "MAXIMUM_OPEN_POSITIONS",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 9,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "PORTFOLIO_CONCENTRATION_OVERLAP",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 8,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "BASE_EDGE_RETURN_ON_PLANNED_LOSS_BELOW_MINIMUM",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 6,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "INSUFFICIENT_ADVERSE_ES95_CAPACITY",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 6,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "NO_TRADE_COMPUTATION_EXCEEDED_FRESHNESS_WINDOW",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 5,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "BASE_EDGE_RETURN_BELOW_DURATION_HURDLE",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 5,
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "BASE_EDGE_RETURN_BELOW_DURATION_HURDLE",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 5,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "BASE_EDGE_RETURN_ON_PLANNED_LOSS_BELOW_MINIMUM",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 5,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "PAPER_ORDER_EXECUTION_FAILED",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 4,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "PAPER_ORDER_EXECUTION_FAILED",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 4,
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "PAPER_ORDER_EXECUTION_FAILED",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 3,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "BASE_EDGE_RETURN_BELOW_DURATION_HURDLE",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 3,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "PAPER_ORDER_EXECUTION_FAILED",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 2,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "BASE_EDGE_RETURN_ON_PLANNED_LOSS_BELOW_MINIMUM",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 2,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "PATH_CONFIRMATION_OTHER",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 2,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "NO_TRADE_EXIT_TARGET_NOT_CONFIRMED",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 1,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "BASE_EDGE_RETURN_BELOW_DURATION_HURDLE",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 1,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "PATH_CONFIRMATION_OTHER",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 1,
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-09-24",
+            "reason": "PAPER_ORDER_EXECUTION_FAILED",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          }
+        ]
+      },
+      "week": {
+        "funnel": [
+          {
+            "count": 644,
+            "detail_status": "ATTRIBUTED",
+            "dte": "0",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 709,
+            "detail_status": "ATTRIBUTED",
+            "dte": "0",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 7595,
+            "detail_status": "ATTRIBUTED",
+            "dte": "0",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 2738,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 3535,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 40464,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 2785,
+            "detail_status": "ATTRIBUTED",
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 3255,
+            "detail_status": "ATTRIBUTED",
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 46441,
+            "detail_status": "ATTRIBUTED",
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 1411,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 2866,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 23993,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 2491,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 3472,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 38973,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Candidates examined",
+            "stage_key": "raw_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 17755,
+            "detail_status": "HISTORICAL_DETAIL_UNAVAILABLE",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Terminal positive",
+            "stage_key": "terminal_positive_candidates",
+            "strategy": "UNATTRIBUTED"
+          },
+          {
+            "count": 13038,
+            "detail_status": "HISTORICAL_DETAIL_UNAVAILABLE",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Quadrature survivors",
+            "stage_key": "quadrature_shortlist",
+            "strategy": "UNATTRIBUTED"
+          },
+          {
+            "count": 8,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "count": 153,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 27,
+            "detail_status": "ATTRIBUTED",
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 9,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 45,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 22,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 29,
+            "detail_status": "HISTORICAL_DETAIL_UNAVAILABLE",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Path confirmed",
+            "stage_key": "confirmation_finalists",
+            "strategy": "UNATTRIBUTED"
+          },
+          {
+            "count": 1,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 57,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 9,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 27,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 2,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 11,
+            "detail_status": "HISTORICAL_DETAIL_UNAVAILABLE",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Eligible",
+            "stage_key": "confirmed_eligible_candidates",
+            "strategy": "UNATTRIBUTED"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Entry orders submitted",
+            "stage_key": "orders_submitted",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Entry orders submitted",
+            "stage_key": "orders_submitted",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Entry orders submitted",
+            "stage_key": "orders_submitted",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 1,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Entry orders submitted",
+            "stage_key": "orders_submitted",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Entry orders submitted",
+            "stage_key": "orders_submitted",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 4,
+            "detail_status": "ATTRIBUTED",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Entries filled",
+            "stage_key": "trades_filled",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 5,
+            "detail_status": "ATTRIBUTED",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Entries filled",
+            "stage_key": "trades_filled",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "count": 2,
+            "detail_status": "HISTORICAL_DETAIL_UNAVAILABLE",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Entries filled",
+            "stage_key": "trades_filled",
+            "strategy": "UNATTRIBUTED"
+          },
+          {
+            "count": 4,
+            "detail_status": "ATTRIBUTED",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Open positions",
+            "stage_key": "trades_open",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "count": 3,
+            "detail_status": "ATTRIBUTED",
+            "dte": "UNATTRIBUTED",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "stage": "Open positions",
+            "stage_key": "trades_open",
+            "strategy": "IRON_CONDOR"
+          }
+        ],
+        "period_days": 7,
+        "rejections": [
+          {
+            "category": "Path confirmation",
+            "count": 146,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "PATH_CONFIRMATION_OTHER",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 64,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "NO_TRADE_POSITIVE_EDGE_NOT_CONFIRMED",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 53,
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "PATH_CONFIRMATION_OTHER",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 38,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "BASE_EDGE_RETURN_BELOW_DURATION_HURDLE",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 30,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "PATH_CONFIRMATION_OTHER",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 19,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "MINIMUM_ENTRY_SPACING_NOT_MET",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 18,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "INSUFFICIENT_DAILY_NEW_CAPITAL",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 17,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "DATA_STALE",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 10,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "MAXIMUM_OPEN_POSITIONS",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 9,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "PORTFOLIO_CONCENTRATION_OVERLAP",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 8,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "BASE_EDGE_RETURN_ON_PLANNED_LOSS_BELOW_MINIMUM",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 6,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "INSUFFICIENT_ADVERSE_ES95_CAPACITY",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 6,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "NO_TRADE_COMPUTATION_EXCEEDED_FRESHNESS_WINDOW",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 5,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "BASE_EDGE_RETURN_BELOW_DURATION_HURDLE",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 5,
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "BASE_EDGE_RETURN_BELOW_DURATION_HURDLE",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 5,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "BASE_EDGE_RETURN_ON_PLANNED_LOSS_BELOW_MINIMUM",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 5,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "PAPER_ORDER_EXECUTION_FAILED",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 4,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "PAPER_ORDER_EXECUTION_FAILED",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 4,
+            "dte": "2",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "PAPER_ORDER_EXECUTION_FAILED",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 3,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "BASE_EDGE_RETURN_BELOW_DURATION_HURDLE",
+            "strategy": "BULL_PUT_CREDIT_SPREAD"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 3,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "PAPER_ORDER_EXECUTION_FAILED",
+            "strategy": "IRON_CONDOR"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 2,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "BASE_EDGE_RETURN_ON_PLANNED_LOSS_BELOW_MINIMUM",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 2,
+            "dte": "1",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "PATH_CONFIRMATION_OTHER",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 2,
+            "dte": "ALL_DTE",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "NO_TRADE_EXIT_TARGET_NOT_CONFIRMED",
+            "strategy": "ALL_STRATEGIES"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 1,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "BASE_EDGE_RETURN_BELOW_DURATION_HURDLE",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Path confirmation",
+            "count": 1,
+            "dte": "7",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "PATH_CONFIRMATION_OTHER",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          },
+          {
+            "category": "Scanner decision",
+            "count": 1,
+            "dte": "3",
+            "period_end": "2026-10-23",
+            "period_start": "2026-10-17",
+            "reason": "PAPER_ORDER_EXECUTION_FAILED",
+            "strategy": "BEAR_CALL_CREDIT_SPREAD"
+          }
+        ]
+      }
     },
     "pnl_summary": {
       "baseline_status": "PRIOR_SESSION_SYNCHRONIZED_CLOSE",
-      "current_ledger_pnl_level": -1333.12,
-      "current_synchronized_pnl_level": -1063.56,
-      "daily_ledger_pnl": 550.08,
-      "daily_synchronized_pnl": 819.64,
+      "current_ledger_pnl_level": -1642.12,
+      "current_synchronized_pnl_level": -1372.56,
+      "daily_ledger_pnl": 241.08,
+      "daily_synchronized_pnl": 510.64,
       "prior_session_as_of_et": "2026-10-22T16:59:52.046695-04:00",
       "prior_session_pnl_level": -1883.2,
-      "synchronized_as_of_et": "2026-10-23T15:35:32.533159-04:00",
-      "unrealized_pnl": 877.48
+      "synchronized_as_of_et": "2026-10-23T16:23:27.805447-04:00",
+      "unrealized_pnl": 157.68
     },
     "portfolio_pnl": [
       {
@@ -311,8 +2049,44 @@
         "time_et": "2026-10-23T15:34:59.671932-04:00"
       },
       {
-        "net_pnl": -1063.56,
-        "time_et": "2026-10-23T15:35:32.533159-04:00"
+        "net_pnl": -1148.56,
+        "time_et": "2026-10-23T15:39:59.480019-04:00"
+      },
+      {
+        "net_pnl": -1112.56,
+        "time_et": "2026-10-23T15:44:58.892155-04:00"
+      },
+      {
+        "net_pnl": -1039.56,
+        "time_et": "2026-10-23T15:49:59.749762-04:00"
+      },
+      {
+        "net_pnl": -1216.56,
+        "time_et": "2026-10-23T15:54:59.350955-04:00"
+      },
+      {
+        "net_pnl": -1417.56,
+        "time_et": "2026-10-23T15:59:52.866347-04:00"
+      },
+      {
+        "net_pnl": -1263.56,
+        "time_et": "2026-10-23T16:04:54.262473-04:00"
+      },
+      {
+        "net_pnl": -1241.56,
+        "time_et": "2026-10-23T16:09:55.528013-04:00"
+      },
+      {
+        "net_pnl": -1283.56,
+        "time_et": "2026-10-23T16:14:56.252525-04:00"
+      },
+      {
+        "net_pnl": -1333.56,
+        "time_et": "2026-10-23T16:19:57.265186-04:00"
+      },
+      {
+        "net_pnl": -1372.56,
+        "time_et": "2026-10-23T16:23:27.805447-04:00"
       }
     ],
     "position_pnl": [
@@ -361,7 +2135,52 @@
           {
             "event": null,
             "net_pnl": -46.68,
-            "time_et": "2026-10-23T15:35:26.846720-04:00"
+            "time_et": "2026-10-23T15:39:58.076190-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -26.68,
+            "time_et": "2026-10-23T15:44:58.892155-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -21.68,
+            "time_et": "2026-10-23T15:49:59.749762-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -31.68,
+            "time_et": "2026-10-23T15:54:45.676373-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -37.68,
+            "time_et": "2026-10-23T15:59:47.392770-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -41.68,
+            "time_et": "2026-10-23T16:04:49.016692-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -36.68,
+            "time_et": "2026-10-23T16:09:50.272969-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -27.68,
+            "time_et": "2026-10-23T16:14:51.174750-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -42.68,
+            "time_et": "2026-10-23T16:19:51.919338-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -46.68,
+            "time_et": "2026-10-23T16:23:22.564174-04:00"
           }
         ],
         "position": "Position 1"
@@ -465,8 +2284,53 @@
           },
           {
             "event": null,
+            "net_pnl": -8.42,
+            "time_et": "2026-10-23T15:39:48.527133-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 1.58,
+            "time_et": "2026-10-23T15:44:49.306654-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -9.42,
+            "time_et": "2026-10-23T15:49:49.988594-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 1.58,
+            "time_et": "2026-10-23T15:54:50.999867-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -8.42,
+            "time_et": "2026-10-23T15:59:52.866347-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -9.42,
+            "time_et": "2026-10-23T16:04:54.262473-04:00"
+          },
+          {
+            "event": null,
             "net_pnl": -18.42,
-            "time_et": "2026-10-23T15:35:32.533159-04:00"
+            "time_et": "2026-10-23T16:09:55.528013-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -39.42,
+            "time_et": "2026-10-23T16:14:56.252525-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -28.42,
+            "time_et": "2026-10-23T16:19:57.265186-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -98.42,
+            "time_et": "2026-10-23T16:23:27.805447-04:00"
           }
         ],
         "position": "Position 2"
@@ -655,8 +2519,53 @@
           },
           {
             "event": null,
+            "net_pnl": 41.58,
+            "time_et": "2026-10-23T15:39:59.480019-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 40.58,
+            "time_et": "2026-10-23T15:44:45.085534-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 41.58,
+            "time_et": "2026-10-23T15:49:46.015276-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 51.58,
+            "time_et": "2026-10-23T15:54:47.118416-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 41.58,
+            "time_et": "2026-10-23T15:59:48.744613-04:00"
+          },
+          {
+            "event": null,
             "net_pnl": 30.58,
-            "time_et": "2026-10-23T15:35:28.386224-04:00"
+            "time_et": "2026-10-23T16:04:50.366618-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 31.58,
+            "time_et": "2026-10-23T16:09:51.560642-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 20.58,
+            "time_et": "2026-10-23T16:14:52.407660-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 20.58,
+            "time_et": "2026-10-23T16:19:53.262979-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 11.58,
+            "time_et": "2026-10-23T16:23:23.845709-04:00"
           }
         ],
         "position": "Position 3"
@@ -880,8 +2789,53 @@
           },
           {
             "event": null,
+            "net_pnl": 75.58,
+            "time_et": "2026-10-23T15:39:45.477458-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 76.58,
+            "time_et": "2026-10-23T15:44:46.338503-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 70.58,
+            "time_et": "2026-10-23T15:49:47.304101-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 81.58,
+            "time_et": "2026-10-23T15:54:48.741016-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 81.58,
+            "time_et": "2026-10-23T15:59:50.579056-04:00"
+          },
+          {
+            "event": null,
             "net_pnl": 71.58,
-            "time_et": "2026-10-23T15:35:29.486179-04:00"
+            "time_et": "2026-10-23T16:04:52.094631-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 66.58,
+            "time_et": "2026-10-23T16:09:53.088466-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 61.58,
+            "time_et": "2026-10-23T16:14:53.913379-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 56.58,
+            "time_et": "2026-10-23T16:19:54.876609-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 90.58,
+            "time_et": "2026-10-23T16:23:25.435851-04:00"
           }
         ],
         "position": "Position 4"
@@ -1130,8 +3084,53 @@
           },
           {
             "event": null,
+            "net_pnl": 31.58,
+            "time_et": "2026-10-23T15:39:45.365441-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 31.58,
+            "time_et": "2026-10-23T15:44:46.284691-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 31.58,
+            "time_et": "2026-10-23T15:49:47.086747-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 41.58,
+            "time_et": "2026-10-23T15:54:48.488814-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 31.58,
+            "time_et": "2026-10-23T15:59:50.155499-04:00"
+          },
+          {
+            "event": null,
             "net_pnl": 20.58,
-            "time_et": "2026-10-23T15:35:29.314634-04:00"
+            "time_et": "2026-10-23T16:04:51.478118-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 20.58,
+            "time_et": "2026-10-23T16:09:52.551948-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 11.58,
+            "time_et": "2026-10-23T16:14:53.304528-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 1.58,
+            "time_et": "2026-10-23T16:19:54.306139-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 0.58,
+            "time_et": "2026-10-23T16:23:24.935075-04:00"
           }
         ],
         "position": "Position 5"
@@ -1506,355 +3505,55 @@
           {
             "event": null,
             "net_pnl": 324.8,
-            "time_et": "2026-10-23T15:35:29.729709-04:00"
+            "time_et": "2026-10-23T15:39:45.714626-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 344.8,
+            "time_et": "2026-10-23T15:44:46.439167-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 334.8,
+            "time_et": "2026-10-23T15:49:47.331499-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 344.8,
+            "time_et": "2026-10-23T15:54:48.868175-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 344.8,
+            "time_et": "2026-10-23T15:59:50.695529-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 324.8,
+            "time_et": "2026-10-23T16:04:52.173614-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 354.8,
+            "time_et": "2026-10-23T16:09:53.222537-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 324.8,
+            "time_et": "2026-10-23T16:14:54.016149-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 304.8,
+            "time_et": "2026-10-23T16:19:54.906434-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 294.8,
+            "time_et": "2026-10-23T16:23:25.475361-04:00"
           }
         ],
         "position": "Position 6"
-      },
-      {
-        "points": [
-          {
-            "event": null,
-            "net_pnl": -195.2,
-            "time_et": "2026-10-23T09:34:48.541674-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": -335.2,
-            "time_et": "2026-10-23T09:39:49.090129-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": -65.2,
-            "time_et": "2026-10-23T09:44:49.753483-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": -25.2,
-            "time_et": "2026-10-23T09:49:50.267472-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": -75.2,
-            "time_et": "2026-10-23T09:54:50.823565-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 39.8,
-            "time_et": "2026-10-23T09:59:51.532610-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": -35.2,
-            "time_et": "2026-10-23T10:04:52.041302-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": -5.2,
-            "time_et": "2026-10-23T10:09:52.832703-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": -95.2,
-            "time_et": "2026-10-23T10:14:53.771615-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": -361.2,
-            "time_et": "2026-10-23T10:19:54.558451-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": -211.2,
-            "time_et": "2026-10-23T10:22:55.034969-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": -270.2,
-            "time_et": "2026-10-23T10:29:45.286721-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": -280.2,
-            "time_et": "2026-10-23T10:34:46.000688-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": -15.2,
-            "time_et": "2026-10-23T10:39:46.510487-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 244.8,
-            "time_et": "2026-10-23T10:44:47.278246-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 338.8,
-            "time_et": "2026-10-23T10:49:48.100646-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 484.8,
-            "time_et": "2026-10-23T10:54:49.398163-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 504.8,
-            "time_et": "2026-10-23T10:59:49.995500-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 444.8,
-            "time_et": "2026-10-23T11:04:51.283025-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 384.8,
-            "time_et": "2026-10-23T11:09:52.284112-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 444.8,
-            "time_et": "2026-10-23T11:14:53.271564-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 529.8,
-            "time_et": "2026-10-23T11:19:54.212938-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 529.8,
-            "time_et": "2026-10-23T11:24:55.423246-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 584.8,
-            "time_et": "2026-10-23T11:29:56.886302-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 639.8,
-            "time_et": "2026-10-23T11:34:57.965542-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 559.8,
-            "time_et": "2026-10-23T11:39:58.601928-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 493.8,
-            "time_et": "2026-10-23T11:44:59.473340-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 563.8,
-            "time_et": "2026-10-23T11:49:45.582346-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 588.8,
-            "time_et": "2026-10-23T11:54:46.438000-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 688.8,
-            "time_et": "2026-10-23T11:59:47.262559-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 639.8,
-            "time_et": "2026-10-23T12:04:48.246701-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 689.8,
-            "time_et": "2026-10-23T12:09:49.088796-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 584.8,
-            "time_et": "2026-10-23T12:14:49.785818-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 574.8,
-            "time_et": "2026-10-23T12:19:50.664352-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 409.8,
-            "time_et": "2026-10-23T12:24:51.736646-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 449.8,
-            "time_et": "2026-10-23T12:29:52.435349-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 569.8,
-            "time_et": "2026-10-23T12:34:54.057739-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 589.8,
-            "time_et": "2026-10-23T12:39:55.674477-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 679.8,
-            "time_et": "2026-10-23T12:44:56.424809-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 674.8,
-            "time_et": "2026-10-23T12:49:57.551394-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 434.8,
-            "time_et": "2026-10-23T12:54:43.412495-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 169.8,
-            "time_et": "2026-10-23T13:29:55.003076-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 228.8,
-            "time_et": "2026-10-23T13:34:56.285340-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 269.8,
-            "time_et": "2026-10-23T13:39:58.924614-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 283.8,
-            "time_et": "2026-10-23T13:44:59.982088-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 469.8,
-            "time_et": "2026-10-23T13:49:46.162019-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 364.8,
-            "time_et": "2026-10-23T13:54:59.867737-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 599.8,
-            "time_et": "2026-10-23T13:59:45.878903-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 404.8,
-            "time_et": "2026-10-23T14:04:47.306192-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 484.8,
-            "time_et": "2026-10-23T14:09:48.340432-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 514.8,
-            "time_et": "2026-10-23T14:14:50.040736-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 599.8,
-            "time_et": "2026-10-23T14:19:51.210721-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 524.8,
-            "time_et": "2026-10-23T14:24:52.077017-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 614.8,
-            "time_et": "2026-10-23T14:29:53.169352-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 659.8,
-            "time_et": "2026-10-23T14:34:53.896423-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 309.8,
-            "time_et": "2026-10-23T14:39:55.283163-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 438.8,
-            "time_et": "2026-10-23T14:44:56.458550-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 444.8,
-            "time_et": "2026-10-23T14:49:57.767006-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 489.8,
-            "time_et": "2026-10-23T14:54:59.143776-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 519.8,
-            "time_et": "2026-10-23T14:59:45.895806-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 544.8,
-            "time_et": "2026-10-23T15:04:47.430684-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 624.8,
-            "time_et": "2026-10-23T15:09:48.774010-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 629.8,
-            "time_et": "2026-10-23T15:14:49.694797-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 649.8,
-            "time_et": "2026-10-23T15:19:51.171451-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 594.8,
-            "time_et": "2026-10-23T15:24:52.708597-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 599.8,
-            "time_et": "2026-10-23T15:29:54.575037-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 564.8,
-            "time_et": "2026-10-23T15:34:55.884222-04:00"
-          },
-          {
-            "event": null,
-            "net_pnl": 589.8,
-            "time_et": "2026-10-23T15:35:25.949945-04:00"
-          }
-        ],
-        "position": "Position 7"
       },
       {
         "points": [
@@ -2225,8 +3924,423 @@
           },
           {
             "event": null,
+            "net_pnl": 163.8,
+            "time_et": "2026-10-23T15:39:45.182379-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 164.8,
+            "time_et": "2026-10-23T15:44:46.073806-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 163.8,
+            "time_et": "2026-10-23T15:49:46.988186-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 144.8,
+            "time_et": "2026-10-23T15:54:48.409429-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 119.8,
+            "time_et": "2026-10-23T15:59:49.983151-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 139.8,
+            "time_et": "2026-10-23T16:04:51.234943-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 139.8,
+            "time_et": "2026-10-23T16:09:52.360459-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 164.8,
+            "time_et": "2026-10-23T16:14:53.140146-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 153.8,
+            "time_et": "2026-10-23T16:19:54.025854-04:00"
+          },
+          {
+            "event": null,
             "net_pnl": 174.8,
-            "time_et": "2026-10-23T15:35:29.228240-04:00"
+            "time_et": "2026-10-23T16:23:24.536989-04:00"
+          }
+        ],
+        "position": "Position 7"
+      },
+      {
+        "points": [
+          {
+            "event": null,
+            "net_pnl": -195.2,
+            "time_et": "2026-10-23T09:34:48.541674-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -335.2,
+            "time_et": "2026-10-23T09:39:49.090129-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -65.2,
+            "time_et": "2026-10-23T09:44:49.753483-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -25.2,
+            "time_et": "2026-10-23T09:49:50.267472-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -75.2,
+            "time_et": "2026-10-23T09:54:50.823565-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 39.8,
+            "time_et": "2026-10-23T09:59:51.532610-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -35.2,
+            "time_et": "2026-10-23T10:04:52.041302-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -5.2,
+            "time_et": "2026-10-23T10:09:52.832703-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -95.2,
+            "time_et": "2026-10-23T10:14:53.771615-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -361.2,
+            "time_et": "2026-10-23T10:19:54.558451-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -211.2,
+            "time_et": "2026-10-23T10:22:55.034969-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -270.2,
+            "time_et": "2026-10-23T10:29:45.286721-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -280.2,
+            "time_et": "2026-10-23T10:34:46.000688-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -15.2,
+            "time_et": "2026-10-23T10:39:46.510487-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 244.8,
+            "time_et": "2026-10-23T10:44:47.278246-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 338.8,
+            "time_et": "2026-10-23T10:49:48.100646-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 484.8,
+            "time_et": "2026-10-23T10:54:49.398163-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 504.8,
+            "time_et": "2026-10-23T10:59:49.995500-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 444.8,
+            "time_et": "2026-10-23T11:04:51.283025-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 384.8,
+            "time_et": "2026-10-23T11:09:52.284112-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 444.8,
+            "time_et": "2026-10-23T11:14:53.271564-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 529.8,
+            "time_et": "2026-10-23T11:19:54.212938-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 529.8,
+            "time_et": "2026-10-23T11:24:55.423246-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 584.8,
+            "time_et": "2026-10-23T11:29:56.886302-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 639.8,
+            "time_et": "2026-10-23T11:34:57.965542-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 559.8,
+            "time_et": "2026-10-23T11:39:58.601928-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 493.8,
+            "time_et": "2026-10-23T11:44:59.473340-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 563.8,
+            "time_et": "2026-10-23T11:49:45.582346-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 588.8,
+            "time_et": "2026-10-23T11:54:46.438000-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 688.8,
+            "time_et": "2026-10-23T11:59:47.262559-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 639.8,
+            "time_et": "2026-10-23T12:04:48.246701-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 689.8,
+            "time_et": "2026-10-23T12:09:49.088796-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 584.8,
+            "time_et": "2026-10-23T12:14:49.785818-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 574.8,
+            "time_et": "2026-10-23T12:19:50.664352-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 409.8,
+            "time_et": "2026-10-23T12:24:51.736646-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 449.8,
+            "time_et": "2026-10-23T12:29:52.435349-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 569.8,
+            "time_et": "2026-10-23T12:34:54.057739-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 589.8,
+            "time_et": "2026-10-23T12:39:55.674477-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 679.8,
+            "time_et": "2026-10-23T12:44:56.424809-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 674.8,
+            "time_et": "2026-10-23T12:49:57.551394-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 434.8,
+            "time_et": "2026-10-23T12:54:43.412495-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 169.8,
+            "time_et": "2026-10-23T13:29:55.003076-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 228.8,
+            "time_et": "2026-10-23T13:34:56.285340-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 269.8,
+            "time_et": "2026-10-23T13:39:58.924614-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 283.8,
+            "time_et": "2026-10-23T13:44:59.982088-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 469.8,
+            "time_et": "2026-10-23T13:49:46.162019-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 364.8,
+            "time_et": "2026-10-23T13:54:59.867737-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 599.8,
+            "time_et": "2026-10-23T13:59:45.878903-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 404.8,
+            "time_et": "2026-10-23T14:04:47.306192-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 484.8,
+            "time_et": "2026-10-23T14:09:48.340432-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 514.8,
+            "time_et": "2026-10-23T14:14:50.040736-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 599.8,
+            "time_et": "2026-10-23T14:19:51.210721-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 524.8,
+            "time_et": "2026-10-23T14:24:52.077017-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 614.8,
+            "time_et": "2026-10-23T14:29:53.169352-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 659.8,
+            "time_et": "2026-10-23T14:34:53.896423-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 309.8,
+            "time_et": "2026-10-23T14:39:55.283163-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 438.8,
+            "time_et": "2026-10-23T14:44:56.458550-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 444.8,
+            "time_et": "2026-10-23T14:49:57.767006-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 489.8,
+            "time_et": "2026-10-23T14:54:59.143776-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 519.8,
+            "time_et": "2026-10-23T14:59:45.895806-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 544.8,
+            "time_et": "2026-10-23T15:04:47.430684-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 624.8,
+            "time_et": "2026-10-23T15:09:48.774010-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 629.8,
+            "time_et": "2026-10-23T15:14:49.694797-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 649.8,
+            "time_et": "2026-10-23T15:19:51.171451-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 594.8,
+            "time_et": "2026-10-23T15:24:52.708597-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 599.8,
+            "time_et": "2026-10-23T15:29:54.575037-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 564.8,
+            "time_et": "2026-10-23T15:34:55.884222-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 479.8,
+            "time_et": "2026-10-23T15:39:56.902942-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 464.8,
+            "time_et": "2026-10-23T15:44:57.691259-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 559.8,
+            "time_et": "2026-10-23T15:49:58.431963-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 359.8,
+            "time_et": "2026-10-23T15:54:59.350955-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 219.8,
+            "time_et": "2026-10-23T15:59:46.104825-04:00"
+          },
+          {
+            "event": "Exit",
+            "net_pnl": 410.8,
+            "time_et": "2026-10-23T16:00:01.165423-04:00"
           }
         ],
         "position": "Position 8"
@@ -2524,6 +4638,42 @@
       {
         "spx": 7627.36,
         "time_et": "2026-10-23T15:33:58.179167-04:00"
+      },
+      {
+        "spx": 7627.56,
+        "time_et": "2026-10-23T15:39:25.578686-04:00"
+      },
+      {
+        "spx": 7625.56,
+        "time_et": "2026-10-23T15:44:25.565372-04:00"
+      },
+      {
+        "spx": 7624.85,
+        "time_et": "2026-10-23T15:49:25.572467-04:00"
+      },
+      {
+        "spx": 7624.12,
+        "time_et": "2026-10-23T15:54:30.459813-04:00"
+      },
+      {
+        "spx": 7626.71,
+        "time_et": "2026-10-23T15:59:45.363301-04:00"
+      },
+      {
+        "spx": 7623.68,
+        "time_et": "2026-10-23T16:04:37.733898-04:00"
+      },
+      {
+        "spx": 7623.68,
+        "time_et": "2026-10-23T16:09:12.220001-04:00"
+      },
+      {
+        "spx": 7623.68,
+        "time_et": "2026-10-23T16:14:12.417626-04:00"
+      },
+      {
+        "spx": 7623.68,
+        "time_et": "2026-10-23T16:15:13.443697-04:00"
       }
     ],
     "system_readiness": {
@@ -2545,7 +4695,7 @@
         "exit_time_et": null,
         "expiration_date": "2026-10-26",
         "maximum_profit": 298.32,
-        "maximum_unrealized_pnl": -31.68,
+        "maximum_unrealized_pnl": 8.32,
         "minimum_unrealized_pnl": -103.2,
         "planned_loss": null,
         "position": 1,
@@ -2569,8 +4719,8 @@
         "exit_time_et": null,
         "expiration_date": "2026-10-28",
         "maximum_profit": 351.58,
-        "maximum_unrealized_pnl": 1.5799999999999983,
-        "minimum_unrealized_pnl": -78.42,
+        "maximum_unrealized_pnl": 11.579999999999998,
+        "minimum_unrealized_pnl": -151.68,
         "planned_loss": null,
         "position": 2,
         "profit_target_fraction": null,
@@ -2581,7 +4731,7 @@
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "BEAR_CALL_CREDIT_SPREAD",
-        "unrealized_net_pnl": -71.68
+        "unrealized_net_pnl": -151.68
       },
       {
         "allocation": 1700.0,
@@ -2593,7 +4743,7 @@
         "exit_time_et": null,
         "expiration_date": "2026-10-28",
         "maximum_profit": 271.58,
-        "maximum_unrealized_pnl": 41.58,
+        "maximum_unrealized_pnl": 51.58,
         "minimum_unrealized_pnl": -88.42,
         "planned_loss": null,
         "position": 3,
@@ -2605,7 +4755,7 @@
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "BEAR_CALL_CREDIT_SPREAD",
-        "unrealized_net_pnl": -22.68
+        "unrealized_net_pnl": -41.68
       },
       {
         "allocation": 1690.0,
@@ -2617,7 +4767,7 @@
         "exit_time_et": null,
         "expiration_date": "2026-10-28",
         "maximum_profit": 281.58,
-        "maximum_unrealized_pnl": 76.58,
+        "maximum_unrealized_pnl": 91.58,
         "minimum_unrealized_pnl": -198.42000000000002,
         "planned_loss": null,
         "position": 4,
@@ -2629,7 +4779,7 @@
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "BEAR_CALL_CREDIT_SPREAD",
-        "unrealized_net_pnl": 18.32
+        "unrealized_net_pnl": 37.32
       },
       {
         "allocation": 1660.0,
@@ -2641,7 +4791,7 @@
         "exit_time_et": null,
         "expiration_date": "2026-10-30",
         "maximum_profit": 311.58,
-        "maximum_unrealized_pnl": 31.58,
+        "maximum_unrealized_pnl": 41.58,
         "minimum_unrealized_pnl": -79.42,
         "planned_loss": null,
         "position": 5,
@@ -2653,7 +4803,7 @@
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "BEAR_CALL_CREDIT_SPREAD",
-        "unrealized_net_pnl": -32.68
+        "unrealized_net_pnl": -52.68
       },
       {
         "allocation": 1411.8,
@@ -2665,8 +4815,8 @@
         "exit_time_et": null,
         "expiration_date": "2026-10-29",
         "maximum_profit": 1088.2,
-        "maximum_unrealized_pnl": 344.8,
-        "minimum_unrealized_pnl": -295.20000000000005,
+        "maximum_unrealized_pnl": 354.8,
+        "minimum_unrealized_pnl": -495.2000000000002,
         "planned_loss": null,
         "position": 6,
         "profit_target_fraction": null,
@@ -2677,31 +4827,7 @@
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 324.8
-      },
-      {
-        "allocation": 2051.8,
-        "base_expected_net_pnl": 83.39667961559027,
-        "base_lower_95": 59.74407801937514,
-        "dte": 2,
-        "entry_time_et": "2026-10-21T13:56:22.844149-04:00",
-        "exit_reason": null,
-        "exit_time_et": null,
-        "expiration_date": "2026-10-23",
-        "maximum_profit": 948.2,
-        "maximum_unrealized_pnl": 729.8,
-        "minimum_unrealized_pnl": -480.2,
-        "planned_loss": null,
-        "position": 7,
-        "profit_target_fraction": null,
-        "q_minus_p_wedge": null,
-        "realized_net_pnl": null,
-        "record_type": "Carried from prior day",
-        "spx_position_direction": "LOWER",
-        "spx_position_zone": "BETWEEN_SHORT_AND_LONG_PROFITABLE",
-        "status": "OPEN",
-        "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 589.8
+        "unrealized_net_pnl": 294.8
       },
       {
         "allocation": 1601.8,
@@ -2716,7 +4842,7 @@
         "maximum_unrealized_pnl": 254.8,
         "minimum_unrealized_pnl": -165.2,
         "planned_loss": null,
-        "position": 8,
+        "position": 7,
         "profit_target_fraction": null,
         "q_minus_p_wedge": null,
         "realized_net_pnl": null,
@@ -2726,6 +4852,30 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "unrealized_net_pnl": 174.8
+      },
+      {
+        "allocation": 2051.8,
+        "base_expected_net_pnl": 83.39667961559027,
+        "base_lower_95": 59.74407801937514,
+        "dte": 2,
+        "entry_time_et": "2026-10-21T13:56:22.844149-04:00",
+        "exit_reason": "EXPIRATION_SETTLEMENT",
+        "exit_time_et": "2026-10-23T16:00:01.165423-04:00",
+        "expiration_date": "2026-10-23",
+        "maximum_profit": 948.2,
+        "maximum_unrealized_pnl": 729.8,
+        "minimum_unrealized_pnl": -480.2,
+        "planned_loss": null,
+        "position": 8,
+        "profit_target_fraction": null,
+        "q_minus_p_wedge": null,
+        "realized_net_pnl": 410.8,
+        "record_type": "Carried from prior day",
+        "spx_position_direction": "LOWER",
+        "spx_position_zone": "BETWEEN_SHORT_AND_LONG_PROFITABLE",
+        "status": "CLOSED",
+        "strategy": "IRON_CONDOR",
+        "unrealized_net_pnl": null
       }
     ],
     "trading_status_and_alerts": {
@@ -2845,9 +4995,9 @@
           "flag": "HIGH_IMPACT_EVENT"
         }
       ],
-      "calendar_reviewed_on": "2026-10-22",
+      "calendar_reviewed_on": "2026-10-23",
       "calendar_status": "CALENDAR_FLAGS_PRESENT",
-      "calendar_valid_through": "2026-10-29",
+      "calendar_valid_through": "2026-10-30",
       "calendar_window_end_date": "2026-10-29",
       "session_message": "5 paper entry-order submissions are recorded for this trading date.",
       "session_status": "PAPER_ENTRY_ORDER_ACTIVITY"
@@ -2874,63 +5024,63 @@
         "return_calibration_difference": null
       },
       {
-        "base_expected_net_pnl": 298.3380245587067,
-        "calibration_ratio": -7.409715886098857,
-        "closed_trades": 3,
-        "expected_return_on_allocation": 0.06447471036730702,
-        "forecast_error": -2508.9380245587067,
-        "forecast_error_standard_deviation": 891.6209933168723,
+        "base_expected_net_pnl": 381.73470417429695,
+        "calibration_ratio": -4.714792708965298,
+        "closed_trades": 4,
+        "expected_return_on_allocation": 0.057154384283643375,
+        "forecast_error": -2181.534704174297,
+        "forecast_error_standard_deviation": 931.9606893757389,
         "frequency": "Weekly",
-        "gross_risk_deployed": 4627.21,
-        "mean_forecast_error": -836.3126748529022,
-        "normalized_error_standard_deviation": 0.5645571130017234,
-        "normalized_error_standard_error": 0.325947201164463,
-        "outperformance_rate": 0.3333333333333333,
+        "gross_risk_deployed": 6679.01,
+        "mean_forecast_error": -545.3836760435743,
+        "normalized_error_standard_deviation": 0.5713684244145526,
+        "normalized_error_standard_error": 0.2856842122072763,
+        "outperformance_rate": 0.5,
         "period": "2026-10-19 to 2026-10-23",
-        "realized_net_pnl": -2210.6,
-        "realized_return_on_allocation": -0.4777392856602575,
-        "return_calibration_difference": -0.5422139960275645
+        "realized_net_pnl": -1799.8000000000002,
+        "realized_return_on_allocation": -0.2694710743059226,
+        "return_calibration_difference": -0.326625458589566
       },
       {
-        "base_expected_net_pnl": 298.3380245587067,
-        "calibration_ratio": -7.409715886098857,
-        "closed_trades": 3,
-        "expected_return_on_allocation": 0.06447471036730702,
-        "forecast_error": -2508.9380245587067,
-        "forecast_error_standard_deviation": 891.6209933168723,
+        "base_expected_net_pnl": 381.73470417429695,
+        "calibration_ratio": -4.714792708965298,
+        "closed_trades": 4,
+        "expected_return_on_allocation": 0.057154384283643375,
+        "forecast_error": -2181.534704174297,
+        "forecast_error_standard_deviation": 931.9606893757389,
         "frequency": "Monthly",
-        "gross_risk_deployed": 4627.21,
-        "mean_forecast_error": -836.3126748529022,
-        "normalized_error_standard_deviation": 0.5645571130017234,
-        "normalized_error_standard_error": 0.325947201164463,
-        "outperformance_rate": 0.3333333333333333,
+        "gross_risk_deployed": 6679.01,
+        "mean_forecast_error": -545.3836760435743,
+        "normalized_error_standard_deviation": 0.5713684244145526,
+        "normalized_error_standard_error": 0.2856842122072763,
+        "outperformance_rate": 0.5,
         "period": "2026-10",
-        "realized_net_pnl": -2210.6,
-        "realized_return_on_allocation": -0.4777392856602575,
-        "return_calibration_difference": -0.5422139960275645
+        "realized_net_pnl": -1799.8000000000002,
+        "realized_return_on_allocation": -0.2694710743059226,
+        "return_calibration_difference": -0.326625458589566
       },
       {
-        "base_expected_net_pnl": 298.3380245587067,
-        "calibration_ratio": -7.409715886098857,
-        "closed_trades": 3,
-        "expected_return_on_allocation": 0.06447471036730702,
-        "forecast_error": -2508.9380245587067,
-        "forecast_error_standard_deviation": 891.6209933168723,
+        "base_expected_net_pnl": 381.73470417429695,
+        "calibration_ratio": -4.714792708965298,
+        "closed_trades": 4,
+        "expected_return_on_allocation": 0.057154384283643375,
+        "forecast_error": -2181.534704174297,
+        "forecast_error_standard_deviation": 931.9606893757389,
         "frequency": "Yearly",
-        "gross_risk_deployed": 4627.21,
-        "mean_forecast_error": -836.3126748529022,
-        "normalized_error_standard_deviation": 0.5645571130017234,
-        "normalized_error_standard_error": 0.325947201164463,
-        "outperformance_rate": 0.3333333333333333,
+        "gross_risk_deployed": 6679.01,
+        "mean_forecast_error": -545.3836760435743,
+        "normalized_error_standard_deviation": 0.5713684244145526,
+        "normalized_error_standard_error": 0.2856842122072763,
+        "outperformance_rate": 0.5,
         "period": "2026",
-        "realized_net_pnl": -2210.6,
-        "realized_return_on_allocation": -0.4777392856602575,
-        "return_calibration_difference": -0.5422139960275645
+        "realized_net_pnl": -1799.8000000000002,
+        "realized_return_on_allocation": -0.2694710743059226,
+        "return_calibration_difference": -0.326625458589566
       }
     ],
     "capacity": {
       "accepted_allocations": 5,
-      "aggregate_available_capacity": 35547.92,
+      "aggregate_available_capacity": 37599.72,
       "available_capacity": 1113.16,
       "consumed_capacity": 9386.68,
       "daily_new_capacity_available": 1113.16,
@@ -2943,7 +5093,7 @@
       "released_allocations": 0,
       "released_capacity": 0,
       "seven_dte_available_capacity": 9428.2,
-      "starting_capacity": 10499.84,
+      "starting_capacity": 8750.0,
       "timed_capacity_carried_forward": 329.84,
       "timed_capacity_forfeited": 9500.16,
       "timed_capacity_released": 10499.84,
@@ -2966,11 +5116,16 @@
         "cumulative_base_expected_net_pnl": 298.3380245587067,
         "cumulative_realized_net_pnl": -2210.6,
         "settled_at_et": "2026-10-22T16:14:38.893710-04:00"
+      },
+      {
+        "cumulative_base_expected_net_pnl": 381.734704174297,
+        "cumulative_realized_net_pnl": -1799.8,
+        "settled_at_et": "2026-10-23T16:00:01.165423-04:00"
       }
     ],
     "performance": {
       "average_loss": -1245.2,
-      "average_win": 279.8,
+      "average_win": 345.3,
       "by_dte": [
         {
           "dte": 1,
@@ -2978,6 +5133,13 @@
           "net_pnl": -2490.4,
           "trades": 2,
           "win_rate": 0.0
+        },
+        {
+          "dte": 2,
+          "expectancy": 410.8,
+          "net_pnl": 410.8,
+          "trades": 1,
+          "win_rate": 1.0
         },
         {
           "dte": 7,
@@ -2989,19 +5151,19 @@
       ],
       "by_strategy": [
         {
-          "expectancy": -736.8666666666667,
-          "net_pnl": -2210.6,
+          "expectancy": -449.95000000000005,
+          "net_pnl": -1799.8000000000002,
           "strategy": "IRON_CONDOR",
-          "trades": 3,
-          "win_rate": 0.3333333333333333
+          "trades": 4,
+          "win_rate": 0.5
         }
       ],
-      "expectancy_per_trade": -736.8666666666667,
-      "maximum_daily_drawdown": 2210.6,
-      "profit_factor": 0.11235142948923868,
-      "settled_trades": 3,
-      "total_net_pnl": -2210.6,
-      "trade_win_rate": 0.3333333333333333,
+      "expectancy_per_trade": -449.95000000000005,
+      "maximum_daily_drawdown": 1799.8000000000002,
+      "profit_factor": 0.2773048506264054,
+      "settled_trades": 4,
+      "total_net_pnl": -1799.8000000000002,
+      "trade_win_rate": 0.5,
       "trading_days": 1
     },
     "portfolio_pnl": [
@@ -3710,29 +5872,67 @@
         "time_et": "2026-10-23T15:34:59.671932-04:00"
       },
       {
-        "net_pnl": -1063.56,
-        "time_et": "2026-10-23T15:35:32.533159-04:00"
+        "net_pnl": -1148.56,
+        "time_et": "2026-10-23T15:39:59.480019-04:00"
+      },
+      {
+        "net_pnl": -1112.56,
+        "time_et": "2026-10-23T15:44:58.892155-04:00"
+      },
+      {
+        "net_pnl": -1039.56,
+        "time_et": "2026-10-23T15:49:59.749762-04:00"
+      },
+      {
+        "net_pnl": -1216.56,
+        "time_et": "2026-10-23T15:54:59.350955-04:00"
+      },
+      {
+        "net_pnl": -1417.56,
+        "time_et": "2026-10-23T15:59:52.866347-04:00"
+      },
+      {
+        "net_pnl": -1263.56,
+        "time_et": "2026-10-23T16:04:54.262473-04:00"
+      },
+      {
+        "net_pnl": -1241.56,
+        "time_et": "2026-10-23T16:09:55.528013-04:00"
+      },
+      {
+        "net_pnl": -1283.56,
+        "time_et": "2026-10-23T16:14:56.252525-04:00"
+      },
+      {
+        "net_pnl": -1333.56,
+        "time_et": "2026-10-23T16:19:57.265186-04:00"
+      },
+      {
+        "net_pnl": -1372.56,
+        "time_et": "2026-10-23T16:23:27.805447-04:00"
       }
     ],
     "summary": {
-      "additional_loss_to_contractual_max": 15037.48,
-      "available_equity": 234506.88,
-      "cash": 247789.4,
-      "closed_trades": 3,
-      "contractual_stress_loss": 14160.0,
-      "equity": 248666.88,
-      "open_positions": 8,
-      "realized_pnl": -2210.6,
-      "reserved_risk": 14160.0,
+      "additional_loss_to_contractual_max": 12347.68,
+      "available_equity": 236167.88,
+      "cash": 248200.2,
+      "closed_trades": 4,
+      "contractual_stress_loss": 12190.0,
+      "equity": 248357.88,
+      "open_positions": 7,
+      "realized_pnl": -1799.8,
+      "reserved_risk": 12190.0,
       "starting_cash": 250000.0,
-      "unrealized_pnl": 877.48
+      "unrealized_pnl": 157.68
     }
   },
   "publication": {
     "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
+    "market_data_is_live": false,
+    "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-23T15:35:35.039374-04:00",
-    "status": "PRELIMINARY_SESSION_ACTIVE",
+    "published_at_et": "2026-10-23T16:23:27.101375-04:00",
+    "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-23"
   },
   "schema_version": "xdte-public-v2"

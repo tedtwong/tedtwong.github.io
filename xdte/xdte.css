@@ -87,10 +87,19 @@ section { padding: 68px 0 10px; }
 .panel__heading { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
 .panel h3 { font-size: 1.12rem; margin: 0; }
 .panel__heading p { color: var(--muted); font-size: .88rem; margin: 6px 0 0; }
+.funnel-heading { align-items: flex-start; }
+.period-controls { display: inline-flex; flex: 0 0 auto; border: 1px solid var(--line); border-radius: 9px; overflow: hidden; }
+.period-controls button { border: 0; border-right: 1px solid var(--line); background: #f8f5ee; color: var(--muted); cursor: pointer; font: inherit; font-size: .76rem; font-weight: 750; padding: 9px 11px; }
+.period-controls button:last-child { border-right: 0; }
+.period-controls button:hover { background: #eef0ff; color: var(--ink); }
+.period-controls button.is-active { background: var(--blue); color: white; }
+.period-controls button:focus-visible { outline: 3px solid #9aa2ff; outline-offset: -3px; }
 .chart { width: 100%; min-height: 300px; }
 .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
 .chart-empty { min-height: 220px; display: grid; place-items: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 10px; }
 .chart-legend { display: flex; gap: 18px; flex-wrap: wrap; margin: 10px 0 0; color: var(--muted); font-size: .8rem; }
+.chart-note { color: var(--muted); font-size: .78rem; line-height: 1.45; margin: 10px 0 0; }
+.funnel-history-chart, .rejection-history-chart { min-height: 260px; overflow-x: auto; }
 .legend-key::before { content: ""; display: inline-block; width: 18px; height: 3px; margin-right: 7px; vertical-align: middle; background: var(--key); }
 .table-wrap { width: 100%; overflow-x: auto; }
 .table-wrap--compact-empty { overflow: visible; }
@@ -175,6 +184,9 @@ footer { background: #e7e2d7; color: var(--muted); padding: 28px 18px; text-alig
   .method-grid { grid-template-columns: 1fr; }
   .daily-summary-columns, .capacity-metrics { grid-template-columns: 1fr; }
   .panel { padding: 16px; }
+  .funnel-heading { flex-direction: column; }
+  .period-controls { width: 100%; }
+  .period-controls button { flex: 1; padding: 9px 6px; }
   section { padding-top: 52px; }
 }
 @media (prefers-reduced-motion: reduce) {
