@@ -81,7 +81,8 @@ tr:last-child td { border-bottom: 0; }
 .position-zone--orange { background: #c46813; }
 .position-zone--red { background: #b42318; }
 .position-zone--unavailable { background: #68727d; }
-.position-map { display: block; width: 150px; height: 32px; overflow: visible; }
+.position-map { display: block; width: 180px; height: 44px; overflow: visible; }
+.position-map .axis-baseline { stroke: #8992a3; stroke-width: 1.25; }
 .position-map .risk-green, .position-map .risk-orange, .position-map .risk-red {
   stroke-width: 7;
 }
@@ -91,6 +92,14 @@ tr:last-child td { border-bottom: 0; }
 .position-map .long-boundary, .position-map .short-boundary { stroke: #172033; }
 .position-map .long-boundary { stroke-width: 1; }
 .position-map .short-boundary { stroke-width: 2; }
+.position-map .distance-tick { stroke: #59636f; stroke-width: .55; }
+.position-map .boundary-label, .position-map .axis-end-label {
+  fill: #4b5563;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 5px;
+}
+.position-map .boundary-label { font-weight: 800; text-anchor: middle; }
+.position-map .axis-end-label { font-size: 4.5px; }
 .position-map--unavailable { color: var(--muted); }
 .notice { margin: 24px 0 -34px; border-left: 4px solid var(--orange); background: #fff4e8; padding: 14px 18px; line-height: 1.45; }
 .status-section { padding-top: 46px; }

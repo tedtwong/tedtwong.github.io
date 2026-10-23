@@ -33,18 +33,22 @@ const positionMap = (zone, row = {}) => {
       : ({ INSIDE_SHORTS: 50, BETWEEN_SHORT_AND_LONG_PROFITABLE: 76, BETWEEN_SHORT_AND_LONG: 76, OUTSIDE_LONGS: 96 }[zone] || 50);
   let zones;
   let boundaries;
+  const ticks = [4, 15.5, 27, 38.5, 50, 61.5, 73, 84.5, 96]
+    .map(x => `<line x1="${x}" x2="${x}" y1="-5" y2="5" class="distance-tick"/>`)
+    .join("");
   if (isPut) {
     zones = '<line x1="4" x2="20" class="risk-red"/><line x1="20" x2="42" class="risk-orange"/><line x1="42" x2="96" class="risk-green"/>';
-    boundaries = '<line x1="20" x2="20" y1="-8" y2="8" class="long-boundary"/><line x1="42" x2="42" y1="-8" y2="8" class="short-boundary"/>';
+    boundaries = '<line x1="20" x2="20" y1="-9" y2="9" class="long-boundary"/><text x="20" y="17" class="boundary-label">LP</text><line x1="42" x2="42" y1="-9" y2="9" class="short-boundary"/><text x="42" y="17" class="boundary-label">SP</text>';
   } else if (isCall) {
     zones = '<line x1="4" x2="58" class="risk-green"/><line x1="58" x2="80" class="risk-orange"/><line x1="80" x2="96" class="risk-red"/>';
-    boundaries = '<line x1="58" x2="58" y1="-8" y2="8" class="short-boundary"/><line x1="80" x2="80" y1="-8" y2="8" class="long-boundary"/>';
+    boundaries = '<line x1="58" x2="58" y1="-9" y2="9" class="short-boundary"/><text x="58" y="17" class="boundary-label">SC</text><line x1="80" x2="80" y1="-9" y2="9" class="long-boundary"/><text x="80" y="17" class="boundary-label">LC</text>';
   } else {
     zones = '<line x1="4" x2="14" class="risk-red"/><line x1="14" x2="34" class="risk-orange"/><line x1="34" x2="66" class="risk-green"/><line x1="66" x2="86" class="risk-orange"/><line x1="86" x2="96" class="risk-red"/>';
-    boundaries = '<line x1="14" x2="14" y1="-8" y2="8" class="long-boundary"/><line x1="34" x2="34" y1="-8" y2="8" class="short-boundary"/><line x1="66" x2="66" y1="-8" y2="8" class="short-boundary"/><line x1="86" x2="86" y1="-8" y2="8" class="long-boundary"/>';
+    boundaries = '<line x1="14" x2="14" y1="-9" y2="9" class="long-boundary"/><text x="14" y="17" class="boundary-label">LP</text><line x1="34" x2="34" y1="-9" y2="9" class="short-boundary"/><text x="34" y="17" class="boundary-label">SP</text><line x1="66" x2="66" y1="-9" y2="9" class="short-boundary"/><text x="66" y="17" class="boundary-label">SC</text><line x1="86" x2="86" y1="-9" y2="9" class="long-boundary"/><text x="86" y="17" class="boundary-label">LC</text>';
   }
-  return `<svg class="position-map" viewBox="0 0 100 32" role="img" aria-label="Normalized SPX risk-zone map; ${positionZoneBadge(zone).replace(/<[^>]+>/g, "")}">
-    <g transform="translate(0 16)">${zones}${boundaries}<circle cx="${markerX}" cy="0" r="3.5" fill="${markerColor}" stroke="#111827" stroke-width="1.5"/></g>
+  return `<svg class="position-map" viewBox="0 0 100 44" role="img" aria-label="Normalized SPX risk-zone map; ${positionZoneBadge(zone).replace(/<[^>]+>/g, "")}">
+    <g transform="translate(0 15)"><line x1="4" x2="96" class="axis-baseline"/>${zones}${ticks}${boundaries}<circle cx="${markerX}" cy="0" r="3.5" fill="${markerColor}" stroke="#111827" stroke-width="1.5"/></g>
+    <text x="4" y="41" class="axis-end-label">Lower SPX</text><text x="96" y="41" text-anchor="end" class="axis-end-label">Higher SPX</text>
   </svg>`;
 };
 const shortTime = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }).format(new Date(v)) : "—";
