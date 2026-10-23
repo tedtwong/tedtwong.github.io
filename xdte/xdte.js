@@ -85,6 +85,30 @@ function lineChart(target, series, options = {}) {
     : Array.from({ length: 5 }, (_, i) => minimum + (maximum - minimum) * i / 4);
   const ticks = axisTicks(minY, maxY, options.leftTickStep);
   const rightTicks = rightPoints.length ? axisTicks(rightBounds[0], rightBounds[1], options.rightTickStep) : [];
+  const relativeAreas = series.map(s => {
+    if (!s.shadeRelativeToFirst) return "";
+    const points = chartPoints(s);
+    if (points.length < 2) return "";
+    const seriesY = s.axis === "right" ? rightY : y;
+    const baseline = points[0].y;
+    const baselineY = seriesY(baseline);
+    const polygon = (left, right, color) => `<path d="M${x(left.t).toFixed(1)},${seriesY(left.y).toFixed(1)} L${x(right.t).toFixed(1)},${seriesY(right.y).toFixed(1)} L${x(right.t).toFixed(1)},${baselineY.toFixed(1)} L${x(left.t).toFixed(1)},${baselineY.toFixed(1)} Z" fill="${color}" fill-opacity="0.16" stroke="none"/>`;
+    const regions = [];
+    for (let i = 1; i < points.length; i += 1) {
+      const left = points[i - 1], right = points[i];
+      const leftDifference = left.y - baseline, rightDifference = right.y - baseline;
+      if (leftDifference * rightDifference < 0) {
+        const crossingFraction = -leftDifference / (rightDifference - leftDifference);
+        const crossing = { t: left.t + (right.t - left.t) * crossingFraction, y: baseline };
+        regions.push(polygon(left, crossing, leftDifference > 0 ? s.aboveColor : s.belowColor));
+        regions.push(polygon(crossing, right, rightDifference > 0 ? s.aboveColor : s.belowColor));
+      } else {
+        const midpointDifference = (leftDifference + rightDifference) / 2;
+        if (midpointDifference !== 0) regions.push(polygon(left, right, midpointDifference > 0 ? s.aboveColor : s.belowColor));
+      }
+    }
+    return `<g aria-label="${s.label} area relative to opening level">${regions.join("")}<line x1="${pad.l}" x2="${width-pad.r}" y1="${baselineY.toFixed(1)}" y2="${baselineY.toFixed(1)}" stroke="${s.color}" stroke-width="1" stroke-dasharray="4 4" opacity="0.8"><title>${s.label} opening level ${number.format(baseline)}</title></line></g>`;
+  }).join("");
   const paths = series.map(s => {
     const points = chartPoints(s), seriesY = s.axis === "right" ? rightY : y;
     return `<path d="${points.map((p, i) => `${i ? "L" : "M"}${x(p.t).toFixed(1)},${seriesY(p.y).toFixed(1)}`).join(" ")}" fill="none" stroke="${s.color}" stroke-width="${s.width || 2.5}" vector-effect="non-scaling-stroke"/>`;
@@ -102,7 +126,7 @@ function lineChart(target, series, options = {}) {
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${options.label || "Time series"}">
     ${ticks.map(v => `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e4dfd6"/><text x="${pad.l-10}" y="${y(v)+4}" text-anchor="end" fill="#667085" font-size="12">${options.money ? money.format(v) : number.format(v)}</text>`).join("")}
     ${rightTicks.map(v => `<line x1="${width-pad.r}" x2="${width-pad.r+5}" y1="${rightY(v)}" y2="${rightY(v)}" stroke="#667085"/><text x="${width-pad.r+10}" y="${rightY(v)+4}" fill="#667085" font-size="12">${number.format(v)}</text>`).join("")}
-    ${zero}${paths}${markers}
+    ${relativeAreas}${zero}${paths}${markers}
     <text x="${pad.l}" y="${height-12}" fill="#667085" font-size="12">${shortTime(minT)}</text>
     <text x="${width-pad.r}" y="${height-12}" text-anchor="end" fill="#667085" font-size="12">${shortTime(maxT)}</text>
   </svg><div class="chart-legend">${series.map(s => `<span class="legend-key" style="--key:${s.color}">${s.label}</span>`).join("")}</div>`;
@@ -241,7 +265,11 @@ async function load() {
   lineChart("#daily-chart", [
     ...positionSeries,
     { rows: daily.portfolio_pnl, x: "time_et", y: "net_pnl", label: "TOTAL", color: "#333ed4", width: 4 },
-    { rows: daily.spx_history || [], x: "time_et", y: "spx", label: "SPX", color: "#aeb4bd", width: 2.5, axis: "right" },
+    {
+      rows: daily.spx_history || [], x: "time_et", y: "spx", label: "SPX",
+      color: "#aeb4bd", width: 2.5, axis: "right", shadeRelativeToFirst: true,
+      aboveColor: "#2fa236", belowColor: "#fd0100",
+    },
   ], {
     money: true, includeZero: true, leftTickStep: 250, rightTickStep: 50,
     label: "Daily position and portfolio P&L with SPX", markers: positionMarkers,
