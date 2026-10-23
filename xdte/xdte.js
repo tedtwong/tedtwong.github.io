@@ -241,7 +241,7 @@ async function load() {
   lineChart("#daily-chart", [
     ...positionSeries,
     { rows: daily.portfolio_pnl, x: "time_et", y: "net_pnl", label: "TOTAL", color: "#333ed4", width: 4 },
-    { rows: daily.spx_history || [], x: "time_et", y: "spx", label: "SPX", color: "#172033", width: 2.5, axis: "right" },
+    { rows: daily.spx_history || [], x: "time_et", y: "spx", label: "SPX", color: "#aeb4bd", width: 2.5, axis: "right" },
   ], {
     money: true, includeZero: true, leftTickStep: 250, rightTickStep: 50,
     label: "Daily position and portfolio P&L with SPX", markers: positionMarkers,
