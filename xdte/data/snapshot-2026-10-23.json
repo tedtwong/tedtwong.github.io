@@ -12,7 +12,7 @@
       "candidates_examined": 164829,
       "completed_scan_decisions": 60,
       "current_capital_allocated": 12400.28,
-      "current_unrealized_pnl": 211.68,
+      "current_unrealized_pnl": 187.68,
       "daily_capacity_released": 10499.84,
       "daily_capacity_total": 20000.0,
       "eligible_candidates": 88,
@@ -1766,14 +1766,14 @@
     },
     "pnl_summary": {
       "baseline_status": "PRIOR_SESSION_SYNCHRONIZED_CLOSE",
-      "current_ledger_pnl_level": -1588.12,
-      "current_synchronized_pnl_level": -1318.56,
-      "daily_ledger_pnl": 295.08,
-      "daily_synchronized_pnl": 564.64,
+      "current_ledger_pnl_level": -1612.12,
+      "current_synchronized_pnl_level": -1342.56,
+      "daily_ledger_pnl": 271.08,
+      "daily_synchronized_pnl": 540.64,
       "prior_session_as_of_et": "2026-10-22T16:59:52.046695-04:00",
       "prior_session_pnl_level": -1883.2,
-      "synchronized_as_of_et": "2026-10-23T16:29:43.692596-04:00",
-      "unrealized_pnl": 211.68
+      "synchronized_as_of_et": "2026-10-23T16:29:58.724659-04:00",
+      "unrealized_pnl": 187.68
     },
     "portfolio_pnl": [
       {
@@ -2089,8 +2089,8 @@
         "time_et": "2026-10-23T16:24:58.016575-04:00"
       },
       {
-        "net_pnl": -1318.56,
-        "time_et": "2026-10-23T16:29:43.692596-04:00"
+        "net_pnl": -1342.56,
+        "time_et": "2026-10-23T16:29:58.724659-04:00"
       }
     ],
     "position_pnl": [
@@ -2189,7 +2189,7 @@
           {
             "event": null,
             "net_pnl": -31.68,
-            "time_et": "2026-10-23T16:29:38.340279-04:00"
+            "time_et": "2026-10-23T16:29:53.371517-04:00"
           }
         ],
         "position": "Position 1"
@@ -2344,7 +2344,7 @@
           {
             "event": null,
             "net_pnl": -39.42,
-            "time_et": "2026-10-23T16:29:43.692596-04:00"
+            "time_et": "2026-10-23T16:29:58.724659-04:00"
           }
         ],
         "position": "Position 2"
@@ -2583,8 +2583,8 @@
           },
           {
             "event": null,
-            "net_pnl": 21.58,
-            "time_et": "2026-10-23T16:29:39.751815-04:00"
+            "net_pnl": 11.58,
+            "time_et": "2026-10-23T16:29:54.788596-04:00"
           }
         ],
         "position": "Position 3"
@@ -2858,8 +2858,8 @@
           },
           {
             "event": null,
-            "net_pnl": 40.58,
-            "time_et": "2026-10-23T16:29:41.326764-04:00"
+            "net_pnl": 51.58,
+            "time_et": "2026-10-23T16:29:56.373920-04:00"
           }
         ],
         "position": "Position 4"
@@ -3158,8 +3158,8 @@
           },
           {
             "event": null,
-            "net_pnl": 10.58,
-            "time_et": "2026-10-23T16:29:40.800943-04:00"
+            "net_pnl": 0.58,
+            "time_et": "2026-10-23T16:29:55.831628-04:00"
           }
         ],
         "position": "Position 5"
@@ -3584,7 +3584,7 @@
           {
             "event": null,
             "net_pnl": 304.8,
-            "time_et": "2026-10-23T16:29:41.369221-04:00"
+            "time_et": "2026-10-23T16:29:56.419127-04:00"
           }
         ],
         "position": "Position 6"
@@ -4008,8 +4008,8 @@
           },
           {
             "event": null,
-            "net_pnl": 174.8,
-            "time_et": "2026-10-23T16:29:40.330215-04:00"
+            "net_pnl": 159.8,
+            "time_et": "2026-10-23T16:29:55.368641-04:00"
           }
         ],
         "position": "Position 7"
@@ -4794,7 +4794,7 @@
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "BEAR_CALL_CREDIT_SPREAD",
-        "unrealized_net_pnl": -31.68
+        "unrealized_net_pnl": -41.68
       },
       {
         "allocation": 1690.0,
@@ -4818,7 +4818,7 @@
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "BEAR_CALL_CREDIT_SPREAD",
-        "unrealized_net_pnl": -12.68
+        "unrealized_net_pnl": -1.68
       },
       {
         "allocation": 1660.0,
@@ -4842,7 +4842,7 @@
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "BEAR_CALL_CREDIT_SPREAD",
-        "unrealized_net_pnl": -42.68
+        "unrealized_net_pnl": -52.68
       },
       {
         "allocation": 1411.8,
@@ -4890,7 +4890,7 @@
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 174.8
+        "unrealized_net_pnl": 159.8
       },
       {
         "allocation": 2051.8,
@@ -5951,22 +5951,22 @@
         "time_et": "2026-10-23T16:24:58.016575-04:00"
       },
       {
-        "net_pnl": -1318.56,
-        "time_et": "2026-10-23T16:29:43.692596-04:00"
+        "net_pnl": -1342.56,
+        "time_et": "2026-10-23T16:29:58.724659-04:00"
       }
     ],
     "summary": {
-      "additional_loss_to_contractual_max": 12401.68,
-      "available_equity": 236221.88,
+      "additional_loss_to_contractual_max": 12377.68,
+      "available_equity": 236197.88,
       "cash": 248200.2,
       "closed_trades": 4,
       "contractual_stress_loss": 12190.0,
-      "equity": 248411.88,
+      "equity": 248387.88,
       "open_positions": 7,
       "realized_pnl": -1799.8,
       "reserved_risk": 12190.0,
       "starting_cash": 250000.0,
-      "unrealized_pnl": 211.68
+      "unrealized_pnl": 187.68
     }
   },
   "publication": {
@@ -5974,7 +5974,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-23T16:29:45.454270-04:00",
+    "published_at_et": "2026-10-23T17:30:00.554005-04:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-23"
   },
