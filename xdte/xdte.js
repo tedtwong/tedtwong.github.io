@@ -229,7 +229,9 @@ function positionOutcomeChart(target, rows) {
       : "";
     const base = finite(row.base_expected_net_pnl) ? Number(row.base_expected_net_pnl) : null;
     const unrealized = finite(row.unrealized_net_pnl) ? Number(row.unrealized_net_pnl) : null;
-    const realized = finite(row.realized_net_pnl) ? Number(row.realized_net_pnl) : null;
+    const status = String(row.status || "").toUpperCase();
+    const isClosed = Boolean(row.exit_time_et) || ["CLOSED", "SETTLED", "EXPIRED"].includes(status);
+    const realized = isClosed && finite(row.realized_net_pnl) ? Number(row.realized_net_pnl) : null;
     const baseMark = base === null ? "" : `<path d="M${x(base)},${cy-6} L${x(base)+6},${cy} L${x(base)},${cy+6} L${x(base)-6},${cy} Z" class="outcome-base"><title>${title(row, "Base expected", base)}</title></path>`;
     const unrealizedMark = unrealized === null ? "" : `<circle cx="${x(unrealized)}" cy="${cy}" r="5" class="outcome-unrealized"><title>${title(row, "Unrealized", unrealized)}</title></circle>`;
     const realizedMark = realized === null ? "" : `<rect x="${x(realized)-5}" y="${cy-5}" width="10" height="10" rx="1" class="outcome-realized"><title>${title(row, "Realized", realized)}</title></rect>`;

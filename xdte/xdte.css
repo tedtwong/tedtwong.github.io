@@ -138,7 +138,7 @@ tr:last-child td { border-bottom: 0; }
 .position-outcome-chart { min-height: 240px; }
 .outcome-envelope { stroke: #d0d5dd; stroke-width: 9; stroke-linecap: round; }
 .outcome-allocation { stroke: #c93b32; stroke-width: 3; }
-.outcome-maximum { stroke: #2fa236; stroke-width: 3; }
+.outcome-maximum { stroke: #667085; stroke-width: 3; }
 .outcome-observed { stroke: #333ed4; stroke-width: 5; stroke-linecap: round; }
 .outcome-observed-point { fill: #333ed4; stroke: #fff; stroke-width: 1; }
 .outcome-base { fill: #f76915; stroke: #fff; stroke-width: 1; }
