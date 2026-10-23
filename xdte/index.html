@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
-  <link rel="stylesheet" href="xdte.css?v=20261023-funnel-history">
-  <script defer src="xdte.js?v=20261023-funnel-history"></script>
+  <link rel="stylesheet" href="xdte.css?v=20261023-funnel-bottom">
+  <script defer src="xdte.js?v=20261023-funnel-bottom"></script>
 </head>
 <body>
   <header class="hero">
@@ -58,23 +58,6 @@
       </div>
       <h3 class="capacity-heading">Capacity</h3>
       <div id="capacity-metrics" class="metric-grid capacity-metrics"></div>
-      <article class="panel chart-panel">
-        <div class="panel__heading funnel-heading">
-          <div><h3>Candidate funnel by strategy and DTE</h3><p>Repeated evaluations are counted each time they pass through a scan. Open positions are the current snapshot.</p></div>
-          <div id="funnel-period-controls" class="period-controls" role="group" aria-label="Funnel history period">
-            <button type="button" data-funnel-period="day">Day</button>
-            <button type="button" data-funnel-period="week">Last 7 days</button>
-            <button type="button" data-funnel-period="month">Last 30 days</button>
-          </div>
-        </div>
-        <div id="funnel-history-chart" class="chart funnel-history-chart"></div>
-        <p id="funnel-history-note" class="chart-note"></p>
-      </article>
-      <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>Rejection reasons</h3><p>Explicit scanner-decision and path-confirmation reasons for the selected period.</p></div></div>
-        <div id="rejection-history-chart" class="chart rejection-history-chart"></div>
-        <p class="chart-note">Counts are observations per evaluation, not unique option contracts.</p>
-      </article>
       <article class="panel chart-panel">
         <div class="panel__heading"><div><h3>Today’s position P&amp;L</h3><p>Individual paper positions after estimated costs, with green entry triangles, red exit squares, the total as a thick blue line, and SPX on the right axis. SPX area above its opening level is green; area below it is red.</p></div></div>
         <div id="daily-chart" class="chart"></div>
@@ -133,9 +116,33 @@
       </article>
     </section>
 
+    <section aria-labelledby="funnel-history-heading">
+      <div class="section-heading">
+        <div><p class="section-number">04</p><h2 id="funnel-history-heading">Candidate funnel history</h2></div>
+        <p>Strategy and DTE progression through the research funnel, followed by the recorded reasons candidates did not advance.</p>
+      </div>
+      <article class="panel chart-panel">
+        <div class="panel__heading funnel-heading">
+          <div><h3>Candidate funnel by strategy and DTE</h3><p>Repeated evaluations are counted each time they pass through a scan. Open positions are the current snapshot.</p></div>
+          <div id="funnel-period-controls" class="period-controls" role="group" aria-label="Funnel history period">
+            <button type="button" data-funnel-period="day">Day</button>
+            <button type="button" data-funnel-period="week">Last 7 days</button>
+            <button type="button" data-funnel-period="month">Last 30 days</button>
+          </div>
+        </div>
+        <div id="funnel-history-chart" class="chart funnel-history-chart"></div>
+        <p id="funnel-history-note" class="chart-note"></p>
+      </article>
+      <article class="panel chart-panel">
+        <div class="panel__heading"><div><h3>Rejection reasons</h3><p>Explicit scanner-decision and path-confirmation reasons for the selected period.</p></div></div>
+        <div id="rejection-history-chart" class="chart rejection-history-chart"></div>
+        <p class="chart-note">Counts are observations per evaluation, not unique option contracts.</p>
+      </article>
+    </section>
+
     <section class="method" aria-labelledby="method-heading">
       <div class="section-heading">
-        <div><p class="section-number">04</p><h2 id="method-heading">Publication policy</h2></div>
+        <div><p class="section-number">05</p><h2 id="method-heading">Publication policy</h2></div>
       </div>
       <div class="method-grid">
         <p><strong>Paper trading only.</strong> These are simulated research results and do not represent a brokerage statement or live-trading performance.</p>
