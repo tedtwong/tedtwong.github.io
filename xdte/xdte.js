@@ -45,20 +45,49 @@ function table(target, columns, rows) {
 
 function lineChart(target, series, options = {}) {
   const node = document.querySelector(target);
-  const all = series.flatMap(s => s.rows.map(r => ({ t: new Date(r[s.x]).getTime(), y: Number(r[s.y]) }))).filter(p => Number.isFinite(p.t) && Number.isFinite(p.y));
+  const chartPoints = s => s.rows.map(r => ({ t: new Date(r[s.x]).getTime(), y: Number(r[s.y]) })).filter(p => Number.isFinite(p.t) && Number.isFinite(p.y));
+  const leftSeries = series.filter(s => s.axis !== "right");
+  const rightSeries = series.filter(s => s.axis === "right");
+  const leftPoints = leftSeries.flatMap(chartPoints);
+  const rightPoints = rightSeries.flatMap(chartPoints);
+  const all = [...leftPoints, ...rightPoints];
   if (!all.length) { node.innerHTML = `<div class="chart-empty">No chart data are available for this period.</div>`; return; }
-  const width = 1000, height = 310, pad = { l: 76, r: 24, t: 18, b: 42 };
+  const width = 1000, height = 310, pad = { l: 76, r: rightPoints.length ? 76 : 24, t: 18, b: 42 };
   const minT = Math.min(...all.map(p => p.t)), maxT = Math.max(...all.map(p => p.t));
-  const observedMinY = Math.min(...all.map(p => p.y)), observedMaxY = Math.max(...all.map(p => p.y));
+  const observedMinY = leftPoints.length ? Math.min(...leftPoints.map(p => p.y)) : 0;
+  const observedMaxY = leftPoints.length ? Math.max(...leftPoints.map(p => p.y)) : 0;
   const minY0 = options.includeZero ? Math.min(observedMinY, 0) : observedMinY;
   const maxY0 = options.includeZero ? Math.max(observedMaxY, 0) : observedMaxY;
-  const range = Math.max(maxY0 - minY0, 1), minY = minY0 - range * .08, maxY = maxY0 + range * .08;
+  const steppedBounds = (minimum, maximum, step, includeZero = false) => {
+    let low = includeZero ? Math.min(minimum, 0) : minimum;
+    let high = includeZero ? Math.max(maximum, 0) : maximum;
+    low = Math.floor(low / step) * step;
+    high = Math.ceil(high / step) * step;
+    if (low === high) { low -= step; high += step; }
+    return [low, high];
+  };
+  const leftBounds = options.leftTickStep
+    ? steppedBounds(minY0, maxY0, options.leftTickStep, options.includeZero)
+    : (() => { const range = Math.max(maxY0 - minY0, 1); return [minY0 - range * .08, maxY0 + range * .08]; })();
+  const minY = leftBounds[0], maxY = leftBounds[1];
+  const rightObservedMin = rightPoints.length ? Math.min(...rightPoints.map(p => p.y)) : 0;
+  const rightObservedMax = rightPoints.length ? Math.max(...rightPoints.map(p => p.y)) : 0;
+  const rightBounds = rightPoints.length
+    ? (options.rightTickStep
+      ? steppedBounds(rightObservedMin, rightObservedMax, options.rightTickStep)
+      : (() => { const range = Math.max(rightObservedMax - rightObservedMin, 1); return [rightObservedMin - range * .08, rightObservedMax + range * .08]; })())
+    : [0, 1];
   const x = t => pad.l + (t - minT) / Math.max(maxT - minT, 1) * (width - pad.l - pad.r);
   const y = v => pad.t + (maxY - v) / Math.max(maxY - minY, 1) * (height - pad.t - pad.b);
-  const ticks = Array.from({ length: 5 }, (_, i) => minY + (maxY - minY) * i / 4);
+  const rightY = v => pad.t + (rightBounds[1] - v) / Math.max(rightBounds[1] - rightBounds[0], 1) * (height - pad.t - pad.b);
+  const axisTicks = (minimum, maximum, step) => step
+    ? Array.from({ length: Math.round((maximum - minimum) / step) + 1 }, (_, i) => minimum + i * step)
+    : Array.from({ length: 5 }, (_, i) => minimum + (maximum - minimum) * i / 4);
+  const ticks = axisTicks(minY, maxY, options.leftTickStep);
+  const rightTicks = rightPoints.length ? axisTicks(rightBounds[0], rightBounds[1], options.rightTickStep) : [];
   const paths = series.map(s => {
-    const points = s.rows.map(r => ({ t: new Date(r[s.x]).getTime(), y: Number(r[s.y]) })).filter(p => Number.isFinite(p.t) && Number.isFinite(p.y));
-    return `<path d="${points.map((p, i) => `${i ? "L" : "M"}${x(p.t).toFixed(1)},${y(p.y).toFixed(1)}`).join(" ")}" fill="none" stroke="${s.color}" stroke-width="${s.width || 2.5}" vector-effect="non-scaling-stroke"/>`;
+    const points = chartPoints(s), seriesY = s.axis === "right" ? rightY : y;
+    return `<path d="${points.map((p, i) => `${i ? "L" : "M"}${x(p.t).toFixed(1)},${seriesY(p.y).toFixed(1)}`).join(" ")}" fill="none" stroke="${s.color}" stroke-width="${s.width || 2.5}" vector-effect="non-scaling-stroke"/>`;
   }).join("");
   const markers = (options.markers || []).map(marker => {
     const t = new Date(marker.time_et).getTime(), v = Number(marker.net_pnl);
@@ -69,9 +98,10 @@ function lineChart(target, series, options = {}) {
     }
     return `<path d="M${cx.toFixed(1)},${(cy-6).toFixed(1)} L${(cx-6).toFixed(1)},${(cy+5).toFixed(1)} L${(cx+6).toFixed(1)},${(cy+5).toFixed(1)} Z" fill="${color}" stroke="white" stroke-width="1.5"><title>${marker.position} Entry · ${money.format(v)}</title></path>`;
   }).join("");
-  const zero = minY <= 0 && maxY >= 0 ? `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#7b8495" stroke-width="1.5"/><text x="${pad.l-10}" y="${y(0)+4}" text-anchor="end" fill="#4b5565" font-size="12">${options.money ? money.format(0) : number.format(0)}</text>` : "";
+  const zero = minY <= 0 && maxY >= 0 ? `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#7b8495" stroke-width="1.75"/>` : "";
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${options.label || "Time series"}">
     ${ticks.map(v => `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e4dfd6"/><text x="${pad.l-10}" y="${y(v)+4}" text-anchor="end" fill="#667085" font-size="12">${options.money ? money.format(v) : number.format(v)}</text>`).join("")}
+    ${rightTicks.map(v => `<line x1="${width-pad.r}" x2="${width-pad.r+5}" y1="${rightY(v)}" y2="${rightY(v)}" stroke="#667085"/><text x="${width-pad.r+10}" y="${rightY(v)+4}" fill="#667085" font-size="12">${number.format(v)}</text>`).join("")}
     ${zero}${paths}${markers}
     <text x="${pad.l}" y="${height-12}" fill="#667085" font-size="12">${shortTime(minT)}</text>
     <text x="${width-pad.r}" y="${height-12}" text-anchor="end" fill="#667085" font-size="12">${shortTime(maxT)}</text>
@@ -211,7 +241,11 @@ async function load() {
   lineChart("#daily-chart", [
     ...positionSeries,
     { rows: daily.portfolio_pnl, x: "time_et", y: "net_pnl", label: "TOTAL", color: "#333ed4", width: 4 },
-  ], { money: true, includeZero: true, label: "Daily position and portfolio P&L", markers: positionMarkers });
+    { rows: daily.spx_history || [], x: "time_et", y: "spx", label: "SPX", color: "#172033", width: 2.5, axis: "right" },
+  ], {
+    money: true, includeZero: true, leftTickStep: 250, rightTickStep: 50,
+    label: "Daily position and portfolio P&L with SPX", markers: positionMarkers,
+  });
   table("#trade-table", [
     ["Position", "position"], ["Record type", "record_type"], ["Strategy", "strategy"], ["DTE", "dte"], ["Status", "status"],
     ["Current SPX location", "spx_position_zone", null, positionZoneBadge],
