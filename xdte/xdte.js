@@ -257,8 +257,10 @@ async function load() {
   metrics("#capacity-metrics", [
     ["Reserved risk", value(summary.reserved_risk, money)],
     ["Total capacity available", value(ledger.capacity.aggregate_available_capacity, money)],
-    ["Time-released daily capacity available", value(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity, money)],
-    ["Daily capacity released so far", value(ledger.capacity.timed_capacity_released, money)],
+    ["Available new-entry capacity now", value(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity, money)],
+    ["Effective capacity unlocked", value(ledger.capacity.timed_capacity_released, money)],
+    ["Carried from prior window (25%)", value(ledger.capacity.timed_capacity_carried_forward, money)],
+    ["Unused capacity forfeited today", value(ledger.capacity.timed_capacity_forfeited, money)],
     ["Long-dated (4+ DTE) capacity available", value(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity, money)],
   ]);
   const positionColors = ["#f76915", "#eede04", "#a0d636", "#2fa236", "#fd0100", "#8a3ffc"];
