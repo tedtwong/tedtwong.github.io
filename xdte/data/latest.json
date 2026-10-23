@@ -9,33 +9,33 @@
     },
     "funnel": {
       "available_daily_capacity": 1757.5,
-      "candidates_examined": 84197,
-      "completed_scan_decisions": 31,
+      "candidates_examined": 95740,
+      "completed_scan_decisions": 34,
       "current_capital_allocated": 10115.4,
-      "current_unrealized_pnl": 752.36,
+      "current_unrealized_pnl": 612.36,
       "daily_capacity_released": 6807.5,
       "daily_capacity_total": 20000.0,
-      "eligible_candidates": 34,
+      "eligible_candidates": 41,
       "next_capacity_release_amount": 17000.0,
       "next_capacity_release_time": "14:00",
       "orders_submitted": 3,
-      "path_confirmed_candidates": 51,
-      "quadrature_survivors": 913,
-      "terminal_positive_candidates": 2299,
+      "path_confirmed_candidates": 60,
+      "quadrature_survivors": 1601,
+      "terminal_positive_candidates": 3242,
       "trades_closed": 0,
       "trades_filled": 3,
       "trades_open": 6
     },
     "pnl_summary": {
       "baseline_status": "PRIOR_SESSION_SYNCHRONIZED_CLOSE",
-      "current_ledger_pnl_level": -1458.24,
+      "current_ledger_pnl_level": -1598.24,
       "current_synchronized_pnl_level": -1387.46,
-      "daily_ledger_pnl": 424.96,
+      "daily_ledger_pnl": 284.96,
       "daily_synchronized_pnl": 495.74,
       "prior_session_as_of_et": "2026-10-22T16:59:52.046695-04:00",
       "prior_session_pnl_level": -1883.2,
       "synchronized_as_of_et": "2026-10-23T12:55:23.776976-04:00",
-      "unrealized_pnl": 752.36
+      "unrealized_pnl": 612.36
     },
     "portfolio_pnl": [
       {
@@ -257,8 +257,23 @@
           },
           {
             "event": null,
+            "net_pnl": 10.58,
+            "time_et": "2026-10-23T13:24:55.460915-04:00"
+          },
+          {
+            "event": null,
             "net_pnl": 1.58,
-            "time_et": "2026-10-23T13:22:40.097014-04:00"
+            "time_et": "2026-10-23T13:29:56.450865-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 11.58,
+            "time_et": "2026-10-23T13:34:42.916614-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 11.58,
+            "time_et": "2026-10-23T13:39:12.988682-04:00"
           }
         ],
         "position": "Position 1"
@@ -348,7 +363,22 @@
           {
             "event": null,
             "net_pnl": 40.58,
-            "time_et": "2026-10-23T13:22:37.153003-04:00"
+            "time_et": "2026-10-23T13:24:52.465391-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 41.58,
+            "time_et": "2026-10-23T13:29:53.447372-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 40.58,
+            "time_et": "2026-10-23T13:34:55.173064-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 41.58,
+            "time_et": "2026-10-23T13:39:14.535419-04:00"
           }
         ],
         "position": "Position 2"
@@ -463,7 +493,22 @@
           {
             "event": null,
             "net_pnl": 11.58,
-            "time_et": "2026-10-23T13:22:38.605486-04:00"
+            "time_et": "2026-10-23T13:24:54.188445-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 1.58,
+            "time_et": "2026-10-23T13:29:55.238661-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 11.58,
+            "time_et": "2026-10-23T13:34:56.599309-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 10.58,
+            "time_et": "2026-10-23T13:39:14.176589-04:00"
           }
         ],
         "position": "Position 3"
@@ -702,8 +747,23 @@
           },
           {
             "event": null,
+            "net_pnl": 293.8,
+            "time_et": "2026-10-23T13:24:49.615902-04:00"
+          },
+          {
+            "event": null,
             "net_pnl": 284.8,
-            "time_et": "2026-10-23T13:22:34.277299-04:00"
+            "time_et": "2026-10-23T13:29:50.576460-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 293.8,
+            "time_et": "2026-10-23T13:34:51.902273-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 294.8,
+            "time_et": "2026-10-23T13:39:14.840155-04:00"
           }
         ],
         "position": "Position 4"
@@ -1152,8 +1212,23 @@
           },
           {
             "event": null,
-            "net_pnl": 138.8,
-            "time_et": "2026-10-23T13:22:28.898362-04:00"
+            "net_pnl": 134.8,
+            "time_et": "2026-10-23T13:24:59.347283-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 144.8,
+            "time_et": "2026-10-23T13:29:45.221554-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 149.8,
+            "time_et": "2026-10-23T13:34:46.813556-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 154.8,
+            "time_et": "2026-10-23T13:39:13.870642-04:00"
           }
         ],
         "position": "Position 6"
@@ -1345,8 +1420,20 @@
         "time_et": "2026-10-23T13:19:09.399870-04:00"
       },
       {
-        "spx": 7632.32,
-        "time_et": "2026-10-23T13:21:09.327575-04:00"
+        "spx": 7628.92,
+        "time_et": "2026-10-23T13:24:16.221557-04:00"
+      },
+      {
+        "spx": 7628.16,
+        "time_et": "2026-10-23T13:29:43.684102-04:00"
+      },
+      {
+        "spx": 7626.85,
+        "time_et": "2026-10-23T13:33:43.712099-04:00"
+      },
+      {
+        "spx": 7628.18,
+        "time_et": "2026-10-23T13:38:27.511651-04:00"
       }
     ],
     "system_readiness": {
@@ -1367,7 +1454,7 @@
         "exit_reason": null,
         "exit_time_et": null,
         "expiration_date": "2026-10-28",
-        "maximum_unrealized_pnl": 11.579999999999998,
+        "maximum_unrealized_pnl": 21.58,
         "minimum_unrealized_pnl": -88.42,
         "planned_loss": 328.42,
         "position": 1,
@@ -1375,10 +1462,11 @@
         "q_minus_p_wedge": 0.04544576075497864,
         "realized_net_pnl": null,
         "record_type": "Entered or evaluated today",
+        "spx_position_direction": "LOWER",
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "BEAR_CALL_CREDIT_SPREAD",
-        "unrealized_net_pnl": -51.68
+        "unrealized_net_pnl": -41.68
       },
       {
         "allocation": 1690.0,
@@ -1389,7 +1477,7 @@
         "exit_reason": null,
         "exit_time_et": null,
         "expiration_date": "2026-10-28",
-        "maximum_unrealized_pnl": 41.58,
+        "maximum_unrealized_pnl": 51.58,
         "minimum_unrealized_pnl": -198.42000000000002,
         "planned_loss": 348.42,
         "position": 2,
@@ -1397,10 +1485,11 @@
         "q_minus_p_wedge": 0.061233376976313925,
         "realized_net_pnl": null,
         "record_type": "Entered or evaluated today",
+        "spx_position_direction": "LOWER",
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "BEAR_CALL_CREDIT_SPREAD",
-        "unrealized_net_pnl": -12.68
+        "unrealized_net_pnl": -11.68
       },
       {
         "allocation": 1660.0,
@@ -1411,7 +1500,7 @@
         "exit_reason": null,
         "exit_time_et": null,
         "expiration_date": "2026-10-30",
-        "maximum_unrealized_pnl": 11.579999999999998,
+        "maximum_unrealized_pnl": 21.58,
         "minimum_unrealized_pnl": -79.42,
         "planned_loss": 378.42,
         "position": 3,
@@ -1419,10 +1508,11 @@
         "q_minus_p_wedge": 0.07284411018270243,
         "realized_net_pnl": null,
         "record_type": "Entered or evaluated today",
+        "spx_position_direction": "LOWER",
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "BEAR_CALL_CREDIT_SPREAD",
-        "unrealized_net_pnl": -41.68
+        "unrealized_net_pnl": -42.68
       },
       {
         "allocation": 1411.8,
@@ -1433,7 +1523,7 @@
         "exit_reason": null,
         "exit_time_et": null,
         "expiration_date": "2026-10-29",
-        "maximum_unrealized_pnl": 303.8,
+        "maximum_unrealized_pnl": 314.8,
         "minimum_unrealized_pnl": -246.2,
         "planned_loss": 1251.8,
         "position": 4,
@@ -1441,10 +1531,11 @@
         "q_minus_p_wedge": null,
         "realized_net_pnl": null,
         "record_type": "Carried from prior day",
+        "spx_position_direction": "CENTER",
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 284.8
+        "unrealized_net_pnl": 294.8
       },
       {
         "allocation": 2051.8,
@@ -1463,10 +1554,11 @@
         "q_minus_p_wedge": null,
         "realized_net_pnl": null,
         "record_type": "Carried from prior day",
-        "spx_position_zone": "INSIDE_SHORTS",
+        "spx_position_direction": "LOWER",
+        "spx_position_zone": "BETWEEN_SHORT_AND_LONG_PROFITABLE",
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 434.8
+        "unrealized_net_pnl": 258.8
       },
       {
         "allocation": 1601.8,
@@ -1485,23 +1577,34 @@
         "q_minus_p_wedge": null,
         "realized_net_pnl": null,
         "record_type": "Carried from prior day",
+        "spx_position_direction": "CENTER",
         "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
-        "unrealized_net_pnl": 138.8
+        "unrealized_net_pnl": 154.8
       }
     ],
     "trading_status_and_alerts": {
       "alerts": [
         {
-          "category": "Position monitoring",
-          "details": "Open-position mark is stale: scan_20261021_1355_2dte_iron_condor.",
-          "first_seen_at_et": null,
-          "last_seen_at_et": "2026-10-23T13:22:40.281093-04:00",
-          "rule_id": "OPEN_POSITION_MARK_STALE",
+          "category": "Execution",
+          "details": "7 paper execution attempt(s) failed.",
+          "first_seen_at_et": "2026-10-23T11:05:54.412541-04:00",
+          "last_seen_at_et": "2026-10-23T13:31:51.669643-04:00",
+          "rule_id": "PAPER_EXECUTION_FAILED",
           "severity": "CRITICAL",
           "state": "ACTIVE",
-          "title": "Open-position mark is stale: scan_20261021_1355_2dte_iron_condor"
+          "title": "Paper-order execution failed"
+        },
+        {
+          "category": "Data freshness",
+          "details": "Candidate quotes exceeded the freshness limit.",
+          "first_seen_at_et": "2026-10-23T10:51:07.173882-04:00",
+          "last_seen_at_et": "2026-10-23T13:35:52.028046-04:00",
+          "rule_id": "CANDIDATE_QUOTES_STALE",
+          "severity": "WARNING",
+          "state": "ACTIVE",
+          "title": "Candidate quotes exceeded the freshness limit"
         },
         {
           "category": "Scanner",
@@ -1512,26 +1615,6 @@
           "severity": "CRITICAL",
           "state": "RESOLVED",
           "title": "Scheduled scanner cycle missing"
-        },
-        {
-          "category": "Execution",
-          "details": "6 paper execution attempt(s) failed. Later scheduled activity confirmed recovery.",
-          "first_seen_at_et": "2026-10-23T11:05:54.412541-04:00",
-          "last_seen_at_et": "2026-10-23T11:36:18.860572-04:00",
-          "rule_id": "PAPER_EXECUTION_FAILED",
-          "severity": "CRITICAL",
-          "state": "RESOLVED",
-          "title": "Paper-order execution failed"
-        },
-        {
-          "category": "Data freshness",
-          "details": "Candidate quotes exceeded the freshness limit. Later scheduled activity confirmed recovery.",
-          "first_seen_at_et": "2026-10-23T10:51:07.173882-04:00",
-          "last_seen_at_et": "2026-10-23T13:06:12.503383-04:00",
-          "rule_id": "CANDIDATE_QUOTES_STALE",
-          "severity": "WARNING",
-          "state": "RESOLVED",
-          "title": "Candidate quotes exceeded the freshness limit"
         },
         {
           "category": "Scanner",
@@ -2340,23 +2423,23 @@
       }
     ],
     "summary": {
-      "additional_loss_to_contractual_max": 10622.36,
-      "available_equity": 238671.76,
+      "additional_loss_to_contractual_max": 10482.36,
+      "available_equity": 238531.76,
       "cash": 247789.4,
       "closed_trades": 3,
       "contractual_stress_loss": 9870.0,
-      "equity": 248541.76,
+      "equity": 248401.76,
       "open_positions": 6,
       "realized_pnl": -2210.6,
       "reserved_risk": 9870.0,
       "starting_cash": 250000.0,
-      "unrealized_pnl": 752.36
+      "unrealized_pnl": 612.36
     }
   },
   "publication": {
     "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-23T13:22:40.281093-04:00",
+    "published_at_et": "2026-10-23T13:39:23.865411-04:00",
     "status": "PRELIMINARY_SESSION_ACTIVE",
     "trade_date": "2026-10-23"
   },

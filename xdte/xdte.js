@@ -20,6 +20,7 @@ const positionMap = (zone, row = {}) => {
   const strategy = String(row.strategy || "");
   const isPut = strategy === "BULL_PUT_CREDIT_SPREAD";
   const isCall = strategy === "BEAR_CALL_CREDIT_SPREAD";
+  const direction = String(row.spx_position_direction || "CENTER");
   const markerColor = {
     INSIDE_SHORTS: "#2fa236",
     BETWEEN_SHORT_AND_LONG_PROFITABLE: "#eede04",
@@ -30,7 +31,11 @@ const positionMap = (zone, row = {}) => {
     ? ({ INSIDE_SHORTS: 72, BETWEEN_SHORT_AND_LONG_PROFITABLE: 32, BETWEEN_SHORT_AND_LONG: 32, OUTSIDE_LONGS: 8 }[zone] || 50)
     : isCall
       ? ({ INSIDE_SHORTS: 28, BETWEEN_SHORT_AND_LONG_PROFITABLE: 68, BETWEEN_SHORT_AND_LONG: 68, OUTSIDE_LONGS: 92 }[zone] || 50)
-      : ({ INSIDE_SHORTS: 50, BETWEEN_SHORT_AND_LONG_PROFITABLE: 76, BETWEEN_SHORT_AND_LONG: 76, OUTSIDE_LONGS: 96 }[zone] || 50);
+      : zone === "INSIDE_SHORTS"
+        ? 50
+        : zone === "OUTSIDE_LONGS"
+          ? (direction === "LOWER" ? 8 : 92)
+          : (direction === "LOWER" ? 24 : 76);
   let zones;
   let boundaries;
   const ticks = [4, 15.5, 27, 38.5, 50, 61.5, 73, 84.5, 96]
