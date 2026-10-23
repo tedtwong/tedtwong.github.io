@@ -59,6 +59,15 @@ section { padding: 68px 0 10px; }
 .chart-legend { display: flex; gap: 18px; flex-wrap: wrap; margin: 10px 0 0; color: var(--muted); font-size: .8rem; }
 .legend-key::before { content: ""; display: inline-block; width: 18px; height: 3px; margin-right: 7px; vertical-align: middle; background: var(--key); }
 .table-wrap { width: 100%; overflow-x: auto; }
+.table-wrap--compact-empty { overflow: visible; }
+.table-wrap--compact-empty .chart-empty {
+  min-height: 0;
+  display: block;
+  padding: 9px 12px;
+  color: var(--muted);
+  font-size: .84rem;
+  background: #faf8f3;
+}
 table { width: 100%; border-collapse: collapse; font-size: .84rem; font-variant-numeric: tabular-nums; }
 th { color: var(--muted); font-size: .69rem; letter-spacing: .05em; text-align: left; text-transform: uppercase; white-space: nowrap; }
 th, td { padding: 11px 10px; border-bottom: 1px solid #e5e0d7; }

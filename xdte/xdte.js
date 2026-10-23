@@ -36,9 +36,14 @@ function summaryMetrics(target, items) {
   ).join("");
 }
 
-function table(target, columns, rows) {
+function table(target, columns, rows, options = {}) {
   const node = document.querySelector(target);
-  if (!rows.length) { node.innerHTML = `<div class="chart-empty">No qualifying records are available.</div>`; return; }
+  const isCompactEmpty = !rows.length && options.compactEmpty;
+  node.classList.toggle("table-wrap--compact-empty", Boolean(isCompactEmpty));
+  if (!rows.length) {
+    node.innerHTML = `<div class="chart-empty">${options.emptyMessage || "No qualifying records are available."}</div>`;
+    return;
+  }
   node.innerHTML = `<table><thead><tr>${columns.map(c => `<th>${c[0]}</th>`).join("")}</tr></thead><tbody>${rows.map(row =>
     `<tr>${columns.map(c => `<td class="${c[2] ? c[2](row[c[1]]) : ""}">${c[3] ? c[3](row[c[1]]) : (row[c[1]] ?? "—")}</td>`).join("")}</tr>`
   ).join("")}</tbody></table>`;
@@ -228,9 +233,9 @@ async function load() {
     ["Details", "details"], ["First observed (ET)", "first_seen_at_et", null, shortTime],
     ["Last affected (ET)", "last_seen_at_et", null, shortTime],
   ];
-  table("#active-alerts", alertColumns, activeAlerts);
-  table("#recovered-alerts", alertColumns, recoveredAlerts);
-  table("#informational-alerts", alertColumns, informationalAlerts);
+  table("#active-alerts", alertColumns, activeAlerts, { compactEmpty: true, emptyMessage: "None" });
+  table("#recovered-alerts", alertColumns, recoveredAlerts, { compactEmpty: true, emptyMessage: "None" });
+  table("#informational-alerts", alertColumns, informationalAlerts, { compactEmpty: true, emptyMessage: "None" });
   summaryMetrics("#pnl-metrics", [
     ["Daily synchronized P&L", value(pnlSummary.daily_synchronized_pnl, money), pnlClass(pnlSummary.daily_synchronized_pnl)],
     ["Daily P&L (ledger change)", value(pnlSummary.daily_ledger_pnl, money), pnlClass(pnlSummary.daily_ledger_pnl)],
