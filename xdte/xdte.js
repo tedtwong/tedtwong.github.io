@@ -15,6 +15,38 @@ const positionZoneBadge = zone => {
   const [className, label] = values[zone] || ["position-zone--unavailable", "Unavailable"];
   return `<span class="position-zone ${className}">${label}</span>`;
 };
+const positionMap = (zone, row = {}) => {
+  if (!zone || zone === "UNAVAILABLE") return '<span class="position-map--unavailable">—</span>';
+  const strategy = String(row.strategy || "");
+  const isPut = strategy === "BULL_PUT_CREDIT_SPREAD";
+  const isCall = strategy === "BEAR_CALL_CREDIT_SPREAD";
+  const markerColor = {
+    INSIDE_SHORTS: "#2fa236",
+    BETWEEN_SHORT_AND_LONG_PROFITABLE: "#eede04",
+    BETWEEN_SHORT_AND_LONG: "#f76915",
+    OUTSIDE_LONGS: "#fd0100",
+  }[zone] || "#7a8491";
+  const markerX = isPut
+    ? ({ INSIDE_SHORTS: 72, BETWEEN_SHORT_AND_LONG_PROFITABLE: 32, BETWEEN_SHORT_AND_LONG: 32, OUTSIDE_LONGS: 8 }[zone] || 50)
+    : isCall
+      ? ({ INSIDE_SHORTS: 28, BETWEEN_SHORT_AND_LONG_PROFITABLE: 68, BETWEEN_SHORT_AND_LONG: 68, OUTSIDE_LONGS: 92 }[zone] || 50)
+      : ({ INSIDE_SHORTS: 50, BETWEEN_SHORT_AND_LONG_PROFITABLE: 76, BETWEEN_SHORT_AND_LONG: 76, OUTSIDE_LONGS: 96 }[zone] || 50);
+  let zones;
+  let boundaries;
+  if (isPut) {
+    zones = '<line x1="4" x2="20" class="risk-red"/><line x1="20" x2="42" class="risk-orange"/><line x1="42" x2="96" class="risk-green"/>';
+    boundaries = '<line x1="20" x2="20" y1="-8" y2="8" class="long-boundary"/><line x1="42" x2="42" y1="-8" y2="8" class="short-boundary"/>';
+  } else if (isCall) {
+    zones = '<line x1="4" x2="58" class="risk-green"/><line x1="58" x2="80" class="risk-orange"/><line x1="80" x2="96" class="risk-red"/>';
+    boundaries = '<line x1="58" x2="58" y1="-8" y2="8" class="short-boundary"/><line x1="80" x2="80" y1="-8" y2="8" class="long-boundary"/>';
+  } else {
+    zones = '<line x1="4" x2="14" class="risk-red"/><line x1="14" x2="34" class="risk-orange"/><line x1="34" x2="66" class="risk-green"/><line x1="66" x2="86" class="risk-orange"/><line x1="86" x2="96" class="risk-red"/>';
+    boundaries = '<line x1="14" x2="14" y1="-8" y2="8" class="long-boundary"/><line x1="34" x2="34" y1="-8" y2="8" class="short-boundary"/><line x1="66" x2="66" y1="-8" y2="8" class="short-boundary"/><line x1="86" x2="86" y1="-8" y2="8" class="long-boundary"/>';
+  }
+  return `<svg class="position-map" viewBox="0 0 100 32" role="img" aria-label="Normalized SPX risk-zone map; ${positionZoneBadge(zone).replace(/<[^>]+>/g, "")}">
+    <g transform="translate(0 16)">${zones}${boundaries}<circle cx="${markerX}" cy="0" r="3.5" fill="${markerColor}" stroke="#111827" stroke-width="1.5"/></g>
+  </svg>`;
+};
 const shortTime = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }).format(new Date(v)) : "—";
 const shortDate = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${v}T00:00:00Z`)) : "—";
 const liveFeedUrl = "https://storage.googleapis.com/ibkr-steamroller-coins-xdte-feed/latest.json";
@@ -45,7 +77,7 @@ function table(target, columns, rows, options = {}) {
     return;
   }
   node.innerHTML = `<table><thead><tr>${columns.map(c => `<th>${c[0]}</th>`).join("")}</tr></thead><tbody>${rows.map(row =>
-    `<tr>${columns.map(c => `<td class="${c[2] ? c[2](row[c[1]]) : ""}">${c[3] ? c[3](row[c[1]]) : (row[c[1]] ?? "—")}</td>`).join("")}</tr>`
+    `<tr>${columns.map(c => `<td class="${c[2] ? c[2](row[c[1]]) : ""}">${c[3] ? c[3](row[c[1]], row) : (row[c[1]] ?? "—")}</td>`).join("")}</tr>`
   ).join("")}</tbody></table>`;
 }
 
@@ -287,6 +319,7 @@ async function load() {
     ["Position", "position"], ["Record type", "record_type"], ["Strategy", "strategy"], ["Entry DTE", "dte"],
     ["Status", "status"],
     ["Current SPX location", "spx_position_zone", null, positionZoneBadge],
+    ["Position map", "spx_position_zone", null, positionMap],
     ["Entry (ET)", "entry_time_et", null, shortTime],
     ["Expiry", "expiration_date", null, shortDate],
     ["Exit (ET)", "exit_time_et", null, shortTime],

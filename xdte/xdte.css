@@ -81,6 +81,17 @@ tr:last-child td { border-bottom: 0; }
 .position-zone--orange { background: #c46813; }
 .position-zone--red { background: #b42318; }
 .position-zone--unavailable { background: #68727d; }
+.position-map { display: block; width: 150px; height: 32px; overflow: visible; }
+.position-map .risk-green, .position-map .risk-orange, .position-map .risk-red {
+  stroke-width: 7;
+}
+.position-map .risk-green { stroke: #2fa236; }
+.position-map .risk-orange { stroke: #f76915; }
+.position-map .risk-red { stroke: #fd0100; }
+.position-map .long-boundary, .position-map .short-boundary { stroke: #172033; }
+.position-map .long-boundary { stroke-width: 1; }
+.position-map .short-boundary { stroke-width: 2; }
+.position-map--unavailable { color: var(--muted); }
 .notice { margin: 24px 0 -34px; border-left: 4px solid var(--orange); background: #fff4e8; padding: 14px 18px; line-height: 1.45; }
 .status-section { padding-top: 46px; }
 .status-summary { border-left: 4px solid var(--orange); background: #fff4e8; padding: 14px 18px; }
