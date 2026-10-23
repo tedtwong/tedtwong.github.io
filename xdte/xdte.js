@@ -16,6 +16,7 @@ const positionZoneBadge = zone => {
   return `<span class="position-zone ${className}">${label}</span>`;
 };
 const shortTime = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }).format(new Date(v)) : "—";
+const shortDate = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${v}T00:00:00Z`)) : "—";
 const liveFeedUrl = "https://storage.googleapis.com/ibkr-steamroller-coins-xdte-feed/latest.json";
 const refreshCooldownMilliseconds = 5 * 60 * 1000;
 const autoRefreshIntervalMilliseconds = 5 * 60 * 1000;
@@ -251,8 +252,9 @@ async function load() {
   metrics("#capacity-metrics", [
     ["Reserved risk", value(summary.reserved_risk, money)],
     ["Total capacity available", value(ledger.capacity.aggregate_available_capacity, money)],
-    ["Total daily capacity available", value(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity, money)],
-    ["Total 7DTE capacity available", value(ledger.capacity.seven_dte_available_capacity, money)],
+    ["Time-released daily capacity available", value(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity, money)],
+    ["Daily capacity released so far", value(ledger.capacity.timed_capacity_released, money)],
+    ["Long-dated (4+ DTE) capacity available", value(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity, money)],
   ]);
   const positionColors = ["#f76915", "#eede04", "#a0d636", "#2fa236", "#fd0100", "#8a3ffc"];
   const positionSeries = (daily.position_pnl || []).map((item, index) => ({
@@ -275,7 +277,8 @@ async function load() {
     label: "Daily position and portfolio P&L with SPX", markers: positionMarkers,
   });
   table("#trade-table", [
-    ["Position", "position"], ["Record type", "record_type"], ["Strategy", "strategy"], ["DTE", "dte"], ["Status", "status"],
+    ["Position", "position"], ["Record type", "record_type"], ["Strategy", "strategy"], ["Entry DTE", "dte"],
+    ["Expiration date", "expiration_date", null, shortDate], ["Status", "status"],
     ["Current SPX location", "spx_position_zone", null, positionZoneBadge],
     ["Entry (ET)", "entry_time_et", null, shortTime], ["Exit (ET)", "exit_time_et", null, shortTime],
     ["Allocation", "allocation", null, v => value(v, money)], ["Base expected", "base_expected_net_pnl", pnlClass, v => value(v, money)],

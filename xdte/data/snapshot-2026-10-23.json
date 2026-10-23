@@ -1,0 +1,1788 @@
+{
+  "daily": {
+    "exit_activity": {
+      "exits_filled": 0,
+      "net_fill_slippage": 0,
+      "realized_pnl": 0,
+      "released_capital": 0,
+      "transaction_costs": 0
+    },
+    "funnel": {
+      "available_daily_capacity": 10616.58,
+      "candidates_examined": 60461,
+      "completed_scan_decisions": 16,
+      "current_capital_allocated": 8448.82,
+      "current_unrealized_pnl": 844.04,
+      "daily_capacity_released": 14000.0,
+      "daily_capacity_total": 20000.0,
+      "eligible_candidates": 24,
+      "next_capacity_release_amount": 17000.0,
+      "next_capacity_release_time": "14:00",
+      "orders_submitted": 2,
+      "path_confirmed_candidates": 33,
+      "quadrature_survivors": 136,
+      "terminal_positive_candidates": 885,
+      "trades_closed": 0,
+      "trades_filled": 2,
+      "trades_open": 5
+    },
+    "pnl_summary": {
+      "baseline_status": "PRIOR_SESSION_SYNCHRONIZED_CLOSE",
+      "current_ledger_pnl_level": -1366.56,
+      "current_synchronized_pnl_level": -1241.04,
+      "daily_ledger_pnl": 516.64,
+      "daily_synchronized_pnl": 642.16,
+      "prior_session_as_of_et": "2026-10-22T16:59:52.046695-04:00",
+      "prior_session_pnl_level": -1883.2,
+      "synchronized_as_of_et": "2026-10-23T12:07:19.430850-04:00",
+      "unrealized_pnl": 844.04
+    },
+    "portfolio_pnl": [
+      {
+        "net_pnl": -2117.2,
+        "time_et": "2026-10-23T09:34:48.737275-04:00"
+      },
+      {
+        "net_pnl": -2258.2,
+        "time_et": "2026-10-23T09:39:49.312421-04:00"
+      },
+      {
+        "net_pnl": -1953.2,
+        "time_et": "2026-10-23T09:44:49.884733-04:00"
+      },
+      {
+        "net_pnl": -1911.2,
+        "time_et": "2026-10-23T09:49:50.415565-04:00"
+      },
+      {
+        "net_pnl": -1937.2,
+        "time_et": "2026-10-23T09:54:51.024613-04:00"
+      },
+      {
+        "net_pnl": -1853.2,
+        "time_et": "2026-10-23T09:59:51.710375-04:00"
+      },
+      {
+        "net_pnl": -1868.2,
+        "time_et": "2026-10-23T10:04:52.274571-04:00"
+      },
+      {
+        "net_pnl": -1827.2,
+        "time_et": "2026-10-23T10:09:53.011199-04:00"
+      },
+      {
+        "net_pnl": -1932.2,
+        "time_et": "2026-10-23T10:14:53.883812-04:00"
+      },
+      {
+        "net_pnl": -2238.2,
+        "time_et": "2026-10-23T10:19:54.624475-04:00"
+      },
+      {
+        "net_pnl": -2082.2,
+        "time_et": "2026-10-23T10:22:55.077101-04:00"
+      },
+      {
+        "net_pnl": -2142.2,
+        "time_et": "2026-10-23T10:29:55.148075-04:00"
+      },
+      {
+        "net_pnl": -2127.2,
+        "time_et": "2026-10-23T10:34:55.986316-04:00"
+      },
+      {
+        "net_pnl": -1843.2,
+        "time_et": "2026-10-23T10:39:56.678299-04:00"
+      },
+      {
+        "net_pnl": -1577.2,
+        "time_et": "2026-10-23T10:44:57.266855-04:00"
+      },
+      {
+        "net_pnl": -1454.2,
+        "time_et": "2026-10-23T10:49:57.964167-04:00"
+      },
+      {
+        "net_pnl": -1301.2,
+        "time_et": "2026-10-23T10:54:59.221400-04:00"
+      },
+      {
+        "net_pnl": -1268.2,
+        "time_et": "2026-10-23T10:59:59.867837-04:00"
+      },
+      {
+        "net_pnl": -1326.2,
+        "time_et": "2026-10-23T11:04:52.315378-04:00"
+      },
+      {
+        "net_pnl": -1392.2,
+        "time_et": "2026-10-23T11:09:53.336881-04:00"
+      },
+      {
+        "net_pnl": -1322.2,
+        "time_et": "2026-10-23T11:14:54.280533-04:00"
+      },
+      {
+        "net_pnl": -1257.2,
+        "time_et": "2026-10-23T11:19:55.030359-04:00"
+      },
+      {
+        "net_pnl": -1247.2,
+        "time_et": "2026-10-23T11:24:56.104972-04:00"
+      },
+      {
+        "net_pnl": -1192.2,
+        "time_et": "2026-10-23T11:29:57.331470-04:00"
+      },
+      {
+        "net_pnl": -1121.2,
+        "time_et": "2026-10-23T11:34:58.420771-04:00"
+      },
+      {
+        "net_pnl": -1223.2,
+        "time_et": "2026-10-23T11:39:59.152048-04:00"
+      },
+      {
+        "net_pnl": -1331.62,
+        "time_et": "2026-10-23T11:44:59.473340-04:00"
+      },
+      {
+        "net_pnl": -1286.62,
+        "time_et": "2026-10-23T11:49:55.635540-04:00"
+      },
+      {
+        "net_pnl": -1255.62,
+        "time_et": "2026-10-23T11:54:56.486697-04:00"
+      },
+      {
+        "net_pnl": -1166.62,
+        "time_et": "2026-10-23T11:59:57.313994-04:00"
+      },
+      {
+        "net_pnl": -1202.62,
+        "time_et": "2026-10-23T12:04:58.140674-04:00"
+      },
+      {
+        "net_pnl": -1241.04,
+        "time_et": "2026-10-23T12:07:19.430850-04:00"
+      }
+    ],
+    "position_pnl": [
+      {
+        "points": [
+          {
+            "event": "Entry",
+            "net_pnl": -28.42,
+            "time_et": "2026-10-23T12:06:53.569102-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -58.42,
+            "time_et": "2026-10-23T12:07:07.401696-04:00"
+          }
+        ],
+        "position": "Position 1"
+      },
+      {
+        "points": [
+          {
+            "event": "Entry",
+            "net_pnl": -28.42,
+            "time_et": "2026-10-23T11:41:51.081169-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -48.42,
+            "time_et": "2026-10-23T11:44:49.559600-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -58.42,
+            "time_et": "2026-10-23T11:49:50.890549-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -58.42,
+            "time_et": "2026-10-23T11:54:51.799088-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -68.42,
+            "time_et": "2026-10-23T11:59:52.567638-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -69.42,
+            "time_et": "2026-10-23T12:04:53.510334-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -69.42,
+            "time_et": "2026-10-23T12:07:08.927762-04:00"
+          }
+        ],
+        "position": "Position 2"
+      },
+      {
+        "points": [
+          {
+            "event": null,
+            "net_pnl": 233.8,
+            "time_et": "2026-10-23T09:34:48.737275-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 253.8,
+            "time_et": "2026-10-23T09:39:49.312421-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 233.8,
+            "time_et": "2026-10-23T09:44:49.884733-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 224.8,
+            "time_et": "2026-10-23T09:49:50.415565-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 253.8,
+            "time_et": "2026-10-23T09:54:51.024613-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 223.8,
+            "time_et": "2026-10-23T09:59:51.710375-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 263.8,
+            "time_et": "2026-10-23T10:04:52.274571-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 263.8,
+            "time_et": "2026-10-23T10:09:53.011199-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 274.8,
+            "time_et": "2026-10-23T10:14:53.883812-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 283.8,
+            "time_et": "2026-10-23T10:19:54.624475-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 264.8,
+            "time_et": "2026-10-23T10:22:55.077101-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 273.8,
+            "time_et": "2026-10-23T10:29:46.520858-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 283.8,
+            "time_et": "2026-10-23T10:34:47.110855-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 273.8,
+            "time_et": "2026-10-23T10:39:47.628057-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 223.8,
+            "time_et": "2026-10-23T10:44:48.227928-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 223.8,
+            "time_et": "2026-10-23T10:49:49.142832-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 214.8,
+            "time_et": "2026-10-23T10:54:50.329957-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 213.8,
+            "time_et": "2026-10-23T10:59:51.129067-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 224.8,
+            "time_et": "2026-10-23T11:04:52.315378-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 233.8,
+            "time_et": "2026-10-23T11:09:53.336881-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 224.8,
+            "time_et": "2026-10-23T11:14:54.280533-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 194.8,
+            "time_et": "2026-10-23T11:19:55.030359-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 204.8,
+            "time_et": "2026-10-23T11:24:56.104972-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 204.8,
+            "time_et": "2026-10-23T11:29:57.331470-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 194.8,
+            "time_et": "2026-10-23T11:34:58.420771-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 203.8,
+            "time_et": "2026-10-23T11:39:59.152048-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 224.8,
+            "time_et": "2026-10-23T11:44:44.973423-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 204.8,
+            "time_et": "2026-10-23T11:49:46.341844-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 194.8,
+            "time_et": "2026-10-23T11:54:47.239647-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 184.8,
+            "time_et": "2026-10-23T11:59:48.151665-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 203.8,
+            "time_et": "2026-10-23T12:04:49.015553-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 203.8,
+            "time_et": "2026-10-23T12:07:19.430850-04:00"
+          }
+        ],
+        "position": "Position 3"
+      },
+      {
+        "points": [
+          {
+            "event": null,
+            "net_pnl": -195.2,
+            "time_et": "2026-10-23T09:34:48.541674-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -335.2,
+            "time_et": "2026-10-23T09:39:49.090129-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -65.2,
+            "time_et": "2026-10-23T09:44:49.753483-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -25.2,
+            "time_et": "2026-10-23T09:49:50.267472-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -75.2,
+            "time_et": "2026-10-23T09:54:50.823565-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 39.8,
+            "time_et": "2026-10-23T09:59:51.532610-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -35.2,
+            "time_et": "2026-10-23T10:04:52.041302-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -5.2,
+            "time_et": "2026-10-23T10:09:52.832703-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -95.2,
+            "time_et": "2026-10-23T10:14:53.771615-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -361.2,
+            "time_et": "2026-10-23T10:19:54.558451-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -211.2,
+            "time_et": "2026-10-23T10:22:55.034969-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -270.2,
+            "time_et": "2026-10-23T10:29:45.286721-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -280.2,
+            "time_et": "2026-10-23T10:34:46.000688-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": -15.2,
+            "time_et": "2026-10-23T10:39:46.510487-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 244.8,
+            "time_et": "2026-10-23T10:44:47.278246-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 338.8,
+            "time_et": "2026-10-23T10:49:48.100646-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 484.8,
+            "time_et": "2026-10-23T10:54:49.398163-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 504.8,
+            "time_et": "2026-10-23T10:59:49.995500-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 444.8,
+            "time_et": "2026-10-23T11:04:51.283025-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 384.8,
+            "time_et": "2026-10-23T11:09:52.284112-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 444.8,
+            "time_et": "2026-10-23T11:14:53.271564-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 529.8,
+            "time_et": "2026-10-23T11:19:54.212938-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 529.8,
+            "time_et": "2026-10-23T11:24:55.423246-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 584.8,
+            "time_et": "2026-10-23T11:29:56.886302-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 639.8,
+            "time_et": "2026-10-23T11:34:57.965542-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 559.8,
+            "time_et": "2026-10-23T11:39:58.601928-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 493.8,
+            "time_et": "2026-10-23T11:44:59.473340-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 563.8,
+            "time_et": "2026-10-23T11:49:45.582346-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 588.8,
+            "time_et": "2026-10-23T11:54:46.438000-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 688.8,
+            "time_et": "2026-10-23T11:59:47.262559-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 639.8,
+            "time_et": "2026-10-23T12:04:48.246701-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 653.8,
+            "time_et": "2026-10-23T12:07:18.791547-04:00"
+          }
+        ],
+        "position": "Position 4"
+      },
+      {
+        "points": [
+          {
+            "event": null,
+            "net_pnl": 54.8,
+            "time_et": "2026-10-23T09:34:48.275361-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 33.8,
+            "time_et": "2026-10-23T09:39:48.822011-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 88.8,
+            "time_et": "2026-10-23T09:44:49.499358-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 99.8,
+            "time_et": "2026-10-23T09:49:50.005158-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 94.8,
+            "time_et": "2026-10-23T09:54:50.710273-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 93.8,
+            "time_et": "2026-10-23T09:59:51.373126-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 113.8,
+            "time_et": "2026-10-23T10:04:51.898555-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 124.8,
+            "time_et": "2026-10-23T10:09:52.761078-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 98.8,
+            "time_et": "2026-10-23T10:14:53.606377-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 49.8,
+            "time_et": "2026-10-23T10:19:54.341823-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 74.8,
+            "time_et": "2026-10-23T10:22:54.842671-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 64.8,
+            "time_et": "2026-10-23T10:29:55.148075-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 79.8,
+            "time_et": "2026-10-23T10:34:55.986316-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 108.8,
+            "time_et": "2026-10-23T10:39:56.678299-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 164.8,
+            "time_et": "2026-10-23T10:44:57.266855-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 193.8,
+            "time_et": "2026-10-23T10:49:57.964167-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 209.8,
+            "time_et": "2026-10-23T10:54:59.221400-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 223.8,
+            "time_et": "2026-10-23T10:59:59.867837-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 214.8,
+            "time_et": "2026-10-23T11:04:45.842252-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 199.8,
+            "time_et": "2026-10-23T11:09:46.940063-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 218.8,
+            "time_et": "2026-10-23T11:14:48.028520-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 228.8,
+            "time_et": "2026-10-23T11:19:49.047283-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 228.8,
+            "time_et": "2026-10-23T11:24:50.092475-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 228.8,
+            "time_et": "2026-10-23T11:29:51.506357-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 254.8,
+            "time_et": "2026-10-23T11:34:52.707234-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 223.8,
+            "time_et": "2026-10-23T11:39:53.570842-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 208.8,
+            "time_et": "2026-10-23T11:44:54.405108-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 213.8,
+            "time_et": "2026-10-23T11:49:55.635540-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 229.8,
+            "time_et": "2026-10-23T11:54:56.486697-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 238.8,
+            "time_et": "2026-10-23T11:59:57.313994-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 233.8,
+            "time_et": "2026-10-23T12:04:58.140674-04:00"
+          },
+          {
+            "event": null,
+            "net_pnl": 239.8,
+            "time_et": "2026-10-23T12:07:13.638380-04:00"
+          }
+        ],
+        "position": "Position 5"
+      }
+    ],
+    "spx_history": [
+      {
+        "spx": 7624.17,
+        "time_et": "2026-10-23T09:34:54.164763-04:00"
+      },
+      {
+        "spx": 7617.54,
+        "time_et": "2026-10-23T09:39:54.206598-04:00"
+      },
+      {
+        "spx": 7630.16,
+        "time_et": "2026-10-23T09:44:55.173309-04:00"
+      },
+      {
+        "spx": 7630.33,
+        "time_et": "2026-10-23T09:49:55.370873-04:00"
+      },
+      {
+        "spx": 7631.62,
+        "time_et": "2026-10-23T09:54:55.365178-04:00"
+      },
+      {
+        "spx": 7633.1,
+        "time_et": "2026-10-23T09:59:55.251675-04:00"
+      },
+      {
+        "spx": 7630.34,
+        "time_et": "2026-10-23T10:04:55.259430-04:00"
+      },
+      {
+        "spx": 7630.15,
+        "time_et": "2026-10-23T10:09:55.564693-04:00"
+      },
+      {
+        "spx": 7625.02,
+        "time_et": "2026-10-23T10:14:05.472087-04:00"
+      },
+      {
+        "spx": 7613.98,
+        "time_et": "2026-10-23T10:19:08.204068-04:00"
+      },
+      {
+        "spx": 7622.19,
+        "time_et": "2026-10-23T10:23:07.872947-04:00"
+      },
+      {
+        "spx": 7618.29,
+        "time_et": "2026-10-23T10:29:43.442669-04:00"
+      },
+      {
+        "spx": 7619.1,
+        "time_et": "2026-10-23T10:34:47.844975-04:00"
+      },
+      {
+        "spx": 7629.51,
+        "time_et": "2026-10-23T10:39:47.837870-04:00"
+      },
+      {
+        "spx": 7639.91,
+        "time_et": "2026-10-23T10:44:54.231480-04:00"
+      },
+      {
+        "spx": 7645.59,
+        "time_et": "2026-10-23T10:49:03.216512-04:00"
+      },
+      {
+        "spx": 7652.71,
+        "time_et": "2026-10-23T10:53:48.542078-04:00"
+      },
+      {
+        "spx": 7651.62,
+        "time_et": "2026-10-23T10:59:16.303962-04:00"
+      },
+      {
+        "spx": 7645.38,
+        "time_et": "2026-10-23T11:04:21.348661-04:00"
+      },
+      {
+        "spx": 7650.1,
+        "time_et": "2026-10-23T11:08:42.728811-04:00"
+      },
+      {
+        "spx": 7650.0,
+        "time_et": "2026-10-23T11:14:08.511308-04:00"
+      },
+      {
+        "spx": 7650.96,
+        "time_et": "2026-10-23T11:19:29.533707-04:00"
+      },
+      {
+        "spx": 7648.32,
+        "time_et": "2026-10-23T11:24:29.364986-04:00"
+      },
+      {
+        "spx": 7655.88,
+        "time_et": "2026-10-23T11:29:00.507931-04:00"
+      },
+      {
+        "spx": 7659.28,
+        "time_et": "2026-10-23T11:34:57.519300-04:00"
+      },
+      {
+        "spx": 7651.44,
+        "time_et": "2026-10-23T11:39:14.506022-04:00"
+      },
+      {
+        "spx": 7645.5,
+        "time_et": "2026-10-23T11:44:31.365367-04:00"
+      },
+      {
+        "spx": 7649.68,
+        "time_et": "2026-10-23T11:48:34.267435-04:00"
+      },
+      {
+        "spx": 7652.01,
+        "time_et": "2026-10-23T11:54:36.006509-04:00"
+      },
+      {
+        "spx": 7654.54,
+        "time_et": "2026-10-23T11:59:51.314336-04:00"
+      },
+      {
+        "spx": 7654.38,
+        "time_et": "2026-10-23T12:04:19.454672-04:00"
+      },
+      {
+        "spx": 7654.37,
+        "time_et": "2026-10-23T12:06:29.129689-04:00"
+      }
+    ],
+    "system_readiness": {
+      "checked_at_et": "2026-10-23T10:25:06.092008-04:00",
+      "failed_checks": 0,
+      "passed_checks": 18,
+      "status": "READY",
+      "total_checks": 18,
+      "trade_date": "2026-10-23"
+    },
+    "trades": [
+      {
+        "allocation": 1723.42,
+        "base_expected_net_pnl": 113.60631944493302,
+        "base_lower_95": 98.6772568360222,
+        "dte": 3,
+        "entry_time_et": "2026-10-23T12:06:53.569102-04:00",
+        "exit_reason": null,
+        "exit_time_et": null,
+        "expiration_date": "2026-10-28",
+        "maximum_unrealized_pnl": -28.42,
+        "minimum_unrealized_pnl": -111.68,
+        "planned_loss": 348.42,
+        "position": 1,
+        "profit_target_fraction": 0.35,
+        "q_minus_p_wedge": null,
+        "realized_net_pnl": null,
+        "record_type": "Entered or evaluated today",
+        "spx_position_zone": "INSIDE_SHORTS",
+        "status": "OPEN",
+        "strategy": "BEAR_CALL_CREDIT_SPREAD",
+        "unrealized_net_pnl": -111.68
+      },
+      {
+        "allocation": 1660.0,
+        "base_expected_net_pnl": 124.98870120975603,
+        "base_lower_95": 109.16210804304818,
+        "dte": 7,
+        "entry_time_et": "2026-10-23T11:41:51.081169-04:00",
+        "exit_reason": null,
+        "exit_time_et": null,
+        "expiration_date": "2026-10-30",
+        "maximum_unrealized_pnl": -28.42,
+        "minimum_unrealized_pnl": -122.68,
+        "planned_loss": 378.42,
+        "position": 2,
+        "profit_target_fraction": 0.35,
+        "q_minus_p_wedge": null,
+        "realized_net_pnl": null,
+        "record_type": "Entered or evaluated today",
+        "spx_position_zone": "INSIDE_SHORTS",
+        "status": "OPEN",
+        "strategy": "BEAR_CALL_CREDIT_SPREAD",
+        "unrealized_net_pnl": -122.68
+      },
+      {
+        "allocation": 1411.8,
+        "base_expected_net_pnl": 79.04446301309993,
+        "base_lower_95": 52.90231320013791,
+        "dte": 7,
+        "entry_time_et": "2026-10-22T10:01:55.276645-04:00",
+        "exit_reason": null,
+        "exit_time_et": null,
+        "expiration_date": "2026-10-29",
+        "maximum_unrealized_pnl": 294.8,
+        "minimum_unrealized_pnl": -246.2,
+        "planned_loss": 1251.8,
+        "position": 3,
+        "profit_target_fraction": 0.7,
+        "q_minus_p_wedge": null,
+        "realized_net_pnl": null,
+        "record_type": "Carried from prior day",
+        "spx_position_zone": "INSIDE_SHORTS",
+        "status": "OPEN",
+        "strategy": "IRON_CONDOR",
+        "unrealized_net_pnl": 184.8
+      },
+      {
+        "allocation": 2051.8,
+        "base_expected_net_pnl": 83.39667961559027,
+        "base_lower_95": 59.74407801937514,
+        "dte": 2,
+        "entry_time_et": "2026-10-21T13:56:22.844149-04:00",
+        "exit_reason": null,
+        "exit_time_et": null,
+        "expiration_date": "2026-10-23",
+        "maximum_unrealized_pnl": 688.8,
+        "minimum_unrealized_pnl": -480.2,
+        "planned_loss": 1121.8,
+        "position": 4,
+        "profit_target_fraction": 0.7,
+        "q_minus_p_wedge": null,
+        "realized_net_pnl": null,
+        "record_type": "Carried from prior day",
+        "spx_position_zone": "INSIDE_SHORTS",
+        "status": "OPEN",
+        "strategy": "IRON_CONDOR",
+        "unrealized_net_pnl": 653.8
+      },
+      {
+        "allocation": 1601.8,
+        "base_expected_net_pnl": 71.84689932765629,
+        "base_lower_95": 49.50154677652185,
+        "dte": 7,
+        "entry_time_et": "2026-10-21T13:27:48.451231-04:00",
+        "exit_reason": null,
+        "exit_time_et": null,
+        "expiration_date": "2026-10-28",
+        "maximum_unrealized_pnl": 254.8,
+        "minimum_unrealized_pnl": -165.2,
+        "planned_loss": 1096.8,
+        "position": 5,
+        "profit_target_fraction": 0.7,
+        "q_minus_p_wedge": null,
+        "realized_net_pnl": null,
+        "record_type": "Carried from prior day",
+        "spx_position_zone": "INSIDE_SHORTS",
+        "status": "OPEN",
+        "strategy": "IRON_CONDOR",
+        "unrealized_net_pnl": 239.8
+      }
+    ],
+    "trading_status_and_alerts": {
+      "alerts": [
+        {
+          "category": "Scanner",
+          "details": "12 scheduled five-minute scanner cycle(s) had no persisted result. Later scheduled activity confirmed recovery.",
+          "first_seen_at_et": "2026-10-23T09:45:00-04:00",
+          "last_seen_at_et": "2026-10-23T10:40:00-04:00",
+          "rule_id": "SCANNER_HEARTBEAT_MISSING_1",
+          "severity": "CRITICAL",
+          "state": "RESOLVED",
+          "title": "Scheduled scanner cycle missing"
+        },
+        {
+          "category": "Execution",
+          "details": "6 paper execution attempt(s) failed. Later scheduled activity confirmed recovery.",
+          "first_seen_at_et": "2026-10-23T11:05:54.412541-04:00",
+          "last_seen_at_et": "2026-10-23T11:36:18.860572-04:00",
+          "rule_id": "PAPER_EXECUTION_FAILED",
+          "severity": "CRITICAL",
+          "state": "RESOLVED",
+          "title": "Paper-order execution failed"
+        },
+        {
+          "category": "Data freshness",
+          "details": "Computation or quote freshness exceeded its threshold. Later scheduled activity confirmed recovery.",
+          "first_seen_at_et": null,
+          "last_seen_at_et": "2026-10-23T10:51:07.173882-04:00",
+          "rule_id": "COMPUTATION_OR_QUOTES_STALE",
+          "severity": "WARNING",
+          "state": "RESOLVED",
+          "title": "Computation or quote freshness exceeded its threshold"
+        },
+        {
+          "category": "Data freshness",
+          "details": "Computation or quote freshness exceeded its threshold. Later scheduled activity confirmed recovery.",
+          "first_seen_at_et": null,
+          "last_seen_at_et": "2026-10-23T10:55:52.479721-04:00",
+          "rule_id": "COMPUTATION_OR_QUOTES_STALE",
+          "severity": "WARNING",
+          "state": "RESOLVED",
+          "title": "Computation or quote freshness exceeded its threshold"
+        },
+        {
+          "category": "Scanner",
+          "details": "1 scheduled five-minute scanner cycle(s) had no persisted result. Later scheduled activity confirmed recovery.",
+          "first_seen_at_et": "2026-10-23T11:10:00-04:00",
+          "last_seen_at_et": "2026-10-23T11:10:00-04:00",
+          "rule_id": "SCANNER_HEARTBEAT_MISSING_2",
+          "severity": "WARNING",
+          "state": "RESOLVED",
+          "title": "Scheduled scanner cycle missing"
+        }
+      ],
+      "calendar_as_of_date": "2026-10-23",
+      "calendar_coverage_complete": true,
+      "calendar_flags": [
+        {
+          "date": "2026-10-27",
+          "event": "FOMC meeting day one",
+          "flag": "HIGH_IMPACT_EVENT"
+        },
+        {
+          "date": "2026-10-28",
+          "event": "FOMC decision day",
+          "flag": "HIGH_IMPACT_EVENT"
+        },
+        {
+          "date": "2026-10-29",
+          "event": "BEA Gross Domestic Product",
+          "flag": "HIGH_IMPACT_EVENT"
+        },
+        {
+          "date": "2026-10-29",
+          "event": "BEA Personal Income and Outlays",
+          "flag": "HIGH_IMPACT_EVENT"
+        }
+      ],
+      "calendar_reviewed_on": "2026-10-22",
+      "calendar_status": "CALENDAR_FLAGS_PRESENT",
+      "calendar_valid_through": "2026-10-29",
+      "calendar_window_end_date": "2026-10-29",
+      "session_message": "2 paper entry-order submissions are recorded for this trading date.",
+      "session_status": "PAPER_ENTRY_ORDER_ACTIVITY"
+    }
+  },
+  "ledger": {
+    "calibration_periods": [
+      {
+        "base_expected_net_pnl": 0,
+        "calibration_ratio": null,
+        "closed_trades": 0,
+        "expected_return_on_allocation": null,
+        "forecast_error": 0,
+        "forecast_error_standard_deviation": null,
+        "frequency": "Daily",
+        "gross_risk_deployed": 0,
+        "mean_forecast_error": null,
+        "normalized_error_standard_deviation": null,
+        "normalized_error_standard_error": null,
+        "outperformance_rate": null,
+        "period": "2026-10-23",
+        "realized_net_pnl": 0,
+        "realized_return_on_allocation": null,
+        "return_calibration_difference": null
+      },
+      {
+        "base_expected_net_pnl": 298.3380245587067,
+        "calibration_ratio": -7.409715886098857,
+        "closed_trades": 3,
+        "expected_return_on_allocation": 0.06447471036730702,
+        "forecast_error": -2508.9380245587067,
+        "forecast_error_standard_deviation": 891.6209933168723,
+        "frequency": "Weekly",
+        "gross_risk_deployed": 4627.21,
+        "mean_forecast_error": -836.3126748529022,
+        "normalized_error_standard_deviation": 0.5645571130017234,
+        "normalized_error_standard_error": 0.325947201164463,
+        "outperformance_rate": 0.3333333333333333,
+        "period": "2026-10-19 to 2026-10-23",
+        "realized_net_pnl": -2210.6,
+        "realized_return_on_allocation": -0.4777392856602575,
+        "return_calibration_difference": -0.5422139960275645
+      },
+      {
+        "base_expected_net_pnl": 298.3380245587067,
+        "calibration_ratio": -7.409715886098857,
+        "closed_trades": 3,
+        "expected_return_on_allocation": 0.06447471036730702,
+        "forecast_error": -2508.9380245587067,
+        "forecast_error_standard_deviation": 891.6209933168723,
+        "frequency": "Monthly",
+        "gross_risk_deployed": 4627.21,
+        "mean_forecast_error": -836.3126748529022,
+        "normalized_error_standard_deviation": 0.5645571130017234,
+        "normalized_error_standard_error": 0.325947201164463,
+        "outperformance_rate": 0.3333333333333333,
+        "period": "2026-10",
+        "realized_net_pnl": -2210.6,
+        "realized_return_on_allocation": -0.4777392856602575,
+        "return_calibration_difference": -0.5422139960275645
+      },
+      {
+        "base_expected_net_pnl": 298.3380245587067,
+        "calibration_ratio": -7.409715886098857,
+        "closed_trades": 3,
+        "expected_return_on_allocation": 0.06447471036730702,
+        "forecast_error": -2508.9380245587067,
+        "forecast_error_standard_deviation": 891.6209933168723,
+        "frequency": "Yearly",
+        "gross_risk_deployed": 4627.21,
+        "mean_forecast_error": -836.3126748529022,
+        "normalized_error_standard_deviation": 0.5645571130017234,
+        "normalized_error_standard_error": 0.325947201164463,
+        "outperformance_rate": 0.3333333333333333,
+        "period": "2026",
+        "realized_net_pnl": -2210.6,
+        "realized_return_on_allocation": -0.4777392856602575,
+        "return_calibration_difference": -0.5422139960275645
+      }
+    ],
+    "capacity": {
+      "accepted_allocations": 2,
+      "aggregate_available_capacity": 41551.18,
+      "available_capacity": 10616.58,
+      "consumed_capacity": 3383.42,
+      "daily_new_capacity_available": 10616.58,
+      "eligible_recycled_allocations": 0,
+      "long_dated_available_capacity": 9428.2,
+      "next_capacity_release_amount": 17000.0,
+      "next_capacity_release_time": "14:00",
+      "recycled_capacity": 0.0,
+      "released_allocations": 0,
+      "released_capacity": 0,
+      "seven_dte_available_capacity": 9428.2,
+      "starting_capacity": 14000.0,
+      "timed_capacity_released": 14000.0,
+      "timed_capacity_total": 20000.0,
+      "trade_date": "2026-10-23"
+    },
+    "cumulative_expected_realized": [
+      {
+        "cumulative_base_expected_net_pnl": 119.66107555453712,
+        "cumulative_realized_net_pnl": -1260.2,
+        "settled_at_et": "2026-10-22T10:44:24.068832-04:00"
+      },
+      {
+        "cumulative_base_expected_net_pnl": 211.2342216046084,
+        "cumulative_realized_net_pnl": -2490.4,
+        "settled_at_et": "2026-10-22T12:46:20.565032-04:00"
+      },
+      {
+        "cumulative_base_expected_net_pnl": 298.3380245587067,
+        "cumulative_realized_net_pnl": -2210.6,
+        "settled_at_et": "2026-10-22T16:14:38.893710-04:00"
+      }
+    ],
+    "performance": {
+      "average_loss": -1245.2,
+      "average_win": 279.8,
+      "by_dte": [
+        {
+          "dte": 1,
+          "expectancy": -1245.2,
+          "net_pnl": -2490.4,
+          "trades": 2,
+          "win_rate": 0.0
+        },
+        {
+          "dte": 7,
+          "expectancy": 279.8,
+          "net_pnl": 279.8,
+          "trades": 1,
+          "win_rate": 1.0
+        }
+      ],
+      "by_strategy": [
+        {
+          "expectancy": -736.8666666666667,
+          "net_pnl": -2210.6,
+          "strategy": "IRON_CONDOR",
+          "trades": 3,
+          "win_rate": 0.3333333333333333
+        }
+      ],
+      "expectancy_per_trade": -736.8666666666667,
+      "maximum_daily_drawdown": 2210.6,
+      "profit_factor": 0.11235142948923868,
+      "settled_trades": 3,
+      "total_net_pnl": -2210.6,
+      "trade_win_rate": 0.3333333333333333,
+      "trading_days": 1
+    },
+    "portfolio_pnl": [
+      {
+        "net_pnl": -70.2,
+        "time_et": "2026-10-21T13:07:28.143881-04:00"
+      },
+      {
+        "net_pnl": -192.6,
+        "time_et": "2026-10-21T13:54:59.645116-04:00"
+      },
+      {
+        "net_pnl": -91.8,
+        "time_et": "2026-10-21T13:59:59.937476-04:00"
+      },
+      {
+        "net_pnl": -67.8,
+        "time_et": "2026-10-21T14:04:48.568748-04:00"
+      },
+      {
+        "net_pnl": -67.8,
+        "time_et": "2026-10-21T14:05:03.582111-04:00"
+      },
+      {
+        "net_pnl": -442.0,
+        "time_et": "2026-10-21T14:19:59.599233-04:00"
+      },
+      {
+        "net_pnl": -317.0,
+        "time_et": "2026-10-21T14:24:59.976741-04:00"
+      },
+      {
+        "net_pnl": -496.0,
+        "time_et": "2026-10-21T14:29:59.994514-04:00"
+      },
+      {
+        "net_pnl": -423.0,
+        "time_et": "2026-10-21T14:34:50.761582-04:00"
+      },
+      {
+        "net_pnl": -344.0,
+        "time_et": "2026-10-21T14:39:51.226336-04:00"
+      },
+      {
+        "net_pnl": -373.0,
+        "time_et": "2026-10-21T14:44:51.652881-04:00"
+      },
+      {
+        "net_pnl": -82.0,
+        "time_et": "2026-10-21T14:49:52.102509-04:00"
+      },
+      {
+        "net_pnl": -72.0,
+        "time_et": "2026-10-21T14:54:52.566492-04:00"
+      },
+      {
+        "net_pnl": 231.0,
+        "time_et": "2026-10-21T14:59:52.930056-04:00"
+      },
+      {
+        "net_pnl": 207.0,
+        "time_et": "2026-10-21T15:04:53.425058-04:00"
+      },
+      {
+        "net_pnl": 345.0,
+        "time_et": "2026-10-21T15:09:53.788204-04:00"
+      },
+      {
+        "net_pnl": 340.0,
+        "time_et": "2026-10-21T15:14:54.127224-04:00"
+      },
+      {
+        "net_pnl": 301.0,
+        "time_et": "2026-10-21T15:19:54.478335-04:00"
+      },
+      {
+        "net_pnl": 362.0,
+        "time_et": "2026-10-21T15:24:54.839242-04:00"
+      },
+      {
+        "net_pnl": 132.0,
+        "time_et": "2026-10-21T15:29:55.158338-04:00"
+      },
+      {
+        "net_pnl": 76.0,
+        "time_et": "2026-10-21T15:34:55.499310-04:00"
+      },
+      {
+        "net_pnl": 122.0,
+        "time_et": "2026-10-21T15:39:55.877252-04:00"
+      },
+      {
+        "net_pnl": 187.0,
+        "time_et": "2026-10-21T15:44:56.267869-04:00"
+      },
+      {
+        "net_pnl": -132.0,
+        "time_et": "2026-10-21T15:49:56.643892-04:00"
+      },
+      {
+        "net_pnl": -193.0,
+        "time_et": "2026-10-21T15:54:56.962811-04:00"
+      },
+      {
+        "net_pnl": -76.0,
+        "time_et": "2026-10-21T15:59:57.316694-04:00"
+      },
+      {
+        "net_pnl": 961.0,
+        "time_et": "2026-10-22T09:34:47.331381-04:00"
+      },
+      {
+        "net_pnl": 837.0,
+        "time_et": "2026-10-22T09:39:47.644003-04:00"
+      },
+      {
+        "net_pnl": 491.0,
+        "time_et": "2026-10-22T09:44:48.057777-04:00"
+      },
+      {
+        "net_pnl": 337.0,
+        "time_et": "2026-10-22T09:49:48.424565-04:00"
+      },
+      {
+        "net_pnl": 163.0,
+        "time_et": "2026-10-22T09:54:48.782321-04:00"
+      },
+      {
+        "net_pnl": 839.0,
+        "time_et": "2026-10-22T09:59:49.197810-04:00"
+      },
+      {
+        "net_pnl": 946.8,
+        "time_et": "2026-10-22T10:03:19.093540-04:00"
+      },
+      {
+        "net_pnl": 180.8,
+        "time_et": "2026-10-22T10:09:56.310246-04:00"
+      },
+      {
+        "net_pnl": -94.2,
+        "time_et": "2026-10-22T10:14:56.727109-04:00"
+      },
+      {
+        "net_pnl": -134.2,
+        "time_et": "2026-10-22T10:19:57.134021-04:00"
+      },
+      {
+        "net_pnl": -899.2,
+        "time_et": "2026-10-22T10:24:57.566613-04:00"
+      },
+      {
+        "net_pnl": -1523.2,
+        "time_et": "2026-10-22T10:29:58.001808-04:00"
+      },
+      {
+        "net_pnl": -1968.2,
+        "time_et": "2026-10-22T10:34:58.423375-04:00"
+      },
+      {
+        "net_pnl": -1953.2,
+        "time_et": "2026-10-22T10:39:58.859361-04:00"
+      },
+      {
+        "net_pnl": -1888.2,
+        "time_et": "2026-10-22T10:44:59.438195-04:00"
+      },
+      {
+        "net_pnl": -1938.2,
+        "time_et": "2026-10-22T10:49:52.809152-04:00"
+      },
+      {
+        "net_pnl": -1901.2,
+        "time_et": "2026-10-22T10:54:46.388290-04:00"
+      },
+      {
+        "net_pnl": -1753.2,
+        "time_et": "2026-10-22T10:59:46.815797-04:00"
+      },
+      {
+        "net_pnl": -1887.2,
+        "time_et": "2026-10-22T11:04:47.293578-04:00"
+      },
+      {
+        "net_pnl": -1929.2,
+        "time_et": "2026-10-22T11:09:47.670342-04:00"
+      },
+      {
+        "net_pnl": -1988.2,
+        "time_et": "2026-10-22T11:14:48.054811-04:00"
+      },
+      {
+        "net_pnl": -1553.2,
+        "time_et": "2026-10-22T11:19:48.454058-04:00"
+      },
+      {
+        "net_pnl": -1296.2,
+        "time_et": "2026-10-22T11:24:48.827980-04:00"
+      },
+      {
+        "net_pnl": -1704.2,
+        "time_et": "2026-10-22T11:29:49.229056-04:00"
+      },
+      {
+        "net_pnl": -1733.2,
+        "time_et": "2026-10-22T11:34:49.576413-04:00"
+      },
+      {
+        "net_pnl": -1733.2,
+        "time_et": "2026-10-22T11:39:34.798367-04:00"
+      },
+      {
+        "net_pnl": -1733.2,
+        "time_et": "2026-10-22T11:44:35.082870-04:00"
+      },
+      {
+        "net_pnl": -1733.2,
+        "time_et": "2026-10-22T11:49:35.368487-04:00"
+      },
+      {
+        "net_pnl": -1483.2,
+        "time_et": "2026-10-22T11:54:50.644134-04:00"
+      },
+      {
+        "net_pnl": -1156.2,
+        "time_et": "2026-10-22T11:59:50.995686-04:00"
+      },
+      {
+        "net_pnl": -1107.2,
+        "time_et": "2026-10-22T12:04:51.385811-04:00"
+      },
+      {
+        "net_pnl": -968.2,
+        "time_et": "2026-10-22T12:09:51.791676-04:00"
+      },
+      {
+        "net_pnl": -1024.2,
+        "time_et": "2026-10-22T12:14:52.163854-04:00"
+      },
+      {
+        "net_pnl": -872.2,
+        "time_et": "2026-10-22T12:19:52.520000-04:00"
+      },
+      {
+        "net_pnl": -823.2,
+        "time_et": "2026-10-22T12:24:52.862438-04:00"
+      },
+      {
+        "net_pnl": -862.2,
+        "time_et": "2026-10-22T12:29:53.255830-04:00"
+      },
+      {
+        "net_pnl": -1382.2,
+        "time_et": "2026-10-22T12:34:53.644816-04:00"
+      },
+      {
+        "net_pnl": -1637.2,
+        "time_et": "2026-10-22T12:39:54.074944-04:00"
+      },
+      {
+        "net_pnl": -1847.2,
+        "time_et": "2026-10-22T12:44:54.547459-04:00"
+      },
+      {
+        "net_pnl": -1922.2,
+        "time_et": "2026-10-22T12:49:55.003112-04:00"
+      },
+      {
+        "net_pnl": -1872.2,
+        "time_et": "2026-10-22T12:54:55.496140-04:00"
+      },
+      {
+        "net_pnl": -1786.2,
+        "time_et": "2026-10-22T12:59:56.091027-04:00"
+      },
+      {
+        "net_pnl": -1921.2,
+        "time_et": "2026-10-22T13:04:56.488381-04:00"
+      },
+      {
+        "net_pnl": -1949.2,
+        "time_et": "2026-10-22T13:09:56.954330-04:00"
+      },
+      {
+        "net_pnl": -1871.2,
+        "time_et": "2026-10-22T13:14:57.553780-04:00"
+      },
+      {
+        "net_pnl": -1864.2,
+        "time_et": "2026-10-22T13:19:58.072489-04:00"
+      },
+      {
+        "net_pnl": -1814.2,
+        "time_et": "2026-10-22T13:24:58.503988-04:00"
+      },
+      {
+        "net_pnl": -1769.2,
+        "time_et": "2026-10-22T13:29:58.966993-04:00"
+      },
+      {
+        "net_pnl": -1698.2,
+        "time_et": "2026-10-22T13:34:59.559307-04:00"
+      },
+      {
+        "net_pnl": -1762.2,
+        "time_et": "2026-10-22T13:39:59.957271-04:00"
+      },
+      {
+        "net_pnl": -1702.2,
+        "time_et": "2026-10-22T13:44:52.560816-04:00"
+      },
+      {
+        "net_pnl": -1816.2,
+        "time_et": "2026-10-22T13:49:53.070779-04:00"
+      },
+      {
+        "net_pnl": -1828.2,
+        "time_et": "2026-10-22T13:54:53.500309-04:00"
+      },
+      {
+        "net_pnl": -1862.2,
+        "time_et": "2026-10-22T13:59:53.956257-04:00"
+      },
+      {
+        "net_pnl": -2072.2,
+        "time_et": "2026-10-22T14:04:54.438671-04:00"
+      },
+      {
+        "net_pnl": -1942.2,
+        "time_et": "2026-10-22T14:09:55.085402-04:00"
+      },
+      {
+        "net_pnl": -1897.2,
+        "time_et": "2026-10-22T14:14:55.777774-04:00"
+      },
+      {
+        "net_pnl": -1836.2,
+        "time_et": "2026-10-22T14:19:56.316205-04:00"
+      },
+      {
+        "net_pnl": -1847.2,
+        "time_et": "2026-10-22T14:24:57.023216-04:00"
+      },
+      {
+        "net_pnl": -1966.2,
+        "time_et": "2026-10-22T14:29:57.661279-04:00"
+      },
+      {
+        "net_pnl": -2003.2,
+        "time_et": "2026-10-22T14:34:58.326750-04:00"
+      },
+      {
+        "net_pnl": -2044.2,
+        "time_et": "2026-10-22T14:39:59.259506-04:00"
+      },
+      {
+        "net_pnl": -2047.2,
+        "time_et": "2026-10-22T14:44:59.992548-04:00"
+      },
+      {
+        "net_pnl": -2053.2,
+        "time_et": "2026-10-22T14:49:59.011816-04:00"
+      },
+      {
+        "net_pnl": -2043.2,
+        "time_et": "2026-10-22T14:54:59.552619-04:00"
+      },
+      {
+        "net_pnl": -2082.2,
+        "time_et": "2026-10-22T14:59:46.990133-04:00"
+      },
+      {
+        "net_pnl": -2057.2,
+        "time_et": "2026-10-22T15:04:47.711552-04:00"
+      },
+      {
+        "net_pnl": -1974.2,
+        "time_et": "2026-10-22T15:09:48.170415-04:00"
+      },
+      {
+        "net_pnl": -1897.2,
+        "time_et": "2026-10-22T15:14:48.623497-04:00"
+      },
+      {
+        "net_pnl": -1903.2,
+        "time_et": "2026-10-22T15:19:49.268297-04:00"
+      },
+      {
+        "net_pnl": -1896.2,
+        "time_et": "2026-10-22T15:24:49.913892-04:00"
+      },
+      {
+        "net_pnl": -1796.2,
+        "time_et": "2026-10-22T15:29:50.675028-04:00"
+      },
+      {
+        "net_pnl": -1892.2,
+        "time_et": "2026-10-22T15:34:51.644271-04:00"
+      },
+      {
+        "net_pnl": -1972.2,
+        "time_et": "2026-10-22T15:39:52.569219-04:00"
+      },
+      {
+        "net_pnl": -1955.2,
+        "time_et": "2026-10-22T15:44:53.182625-04:00"
+      },
+      {
+        "net_pnl": -1998.2,
+        "time_et": "2026-10-22T15:49:53.696180-04:00"
+      },
+      {
+        "net_pnl": -1817.2,
+        "time_et": "2026-10-22T15:54:54.282015-04:00"
+      },
+      {
+        "net_pnl": -1719.2,
+        "time_et": "2026-10-22T15:59:55.313648-04:00"
+      },
+      {
+        "net_pnl": -1872.2,
+        "time_et": "2026-10-22T16:31:56.906784-04:00"
+      },
+      {
+        "net_pnl": -1868.2,
+        "time_et": "2026-10-22T16:49:50.867047-04:00"
+      },
+      {
+        "net_pnl": -1841.2,
+        "time_et": "2026-10-22T16:54:51.498288-04:00"
+      },
+      {
+        "net_pnl": -1883.2,
+        "time_et": "2026-10-22T16:59:52.046695-04:00"
+      },
+      {
+        "net_pnl": -2117.2,
+        "time_et": "2026-10-23T09:34:48.737275-04:00"
+      },
+      {
+        "net_pnl": -2258.2,
+        "time_et": "2026-10-23T09:39:49.312421-04:00"
+      },
+      {
+        "net_pnl": -1953.2,
+        "time_et": "2026-10-23T09:44:49.884733-04:00"
+      },
+      {
+        "net_pnl": -1911.2,
+        "time_et": "2026-10-23T09:49:50.415565-04:00"
+      },
+      {
+        "net_pnl": -1937.2,
+        "time_et": "2026-10-23T09:54:51.024613-04:00"
+      },
+      {
+        "net_pnl": -1853.2,
+        "time_et": "2026-10-23T09:59:51.710375-04:00"
+      },
+      {
+        "net_pnl": -1868.2,
+        "time_et": "2026-10-23T10:04:52.274571-04:00"
+      },
+      {
+        "net_pnl": -1827.2,
+        "time_et": "2026-10-23T10:09:53.011199-04:00"
+      },
+      {
+        "net_pnl": -1932.2,
+        "time_et": "2026-10-23T10:14:53.883812-04:00"
+      },
+      {
+        "net_pnl": -2238.2,
+        "time_et": "2026-10-23T10:19:54.624475-04:00"
+      },
+      {
+        "net_pnl": -2082.2,
+        "time_et": "2026-10-23T10:22:55.077101-04:00"
+      },
+      {
+        "net_pnl": -2142.2,
+        "time_et": "2026-10-23T10:29:55.148075-04:00"
+      },
+      {
+        "net_pnl": -2127.2,
+        "time_et": "2026-10-23T10:34:55.986316-04:00"
+      },
+      {
+        "net_pnl": -1843.2,
+        "time_et": "2026-10-23T10:39:56.678299-04:00"
+      },
+      {
+        "net_pnl": -1577.2,
+        "time_et": "2026-10-23T10:44:57.266855-04:00"
+      },
+      {
+        "net_pnl": -1454.2,
+        "time_et": "2026-10-23T10:49:57.964167-04:00"
+      },
+      {
+        "net_pnl": -1301.2,
+        "time_et": "2026-10-23T10:54:59.221400-04:00"
+      },
+      {
+        "net_pnl": -1268.2,
+        "time_et": "2026-10-23T10:59:59.867837-04:00"
+      },
+      {
+        "net_pnl": -1326.2,
+        "time_et": "2026-10-23T11:04:52.315378-04:00"
+      },
+      {
+        "net_pnl": -1392.2,
+        "time_et": "2026-10-23T11:09:53.336881-04:00"
+      },
+      {
+        "net_pnl": -1322.2,
+        "time_et": "2026-10-23T11:14:54.280533-04:00"
+      },
+      {
+        "net_pnl": -1257.2,
+        "time_et": "2026-10-23T11:19:55.030359-04:00"
+      },
+      {
+        "net_pnl": -1247.2,
+        "time_et": "2026-10-23T11:24:56.104972-04:00"
+      },
+      {
+        "net_pnl": -1192.2,
+        "time_et": "2026-10-23T11:29:57.331470-04:00"
+      },
+      {
+        "net_pnl": -1121.2,
+        "time_et": "2026-10-23T11:34:58.420771-04:00"
+      },
+      {
+        "net_pnl": -1223.2,
+        "time_et": "2026-10-23T11:39:59.152048-04:00"
+      },
+      {
+        "net_pnl": -1331.62,
+        "time_et": "2026-10-23T11:44:59.473340-04:00"
+      },
+      {
+        "net_pnl": -1286.62,
+        "time_et": "2026-10-23T11:49:55.635540-04:00"
+      },
+      {
+        "net_pnl": -1255.62,
+        "time_et": "2026-10-23T11:54:56.486697-04:00"
+      },
+      {
+        "net_pnl": -1166.62,
+        "time_et": "2026-10-23T11:59:57.313994-04:00"
+      },
+      {
+        "net_pnl": -1202.62,
+        "time_et": "2026-10-23T12:04:58.140674-04:00"
+      },
+      {
+        "net_pnl": -1241.04,
+        "time_et": "2026-10-23T12:07:19.430850-04:00"
+      }
+    ],
+    "summary": {
+      "additional_loss_to_contractual_max": 9014.04,
+      "available_equity": 240463.44,
+      "cash": 247789.4,
+      "closed_trades": 3,
+      "contractual_stress_loss": 8170.0,
+      "equity": 248633.44,
+      "open_positions": 5,
+      "realized_pnl": -2210.6,
+      "reserved_risk": 8170.0,
+      "starting_cash": 250000.0,
+      "unrealized_pnl": 844.04
+    }
+  },
+  "publication": {
+    "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
+    "paper_trading_only": true,
+    "published_at_et": "2026-10-23T12:07:19.049008-04:00",
+    "status": "PRELIMINARY_SESSION_ACTIVE",
+    "trade_date": "2026-10-23"
+  },
+  "schema_version": "xdte-public-v2"
+}
