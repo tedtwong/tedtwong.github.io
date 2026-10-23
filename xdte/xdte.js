@@ -267,6 +267,18 @@ async function load() {
     ["Date (ET)", "date"], ["Flag", "flag"], ["Event", "event"],
   ], tradingStatus.calendar_flags || []);
   const activeAlerts = (tradingStatus.alerts || []).filter(row => row.state === "ACTIVE");
+  const criticalAlerts = activeAlerts.filter(row => String(row.severity || "").toUpperCase() === "CRITICAL");
+  const criticalBanner = document.querySelector("#critical-alert-banner");
+  const criticalText = document.querySelector("#critical-alert-text");
+  if (criticalAlerts.length) {
+    const alertTitles = criticalAlerts.map(row => row.title || "Critical trading condition");
+    const countLabel = `${criticalAlerts.length} active critical alert${criticalAlerts.length === 1 ? "" : "s"}`;
+    criticalText.textContent = `${countLabel}: ${alertTitles.join("; ")}. View details.`;
+    criticalBanner.classList.remove("hidden");
+  } else {
+    criticalText.textContent = "";
+    criticalBanner.classList.add("hidden");
+  }
   const recoveredAlerts = (tradingStatus.alerts || []).filter(row => row.state === "RESOLVED" && row.severity !== "INFO");
   const informationalAlerts = (tradingStatus.alerts || []).filter(row => row.state === "RESOLVED" && row.severity === "INFO");
   const alertColumns = [

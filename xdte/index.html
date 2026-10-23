@@ -10,12 +10,17 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
-  <link rel="stylesheet" href="xdte.css?v=20261023-position-map-ticks">
-  <script defer src="xdte.js?v=20261023-position-map-direction"></script>
+  <link rel="stylesheet" href="xdte.css?v=20261023-critical-alert-badge">
+  <script defer src="xdte.js?v=20261023-critical-alert-badge"></script>
 </head>
 <body>
   <header class="hero">
     <div class="hero__inner">
+      <a id="critical-alert-banner" class="critical-alert-banner hidden"
+         href="#trading-status-heading" role="alert" aria-live="assertive">
+        <span class="critical-alert-badge">CRITICAL ALERT</span>
+        <span id="critical-alert-text"></span>
+      </a>
       <p class="eyebrow">SPXW PAPER RESEARCH</p>
       <h1>XDTE trading record</h1>
       <p class="lede">Daily opportunity selection, portfolio results, and model calibration from a paper-only options experiment.</p>
