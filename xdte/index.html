@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
-  <link rel="stylesheet" href="xdte.css?v=20261026-performance-returns">
-  <script defer src="xdte.js?v=20261026-performance-returns"></script>
+  <link rel="stylesheet" href="xdte.css?v=20261026-settled-history">
+  <script defer src="xdte.js?v=20261026-settled-history"></script>
 </head>
 <body>
   <header class="hero">
@@ -102,7 +102,7 @@
       </div>
       <div id="ledger-metrics" class="metric-grid"></div>
       <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>Portfolio net P&amp;L history</h3><p>Bars show realized net P&amp;L on each exit or settlement date (left axis). The blue line shows the latest total portfolio net P&amp;L for each trading session, including open-position marks. The orange line sums the saved entry-time expected P&amp;L of all filled trades, open and closed, counted once on entry. Expected amounts are full-trade forecasts, not accrued daily earnings. Both lines share the right axis. Weekends and market holidays are omitted.</p></div></div>
+        <div class="panel__heading"><div><h3>Portfolio net P&amp;L history</h3><p>Settled trades only. Bars show realized net P&amp;L on settlement dates (left axis). The blue line shows cumulative realized net P&amp;L; the orange line accumulates saved entry-time expected net P&amp;L for the same settled trades (right axis). Both lines recognize trades on settlement dates. Open positions, unrealized marks and unfilled orders are excluded. Weekends and market holidays are omitted.</p></div></div>
         <div id="portfolio-chart" class="chart"></div>
         <p id="expected-entry-coverage" class="chart-note"></p>
       </article>

@@ -8649,36 +8649,43 @@
     },
     "portfolio_daily": [
       {
-        "closed_trades": 0,
-        "date": "2026-10-21",
-        "net_as_of_et": "2026-10-21T15:59:57.316694-04:00",
-        "net_pnl": -76.0,
-        "realized_data_complete": true,
-        "realized_net_pnl": 0
-      },
-      {
+        "basis": "SETTLED_TRADES_ONLY",
         "closed_trades": 3,
         "date": "2026-10-22",
-        "net_as_of_et": "2026-10-22T16:59:52.046695-04:00",
-        "net_pnl": -1883.2,
+        "expected_data_complete": true,
+        "expected_net_pnl": 298.34,
+        "modeled_settled_trades_to_date": 3,
+        "net_as_of_et": "2026-10-22T16:14:38.893710-04:00",
+        "net_pnl": -2210.6,
         "realized_data_complete": true,
-        "realized_net_pnl": -2210.6
+        "realized_net_pnl": -2210.6,
+        "settled_trades_to_date": 3
       },
       {
+        "basis": "SETTLED_TRADES_ONLY",
         "closed_trades": 1,
         "date": "2026-10-23",
-        "net_as_of_et": "2026-10-23T16:29:58.724659-04:00",
-        "net_pnl": -1612.12,
+        "expected_data_complete": true,
+        "expected_net_pnl": 381.73,
+        "modeled_settled_trades_to_date": 4,
+        "net_as_of_et": "2026-10-23T16:00:01.165423-04:00",
+        "net_pnl": -1799.8,
         "realized_data_complete": true,
-        "realized_net_pnl": 410.8
+        "realized_net_pnl": 410.8,
+        "settled_trades_to_date": 4
       },
       {
+        "basis": "SETTLED_TRADES_ONLY",
         "closed_trades": 1,
         "date": "2026-10-26",
-        "net_as_of_et": "2026-10-26T16:59:59.428390-04:00",
-        "net_pnl": -1197.03,
+        "expected_data_complete": true,
+        "expected_net_pnl": 520.25,
+        "modeled_settled_trades_to_date": 5,
+        "net_as_of_et": "2026-10-26T16:00:02.308526-04:00",
+        "net_pnl": -1501.48,
         "realized_data_complete": true,
-        "realized_net_pnl": 298.32
+        "realized_net_pnl": 298.32,
+        "settled_trades_to_date": 5
       }
     ],
     "portfolio_pnl": [
@@ -9810,7 +9817,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-26T17:12:40.132256-04:00",
+    "published_at_et": "2026-10-26T17:24:10.985638-04:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-26"
   },

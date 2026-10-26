@@ -240,19 +240,8 @@ function lineChart(target, series, options = {}) {
 }
 
 function portfolioDailyChart(target, rows, expectedHistory = []) {
-  // Frozen expectations are added once on each filled entry date.
-  const dayFormat = new Intl.DateTimeFormat("en-CA", {year:"numeric", month:"2-digit", day:"2-digit", timeZone:"America/New_York"});
-  const history = (expectedHistory || []).filter(r => r.cumulative_base_expected_net_pnl != null
-    && Number.isFinite(Number(r.cumulative_base_expected_net_pnl)) && Number.isFinite(new Date(r.entered_at_et).getTime()))
-    .map(r => {
-      const parts = Object.fromEntries(dayFormat.formatToParts(new Date(r.entered_at_et)).map(p=>[p.type,p.value]));
-      return {day:`${parts.year}-${parts.month}-${parts.day}`, time:new Date(r.entered_at_et).getTime(), value:Number(r.cumulative_base_expected_net_pnl)};
-    }).sort((a,b)=>a.time-b.time);
-  let cursor = 0, cumulative = history.length ? 0 : null;
-  rows = (rows || []).map(row=>{
-    while (cursor<history.length && history[cursor].day<=row.date) cumulative=history[cursor++].value;
-    return {...row, expected_net_pnl:cumulative};
-  });
+  // Refuse old marked-to-market snapshots; only matched settled-trade totals.
+  rows = (rows || []).filter(row => row.basis === "SETTLED_TRADES_ONLY");
   const node = document.querySelector(target);
   const finite = v => v !== null && v !== undefined && v !== "" && Number.isFinite(Number(v));
   if (!(rows || []).length) {
@@ -288,25 +277,25 @@ function portfolioDailyChart(target, rows, expectedHistory = []) {
     const move = drawing ? "L" : "M"; drawing=true;
     return `${move}${x(i).toFixed(2)},${ry(r.net_pnl).toFixed(2)}`;
   }).join(" ");
-  const dots = rows.map((r,i)=>finite(r.net_pnl) ? `<circle cx="${x(i)}" cy="${ry(r.net_pnl)}" r="3.5" fill="#333ed4"><title>${r.date}: total portfolio net P&amp;L ${money.format(r.net_pnl)}</title></circle>` : "").join("");
+  const dots = rows.map((r,i)=>finite(r.net_pnl) ? `<circle cx="${x(i)}" cy="${ry(r.net_pnl)}" r="3.5" fill="#333ed4"><title>${r.date}: cumulative settled net P&amp;L ${money.format(r.net_pnl)}</title></circle>` : "").join("");
   let expectedDrawing = false;
   const expectedPath = rows.map((r,i)=>{
     if (!finite(r.expected_net_pnl)) { expectedDrawing=false;return ""; }
     const move = expectedDrawing ? "L" : "M"; expectedDrawing=true;
     return `${move}${x(i).toFixed(2)},${ry(r.expected_net_pnl).toFixed(2)}`;
   }).join(" ");
-  const expectedDots = rows.map((r,i)=>finite(r.expected_net_pnl) ? `<circle cx="${x(i)}" cy="${ry(r.expected_net_pnl)}" r="3" fill="#f76915"><title>${r.date}: cumulative expected net P&amp;L for filled entries ${money.format(r.expected_net_pnl)}</title></circle>` : "").join("");
+  const expectedDots = rows.map((r,i)=>finite(r.expected_net_pnl) ? `<circle cx="${x(i)}" cy="${ry(r.expected_net_pnl)}" r="3" fill="#f76915"><title>${r.date}: cumulative saved expected net P&amp;L for settled trades ${money.format(r.expected_net_pnl)}</title></circle>` : "").join("");
   const dateFormat = new Intl.DateTimeFormat("en-US",{month:"short",day:"numeric",timeZone:"UTC"});
   const interval = Math.max(1,Math.ceil(rows.length/8));
   const labels = rows.map((r,i)=>(i%interval===0 || i===rows.length-1) ? `<text x="${x(i)}" y="${height-39}" text-anchor="middle" fill="#667085" font-size="12">${dateFormat.format(new Date(r.date+"T12:00:00Z"))}</text>` : "").join("");
-  node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Daily realized P&amp;L bars, total portfolio net P&amp;L and cumulative expected P&amp;L by trading session">
+  node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Daily realized P&amp;L bars, cumulative settled net P&amp;L and cumulative expected P&amp;L by trading session">
     ${grid}${rightTicks}
     <line data-zero-axis="left" x1="${pad.l}" x2="${width-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#7b8495" stroke-width="1.75"/>
     ${bars}<path d="${path}" stroke="#333ed4" stroke-width="3" fill="none" vector-effect="non-scaling-stroke"/>${dots}<path data-series="expected" d="${expectedPath}" stroke="#f76915" stroke-width="2.5" fill="none" vector-effect="non-scaling-stroke"/>${expectedDots}${labels}
     <text transform="translate(17,${pad.t+plotHeight/2}) rotate(-90)" text-anchor="middle" fill="#667085" font-size="12">Daily realized P&amp;L ($) · left</text>
     <text transform="translate(${width-12},${pad.t+plotHeight/2}) rotate(90)" text-anchor="middle" fill="#333ed4" font-size="12">Total / expected P&amp;L ($) · right</text>
     <text x="${width/2}" y="${height-10}" text-anchor="middle" fill="#667085" font-size="12">Trading sessions (ET; non-market days omitted)</text>
-  </svg><div class="chart-legend"><span class="legend-key" style="--key:#2fa236">Positive realized P&amp;L · left</span><span class="legend-key" style="--key:#fd0100">Negative realized P&amp;L · left</span><span class="legend-key" style="--key:#333ed4">Total portfolio net P&amp;L · right</span><span class="legend-key" style="--key:#f76915">Cumulative entry-time expected P&amp;L · right</span></div>`;
+  </svg><div class="chart-legend"><span class="legend-key" style="--key:#2fa236">Positive realized P&amp;L · left</span><span class="legend-key" style="--key:#fd0100">Negative realized P&amp;L · left</span><span class="legend-key" style="--key:#333ed4">Cumulative settled net P&amp;L · right</span><span class="legend-key" style="--key:#f76915">Expected P&amp;L · settled trades · right</span></div>`;
 }
 
 function positionOutcomeChart(target, rows) {
@@ -665,11 +654,12 @@ async function load() {
     ["Reserved risk", value(summary.reserved_risk, money)], ["Available capacity", value(ledger.capacity.available_capacity, money)],
     ["Open positions", value(summary.open_positions)], ["Closed trades", value(summary.closed_trades)],
   ]);
-  portfolioDailyChart("#portfolio-chart", ledger.portfolio_daily || [], (ledger.cumulative_entry_expected || {}).rows || []);
-  const expectation = ledger.cumulative_entry_expected || {};
-  document.querySelector("#expected-entry-coverage").textContent = expectation.filled_entries == null
-    ? "Entry-expectation coverage is not available in this snapshot."
-    : `Entry-time expectations available for ${expectation.modeled_entries} of ${expectation.filled_entries} filled entries. Contributions remain after closing; unfilled attempts are excluded.${expectation.missing_entry_dates ? ` ${expectation.missing_entry_dates} filled record(s) lack an entry date.` : ""}`;
+  portfolioDailyChart("#portfolio-chart", ledger.portfolio_daily || []);
+  const settledHistory = (ledger.portfolio_daily || []).filter(row => row.basis === "SETTLED_TRADES_ONLY");
+  const settledCoverage = settledHistory.at(-1);
+  document.querySelector("#expected-entry-coverage").textContent = settledCoverage
+    ? `Saved entry-time expectations available for ${settledCoverage.modeled_settled_trades_to_date} of ${settledCoverage.settled_trades_to_date} settled trades. Both cumulative lines recognize trades on settlement dates; open positions are excluded. Missing estimates create a gap rather than a partial total.`
+    : "No settled-trade history is available.";
   table("#calibration-table", [
     ["Frequency", "frequency"], ["Period", "period"], ["Trades", "closed_trades"],
     ["Risk deployed", "gross_risk_deployed", null, v => value(v, money)], ["Expected", "base_expected_net_pnl", pnlClass, v => value(v, money)],
