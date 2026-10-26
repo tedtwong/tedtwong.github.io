@@ -90,6 +90,22 @@ function table(target, columns, rows, options = {}) {
   ).join("")}</tbody></table>`;
 }
 
+function renderUnsuccessfulEntries(rows) {
+  table("#unsuccessful-entry-attempts", [
+    ["Time (ET)", "time_et", null, shortTime],
+    ["Strategy", "strategy", null, v => String(v || "Unspecified").replaceAll("_", " ")],
+    ["DTE at evaluation", "dte"],
+    ["Failure stage", "stage", null, v => String(v || "Unknown").replaceAll("_", " ")],
+    ["Broker submission", "submission", null, v => ({CONFIRMED_SUBMITTED: "Submitted", CONFIRMED_NOT_SUBMITTED: "Not submitted", UNKNOWN: "Unconfirmed"}[v] || "Unconfirmed")],
+    ["Broker status", "broker_status"], ["Filled qty", "filled_quantity"],
+    ["Requested credit (points)", "limit_credit", null, v => v == null ? "—" : Number(v).toFixed(2)],
+    ["Capacity required", "capacity_required", null, v => value(v, money)],
+    ["Capacity available", "capacity_available", null, v => value(v, money)],
+    ["Capacity shortfall", "capacity_shortfall", null, v => value(v, money)],
+    ["Explanation", "details"],
+  ], rows || [], { compactEmpty: true, emptyMessage: "No unsuccessful entry attempts recorded for this session." });
+}
+
 function lineChart(target, series, options = {}) {
   const node = document.querySelector(target);
   const chartPoints = s => s.rows.map(r => ({ t: new Date(r[s.x]).getTime(), y: Number(r[s.y]) })).filter(p => Number.isFinite(p.t) && Number.isFinite(p.y));
@@ -259,7 +275,7 @@ function funnelHeatmap(target, rows) {
     node.innerHTML = '<div class="chart-empty">No funnel observations are available for this period.</div>';
     return;
   }
-  const stages = ["Candidates examined", "Terminal positive", "Quadrature survivors", "Path confirmed", "Eligible", "Entry orders submitted", "Entries filled", "Open positions"];
+  const stages = ["Candidates examined", "Terminal positive", "Terminal-payoff survivors", "Path confirmed", "Eligible", "Entry orders submitted", "Entries filled", "Open positions"];
   const labels = [...new Set(rows.map(row => {
     const strategy = String(row.strategy || "UNATTRIBUTED").replaceAll("_", " ");
     const dte = /^\d+$/.test(String(row.dte)) ? `${row.dte}DTE` : "Unattributed";
@@ -432,7 +448,7 @@ async function load() {
   const coverageWindow = tradingStatus.calendar_as_of_date && tradingStatus.calendar_window_end_date
     ? `${tradingStatus.calendar_as_of_date} through ${tradingStatus.calendar_window_end_date}` : "unavailable";
   coverage.textContent = tradingStatus.calendar_coverage_complete
-    ? `Economic calendar window: ${coverageWindow}. Reviewed ${tradingStatus.calendar_reviewed_on || "—"}; valid through ${tradingStatus.calendar_valid_through || "—"}.`
+    ? `Economic calendar window: ${coverageWindow}. Reviewed ${tradingStatus.calendar_reviewed_on || "—"}; freshness valid through ${tradingStatus.calendar_fresh_until || tradingStatus.calendar_valid_through || "—"}; event coverage through ${tradingStatus.calendar_coverage_end || "—"}.`
     : `Economic calendar coverage is incomplete for the seven-day window (${coverageWindow}).`;
   table("#calendar-alerts", [
     ["Date (ET)", "date"], ["Flag", "flag"], ["Event", "event"],
@@ -460,6 +476,7 @@ async function load() {
   table("#active-alerts", alertColumns, activeAlerts, { compactEmpty: true, emptyMessage: "None" });
   table("#recovered-alerts", alertColumns, recoveredAlerts, { compactEmpty: true, emptyMessage: "None" });
   table("#informational-alerts", alertColumns, informationalAlerts, { compactEmpty: true, emptyMessage: "None" });
+  renderUnsuccessfulEntries(data.daily.unsuccessful_entry_attempts || []);
   summaryMetrics("#pnl-metrics", [
     ["Daily synchronized P&L", value(pnlSummary.daily_synchronized_pnl, money), pnlClass(pnlSummary.daily_synchronized_pnl)],
     ["Daily P&L (ledger change)", value(pnlSummary.daily_ledger_pnl, money), pnlClass(pnlSummary.daily_ledger_pnl)],
@@ -468,7 +485,7 @@ async function load() {
   ]);
   summaryMetrics("#evaluation-metrics", [
     ["Candidates examined", value(funnel.candidates_examined)], ["Terminal positive", value(funnel.terminal_positive_candidates)],
-    ["Quadrature survivors", value(funnel.quadrature_survivors)], ["Path confirmed", value(funnel.path_confirmed_candidates)],
+    ["Terminal-payoff survivors", value(funnel.quadrature_survivors)], ["Path confirmed", value(funnel.path_confirmed_candidates)],
     ["Eligible", value(funnel.eligible_candidates)], ["Entry orders submitted", value(funnel.orders_submitted)],
     ["Entries filled", value(funnel.trades_filled)], ["Open positions", value(funnel.trades_open)],
   ]);
