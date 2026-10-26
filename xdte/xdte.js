@@ -567,6 +567,7 @@ async function load() {
     ["Capital released by exits", value(exitActivity.released_capital, money)],
   ]);
   metrics("#capacity-metrics", [
+    ["Capacity reserved today", value(ledger.capacity.capacity_reserved_today, money)],
     ["Reserved risk", value(summary.reserved_risk, money)],
     ["Total capacity available", value(ledger.capacity.aggregate_available_capacity, money)],
     ["Available new-entry capacity now", value(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity, money)],
