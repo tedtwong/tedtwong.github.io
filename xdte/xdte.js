@@ -630,7 +630,7 @@ async function load() {
     .map(point => ({ ...point, position: item.position })));
   lineChart("#daily-chart", [
     ...positionSeries,
-    { rows: daily.portfolio_pnl, x: "time_et", y: "net_pnl", label: "TOTAL", color: "#333ed4", width: 4 },
+    { rows: daily.portfolio_pnl, x: "time_et", y: "net_pnl", label: "TOTAL", color: "rgba(55,65,81,0.5)", width: 4 },
     {
       rows: daily.spx_history || [], x: "time_et", y: "spx", label: "SPX",
       color: "#aeb4bd", width: 2.5, dash: "7 5", axis: "right", shadeRelativeToFirst: true,
