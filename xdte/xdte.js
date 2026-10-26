@@ -268,7 +268,7 @@ function portfolioDailyChart(target, rows, expectedHistory = []) {
   const bars = rows.map((r,i)=> {
     if (!finite(r.realized_net_pnl)) return "";
     const amount = Number(r.realized_net_pnl), top = Math.min(y(0),y(amount));
-    const color = amount>0 ? "#2fa236" : amount<0 ? "#fd0100" : "#8b939f";
+    const color = amount>0 ? "#2fa236" : amount<0 ? "#dc2626" : "#8b939f";
     return `<rect data-session="${r.date}" data-realized="${amount}" x="${x(i)-barWidth/2}" y="${top}" width="${barWidth}" height="${Math.max(1,Math.abs(y(amount)-y(0)))}" fill="${color}" fill-opacity="0.65"><title>${r.date}: realized net P&amp;L ${money.format(amount)} · ${r.closed_trades || 0} closed trade(s)</title></rect>`;
   }).join("");
   let drawing = false;
@@ -284,18 +284,18 @@ function portfolioDailyChart(target, rows, expectedHistory = []) {
     const move = expectedDrawing ? "L" : "M"; expectedDrawing=true;
     return `${move}${x(i).toFixed(2)},${ry(r.expected_net_pnl).toFixed(2)}`;
   }).join(" ");
-  const expectedDots = rows.map((r,i)=>finite(r.expected_net_pnl) ? `<circle cx="${x(i)}" cy="${ry(r.expected_net_pnl)}" r="3" fill="#f76915"><title>${r.date}: cumulative saved expected net P&amp;L for settled trades ${money.format(r.expected_net_pnl)}</title></circle>` : "").join("");
+  const expectedDots = rows.map((r,i)=>finite(r.expected_net_pnl) ? `<circle cx="${x(i)}" cy="${ry(r.expected_net_pnl)}" r="3" fill="#7c3aed"><title>${r.date}: cumulative saved expected net P&amp;L for settled trades ${money.format(r.expected_net_pnl)}</title></circle>` : "").join("");
   const dateFormat = new Intl.DateTimeFormat("en-US",{month:"short",day:"numeric",timeZone:"UTC"});
   const interval = Math.max(1,Math.ceil(rows.length/8));
   const labels = rows.map((r,i)=>(i%interval===0 || i===rows.length-1) ? `<text x="${x(i)}" y="${height-39}" text-anchor="middle" fill="#667085" font-size="12">${dateFormat.format(new Date(r.date+"T12:00:00Z"))}</text>` : "").join("");
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Daily realized P&amp;L bars, cumulative settled net P&amp;L and cumulative expected P&amp;L by trading session">
     ${grid}${rightTicks}
     <line data-zero-axis="left" x1="${pad.l}" x2="${width-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#7b8495" stroke-width="1.75"/>
-    ${bars}<path d="${path}" stroke="#333ed4" stroke-width="3" fill="none" vector-effect="non-scaling-stroke"/>${dots}<path data-series="expected" d="${expectedPath}" stroke="#f76915" stroke-width="2.5" fill="none" vector-effect="non-scaling-stroke"/>${expectedDots}${labels}
+    ${bars}<path d="${path}" stroke="#333ed4" stroke-width="3" fill="none" vector-effect="non-scaling-stroke"/>${dots}<path data-series="expected" d="${expectedPath}" stroke="#7c3aed" stroke-dasharray="6 4" stroke-width="2.5" fill="none" vector-effect="non-scaling-stroke"/>${expectedDots}${labels}
     <text transform="translate(17,${pad.t+plotHeight/2}) rotate(-90)" text-anchor="middle" fill="#667085" font-size="12">Daily realized P&amp;L ($) · left</text>
     <text transform="translate(${width-12},${pad.t+plotHeight/2}) rotate(90)" text-anchor="middle" fill="#333ed4" font-size="12">Total / expected P&amp;L ($) · right</text>
     <text x="${width/2}" y="${height-10}" text-anchor="middle" fill="#667085" font-size="12">Trading sessions (ET; non-market days omitted)</text>
-  </svg><div class="chart-legend"><span class="legend-key" style="--key:#2fa236">Positive realized P&amp;L · left</span><span class="legend-key" style="--key:#fd0100">Negative realized P&amp;L · left</span><span class="legend-key" style="--key:#333ed4">Cumulative settled net P&amp;L · right</span><span class="legend-key" style="--key:#f76915">Expected P&amp;L · settled trades · right</span></div>`;
+  </svg><div class="chart-legend"><span class="legend-key" style="--key:#2fa236">Positive realized P&amp;L · left</span><span class="legend-key" style="--key:#dc2626">Negative realized P&amp;L · left</span><span class="legend-key" style="--key:#333ed4">Cumulative settled net P&amp;L · right</span><span class="legend-key" style="--key:#7c3aed">Expected P&amp;L (dashed) · settled trades · right</span></div>`;
 }
 
 function positionOutcomeChart(target, rows) {
