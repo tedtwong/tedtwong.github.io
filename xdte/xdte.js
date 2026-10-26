@@ -159,7 +159,7 @@ function lineChart(target, series, options = {}) {
   const rightPoints = rightSeries.flatMap(chartPoints);
   const all = [...leftPoints, ...rightPoints];
   if (!all.length) { node.innerHTML = `<div class="chart-empty">No chart data are available for this period.</div>`; return; }
-  const width = 1000, height = 310, pad = { l: 76, r: rightPoints.length ? 76 : 24, t: 18, b: 42 };
+  const width = 1000, height = options.height || 310, pad = { l: 76, r: rightPoints.length ? 76 : 24, t: 18, b: 42 };
   const minT = Math.min(...all.map(p => p.t)), maxT = Math.max(...all.map(p => p.t));
   const observedMinY = leftPoints.length ? Math.min(...leftPoints.map(p => p.y)) : 0;
   const observedMaxY = leftPoints.length ? Math.max(...leftPoints.map(p => p.y)) : 0;
@@ -617,7 +617,10 @@ async function load() {
     ["Unused capacity forfeited today", value(ledger.capacity.timed_capacity_forfeited, money)],
     ["Long-dated (4+ DTE) capacity available", value(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity, money)],
   ]);
-  const positionSeries = (daily.position_pnl || []).map(item => ({
+  const positionSeries = [...(daily.position_pnl || [])].sort((a,b) => {
+    const dateKey = item => /^\d{4}-\d{2}-\d{2}$/.test(item.exit_date_group || "") ? item.exit_date_group : "9999-99-99";
+    return dateKey(a).localeCompare(dateKey(b));
+  }).map(item => ({
     rows: item.points, x: "time_et", y: "net_pnl", label: `${item.position} · exit ${item.exit_date_group || "unknown"}`,
     legendLabel: `Exit ${item.exit_date_group || "unknown"}`,
     color: item.exit_date_color || "#8b939f", width: 2,
@@ -634,7 +637,7 @@ async function load() {
       aboveColor: "#2fa236", belowColor: "#fd0100",
     },
   ], {
-    money: true, includeZero: true, leftTickStep: 250, rightTickStep: 25,
+    money: true, height: 465, includeZero: true, leftTickStep: 250, rightTickStep: 25,
     label: "Daily position and portfolio P&L with SPX", markers: positionMarkers,
   });
   table("#trade-table", [

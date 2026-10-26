@@ -9857,7 +9857,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-26T17:41:18.771063-04:00",
+    "published_at_et": "2026-10-26T17:44:37.508191-04:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-26"
   },
