@@ -654,11 +654,16 @@ async function load() {
     ["Exit reason", "exit_reason"],
   ], daily.trades);
   positionOutcomeChart("#position-outcome-chart", daily.trades);
+  const averages = ledger.trade_averages || {};
   metrics("#ledger-metrics", [
     ["Starting cash", value(summary.starting_cash, money)], ["Equity", value(summary.equity, money)],
     ["Realized P&L", value(summary.realized_pnl, money), pnlClass(summary.realized_pnl)], ["Unrealized P&L", value(summary.unrealized_pnl, money), pnlClass(summary.unrealized_pnl)],
     ["Reserved risk", value(summary.reserved_risk, money)], ["Available capacity", value(ledger.capacity.available_capacity, money)],
     ["Open positions", value(summary.open_positions)], ["Closed trades", value(summary.closed_trades)],
+    ["Average P&L / trade", value(averages.average_net_pnl, money), pnlClass(averages.average_net_pnl)],
+    ["Average capacity / trade", value(averages.average_capacity, money)],
+    ["Average return / trade", value(averages.average_return, percent), pnlClass(averages.average_return)],
+    ["Average duration / trade", averages.average_duration_hours == null ? "—" : `${number.format(averages.average_duration_hours)} hours`],
   ]);
   portfolioDailyChart("#portfolio-chart", ledger.portfolio_daily || []);
   const settledHistory = (ledger.portfolio_daily || []).filter(row => row.basis === "SETTLED_TRADES_ONLY");
@@ -673,13 +678,6 @@ async function load() {
     ["Expected return", "expected_return_on_allocation", null, v => value(v, percent)], ["Realized return", "realized_return_on_allocation", null, v => value(v, percent)],
     ["Error SD", "normalized_error_standard_deviation", null, v => value(v, percent)],
   ], ledger.calibration_periods);
-  const averages = ledger.trade_averages || {};
-  metrics("#trade-average-metrics", [
-    ["Average P&L / trade", value(averages.average_net_pnl, money), pnlClass(averages.average_net_pnl)],
-    ["Average capacity / trade", value(averages.average_capacity, money)],
-    ["Average return / trade", value(averages.average_return, percent), pnlClass(averages.average_return)],
-    ["Average duration / trade", averages.average_duration_hours == null ? "—" : `${number.format(averages.average_duration_hours)} hours`],
-  ]);
   document.querySelector("#trade-average-coverage").textContent = `Settled trades only (${averages.settled_trades || 0}). Duration includes nights and weekends. Duration observations: ${averages.duration_samples || 0}; missing inputs make that average unavailable.`;
   const perf = ledger.performance;
   metrics("#performance-metrics", [
