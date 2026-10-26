@@ -3383,7 +3383,7 @@
     ],
     "position_pnl": [
       {
-        "exit_date_color": "#2fa236",
+        "exit_date_color": "#e68a0a",
         "exit_date_group": "2026-10-27",
         "points": [
           {
@@ -3510,7 +3510,7 @@
         "position": "Position 1"
       },
       {
-        "exit_date_color": "#dc2626",
+        "exit_date_color": "#1281d2",
         "exit_date_group": "2026-10-29",
         "points": [
           {
@@ -3682,7 +3682,7 @@
         "position": "Position 2"
       },
       {
-        "exit_date_color": "#2fa236",
+        "exit_date_color": "#e68a0a",
         "exit_date_group": "2026-10-27",
         "points": [
           {
@@ -3879,7 +3879,7 @@
         "position": "Position 3"
       },
       {
-        "exit_date_color": "#dc2626",
+        "exit_date_color": "#1281d2",
         "exit_date_group": "2026-10-29",
         "points": [
           {
@@ -4111,7 +4111,7 @@
         "position": "Position 4"
       },
       {
-        "exit_date_color": "#dc2626",
+        "exit_date_color": "#1281d2",
         "exit_date_group": "2026-10-29",
         "points": [
           {
@@ -4368,7 +4368,7 @@
         "position": "Position 5"
       },
       {
-        "exit_date_color": "#8a3ffc",
+        "exit_date_color": "#2fa236",
         "exit_date_group": "2026-10-28",
         "points": [
           {
@@ -4825,7 +4825,7 @@
         "position": "Position 6"
       },
       {
-        "exit_date_color": "#8a3ffc",
+        "exit_date_color": "#2fa236",
         "exit_date_group": "2026-10-28",
         "points": [
           {
@@ -5282,7 +5282,7 @@
         "position": "Position 7"
       },
       {
-        "exit_date_color": "#8a3ffc",
+        "exit_date_color": "#2fa236",
         "exit_date_group": "2026-10-28",
         "points": [
           {
@@ -5739,7 +5739,7 @@
         "position": "Position 8"
       },
       {
-        "exit_date_color": "#008b8b",
+        "exit_date_color": "#8a3ffc",
         "exit_date_group": "2026-10-30",
         "points": [
           {
@@ -6196,7 +6196,7 @@
         "position": "Position 9"
       },
       {
-        "exit_date_color": "#dc2626",
+        "exit_date_color": "#1281d2",
         "exit_date_group": "2026-10-29",
         "points": [
           {
@@ -6653,7 +6653,7 @@
         "position": "Position 10"
       },
       {
-        "exit_date_color": "#8a3ffc",
+        "exit_date_color": "#2fa236",
         "exit_date_group": "2026-10-28",
         "points": [
           {
@@ -7110,7 +7110,7 @@
         "position": "Position 11"
       },
       {
-        "exit_date_color": "#f76915",
+        "exit_date_color": "#dc2626",
         "exit_date_group": "2026-10-26",
         "points": [
           {
@@ -9857,7 +9857,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-26T17:50:11.142844-04:00",
+    "published_at_et": "2026-10-26T17:55:39.336981-04:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-26"
   },

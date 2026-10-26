@@ -218,7 +218,7 @@ function lineChart(target, series, options = {}) {
   }).join("");
   const paths = series.map(s => {
     const points = chartPoints(s), seriesY = s.axis === "right" ? rightY : y;
-    return `<path d="${points.map((p, i) => `${i ? "L" : "M"}${x(p.t).toFixed(1)},${seriesY(p.y).toFixed(1)}`).join(" ")}" fill="none" stroke="${s.color}" stroke-width="${s.width || 2.5}" vector-effect="non-scaling-stroke"/>`;
+    return `<path d="${points.map((p, i) => `${i ? "L" : "M"}${x(p.t).toFixed(1)},${seriesY(p.y).toFixed(1)}`).join(" ")}" fill="none" stroke="${s.color}" stroke-width="${s.width || 2.5}" ${s.dash ? `stroke-dasharray="${s.dash}"` : ""} vector-effect="non-scaling-stroke"/>`;
   }).join("");
   const markers = (options.markers || []).map(marker => {
     const t = new Date(marker.time_et).getTime(), v = Number(marker.net_pnl);
@@ -236,7 +236,7 @@ function lineChart(target, series, options = {}) {
     ${relativeAreas}${zero}${paths}${markers}
     <text x="${pad.l}" y="${height-12}" fill="#667085" font-size="12">${shortTime(minT)}</text>
     <text x="${width-pad.r}" y="${height-12}" text-anchor="end" fill="#667085" font-size="12">${shortTime(maxT)}</text>
-  </svg><div class="chart-legend">${series.filter((s,i,a)=>a.findIndex(t=>(t.legendLabel||t.label)===(s.legendLabel||s.label))===i).map(s => `<span class="legend-key" style="--key:${s.color}">${s.legendLabel || s.label}</span>`).join("")}</div>`;
+  </svg><div class="chart-legend">${series.filter((s,i,a)=>a.findIndex(t=>(t.legendLabel||t.label)===(s.legendLabel||s.label))===i).map(s => `<span class="legend-key${s.dash ? " legend-key--dashed" : ""}" style="--key:${s.color}">${s.legendLabel || s.label}</span>`).join("")}</div>`;
 }
 
 function portfolioDailyChart(target, rows, expectedHistory = []) {
@@ -621,8 +621,8 @@ async function load() {
     const dateKey = item => /^\d{4}-\d{2}-\d{2}$/.test(item.exit_date_group || "") ? item.exit_date_group : "9999-99-99";
     return dateKey(a).localeCompare(dateKey(b));
   }).map(item => ({
-    rows: item.points, x: "time_et", y: "net_pnl", label: `${item.position} · exit ${item.exit_date_group || "unknown"}`,
-    legendLabel: `Exit ${item.exit_date_group || "unknown"}`,
+    rows: item.points, x: "time_et", y: "net_pnl", label: `${item.position} · expiry ${item.exit_date_group || "unknown"}`,
+    legendLabel: `Expiry ${item.exit_date_group || "unknown"}`,
     color: item.exit_date_color || "#8b939f", width: 2,
   }));
   const positionMarkers = (daily.position_pnl || []).flatMap(item => item.points
@@ -633,7 +633,7 @@ async function load() {
     { rows: daily.portfolio_pnl, x: "time_et", y: "net_pnl", label: "TOTAL", color: "#333ed4", width: 4 },
     {
       rows: daily.spx_history || [], x: "time_et", y: "spx", label: "SPX",
-      color: "#aeb4bd", width: 2.5, axis: "right", shadeRelativeToFirst: true,
+      color: "#aeb4bd", width: 2.5, dash: "7 5", axis: "right", shadeRelativeToFirst: true,
       aboveColor: "#2fa236", belowColor: "#fd0100",
     },
   ], {

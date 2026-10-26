@@ -192,3 +192,5 @@ footer { background: #e7e2d7; color: var(--muted); padding: 28px 18px; text-alig
 @media (prefers-reduced-motion: reduce) {
   .critical-alert-banner { animation: none; }
 }
+
+.legend-key--dashed::before { height: 0; background: none; border-top: 3px dashed var(--key); }
