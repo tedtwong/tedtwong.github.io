@@ -1,3 +1,23 @@
+function reserveCapacityChart(flow) {
+  const node = document.querySelector("#capacity-flow-chart");
+  if (!node) return;
+  const rows = flow?.rows || [];
+  if (!rows.length) { node.textContent = "Capacity history unavailable."; return; }
+  const width=900, height=260, left=85, right=25, top=32, bottom=60;
+  const max=Math.max(1, ...rows.flatMap(r=>[r.start,r.end]));
+  const min=Math.min(0, ...rows.flatMap(r=>[r.start,r.end]));
+  const y=v=>top+(max-v)/(max-min)*(height-top-bottom);
+  const step=(width-left-right)/rows.length;
+  const colors={total:"#333ed4",reserved:"#f76915",released:"#2fa236"};
+  let marks="";
+  for(let i=0;i<=4;i++) { const v=min+(max-min)*i/4; marks+=`<line x1="${left}" x2="${width-right}" y1="${y(v)}" y2="${y(v)}" stroke="#ddd"/><text x="${left-8}" y="${y(v)+4}" text-anchor="end" font-size="12">${money(v)}</text>`; }
+  rows.forEach((r,i)=>{ const x=left+i*step+step*.17, w=step*.66;
+    marks+=`<rect x="${x}" y="${Math.min(y(r.start),y(r.end))}" width="${w}" height="${Math.max(1,Math.abs(y(r.start)-y(r.end)))}" fill="${colors[r.kind]}"><title>${r.label}: ${money(r.amount)}; available after step ${money(r.end)}</title></rect><text x="${x+w/2}" y="${Math.min(y(r.start),y(r.end))-9}" text-anchor="middle" font-size="12">${money(r.amount)}</text><text x="${x+w/2}" y="${height-bottom+22}" text-anchor="middle" font-size="12">${r.label}</text>`;
+  });
+  node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Available aggregate reserve capacity: starting capacity, new reservations, exits and current availability">${marks}</svg>`;
+  document.querySelector("#capacity-flow-note").textContent=`Aggregate limit ${money(flow.aggregate_limit)}; carried-in reserves ${money(flow.opening_reserved)}. New reservations consume capacity; exits and cancellations release it. The separate daily new-entry budget is not recycled.${flow.status !== "COMPLETE" ? " Warning: saved capacity history is incomplete." : ""}`;
+}
+
 const money = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
 const number = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 });
 const percent = new Intl.NumberFormat("en-US", { style: "percent", maximumFractionDigits: 2 });
@@ -570,6 +590,7 @@ async function load() {
     ["Transaction costs on exits", value(exitActivity.transaction_costs, money)],
     ["Capital released by exits", value(exitActivity.released_capital, money)],
   ]);
+  reserveCapacityChart(daily.reserve_capacity_flow);
   metrics("#capacity-metrics", [
     ["Capacity reserved today", value(ledger.capacity.capacity_reserved_today, money)],
     ["Reserved risk", value(summary.reserved_risk, money)],

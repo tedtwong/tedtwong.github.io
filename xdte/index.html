@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
-  <link rel="stylesheet" href="xdte.css?v=20261026-ledger-cost-basis">
-  <script defer src="xdte.js?v=20261026-ledger-cost-basis"></script>
+  <link rel="stylesheet" href="xdte.css?v=20261026-reserve-capacity">
+  <script defer src="xdte.js?v=20261026-reserve-capacity"></script>
 </head>
 <body>
   <header class="hero">
@@ -59,6 +59,7 @@
       </div>
       <h3 class="capacity-heading">Capacity</h3>
       <div id="capacity-metrics" class="metric-grid capacity-metrics"></div>
+      <article class="panel chart-panel"><h3>Reserve capacity — today</h3><p id="capacity-flow-note"></p><div id="capacity-flow-chart" class="chart"></div></article>
       <article class="panel chart-panel">
         <div class="panel__heading"><div><h3>Today’s position P&amp;L</h3><p>Individual paper positions after estimated costs, with green entry triangles, red exit squares, the total as a thick blue line, and SPX on the right axis. TOTAL sums the displayed positions (including carryovers and positions closed today), excludes positions closed before this session, and uses each position’s lifetime P&amp;L. SPX area above its opening level is green; area below it is red.</p></div></div>
         <div id="daily-chart" class="chart"></div>
