@@ -8546,6 +8546,48 @@
         "settled_at_et": "2026-10-26T16:00:02.308526-04:00"
       }
     ],
+    "deployed_capacity_history": [
+      {
+        "cancelled_today": 3100.09,
+        "date": "2026-10-21",
+        "deployed": 8280.81,
+        "exited_today": 0.0,
+        "is_current_session": false,
+        "opening_deployed": 0.0,
+        "reserved_today": 11380.9,
+        "status": "COMPLETE"
+      },
+      {
+        "cancelled_today": 0.0,
+        "date": "2026-10-22",
+        "deployed": 5065.4,
+        "exited_today": 4627.21,
+        "is_current_session": false,
+        "opening_deployed": 8280.81,
+        "reserved_today": 1411.8,
+        "status": "COMPLETE"
+      },
+      {
+        "cancelled_today": 0.0,
+        "date": "2026-10-23",
+        "deployed": 12385.28,
+        "exited_today": 2051.8,
+        "is_current_session": false,
+        "opening_deployed": 5065.4,
+        "reserved_today": 9371.68,
+        "status": "COMPLETE"
+      },
+      {
+        "cancelled_today": 2106.07,
+        "date": "2026-10-26",
+        "deployed": 19497.88,
+        "exited_today": 2201.68,
+        "is_current_session": true,
+        "opening_deployed": 12385.28,
+        "reserved_today": 11420.35,
+        "status": "COMPLETE"
+      }
+    ],
     "performance": {
       "average_loss": -1245.2,
       "average_win": 329.64000000000004,
@@ -9752,7 +9794,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-26T17:01:53.146867-04:00",
+    "published_at_et": "2026-10-26T17:06:07.057373-04:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-26"
   },

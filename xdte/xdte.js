@@ -1,3 +1,27 @@
+function deployedCapacityChart(rows) {
+  const node = document.querySelector("#deployed-capacity-chart");
+  if (!node) return;
+  if (!rows.length) {node.textContent="No deployed-capacity history available.";return;}
+  const width=1050,height=310,pad={l:85,r:25,t:25,b:65};
+  const maximum=Math.max(1,...rows.flatMap(r=>[r.deployed,r.reserved_today,r.exited_today]));
+  const step=(width-pad.l-pad.r)/rows.length;
+  const x=i=>pad.l+step*(i+.5), y=v=>height-pad.b-v/maximum*(height-pad.t-pad.b);
+  const ticks=Array.from({length:5},(_,i)=>maximum*i/4);
+  let marks=ticks.map(v=>`<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#ddd"/><text x="${pad.l-8}" y="${y(v)+4}" text-anchor="end" font-size="12">${money.format(v)}</text>`).join("");
+  const labelEvery=Math.max(1,Math.ceil(rows.length/12));
+  rows.forEach((r,i)=>{
+    const tooltip=`${r.date}: starting deployed ${money.format(r.opening_deployed)}; reserved ${money.format(r.reserved_today)}; exited ${money.format(r.exited_today)}; cancelled/unfilled releases ${money.format(r.cancelled_today)}; ending/current deployed ${money.format(r.deployed)}${r.status!=="COMPLETE"?" (incomplete history)":""}`;
+    [[r.reserved_today,-.27,"#f76915"],[r.exited_today,.02,"#2fa236"]].forEach(([v,offset,color])=>{
+      marks+=`<rect x="${x(i)+step*offset}" y="${y(v)}" width="${step*.25}" height="${Math.max(0,y(0)-y(v))}" fill="${color}" opacity=".65"><title>${tooltip}</title></rect>`;
+    });
+    if(i%labelEvery===0||i===rows.length-1) marks+=`<text transform="translate(${x(i)},${height-pad.b+18}) rotate(-30)" text-anchor="end" font-size="12">${r.date}</text>`;
+  });
+  marks+=`<path d="${rows.map((r,i)=>`${i?'L':'M'}${x(i)},${y(r.deployed)}`).join(' ')}" fill="none" stroke="#333ed4" stroke-width="3"/>`;
+  rows.forEach((r,i)=>{marks+=`<circle cx="${x(i)}" cy="${y(r.deployed)}" r="4" fill="#333ed4"><title>${r.date}: starting ${money.format(r.opening_deployed)}; ending/current deployed ${money.format(r.deployed)}; reserved ${money.format(r.reserved_today)}; exited ${money.format(r.exited_today)}; cancelled/unfilled ${money.format(r.cancelled_today)}</title></circle>`;});
+  node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Daily deployed reserve capital, new reservations and exited capacity">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#333ed4">Deployed reserves</span><span class="legend-key" style="--key:#f76915">New reservations</span><span class="legend-key" style="--key:#2fa236">Exited capacity</span></div>`;
+  if(rows.some(r=>r.status!=="COMPLETE"))node.insertAdjacentHTML("beforeend","<p>Warning: capacity history is incomplete.</p>");
+}
+
 function reserveCapacityChart(flow) {
   const node = document.querySelector("#capacity-flow-chart");
   if (!node) return;
@@ -590,7 +614,7 @@ async function load() {
     ["Transaction costs on exits", value(exitActivity.transaction_costs, money)],
     ["Capital released by exits", value(exitActivity.released_capital, money)],
   ]);
-  reserveCapacityChart(daily.reserve_capacity_flow);
+  deployedCapacityChart(ledger.deployed_capacity_history || []);
   metrics("#capacity-metrics", [
     ["Capacity reserved today", value(ledger.capacity.capacity_reserved_today, money)],
     ["Reserved risk", value(summary.reserved_risk, money)],
