@@ -373,12 +373,13 @@ const escapeText = value => String(value ?? "").replace(/[&<>"']/g, character =>
 }[character]));
 
 function funnelHeatmap(target, rows) {
+  rows = rows.filter(row => !["Terminal-payoff survivors", "Quadrature survivors"].includes(row.stage));
   const node = document.querySelector(target);
   if (!rows.length) {
     node.innerHTML = '<div class="chart-empty">No funnel observations are available for this period.</div>';
     return;
   }
-  const stages = ["Candidates examined", "Terminal positive", "Terminal-payoff survivors", "Path confirmed", "Eligible", "Entry orders submitted", "Entries filled", "Open positions"];
+  const stages = ["Candidates examined", "Terminal positive", "Path confirmed", "Eligible", "Entry orders submitted", "Entries filled", "Open positions"];
   const labels = [...new Set(rows.map(row => {
     const strategy = String(row.strategy || "UNATTRIBUTED").replaceAll("_", " ");
     const dte = /^\d+$/.test(String(row.dte)) ? `${row.dte}DTE` : "Unattributed";
@@ -389,8 +390,9 @@ function funnelHeatmap(target, rows) {
     const dte = /^\d+$/.test(String(row.dte)) ? `${row.dte}DTE` : "Unattributed";
     return [[row.stage, `${strategy} · ${dte}`].join("||"), Number(row.count) || 0];
   }));
-  const width = 1200, cellWidth = 122, cellHeight = 34;
+  const cellWidth = 122, cellHeight = 34;
   const pad = { l: 248, r: 18, t: 104, b: 26 };
+  const width = pad.l + stages.length * cellWidth + pad.r;
   const height = pad.t + labels.length * cellHeight + pad.b;
   const maximum = Math.max(1, ...rows.map(row => Number(row.count) || 0));
   const cells = labels.flatMap((label, rowIndex) => stages.map((stage, columnIndex) => {
@@ -592,7 +594,7 @@ async function load() {
     : "Ledger change uses actual saved closing equity. Open-position marks include saved liquidation expenses; realized exits use recorded net P&L.";
   summaryMetrics("#evaluation-metrics", [
     ["Candidates examined", value(funnel.candidates_examined)], ["Terminal positive", value(funnel.terminal_positive_candidates)],
-    ["Terminal-payoff survivors", value(funnel.quadrature_survivors)], ["Path confirmed", value(funnel.path_confirmed_candidates)],
+    ["Path confirmed", value(funnel.path_confirmed_candidates)],
     ["Eligible", value(funnel.eligible_candidates)], ["Entry orders submitted", value(funnel.orders_submitted)],
     ["Entries filled", value(funnel.trades_filled)], ["Open positions", value(funnel.trades_open)],
     ["Entry fill slippage", value(daily.entry_activity?.entry_slippage, money), slippageClass(daily.entry_activity?.entry_slippage)],
