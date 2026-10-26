@@ -593,7 +593,7 @@ async function load() {
       aboveColor: "#2fa236", belowColor: "#fd0100",
     },
   ], {
-    money: true, includeZero: true, leftTickStep: 250, rightTickStep: 50,
+    money: true, includeZero: true, leftTickStep: 250, rightTickStep: 25,
     label: "Daily position and portfolio P&L with SPX", markers: positionMarkers,
   });
   table("#trade-table", [
