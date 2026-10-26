@@ -195,6 +195,56 @@ function lineChart(target, series, options = {}) {
   </svg><div class="chart-legend">${series.map(s => `<span class="legend-key" style="--key:${s.color}">${s.label}</span>`).join("")}</div>`;
 }
 
+function portfolioDailyChart(target, rows) {
+  const node = document.querySelector(target);
+  const finite = v => v !== null && v !== undefined && v !== "" && Number.isFinite(Number(v));
+  if (!(rows || []).length) {
+    node.innerHTML = '<div class="chart-empty">No portfolio session history is available.</div>';
+    return;
+  }
+  const width = 1000, height = 365, pad = {l: 96, r: 100, t: 30, b: 66};
+  const plotWidth = width-pad.l-pad.r, plotHeight = height-pad.t-pad.b;
+  const x = i => pad.l+(i+.5)*plotWidth/rows.length;
+  const bounds = values => {
+    const maximum = Math.max(1, ...values.filter(finite).map(v => Math.abs(Number(v))));
+    const rawStep = maximum/3, power = 10**Math.floor(Math.log10(rawStep));
+    const ratio = rawStep/power;
+    const step = (ratio<=1 ? 1 : ratio<=2 ? 2 : ratio<=5 ? 5 : 10)*power;
+    return {maximum: Math.ceil(maximum/step)*step, step};
+  };
+  const left = bounds(rows.map(r=>r.realized_net_pnl)), right = bounds(rows.map(r=>r.net_pnl));
+  const scale = (v,b) => pad.t+(b.maximum-Number(v))/(2*b.maximum)*plotHeight;
+  const y = v=>scale(v,left), ry = v=>scale(v,right);
+  const ticks = b => Array.from({length:2*Math.round(b.maximum/b.step)+1},(_,i)=>-b.maximum+i*b.step);
+  const grid = ticks(left).map(v=>`<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e4dfd6"/><text x="${pad.l-10}" y="${y(v)+4}" text-anchor="end" fill="#667085" font-size="12">${money.format(v)}</text>`).join("");
+  const rightTicks = ticks(right).map(v=>`<text x="${width-pad.r+10}" y="${ry(v)+4}" fill="#333ed4" font-size="12">${money.format(v)}</text>`).join("");
+  const barWidth = Math.min(60,plotWidth/rows.length*.65);
+  const bars = rows.map((r,i)=> {
+    if (!finite(r.realized_net_pnl)) return "";
+    const amount = Number(r.realized_net_pnl), top = Math.min(y(0),y(amount));
+    const color = amount>0 ? "#2fa236" : amount<0 ? "#fd0100" : "#8b939f";
+    return `<rect data-session="${r.date}" data-realized="${amount}" x="${x(i)-barWidth/2}" y="${top}" width="${barWidth}" height="${Math.max(1,Math.abs(y(amount)-y(0)))}" fill="${color}" fill-opacity="0.65"><title>${r.date}: realized net P&amp;L ${money.format(amount)} · ${r.closed_trades || 0} closed trade(s)</title></rect>`;
+  }).join("");
+  let drawing = false;
+  const path = rows.map((r,i)=>{
+    if (!finite(r.net_pnl)) { drawing=false;return ""; }
+    const move = drawing ? "L" : "M"; drawing=true;
+    return `${move}${x(i).toFixed(2)},${ry(r.net_pnl).toFixed(2)}`;
+  }).join(" ");
+  const dots = rows.map((r,i)=>finite(r.net_pnl) ? `<circle cx="${x(i)}" cy="${ry(r.net_pnl)}" r="3.5" fill="#333ed4"><title>${r.date}: total portfolio net P&amp;L ${money.format(r.net_pnl)}</title></circle>` : "").join("");
+  const dateFormat = new Intl.DateTimeFormat("en-US",{month:"short",day:"numeric",timeZone:"UTC"});
+  const interval = Math.max(1,Math.ceil(rows.length/8));
+  const labels = rows.map((r,i)=>(i%interval===0 || i===rows.length-1) ? `<text x="${x(i)}" y="${height-39}" text-anchor="middle" fill="#667085" font-size="12">${dateFormat.format(new Date(r.date+"T12:00:00Z"))}</text>` : "").join("");
+  node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Daily realized P&amp;L bars and total portfolio net P&amp;L by trading session">
+    ${grid}${rightTicks}
+    <line data-zero-axis="left" x1="${pad.l}" x2="${width-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#7b8495" stroke-width="1.75"/>
+    ${bars}<path d="${path}" stroke="#333ed4" stroke-width="3" fill="none" vector-effect="non-scaling-stroke"/>${dots}${labels}
+    <text transform="translate(17,${pad.t+plotHeight/2}) rotate(-90)" text-anchor="middle" fill="#667085" font-size="12">Daily realized P&amp;L ($) · left</text>
+    <text transform="translate(${width-12},${pad.t+plotHeight/2}) rotate(90)" text-anchor="middle" fill="#333ed4" font-size="12">Total portfolio net P&amp;L ($) · right</text>
+    <text x="${width/2}" y="${height-10}" text-anchor="middle" fill="#667085" font-size="12">Trading sessions (ET; non-market days omitted)</text>
+  </svg><div class="chart-legend"><span class="legend-key" style="--key:#2fa236">Positive realized P&amp;L · left</span><span class="legend-key" style="--key:#fd0100">Negative realized P&amp;L · left</span><span class="legend-key" style="--key:#333ed4">Total portfolio net P&amp;L · right</span></div>`;
+}
+
 function positionOutcomeChart(target, rows) {
   const node = document.querySelector(target);
   const finite = value => value !== null && value !== undefined && value !== "" && Number.isFinite(Number(value));
@@ -545,7 +595,7 @@ async function load() {
     ["Reserved risk", value(summary.reserved_risk, money)], ["Available capacity", value(ledger.capacity.available_capacity, money)],
     ["Open positions", value(summary.open_positions)], ["Closed trades", value(summary.closed_trades)],
   ]);
-  lineChart("#portfolio-chart", [{ rows: ledger.portfolio_pnl, x: "time_et", y: "net_pnl", label: "Portfolio net P&L", color: "#333ed4", width: 3 }], { money: true, label: "Portfolio P&L history" });
+  portfolioDailyChart("#portfolio-chart", ledger.portfolio_daily || []);
   lineChart("#calibration-chart", [
     { rows: ledger.cumulative_expected_realized, x: "settled_at_et", y: "cumulative_base_expected_net_pnl", label: "Base expected net P&L", color: "#f76915" },
     { rows: ledger.cumulative_expected_realized, x: "settled_at_et", y: "cumulative_realized_net_pnl", label: "Realized net P&L", color: "#2fa236", width: 3 },
