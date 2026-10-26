@@ -196,13 +196,13 @@ function lineChart(target, series, options = {}) {
 }
 
 function portfolioDailyChart(target, rows, expectedHistory = []) {
-  // Reuse the existing closed-trade expected series; do not re-estimate edge.
+  // Frozen expectations are added once on each filled entry date.
   const dayFormat = new Intl.DateTimeFormat("en-CA", {year:"numeric", month:"2-digit", day:"2-digit", timeZone:"America/New_York"});
   const history = (expectedHistory || []).filter(r => r.cumulative_base_expected_net_pnl != null
-    && Number.isFinite(Number(r.cumulative_base_expected_net_pnl)) && Number.isFinite(new Date(r.settled_at_et).getTime()))
+    && Number.isFinite(Number(r.cumulative_base_expected_net_pnl)) && Number.isFinite(new Date(r.entered_at_et).getTime()))
     .map(r => {
-      const parts = Object.fromEntries(dayFormat.formatToParts(new Date(r.settled_at_et)).map(p=>[p.type,p.value]));
-      return {day:`${parts.year}-${parts.month}-${parts.day}`, time:new Date(r.settled_at_et).getTime(), value:Number(r.cumulative_base_expected_net_pnl)};
+      const parts = Object.fromEntries(dayFormat.formatToParts(new Date(r.entered_at_et)).map(p=>[p.type,p.value]));
+      return {day:`${parts.year}-${parts.month}-${parts.day}`, time:new Date(r.entered_at_et).getTime(), value:Number(r.cumulative_base_expected_net_pnl)};
     }).sort((a,b)=>a.time-b.time);
   let cursor = 0, cumulative = history.length ? 0 : null;
   rows = (rows || []).map(row=>{
@@ -251,7 +251,7 @@ function portfolioDailyChart(target, rows, expectedHistory = []) {
     const move = expectedDrawing ? "L" : "M"; expectedDrawing=true;
     return `${move}${x(i).toFixed(2)},${ry(r.expected_net_pnl).toFixed(2)}`;
   }).join(" ");
-  const expectedDots = rows.map((r,i)=>finite(r.expected_net_pnl) ? `<circle cx="${x(i)}" cy="${ry(r.expected_net_pnl)}" r="3" fill="#f76915"><title>${r.date}: cumulative expected net P&amp;L for modeled closed trades ${money.format(r.expected_net_pnl)}</title></circle>` : "").join("");
+  const expectedDots = rows.map((r,i)=>finite(r.expected_net_pnl) ? `<circle cx="${x(i)}" cy="${ry(r.expected_net_pnl)}" r="3" fill="#f76915"><title>${r.date}: cumulative expected net P&amp;L for filled entries ${money.format(r.expected_net_pnl)}</title></circle>` : "").join("");
   const dateFormat = new Intl.DateTimeFormat("en-US",{month:"short",day:"numeric",timeZone:"UTC"});
   const interval = Math.max(1,Math.ceil(rows.length/8));
   const labels = rows.map((r,i)=>(i%interval===0 || i===rows.length-1) ? `<text x="${x(i)}" y="${height-39}" text-anchor="middle" fill="#667085" font-size="12">${dateFormat.format(new Date(r.date+"T12:00:00Z"))}</text>` : "").join("");
@@ -262,7 +262,7 @@ function portfolioDailyChart(target, rows, expectedHistory = []) {
     <text transform="translate(17,${pad.t+plotHeight/2}) rotate(-90)" text-anchor="middle" fill="#667085" font-size="12">Daily realized P&amp;L ($) · left</text>
     <text transform="translate(${width-12},${pad.t+plotHeight/2}) rotate(90)" text-anchor="middle" fill="#333ed4" font-size="12">Total / expected P&amp;L ($) · right</text>
     <text x="${width/2}" y="${height-10}" text-anchor="middle" fill="#667085" font-size="12">Trading sessions (ET; non-market days omitted)</text>
-  </svg><div class="chart-legend"><span class="legend-key" style="--key:#2fa236">Positive realized P&amp;L · left</span><span class="legend-key" style="--key:#fd0100">Negative realized P&amp;L · left</span><span class="legend-key" style="--key:#333ed4">Total portfolio net P&amp;L · right</span><span class="legend-key" style="--key:#f76915">Expected P&amp;L (modeled closed trades) · right</span></div>`;
+  </svg><div class="chart-legend"><span class="legend-key" style="--key:#2fa236">Positive realized P&amp;L · left</span><span class="legend-key" style="--key:#fd0100">Negative realized P&amp;L · left</span><span class="legend-key" style="--key:#333ed4">Total portfolio net P&amp;L · right</span><span class="legend-key" style="--key:#f76915">Cumulative entry-time expected P&amp;L · right</span></div>`;
 }
 
 function positionOutcomeChart(target, rows) {
@@ -616,7 +616,11 @@ async function load() {
     ["Reserved risk", value(summary.reserved_risk, money)], ["Available capacity", value(ledger.capacity.available_capacity, money)],
     ["Open positions", value(summary.open_positions)], ["Closed trades", value(summary.closed_trades)],
   ]);
-  portfolioDailyChart("#portfolio-chart", ledger.portfolio_daily || [], ledger.cumulative_expected_realized || []);
+  portfolioDailyChart("#portfolio-chart", ledger.portfolio_daily || [], (ledger.cumulative_entry_expected || {}).rows || []);
+  const expectation = ledger.cumulative_entry_expected || {};
+  document.querySelector("#expected-entry-coverage").textContent = expectation.filled_entries == null
+    ? "Entry-expectation coverage is not available in this snapshot."
+    : `Entry-time expectations available for ${expectation.modeled_entries} of ${expectation.filled_entries} filled entries. Contributions remain after closing; unfilled attempts are excluded.${expectation.missing_entry_dates ? ` ${expectation.missing_entry_dates} filled record(s) lack an entry date.` : ""}`;
   table("#calibration-table", [
     ["Frequency", "frequency"], ["Period", "period"], ["Trades", "closed_trades"],
     ["Risk deployed", "gross_risk_deployed", null, v => value(v, money)], ["Expected", "base_expected_net_pnl", pnlClass, v => value(v, money)],

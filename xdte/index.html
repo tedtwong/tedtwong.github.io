@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
-  <link rel="stylesheet" href="xdte.css?v=20261026-capacity-reserved">
-  <script defer src="xdte.js?v=20261026-capacity-reserved"></script>
+  <link rel="stylesheet" href="xdte.css?v=20261026-entry-expected">
+  <script defer src="xdte.js?v=20261026-entry-expected"></script>
 </head>
 <body>
   <header class="hero">
@@ -101,8 +101,9 @@
       </div>
       <div id="ledger-metrics" class="metric-grid"></div>
       <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>Portfolio net P&amp;L history</h3><p>Bars show realized net P&amp;L on each exit or settlement date (left axis). The blue line shows the latest total portfolio net P&amp;L for each trading session, including open-position marks. The orange line retains the cumulative entry-time expected P&amp;L for modeled closed trades; both lines share the right axis. Weekends and market holidays are omitted.</p></div></div>
+        <div class="panel__heading"><div><h3>Portfolio net P&amp;L history</h3><p>Bars show realized net P&amp;L on each exit or settlement date (left axis). The blue line shows the latest total portfolio net P&amp;L for each trading session, including open-position marks. The orange line sums the saved entry-time expected P&amp;L of all filled trades, open and closed, counted once on entry. Expected amounts are full-trade forecasts, not accrued daily earnings. Both lines share the right axis. Weekends and market holidays are omitted.</p></div></div>
         <div id="portfolio-chart" class="chart"></div>
+        <p id="expected-entry-coverage" class="chart-note"></p>
       </article>
       <article class="panel">
         <div class="panel__heading"><div><h3>Calibration by period</h3><p>Returns are weighted by gross adverse-ES95 allocation deployed.</p></div></div>
