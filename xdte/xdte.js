@@ -707,6 +707,38 @@ async function refresh({ manual = false } = {}) {
   }
 }
 
+function initializeThesisBanner() {
+  const box = document.querySelector("#thesis-banner");
+  const button = document.querySelector("#load-thesis-animation");
+  const hint = document.querySelector("#thesis-animation-hint");
+  if (!box || !button || !hint) return;
+  button.addEventListener("click", () => {
+    if (button.disabled) return;
+    button.disabled = true;
+    box.setAttribute("aria-busy", "true");
+    hint.textContent = "Loading animation…";
+    // Create and request the image only after explicit mouse/keyboard activation.
+    const image = document.createElement("img");
+    image.className = "thesis-banner-image";
+    image.width = 2000;
+    image.height = 400;
+    image.alt = "Animated steamroller and a person collecting coins along a road.";
+    image.decoding = "async";
+    image.onload = () => {
+      box.setAttribute("aria-busy", "false");
+      box.replaceChildren(image);
+    };
+    image.onerror = () => {
+      box.setAttribute("aria-busy", "false");
+      button.disabled = false;
+      hint.textContent = "Animation could not load. Click to try again.";
+    };
+    image.src = button.dataset.bannerSrc;
+  });
+}
+
+initializeThesisBanner();
+
 document.querySelector("#refresh-feed").addEventListener("click", () => {
   if (Date.now() >= refreshAvailableAt) refresh({ manual: true });
 });
