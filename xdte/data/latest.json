@@ -1,5 +1,10 @@
 {
   "daily": {
+    "entry_activity": {
+      "entry_slippage": 100.0,
+      "filled_trades": 5,
+      "measured_trades": 5
+    },
     "exit_activity": {
       "exits_filled": 1,
       "net_fill_slippage": null,
@@ -3378,6 +3383,8 @@
     ],
     "position_pnl": [
       {
+        "exit_date_color": "#dc2626",
+        "exit_date_group": "2026-10-27",
         "points": [
           {
             "event": "Entry",
@@ -3503,6 +3510,8 @@
         "position": "Position 1"
       },
       {
+        "exit_date_color": "#a07800",
+        "exit_date_group": "2026-10-29",
         "points": [
           {
             "event": "Entry",
@@ -3673,6 +3682,8 @@
         "position": "Position 2"
       },
       {
+        "exit_date_color": "#dc2626",
+        "exit_date_group": "2026-10-27",
         "points": [
           {
             "event": "Entry",
@@ -3868,6 +3879,8 @@
         "position": "Position 3"
       },
       {
+        "exit_date_color": "#a07800",
+        "exit_date_group": "2026-10-29",
         "points": [
           {
             "event": "Entry",
@@ -4098,6 +4111,8 @@
         "position": "Position 4"
       },
       {
+        "exit_date_color": "#a07800",
+        "exit_date_group": "2026-10-29",
         "points": [
           {
             "event": "Entry",
@@ -4353,6 +4368,8 @@
         "position": "Position 5"
       },
       {
+        "exit_date_color": "#008b8b",
+        "exit_date_group": "2026-10-28",
         "points": [
           {
             "event": null,
@@ -4808,6 +4825,8 @@
         "position": "Position 6"
       },
       {
+        "exit_date_color": "#008b8b",
+        "exit_date_group": "2026-10-28",
         "points": [
           {
             "event": null,
@@ -5263,6 +5282,8 @@
         "position": "Position 7"
       },
       {
+        "exit_date_color": "#008b8b",
+        "exit_date_group": "2026-10-28",
         "points": [
           {
             "event": null,
@@ -5718,6 +5739,8 @@
         "position": "Position 8"
       },
       {
+        "exit_date_color": "#f76915",
+        "exit_date_group": "2026-10-30",
         "points": [
           {
             "event": null,
@@ -6173,6 +6196,8 @@
         "position": "Position 9"
       },
       {
+        "exit_date_color": "#a07800",
+        "exit_date_group": "2026-10-29",
         "points": [
           {
             "event": null,
@@ -6628,6 +6653,8 @@
         "position": "Position 10"
       },
       {
+        "exit_date_color": "#008b8b",
+        "exit_date_group": "2026-10-28",
         "points": [
           {
             "event": null,
@@ -7083,6 +7110,8 @@
         "position": "Position 11"
       },
       {
+        "exit_date_color": "#8a3ffc",
+        "exit_date_group": "2026-10-26",
         "points": [
           {
             "event": null,
@@ -9810,6 +9839,17 @@
       "reserved_risk": 19225.0,
       "starting_cash": 250000.0,
       "unrealized_pnl": 304.45
+    },
+    "trade_averages": {
+      "average_capacity": 1776.1380000000001,
+      "average_duration_hours": 38.83197140861111,
+      "average_net_pnl": -300.296,
+      "average_return": -0.20364200981466918,
+      "capacity_samples": 5,
+      "duration_samples": 5,
+      "pnl_samples": 5,
+      "return_samples": 5,
+      "settled_trades": 5
     }
   },
   "publication": {
@@ -9817,7 +9857,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-26T17:30:01.172122-04:00",
+    "published_at_et": "2026-10-26T17:36:56.940115-04:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-26"
   },

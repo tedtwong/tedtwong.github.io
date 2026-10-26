@@ -236,7 +236,7 @@ function lineChart(target, series, options = {}) {
     ${relativeAreas}${zero}${paths}${markers}
     <text x="${pad.l}" y="${height-12}" fill="#667085" font-size="12">${shortTime(minT)}</text>
     <text x="${width-pad.r}" y="${height-12}" text-anchor="end" fill="#667085" font-size="12">${shortTime(maxT)}</text>
-  </svg><div class="chart-legend">${series.map(s => `<span class="legend-key" style="--key:${s.color}">${s.label}</span>`).join("")}</div>`;
+  </svg><div class="chart-legend">${series.filter((s,i,a)=>a.findIndex(t=>(t.legendLabel||t.label)===(s.legendLabel||s.label))===i).map(s => `<span class="legend-key" style="--key:${s.color}">${s.legendLabel || s.label}</span>`).join("")}</div>`;
 }
 
 function portfolioDailyChart(target, rows, expectedHistory = []) {
@@ -595,7 +595,10 @@ async function load() {
     ["Terminal-payoff survivors", value(funnel.quadrature_survivors)], ["Path confirmed", value(funnel.path_confirmed_candidates)],
     ["Eligible", value(funnel.eligible_candidates)], ["Entry orders submitted", value(funnel.orders_submitted)],
     ["Entries filled", value(funnel.trades_filled)], ["Open positions", value(funnel.trades_open)],
+    ["Entry fill slippage", value(daily.entry_activity?.entry_slippage, money), slippageClass(daily.entry_activity?.entry_slippage)],
   ]);
+  const entrySlippageNote = document.querySelector("#entry-slippage-note");
+  if (entrySlippageNote) entrySlippageNote.textContent = `Entry fill slippage: requested credit minus filled credit, in dollars. Positive is worse; negative is price improvement. Measured for ${daily.entry_activity?.measured_trades ?? 0} of ${daily.entry_activity?.filled_trades ?? 0} filled trades today.`;
   renderFunnelHistory(daily.funnel_history || {});
   summaryMetrics("#exit-metrics", [
     ["Exits filled today", value(exitActivity.exits_filled)],
@@ -614,10 +617,10 @@ async function load() {
     ["Unused capacity forfeited today", value(ledger.capacity.timed_capacity_forfeited, money)],
     ["Long-dated (4+ DTE) capacity available", value(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity, money)],
   ]);
-  const positionColors = ["#f76915", "#eede04", "#a0d636", "#2fa236", "#fd0100", "#8a3ffc"];
-  const positionSeries = (daily.position_pnl || []).map((item, index) => ({
-    rows: item.points, x: "time_et", y: "net_pnl", label: item.position,
-    color: positionColors[index % positionColors.length], width: 2,
+  const positionSeries = (daily.position_pnl || []).map(item => ({
+    rows: item.points, x: "time_et", y: "net_pnl", label: `${item.position} · exit ${item.exit_date_group || "unknown"}`,
+    legendLabel: `Exit ${item.exit_date_group || "unknown"}`,
+    color: item.exit_date_color || "#8b939f", width: 2,
   }));
   const positionMarkers = (daily.position_pnl || []).flatMap(item => item.points
     .filter(point => point.event === "Entry" || point.event === "Exit")
@@ -667,6 +670,14 @@ async function load() {
     ["Expected return", "expected_return_on_allocation", null, v => value(v, percent)], ["Realized return", "realized_return_on_allocation", null, v => value(v, percent)],
     ["Error SD", "normalized_error_standard_deviation", null, v => value(v, percent)],
   ], ledger.calibration_periods);
+  const averages = ledger.trade_averages || {};
+  metrics("#trade-average-metrics", [
+    ["Average P&L / trade", value(averages.average_net_pnl, money), pnlClass(averages.average_net_pnl)],
+    ["Average capacity / trade", value(averages.average_capacity, money)],
+    ["Average return / trade", value(averages.average_return, percent), pnlClass(averages.average_return)],
+    ["Average duration / trade", averages.average_duration_hours == null ? "—" : `${number.format(averages.average_duration_hours)} hours`],
+  ]);
+  document.querySelector("#trade-average-coverage").textContent = `Settled trades only (${averages.settled_trades || 0}). Duration includes nights and weekends. Duration observations: ${averages.duration_samples || 0}; missing inputs make that average unavailable.`;
   const perf = ledger.performance;
   metrics("#performance-metrics", [
     ["Settled trades", value(perf.settled_trades)], ["Trading days", value(perf.trading_days)], ["Net return on deployed capital", value(perf.net_return_on_deployed_capital, percent), pnlClass(perf.net_return_on_deployed_capital)],
