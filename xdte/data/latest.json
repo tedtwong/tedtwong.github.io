@@ -8593,39 +8593,55 @@
       "average_win": 329.64000000000004,
       "by_dte": [
         {
+          "deployed_capital": 5412.09,
           "dte": 1,
           "expectancy": -730.6933333333333,
+          "expectancy_return_per_trade": -0.4719705967463834,
           "net_pnl": -2192.08,
+          "net_return_on_deployed_capital": -0.4050339148092511,
           "trades": 3,
           "win_rate": 0.3333333333333333
         },
         {
+          "deployed_capital": 2051.8,
           "dte": 2,
           "expectancy": 410.8,
+          "expectancy_return_per_trade": 0.20021444585242226,
           "net_pnl": 410.8,
+          "net_return_on_deployed_capital": 0.20021444585242226,
           "trades": 1,
           "win_rate": 1.0
         },
         {
+          "deployed_capital": 1416.8,
           "dte": 7,
           "expectancy": 279.8,
+          "expectancy_return_per_trade": 0.19748729531338227,
           "net_pnl": 279.8,
+          "net_return_on_deployed_capital": 0.19748729531338227,
           "trades": 1,
           "win_rate": 1.0
         }
       ],
       "by_strategy": [
         {
+          "deployed_capital": 8880.69,
           "expectancy": -300.296,
+          "expectancy_return_per_trade": -0.20364200981466918,
           "net_pnl": -1501.48,
+          "net_return_on_deployed_capital": -0.16907244819940792,
           "strategy": "IRON_CONDOR",
           "trades": 5,
           "win_rate": 0.6
         }
       ],
+      "deployed_capital": 8880.69,
       "expectancy_per_trade": -300.296,
+      "expectancy_return_per_trade": -0.20364200981466918,
       "maximum_daily_drawdown": 1799.8000000000002,
+      "net_return_on_deployed_capital": -0.16907244819940792,
       "profit_factor": 0.3970928364921298,
+      "return_samples": 5,
       "settled_trades": 5,
       "total_net_pnl": -1501.48,
       "trade_win_rate": 0.6,
@@ -9794,7 +9810,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-26T17:06:07.057373-04:00",
+    "published_at_et": "2026-10-26T17:12:40.132256-04:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-26"
   },
