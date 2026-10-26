@@ -10,12 +10,12 @@ function reserveCapacityChart(flow) {
   const step=(width-left-right)/rows.length;
   const colors={total:"#333ed4",reserved:"#f76915",released:"#2fa236"};
   let marks="";
-  for(let i=0;i<=4;i++) { const v=min+(max-min)*i/4; marks+=`<line x1="${left}" x2="${width-right}" y1="${y(v)}" y2="${y(v)}" stroke="#ddd"/><text x="${left-8}" y="${y(v)+4}" text-anchor="end" font-size="12">${money(v)}</text>`; }
+  for(let i=0;i<=4;i++) { const v=min+(max-min)*i/4; marks+=`<line x1="${left}" x2="${width-right}" y1="${y(v)}" y2="${y(v)}" stroke="#ddd"/><text x="${left-8}" y="${y(v)+4}" text-anchor="end" font-size="12">${money.format(v)}</text>`; }
   rows.forEach((r,i)=>{ const x=left+i*step+step*.17, w=step*.66;
-    marks+=`<rect x="${x}" y="${Math.min(y(r.start),y(r.end))}" width="${w}" height="${Math.max(1,Math.abs(y(r.start)-y(r.end)))}" fill="${colors[r.kind]}"><title>${r.label}: ${money(r.amount)}; available after step ${money(r.end)}</title></rect><text x="${x+w/2}" y="${Math.min(y(r.start),y(r.end))-9}" text-anchor="middle" font-size="12">${money(r.amount)}</text><text x="${x+w/2}" y="${height-bottom+22}" text-anchor="middle" font-size="12">${r.label}</text>`;
+    marks+=`<rect x="${x}" y="${Math.min(y(r.start),y(r.end))}" width="${w}" height="${Math.max(1,Math.abs(y(r.start)-y(r.end)))}" fill="${colors[r.kind]}"><title>${r.label}: ${money.format(r.amount)}; available after step ${money.format(r.end)}</title></rect><text x="${x+w/2}" y="${Math.min(y(r.start),y(r.end))-9}" text-anchor="middle" font-size="12">${money.format(r.amount)}</text><text x="${x+w/2}" y="${height-bottom+22}" text-anchor="middle" font-size="12">${r.label}</text>`;
   });
   node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Available aggregate reserve capacity: starting capacity, new reservations, exits and current availability">${marks}</svg>`;
-  document.querySelector("#capacity-flow-note").textContent=`Aggregate limit ${money(flow.aggregate_limit)}; carried-in reserves ${money(flow.opening_reserved)}. New reservations consume capacity; exits and cancellations release it. The separate daily new-entry budget is not recycled.${flow.status !== "COMPLETE" ? " Warning: saved capacity history is incomplete." : ""}`;
+  document.querySelector("#capacity-flow-note").textContent=`Aggregate limit ${money.format(flow.aggregate_limit)}; carried-in reserves ${money.format(flow.opening_reserved)}. New reservations consume capacity; exits and cancellations release it. The separate daily new-entry budget is not recycled.${flow.status !== "COMPLETE" ? " Warning: saved capacity history is incomplete." : ""}`;
 }
 
 const money = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
