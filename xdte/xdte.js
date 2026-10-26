@@ -553,6 +553,10 @@ async function load() {
     ["Unrealized P&L", value(pnlSummary.unrealized_pnl, money), pnlClass(pnlSummary.unrealized_pnl)],
     ["Realized P&L on exits", value(exitActivity.realized_pnl, money), pnlClass(exitActivity.realized_pnl)],
   ]);
+  const baselineNote = document.querySelector("#ledger-baseline-note");
+  if (baselineNote) baselineNote.textContent = pnlSummary.ledger_baseline_status === "ACTUAL_PRIOR_SESSION_LEDGER_CLOSE_UNAVAILABLE"
+    ? "Ledger change unavailable: no actual prior-session closing ledger-equity snapshot was saved. Open-position marks include saved liquidation expenses."
+    : "Ledger change uses actual saved closing equity. Open-position marks include saved liquidation expenses; realized exits use recorded net P&L.";
   summaryMetrics("#evaluation-metrics", [
     ["Candidates examined", value(funnel.candidates_examined)], ["Terminal positive", value(funnel.terminal_positive_candidates)],
     ["Terminal-payoff survivors", value(funnel.quadrature_survivors)], ["Path confirmed", value(funnel.path_confirmed_candidates)],
