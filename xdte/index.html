@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
   <link rel="stylesheet" href="xdte.css?v=20261027-daily-pnl-simple">
-  <script defer src="xdte.js?v=20261027-directional-reserve-tiles"></script>
+  <script defer src="xdte.js?v=20261027-settlement-scenarios"></script>
 </head>
 <body>
   <header class="hero">
@@ -80,6 +80,10 @@
       <article class="panel chart-panel">
         <div class="panel__heading"><div><h3>Position outcome map</h3><p>Risk/reward boundaries, expected value, and observed P&amp;L for each filled position. Allocation is shown as a negative loss boundary; maximum profit is net of modeled expenses.</p></div></div>
         <div id="position-outcome-chart" class="chart position-outcome-chart"></div>
+      </article>
+      <article class="panel chart-panel">
+        <div class="panel__heading"><div><h3>SPX settlement payoff scenarios</h3><p>Net lifetime P&amp;L at five-point SPX levels, ±3% around current SPX. Blue assumes every open position settles at that level; orange includes only positions expiring today. Later expirations retain no time value in this hypothetical scenario. This is not today’s ledger change or a forecast.</p></div></div>
+        <div id="settlement-scenario-chart" class="chart"></div>
       </article>
     </section>
 
