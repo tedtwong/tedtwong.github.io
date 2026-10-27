@@ -604,7 +604,6 @@ async function load() {
   renderFunnelHistory(daily.funnel_history || {});
   summaryMetrics("#exit-metrics", [
     ["Exits filled today", value(exitActivity.exits_filled)],
-    ["Net fill slippage", value(exitActivity.net_fill_slippage, money), slippageClass(exitActivity.net_fill_slippage)],
     ["Transaction costs on exits", value(exitActivity.transaction_costs, money)],
     ["Capital released by exits", value(exitActivity.released_capital, money)],
   ]);
