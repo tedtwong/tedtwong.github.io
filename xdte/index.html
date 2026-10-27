@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
   <link rel="stylesheet" href="xdte.css?v=20261027-daily-pnl-simple">
-  <script defer src="xdte.js?v=20261027-directional-reserves"></script>
+  <script defer src="xdte.js?v=20261027-directional-reserve-tiles"></script>
 </head>
 <body>
   <header class="hero">
@@ -68,6 +68,7 @@
       </div>
       <h3 class="capacity-heading">Capacity</h3>
       <div id="capacity-metrics" class="metric-grid capacity-metrics"></div>
+      <p class="chart-note">Put and call reserve totals overlap for condors and are not additive.</p>
       <article class="panel chart-panel">
         <div class="panel__heading"><div><h3>Today’s position P&amp;L</h3><p>Individual paper positions after estimated costs, with green entry triangles, red exit squares, the total as a thick dark-gray line at 50% opacity, and dashed grey SPX on the right axis. Position lines share colors by expiration: red nearest, progressing through the spectrum to violet furthest; individual lines are retained. TOTAL sums the displayed positions (including carryovers and positions closed today), excludes positions closed before this session, and uses each position’s lifetime P&amp;L. SPX area above its opening level is green; area below it is red.</p></div></div>
         <div id="daily-chart" class="chart"></div>
@@ -79,11 +80,6 @@
       <article class="panel chart-panel">
         <div class="panel__heading"><div><h3>Position outcome map</h3><p>Risk/reward boundaries, expected value, and observed P&amp;L for each filled position. Allocation is shown as a negative loss boundary; maximum profit is net of modeled expenses.</p></div></div>
         <div id="position-outcome-chart" class="chart position-outcome-chart"></div>
-      </article>
-      <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>Reserved capacity around SPX</h3><p>Short-call and short-put reserves shown separately in 25-point bins relative to SPX. They are alternative loss scenarios and must not be added to calculate total portfolio reserve. All expirations are combined; these bins are not the directional-cluster cap test.</p></div></div>
-        <div id="directional-capacity-chart" class="chart"></div>
-        <p id="directional-capacity-note" class="chart-note"></p>
       </article>
     </section>
 
