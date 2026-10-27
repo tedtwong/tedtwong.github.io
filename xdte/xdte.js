@@ -639,6 +639,7 @@ async function load() {
     ["Reserved capacity", value(ledger.capacity.total_position_reserve ?? ledger.capacity.aggregate_reserved_capacity ?? summary.reserved_risk, money)],
     ["Total put reserve", value(ledger.capacity.total_put_reserve, money)],
     ["Total call reserve", value(ledger.capacity.total_call_reserve, money)],
+    ["Lowest nearby-interval headroom", value(ledger.capacity.nearby_interval_headroom, money)],
     ["Capacity reserved today", value(ledger.capacity.capacity_reserved_today, money)],
     ["Total capacity available", value(ledger.capacity.aggregate_available_capacity, money)],
     ["Available new-entry capacity now", value(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity, money)],
