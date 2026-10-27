@@ -3,6 +3,8 @@ function settlementScenarioChart(target, scenario) {
   if (!node) return;
   const rows = (scenario?.rows || []).filter(r => [r.spx_level, r.all_open_net_pnl, r.expiring_today_net_pnl].every(v => typeof v === "number" && Number.isFinite(v)));
   if (!rows.length) { node.textContent = `Settlement scenarios unavailable: ${scenario?.status || "no snapshot"}.`; return; }
+  const expiryLabel = scenario.forward_session ? `Expiring on ${scenario.session_date}` : "Expiring today only";
+  const allLabel = scenario.forward_session ? "Outstanding at target · hypothetical settlement" : "All open · hypothetical settlement";
   const width=1000,height=390,p={l:95,r:30,t:30,b:65};
   const low=rows[0].spx_level,high=rows[rows.length-1].spx_level;
   let ymin=Math.min(0,...rows.flatMap(r=>[r.all_open_net_pnl,r.expiring_today_net_pnl]));
@@ -14,15 +16,15 @@ function settlementScenarioChart(target, scenario) {
   const tickEvery=Math.max(1,Math.ceil(rows.length/9));
   rows.forEach((r,i)=>{if(i%tickEvery===0||i===rows.length-1)marks+=`<text x="${x(r.spx_level)}" y="${height-p.b+24}" text-anchor="middle" font-size="12">${number.format(r.spx_level)}</text>`;});
   marks+=`<line x1="${p.l}" x2="${width-p.r}" y1="${y(0)}" y2="${y(0)}" stroke="#475467" stroke-width="1.5"/>`;
-  const specs=[["all_open_net_pnl","All open · hypothetical settlement", "#333ED4", ""],["expiring_today_net_pnl","Expiring today only", "#F76915", "7 4"]];
+  const specs=[["all_open_net_pnl",allLabel, "#333ED4", ""],["expiring_today_net_pnl",expiryLabel, "#F76915", "7 4"]];
   for(const [field,label,color,dash] of specs){
     const line=rows.map((r,i)=>`${i?'L':'M'}${x(r.spx_level)},${y(r[field])}`).join(' ');
     marks+=`<path d="${line} L${x(high)},${y(0)} L${x(low)},${y(0)} Z" fill="${color}" fill-opacity=".10"/><path d="${line}" fill="none" stroke="${color}" stroke-width="3" stroke-opacity=".65" stroke-dasharray="${dash}"/>`;
     rows.forEach(r=>{marks+=`<circle cx="${x(r.spx_level)}" cy="${y(r[field])}" r="4" fill="${color}" fill-opacity=".18"><title>SPX ${number.format(r.spx_level)} · ${label}: ${money.format(r[field])}</title></circle>`;});
   }
   if(typeof scenario.spot === "number")marks+=`<line x1="${x(scenario.spot)}" x2="${x(scenario.spot)}" y1="${p.t}" y2="${height-p.b}" stroke="#667085" stroke-dasharray="4 4"/><text x="${x(scenario.spot)}" y="${p.t-10}" text-anchor="middle" font-size="12">Current SPX ${number.format(scenario.spot)}</text>`;
-  node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Net settlement payoff versus hypothetical SPX: all open positions and positions expiring today"><text x="${(p.l+width-p.r)/2}" y="${height-8}" text-anchor="middle" font-size="13">Hypothetical SPX settlement level · five-point increments</text>${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#333ED4">All open (${scenario.all_open_count}) · hypothetical settlement</span><span class="legend-key" style="--key:#F76915">Expiring today only (${scenario.expiring_today_count})</span></div>`;
-  const note=document.createElement("p");note.className="chart-note";note.textContent=`${scenario.note} Session ${scenario.session_date}. ${scenario.as_of_et ? `SPX as of ${scenario.as_of_et}. ` : ""}${scenario.excluded_count ? `Warning: ${scenario.excluded_count} open position(s) excluded; incomplete result. ` : ""}${scenario.expiring_today_count===0 ? "No open positions expire today; orange curve is zero." : ""}`;node.appendChild(note);
+  node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Net settlement payoff versus hypothetical SPX: outstanding positions and positions expiring on the selected session"><text x="${(p.l+width-p.r)/2}" y="${height-8}" text-anchor="middle" font-size="13">Hypothetical SPX settlement level · five-point increments</text>${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#333ED4">${allLabel} (${scenario.all_open_count})</span><span class="legend-key" style="--key:#F76915">${expiryLabel} (${scenario.expiring_today_count})</span></div>`;
+  const note=document.createElement("p");note.className="chart-note";note.textContent=`${scenario.note} Session ${scenario.session_date}. ${scenario.as_of_et ? `SPX as of ${scenario.as_of_et}. ` : ""}${scenario.excluded_count ? `Warning: ${scenario.excluded_count} open position(s) excluded; incomplete result. ` : ""}${scenario.expiring_today_count===0 ? `No open positions expire on ${scenario.session_date}; orange curve is zero.` : ""}`;node.appendChild(note);
 }
 
 function deployedCapacityChart(rows) {
@@ -688,6 +690,7 @@ async function load() {
   ], daily.trades);
   positionOutcomeChart("#position-outcome-chart", daily.trades);
   settlementScenarioChart("#settlement-scenario-chart", daily.settlement_scenarios);
+  settlementScenarioChart("#settlement-scenario-next-chart", daily.settlement_scenarios_next_session);
   const averages = ledger.trade_averages || {};
   metrics("#ledger-metrics", [
     ["Starting cash", value(summary.starting_cash, money)], ["Equity", value(summary.equity, money)],
