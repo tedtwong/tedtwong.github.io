@@ -600,8 +600,8 @@ async function load() {
     criticalText.textContent = "";
     criticalBanner.classList.add("hidden");
   }
-  const recoveredAlerts = (tradingStatus.alerts || []).filter(row => row.state === "RESOLVED" && row.severity !== "INFO");
-  const informationalAlerts = (tradingStatus.alerts || []).filter(row => row.state === "RESOLVED" && row.severity === "INFO");
+  const recoveredAlerts = (tradingStatus.alerts || []).filter(row => row.state === "RESOLVED" && row.recovery_confirmed === true);
+  const informationalAlerts = (tradingStatus.alerts || []).filter(row => row.state === "RESOLVED" && row.recovery_confirmed !== true);
   const alertColumns = [
     ["Severity", "severity"], ["Category", "category"], ["Alert", "title"],
     ["Details", "details"], ["First observed (ET)", "first_seen_at_et", null, shortTime],
