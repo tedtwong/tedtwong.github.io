@@ -590,8 +590,10 @@ async function load() {
   ]);
   const baselineNote = document.querySelector("#ledger-baseline-note");
   if (baselineNote) baselineNote.textContent = pnlSummary.ledger_baseline_status === "ACTUAL_PRIOR_SESSION_LEDGER_CLOSE_UNAVAILABLE"
-    ? "Ledger change unavailable: no actual prior-session closing ledger-equity snapshot was saved. Open-position marks include estimated entry/closing fees and exclude modeled slippage."
-    : "Ledger change uses actual saved closing equity. Open-position marks include estimated entry/closing fees and exclude modeled slippage; realized exits use recorded net P&L.";
+    ? "Ledger change unavailable: no complete saved or reconstructable prior-session closing balance is available. Open-position marks include estimated entry/closing fees and exclude modeled slippage."
+    : pnlSummary.ledger_baseline_status === "RECONSTRUCTED_PRIOR_SESSION_LEDGER_CLOSE"
+      ? `Ledger change uses reconstructed prior closing equity at ${pnlSummary.prior_ledger_as_of_et}. The saved balance is supported by recorded settlements and complete individual closing quotes, using fees-only marks.`
+      : "Ledger change uses actual saved closing equity. Open-position marks include estimated entry/closing fees and exclude modeled slippage; realized exits use recorded net P&L.";
   if (baselineNote && pnlSummary.accounting_basis_adjustment) baselineNote.textContent += ` Accounting-basis adjustment: ${money.format(pnlSummary.accounting_basis_adjustment)}; this removes modeled slippage and is not trading profit.`;
   summaryMetrics("#evaluation-metrics", [
     ["Candidates examined", value(funnel.candidates_examined)], ["Terminal positive", value(funnel.terminal_positive_candidates)],
