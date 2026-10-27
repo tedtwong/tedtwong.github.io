@@ -1,3 +1,26 @@
+function directionalCapacityChart(data) {
+  const node=document.querySelector("#directional-capacity-chart");
+  if(!node)return;
+  const note=document.querySelector("#directional-capacity-note");
+  const rows=Array.isArray(data?.bins)?data.bins:[];
+  if(note)note.textContent=data?`Total position reserve ${money.format(data.total_short_reserve||0)} · Short-call reserve ${money.format(data.short_call_reserve||0)} · Short-put reserve ${money.format(data.short_put_reserve||0)}. As of ${data.as_of_et?shortTime(data.as_of_et):"unavailable"}. ${data.unclassified_reserve?"Some reserves lack strike classification.":""}`:"";
+  if(!rows.length){node.innerHTML='<div class="chart-empty">No active reserves or usable SPX reference are available.</div>';return;}
+  const width=1050,height=360,pad={l:90,r:30,t:35,b:65};
+  const range=Math.ceil(Math.max(50,...rows.flatMap(r=>[Math.abs(r.lower_points),Math.abs(r.upper_points)]))/50)*50;
+  const maximum=Math.max(1,...rows.flatMap(r=>[r.short_call_reserve,r.short_put_reserve]));
+  const x=v=>pad.l+(v+range)/(2*range)*(width-pad.l-pad.r);
+  const y=v=>height-pad.b-v/maximum*(height-pad.t-pad.b);
+  const colors={short_call_reserve:"#F76915",short_put_reserve:"#333ED4"};
+  const barWidth=Math.max(1,(x(data.bin_width_points)-x(0))*.4);
+  const bars=rows.flatMap(r=>Object.entries(colors).map(([field,color],i)=>{
+    const amount=Number(r[field]||0),left=x(r.center_points)+(i===0?-barWidth-1:1);
+    return `<rect x="${left}" y="${y(amount)}" width="${barWidth}" height="${Math.max(0,y(0)-y(amount))}" fill="${color}"><title>${i===0?"Short calls":"Short puts"}: ${money.format(amount)}; ${r.lower_points} to ${r.upper_points} SPX points from reference</title></rect>`;
+  })).join("");
+  const grid=Array.from({length:5},(_,i)=>{const v=maximum*i/4;return `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e4e7ec"/><text x="${pad.l-10}" y="${y(v)+4}" text-anchor="end" font-size="12">${money.format(v)}</text>`;}).join("");
+  const ticks=[-range,-range/2,0,range/2,range].map(v=>`<text x="${x(v)}" y="${height-pad.b+23}" text-anchor="middle" font-size="12">${v===0?"SPX":v.toFixed(0)}</text>`).join("");
+  node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Short-call and short-put reserved capacity centered on SPX">${grid}${bars}<line x1="${x(0)}" x2="${x(0)}" y1="${pad.t}" y2="${height-pad.b}" stroke="#101828" stroke-width="2" stroke-dasharray="5 4"/>${ticks}<text x="${width/2}" y="${height-12}" text-anchor="middle" font-size="13">Short-strike distance from SPX (points)</text><rect x="${pad.l}" y="8" width="12" height="12" fill="${colors.short_call_reserve}"/><text x="${pad.l+18}" y="18" font-size="12">Short-call reserve</text><rect x="${pad.l+165}" y="8" width="12" height="12" fill="${colors.short_put_reserve}"/><text x="${pad.l+183}" y="18" font-size="12">Short-put reserve</text></svg>`;
+}
+
 function deployedCapacityChart(rows) {
   const node = document.querySelector("#deployed-capacity-chart");
   if (!node) return;
@@ -649,12 +672,15 @@ async function load() {
     ["Entry (ET)", "entry_time_et", null, shortTime],
     ["Expiry", "expiration_date", null, shortDate],
     ["Exit (ET)", "exit_time_et", null, shortTime],
-    ["Allocation", "allocation", null, v => value(v, money)], ["Maximum profit", "maximum_profit", pnlClass, v => value(v, money)], ["Base expected", "base_expected_net_pnl", pnlClass, v => value(v, money)],
+    ["Total reserve", "total_short_reserve", null, v => value(v, money)],
+    ["Short-call reserve", "short_call_reserve", null, v => value(v, money)],
+    ["Short-put reserve", "short_put_reserve", null, v => value(v, money)], ["Maximum profit", "maximum_profit", pnlClass, v => value(v, money)], ["Base expected", "base_expected_net_pnl", pnlClass, v => value(v, money)],
     ["Unrealized", "unrealized_net_pnl", pnlClass, v => value(v, money)], ["Realized", "realized_net_pnl", pnlClass, v => value(v, money)],
     ["Max unrealized", "maximum_unrealized_pnl", pnlClass, v => value(v, money)], ["Min unrealized", "minimum_unrealized_pnl", pnlClass, v => value(v, money)],
     ["Exit reason", "exit_reason"],
   ], daily.trades);
   positionOutcomeChart("#position-outcome-chart", daily.trades);
+  directionalCapacityChart(daily.capacity_histogram);
   const averages = ledger.trade_averages || {};
   metrics("#ledger-metrics", [
     ["Starting cash", value(summary.starting_cash, money)], ["Equity", value(summary.equity, money)],
