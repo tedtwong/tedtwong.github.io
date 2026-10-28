@@ -152,8 +152,8 @@ function summaryMetrics(target, items) {
 
 function fullCreditProbability(probability, row) {
   const displayed = value(probability, percent);
-  return probability !== null && probability !== undefined && Number.isFinite(Number(probability)) && row.probability_of_full_credit_source === "BLACK_SCHOLES"
-    ? `${displayed} <span title="Saved Black–Scholes estimate used because no blended-reference value was recorded">(BS)</span>`
+  return probability !== null && probability !== undefined && Number.isFinite(Number(probability)) && ["BLACK_SCHOLES", "BLACK_SCHOLES_RECONSTRUCTED"].includes(row.probability_of_full_credit_source)
+    ? `${displayed} <span title="Black–Scholes fallback from saved entry probability or entry delta/IV; reconstructed estimates use the forward-delta convention">(BS)</span>`
     : displayed;
 }
 
