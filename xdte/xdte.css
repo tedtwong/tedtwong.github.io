@@ -212,12 +212,12 @@ footer { background: #e7e2d7; color: var(--muted); padding: 28px 18px; text-alig
 .outcome-expiring-today { fill: #eceeed; }
 
 /* Shared visual opacity: data marks soften, labels and axes stay crisp. */
-.chart svg :is(path, circle, rect, polygon):not(.outcome-expiring-today) {
+.chart:not(#settlement-scenario-chart):not(#settlement-scenario-next-chart) svg :is(path, circle, rect, polygon):not(.outcome-expiring-today):not(.spx-opening-area) {
   fill-opacity: .6;
   stroke-opacity: .6;
   opacity: 1;
 }
-.chart svg line:not(.outcome-grid):not(.outcome-zero):not([stroke="#e4dfd6"]):not([stroke="#e4e7ec"]):not([stroke="#ddd"]):not([stroke="#7b8495"]):not([stroke="#475467"]):not([stroke="#667085"]) {
+.chart:not(#settlement-scenario-chart):not(#settlement-scenario-next-chart) svg line:not(.outcome-grid):not(.outcome-zero):not([stroke="#e4dfd6"]):not([stroke="#e4e7ec"]):not([stroke="#ddd"]):not([stroke="#7b8495"]):not([stroke="#475467"]):not([stroke="#667085"]) {
   stroke-opacity: .6;
 }
 /* Heatmap intensity encodes counts; preserve that scale under the shared tint. */
@@ -230,3 +230,6 @@ footer { background: #e7e2d7; color: var(--muted); padding: 28px 18px; text-alig
 .position-zone--orange { background: rgb(196 104 19 / 60%); color: #172033; }
 .position-zone--red { background: rgb(180 35 24 / 60%); color: #172033; }
 .position-zone--unavailable { background: rgb(104 114 125 / 60%); color: #172033; }
+
+/* Settlement scenarios retain their original blue/orange opacity and legends. */
+:is(#settlement-scenario-chart, #settlement-scenario-next-chart) .legend-key::before { opacity: 1; }

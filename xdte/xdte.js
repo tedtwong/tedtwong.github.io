@@ -293,7 +293,7 @@ function lineChart(target, series, options = {}) {
     const seriesY = s.axis === "right" ? rightY : y;
     const baseline = points[0].y;
     const baselineY = seriesY(baseline);
-    const polygon = (left, right, color) => `<path d="M${x(left.t).toFixed(1)},${seriesY(left.y).toFixed(1)} L${x(right.t).toFixed(1)},${seriesY(right.y).toFixed(1)} L${x(right.t).toFixed(1)},${baselineY.toFixed(1)} L${x(left.t).toFixed(1)},${baselineY.toFixed(1)} Z" fill="${color}" fill-opacity="0.16" stroke="none"/>`;
+    const polygon = (left, right, color) => `<path class="spx-opening-area" d="M${x(left.t).toFixed(1)},${seriesY(left.y).toFixed(1)} L${x(right.t).toFixed(1)},${seriesY(right.y).toFixed(1)} L${x(right.t).toFixed(1)},${baselineY.toFixed(1)} L${x(left.t).toFixed(1)},${baselineY.toFixed(1)} Z" fill="${color}" fill-opacity="0.16" stroke="none"/>`;
     const regions = [];
     for (let i = 1; i < points.length; i += 1) {
       const left = points[i - 1], right = points[i];
