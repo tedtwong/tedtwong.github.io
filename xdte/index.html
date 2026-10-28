@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
   <link rel="stylesheet" href="xdte.css?v=20261027-daily-pnl-simple">
-  <script defer src="xdte.js?v=20261028-entry-q-minus-p"></script>
+  <script defer src="xdte.js?v=20261028-distribution-comparison"></script>
 </head>
 <body>
   <header class="hero">
@@ -158,6 +158,14 @@
         <div class="panel__heading"><div><h3>Rejection reasons</h3><p>Explicit scanner-decision and path-confirmation reasons for the selected period.</p></div></div>
         <div id="rejection-history-chart" class="chart rejection-history-chart"></div>
         <p class="chart-note">Counts are observations per evaluation, not unique option contracts.</p>
+      </article>
+    </section>
+
+    <section aria-labelledby="distribution-comparison-heading">
+      <div class="section-heading"><h2 id="distribution-comparison-heading">Blended reference and option-implied distribution</h2></div>
+      <article class="panel"><label for="distribution-expiration">Expiration </label><select id="distribution-expiration"></select>
+        <div id="distribution-comparison-chart" class="chart"></div>
+        <p id="distribution-comparison-note" class="chart-note"></p>
       </article>
     </section>
 

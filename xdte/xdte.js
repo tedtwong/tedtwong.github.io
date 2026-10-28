@@ -1,3 +1,35 @@
+function renderDistributionComparison(data) {
+  const selector=document.querySelector("#distribution-expiration");
+  const chart=document.querySelector("#distribution-comparison-chart");
+  const note=document.querySelector("#distribution-comparison-note");
+  const rows=data?.expirations || [];
+  const previous=selector.value;
+  selector.replaceChildren(...rows.map(row => {
+    const option=document.createElement("option");option.value=row.expiration;
+    option.textContent=row.expiration.replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3");return option;
+  }));
+  if(rows.some(row=>row.expiration===previous))selector.value=previous;
+  function draw() {
+    const row=rows.find(row=>row.expiration===selector.value);
+    if(!row){chart.innerHTML='<p class="chart-empty">No matching blended-reference and risk-neutral curves are available in the latest snapshot.</p>';note.textContent="";return;}
+    const all=[...row.reference,...row.risk_neutral];
+    const xmin=Math.min(...all.map(p=>p.return_pct)),xmax=Math.max(...all.map(p=>p.return_pct));
+    const ymax=Math.max(...all.map(p=>p.density));
+    if(!(xmax>xmin && ymax>0)){chart.textContent="Invalid distribution grid.";return;}
+    const width=1050,height=420,left=70,right=25,top=25,bottom=65;
+    const x=v=>left+(v-xmin)/(xmax-xmin)*(width-left-right);
+    const y=v=>height-bottom-v/ymax*(height-top-bottom);
+    const line=points=>points.map((p,i)=>`${i?'L':'M'}${x(p.return_pct).toFixed(2)},${y(p.density).toFixed(2)}`).join(' ');
+    let axes='';
+    for(let i=0;i<=6;i++){const v=xmin+(xmax-xmin)*i/6;axes+=`<text x="${x(v)}" y="${height-bottom+23}" text-anchor="middle">${v.toFixed(1)}%</text>`;}
+    for(let i=0;i<=4;i++){const v=ymax*i/4;axes+=`<line x1="${left}" x2="${width-right}" y1="${y(v)}" y2="${y(v)}" stroke="#ddd"/><text x="${left-8}" y="${y(v)+4}" text-anchor="end">${v.toFixed(2)}</text>`;}
+    chart.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Blended reference versus risk-neutral terminal SPX return density">${axes}<path d="${line(row.reference)}" fill="none" stroke="#168a91" stroke-width="3"/><path d="${line(row.risk_neutral)}" fill="none" stroke="#8b5cf6" stroke-width="3"/><text x="${width/2}" y="${height-10}" text-anchor="middle">SPX return from snapshot level (%) at expiration</text><text transform="translate(17 ${height/2}) rotate(-90)" text-anchor="middle">Density per percentage point</text></svg>`;
+    const age=Math.max(Number(data.age_seconds)||0,(Date.now()-Date.parse(data.observed_at_et))/1000);
+    note.textContent=`As of ${data.observed_at_et} · ${age>180?'STALE — ':''}${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: blended reference. Purple: option-implied risk-neutral density. Risk-neutral probabilities are pricing measures, not real-world forecasts. Curves are sampled from stored fits without renormalizing their tails. Missing expirations are not replaced by older snapshots.`;
+  }
+  selector.onchange=draw;draw();
+}
+
 function settlementScenarioChart(target, scenario) {
   const node = document.querySelector(target);
   if (!node) return;
@@ -544,6 +576,7 @@ async function load() {
   const retrieved = await retrieveSnapshot();
   const data = retrieved.data;
   const pub = data.publication, daily = data.daily, ledger = data.ledger, funnel = daily.funnel, summary = ledger.summary;
+  renderDistributionComparison(data.distribution_comparison);
   const pnlSummary = daily.pnl_summary || {};
   const exitActivity = daily.exit_activity || {};
   const badge = document.querySelector("#status-badge");
