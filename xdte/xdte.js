@@ -761,6 +761,12 @@ async function load() {
     money: true, height: 465, includeZero: true, leftTickStep: 250, rightTickStep: 25,
     label: "Daily position and portfolio P&L with SPX", markers: positionMarkers,
   });
+  const dailyChartNode=document.querySelector("#daily-chart");
+  if(dailyChartNode && daily.stale_mark_count>0){
+    const warning=document.createElement("p");warning.className="chart-note";
+    warning.textContent=`TOTAL includes last valid accounting marks for ${daily.stale_mark_count} stale position(s); other positions continue updating.`;
+    dailyChartNode.appendChild(warning);
+  }
   table("#trade-table", [
     ["Position", "position"], ["Record type", "record_type"], ["Strategy", "strategy"], ["Entry DTE", "dte"],
     ["Status", "status"],
