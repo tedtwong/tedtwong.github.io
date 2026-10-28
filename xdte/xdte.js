@@ -681,6 +681,8 @@ async function load() {
     ["Entry (ET)", "entry_time_et", null, shortTime],
     ["Expiry", "expiration_date", null, shortDate],
     ["Exit (ET)", "exit_time_et", null, shortTime],
+    ["Modeled expected return", "modeled_expected_return", null, v => value(v, percent)],
+    ["Probability of full credit", "probability_of_full_credit", null, v => value(v, percent)],
     ["Total reserve", "total_short_reserve", null, v => value(v, money)],
     ["Short-call reserve", "short_call_reserve", null, v => value(v, money)],
     ["Short-put reserve", "short_put_reserve", null, v => value(v, money)], ["Maximum profit", "maximum_profit", pnlClass, v => value(v, money)], ["Base expected", "base_expected_net_pnl", pnlClass, v => value(v, money)],
