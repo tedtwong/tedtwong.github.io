@@ -73,22 +73,6 @@
         <div class="panel__heading"><div><h3>Today’s position P&amp;L</h3><p>Individual paper positions after estimated costs, with green entry triangles, red exit squares, the total as a thick dark-gray line at 50% opacity, and dashed grey SPX on the right axis. Position lines share colors by expiration: red nearest, progressing through the spectrum to violet furthest; individual lines are retained. TOTAL sums the displayed positions (including carryovers and positions closed today), excludes positions closed before this session, and uses each position’s lifetime P&amp;L. SPX area above its opening level is green; area below it is red.</p></div></div>
         <div id="daily-chart" class="chart"></div>
       </article>
-      <article class="panel">
-        <div class="panel__heading"><div><h3>Entries and exits</h3><p>Sanitized position summaries, including each position’s observed maximum and minimum unrealized P&amp;L over its holding period; option legs and raw quotes are excluded. Modeled expected return is expected net P&amp;L divided by total reserve; full-credit probability uses the saved blended reference, or a Black–Scholes fallback marked (BS), reconstructed from saved entry delta/IV when needed. A dash means neither estimate was recorded. Q−P is the saved entry-time risk-neutral minus model probability of finishing in the loss region, in percentage points. Positive values mean option prices assign more loss risk than the entry model. Historical rows retain their original model, which may predate the blended reference.</p></div></div>
-        <div id="trade-table" class="table-wrap"></div>
-      </article>
-      <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>Position outcome map</h3><p>Risk/reward boundaries, expected value, and observed P&amp;L for each filled position. Allocation is shown as a negative loss boundary; maximum profit is net of modeled expenses.</p></div></div>
-        <div id="position-outcome-chart" class="chart position-outcome-chart"></div>
-      </article>
-      <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>SPX settlement payoff scenarios</h3><p>Net lifetime P&amp;L at five-point SPX levels, ±3% around current SPX. Blue assumes every open position settles at that level; orange includes only positions expiring today. Later expirations retain no time value in this hypothetical scenario. This is not today’s ledger change or a forecast.</p></div></div>
-        <div id="settlement-scenario-chart" class="chart"></div>
-      </article>
-      <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>SPX settlement payoff scenarios (+1 trading day)</h3><p>Same five-point grid around current SPX. Blue includes current positions still outstanding at the next trading session; orange includes only that session's expirations. Earlier expirations are omitted. Hypothetical lifetime intrinsic payoff after fees, not a forecast of next-day marks or daily P&amp;L.</p></div></div>
-        <div id="settlement-scenario-next-chart" class="chart"></div>
-      </article>
     </section>
 
     <section class="status-section" aria-labelledby="trading-status-heading">
@@ -113,9 +97,69 @@
       </article>
     </section>
 
+    <section aria-labelledby="positions-heading">
+      <div class="section-heading"><div><p class="section-number">03</p><h2 id="positions-heading">Current positions</h2></div></div>
+      <article class="panel">
+        <div class="panel__heading"><div><h3>Entries and exits</h3><p>Sanitized position summaries, including each position’s observed maximum and minimum unrealized P&amp;L over its holding period; option legs and raw quotes are excluded. Modeled expected return is expected net P&amp;L divided by total reserve; full-credit probability uses the saved blended reference, or a Black–Scholes fallback marked (BS), reconstructed from saved entry delta/IV when needed. A dash means neither estimate was recorded. Q−P is the saved entry-time risk-neutral minus model probability of finishing in the loss region, in percentage points. Positive values mean option prices assign more loss risk than the entry model. Historical rows retain their original model, which may predate the blended reference.</p></div></div>
+        <div id="trade-table" class="table-wrap"></div>
+      </article>
+      <article class="panel chart-panel">
+        <div class="panel__heading"><div><h3>Position outcome map</h3><p>Risk/reward boundaries, expected value, and observed P&amp;L for each filled position. Allocation is shown as a negative loss boundary; maximum profit is net of modeled expenses.</p></div></div>
+        <div id="position-outcome-chart" class="chart position-outcome-chart"></div>
+      </article>
+      <article class="panel chart-panel">
+        <div class="panel__heading"><div><h3>SPX settlement payoff scenarios</h3><p>Net lifetime P&amp;L at five-point SPX levels, ±3% around current SPX. Blue assumes every open position settles at that level; orange includes only positions expiring today. Later expirations retain no time value in this hypothetical scenario. This is not today’s ledger change or a forecast.</p></div></div>
+        <div id="settlement-scenario-chart" class="chart"></div>
+      </article>
+      <article class="panel chart-panel">
+        <div class="panel__heading"><div><h3>SPX settlement payoff scenarios (+1 trading day)</h3><p>Same five-point grid around current SPX. Blue includes current positions still outstanding at the next trading session; orange includes only that session's expirations. Earlier expirations are omitted. Hypothetical lifetime intrinsic payoff after fees, not a forecast of next-day marks or daily P&amp;L.</p></div></div>
+        <div id="settlement-scenario-next-chart" class="chart"></div>
+      </article>
+    </section>
+
+    <section aria-labelledby="distribution-comparison-heading">
+      <div class="section-heading"><p class="section-number">04</p><h2 id="distribution-comparison-heading">Blended reference and option-implied distribution</h2></div>
+      <article class="panel"><label for="distribution-expiration">Expiration </label><select id="distribution-expiration"></select>
+        <div id="distribution-comparison-chart" class="chart"></div>
+        <p id="distribution-comparison-note" class="chart-note"></p>
+      </article>
+    </section>
+
+    <section aria-labelledby="funnel-history-heading">
+      <div class="section-heading">
+        <div><p class="section-number">05</p><h2 id="funnel-history-heading">Candidate funnel history</h2></div>
+        <p>Strategy and DTE progression through the research funnel, followed by the recorded reasons candidates did not advance.</p>
+      </div>
+      <article class="panel chart-panel">
+        <div class="panel__heading funnel-heading">
+          <div><h3>Candidate funnel by strategy and DTE</h3><p>Repeated evaluations are counted each time they pass through a scan. Open positions are the current snapshot.</p></div>
+          <div id="funnel-period-controls" class="period-controls" role="group" aria-label="Funnel history period">
+            <button type="button" data-funnel-period="day">Day</button>
+            <button type="button" data-funnel-period="week">Last 7 days</button>
+            <button type="button" data-funnel-period="month">Last 30 days</button>
+          </div>
+        </div>
+        <div id="funnel-history-chart" class="chart funnel-history-chart"></div>
+        <p id="funnel-history-note" class="chart-note"></p>
+      </article>
+      <article class="panel chart-panel">
+        <div class="panel__heading"><div><h3>Rejection reasons</h3><p>Explicit scanner-decision and path-confirmation reasons for the selected period.</p></div></div>
+        <div id="rejection-history-chart" class="chart rejection-history-chart"></div>
+        <p class="chart-note">Counts are observations per evaluation, not unique option contracts.</p>
+      </article>
+      <article class="panel">
+        <div class="panel__heading"><h3>Finalist return and full-credit probability percentiles</h3>
+          <div class="period-selector"><button type="button" data-percentile-period="day">Today</button><button type="button" data-percentile-period="three">Last 3 trading days</button><button type="button" data-percentile-period="week">Last 7 trading days</button></div>
+        </div>
+        <p id="candidate-percentile-window" class="chart-note"></p>
+        <div id="candidate-percentile-table" class="table-wrap"></div>
+        <p class="chart-note">Independent empirical 95th percentiles across recorded confirmed finalists, including rejected and capacity-blocked research candidates. Each candidate counts once per scan; repeat scans count separately. Raw return is modeled base edge / reserve (historical fallback: saved planned-loss return). Full-credit probability prefers the saved blended reference, with saved Black–Scholes fallback. Columns need not describe the same candidate. Small samples and changing models limit comparisons.</p>
+      </article>
+    </section>
+
     <section aria-labelledby="ledger-heading">
       <div class="section-heading">
-        <div><p class="section-number">03</p><h2 id="ledger-heading">Account ledger</h2></div>
+        <div><p class="section-number">06</p><h2 id="ledger-heading">Account ledger</h2></div>
         <p>Model-account capital, risk deployment, and portfolio outcomes.</p>
       </div>
       <div id="ledger-metrics" class="metric-grid"></div>
@@ -137,49 +181,9 @@
       <article class="panel chart-panel"><h3>Deployed reserve capacity — daily history</h3><p>Blue: total deployed reserves at session end (today: current). Orange: capital deployed by filled entries; green: reserves released by filled-position exits. Unfilled orders are excluded from deployment. Hover for starting reserves and cancelled/unfilled releases. Historical values use saved ledger allocations. Releases do not recycle the daily new-entry allowance.</p><div id="deployed-capacity-chart" class="chart"></div></article>
     </section>
 
-    <section aria-labelledby="funnel-history-heading">
-      <div class="section-heading">
-        <div><p class="section-number">04</p><h2 id="funnel-history-heading">Candidate funnel history</h2></div>
-        <p>Strategy and DTE progression through the research funnel, followed by the recorded reasons candidates did not advance.</p>
-      </div>
-      <article class="panel chart-panel">
-        <div class="panel__heading funnel-heading">
-          <div><h3>Candidate funnel by strategy and DTE</h3><p>Repeated evaluations are counted each time they pass through a scan. Open positions are the current snapshot.</p></div>
-          <div id="funnel-period-controls" class="period-controls" role="group" aria-label="Funnel history period">
-            <button type="button" data-funnel-period="day">Day</button>
-            <button type="button" data-funnel-period="week">Last 7 days</button>
-            <button type="button" data-funnel-period="month">Last 30 days</button>
-          </div>
-        </div>
-        <div id="funnel-history-chart" class="chart funnel-history-chart"></div>
-        <p id="funnel-history-note" class="chart-note"></p>
-      </article>
-      <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>Rejection reasons</h3><p>Explicit scanner-decision and path-confirmation reasons for the selected period.</p></div></div>
-        <div id="rejection-history-chart" class="chart rejection-history-chart"></div>
-        <p class="chart-note">Counts are observations per evaluation, not unique option contracts.</p>
-      </article>
-    </section>
-
-      <article class="panel">
-        <div class="panel__heading"><h3>Finalist return and full-credit probability percentiles</h3>
-          <div class="period-selector"><button type="button" data-percentile-period="day">Today</button><button type="button" data-percentile-period="three">Last 3 trading days</button><button type="button" data-percentile-period="week">Last 7 trading days</button></div>
-        </div>
-        <p id="candidate-percentile-window" class="chart-note"></p>
-        <div id="candidate-percentile-table" class="table-wrap"></div>
-        <p class="chart-note">Independent empirical 95th percentiles across recorded confirmed finalists, including rejected and capacity-blocked research candidates. Each candidate counts once per scan; repeat scans count separately. Raw return is modeled base edge / reserve (historical fallback: saved planned-loss return). Full-credit probability prefers the saved blended reference, with saved Black–Scholes fallback. Columns need not describe the same candidate. Small samples and changing models limit comparisons.</p>
-      </article>
-    <section aria-labelledby="distribution-comparison-heading">
-      <div class="section-heading"><h2 id="distribution-comparison-heading">Blended reference and option-implied distribution</h2></div>
-      <article class="panel"><label for="distribution-expiration">Expiration </label><select id="distribution-expiration"></select>
-        <div id="distribution-comparison-chart" class="chart"></div>
-        <p id="distribution-comparison-note" class="chart-note"></p>
-      </article>
-    </section>
-
     <section class="method" aria-labelledby="method-heading">
       <div class="section-heading">
-        <div><p class="section-number">05</p><h2 id="method-heading">Publication policy</h2></div>
+        <div><p class="section-number">07</p><h2 id="method-heading">Publication policy</h2></div>
       </div>
       <div class="method-grid">
         <p><strong>Paper trading only.</strong> These are simulated research results and do not represent a brokerage statement or live-trading performance.</p>
