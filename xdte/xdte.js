@@ -388,12 +388,17 @@ function portfolioDailyChart(target, rows, expectedHistory = [], intradayHistory
   }).join(" ");
   const expectedDots = rows.map((r,i)=>finite(r.expected_net_pnl) ? `<circle cx="${x(i)}" cy="${ry(r.expected_net_pnl)}" r="3" fill="#7c3aed"><title>${r.date}: cumulative saved expected net P&amp;L for settled trades ${money.format(r.expected_net_pnl)}</title></circle>` : "").join("");
   let previousMark = null;
+  let previousPoint = null;
+  const overnightSegments = [];
   const intradayPath = intraday.slice().sort((a,b)=>Date.parse(a.time_et)-Date.parse(b.time_et)).map(r=>{
     const day=r.time_et.slice(0,10), index=rows.findIndex(session=>session.date===day);
     const stamp=new Date(r.time_et), clock=r.time_et.slice(11,19).split(":").map(Number);
     const fraction=Math.max(0,Math.min(1,(clock[0]*60+clock[1]+clock[2]/60-570)/390));
     const px=pad.l+(index+.1+.8*fraction)*plotWidth/rows.length;
     const contiguous=previousMark && previousMark.time_et.slice(0,10)===day && stamp-Date.parse(previousMark.time_et)<=15*60*1000;
+    const point=`${px.toFixed(2)},${ry(r.net_pnl).toFixed(2)}`;
+    if(previousMark && previousMark.time_et.slice(0,10)!==day) overnightSegments.push(`M${previousPoint} L${point}`);
+    previousPoint=point;
     previousMark=r;
     return `${contiguous ? "L" : "M"}${px.toFixed(2)},${ry(r.net_pnl).toFixed(2)}`;
   }).join(" ");
@@ -403,7 +408,7 @@ function portfolioDailyChart(target, rows, expectedHistory = [], intradayHistory
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Daily realized P&amp;L bars, cumulative settled net P&amp;L and cumulative expected P&amp;L by trading session">
     ${grid}${rightTicks}
     <line data-zero-axis="left" x1="${pad.l}" x2="${width-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#7b8495" stroke-width="1.75"/>
-    ${bars}<path data-series="intraday-total" d="${intradayPath}" stroke="#707780" stroke-width="1.4" fill="none" vector-effect="non-scaling-stroke"/><path d="${path}" stroke="#333ed4" stroke-width="3" fill="none" vector-effect="non-scaling-stroke"/>${dots}<path data-series="expected" d="${expectedPath}" stroke="#7c3aed" stroke-dasharray="6 4" stroke-width="2.5" fill="none" vector-effect="non-scaling-stroke"/>${expectedDots}${labels}
+    ${bars}<path data-series="intraday-total" d="${intradayPath}" stroke="#707780" stroke-width="2.3" stroke-opacity="0.6" fill="none" vector-effect="non-scaling-stroke"/><path data-series="overnight-total" d="${overnightSegments.join(" ")}" stroke="#707780" stroke-width="2.3" stroke-opacity="0.6" stroke-dasharray="5 4" fill="none" vector-effect="non-scaling-stroke"/><path d="${path}" stroke="#333ed4" stroke-width="3" fill="none" vector-effect="non-scaling-stroke"/>${dots}<path data-series="expected" d="${expectedPath}" stroke="#7c3aed" stroke-dasharray="6 4" stroke-width="2.5" fill="none" vector-effect="non-scaling-stroke"/>${expectedDots}${labels}
     <text transform="translate(17,${pad.t+plotHeight/2}) rotate(-90)" text-anchor="middle" fill="#667085" font-size="12">Daily realized P&amp;L ($) · left</text>
     <text transform="translate(${width-12},${pad.t+plotHeight/2}) rotate(90)" text-anchor="middle" fill="#333ed4" font-size="12">Total / expected P&amp;L ($) · right</text>
     <text x="${width/2}" y="${height-10}" text-anchor="middle" fill="#667085" font-size="12">Trading sessions (ET; non-market days omitted)</text>
