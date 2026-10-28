@@ -190,6 +190,14 @@ function fullCreditProbability(probability, row) {
     : displayed;
 }
 
+function expiresToday(expiration, now = new Date()) {
+  if (typeof expiration !== "string") return false;
+  const normalized=expiration.replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3");
+  const parts=new Intl.DateTimeFormat("en-US", {timeZone:"America/New_York",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(now);
+  const part=type=>parts.find(p=>p.type===type).value;
+  return normalized === `${part("year")}-${part("month")}-${part("day")}`;
+}
+
 function table(target, columns, rows, options = {}) {
   const node = document.querySelector(target);
   const isCompactEmpty = !rows.length && options.compactEmpty;
@@ -199,7 +207,7 @@ function table(target, columns, rows, options = {}) {
     return;
   }
   node.innerHTML = `<table><thead><tr>${columns.map(c => `<th>${c[0]}</th>`).join("")}</tr></thead><tbody>${rows.map(row =>
-    `<tr>${columns.map(c => `<td class="${c[2] ? c[2](row[c[1]]) : ""}">${c[3] ? c[3](row[c[1]], row) : (row[c[1]] ?? "—")}</td>`).join("")}</tr>`
+    `<tr class="${target === "#trade-table" && expiresToday(row.expiration_date) ? "expiring-today" : ""}">${columns.map(c => `<td class="${c[2] ? c[2](row[c[1]]) : ""}">${c[3] ? c[3](row[c[1]], row) : (row[c[1]] ?? "—")}</td>`).join("")}</tr>`
   ).join("")}</tbody></table>`;
 }
 
