@@ -531,6 +531,7 @@ function renderCandidatePercentiles(history) {
   const selected=history?.[selectedPercentilePeriod] || {rows:[]};
   table("#candidate-percentile-table", [
     ["DTE","dte"], ["Strategy","strategy",null,v=>String(v).replaceAll("_"," ")],
+    ["Evaluation scope","evaluation_scope",null,v=>String(v || "EXECUTION_FINALIST").replaceAll("_"," ")],
     ["Finalists","finalist_samples"], ["Return samples","return_samples"],
     ["P95 raw expected return","raw_return_p95",null,v=>value(v,percent)],
     ["P95 duration-adjusted return","duration_adjusted_return_p95",null,v=>value(v,percent)],
