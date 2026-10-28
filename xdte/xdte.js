@@ -407,6 +407,8 @@ function positionOutcomeChart(target, rows) {
     (_, index) => minValue + index * tickStep,
   );
   const title = (row, label, value) => `${row.position} · ${row.strategy || "Strategy unavailable"} · ${label}: ${money.format(Number(value))}`;
+  const expiryBackgrounds = positions.map((row,index) => expiresToday(row.expiration_date)
+    ? `<rect x="0" y="${pad.t+index*rowHeight}" width="${width}" height="${rowHeight}" class="outcome-expiring-today"/>` : "").join("");
   const rowMarks = positions.map((row, index) => {
     const cy = y(index);
     const allocation = finite(row.allocation) ? -Number(row.allocation) : null;
@@ -434,6 +436,7 @@ function positionOutcomeChart(target, rows) {
     return `<text x="${pad.l-12}" y="${cy+4}" text-anchor="end" class="outcome-row-label">${row.position}</text>${envelope}${observed}${baseMark}${unrealizedMark}${realizedMark}`;
   }).join("");
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Position risk, expected value, and observed profit and loss map">
+    ${expiryBackgrounds}
     ${ticks.map(value => `<line x1="${x(value)}" x2="${x(value)}" y1="${pad.t-8}" y2="${height-pad.b}" class="outcome-grid${value === 0 ? " outcome-zero" : ""}"/><text x="${x(value)}" y="${height-14}" text-anchor="middle" class="outcome-axis-label">${money.format(value)}</text>`).join("")}
     ${rowMarks}
   </svg><div class="chart-legend outcome-legend">

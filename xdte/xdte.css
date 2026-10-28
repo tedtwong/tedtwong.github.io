@@ -208,3 +208,5 @@ footer { background: #e7e2d7; color: var(--muted); padding: 28px 18px; text-alig
 
 /* Subtle cue for positions expiring on the current New York calendar date. */
 #trade-table tbody tr.expiring-today td { background-color: #eceeed; }
+
+.outcome-expiring-today { fill: #eceeed; }
