@@ -72,15 +72,15 @@ function deployedCapacityChart(rows) {
   let marks=ticks.map(v=>`<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#ddd"/><text x="${pad.l-8}" y="${y(v)+4}" text-anchor="end" font-size="12">${money.format(v)}</text>`).join("");
   const labelEvery=Math.max(1,Math.ceil(rows.length/12));
   rows.forEach((r,i)=>{
-    const tooltip=`${r.date}: starting deployed ${money.format(r.opening_deployed)}; reserved ${money.format(r.reserved_today)}; exited ${money.format(r.exited_today)}; cancelled/unfilled releases ${money.format(r.cancelled_today)}; ending/current deployed ${money.format(r.deployed)}${r.status!=="COMPLETE"?" (incomplete history)":""}`;
+    const tooltip=`${r.date}: starting deployed ${money.format(r.opening_deployed)}; newly deployed ${money.format(r.reserved_today)}; exited ${money.format(r.exited_today)}; cancelled/unfilled releases ${money.format(r.cancelled_today)}; ending/current deployed ${money.format(r.deployed)}${r.status!=="COMPLETE"?" (incomplete history)":""}`;
     [[r.reserved_today,-.27,"#f76915"],[r.exited_today,.02,"#2fa236"]].forEach(([v,offset,color])=>{
       marks+=`<rect x="${x(i)+step*offset}" y="${y(v)}" width="${step*.25}" height="${Math.max(0,y(0)-y(v))}" fill="${color}" opacity=".65"><title>${tooltip}</title></rect>`;
     });
     if(i%labelEvery===0||i===rows.length-1) marks+=`<text transform="translate(${x(i)},${height-pad.b+18}) rotate(-30)" text-anchor="end" font-size="12">${r.date}</text>`;
   });
   marks+=`<path d="${rows.map((r,i)=>`${i?'L':'M'}${x(i)},${y(r.deployed)}`).join(' ')}" fill="none" stroke="#333ed4" stroke-width="3"/>`;
-  rows.forEach((r,i)=>{marks+=`<circle cx="${x(i)}" cy="${y(r.deployed)}" r="4" fill="#333ed4"><title>${r.date}: starting ${money.format(r.opening_deployed)}; ending/current deployed ${money.format(r.deployed)}; reserved ${money.format(r.reserved_today)}; exited ${money.format(r.exited_today)}; cancelled/unfilled ${money.format(r.cancelled_today)}</title></circle>`;});
-  node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Daily deployed reserve capital, new reservations and exited capacity">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#333ed4">Deployed reserves</span><span class="legend-key" style="--key:#f76915">New reservations</span><span class="legend-key" style="--key:#2fa236">Exited capacity</span></div>`;
+  rows.forEach((r,i)=>{marks+=`<circle cx="${x(i)}" cy="${y(r.deployed)}" r="4" fill="#333ed4"><title>${r.date}: starting ${money.format(r.opening_deployed)}; ending/current deployed ${money.format(r.deployed)}; newly deployed ${money.format(r.reserved_today)}; exited ${money.format(r.exited_today)}; cancelled/unfilled ${money.format(r.cancelled_today)}</title></circle>`;});
+  node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Daily deployed reserve capital, new filled deployment and exited capacity">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#333ed4">Deployed reserves</span><span class="legend-key" style="--key:#f76915">New filled deployment</span><span class="legend-key" style="--key:#2fa236">Exited capacity</span></div>`;
   if(rows.some(r=>r.status!=="COMPLETE"))node.insertAdjacentHTML("beforeend","<p>Warning: capacity history is incomplete.</p>");
 }
 
