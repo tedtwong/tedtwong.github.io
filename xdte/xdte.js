@@ -165,7 +165,6 @@ const positionMap = (zone, row = {}) => {
 const shortTime = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }).format(new Date(v)) : "—";
 const shortDate = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${v}T00:00:00Z`)) : "—";
 const liveFeedUrl = "https://storage.googleapis.com/ibkr-steamroller-coins-xdte-feed/latest.json";
-const refreshCooldownMilliseconds = 5 * 60 * 1000;
 const autoRefreshIntervalMilliseconds = 5 * 60 * 1000;
 const publicationRefreshDelayMilliseconds = 15 * 1000;
 function publicationWindowDelay(now = Date.now()) {
@@ -184,7 +183,6 @@ function scheduleAutomaticRefresh() {
   }, nextAutomaticRefreshDelay());
 }
 
-let refreshAvailableAt = 0;
 let lastSuccessfulRefreshAt = 0;
 let refreshInFlight = false;
 
@@ -616,9 +614,8 @@ async function retrieveSnapshot() {
 
 function updateRefreshButton() {
   const button = document.querySelector("#refresh-feed");
-  const remaining = Math.max(0, refreshAvailableAt - Date.now());
-  button.disabled = refreshInFlight || remaining > 0;
-  button.textContent = refreshInFlight ? "Refreshing…" : remaining > 0 ? `Refresh in ${Math.ceil(remaining / 60000)}m` : "Refresh P&L";
+  button.disabled = refreshInFlight;
+  button.textContent = refreshInFlight ? "Refreshing…" : "Refresh P&L";
 }
 
 async function load() {
@@ -826,14 +823,13 @@ async function refresh({ manual = false } = {}) {
   refreshInFlight = true;
   updateRefreshButton();
   try {
-    const publicationWait = publicationWindowDelay();
+    const publicationWait = manual ? 0 : publicationWindowDelay();
     if (publicationWait > 0) await new Promise(resolve => setTimeout(resolve, publicationWait));
     await load();
     lastSuccessfulRefreshAt = Date.now();
   } catch (error) {
     showLoadError(error, lastSuccessfulRefreshAt > 0);
   } finally {
-    if (manual) refreshAvailableAt = Date.now() + refreshCooldownMilliseconds;
     refreshInFlight = false;
     updateRefreshButton();
   }
@@ -872,9 +868,8 @@ function initializeThesisBanner() {
 initializeThesisBanner();
 
 document.querySelector("#refresh-feed").addEventListener("click", () => {
-  if (Date.now() >= refreshAvailableAt) refresh({ manual: true });
+  refresh({ manual: true });
 });
-setInterval(updateRefreshButton, 1000);
 scheduleAutomaticRefresh();
 document.addEventListener("visibilitychange", () => {
   if (!document.hidden && Date.now() - lastSuccessfulRefreshAt >= autoRefreshIntervalMilliseconds) refresh();
