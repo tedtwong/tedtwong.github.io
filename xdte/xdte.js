@@ -333,7 +333,7 @@ function lineChart(target, series, options = {}) {
   </svg><div class="chart-legend">${series.filter((s,i,a)=>a.findIndex(t=>(t.legendLabel||t.label)===(s.legendLabel||s.label))===i).map(s => `<span class="legend-key${s.dash ? " legend-key--dashed" : ""}" style="--key:${s.color}">${s.legendLabel || s.label}</span>`).join("")}</div>`;
 }
 
-function portfolioDailyChart(target, rows, expectedHistory = []) {
+function portfolioDailyChart(target, rows, expectedHistory = [], intradayHistory = []) {
   // Refuse old marked-to-market snapshots; only matched settled-trade totals.
   rows = (rows || []).filter(row => row.basis === "SETTLED_TRADES_ONLY");
   const node = document.querySelector(target);
@@ -342,6 +342,14 @@ function portfolioDailyChart(target, rows, expectedHistory = []) {
     node.innerHTML = '<div class="chart-empty">No portfolio session history is available.</div>';
     return;
   }
+  // Saved aggregate marks include closed positions at realized value plus open marks.
+  const intraday = intradayHistory.filter(r => r.time_et && finite(r.net_pnl));
+  const sessions = new Map(rows.map(r => [r.date, r]));
+  intraday.forEach(r => {
+    const day = r.time_et.slice(0, 10);
+    if (!sessions.has(day)) sessions.set(day, {date:day, realized_net_pnl:null, net_pnl:null, expected_net_pnl:null});
+  });
+  rows = [...sessions.values()].sort((a,b)=>a.date.localeCompare(b.date));
   const width = 1000, height = 365, pad = {l: 96, r: 100, t: 30, b: 66};
   const plotWidth = width-pad.l-pad.r, plotHeight = height-pad.t-pad.b;
   const x = i => pad.l+(i+.5)*plotWidth/rows.length;
@@ -352,7 +360,7 @@ function portfolioDailyChart(target, rows, expectedHistory = []) {
     const step = (ratio<=1 ? 1 : ratio<=2 ? 2 : ratio<=5 ? 5 : 10)*power;
     return {maximum: Math.ceil(maximum/step)*step, step};
   };
-  const left = bounds(rows.map(r=>r.realized_net_pnl)), right = bounds(rows.flatMap(r=>[r.net_pnl,r.expected_net_pnl]));
+  const left = bounds(rows.map(r=>r.realized_net_pnl)), right = bounds([...rows.flatMap(r=>[r.net_pnl,r.expected_net_pnl]), ...intraday.map(r=>r.net_pnl)]);
   const scale = (v,b) => pad.t+(b.maximum-Number(v))/(2*b.maximum)*plotHeight;
   const y = v=>scale(v,left), ry = v=>scale(v,right);
   const ticks = b => Array.from({length:2*Math.round(b.maximum/b.step)+1},(_,i)=>-b.maximum+i*b.step);
@@ -379,17 +387,27 @@ function portfolioDailyChart(target, rows, expectedHistory = []) {
     return `${move}${x(i).toFixed(2)},${ry(r.expected_net_pnl).toFixed(2)}`;
   }).join(" ");
   const expectedDots = rows.map((r,i)=>finite(r.expected_net_pnl) ? `<circle cx="${x(i)}" cy="${ry(r.expected_net_pnl)}" r="3" fill="#7c3aed"><title>${r.date}: cumulative saved expected net P&amp;L for settled trades ${money.format(r.expected_net_pnl)}</title></circle>` : "").join("");
+  let previousMark = null;
+  const intradayPath = intraday.slice().sort((a,b)=>Date.parse(a.time_et)-Date.parse(b.time_et)).map(r=>{
+    const day=r.time_et.slice(0,10), index=rows.findIndex(session=>session.date===day);
+    const stamp=new Date(r.time_et), clock=r.time_et.slice(11,19).split(":").map(Number);
+    const fraction=Math.max(0,Math.min(1,(clock[0]*60+clock[1]+clock[2]/60-570)/390));
+    const px=pad.l+(index+.1+.8*fraction)*plotWidth/rows.length;
+    const contiguous=previousMark && previousMark.time_et.slice(0,10)===day && stamp-Date.parse(previousMark.time_et)<=15*60*1000;
+    previousMark=r;
+    return `${contiguous ? "L" : "M"}${px.toFixed(2)},${ry(r.net_pnl).toFixed(2)}`;
+  }).join(" ");
   const dateFormat = new Intl.DateTimeFormat("en-US",{month:"short",day:"numeric",timeZone:"UTC"});
   const interval = Math.max(1,Math.ceil(rows.length/8));
   const labels = rows.map((r,i)=>(i%interval===0 || i===rows.length-1) ? `<text x="${x(i)}" y="${height-39}" text-anchor="middle" fill="#667085" font-size="12">${dateFormat.format(new Date(r.date+"T12:00:00Z"))}</text>` : "").join("");
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Daily realized P&amp;L bars, cumulative settled net P&amp;L and cumulative expected P&amp;L by trading session">
     ${grid}${rightTicks}
     <line data-zero-axis="left" x1="${pad.l}" x2="${width-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#7b8495" stroke-width="1.75"/>
-    ${bars}<path d="${path}" stroke="#333ed4" stroke-width="3" fill="none" vector-effect="non-scaling-stroke"/>${dots}<path data-series="expected" d="${expectedPath}" stroke="#7c3aed" stroke-dasharray="6 4" stroke-width="2.5" fill="none" vector-effect="non-scaling-stroke"/>${expectedDots}${labels}
+    ${bars}<path data-series="intraday-total" d="${intradayPath}" stroke="#707780" stroke-width="1.4" fill="none" vector-effect="non-scaling-stroke"/><path d="${path}" stroke="#333ed4" stroke-width="3" fill="none" vector-effect="non-scaling-stroke"/>${dots}<path data-series="expected" d="${expectedPath}" stroke="#7c3aed" stroke-dasharray="6 4" stroke-width="2.5" fill="none" vector-effect="non-scaling-stroke"/>${expectedDots}${labels}
     <text transform="translate(17,${pad.t+plotHeight/2}) rotate(-90)" text-anchor="middle" fill="#667085" font-size="12">Daily realized P&amp;L ($) · left</text>
     <text transform="translate(${width-12},${pad.t+plotHeight/2}) rotate(90)" text-anchor="middle" fill="#333ed4" font-size="12">Total / expected P&amp;L ($) · right</text>
     <text x="${width/2}" y="${height-10}" text-anchor="middle" fill="#667085" font-size="12">Trading sessions (ET; non-market days omitted)</text>
-  </svg><div class="chart-legend"><span class="legend-key" style="--key:#2fa236">Positive realized P&amp;L · left</span><span class="legend-key" style="--key:#dc2626">Negative realized P&amp;L · left</span><span class="legend-key" style="--key:#333ed4">Cumulative settled net P&amp;L · right</span><span class="legend-key" style="--key:#7c3aed">Expected P&amp;L (dashed) · settled trades · right</span></div>`;
+  </svg><div class="chart-legend"><span class="legend-key" style="--key:#2fa236">Positive realized P&amp;L · left</span><span class="legend-key" style="--key:#dc2626">Negative realized P&amp;L · left</span><span class="legend-key" style="--key:#333ed4">Cumulative settled net P&amp;L · right</span><span class="legend-key" style="--key:#7c3aed">Expected P&amp;L (dashed) · settled trades · right</span><span class="legend-key" style="--key:#707780">Total P&amp;L including unrealized · intraday · right</span></div>`;
 }
 
 function positionOutcomeChart(target, rows) {
@@ -804,7 +822,7 @@ async function load() {
     ["Average return / trade", value(averages.average_return, percent), pnlClass(averages.average_return)],
     ["Average duration / trade", averages.average_duration_hours == null ? "—" : `${number.format(averages.average_duration_hours)} hours`],
   ]);
-  portfolioDailyChart("#portfolio-chart", ledger.portfolio_daily || []);
+  portfolioDailyChart("#portfolio-chart", ledger.portfolio_daily || [], [], ledger.portfolio_pnl || []);
   const settledHistory = (ledger.portfolio_daily || []).filter(row => row.basis === "SETTLED_TRADES_ONLY");
   const settledCoverage = settledHistory.at(-1);
   document.querySelector("#expected-entry-coverage").textContent = settledCoverage
