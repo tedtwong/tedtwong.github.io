@@ -41,12 +41,11 @@ function settlementScenarioChart(target, scenario) {
   const allLabel = scenario.forward_session ? "Outstanding at target · hypothetical settlement" : "All open · hypothetical settlement";
   const width=1000,height=390,p={l:95,r:30,t:30,b:65};
   const low=rows[0].spx_level,high=rows[rows.length-1].spx_level;
-  let ymin=Math.min(0,...rows.flatMap(r=>[r.all_open_net_pnl,r.expiring_today_net_pnl]));
-  let ymax=Math.max(0,...rows.flatMap(r=>[r.all_open_net_pnl,r.expiring_today_net_pnl]));
-  const extra=Math.max(1,(ymax-ymin)*.08);ymin-=extra;ymax+=extra;
+  const extent=Math.max(1,...rows.flatMap(r=>[Math.abs(r.all_open_net_pnl),Math.abs(r.expiring_today_net_pnl)]))*1.08;
+  const ymin=-extent,ymax=extent;
   const x=v=>p.l+(v-low)/(high-low||1)*(width-p.l-p.r),y=v=>p.t+(ymax-v)/(ymax-ymin)*(height-p.t-p.b);
   let marks="";
-  for(let i=0;i<=5;i++){const v=ymin+(ymax-ymin)*i/5;marks+=`<line x1="${p.l}" x2="${width-p.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e4e7ec"/><text x="${p.l-10}" y="${y(v)+4}" text-anchor="end" font-size="12">${money.format(v)}</text>`;}
+  for(let i=0;i<=6;i++){const v=ymin+(ymax-ymin)*i/6;marks+=`<line x1="${p.l}" x2="${width-p.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e4e7ec"/><text x="${p.l-10}" y="${y(v)+4}" text-anchor="end" font-size="12">${money.format(v)}</text>`;}
   const tickEvery=Math.max(1,Math.ceil(rows.length/9));
   rows.forEach((r,i)=>{if(i%tickEvery===0||i===rows.length-1)marks+=`<text x="${x(r.spx_level)}" y="${height-p.b+24}" text-anchor="middle" font-size="12">${number.format(r.spx_level)}</text>`;});
   marks+=`<line x1="${p.l}" x2="${width-p.r}" y1="${y(0)}" y2="${y(0)}" stroke="#475467" stroke-width="1.5"/>`;
