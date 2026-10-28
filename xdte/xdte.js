@@ -150,6 +150,13 @@ function summaryMetrics(target, items) {
   ).join("");
 }
 
+function fullCreditProbability(probability, row) {
+  const displayed = value(probability, percent);
+  return finite(probability) && row.probability_of_full_credit_source === "BLACK_SCHOLES"
+    ? `${displayed} <span title="Saved Black–Scholes estimate used because no blended-reference value was recorded">(BS)</span>`
+    : displayed;
+}
+
 function table(target, columns, rows, options = {}) {
   const node = document.querySelector(target);
   const isCompactEmpty = !rows.length && options.compactEmpty;
@@ -682,7 +689,7 @@ async function load() {
     ["Expiry", "expiration_date", null, shortDate],
     ["Exit (ET)", "exit_time_et", null, shortTime],
     ["Modeled expected return", "modeled_expected_return", null, v => value(v, percent)],
-    ["Probability of full credit", "probability_of_full_credit", null, v => value(v, percent)],
+    ["Probability of full credit", "probability_of_full_credit", null, fullCreditProbability],
     ["Total reserve", "total_short_reserve", null, v => value(v, money)],
     ["Short-call reserve", "short_call_reserve", null, v => value(v, money)],
     ["Short-put reserve", "short_put_reserve", null, v => value(v, money)], ["Maximum profit", "maximum_profit", pnlClass, v => value(v, money)], ["Base expected", "base_expected_net_pnl", pnlClass, v => value(v, money)],
