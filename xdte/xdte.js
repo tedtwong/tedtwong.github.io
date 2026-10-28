@@ -108,6 +108,7 @@ const number = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 });
 const percent = new Intl.NumberFormat("en-US", { style: "percent", maximumFractionDigits: 2 });
 
 const value = (v, formatter = number) => v === null || v === undefined || Number.isNaN(Number(v)) ? "—" : formatter.format(Number(v));
+const capacityClass = v => v !== null && v !== undefined && v !== "" && Number.isFinite(Number(v)) && Number(v) <= 0 ? "negative" : "";
 const pnlClass = v => Number(v) > 0 ? "positive" : Number(v) < 0 ? "negative" : "";
 const slippageClass = v => Number(v) < 0 ? "positive" : Number(v) > 0 ? "negative" : "";
 const positionZoneBadge = zone => {
@@ -678,17 +679,17 @@ async function load() {
   ]);
   deployedCapacityChart(ledger.deployed_capacity_history || []);
   metrics("#capacity-metrics", [
-    ["Reserved capacity", value(ledger.capacity.total_position_reserve ?? ledger.capacity.aggregate_reserved_capacity ?? summary.reserved_risk, money)],
-    ["Total put reserve", value(ledger.capacity.total_put_reserve, money)],
-    ["Total call reserve", value(ledger.capacity.total_call_reserve, money)],
-    ["Lowest nearby-interval headroom", value(ledger.capacity.nearby_interval_headroom, money)],
-    ["Capacity reserved today", value(ledger.capacity.capacity_reserved_today, money)],
-    ["Total capacity available", value(ledger.capacity.aggregate_available_capacity, money)],
-    ["Available new-entry capacity now", value(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity, money)],
-    ["Effective capacity unlocked", value(ledger.capacity.timed_capacity_released, money)],
-    ["Carried from prior window (25%)", value(ledger.capacity.timed_capacity_carried_forward, money)],
-    ["Unused capacity forfeited today", value(ledger.capacity.timed_capacity_forfeited, money)],
-    ["Long-dated (4+ DTE) capacity available", value(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity, money)],
+    ["Reserved capacity", value(ledger.capacity.total_position_reserve ?? ledger.capacity.aggregate_reserved_capacity ?? summary.reserved_risk, money), capacityClass(ledger.capacity.total_position_reserve ?? ledger.capacity.aggregate_reserved_capacity ?? summary.reserved_risk)],
+    ["Total put reserve", value(ledger.capacity.total_put_reserve, money), capacityClass(ledger.capacity.total_put_reserve)],
+    ["Total call reserve", value(ledger.capacity.total_call_reserve, money), capacityClass(ledger.capacity.total_call_reserve)],
+    ["Lowest nearby-interval headroom", value(ledger.capacity.nearby_interval_headroom, money), capacityClass(ledger.capacity.nearby_interval_headroom)],
+    ["Capacity reserved today", value(ledger.capacity.capacity_reserved_today, money), capacityClass(ledger.capacity.capacity_reserved_today)],
+    ["Total capacity available", value(ledger.capacity.aggregate_available_capacity, money), capacityClass(ledger.capacity.aggregate_available_capacity)],
+    ["Available new-entry capacity now", value(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity, money), capacityClass(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity)],
+    ["Effective capacity unlocked", value(ledger.capacity.timed_capacity_released, money), capacityClass(ledger.capacity.timed_capacity_released)],
+    ["Carried from prior window (25%)", value(ledger.capacity.timed_capacity_carried_forward, money), capacityClass(ledger.capacity.timed_capacity_carried_forward)],
+    ["Unused capacity forfeited today", value(ledger.capacity.timed_capacity_forfeited, money), capacityClass(ledger.capacity.timed_capacity_forfeited)],
+    ["Long-dated (4+ DTE) capacity available", value(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity, money), capacityClass(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity)],
   ]);
   const positionSeries = [...(daily.position_pnl || [])].sort((a,b) => {
     const dateKey = item => /^\d{4}-\d{2}-\d{2}$/.test(item.exit_date_group || "") ? item.exit_date_group : "9999-99-99";
