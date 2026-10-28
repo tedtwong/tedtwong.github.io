@@ -690,6 +690,7 @@ async function load() {
     ["Exit (ET)", "exit_time_et", null, shortTime],
     ["Modeled expected return", "modeled_expected_return", null, v => value(v, percent)],
     ["Probability of full credit", "probability_of_full_credit", null, fullCreditProbability],
+    ["Q−P (pp)", "entry_q_minus_p", null, v => v === null || v === undefined ? "—" : `${Number(v) >= 0 ? "+" : ""}${(Number(v) * 100).toFixed(2)} pp`],
     ["Total reserve", "total_short_reserve", null, v => value(v, money)],
     ["Short-call reserve", "short_call_reserve", null, v => value(v, money)],
     ["Short-put reserve", "short_put_reserve", null, v => value(v, money)], ["Maximum profit", "maximum_profit", pnlClass, v => value(v, money)], ["Base expected", "base_expected_net_pnl", pnlClass, v => value(v, money)],
