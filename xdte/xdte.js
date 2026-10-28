@@ -167,6 +167,23 @@ const shortDate = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", da
 const liveFeedUrl = "https://storage.googleapis.com/ibkr-steamroller-coins-xdte-feed/latest.json";
 const refreshCooldownMilliseconds = 5 * 60 * 1000;
 const autoRefreshIntervalMilliseconds = 5 * 60 * 1000;
+const publicationRefreshDelayMilliseconds = 15 * 1000;
+function publicationWindowDelay(now = Date.now()) {
+  const offset = now % autoRefreshIntervalMilliseconds;
+  return offset < publicationRefreshDelayMilliseconds ? publicationRefreshDelayMilliseconds - offset : 0;
+}
+function nextAutomaticRefreshDelay(now = Date.now()) {
+  const boundary = Math.floor(now / autoRefreshIntervalMilliseconds) * autoRefreshIntervalMilliseconds;
+  const target = boundary + publicationRefreshDelayMilliseconds;
+  return (target > now ? target : target + autoRefreshIntervalMilliseconds) - now;
+}
+function scheduleAutomaticRefresh() {
+  setTimeout(() => {
+    scheduleAutomaticRefresh();
+    if (!document.hidden) refresh();
+  }, nextAutomaticRefreshDelay());
+}
+
 let refreshAvailableAt = 0;
 let lastSuccessfulRefreshAt = 0;
 let refreshInFlight = false;
@@ -809,6 +826,8 @@ async function refresh({ manual = false } = {}) {
   refreshInFlight = true;
   updateRefreshButton();
   try {
+    const publicationWait = publicationWindowDelay();
+    if (publicationWait > 0) await new Promise(resolve => setTimeout(resolve, publicationWait));
     await load();
     lastSuccessfulRefreshAt = Date.now();
   } catch (error) {
@@ -856,9 +875,7 @@ document.querySelector("#refresh-feed").addEventListener("click", () => {
   if (Date.now() >= refreshAvailableAt) refresh({ manual: true });
 });
 setInterval(updateRefreshButton, 1000);
-setInterval(() => {
-  if (!document.hidden) refresh();
-}, autoRefreshIntervalMilliseconds);
+scheduleAutomaticRefresh();
 document.addEventListener("visibilitychange", () => {
   if (!document.hidden && Date.now() - lastSuccessfulRefreshAt >= autoRefreshIntervalMilliseconds) refresh();
 });
