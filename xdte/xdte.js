@@ -167,7 +167,7 @@ const shortTime = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", da
 const shortDate = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${v}T00:00:00Z`)) : "—";
 const liveFeedUrl = "https://storage.googleapis.com/ibkr-steamroller-coins-xdte-feed/latest.json";
 const autoRefreshIntervalMilliseconds = 5 * 60 * 1000;
-const publicationRefreshDelayMilliseconds = 15 * 1000;
+const publicationRefreshDelayMilliseconds = 90 * 1000;
 function publicationWindowDelay(now = Date.now()) {
   const offset = now % autoRefreshIntervalMilliseconds;
   return offset < publicationRefreshDelayMilliseconds ? publicationRefreshDelayMilliseconds - offset : 0;
@@ -186,6 +186,7 @@ function scheduleAutomaticRefresh() {
 
 let lastSuccessfulRefreshAt = 0;
 let refreshInFlight = false;
+let lastRenderedPublicationAt = 0;
 
 function metrics(target, items) {
   document.querySelector(target).innerHTML = items.map(([label, display, className = ""]) =>
@@ -622,6 +623,10 @@ function updateRefreshButton() {
 async function load() {
   const retrieved = await retrieveSnapshot();
   const data = retrieved.data;
+  const publicationAt=Date.parse(data.publication?.published_at_et || '');
+  if(!Number.isFinite(publicationAt))throw new Error('Snapshot publication timestamp is invalid');
+  if(publicationAt<lastRenderedPublicationAt)return lastRenderedPublicationAt;
+
   const pub = data.publication, daily = data.daily, ledger = data.ledger, funnel = daily.funnel, summary = ledger.summary;
   renderDistributionComparison(data.distribution_comparison);
   renderCandidatePercentiles(data.daily.candidate_percentiles);
@@ -651,7 +656,7 @@ async function load() {
   }
   document.querySelector("#as-of").textContent = `Trading date ${pub.trade_date} · published ${shortTime(pub.published_at_et)} ET`;
   document.querySelector("#footer-date").textContent = `Snapshot ${pub.trade_date}`;
-  document.querySelector("#feed-status").textContent = `Source: ${retrieved.source} · refreshes automatically every five minutes`;
+  document.querySelector("#feed-status").textContent = `Source: ${retrieved.source} · refreshes automatically every five minutes after a 90-second publication allowance`;
   const warning = document.querySelector("#data-warning");
   if (marketDataStatus === "MARKET_CLOSED") {
     warning.classList.remove("hidden");
@@ -823,6 +828,8 @@ async function load() {
     ["Dimension", "dimension"], ["Group", "group"], ["Trades", "trades"], ["Win rate", "win_rate", null, v => value(v, percent)],
     ["Total net ($)", "net_pnl", pnlClass, v => value(v, money)], ["Net return (%)", "net_return_on_deployed_capital", pnlClass, v => value(v, percent)], ["Expectancy / trade", "expectancy_return_per_trade", pnlClass, v => value(v, percent)],
   ], groups);
+  lastRenderedPublicationAt=publicationAt;
+  return publicationAt;
 }
 
 async function refresh({ manual = false } = {}) {
@@ -832,7 +839,14 @@ async function refresh({ manual = false } = {}) {
   try {
     const publicationWait = manual ? 0 : publicationWindowDelay();
     if (publicationWait > 0) await new Promise(resolve => setTimeout(resolve, publicationWait));
-    await load();
+    const expectedBoundary=Math.floor(Date.now()/autoRefreshIntervalMilliseconds)*autoRefreshIntervalMilliseconds;
+    let publishedAt=await load();
+    // A slow publisher may finish after the normal 90-second grace.
+    // Retry only automatic refreshes; manual requests always fetch immediately.
+    for(let retry=0; !manual && publishedAt<expectedBoundary && retry<3; retry++){
+      await new Promise(resolve=>setTimeout(resolve,20000));
+      publishedAt=await load();
+    }
     lastSuccessfulRefreshAt = Date.now();
   } catch (error) {
     showLoadError(error, lastSuccessfulRefreshAt > 0);
