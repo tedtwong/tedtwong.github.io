@@ -526,6 +526,25 @@ function rejectionBarChart(target, rows) {
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Recorded rejection reasons">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:${colors["Scanner decision"]}">Scanner decision</span><span class="legend-key" style="--key:${colors["Path confirmation"]}">Path confirmation</span></div>`;
 }
 
+let selectedPercentilePeriod = "day";
+function renderCandidatePercentiles(history) {
+  const selected=history?.[selectedPercentilePeriod] || {rows:[]};
+  table("#candidate-percentile-table", [
+    ["DTE","dte"], ["Strategy","strategy",null,v=>String(v).replaceAll("_"," ")],
+    ["Finalists","finalist_samples"], ["Return samples","return_samples"],
+    ["P95 raw expected return","raw_return_p95",null,v=>value(v,percent)],
+    ["P95 duration-adjusted return","duration_adjusted_return_p95",null,v=>value(v,percent)],
+    ["P95 full-credit probability","full_credit_probability_p95",null,v=>value(v,percent)],
+    ["Probability samples","probability_samples"], ["Reference samples","reference_probability_samples"],
+    ["BS fallback samples","bs_probability_samples"],
+  ], selected.rows || []);
+  document.querySelectorAll("[data-percentile-period]").forEach(button=>{
+    button.classList.toggle("is-active",button.dataset.percentilePeriod===selectedPercentilePeriod);
+    button.onclick=()=>{selectedPercentilePeriod=button.dataset.percentilePeriod;renderCandidatePercentiles(history);};
+  });
+  document.querySelector("#candidate-percentile-window").textContent=selected.start_date ? `${selected.start_date} through ${selected.end_date} · ${selected.trading_days} trading day(s)` : "No persisted metrics available.";
+}
+
 let selectedFunnelPeriod = "day";
 function renderFunnelHistory(history) {
   const selected = history?.[selectedFunnelPeriod] || { funnel: [], rejections: [] };
@@ -589,6 +608,7 @@ async function load() {
   const data = retrieved.data;
   const pub = data.publication, daily = data.daily, ledger = data.ledger, funnel = daily.funnel, summary = ledger.summary;
   renderDistributionComparison(data.distribution_comparison);
+  renderCandidatePercentiles(data.daily.candidate_percentiles);
   const pnlSummary = daily.pnl_summary || {};
   const exitActivity = daily.exit_activity || {};
   const badge = document.querySelector("#status-badge");
