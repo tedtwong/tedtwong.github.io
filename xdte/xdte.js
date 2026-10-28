@@ -519,7 +519,7 @@ function funnelHeatmap(target, rows) {
     const count = lookup.get([stage, label].join("||")) || 0;
     const intensity = count ? .14 + .86 * Math.log1p(count) / Math.log1p(maximum) : 0;
     const x = pad.l + columnIndex * cellWidth, y = pad.t + rowIndex * cellHeight;
-    return `<rect x="${x}" y="${y}" width="${cellWidth-3}" height="${cellHeight-3}" rx="3" fill="#333ed4" fill-opacity="${intensity.toFixed(3)}"><title>${escapeText(stage)} · ${escapeText(label)}: ${number.format(count)}</title></rect>${count ? `<text x="${x+(cellWidth-3)/2}" y="${y+21}" text-anchor="middle" fill="${intensity > .56 ? "white" : "#172033"}" font-size="11" font-weight="700">${number.format(count)}</text>` : ""}`;
+    return `<rect x="${x}" y="${y}" width="${cellWidth-3}" height="${cellHeight-3}" rx="3" fill="#333ed4" style="fill-opacity:${intensity.toFixed(3)}"><title>${escapeText(stage)} · ${escapeText(label)}: ${number.format(count)}</title></rect>${count ? `<text x="${x+(cellWidth-3)/2}" y="${y+21}" text-anchor="middle" fill="${intensity > .56 ? "white" : "#172033"}" font-size="11" font-weight="700">${number.format(count)}</text>` : ""}`;
   })).join("");
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Candidate funnel counts by strategy and DTE">
     ${stages.map((stage, index) => `<text transform="translate(${pad.l + index*cellWidth + 16},${pad.t-12}) rotate(-38)" font-size="12" font-weight="700" fill="#667085">${escapeText(stage)}</text>`).join("")}

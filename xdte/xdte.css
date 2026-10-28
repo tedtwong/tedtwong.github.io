@@ -210,3 +210,23 @@ footer { background: #e7e2d7; color: var(--muted); padding: 28px 18px; text-alig
 #trade-table tbody tr.expiring-today td { background-color: #eceeed; }
 
 .outcome-expiring-today { fill: #eceeed; }
+
+/* Shared visual opacity: data marks soften, labels and axes stay crisp. */
+.chart svg :is(path, circle, rect, polygon):not(.outcome-expiring-today) {
+  fill-opacity: .6;
+  stroke-opacity: .6;
+  opacity: 1;
+}
+.chart svg line:not(.outcome-grid):not(.outcome-zero):not([stroke="#e4dfd6"]):not([stroke="#e4e7ec"]):not([stroke="#ddd"]):not([stroke="#7b8495"]):not([stroke="#475467"]):not([stroke="#667085"]) {
+  stroke-opacity: .6;
+}
+/* Heatmap intensity encodes counts; preserve that scale under the shared tint. */
+#funnel-history-chart svg rect { fill-opacity: inherit; opacity: .6; }
+.position-map :is(.risk-green, .risk-orange, .risk-red) { stroke-opacity: .6; }
+.position-map circle { fill-opacity: .6; stroke-opacity: .6; }
+.legend-key::before, .legend-symbol { opacity: .6; }
+.position-zone--green { background: rgb(35 122 59 / 60%); color: #172033; }
+.position-zone--yellow { background: rgb(228 205 22 / 60%); color: #292500; }
+.position-zone--orange { background: rgb(196 104 19 / 60%); color: #172033; }
+.position-zone--red { background: rgb(180 35 24 / 60%); color: #172033; }
+.position-zone--unavailable { background: rgb(104 114 125 / 60%); color: #172033; }
