@@ -152,7 +152,7 @@ function summaryMetrics(target, items) {
 
 function fullCreditProbability(probability, row) {
   const displayed = value(probability, percent);
-  return finite(probability) && row.probability_of_full_credit_source === "BLACK_SCHOLES"
+  return probability !== null && probability !== undefined && Number.isFinite(Number(probability)) && row.probability_of_full_credit_source === "BLACK_SCHOLES"
     ? `${displayed} <span title="Saved Black–Scholes estimate used because no blended-reference value was recorded">(BS)</span>`
     : displayed;
 }
