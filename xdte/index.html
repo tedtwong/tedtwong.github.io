@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
   <link rel="stylesheet" href="xdte.css?v=20261028-original-settlement-shading">
-  <script defer src="xdte.js?v=20261028-darker-daily-total"></script>
+  <script defer src="xdte.js?v=20261029-full-credit-results"></script>
 </head>
 <body>
   <header class="hero">
@@ -176,6 +176,7 @@
       <article class="panel">
         <div class="panel__heading"><div><h3>Realized performance</h3><p>Settled paper trades after recorded transaction costs. Net return is realized net P&amp;L divided by total saved deployed allocations; expectancy is the average individual trade return. Each reuse of capital counts as a new deployment. Missing allocations are unavailable; these are not NAV or annualized returns.</p></div></div>
         <div id="performance-metrics" class="metric-grid metric-grid--compact"></div>
+        <p id="full-credit-note" class="chart-note"></p>
         <div id="performance-table" class="table-wrap"></div>
       </article>
       <article class="panel chart-panel"><h3>Deployed reserve capacity — daily history</h3><p>Blue: total deployed reserves at session end (today: current). Orange: capital deployed by filled entries; green: reserves released by filled-position exits. Unfilled orders are excluded from deployment. Hover for starting reserves and cancelled/unfilled releases. Historical values use saved ledger allocations. Releases do not recycle the daily new-entry allowance.</p><div id="deployed-capacity-chart" class="chart"></div></article>

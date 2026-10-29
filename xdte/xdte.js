@@ -844,8 +844,10 @@ async function load() {
   const perf = ledger.performance;
   metrics("#performance-metrics", [
     ["Settled trades", value(perf.settled_trades)], ["Trading days", value(perf.trading_days)], ["Total net P&L ($)", value(perf.total_net_pnl, money), pnlClass(perf.total_net_pnl)], ["Net return on deployed capital", value(perf.net_return_on_deployed_capital, percent), pnlClass(perf.net_return_on_deployed_capital)],
-    ["Expectancy / trade", value(perf.expectancy_return_per_trade, percent), pnlClass(perf.expectancy_return_per_trade)], ["Win rate", value(perf.trade_win_rate, percent)], ["Max realized drawdown", value(perf.maximum_realized_drawdown, money)], ["Max daily-close drawdown", value(perf.maximum_daily_drawdown, money)],
+    ["Expectancy / trade", value(perf.expectancy_return_per_trade, percent), pnlClass(perf.expectancy_return_per_trade)], ["Win rate", value(perf.trade_win_rate, percent)], ["Full-credit (%)", value(perf.full_credit_rate, percent)], ["Max realized drawdown", value(perf.maximum_realized_drawdown, money)], ["Max daily-close drawdown", value(perf.maximum_daily_drawdown, money)],
   ]);
+  const fullCreditNote = document.querySelector('#full-credit-note');
+  if(fullCreditNote) fullCreditNote.textContent = `Full credit: ${perf.full_credit_trades ?? '—'} of ${perf.settled_trades ?? '—'} settled trades retained the entire premium at expiration before fees. Known outcomes: ${perf.full_credit_samples ?? '—'}. Early closes count as not full credit; missing outcome data makes the percentage unavailable.`;
   const groups = [...perf.by_strategy.map(r => ({ dimension: "Strategy", group: r.strategy, ...r })), ...perf.by_dte.map(r => ({ dimension: "DTE", group: r.dte, ...r }))];
   table("#performance-table", [
     ["Dimension", "dimension"], ["Group", "group"], ["Trades", "trades"], ["Win rate", "win_rate", null, v => value(v, percent)],
