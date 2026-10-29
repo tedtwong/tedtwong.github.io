@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
-  <link rel="stylesheet" href="xdte.css?v=20261028-original-settlement-shading">
-  <script defer src="xdte.js?v=20261029-market-first-p90"></script>
+  <link rel="stylesheet" href="xdte.css?v=20261029-market-snapshot-controls">
+  <script defer src="xdte.js?v=20261029-market-snapshot-controls"></script>
 </head>
 <body>
   <header class="hero">
@@ -131,8 +131,13 @@
         <p>Strategy and DTE progression through the research funnel, followed by the recorded reasons candidates did not advance.</p>
       </div>
       <article class="panel">
-        <h3>Latest market opportunities</h3>
-        <p>Top ten positive-edge structures evaluated independently of entry capacity. Account and execution gates remain mandatory for orders.</p>
+        <div class="panel__heading market-opportunity-heading">
+          <div>
+            <h3>Latest market opportunities</h3>
+            <p>Top ten positive-edge structures evaluated independently of entry capacity. Account and execution gates remain mandatory for orders.</p>
+          </div>
+          <div id="market-opportunity-snapshot-controls" class="snapshot-controls" role="group" aria-label="Market-opportunity snapshot time"></div>
+        </div>
         <p id="market-opportunities-note" class="chart-note"></p>
         <div id="market-opportunities-table" class="table-wrap"></div>
       </article>

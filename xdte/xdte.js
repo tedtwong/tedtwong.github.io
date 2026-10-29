@@ -12,22 +12,24 @@ function renderDistributionComparison(data) {
   function draw() {
     const row=rows.find(row=>row.expiration===selector.value);
     if(!row){chart.innerHTML='<p class="chart-empty">No matching blended-reference and risk-neutral curves are available in the latest snapshot.</p>';note.textContent="";return;}
-    const all=[...row.reference,...row.risk_neutral];
-    const xmin=Math.min(...all.map(p=>p.return_pct)),xmax=Math.max(...all.map(p=>p.return_pct));
+    const xmin=-7.5,xmax=7.5,xTicks=[-7.5,-5,-2.5,0,2.5,5,7.5];
+    const inView=points=>(points||[]).filter(p=>Number.isFinite(p.return_pct)&&Number.isFinite(p.density)&&p.return_pct>=xmin&&p.return_pct<=xmax);
+    const reference=inView(row.reference),riskNeutral=inView(row.risk_neutral);
+    const all=[...reference,...riskNeutral];
     const ymax=Math.max(...all.map(p=>p.density));
-    if(!(xmax>xmin && ymax>0)){chart.textContent="Invalid distribution grid.";return;}
+    if(!(all.length>1 && ymax>0)){chart.textContent="No valid distribution values fall within the displayed ±7.5% return range.";return;}
     const width=1050,height=420,left=70,right=25,top=25,bottom=65;
     const x=v=>left+(v-xmin)/(xmax-xmin)*(width-left-right);
     const y=v=>height-bottom-v/ymax*(height-top-bottom);
     const line=points=>points.map((p,i)=>`${i?'L':'M'}${x(p.return_pct).toFixed(2)},${y(p.density).toFixed(2)}`).join(' ');
     let axes='';
-    for(let i=0;i<=6;i++){const v=xmin+(xmax-xmin)*i/6;axes+=`<text x="${x(v)}" y="${height-bottom+23}" text-anchor="middle">${v.toFixed(1)}%</text>`;}
+    for(const v of xTicks){const label=`${v>0?'+':''}${v.toFixed(1)}%`;axes+=`<line x1="${x(v)}" x2="${x(v)}" y1="${top}" y2="${height-bottom}" stroke="${v===0?'#aeb4bc':'#eceff2'}"/><text x="${x(v)}" y="${height-bottom+23}" text-anchor="middle">${label}</text>`;}
     for(let i=0;i<=4;i++){const v=ymax*i/4;axes+=`<line x1="${left}" x2="${width-right}" y1="${y(v)}" y2="${y(v)}" stroke="#ddd"/><text x="${left-8}" y="${y(v)+4}" text-anchor="end">${v.toFixed(2)}</text>`;}
     const ivLabel=value=>typeof value==='number' && Number.isFinite(value) && value>=0 ? `${(100*value).toFixed(2)}%` : 'unavailable';
     const ivLegend=`<text x="${left+12}" y="${top+18}" fill="#168a91">Blended reference IV: ${ivLabel(row.reference_iv)}</text><text x="${left+12}" y="${top+40}" fill="#8b5cf6">Risk-neutral IV: ${ivLabel(row.risk_neutral_iv)}</text><text x="${left+12}" y="${top+60}" fill="#555" font-size="12">Annualized · selected expiration</text>`;
-    chart.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Blended reference versus risk-neutral terminal SPX return density">${axes}${ivLegend}<path d="${line(row.reference)}" fill="none" stroke="#168a91" stroke-width="3" stroke-opacity="0.6"/><path d="${line(row.risk_neutral)}" fill="none" stroke="#8b5cf6" stroke-width="3" stroke-opacity="0.6"/><text x="${width/2}" y="${height-10}" text-anchor="middle">SPX return from snapshot level (%) at expiration</text><text transform="translate(17 ${height/2}) rotate(-90)" text-anchor="middle">Density per percentage point</text></svg>`;
+    chart.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Blended reference versus risk-neutral terminal SPX return density, displayed from minus 7.5 percent to plus 7.5 percent">${axes}${ivLegend}<path d="${line(reference)}" fill="none" stroke="#168a91" stroke-width="3" stroke-opacity="0.6"/><path d="${line(riskNeutral)}" fill="none" stroke="#8b5cf6" stroke-width="3" stroke-opacity="0.6"/><text x="${width/2}" y="${height-10}" text-anchor="middle">SPX return from snapshot level (%) at expiration</text><text transform="translate(17 ${height/2}) rotate(-90)" text-anchor="middle">Density per percentage point</text></svg>`;
     const age=Math.max(Number(data.age_seconds)||0,(Date.now()-Date.parse(data.observed_at_et))/1000);
-    note.textContent=`As of ${data.observed_at_et} · ${age>180?'STALE — ':''}${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: blended reference. Purple: option-implied risk-neutral density. Risk-neutral probabilities are pricing measures, not real-world forecasts. Curves are sampled from stored fits without renormalizing their tails. Missing expirations are not replaced by older snapshots.`;
+    note.textContent=`As of ${data.observed_at_et} · ${age>180?'STALE — ':''}${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: blended reference. Purple: option-implied risk-neutral density. The display is fixed at −7.5% to +7.5%; stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced by older snapshots.`;
   }
   selector.onchange=draw;draw();
 }
@@ -587,8 +589,47 @@ function renderCandidatePercentiles(history) {
 }
 
 let selectedFunnelPeriod = "day";
-function renderMarketOpportunities(data) {
-  const market = data || {rows:[]};
+let selectedMarketOpportunitySnapshot = "__LATEST__";
+const marketSnapshotTimeFormatter = new Intl.DateTimeFormat("en-US", {
+  hour: "numeric", minute: "2-digit", timeZone: "America/New_York",
+});
+function marketSnapshotTimeLabel(snapshot) {
+  const stamp = Date.parse(snapshot?.scan_bucket || snapshot?.observed_at_et || "");
+  return Number.isFinite(stamp) ? marketSnapshotTimeFormatter.format(new Date(stamp)) : "Time unavailable";
+}
+function renderMarketOpportunities(data, snapshotHistory = []) {
+  const snapshotsByBucket = new Map();
+  [data, ...(Array.isArray(snapshotHistory) ? snapshotHistory : [])].forEach(snapshot => {
+    if(snapshot?.scan_bucket && !snapshotsByBucket.has(snapshot.scan_bucket)) snapshotsByBucket.set(snapshot.scan_bucket, snapshot);
+  });
+  const snapshots = [...snapshotsByBucket.values()];
+  const latest = data?.scan_bucket ? data : (snapshots[0] || null);
+  if(selectedMarketOpportunitySnapshot !== "__LATEST__" && !snapshotsByBucket.has(selectedMarketOpportunitySnapshot)) {
+    selectedMarketOpportunitySnapshot = "__LATEST__";
+  }
+  const market = selectedMarketOpportunitySnapshot === "__LATEST__"
+    ? (latest || {rows:[]})
+    : (snapshotsByBucket.get(selectedMarketOpportunitySnapshot) || {rows:[]});
+  const controls = document.querySelector('#market-opportunity-snapshot-controls');
+  if(controls) {
+    const options = latest ? [
+      {key:"__LATEST__", label:`Latest · ${marketSnapshotTimeLabel(latest)}`},
+      ...snapshots.filter(snapshot => snapshot.scan_bucket !== latest.scan_bucket).map(snapshot => ({
+        key:snapshot.scan_bucket, label:marketSnapshotTimeLabel(snapshot),
+      })),
+    ] : [];
+    controls.hidden = !options.length;
+    controls.innerHTML = options.map(option => `<button type="button" data-market-snapshot="${escapeText(option.key)}">${escapeText(option.label)}</button>`).join("");
+    controls.querySelectorAll("[data-market-snapshot]").forEach(button => {
+      const active = button.dataset.marketSnapshot === selectedMarketOpportunitySnapshot;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
+      button.onclick = () => {
+        selectedMarketOpportunitySnapshot = button.dataset.marketSnapshot;
+        renderMarketOpportunities(data, snapshotHistory);
+      };
+    });
+  }
   const marketTable = document.querySelector('#market-opportunities-table');
   if(marketTable) table('#market-opportunities-table', [
     ['Market rank','market_rank'],['Strategy','strategy'],['DTE','target_dte'],['Expiration','expiration'],
@@ -602,7 +643,9 @@ function renderMarketOpportunities(data) {
     ['Entry status','entry_status'],['Entry blockers','entry_blocking_reasons',null,v=>(v||[]).join(', ')],
   ], market.rows || []);
   const marketNote = document.querySelector('#market-opportunities-note');
-  if(marketNote) marketNote.textContent = market.scan_bucket ? `Scan ${market.scan_bucket} · recorded ${market.observed_at_et}. Market rank is independent of account capacity; entry status is a scan-time assessment, not an order approval.` : 'Awaiting the first independent market-opportunity scan; historical finalists are not relabeled.';
+  if(marketNote) marketNote.textContent = market.scan_bucket
+    ? `Scan ${market.scan_bucket} · recorded ${market.observed_at_et}. ${(market.rows || []).length ? 'Market rank is independent of account capacity; entry status is a scan-time assessment, not an order approval.' : 'No independent market opportunities were saved for this scan.'}`
+    : 'Awaiting the first independent market-opportunity scan; historical finalists are not relabeled.';
 }
 
 function renderFunnelHistory(history) {
@@ -767,7 +810,7 @@ async function load() {
   const entrySlippageNote = document.querySelector("#entry-slippage-note");
   if (entrySlippageNote) entrySlippageNote.textContent = `Entry fill slippage: requested credit minus filled credit, in dollars. Positive is worse; negative is price improvement. Measured for ${daily.entry_activity?.measured_trades ?? 0} of ${daily.entry_activity?.filled_trades ?? 0} filled trades today.`;
   renderFunnelHistory(daily.funnel_history || {});
-  renderMarketOpportunities(daily.market_opportunities);
+  renderMarketOpportunities(daily.market_opportunities, daily.market_opportunity_snapshots);
   summaryMetrics("#exit-metrics", [
     ["Exits filled today", value(exitActivity.exits_filled)],
     ["Transaction costs on exits", value(exitActivity.transaction_costs, money)],
