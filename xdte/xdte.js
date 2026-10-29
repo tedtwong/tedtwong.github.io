@@ -80,6 +80,44 @@ function settlementScenarioChart(target, scenario) {
   const note=document.createElement("p");note.className="chart-note";note.textContent=`${scenario.note} Session ${scenario.session_date}. ${scenario.as_of_et ? `SPX as of ${scenario.as_of_et}. ` : ""}${scenario.excluded_count ? `Warning: ${scenario.excluded_count} open position(s) excluded; incomplete result. ` : ""}${scenario.expiring_today_count===0 ? `No open positions expire on ${scenario.session_date}; orange curve is zero.` : ""}`;node.appendChild(note);
 }
 
+function renderSettlementScenarioHorizons(horizons) {
+  const controls=document.querySelector("#settlement-horizon-controls");
+  const scenarios=(Array.isArray(horizons)?horizons:[]).filter(Boolean);
+  const offsetFor=(scenario,index)=>Number.isInteger(scenario?.horizon_trading_days)
+    ? scenario.horizon_trading_days : index;
+  const previous=Number.parseInt(controls.dataset.selectedHorizon || "0",10);
+  let selected=scenarios.some((scenario,index)=>offsetFor(scenario,index)===previous)
+    ? previous : (scenarios.length ? offsetFor(scenarios[0],0) : 0);
+  const setActiveButton=()=>controls.querySelectorAll("button").forEach(button=>{
+    const active=Number(button.dataset.settlementHorizon)===selected;
+    button.classList.toggle("is-active",active);
+    button.setAttribute("aria-pressed",String(active));
+  });
+  const draw=()=>{
+    const scenario=scenarios.find((item,index)=>offsetFor(item,index)===selected);
+    settlementScenarioChart("#settlement-scenario-chart",scenario || {status:"NO_SETTLEMENT_HORIZONS",rows:[]});
+  };
+  const buttons=scenarios.map((scenario,index)=>{
+    const offset=offsetFor(scenario,index);
+    const button=document.createElement("button");
+    button.type="button";
+    button.dataset.settlementHorizon=String(offset);
+    button.textContent=scenario.horizon_label || (offset===0 ? "Today" : `+${offset} day${offset===1?"":"s"}`);
+    button.title=`Target session ${scenario.session_date || "unavailable"}`;
+    button.onclick=()=>{
+      selected=offset;
+      controls.dataset.selectedHorizon=String(selected);
+      setActiveButton();
+      draw();
+    };
+    return button;
+  });
+  controls.dataset.selectedHorizon=String(selected);
+  controls.replaceChildren(...buttons);
+  setActiveButton();
+  draw();
+}
+
 function deployedCapacityChart(rows) {
   const node = document.querySelector("#deployed-capacity-chart");
   if (!node) return;
@@ -266,7 +304,7 @@ function renderUnsuccessfulEntries(rows) {
 
 function lineChart(target, series, options = {}) {
   const node = document.querySelector(target);
-  const chartPoints = s => s.rows.map(r => ({ t: new Date(r[s.x]).getTime(), y: Number(r[s.y]) })).filter(p => Number.isFinite(p.t) && Number.isFinite(p.y));
+  const chartPoints = s => s.rows.map(r => ({ t: new Date(r[s.x]).getTime(), y: Number(r[s.y]), row: r })).filter(p => Number.isFinite(p.t) && Number.isFinite(p.y));
   const leftSeries = series.filter(s => s.axis !== "right");
   const rightSeries = series.filter(s => s.axis === "right");
   const leftPoints = leftSeries.flatMap(chartPoints);
@@ -332,6 +370,22 @@ function lineChart(target, series, options = {}) {
   }).join("");
   const paths = series.map(s => {
     const points = chartPoints(s), seriesY = s.axis === "right" ? rightY : y;
+    if (s.dashCarriedForward) {
+      const segments=[];
+      for(let i=1;i<points.length;i+=1){
+        const left=points[i-1],right=points[i];
+        const leftHeld=Boolean(left.row?.is_carried_forward),rightHeld=Boolean(right.row?.is_carried_forward);
+        if(leftHeld && !rightHeld){
+          segments.push(`<path d="M${x(left.t).toFixed(1)},${seriesY(left.y).toFixed(1)} L${x(right.t).toFixed(1)},${seriesY(left.y).toFixed(1)}" fill="none" stroke="${s.color}" stroke-width="${s.width||2.5}" stroke-dasharray="7 5" vector-effect="non-scaling-stroke"><title>${s.label} · held at last valid quote until ${shortTime(right.t)}</title></path>`);
+          segments.push(`<path d="M${x(right.t).toFixed(1)},${seriesY(left.y).toFixed(1)} L${x(right.t).toFixed(1)},${seriesY(right.y).toFixed(1)}" fill="none" stroke="${s.color}" stroke-width="${s.width||2.5}" vector-effect="non-scaling-stroke"/>`);
+          continue;
+        }
+        const dash=(leftHeld||rightHeld)?' stroke-dasharray="7 5"':'';
+        const heldTitle=(leftHeld||rightHeld)?`<title>${s.label} · held at last valid quote</title>`:"";
+        segments.push(`<path d="M${x(left.t).toFixed(1)},${seriesY(left.y).toFixed(1)} L${x(right.t).toFixed(1)},${seriesY(right.y).toFixed(1)}" fill="none" stroke="${s.color}" stroke-width="${s.width||2.5}"${dash} vector-effect="non-scaling-stroke">${heldTitle}</path>`);
+      }
+      return segments.join("");
+    }
     return `<path d="${points.map((p, i) => `${i ? "L" : "M"}${x(p.t).toFixed(1)},${seriesY(p.y).toFixed(1)}`).join(" ")}" fill="none" stroke="${s.color}" stroke-width="${s.width || 2.5}" ${s.dash ? `stroke-dasharray="${s.dash}"` : ""} vector-effect="non-scaling-stroke"/>`;
   }).join("");
   const markers = (options.markers || []).map(marker => {
@@ -350,7 +404,7 @@ function lineChart(target, series, options = {}) {
     ${relativeAreas}${zero}${paths}${markers}
     <text x="${pad.l}" y="${height-12}" fill="#667085" font-size="12">${shortTime(minT)}</text>
     <text x="${width-pad.r}" y="${height-12}" text-anchor="end" fill="#667085" font-size="12">${shortTime(maxT)}</text>
-  </svg><div class="chart-legend">${series.filter((s,i,a)=>a.findIndex(t=>(t.legendLabel||t.label)===(s.legendLabel||s.label))===i).map(s => `<span class="legend-key${s.dash ? " legend-key--dashed" : ""}" style="--key:${s.color}">${s.legendLabel || s.label}</span>`).join("")}</div>`;
+  </svg><div class="chart-legend">${series.filter((s,i,a)=>a.findIndex(t=>(t.legendLabel||t.label)===(s.legendLabel||s.label))===i).map(s => `<span class="legend-key${s.dash ? " legend-key--dashed" : ""}" style="--key:${s.color}">${s.legendLabel || s.label}</span>`).join("")}${options.carriedForwardLegend ? '<span class="legend-key legend-key--dashed" style="--key:#667085">Held at last valid quote</span>' : ''}</div>`;
 }
 
 function portfolioDailyChart(target, rows, expectedHistory = [], intradayHistory = []) {
@@ -854,7 +908,7 @@ async function load() {
   }).map(item => ({
     rows: item.points, x: "time_et", y: "net_pnl", label: `${item.position} · expiry ${item.exit_date_group || "unknown"}`,
     legendLabel: `Expiry ${item.exit_date_group || "unknown"}`,
-    color: item.exit_date_color || "#8b939f", width: 2,
+    color: item.exit_date_color || "#8b939f", width: 2, dashCarriedForward: true,
   }));
   const positionMarkers = (daily.position_pnl || []).flatMap(item => item.points
     .filter(point => point.event === "Entry" || point.event === "Exit")
@@ -870,11 +924,13 @@ async function load() {
   ], {
     money: true, height: 465, includeZero: true, leftTickStep: 250, rightTickStep: 25,
     label: "Daily position and portfolio P&L with SPX", markers: positionMarkers,
+    carriedForwardLegend: true,
   });
   const dailyChartNode=document.querySelector("#daily-chart");
-  if(dailyChartNode && daily.stale_mark_count>0){
+  if(dailyChartNode && (daily.carried_forward_mark_count||daily.stale_mark_count)>0){
     const warning=document.createElement("p");warning.className="chart-note";
-    warning.textContent=`TOTAL includes last valid accounting marks for ${daily.stale_mark_count} stale position(s); other positions continue updating.`;
+    const count=daily.carried_forward_mark_count||daily.stale_mark_count;
+    warning.textContent=`Dashed segments and TOTAL retain the last valid accounting mark during quote gaps for ${count} position(s); no theoretical full-credit value is substituted.`;
     dailyChartNode.appendChild(warning);
   }
   table("#trade-table", [
@@ -896,8 +952,12 @@ async function load() {
     ["Exit reason", "exit_reason"],
   ], daily.trades);
   positionOutcomeChart("#position-outcome-chart", daily.trades);
-  settlementScenarioChart("#settlement-scenario-chart", daily.settlement_scenarios);
-  settlementScenarioChart("#settlement-scenario-next-chart", daily.settlement_scenarios_next_session);
+  renderSettlementScenarioHorizons(
+    daily.settlement_scenario_horizons || [
+      daily.settlement_scenarios,
+      daily.settlement_scenarios_next_session,
+    ]
+  );
   const averages = ledger.trade_averages || {};
   metrics("#ledger-metrics", [
     ["Starting cash", value(summary.starting_cash, money)], ["Equity", value(summary.equity, money)],
