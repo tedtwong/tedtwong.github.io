@@ -1,16 +1,33 @@
 function renderDistributionComparison(data) {
-  const selector=document.querySelector("#distribution-expiration");
+  const controls=document.querySelector("#distribution-expiration-controls");
   const chart=document.querySelector("#distribution-comparison-chart");
   const note=document.querySelector("#distribution-comparison-note");
   const rows=data?.expirations || [];
-  const previous=selector.value;
-  selector.replaceChildren(...rows.map(row => {
-    const option=document.createElement("option");option.value=row.expiration;
-    option.textContent=row.expiration.replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3");return option;
-  }));
-  if(rows.some(row=>row.expiration===previous))selector.value=previous;
+  const previous=controls.dataset.selectedExpiration;
+  let selectedExpiration=rows.some(row=>row.expiration===previous)
+    ? previous : (rows[0]?.expiration || "");
+  controls.dataset.selectedExpiration=selectedExpiration;
+  const setActiveButton=()=>controls.querySelectorAll("button").forEach(button=>{
+    const active=button.dataset.distributionExpiration===selectedExpiration;
+    button.classList.toggle("is-active",active);
+    button.setAttribute("aria-pressed",String(active));
+  });
+  const buttons=rows.map(row=>{
+    const button=document.createElement("button");
+    button.type="button";
+    button.dataset.distributionExpiration=row.expiration;
+    button.textContent=row.expiration.replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3");
+    button.onclick=()=>{
+      selectedExpiration=row.expiration;
+      controls.dataset.selectedExpiration=selectedExpiration;
+      setActiveButton();
+      draw();
+    };
+    return button;
+  });
+  controls.replaceChildren(...buttons);
   function draw() {
-    const row=rows.find(row=>row.expiration===selector.value);
+    const row=rows.find(row=>row.expiration===selectedExpiration);
     if(!row){chart.innerHTML='<p class="chart-empty">No matching blended-reference and risk-neutral curves are available in the latest snapshot.</p>';note.textContent="";return;}
     const xmin=-7.5,xmax=7.5,xTicks=[-7.5,-5,-2.5,0,2.5,5,7.5];
     const inView=points=>(points||[]).filter(p=>Number.isFinite(p.return_pct)&&Number.isFinite(p.density)&&p.return_pct>=xmin&&p.return_pct<=xmax);
@@ -31,7 +48,8 @@ function renderDistributionComparison(data) {
     const age=Math.max(Number(data.age_seconds)||0,(Date.now()-Date.parse(data.observed_at_et))/1000);
     note.textContent=`As of ${data.observed_at_et} · ${age>180?'STALE — ':''}${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: blended reference. Purple: option-implied risk-neutral density. The display is fixed at −7.5% to +7.5%; stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced by older snapshots.`;
   }
-  selector.onchange=draw;draw();
+  setActiveButton();
+  draw();
 }
 
 function settlementScenarioChart(target, scenario) {

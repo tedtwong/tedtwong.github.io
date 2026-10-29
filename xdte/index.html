@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
-  <link rel="stylesheet" href="xdte.css?v=20261029-market-snapshot-controls">
-  <script defer src="xdte.js?v=20261029-market-snapshot-controls"></script>
+  <link rel="stylesheet" href="xdte.css?v=20261029-distribution-date-buttons">
+  <script defer src="xdte.js?v=20261029-distribution-date-buttons"></script>
 </head>
 <body>
   <header class="hero">
@@ -119,7 +119,11 @@
 
     <section aria-labelledby="distribution-comparison-heading">
       <div class="section-heading"><p class="section-number">04</p><h2 id="distribution-comparison-heading">Blended reference and option-implied distribution</h2></div>
-      <article class="panel"><label for="distribution-expiration">Expiration </label><select id="distribution-expiration"></select>
+      <article class="panel">
+        <div class="distribution-expiration-picker">
+          <span class="control-label">Expiration</span>
+          <div id="distribution-expiration-controls" class="snapshot-controls distribution-expiration-controls" role="group" aria-label="Distribution expiration date"></div>
+        </div>
         <div id="distribution-comparison-chart" class="chart"></div>
         <p id="distribution-comparison-note" class="chart-note"></p>
       </article>
