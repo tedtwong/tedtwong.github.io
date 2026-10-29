@@ -572,10 +572,10 @@ function renderCandidatePercentiles(history) {
   table("#candidate-percentile-table", [
     ["DTE","dte"], ["Strategy","strategy",null,v=>String(v).replaceAll("_"," ")],
     ["Evaluation scope","evaluation_scope",null,v=>String(v || "EXECUTION_FINALIST").replaceAll("_"," ")],
-    ["Finalists","finalist_samples"], ["Return samples","return_samples"],
-    ["P95 raw expected return","raw_return_p95",null,v=>value(v,percent)],
-    ["P95 duration-adjusted return","duration_adjusted_return_p95",null,v=>value(v,percent)],
-    ["P95 full-credit probability","full_credit_probability_p95",null,v=>value(v,percent)],
+    ["Observations","finalist_samples"], ["Return samples","return_samples"],
+    ["P90 raw expected return","raw_return_p90",null,v=>value(v,percent)],
+    ["P90 duration-adjusted return","duration_adjusted_return_p90",null,v=>value(v,percent)],
+    ["P90 full-credit probability","full_credit_probability_p90",null,v=>value(v,percent)],
     ["Probability samples","probability_samples"], ["Reference samples","reference_probability_samples"],
     ["BS fallback samples","bs_probability_samples"],
   ], selected.rows || []);
@@ -587,6 +587,24 @@ function renderCandidatePercentiles(history) {
 }
 
 let selectedFunnelPeriod = "day";
+function renderMarketOpportunities(data) {
+  const market = data || {rows:[]};
+  const marketTable = document.querySelector('#market-opportunities-table');
+  if(marketTable) table('#market-opportunities-table', [
+    ['Market rank','market_rank'],['Strategy','strategy'],['DTE','target_dte'],['Expiration','expiration'],
+    ['Expected net P&L','base_edge_dollars',null,v=>value(v,money)],
+    ['Raw return','base_edge_return_on_planned_loss',null,v=>value(v,percent)],
+    ['Duration-adjusted return','duration_adjusted_base_edge_return_on_planned_loss',null,v=>value(v,percent)],
+    ['Full-credit probability','reference_full_credit_probability',null,v=>value(v,percent)],
+    ['Q−P','q_minus_p_probability_wedge',null,v=>value(v,percent)],
+    ['Required reserve','capital_reserve',null,v=>value(v,money)],
+    ['Entry hurdle','required_base_edge_return_on_planned_loss',null,v=>value(v,percent)],
+    ['Entry status','entry_status'],['Entry blockers','entry_blocking_reasons',null,v=>(v||[]).join(', ')],
+  ], market.rows || []);
+  const marketNote = document.querySelector('#market-opportunities-note');
+  if(marketNote) marketNote.textContent = market.scan_bucket ? `Scan ${market.scan_bucket} · recorded ${market.observed_at_et}. Market rank is independent of account capacity; entry status is a scan-time assessment, not an order approval.` : 'Awaiting the first independent market-opportunity scan; historical finalists are not relabeled.';
+}
+
 function renderFunnelHistory(history) {
   const selected = history?.[selectedFunnelPeriod] || { funnel: [], rejections: [] };
   funnelHeatmap("#funnel-history-chart", selected.funnel || []);
@@ -602,6 +620,8 @@ function renderFunnelHistory(history) {
     button.onclick = () => {
       selectedFunnelPeriod = button.dataset.funnelPeriod;
       renderFunnelHistory(history);
+
+
     };
   });
 }
@@ -747,6 +767,7 @@ async function load() {
   const entrySlippageNote = document.querySelector("#entry-slippage-note");
   if (entrySlippageNote) entrySlippageNote.textContent = `Entry fill slippage: requested credit minus filled credit, in dollars. Positive is worse; negative is price improvement. Measured for ${daily.entry_activity?.measured_trades ?? 0} of ${daily.entry_activity?.filled_trades ?? 0} filled trades today.`;
   renderFunnelHistory(daily.funnel_history || {});
+  renderMarketOpportunities(daily.market_opportunities);
   summaryMetrics("#exit-metrics", [
     ["Exits filled today", value(exitActivity.exits_filled)],
     ["Transaction costs on exits", value(exitActivity.transaction_costs, money)],
