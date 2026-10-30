@@ -224,7 +224,7 @@ const positionMap = (zone, row = {}) => {
   </svg>`;
 };
 const shortTime = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }).format(new Date(v)) : "—";
-const shortDate = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${v}T00:00:00Z`)) : "—";
+const shortDate = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(`${v}T00:00:00Z`)) : "—";
 const liveFeedUrl = "https://storage.googleapis.com/ibkr-steamroller-coins-xdte-feed/latest.json";
 const autoRefreshIntervalMilliseconds = 5 * 60 * 1000;
 const publicationRefreshDelayMilliseconds = 90 * 1000;
@@ -984,7 +984,6 @@ async function load() {
     ["SPX map", "spx_position_zone", null, positionMap, "Position map"],
     ["Entry", "entry_time_et", null, shortTime, "Entry time (ET)"],
     ["Expiry", "expiration_date", null, shortDate],
-    ["Exit", "exit_time_et", null, shortTime, "Exit time (ET)"],
     ["Exp. return", "modeled_expected_return", null, v => value(v, percent), "Modeled expected return"],
     ["Full-credit P", "probability_of_full_credit", null, fullCreditProbability, "Probability of full credit"],
     ["Q−P (pp)", "entry_q_minus_p", null, v => v === null || v === undefined ? "—" : `${Number(v) >= 0 ? "+" : ""}${(Number(v) * 100).toFixed(2)} pp`],
@@ -993,6 +992,7 @@ async function load() {
     ["Put res.", "short_put_reserve", null, v => value(v, money), "Short-put reserve"], ["Max profit", "maximum_profit", pnlClass, v => value(v, money), "Maximum profit"], ["Base EV", "base_expected_net_pnl", pnlClass, v => value(v, money), "Base expected net P&L"],
     ["uPnL", "unrealized_net_pnl", pnlClass, v => value(v, money), "Unrealized P&L"], ["Realized", "realized_net_pnl", pnlClass, v => value(v, money)],
     ["Max uPnL", "maximum_unrealized_pnl", pnlClass, v => value(v, money), "Maximum unrealized P&L"], ["Min uPnL", "minimum_unrealized_pnl", pnlClass, v => value(v, money), "Minimum unrealized P&L"],
+    ["Exit", "exit_time_et", null, shortTime, "Exit time (ET)"],
     ["Reason", "exit_reason", null, compactExitReason, "Exit reason"],
   ], daily.trades);
   positionOutcomeChart("#position-outcome-chart", daily.trades);
