@@ -123,25 +123,94 @@ function renderSettlementScenarioHorizons(horizons) {
 function deployedCapacityChart(rows) {
   const node = document.querySelector("#deployed-capacity-chart");
   if (!node) return;
-  if (!rows.length) {node.textContent="No deployed-capacity history available.";return;}
-  const width=1050,height=310,pad={l:85,r:25,t:25,b:65};
-  const maximum=Math.max(1,...rows.flatMap(r=>[r.deployed,r.reserved_today,r.exited_today]));
-  const step=(width-pad.l-pad.r)/rows.length;
-  const x=i=>pad.l+step*(i+.5), y=v=>height-pad.b-v/maximum*(height-pad.t-pad.b);
-  const ticks=Array.from({length:5},(_,i)=>maximum*i/4);
-  let marks=ticks.map(v=>`<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#ddd"/><text x="${pad.l-8}" y="${y(v)+4}" text-anchor="end" font-size="12">${money.format(v)}</text>`).join("");
-  const labelEvery=Math.max(1,Math.ceil(rows.length/12));
-  rows.forEach((r,i)=>{
-    const tooltip=`${r.date}: starting deployed ${money.format(r.opening_deployed)}; newly deployed ${money.format(r.reserved_today)}; exited ${money.format(r.exited_today)}; cancelled/unfilled releases ${money.format(r.cancelled_today)}; ending/current deployed ${money.format(r.deployed)}${r.status!=="COMPLETE"?" (incomplete history)":""}`;
-    [[r.reserved_today,-.27,"#f76915"],[r.exited_today,.02,"#2fa236"]].forEach(([v,offset,color])=>{
-      marks+=`<rect x="${x(i)+step*offset}" y="${y(v)}" width="${step*.25}" height="${Math.max(0,y(0)-y(v))}" fill="${color}" opacity=".65"><title>${tooltip}</title></rect>`;
+  const controls = document.querySelector("#deployed-capacity-period-controls");
+  const history = (Array.isArray(rows) ? rows : []).filter(row=>row?.date);
+  if (!history.length) {node.textContent="No deployed-capacity history available.";return;}
+  let selectedWindow = Number(controls?.dataset?.selectedWindow || 30);
+
+  const draw = () => {
+    const displayed = history.slice(-Math.max(1, selectedWindow));
+    const width=1050,height=350,pad={l:90,r:105,t:28,b:72};
+    const numeric=(value,fallback=0)=>Number.isFinite(Number(value))?Number(value):fallback;
+    const capacityMaximum=Math.max(1,...displayed.flatMap(r=>[
+      numeric(r.opening_deployed),
+      numeric(r.after_new_deployment,numeric(r.opening_deployed)+numeric(r.reserved_today)),
+      numeric(r.deployed),
+    ]));
+    const step=(width-pad.l-pad.r)/displayed.length;
+    const x=i=>pad.l+step*(i+.5);
+    const capacityY=value=>height-pad.b-numeric(value)/capacityMaximum*(height-pad.t-pad.b);
+    const pnlRows=displayed.map((row,index)=>({row,index,value:Number(row.realized_pnl)}))
+      .filter(item=>Number.isFinite(item.value));
+    let pnlMinimum=Math.min(0,...pnlRows.map(item=>item.value));
+    let pnlMaximum=Math.max(0,...pnlRows.map(item=>item.value));
+    if(pnlMinimum===pnlMaximum){pnlMinimum-=1;pnlMaximum+=1;}
+    const pnlY=value=>pad.t+(pnlMaximum-value)/(pnlMaximum-pnlMinimum)*(height-pad.t-pad.b);
+    const capacityTicks=Array.from({length:5},(_,i)=>capacityMaximum*i/4);
+    let marks=capacityTicks.map(value=>`<line x1="${pad.l}" x2="${width-pad.r}" y1="${capacityY(value)}" y2="${capacityY(value)}" stroke="#ddd"/><text x="${pad.l-8}" y="${capacityY(value)+4}" text-anchor="end" font-size="12">${money.format(value)}</text>`).join("");
+    if(pnlRows.length){
+      const pnlTicks=Array.from({length:5},(_,i)=>pnlMinimum+(pnlMaximum-pnlMinimum)*i/4);
+      marks+=pnlTicks.map(value=>`<text x="${width-pad.r+9}" y="${pnlY(value)+4}" text-anchor="start" fill="#7c3aed" font-size="12">${money.format(value)}</text>`).join("");
+      marks+=`<line x1="${pad.l}" x2="${width-pad.r}" y1="${pnlY(0)}" y2="${pnlY(0)}" stroke="#7c3aed" stroke-opacity=".25" stroke-dasharray="4 4"/>`;
+    }
+    const labelEvery=Math.max(1,Math.ceil(displayed.length/12));
+    const barColors={Opening:"#8da2fb","New filled":"#f76915",Exited:"#2fa236",Ending:"#333ed4"};
+    displayed.forEach((row,index)=>{
+      const opening=numeric(row.opening_deployed);
+      const newlyDeployed=numeric(row.reserved_today);
+      const exited=numeric(row.exited_today);
+      const afterNew=numeric(row.after_new_deployment,opening+newlyDeployed);
+      const afterExits=numeric(row.after_exits,afterNew-exited);
+      const ending=numeric(row.deployed);
+      const groupWidth=Math.min(step*.82,72);
+      const barWidth=groupWidth/4;
+      const left=x(index)-groupWidth/2;
+      const tooltip=`${row.date}: opening deployed ${money.format(opening)}; new filled ${money.format(newlyDeployed)}; exited/released ${money.format(exited)}; ending deployed ${money.format(ending)}; realized P&L ${Number.isFinite(Number(row.realized_pnl))?money.format(Number(row.realized_pnl)):"unavailable"}; reconciliation ${money.format(numeric(row.reconciliation_difference))}${row.status!=="COMPLETE"?" (incomplete history)":""}`;
+      const bridge=[
+        ["Opening",0,opening],
+        ["New filled",opening,afterNew],
+        ["Exited",afterNew,afterExits],
+        ["Ending",0,ending],
+      ];
+      bridge.forEach(([label,start,end],barIndex)=>{
+        const top=Math.min(capacityY(start),capacityY(end));
+        const barHeight=Math.max(1,Math.abs(capacityY(start)-capacityY(end)));
+        marks+=`<rect x="${left+barIndex*barWidth}" y="${top}" width="${Math.max(2,barWidth-1)}" height="${barHeight}" fill="${barColors[label]}" opacity=".78"><title>${label} · ${tooltip}</title></rect>`;
+      });
+      if(index%labelEvery===0||index===displayed.length-1) marks+=`<text transform="translate(${x(index)},${height-pad.b+20}) rotate(-30)" text-anchor="end" font-size="12">${row.date}</text>`;
     });
-    if(i%labelEvery===0||i===rows.length-1) marks+=`<text transform="translate(${x(i)},${height-pad.b+18}) rotate(-30)" text-anchor="end" font-size="12">${r.date}</text>`;
-  });
-  marks+=`<path d="${rows.map((r,i)=>`${i?'L':'M'}${x(i)},${y(r.deployed)}`).join(' ')}" fill="none" stroke="#333ed4" stroke-width="3"/>`;
-  rows.forEach((r,i)=>{marks+=`<circle cx="${x(i)}" cy="${y(r.deployed)}" r="4" fill="#333ed4"><title>${r.date}: starting ${money.format(r.opening_deployed)}; ending/current deployed ${money.format(r.deployed)}; newly deployed ${money.format(r.reserved_today)}; exited ${money.format(r.exited_today)}; cancelled/unfilled ${money.format(r.cancelled_today)}</title></circle>`;});
-  node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Daily deployed reserve capital, new filled deployment and exited capacity">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#333ed4">Deployed reserves</span><span class="legend-key" style="--key:#f76915">New filled deployment</span><span class="legend-key" style="--key:#2fa236">Exited capacity</span></div>`;
-  if(rows.some(r=>r.status!=="COMPLETE"))node.insertAdjacentHTML("beforeend","<p>Warning: capacity history is incomplete.</p>");
+    marks+=`<path d="${displayed.map((row,index)=>`${index?'L':'M'}${x(index)},${capacityY(row.deployed)}`).join(' ')}" fill="none" stroke="#333ed4" stroke-width="2.5"/>`;
+    displayed.forEach((row,index)=>{marks+=`<circle cx="${x(index)}" cy="${capacityY(row.deployed)}" r="3.5" fill="#333ed4"><title>${row.date}: ending deployed ${money.format(numeric(row.deployed))}</title></circle>`;});
+    if(pnlRows.length){
+      marks+=`<path d="${pnlRows.map((item,index)=>`${index?'L':'M'}${x(item.index)},${pnlY(item.value)}`).join(' ')}" fill="none" stroke="#7c3aed" stroke-width="3"/>`;
+      pnlRows.forEach(item=>{marks+=`<circle cx="${x(item.index)}" cy="${pnlY(item.value)}" r="4" fill="#7c3aed"><title>${item.row.date}: realized P&L ${money.format(item.value)}</title></circle>`;});
+    }
+    marks+=`<text transform="translate(18 ${(pad.t+height-pad.b)/2}) rotate(-90)" text-anchor="middle" font-size="12">Deployed reserve ($)</text><text transform="translate(${width-15} ${(pad.t+height-pad.b)/2}) rotate(90)" text-anchor="middle" fill="#7c3aed" font-size="12">Daily realized P&amp;L ($)</text>`;
+    node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Daily opening reserve plus new filled deployment minus exited reserve equals ending reserve, with daily realized P and L on the right axis">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#8da2fb">Opening deployed</span><span class="legend-key" style="--key:#f76915">New filled</span><span class="legend-key" style="--key:#2fa236">Exited / released</span><span class="legend-key" style="--key:#333ed4">Ending deployed</span><span class="legend-key" style="--key:#7c3aed">Daily realized P&amp;L · right axis</span></div>`;
+    const reconciliationFailures=displayed.filter(row=>Math.abs(numeric(row.reconciliation_difference))>.01);
+    if(reconciliationFailures.length)node.insertAdjacentHTML("beforeend",`<p class="chart-note">Warning: ${reconciliationFailures.length} displayed session(s) do not reconcile opening + deployment − exits to ending reserve.</p>`);
+    if(displayed.some(row=>row.status!=="COMPLETE"))node.insertAdjacentHTML("beforeend","<p class=\"chart-note\">Warning: capacity or realized-P&amp;L history is incomplete.</p>");
+  };
+
+  if(controls){
+    controls.querySelectorAll("button").forEach(button=>{
+      const windowValue=Number(button.dataset.capacityWindow);
+      const active=windowValue===selectedWindow;
+      button.classList.toggle("is-active",active);
+      button.setAttribute("aria-pressed",String(active));
+      button.onclick=()=>{
+        selectedWindow=windowValue;
+        controls.dataset.selectedWindow=String(windowValue);
+        controls.querySelectorAll("button").forEach(candidate=>{
+          const isActive=Number(candidate.dataset.capacityWindow)===selectedWindow;
+          candidate.classList.toggle("is-active",isActive);
+          candidate.setAttribute("aria-pressed",String(isActive));
+        });
+        draw();
+      };
+    });
+  }
+  draw();
 }
 
 function reserveCapacityChart(flow) {
