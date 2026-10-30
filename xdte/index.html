@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
   <link rel="stylesheet" href="xdte.css?v=20261029-compact-trade-table">
-  <script defer src="xdte.js?v=20261030-capacity-bridge"></script>
+  <script defer src="xdte.js?v=20261030-session-rollover"></script>
 </head>
 <body>
   <header class="hero">
@@ -108,7 +108,7 @@
         <div id="position-outcome-chart" class="chart position-outcome-chart"></div>
       </article>
       <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>SPX settlement payoff scenarios</h3><p>Select Today or one of the next seven trading sessions. Blue includes positions still outstanding at the selected target; orange includes positions expiring on that target date. Positions expiring earlier are omitted. This is a hypothetical lifetime intrinsic payoff after fees, not a forecast or daily ledger change.</p></div></div>
+        <div class="panel__heading"><div><h3>SPX settlement payoff scenarios</h3><p>Select Today or one of the next seven trading sessions. Blue includes positions still outstanding at the selected target; orange includes positions expiring on that target date. After the close, Today retains the completed session and its actual expiration-settled result through midnight ET; it then rolls to the current or next regular session. Positions expiring earlier are omitted. This is a hypothetical lifetime intrinsic payoff after fees, not a forecast or daily ledger change.</p></div></div>
         <div id="settlement-horizon-controls" class="snapshot-controls settlement-horizon-controls" role="group" aria-label="Settlement target trading session"></div>
         <div id="settlement-scenario-chart" class="chart"></div>
       </article>
@@ -193,7 +193,7 @@
       </article>
       <article class="panel chart-panel">
         <div class="panel__heading">
-          <div><h3>Deployed reserve capacity bridge — daily history</h3><p>Opening reserve + new filled deployment − exited reserve = ending reserve. Daily realized P&amp;L after costs uses the right axis. Cancelled and zero-fill orders are excluded.</p></div>
+          <div><h3>Deployed reserve capacity bridge — daily history</h3><p>Opening and ending deployed reserve are connected across session time. New filled and exited reserve are bars anchored to each opening balance. Daily realized P&amp;L after costs uses a zero-centered right axis. Cancelled and zero-fill orders are excluded.</p></div>
           <div id="deployed-capacity-period-controls" class="period-controls" role="group" aria-label="Deployed reserve history window" data-selected-window="30">
             <button type="button" data-capacity-window="1">Today</button>
             <button type="button" data-capacity-window="7">7 sessions</button>

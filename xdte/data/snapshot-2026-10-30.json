@@ -21512,32 +21512,499 @@
     },
     "settlement_scenario_horizons": [
       {
-        "all_open_count": 0,
+        "all_open_count": 16,
         "as_of_et": "2026-10-30T16:14:34.762035-04:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
-        "excluded_count": 0,
-        "exclusion_reasons": {},
+        "display_mode": "RETAINED_SESSION_CLOSE",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
         "expire_before_target_count": 0,
-        "expiring_today_count": 0,
+        "expiring_today_count": 16,
         "forward_session": false,
         "horizon_label": "Today",
         "horizon_trading_days": 0,
         "increment_points": 5,
         "lower_level": 7355,
-        "note": "All open: hypothetical simultaneous settlement, including later expirations. Today only: positions expiring today. Lifetime net payoff, not daily ledger change; excludes closed positions. No remaining time value or forecast probability.",
+        "note": "Market closed: this retained session-close view includes positions settled at expiration plus positions still outstanding. The realized marker is the aggregate saved net P&L of expiration-settled positions. It remains fixed through midnight ET, then rolls to the current or next regular session.",
+        "realized_expiry_net_pnl": -6391.28,
+        "realized_result_status": "COMPLETE",
+        "realized_settlement_spx": 7580.04,
         "reference_session_date": "2026-10-30",
-        "rows": [],
+        "retained_session_settlements": true,
+        "retained_settled_count": 16,
+        "rows": [
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7355
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7360
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7365
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7370
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7375
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7380
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7385
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7390
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7395
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7400
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7405
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7410
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7415
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7420
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7425
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7430
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7435
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7440
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7445
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7450
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7455
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7460
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7465
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7470
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7475
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7480
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7485
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7490
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7495
+          },
+          {
+            "all_open_net_pnl": -16001.28,
+            "expiring_today_net_pnl": -16001.28,
+            "spx_level": 7500
+          },
+          {
+            "all_open_net_pnl": -15501.28,
+            "expiring_today_net_pnl": -15501.28,
+            "spx_level": 7505
+          },
+          {
+            "all_open_net_pnl": -15501.28,
+            "expiring_today_net_pnl": -15501.28,
+            "spx_level": 7510
+          },
+          {
+            "all_open_net_pnl": -15001.28,
+            "expiring_today_net_pnl": -15001.28,
+            "spx_level": 7515
+          },
+          {
+            "all_open_net_pnl": -14001.28,
+            "expiring_today_net_pnl": -14001.28,
+            "spx_level": 7520
+          },
+          {
+            "all_open_net_pnl": -12501.28,
+            "expiring_today_net_pnl": -12501.28,
+            "spx_level": 7525
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7530
+          },
+          {
+            "all_open_net_pnl": -10001.28,
+            "expiring_today_net_pnl": -10001.28,
+            "spx_level": 7535
+          },
+          {
+            "all_open_net_pnl": -9501.28,
+            "expiring_today_net_pnl": -9501.28,
+            "spx_level": 7540
+          },
+          {
+            "all_open_net_pnl": -8501.28,
+            "expiring_today_net_pnl": -8501.28,
+            "spx_level": 7545
+          },
+          {
+            "all_open_net_pnl": -8001.28,
+            "expiring_today_net_pnl": -8001.28,
+            "spx_level": 7550
+          },
+          {
+            "all_open_net_pnl": -8001.28,
+            "expiring_today_net_pnl": -8001.28,
+            "spx_level": 7555
+          },
+          {
+            "all_open_net_pnl": -7501.28,
+            "expiring_today_net_pnl": -7501.28,
+            "spx_level": 7560
+          },
+          {
+            "all_open_net_pnl": -7001.28,
+            "expiring_today_net_pnl": -7001.28,
+            "spx_level": 7565
+          },
+          {
+            "all_open_net_pnl": -7501.28,
+            "expiring_today_net_pnl": -7501.28,
+            "spx_level": 7570
+          },
+          {
+            "all_open_net_pnl": -7001.28,
+            "expiring_today_net_pnl": -7001.28,
+            "spx_level": 7575
+          },
+          {
+            "all_open_net_pnl": -6501.28,
+            "expiring_today_net_pnl": -6501.28,
+            "spx_level": 7580
+          },
+          {
+            "all_open_net_pnl": -6001.28,
+            "expiring_today_net_pnl": -6001.28,
+            "spx_level": 7585
+          },
+          {
+            "all_open_net_pnl": -5501.28,
+            "expiring_today_net_pnl": -5501.28,
+            "spx_level": 7590
+          },
+          {
+            "all_open_net_pnl": -5001.28,
+            "expiring_today_net_pnl": -5001.28,
+            "spx_level": 7595
+          },
+          {
+            "all_open_net_pnl": -5501.28,
+            "expiring_today_net_pnl": -5501.28,
+            "spx_level": 7600
+          },
+          {
+            "all_open_net_pnl": -6001.28,
+            "expiring_today_net_pnl": -6001.28,
+            "spx_level": 7605
+          },
+          {
+            "all_open_net_pnl": -6501.28,
+            "expiring_today_net_pnl": -6501.28,
+            "spx_level": 7610
+          },
+          {
+            "all_open_net_pnl": -7001.28,
+            "expiring_today_net_pnl": -7001.28,
+            "spx_level": 7615
+          },
+          {
+            "all_open_net_pnl": -7001.28,
+            "expiring_today_net_pnl": -7001.28,
+            "spx_level": 7620
+          },
+          {
+            "all_open_net_pnl": -6001.28,
+            "expiring_today_net_pnl": -6001.28,
+            "spx_level": 7625
+          },
+          {
+            "all_open_net_pnl": -6001.28,
+            "expiring_today_net_pnl": -6001.28,
+            "spx_level": 7630
+          },
+          {
+            "all_open_net_pnl": -6001.28,
+            "expiring_today_net_pnl": -6001.28,
+            "spx_level": 7635
+          },
+          {
+            "all_open_net_pnl": -6001.28,
+            "expiring_today_net_pnl": -6001.28,
+            "spx_level": 7640
+          },
+          {
+            "all_open_net_pnl": -5501.28,
+            "expiring_today_net_pnl": -5501.28,
+            "spx_level": 7645
+          },
+          {
+            "all_open_net_pnl": -6001.28,
+            "expiring_today_net_pnl": -6001.28,
+            "spx_level": 7650
+          },
+          {
+            "all_open_net_pnl": -6001.28,
+            "expiring_today_net_pnl": -6001.28,
+            "spx_level": 7655
+          },
+          {
+            "all_open_net_pnl": -6001.28,
+            "expiring_today_net_pnl": -6001.28,
+            "spx_level": 7660
+          },
+          {
+            "all_open_net_pnl": -6501.28,
+            "expiring_today_net_pnl": -6501.28,
+            "spx_level": 7665
+          },
+          {
+            "all_open_net_pnl": -6501.28,
+            "expiring_today_net_pnl": -6501.28,
+            "spx_level": 7670
+          },
+          {
+            "all_open_net_pnl": -7001.28,
+            "expiring_today_net_pnl": -7001.28,
+            "spx_level": 7675
+          },
+          {
+            "all_open_net_pnl": -8001.28,
+            "expiring_today_net_pnl": -8001.28,
+            "spx_level": 7680
+          },
+          {
+            "all_open_net_pnl": -9501.28,
+            "expiring_today_net_pnl": -9501.28,
+            "spx_level": 7685
+          },
+          {
+            "all_open_net_pnl": -10501.28,
+            "expiring_today_net_pnl": -10501.28,
+            "spx_level": 7690
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7695
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7700
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7705
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7710
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7715
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7720
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7725
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7730
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7735
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7740
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7745
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7750
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7755
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7760
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7765
+          },
+          {
+            "all_open_net_pnl": -11001.28,
+            "expiring_today_net_pnl": -11001.28,
+            "spx_level": 7770
+          },
+          {
+            "all_open_net_pnl": -11501.28,
+            "expiring_today_net_pnl": -11501.28,
+            "spx_level": 7775
+          },
+          {
+            "all_open_net_pnl": -12001.28,
+            "expiring_today_net_pnl": -12001.28,
+            "spx_level": 7780
+          },
+          {
+            "all_open_net_pnl": -13001.28,
+            "expiring_today_net_pnl": -13001.28,
+            "spx_level": 7785
+          },
+          {
+            "all_open_net_pnl": -14001.28,
+            "expiring_today_net_pnl": -14001.28,
+            "spx_level": 7790
+          },
+          {
+            "all_open_net_pnl": -15501.28,
+            "expiring_today_net_pnl": -15501.28,
+            "spx_level": 7795
+          },
+          {
+            "all_open_net_pnl": -16501.28,
+            "expiring_today_net_pnl": -16501.28,
+            "spx_level": 7800
+          },
+          {
+            "all_open_net_pnl": -18001.28,
+            "expiring_today_net_pnl": -18001.28,
+            "spx_level": 7805
+          }
+        ],
         "session_date": "2026-10-30",
         "spot": 7580.07,
-        "status": "NO_OPEN_POSITIONS",
+        "status": "PARTIAL",
         "upper_level": 7805
       },
       {
         "all_open_count": 0,
         "as_of_et": "2026-10-30T16:14:34.762035-04:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
-        "excluded_count": 0,
-        "exclusion_reasons": {},
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
         "expire_before_target_count": 0,
         "expiring_today_count": 0,
         "forward_session": true,
@@ -21546,19 +22013,27 @@
         "increment_points": 5,
         "lower_level": 7355,
         "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-02. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
         "reference_session_date": "2026-10-30",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
         "rows": [],
         "session_date": "2026-11-02",
         "spot": 7580.07,
-        "status": "NO_OPEN_POSITIONS",
+        "status": "POSITION_DATA_UNAVAILABLE",
         "upper_level": 7805
       },
       {
         "all_open_count": 0,
         "as_of_et": "2026-10-30T16:14:34.762035-04:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
-        "excluded_count": 0,
-        "exclusion_reasons": {},
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
         "expire_before_target_count": 0,
         "expiring_today_count": 0,
         "forward_session": true,
@@ -21567,19 +22042,27 @@
         "increment_points": 5,
         "lower_level": 7355,
         "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-03. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
         "reference_session_date": "2026-10-30",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
         "rows": [],
         "session_date": "2026-11-03",
         "spot": 7580.07,
-        "status": "NO_OPEN_POSITIONS",
+        "status": "POSITION_DATA_UNAVAILABLE",
         "upper_level": 7805
       },
       {
         "all_open_count": 0,
         "as_of_et": "2026-10-30T16:14:34.762035-04:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
-        "excluded_count": 0,
-        "exclusion_reasons": {},
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
         "expire_before_target_count": 0,
         "expiring_today_count": 0,
         "forward_session": true,
@@ -21588,19 +22071,27 @@
         "increment_points": 5,
         "lower_level": 7355,
         "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-04. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
         "reference_session_date": "2026-10-30",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
         "rows": [],
         "session_date": "2026-11-04",
         "spot": 7580.07,
-        "status": "NO_OPEN_POSITIONS",
+        "status": "POSITION_DATA_UNAVAILABLE",
         "upper_level": 7805
       },
       {
         "all_open_count": 0,
         "as_of_et": "2026-10-30T16:14:34.762035-04:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
-        "excluded_count": 0,
-        "exclusion_reasons": {},
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
         "expire_before_target_count": 0,
         "expiring_today_count": 0,
         "forward_session": true,
@@ -21609,19 +22100,27 @@
         "increment_points": 5,
         "lower_level": 7355,
         "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-05. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
         "reference_session_date": "2026-10-30",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
         "rows": [],
         "session_date": "2026-11-05",
         "spot": 7580.07,
-        "status": "NO_OPEN_POSITIONS",
+        "status": "POSITION_DATA_UNAVAILABLE",
         "upper_level": 7805
       },
       {
         "all_open_count": 0,
         "as_of_et": "2026-10-30T16:14:34.762035-04:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
-        "excluded_count": 0,
-        "exclusion_reasons": {},
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
         "expire_before_target_count": 0,
         "expiring_today_count": 0,
         "forward_session": true,
@@ -21630,19 +22129,27 @@
         "increment_points": 5,
         "lower_level": 7355,
         "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-06. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
         "reference_session_date": "2026-10-30",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
         "rows": [],
         "session_date": "2026-11-06",
         "spot": 7580.07,
-        "status": "NO_OPEN_POSITIONS",
+        "status": "POSITION_DATA_UNAVAILABLE",
         "upper_level": 7805
       },
       {
         "all_open_count": 0,
         "as_of_et": "2026-10-30T16:14:34.762035-04:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
-        "excluded_count": 0,
-        "exclusion_reasons": {},
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
         "expire_before_target_count": 0,
         "expiring_today_count": 0,
         "forward_session": true,
@@ -21651,19 +22158,27 @@
         "increment_points": 5,
         "lower_level": 7355,
         "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-09. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
         "reference_session_date": "2026-10-30",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
         "rows": [],
         "session_date": "2026-11-09",
         "spot": 7580.07,
-        "status": "NO_OPEN_POSITIONS",
+        "status": "POSITION_DATA_UNAVAILABLE",
         "upper_level": 7805
       },
       {
         "all_open_count": 0,
         "as_of_et": "2026-10-30T16:14:34.762035-04:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
-        "excluded_count": 0,
-        "exclusion_reasons": {},
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
         "expire_before_target_count": 0,
         "expiring_today_count": 0,
         "forward_session": true,
@@ -21672,41 +22187,749 @@
         "increment_points": 5,
         "lower_level": 7355,
         "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-10. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
         "reference_session_date": "2026-10-30",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
         "rows": [],
         "session_date": "2026-11-10",
         "spot": 7580.07,
-        "status": "NO_OPEN_POSITIONS",
+        "status": "POSITION_DATA_UNAVAILABLE",
         "upper_level": 7805
       }
     ],
+    "settlement_scenario_horizons_after_midnight": [
+      {
+        "all_open_count": 0,
+        "as_of_et": "2026-10-30T16:14:34.762035-04:00",
+        "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
+        "expire_before_target_count": 0,
+        "expiring_today_count": 0,
+        "forward_session": false,
+        "horizon_label": "Today",
+        "horizon_trading_days": 0,
+        "increment_points": 5,
+        "lower_level": 7355,
+        "note": "All open: hypothetical simultaneous settlement, including later expirations. Today only: positions expiring today. Lifetime net payoff, not daily ledger change; excludes closed positions. No remaining time value or forecast probability.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
+        "reference_session_date": "2026-11-02",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
+        "rows": [],
+        "session_date": "2026-11-02",
+        "spot": 7580.07,
+        "status": "POSITION_DATA_UNAVAILABLE",
+        "upper_level": 7805
+      },
+      {
+        "all_open_count": 0,
+        "as_of_et": "2026-10-30T16:14:34.762035-04:00",
+        "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
+        "expire_before_target_count": 0,
+        "expiring_today_count": 0,
+        "forward_session": true,
+        "horizon_label": "+1 day",
+        "horizon_trading_days": 1,
+        "increment_points": 5,
+        "lower_level": 7355,
+        "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-03. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
+        "reference_session_date": "2026-11-02",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
+        "rows": [],
+        "session_date": "2026-11-03",
+        "spot": 7580.07,
+        "status": "POSITION_DATA_UNAVAILABLE",
+        "upper_level": 7805
+      },
+      {
+        "all_open_count": 0,
+        "as_of_et": "2026-10-30T16:14:34.762035-04:00",
+        "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
+        "expire_before_target_count": 0,
+        "expiring_today_count": 0,
+        "forward_session": true,
+        "horizon_label": "+2 days",
+        "horizon_trading_days": 2,
+        "increment_points": 5,
+        "lower_level": 7355,
+        "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-04. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
+        "reference_session_date": "2026-11-02",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
+        "rows": [],
+        "session_date": "2026-11-04",
+        "spot": 7580.07,
+        "status": "POSITION_DATA_UNAVAILABLE",
+        "upper_level": 7805
+      },
+      {
+        "all_open_count": 0,
+        "as_of_et": "2026-10-30T16:14:34.762035-04:00",
+        "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
+        "expire_before_target_count": 0,
+        "expiring_today_count": 0,
+        "forward_session": true,
+        "horizon_label": "+3 days",
+        "horizon_trading_days": 3,
+        "increment_points": 5,
+        "lower_level": 7355,
+        "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-05. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
+        "reference_session_date": "2026-11-02",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
+        "rows": [],
+        "session_date": "2026-11-05",
+        "spot": 7580.07,
+        "status": "POSITION_DATA_UNAVAILABLE",
+        "upper_level": 7805
+      },
+      {
+        "all_open_count": 0,
+        "as_of_et": "2026-10-30T16:14:34.762035-04:00",
+        "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
+        "expire_before_target_count": 0,
+        "expiring_today_count": 0,
+        "forward_session": true,
+        "horizon_label": "+4 days",
+        "horizon_trading_days": 4,
+        "increment_points": 5,
+        "lower_level": 7355,
+        "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-06. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
+        "reference_session_date": "2026-11-02",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
+        "rows": [],
+        "session_date": "2026-11-06",
+        "spot": 7580.07,
+        "status": "POSITION_DATA_UNAVAILABLE",
+        "upper_level": 7805
+      },
+      {
+        "all_open_count": 0,
+        "as_of_et": "2026-10-30T16:14:34.762035-04:00",
+        "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
+        "expire_before_target_count": 0,
+        "expiring_today_count": 0,
+        "forward_session": true,
+        "horizon_label": "+5 days",
+        "horizon_trading_days": 5,
+        "increment_points": 5,
+        "lower_level": 7355,
+        "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-09. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
+        "reference_session_date": "2026-11-02",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
+        "rows": [],
+        "session_date": "2026-11-09",
+        "spot": 7580.07,
+        "status": "POSITION_DATA_UNAVAILABLE",
+        "upper_level": 7805
+      },
+      {
+        "all_open_count": 0,
+        "as_of_et": "2026-10-30T16:14:34.762035-04:00",
+        "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
+        "expire_before_target_count": 0,
+        "expiring_today_count": 0,
+        "forward_session": true,
+        "horizon_label": "+6 days",
+        "horizon_trading_days": 6,
+        "increment_points": 5,
+        "lower_level": 7355,
+        "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-10. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
+        "reference_session_date": "2026-11-02",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
+        "rows": [],
+        "session_date": "2026-11-10",
+        "spot": 7580.07,
+        "status": "POSITION_DATA_UNAVAILABLE",
+        "upper_level": 7805
+      },
+      {
+        "all_open_count": 0,
+        "as_of_et": "2026-10-30T16:14:34.762035-04:00",
+        "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
+        "display_mode": "CURRENT_SESSION",
+        "excluded_count": 4,
+        "exclusion_reasons": {
+          "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+        },
+        "expire_before_target_count": 0,
+        "expiring_today_count": 0,
+        "forward_session": true,
+        "horizon_label": "+7 days",
+        "horizon_trading_days": 7,
+        "increment_points": 5,
+        "lower_level": 7355,
+        "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-11. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+        "realized_expiry_net_pnl": null,
+        "realized_result_status": "NOT_APPLICABLE",
+        "realized_settlement_spx": null,
+        "reference_session_date": "2026-11-02",
+        "retained_session_settlements": false,
+        "retained_settled_count": 0,
+        "rows": [],
+        "session_date": "2026-11-11",
+        "spot": 7580.07,
+        "status": "POSITION_DATA_UNAVAILABLE",
+        "upper_level": 7805
+      }
+    ],
+    "settlement_scenario_roll_forward_at_et": "2026-10-31T00:00:00-04:00",
+    "settlement_scenario_roll_policy": "MIDNIGHT_ET",
     "settlement_scenarios": {
-      "all_open_count": 0,
+      "all_open_count": 16,
       "as_of_et": "2026-10-30T16:14:34.762035-04:00",
       "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
-      "excluded_count": 0,
-      "exclusion_reasons": {},
+      "display_mode": "RETAINED_SESSION_CLOSE",
+      "excluded_count": 4,
+      "exclusion_reasons": {
+        "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+      },
       "expire_before_target_count": 0,
-      "expiring_today_count": 0,
+      "expiring_today_count": 16,
       "forward_session": false,
       "horizon_label": "Today",
       "horizon_trading_days": 0,
       "increment_points": 5,
       "lower_level": 7355,
-      "note": "All open: hypothetical simultaneous settlement, including later expirations. Today only: positions expiring today. Lifetime net payoff, not daily ledger change; excludes closed positions. No remaining time value or forecast probability.",
+      "note": "Market closed: this retained session-close view includes positions settled at expiration plus positions still outstanding. The realized marker is the aggregate saved net P&L of expiration-settled positions. It remains fixed through midnight ET, then rolls to the current or next regular session.",
+      "realized_expiry_net_pnl": -6391.28,
+      "realized_result_status": "COMPLETE",
+      "realized_settlement_spx": 7580.04,
       "reference_session_date": "2026-10-30",
-      "rows": [],
+      "retained_session_settlements": true,
+      "retained_settled_count": 16,
+      "rows": [
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7355
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7360
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7365
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7370
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7375
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7380
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7385
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7390
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7395
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7400
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7405
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7410
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7415
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7420
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7425
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7430
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7435
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7440
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7445
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7450
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7455
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7460
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7465
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7470
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7475
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7480
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7485
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7490
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7495
+        },
+        {
+          "all_open_net_pnl": -16001.28,
+          "expiring_today_net_pnl": -16001.28,
+          "spx_level": 7500
+        },
+        {
+          "all_open_net_pnl": -15501.28,
+          "expiring_today_net_pnl": -15501.28,
+          "spx_level": 7505
+        },
+        {
+          "all_open_net_pnl": -15501.28,
+          "expiring_today_net_pnl": -15501.28,
+          "spx_level": 7510
+        },
+        {
+          "all_open_net_pnl": -15001.28,
+          "expiring_today_net_pnl": -15001.28,
+          "spx_level": 7515
+        },
+        {
+          "all_open_net_pnl": -14001.28,
+          "expiring_today_net_pnl": -14001.28,
+          "spx_level": 7520
+        },
+        {
+          "all_open_net_pnl": -12501.28,
+          "expiring_today_net_pnl": -12501.28,
+          "spx_level": 7525
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7530
+        },
+        {
+          "all_open_net_pnl": -10001.28,
+          "expiring_today_net_pnl": -10001.28,
+          "spx_level": 7535
+        },
+        {
+          "all_open_net_pnl": -9501.28,
+          "expiring_today_net_pnl": -9501.28,
+          "spx_level": 7540
+        },
+        {
+          "all_open_net_pnl": -8501.28,
+          "expiring_today_net_pnl": -8501.28,
+          "spx_level": 7545
+        },
+        {
+          "all_open_net_pnl": -8001.28,
+          "expiring_today_net_pnl": -8001.28,
+          "spx_level": 7550
+        },
+        {
+          "all_open_net_pnl": -8001.28,
+          "expiring_today_net_pnl": -8001.28,
+          "spx_level": 7555
+        },
+        {
+          "all_open_net_pnl": -7501.28,
+          "expiring_today_net_pnl": -7501.28,
+          "spx_level": 7560
+        },
+        {
+          "all_open_net_pnl": -7001.28,
+          "expiring_today_net_pnl": -7001.28,
+          "spx_level": 7565
+        },
+        {
+          "all_open_net_pnl": -7501.28,
+          "expiring_today_net_pnl": -7501.28,
+          "spx_level": 7570
+        },
+        {
+          "all_open_net_pnl": -7001.28,
+          "expiring_today_net_pnl": -7001.28,
+          "spx_level": 7575
+        },
+        {
+          "all_open_net_pnl": -6501.28,
+          "expiring_today_net_pnl": -6501.28,
+          "spx_level": 7580
+        },
+        {
+          "all_open_net_pnl": -6001.28,
+          "expiring_today_net_pnl": -6001.28,
+          "spx_level": 7585
+        },
+        {
+          "all_open_net_pnl": -5501.28,
+          "expiring_today_net_pnl": -5501.28,
+          "spx_level": 7590
+        },
+        {
+          "all_open_net_pnl": -5001.28,
+          "expiring_today_net_pnl": -5001.28,
+          "spx_level": 7595
+        },
+        {
+          "all_open_net_pnl": -5501.28,
+          "expiring_today_net_pnl": -5501.28,
+          "spx_level": 7600
+        },
+        {
+          "all_open_net_pnl": -6001.28,
+          "expiring_today_net_pnl": -6001.28,
+          "spx_level": 7605
+        },
+        {
+          "all_open_net_pnl": -6501.28,
+          "expiring_today_net_pnl": -6501.28,
+          "spx_level": 7610
+        },
+        {
+          "all_open_net_pnl": -7001.28,
+          "expiring_today_net_pnl": -7001.28,
+          "spx_level": 7615
+        },
+        {
+          "all_open_net_pnl": -7001.28,
+          "expiring_today_net_pnl": -7001.28,
+          "spx_level": 7620
+        },
+        {
+          "all_open_net_pnl": -6001.28,
+          "expiring_today_net_pnl": -6001.28,
+          "spx_level": 7625
+        },
+        {
+          "all_open_net_pnl": -6001.28,
+          "expiring_today_net_pnl": -6001.28,
+          "spx_level": 7630
+        },
+        {
+          "all_open_net_pnl": -6001.28,
+          "expiring_today_net_pnl": -6001.28,
+          "spx_level": 7635
+        },
+        {
+          "all_open_net_pnl": -6001.28,
+          "expiring_today_net_pnl": -6001.28,
+          "spx_level": 7640
+        },
+        {
+          "all_open_net_pnl": -5501.28,
+          "expiring_today_net_pnl": -5501.28,
+          "spx_level": 7645
+        },
+        {
+          "all_open_net_pnl": -6001.28,
+          "expiring_today_net_pnl": -6001.28,
+          "spx_level": 7650
+        },
+        {
+          "all_open_net_pnl": -6001.28,
+          "expiring_today_net_pnl": -6001.28,
+          "spx_level": 7655
+        },
+        {
+          "all_open_net_pnl": -6001.28,
+          "expiring_today_net_pnl": -6001.28,
+          "spx_level": 7660
+        },
+        {
+          "all_open_net_pnl": -6501.28,
+          "expiring_today_net_pnl": -6501.28,
+          "spx_level": 7665
+        },
+        {
+          "all_open_net_pnl": -6501.28,
+          "expiring_today_net_pnl": -6501.28,
+          "spx_level": 7670
+        },
+        {
+          "all_open_net_pnl": -7001.28,
+          "expiring_today_net_pnl": -7001.28,
+          "spx_level": 7675
+        },
+        {
+          "all_open_net_pnl": -8001.28,
+          "expiring_today_net_pnl": -8001.28,
+          "spx_level": 7680
+        },
+        {
+          "all_open_net_pnl": -9501.28,
+          "expiring_today_net_pnl": -9501.28,
+          "spx_level": 7685
+        },
+        {
+          "all_open_net_pnl": -10501.28,
+          "expiring_today_net_pnl": -10501.28,
+          "spx_level": 7690
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7695
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7700
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7705
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7710
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7715
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7720
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7725
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7730
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7735
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7740
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7745
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7750
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7755
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7760
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7765
+        },
+        {
+          "all_open_net_pnl": -11001.28,
+          "expiring_today_net_pnl": -11001.28,
+          "spx_level": 7770
+        },
+        {
+          "all_open_net_pnl": -11501.28,
+          "expiring_today_net_pnl": -11501.28,
+          "spx_level": 7775
+        },
+        {
+          "all_open_net_pnl": -12001.28,
+          "expiring_today_net_pnl": -12001.28,
+          "spx_level": 7780
+        },
+        {
+          "all_open_net_pnl": -13001.28,
+          "expiring_today_net_pnl": -13001.28,
+          "spx_level": 7785
+        },
+        {
+          "all_open_net_pnl": -14001.28,
+          "expiring_today_net_pnl": -14001.28,
+          "spx_level": 7790
+        },
+        {
+          "all_open_net_pnl": -15501.28,
+          "expiring_today_net_pnl": -15501.28,
+          "spx_level": 7795
+        },
+        {
+          "all_open_net_pnl": -16501.28,
+          "expiring_today_net_pnl": -16501.28,
+          "spx_level": 7800
+        },
+        {
+          "all_open_net_pnl": -18001.28,
+          "expiring_today_net_pnl": -18001.28,
+          "spx_level": 7805
+        }
+      ],
       "session_date": "2026-10-30",
       "spot": 7580.07,
-      "status": "NO_OPEN_POSITIONS",
+      "status": "PARTIAL",
       "upper_level": 7805
     },
     "settlement_scenarios_next_session": {
       "all_open_count": 0,
       "as_of_et": "2026-10-30T16:14:34.762035-04:00",
       "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
-      "excluded_count": 0,
-      "exclusion_reasons": {},
+      "display_mode": "CURRENT_SESSION",
+      "excluded_count": 4,
+      "exclusion_reasons": {
+        "INCOMPLETE_OR_INVALID_OPEN_POSITION": 4
+      },
       "expire_before_target_count": 0,
       "expiring_today_count": 0,
       "forward_session": true,
@@ -21715,11 +22938,16 @@
       "increment_points": 5,
       "lower_level": 7355,
       "note": "All outstanding at target: hypothetical simultaneous settlement of current positions expiring on or after 2026-11-02. Target session only: positions expiring on that date. Earlier expirations are omitted, not projected or carried as realized P&L. Lifetime net payoff after fees, not next-day ledger change; no remaining time value or forecast probability. Grid remains centered on the current SPX reference; no new trades assumed.",
+      "realized_expiry_net_pnl": null,
+      "realized_result_status": "NOT_APPLICABLE",
+      "realized_settlement_spx": null,
       "reference_session_date": "2026-10-30",
+      "retained_session_settlements": false,
+      "retained_settled_count": 0,
       "rows": [],
       "session_date": "2026-11-02",
       "spot": 7580.07,
-      "status": "NO_OPEN_POSITIONS",
+      "status": "POSITION_DATA_UNAVAILABLE",
       "upper_level": 7805
     },
     "spx_history": [
@@ -22814,7 +24042,7 @@
     ]
   },
   "distribution_comparison": {
-    "age_seconds": 2024,
+    "age_seconds": 3466,
     "expirations": [
       {
         "expiration": "20261102",
@@ -30411,7 +31639,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-10-30T16:48:18.776449-04:00",
+    "published_at_et": "2026-10-30T17:12:21.009201-04:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-10-30"
   },
