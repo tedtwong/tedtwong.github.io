@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
-  <link rel="stylesheet" href="xdte.css?v=20261030-capacity-pnl-alignment-v4">
-  <script defer src="xdte.js?v=20261030-capacity-pnl-alignment-v4"></script>
+  <link rel="stylesheet" href="xdte.css?v=20261030-capacity-overlay-v5">
+  <script defer src="xdte.js?v=20261030-capacity-overlay-v5"></script>
 </head>
 <body>
   <header class="hero">
@@ -201,7 +201,7 @@
       </article>
       <article class="panel chart-panel">
         <div class="panel__heading">
-          <div><h3>Deployed reserve capacity bridge — daily history</h3><p>Only trading sessions are shown; weekends and full-market holidays are omitted. Every session uses the same fixed order: Open → +New → P&amp;L center → −Exit → Close. The reserve line skips the neutral P&amp;L slot; dashed segments connect one close to the next open. New filled reserve starts at opening, and exited reserve continues from its top to closing reserve. Cancelled and zero-fill orders are excluded.</p></div>
+          <div><h3>Deployed reserve capacity bridge — daily history</h3><p>Only trading sessions are shown; weekends and full-market holidays are omitted. Reserve always follows Open → +New → −Exit → Close. Daily realized P&amp;L is a translucent background overlay on the independent right axis, not a reserve stage. Dashed segments connect one close to the next open. New filled reserve starts at opening, and exited reserve continues from its top to closing reserve. Cancelled and zero-fill orders are excluded.</p></div>
           <div id="deployed-capacity-period-controls" class="period-controls" role="group" aria-label="Deployed reserve history window" data-selected-window="30">
             <button type="button" data-capacity-window="7">7 days</button>
             <button type="button" data-capacity-window="30" class="is-active" aria-pressed="true">30 days</button>
