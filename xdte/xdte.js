@@ -2,37 +2,56 @@ function renderDistributionComparison(data) {
   const controls=document.querySelector("#distribution-expiration-controls");
   const chart=document.querySelector("#distribution-comparison-chart");
   const note=document.querySelector("#distribution-comparison-note");
-  const rows=data?.expirations || [];
-  const previous=controls.dataset.selectedExpiration;
-  let selectedExpiration=rows.some(row=>row.expiration===previous)
-    ? previous : (rows[0]?.expiration || "");
-  controls.dataset.selectedExpiration=selectedExpiration;
+  const slider=document.querySelector("#distribution-scan-slider");
+  const scanOutput=document.querySelector("#distribution-scan-output");
+  const scans=(data?.scans?.length?data.scans:[{
+    snapshot_id:"latest",observed_at_et:data?.observed_at_et,
+    expirations:data?.expirations || [],
+  }]).filter(scan=>(scan.expirations||[]).length);
+  if(!scans.length){controls.replaceChildren();slider.disabled=true;scanOutput.textContent="Unavailable";chart.innerHTML='<p class="chart-empty">No matching blended-reference and risk-neutral curves are available.</p>';note.textContent="";return;}
+  const sessionChanged=slider.dataset.sessionDate!==(data?.session_date||"");
+  const priorMaximum=Number(slider.max);
+  const priorValue=Number(slider.value);
+  const wasFollowingLatest=slider.dataset.followLatest!=="false" && (!Number.isFinite(priorValue)||priorValue>=priorMaximum);
+  let selectedScanIndex=sessionChanged||wasFollowingLatest?scans.length-1:Math.max(0,Math.min(scans.length-1,priorValue));
+  slider.min="0";slider.max=String(scans.length-1);slider.step="1";slider.value=String(selectedScanIndex);slider.disabled=scans.length===1;
+  slider.dataset.sessionDate=data?.session_date||"";
+  slider.dataset.followLatest=String(selectedScanIndex===scans.length-1);
+  const timeLabel=value=>value?new Intl.DateTimeFormat("en-US",{hour:"numeric",minute:"2-digit",timeZone:"America/New_York"}).format(new Date(value))+" ET":"Unknown time";
+  let rows=[];
+  let selectedExpiration="";
   const setActiveButton=()=>controls.querySelectorAll("button").forEach(button=>{
     const active=button.dataset.distributionExpiration===selectedExpiration;
     button.classList.toggle("is-active",active);
     button.setAttribute("aria-pressed",String(active));
   });
-  const buttons=rows.map(row=>{
-    const button=document.createElement("button");
-    button.type="button";
-    button.dataset.distributionExpiration=row.expiration;
-    button.textContent=row.expiration.replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3");
-    button.onclick=()=>{
-      selectedExpiration=row.expiration;
-      controls.dataset.selectedExpiration=selectedExpiration;
-      setActiveButton();
-      draw();
-    };
-    return button;
-  });
-  controls.replaceChildren(...buttons);
+  const setScan=()=>{
+    const scan=scans[selectedScanIndex];
+    rows=scan.expirations||[];
+    const previous=controls.dataset.selectedExpiration;
+    selectedExpiration=rows.some(row=>row.expiration===previous)?previous:(rows[0]?.expiration||"");
+    controls.dataset.selectedExpiration=selectedExpiration;
+    scanOutput.textContent=`${timeLabel(scan.observed_at_et)} · scan ${selectedScanIndex+1} of ${scans.length}`;
+    const buttons=rows.map(row=>{
+      const button=document.createElement("button");
+      button.type="button";
+      button.dataset.distributionExpiration=row.expiration;
+      button.textContent=row.expiration.replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3");
+      button.onclick=()=>{selectedExpiration=row.expiration;controls.dataset.selectedExpiration=selectedExpiration;setActiveButton();draw();};
+      return button;
+    });
+    controls.replaceChildren(...buttons);
+    setActiveButton();
+    draw();
+  };
   function draw() {
     const row=rows.find(row=>row.expiration===selectedExpiration);
-    if(!row){chart.innerHTML='<p class="chart-empty">No matching blended-reference and risk-neutral curves are available in the latest snapshot.</p>';note.textContent="";return;}
+    if(!row){chart.innerHTML='<p class="chart-empty">No matching blended-reference and risk-neutral curves are available in this scan.</p>';note.textContent="";return;}
     const xmin=-7.5,xmax=7.5,xTicks=[-7.5,-5,-2.5,0,2.5,5,7.5];
     const ymin=0,ymax=1,yTicks=[0,.25,.5,.75,1];
     const inView=points=>(points||[]).filter(p=>Number.isFinite(p.return_pct)&&Number.isFinite(p.density)&&p.return_pct>=xmin&&p.return_pct<=xmax);
-    const reference=inView(row.reference),riskNeutral=inView(row.risk_neutral);
+    const compactPoints=field=>(row[field]||[]).map((density,index)=>({return_pct:data.return_grid?.[index],density}));
+    const reference=inView(row.reference||compactPoints("reference_density")),riskNeutral=inView(row.risk_neutral||compactPoints("risk_neutral_density"));
     const all=[...reference,...riskNeutral];
     const observedMax=Math.max(...all.map(p=>p.density));
     if(!(all.length>1 && observedMax>0)){chart.textContent="No valid distribution values fall within the displayed ±7.5% return range.";return;}
@@ -46,12 +65,16 @@ function renderDistributionComparison(data) {
     const ivLabel=value=>typeof value==='number' && Number.isFinite(value) && value>=0 ? `${(100*value).toFixed(2)}%` : 'unavailable';
     const ivLegend=`<text x="${left+12}" y="${top+18}" fill="#168a91">Blended reference IV: ${ivLabel(row.reference_iv)}</text><text x="${left+12}" y="${top+40}" fill="#8b5cf6">Risk-neutral IV: ${ivLabel(row.risk_neutral_iv)}</text><text x="${left+12}" y="${top+60}" fill="#555" font-size="12">Annualized · selected expiration</text>`;
     chart.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Blended reference versus risk-neutral terminal SPX return density, displayed from minus 7.5 percent to plus 7.5 percent on a fixed zero-to-one density scale"><defs><clipPath id="distribution-density-clip"><rect x="${left}" y="${top}" width="${width-left-right}" height="${height-top-bottom}"/></clipPath></defs>${axes}${ivLegend}<g clip-path="url(#distribution-density-clip)"><path d="${line(reference)}" fill="none" stroke="#168a91" stroke-width="3" stroke-opacity="0.6"/><path d="${line(riskNeutral)}" fill="none" stroke="#8b5cf6" stroke-width="3" stroke-opacity="0.6"/></g><text x="${width/2}" y="${height-10}" text-anchor="middle">SPX return from snapshot level (%) at expiration</text><text transform="translate(17 ${height/2}) rotate(-90)" text-anchor="middle">Density per percentage point</text></svg>`;
-    const age=Math.max(Number(data.age_seconds)||0,(Date.now()-Date.parse(data.observed_at_et))/1000);
+    const scan=scans[selectedScanIndex];
+    const age=Math.max(0,(Date.now()-Date.parse(scan.observed_at_et))/1000);
+    const isLatest=selectedScanIndex===scans.length-1;
+    const stateLabel=!isLatest?"HISTORICAL SCAN — ":data.status==="RETAINED_SESSION"?"RETAINED SESSION CLOSE — ":age>180?"STALE — ":"";
     const clippingNote=observedMax>ymax?' Density above 1.00 is clipped in the chart only; stored values are unchanged.':'';
-    note.textContent=`As of ${data.observed_at_et} · ${age>180?'STALE — ':''}${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: blended reference. Purple: option-implied risk-neutral density. The display is fixed at −7.5% to +7.5% and 0.00 to 1.00 density, with identical vertical ticks for every expiration.${clippingNote} Stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced by older snapshots.`;
+    const retention=data.status==="RETAINED_SESSION"&&isLatest?" The completed session remains displayed until the next session records a valid distribution.":"";
+    note.textContent=`${stateLabel}As of ${scan.observed_at_et} · ${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: blended reference. Purple: option-implied risk-neutral density. The display is fixed at −7.5% to +7.5% and 0.00 to 1.00 density, with identical vertical ticks for every expiration.${clippingNote} Stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced across scans.${retention}`;
   }
-  setActiveButton();
-  draw();
+  slider.oninput=()=>{selectedScanIndex=Math.max(0,Math.min(scans.length-1,Number(slider.value)||0));slider.dataset.followLatest=String(selectedScanIndex===scans.length-1);setScan();};
+  setScan();
 }
 
 function settlementScenarioChart(target, scenario) {
@@ -88,18 +111,30 @@ function settlementScenarioChart(target, scenario) {
   const note=document.createElement("p");note.className="chart-note";note.textContent=`${scenario.note} Session ${scenario.session_date}. ${scenario.as_of_et ? `SPX as of ${scenario.as_of_et}. ` : ""}${scenario.excluded_count ? `Warning: ${scenario.excluded_count} open position(s) excluded; incomplete result. ` : ""}${scenario.expiring_today_count===0 ? `No open positions expire on ${scenario.session_date}; orange curve is zero.` : ""}`;node.appendChild(note);
 }
 
-function renderSettlementScenarioHorizons(horizons, afterMidnightHorizons = [], rollForwardAtEt = null) {
+function renderSettlementScenarioHorizons(horizons, afterMidnightHorizons = [], rollForwardAtEt = null, history = null) {
   const controls=document.querySelector("#settlement-horizon-controls");
+  const slider=document.querySelector("#settlement-scan-slider");
+  const scanOutput=document.querySelector("#settlement-scan-output");
   const rollForwardAt=Date.parse(rollForwardAtEt || "");
   const useAfterMidnight=Array.isArray(afterMidnightHorizons) && afterMidnightHorizons.length && Number.isFinite(rollForwardAt) && Date.now()>=rollForwardAt;
   const selectedHorizons=useAfterMidnight?afterMidnightHorizons:horizons;
-  const scenarios=(Array.isArray(selectedHorizons)?selectedHorizons:[]).filter(Boolean);
+  const currentScenarios=(Array.isArray(selectedHorizons)?selectedHorizons:[]).filter(Boolean);
+  const activeSession=currentScenarios[0]?.reference_session_date || currentScenarios[0]?.session_date || "";
+  const savedScans=history?.session_date===activeSession && Array.isArray(history?.scans)?history.scans:[];
+  const scans=(savedScans.length?savedScans:[{observed_at_et:currentScenarios[0]?.as_of_et,horizons:currentScenarios}]).filter(scan=>(scan.horizons||[]).length);
   controls.dataset.rollForwardApplied=String(Boolean(useAfterMidnight));
+  if(!scans.length){controls.replaceChildren();slider.disabled=true;scanOutput.textContent="Unavailable";settlementScenarioChart("#settlement-scenario-chart",{status:"NO_SETTLEMENT_HORIZONS",rows:[]});return;}
+  const sessionChanged=slider.dataset.sessionDate!==activeSession;
+  const priorMaximum=Number(slider.max),priorValue=Number(slider.value);
+  const wasFollowingLatest=slider.dataset.followLatest!=="false"&&(!Number.isFinite(priorValue)||priorValue>=priorMaximum);
+  let selectedScanIndex=sessionChanged||wasFollowingLatest?scans.length-1:Math.max(0,Math.min(scans.length-1,priorValue));
+  slider.min="0";slider.max=String(scans.length-1);slider.step="1";slider.value=String(selectedScanIndex);slider.disabled=scans.length===1;
+  slider.dataset.sessionDate=activeSession;slider.dataset.followLatest=String(selectedScanIndex===scans.length-1);
+  const timeLabel=value=>value?new Intl.DateTimeFormat("en-US",{hour:"numeric",minute:"2-digit",timeZone:"America/New_York"}).format(new Date(value))+" ET":"Current";
+  let scenarios=[];
   const offsetFor=(scenario,index)=>Number.isInteger(scenario?.horizon_trading_days)
     ? scenario.horizon_trading_days : index;
-  const previous=Number.parseInt(controls.dataset.selectedHorizon || "0",10);
-  let selected=scenarios.some((scenario,index)=>offsetFor(scenario,index)===previous)
-    ? previous : (scenarios.length ? offsetFor(scenarios[0],0) : 0);
+  let selected=0;
   const setActiveButton=()=>controls.querySelectorAll("button").forEach(button=>{
     const active=Number(button.dataset.settlementHorizon)===selected;
     button.classList.toggle("is-active",active);
@@ -109,25 +144,29 @@ function renderSettlementScenarioHorizons(horizons, afterMidnightHorizons = [], 
     const scenario=scenarios.find((item,index)=>offsetFor(item,index)===selected);
     settlementScenarioChart("#settlement-scenario-chart",scenario || {status:"NO_SETTLEMENT_HORIZONS",rows:[]});
   };
-  const buttons=scenarios.map((scenario,index)=>{
-    const offset=offsetFor(scenario,index);
-    const button=document.createElement("button");
-    button.type="button";
-    button.dataset.settlementHorizon=String(offset);
-    button.textContent=scenario.horizon_label || (offset===0 ? "Today" : `+${offset} day${offset===1?"":"s"}`);
-    button.title=`Target session ${scenario.session_date || "unavailable"}`;
-    button.onclick=()=>{
-      selected=offset;
-      controls.dataset.selectedHorizon=String(selected);
-      setActiveButton();
-      draw();
-    };
-    return button;
-  });
-  controls.dataset.selectedHorizon=String(selected);
-  controls.replaceChildren(...buttons);
-  setActiveButton();
-  draw();
+  const setScan=()=>{
+    const scan=scans[selectedScanIndex];
+    scenarios=(scan.horizons||[]).filter(Boolean);
+    const previous=Number.parseInt(controls.dataset.selectedHorizon||"0",10);
+    selected=scenarios.some((scenario,index)=>offsetFor(scenario,index)===previous)?previous:(scenarios.length?offsetFor(scenarios[0],0):0);
+    scanOutput.textContent=`${timeLabel(scan.observed_at_et)} · scan ${selectedScanIndex+1} of ${scans.length}`;
+    const buttons=scenarios.map((scenario,index)=>{
+      const offset=offsetFor(scenario,index);
+      const button=document.createElement("button");
+      button.type="button";
+      button.dataset.settlementHorizon=String(offset);
+      button.textContent=scenario.horizon_label || (offset===0 ? "Today" : `+${offset} day${offset===1?"":"s"}`);
+      button.title=`Target session ${scenario.session_date || "unavailable"}`;
+      button.onclick=()=>{selected=offset;controls.dataset.selectedHorizon=String(selected);setActiveButton();draw();};
+      return button;
+    });
+    controls.dataset.selectedHorizon=String(selected);
+    controls.replaceChildren(...buttons);
+    setActiveButton();
+    draw();
+  };
+  slider.oninput=()=>{selectedScanIndex=Math.max(0,Math.min(scans.length-1,Number(slider.value)||0));slider.dataset.followLatest=String(selectedScanIndex===scans.length-1);setScan();};
+  setScan();
 }
 
 function deployedCapacityChart(rows) {
@@ -1082,7 +1121,8 @@ async function load() {
       daily.settlement_scenarios_next_session,
     ],
     daily.settlement_scenario_horizons_after_midnight || [],
-    daily.settlement_scenario_roll_forward_at_et
+    daily.settlement_scenario_roll_forward_at_et,
+    daily.settlement_scenario_history
   );
   const averages = ledger.trade_averages || {};
   metrics("#ledger-metrics", [

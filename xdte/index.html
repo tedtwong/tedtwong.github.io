@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
-  <link rel="stylesheet" href="xdte.css?v=20261029-compact-trade-table">
-  <script defer src="xdte.js?v=20261030-capacity-bridge-v5"></script>
+  <link rel="stylesheet" href="xdte.css?v=20261030-intraday-scan-sliders-v2">
+  <script defer src="xdte.js?v=20261030-intraday-scan-sliders-v2"></script>
 </head>
 <body>
   <header class="hero">
@@ -109,6 +109,10 @@
       </article>
       <article class="panel chart-panel">
         <div class="panel__heading"><div><h3>SPX settlement payoff scenarios</h3><p>Select Today or one of the next seven trading sessions. Blue includes positions still outstanding at the selected target; orange includes positions expiring on that target date. After the close, Today retains the completed session and its actual expiration-settled result through midnight ET; it then rolls to the current or next regular session. Positions expiring earlier are omitted. This is a hypothetical lifetime intrinsic payoff after fees, not a forecast or daily ledger change.</p></div></div>
+        <div class="distribution-scan-picker">
+          <label for="settlement-scan-slider">Scan time <output id="settlement-scan-output"></output></label>
+          <input id="settlement-scan-slider" type="range" min="0" max="0" step="1" value="0" aria-label="Settlement scenario scan time">
+        </div>
         <div id="settlement-horizon-controls" class="snapshot-controls settlement-horizon-controls" role="group" aria-label="Settlement target trading session"></div>
         <div id="settlement-scenario-chart" class="chart"></div>
       </article>
@@ -117,6 +121,10 @@
     <section aria-labelledby="distribution-comparison-heading">
       <div class="section-heading"><p class="section-number">04</p><h2 id="distribution-comparison-heading">Blended reference and option-implied distribution</h2></div>
       <article class="panel">
+        <div class="distribution-scan-picker">
+          <label for="distribution-scan-slider">Scan time <output id="distribution-scan-output"></output></label>
+          <input id="distribution-scan-slider" type="range" min="0" max="0" step="1" value="0" aria-label="Distribution scan time">
+        </div>
         <div class="distribution-expiration-picker">
           <span class="control-label">Expiration</span>
           <div id="distribution-expiration-controls" class="snapshot-controls distribution-expiration-controls" role="group" aria-label="Distribution expiration date"></div>
