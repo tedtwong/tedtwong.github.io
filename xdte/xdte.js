@@ -146,15 +146,24 @@ function deployedCapacityChart(rows) {
     const numeric=(value,fallback=0)=>Number.isFinite(Number(value))?Number(value):fallback;
     const maximumSlot=Math.max(1,displayed.length*4-1);
     const sessionX=(index,slot)=>pad.l+(index*4+slot)/maximumSlot*(width-pad.l-pad.r);
-    const reserveTimeline=displayed.flatMap((row,index)=>[
-      {row,index,slot:0,phase:"Opening",value:numeric(row.opening_deployed)},
-      {row,index,slot:3,phase:"Ending",value:numeric(row.deployed)},
-    ]);
+    const reserveTimeline=displayed.flatMap((row,index)=>{
+      const opening=numeric(row.opening_deployed);
+      const afterAdded=numeric(row.after_new_deployment,opening+numeric(row.reserved_today));
+      const afterExited=numeric(row.after_exits,afterAdded-numeric(row.exited_today));
+      return [
+        {row,index,slot:0,phase:"Starting",value:opening,color:"#8da2fb"},
+        {row,index,slot:1,phase:"After added",value:afterAdded,color:"#f76915"},
+        {row,index,slot:2,phase:"After exited",value:afterExited,color:"#2fa236"},
+        {row,index,slot:3,phase:"Ending",value:numeric(row.deployed),color:"#333ed4"},
+      ];
+    });
     const changeBars=displayed.flatMap((row,index)=>{
-      const opening=numeric(row.opening_deployed),reserved=numeric(row.reserved_today),ending=numeric(row.deployed),afterNew=opening+reserved;
+      const opening=numeric(row.opening_deployed),reserved=numeric(row.reserved_today);
+      const afterNew=numeric(row.after_new_deployment,opening+reserved);
+      const afterExits=numeric(row.after_exits,afterNew-numeric(row.exited_today));
       return [
         {row,index,slot:1,label:"New filled",start:opening,end:afterNew,amount:reserved,color:"#f76915",anchor:"opening deployed"},
-        {row,index,slot:2,label:"Exited / released",start:afterNew,end:ending,amount:ending-afterNew,color:"#2fa236",anchor:"post-fill deployed"},
+        {row,index,slot:2,label:"Exited / released",start:afterNew,end:afterExits,amount:afterExits-afterNew,color:"#2fa236",anchor:"post-fill deployed"},
       ];
     });
     const capacityValues=[0,...reserveTimeline.map(item=>item.value),...changeBars.flatMap(item=>[item.start,item.end])];
@@ -180,7 +189,7 @@ function deployedCapacityChart(rows) {
       marks+=`<rect x="${sessionX(item.index,item.slot)-6}" y="${top}" width="12" height="${barHeight}" fill="${item.color}" opacity=".78"><title>${item.row.date}: ${item.label} ${money.format(Math.abs(item.amount))}; starts at ${item.anchor} ${money.format(item.start)}; ends at ${money.format(item.end)}</title></rect>`;
     });
     marks+=`<path d="${reserveTimeline.map((item,index)=>`${index?'L':'M'}${sessionX(item.index,item.slot)},${capacityY(item.value)}`).join(' ')}" fill="none" stroke="#333ed4" stroke-width="2.5"/>`;
-    reserveTimeline.forEach(item=>{const color=item.phase==="Opening"?"#8da2fb":"#333ed4";marks+=`<circle cx="${sessionX(item.index,item.slot)}" cy="${capacityY(item.value)}" r="4" fill="${color}" stroke="white" stroke-width="1"><title>${item.row.date} ${item.phase.toLowerCase()}: deployed reserve ${money.format(item.value)}</title></circle>`;});
+    reserveTimeline.forEach(item=>{marks+=`<circle cx="${sessionX(item.index,item.slot)}" cy="${capacityY(item.value)}" r="4" fill="${item.color}" stroke="white" stroke-width="1"><title>${item.row.date} ${item.phase.toLowerCase()}: deployed reserve ${money.format(item.value)}</title></circle>`;});
     displayed.forEach((row,index)=>{
       if(index%labelEvery===0||index===displayed.length-1){const center=(sessionX(index,0)+sessionX(index,3))/2;marks+=`<text transform="translate(${center},${height-pad.b+20}) rotate(-30)" text-anchor="end" font-size="12">${row.date}</text>`;}
     });
@@ -188,7 +197,7 @@ function deployedCapacityChart(rows) {
       pnlRows.forEach(item=>{const left=sessionX(item.index,1)-8,right=sessionX(item.index,2)+8,top=Math.min(pnlY(0),pnlY(item.value)),barHeight=Math.max(1,Math.abs(pnlY(0)-pnlY(item.value)));marks+=`<rect x="${left}" y="${top}" width="${Math.max(16,right-left)}" height="${barHeight}" fill="#6b7280" opacity=".28"><title>${item.row.date}: daily realized P&L ${money.format(item.value)}</title></rect>`;});
     }
     marks+=`<text x="${(pad.l+width-pad.r)/2}" y="${height-10}" text-anchor="middle" font-size="12">Trading sessions only (ET; closed days omitted)</text><text transform="translate(18 ${(pad.t+height-pad.b)/2}) rotate(-90)" text-anchor="middle" font-size="12">Deployed reserve ($)</text><text transform="translate(${width-15} ${(pad.t+height-pad.b)/2}) rotate(90)" text-anchor="middle" fill="#6b7280" font-size="12">Daily realized P&amp;L ($; zero centered)</text>`;
-    node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Opening and ending deployed reserve across trading sessions only, sequential reserve changes, and foreground daily realized P and L bars">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#8da2fb">Opening reserve · line point</span><span class="legend-key" style="--key:#333ed4">Ending reserve · line point</span><span class="legend-key" style="--key:#f76915">New filled · from opening</span><span class="legend-key" style="--key:#2fa236">Exited / released · post-fill to ending</span><span class="legend-key" style="--key:#6b7280">Daily realized P&amp;L · translucent foreground bar</span></div><p class="chart-note">The selected lookback is ${selectedWindow} calendar days. Weekends and full-market holidays are omitted. Gray P&amp;L bars use the zero-centered right axis and render in front of the orange and green capacity changes.</p>`;
+    node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Deployed reserve follows starting, added, exited, and ending states for each trading session, with foreground daily realized P and L bars">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#8da2fb">Starting reserve · line point</span><span class="legend-key" style="--key:#f76915">After added · line point and change bar</span><span class="legend-key" style="--key:#2fa236">After exited · line point and change bar</span><span class="legend-key" style="--key:#333ed4">Ending reserve · line point</span><span class="legend-key" style="--key:#6b7280">Daily realized P&amp;L · translucent foreground bar</span></div><p class="chart-note">For each session, the reserve line runs starting → after added → after exited → ending. The selected lookback is ${selectedWindow} calendar days. Weekends and full-market holidays are omitted. Gray P&amp;L bars use the zero-centered right axis and render in front of the capacity changes.</p>`;
     const reconciliationFailures=displayed.filter(row=>Math.abs(numeric(row.reconciliation_difference))>.01);
     if(reconciliationFailures.length)node.insertAdjacentHTML("beforeend",`<p class="chart-note">Warning: ${reconciliationFailures.length} displayed session(s) do not reconcile opening + deployment − exits to ending reserve.</p>`);
     if(displayed.some(row=>row.status!=="COMPLETE"))node.insertAdjacentHTML("beforeend","<p class=\"chart-note\">Warning: capacity or realized-P&amp;L history is incomplete.</p>");
