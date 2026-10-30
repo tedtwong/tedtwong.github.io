@@ -148,10 +148,10 @@ function deployedCapacityChart(rows) {
       {row,phase:"Ending",time:sessionTime(row.date,16),value:numeric(row.deployed)},
     ]);
     const changeBars=displayed.flatMap(row=>{
-      const opening=numeric(row.opening_deployed),reserved=numeric(row.reserved_today),exited=numeric(row.exited_today);
+      const opening=numeric(row.opening_deployed),reserved=numeric(row.reserved_today),ending=numeric(row.deployed),afterNew=opening+reserved;
       return [
-        {row,label:"New filled",time:sessionTime(row.date,11,30),start:opening,end:opening+reserved,amount:reserved,color:"#f76915"},
-        {row,label:"Exited / released",time:sessionTime(row.date,14),start:opening,end:opening-exited,amount:-exited,color:"#2fa236"},
+        {row,label:"New filled",time:sessionTime(row.date,11,30),start:opening,end:afterNew,amount:reserved,color:"#f76915",anchor:"opening deployed"},
+        {row,label:"Exited / released",time:sessionTime(row.date,14),start:afterNew,end:ending,amount:ending-afterNew,color:"#2fa236",anchor:"post-fill deployed"},
       ];
     });
     const capacityValues=[0,...reserveTimeline.map(item=>item.value),...changeBars.flatMap(item=>[item.start,item.end])];
@@ -177,7 +177,7 @@ function deployedCapacityChart(rows) {
     changeBars.forEach(item=>{
       const top=Math.min(capacityY(item.start),capacityY(item.end));
       const barHeight=Math.max(1,Math.abs(capacityY(item.start)-capacityY(item.end)));
-      marks+=`<rect x="${x(item.time)-6}" y="${top}" width="12" height="${barHeight}" fill="${item.color}" opacity=".78"><title>${item.row.date}: ${item.label} ${money.format(Math.abs(item.amount))}; bar anchored at opening deployed ${money.format(item.start)}</title></rect>`;
+      marks+=`<rect x="${x(item.time)-6}" y="${top}" width="12" height="${barHeight}" fill="${item.color}" opacity=".78"><title>${item.row.date}: ${item.label} ${money.format(Math.abs(item.amount))}; starts at ${item.anchor} ${money.format(item.start)}; ends at ${money.format(item.end)}</title></rect>`;
     });
     marks+=`<path d="${reserveTimeline.map((item,index)=>`${index?'L':'M'}${x(item.time)},${capacityY(item.value)}`).join(' ')}" fill="none" stroke="#333ed4" stroke-width="2.5"/>`;
     reserveTimeline.forEach(item=>{const color=item.phase==="Opening"?"#8da2fb":"#333ed4";marks+=`<circle cx="${x(item.time)}" cy="${capacityY(item.value)}" r="4" fill="${color}" stroke="white" stroke-width="1"><title>${item.row.date} ${item.phase.toLowerCase()}: deployed reserve ${money.format(item.value)}</title></circle>`;});
@@ -189,7 +189,7 @@ function deployedCapacityChart(rows) {
       pnlRows.forEach(item=>{marks+=`<circle cx="${x(sessionTime(item.row.date,16))}" cy="${pnlY(item.value)}" r="4" fill="#7c3aed"><title>${item.row.date}: realized P&L ${money.format(item.value)}</title></circle>`;});
     }
     marks+=`<text x="${(pad.l+width-pad.r)/2}" y="${height-10}" text-anchor="middle" font-size="12">Session time (ET): opening 09:30 · ending 16:00</text><text transform="translate(18 ${(pad.t+height-pad.b)/2}) rotate(-90)" text-anchor="middle" font-size="12">Deployed reserve ($)</text><text transform="translate(${width-15} ${(pad.t+height-pad.b)/2}) rotate(90)" text-anchor="middle" fill="#7c3aed" font-size="12">Daily realized P&amp;L ($; zero centered)</text>`;
-    node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Opening and ending deployed reserve over session time, intraday reserve changes anchored to opening reserve, and zero-centered daily realized P and L">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#8da2fb">Opening reserve · line point</span><span class="legend-key" style="--key:#333ed4">Ending reserve · line point</span><span class="legend-key" style="--key:#f76915">New filled · from opening</span><span class="legend-key" style="--key:#2fa236">Exited / released · from opening</span><span class="legend-key" style="--key:#7c3aed">Daily realized P&amp;L · zero-centered right axis</span></div><p class="chart-note">Change-bar positions within each session are visual anchors for daily totals, not the individual event timestamps.</p>`;
+    node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Opening and ending deployed reserve over session time, sequential intraday reserve changes, and zero-centered daily realized P and L">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#8da2fb">Opening reserve · line point</span><span class="legend-key" style="--key:#333ed4">Ending reserve · line point</span><span class="legend-key" style="--key:#f76915">New filled · from opening</span><span class="legend-key" style="--key:#2fa236">Exited / released · post-fill to ending</span><span class="legend-key" style="--key:#7c3aed">Daily realized P&amp;L · zero-centered right axis</span></div><p class="chart-note">The green exit bar starts at the orange new-filled bar's top and ends at closing reserve. Change-bar positions within each session are visual anchors for daily totals, not the individual event timestamps.</p>`;
     const reconciliationFailures=displayed.filter(row=>Math.abs(numeric(row.reconciliation_difference))>.01);
     if(reconciliationFailures.length)node.insertAdjacentHTML("beforeend",`<p class="chart-note">Warning: ${reconciliationFailures.length} displayed session(s) do not reconcile opening + deployment − exits to ending reserve.</p>`);
     if(displayed.some(row=>row.status!=="COMPLETE"))node.insertAdjacentHTML("beforeend","<p class=\"chart-note\">Warning: capacity or realized-P&amp;L history is incomplete.</p>");
