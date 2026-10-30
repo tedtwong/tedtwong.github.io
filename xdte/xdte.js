@@ -149,7 +149,8 @@ function renderSettlementScenarioHorizons(horizons, afterMidnightHorizons = [], 
     scenarios=(scan.horizons||[]).filter(Boolean);
     const previous=Number.parseInt(controls.dataset.selectedHorizon||"0",10);
     selected=scenarios.some((scenario,index)=>offsetFor(scenario,index)===previous)?previous:(scenarios.length?offsetFor(scenarios[0],0):0);
-    scanOutput.textContent=`${timeLabel(scan.observed_at_et)} · scan ${selectedScanIndex+1} of ${scans.length}`;
+    const provenance=String(scan.capture_mode||"").startsWith("RECONSTRUCTED_")?" · reconstructed":"";
+    scanOutput.textContent=`${timeLabel(scan.observed_at_et)}${provenance} · scan ${selectedScanIndex+1} of ${scans.length}`;
     const buttons=scenarios.map((scenario,index)=>{
       const offset=offsetFor(scenario,index);
       const button=document.createElement("button");
