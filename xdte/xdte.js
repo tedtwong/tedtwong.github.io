@@ -30,23 +30,25 @@ function renderDistributionComparison(data) {
     const row=rows.find(row=>row.expiration===selectedExpiration);
     if(!row){chart.innerHTML='<p class="chart-empty">No matching blended-reference and risk-neutral curves are available in the latest snapshot.</p>';note.textContent="";return;}
     const xmin=-7.5,xmax=7.5,xTicks=[-7.5,-5,-2.5,0,2.5,5,7.5];
+    const ymin=0,ymax=1,yTicks=[0,.25,.5,.75,1];
     const inView=points=>(points||[]).filter(p=>Number.isFinite(p.return_pct)&&Number.isFinite(p.density)&&p.return_pct>=xmin&&p.return_pct<=xmax);
     const reference=inView(row.reference),riskNeutral=inView(row.risk_neutral);
     const all=[...reference,...riskNeutral];
-    const ymax=Math.max(...all.map(p=>p.density));
-    if(!(all.length>1 && ymax>0)){chart.textContent="No valid distribution values fall within the displayed ±7.5% return range.";return;}
+    const observedMax=Math.max(...all.map(p=>p.density));
+    if(!(all.length>1 && observedMax>0)){chart.textContent="No valid distribution values fall within the displayed ±7.5% return range.";return;}
     const width=1050,height=420,left=70,right=25,top=25,bottom=65;
     const x=v=>left+(v-xmin)/(xmax-xmin)*(width-left-right);
-    const y=v=>height-bottom-v/ymax*(height-top-bottom);
+    const y=v=>height-bottom-(v-ymin)/(ymax-ymin)*(height-top-bottom);
     const line=points=>points.map((p,i)=>`${i?'L':'M'}${x(p.return_pct).toFixed(2)},${y(p.density).toFixed(2)}`).join(' ');
     let axes='';
     for(const v of xTicks){const label=`${v>0?'+':''}${v.toFixed(1)}%`;axes+=`<line x1="${x(v)}" x2="${x(v)}" y1="${top}" y2="${height-bottom}" stroke="${v===0?'#aeb4bc':'#eceff2'}"/><text x="${x(v)}" y="${height-bottom+23}" text-anchor="middle">${label}</text>`;}
-    for(let i=0;i<=4;i++){const v=ymax*i/4;axes+=`<line x1="${left}" x2="${width-right}" y1="${y(v)}" y2="${y(v)}" stroke="#ddd"/><text x="${left-8}" y="${y(v)+4}" text-anchor="end">${v.toFixed(2)}</text>`;}
+    for(const v of yTicks){axes+=`<line x1="${left}" x2="${width-right}" y1="${y(v)}" y2="${y(v)}" stroke="#ddd"/><text x="${left-8}" y="${y(v)+4}" text-anchor="end">${v.toFixed(2)}</text>`;}
     const ivLabel=value=>typeof value==='number' && Number.isFinite(value) && value>=0 ? `${(100*value).toFixed(2)}%` : 'unavailable';
     const ivLegend=`<text x="${left+12}" y="${top+18}" fill="#168a91">Blended reference IV: ${ivLabel(row.reference_iv)}</text><text x="${left+12}" y="${top+40}" fill="#8b5cf6">Risk-neutral IV: ${ivLabel(row.risk_neutral_iv)}</text><text x="${left+12}" y="${top+60}" fill="#555" font-size="12">Annualized · selected expiration</text>`;
-    chart.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Blended reference versus risk-neutral terminal SPX return density, displayed from minus 7.5 percent to plus 7.5 percent">${axes}${ivLegend}<path d="${line(reference)}" fill="none" stroke="#168a91" stroke-width="3" stroke-opacity="0.6"/><path d="${line(riskNeutral)}" fill="none" stroke="#8b5cf6" stroke-width="3" stroke-opacity="0.6"/><text x="${width/2}" y="${height-10}" text-anchor="middle">SPX return from snapshot level (%) at expiration</text><text transform="translate(17 ${height/2}) rotate(-90)" text-anchor="middle">Density per percentage point</text></svg>`;
+    chart.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Blended reference versus risk-neutral terminal SPX return density, displayed from minus 7.5 percent to plus 7.5 percent on a fixed zero-to-one density scale"><defs><clipPath id="distribution-density-clip"><rect x="${left}" y="${top}" width="${width-left-right}" height="${height-top-bottom}"/></clipPath></defs>${axes}${ivLegend}<g clip-path="url(#distribution-density-clip)"><path d="${line(reference)}" fill="none" stroke="#168a91" stroke-width="3" stroke-opacity="0.6"/><path d="${line(riskNeutral)}" fill="none" stroke="#8b5cf6" stroke-width="3" stroke-opacity="0.6"/></g><text x="${width/2}" y="${height-10}" text-anchor="middle">SPX return from snapshot level (%) at expiration</text><text transform="translate(17 ${height/2}) rotate(-90)" text-anchor="middle">Density per percentage point</text></svg>`;
     const age=Math.max(Number(data.age_seconds)||0,(Date.now()-Date.parse(data.observed_at_et))/1000);
-    note.textContent=`As of ${data.observed_at_et} · ${age>180?'STALE — ':''}${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: blended reference. Purple: option-implied risk-neutral density. The display is fixed at −7.5% to +7.5%; stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced by older snapshots.`;
+    const clippingNote=observedMax>ymax?' Density above 1.00 is clipped in the chart only; stored values are unchanged.':'';
+    note.textContent=`As of ${data.observed_at_et} · ${age>180?'STALE — ':''}${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: blended reference. Purple: option-implied risk-neutral density. The display is fixed at −7.5% to +7.5% and 0.00 to 1.00 density, with identical vertical ticks for every expiration.${clippingNote} Stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced by older snapshots.`;
   }
   setActiveButton();
   draw();
@@ -172,13 +174,13 @@ const pnlClass = v => Number(v) > 0 ? "positive" : Number(v) < 0 ? "negative" : 
 const slippageClass = v => Number(v) < 0 ? "positive" : Number(v) > 0 ? "negative" : "";
 const positionZoneBadge = zone => {
   const values = {
-    INSIDE_SHORTS: ["position-zone--green", "Inside short strikes"],
-    BETWEEN_SHORT_AND_LONG_PROFITABLE: ["position-zone--yellow", "Between strikes · profitable"],
-    BETWEEN_SHORT_AND_LONG: ["position-zone--orange", "Between short and long"],
-    OUTSIDE_LONGS: ["position-zone--red", "Outside long strikes"],
+    INSIDE_SHORTS: ["position-zone--green", "Inside", "Inside short strikes"],
+    BETWEEN_SHORT_AND_LONG_PROFITABLE: ["position-zone--yellow", "Between +", "Between short and long strikes; position remains profitable"],
+    BETWEEN_SHORT_AND_LONG: ["position-zone--orange", "Between", "Between short and long strikes"],
+    OUTSIDE_LONGS: ["position-zone--red", "Outside", "Outside long strikes"],
   };
-  const [className, label] = values[zone] || ["position-zone--unavailable", "Unavailable"];
-  return `<span class="position-zone ${className}">${label}</span>`;
+  const [className, label, title] = values[zone] || ["position-zone--unavailable", "N/A", "Unavailable"];
+  return `<span class="position-zone ${className}" title="${title}">${label}</span>`;
 };
 const positionMap = (zone, row = {}) => {
   if (!zone || zone === "UNAVAILABLE") return '<span class="position-map--unavailable">—</span>';
@@ -281,10 +283,44 @@ function table(target, columns, rows, options = {}) {
     node.innerHTML = `<div class="chart-empty">${options.emptyMessage || "No qualifying records are available."}</div>`;
     return;
   }
-  node.innerHTML = `<table><thead><tr>${columns.map(c => `<th>${c[0]}</th>`).join("")}</tr></thead><tbody>${rows.map(row =>
+  node.innerHTML = `<table><thead><tr>${columns.map(c => `<th${c[4] ? ` title="${c[4]}"` : ""}>${c[0]}</th>`).join("")}</tr></thead><tbody>${rows.map(row =>
     `<tr class="${target === "#trade-table" && expiresToday(row.expiration_date) ? "expiring-today" : ""}">${columns.map(c => `<td class="${c[2] ? c[2](row[c[1]]) : ""}">${c[3] ? c[3](row[c[1]], row) : (row[c[1]] ?? "—")}</td>`).join("")}</tr>`
   ).join("")}</tbody></table>`;
 }
+
+const compactRecordType = value => {
+  const label = String(value || "");
+  if (label.startsWith("Carried")) return "Carried";
+  if (label === "Today" || label.startsWith("Entered") || label.startsWith("Candidate")) return "Today";
+  return label || "—";
+};
+const compactStrategy = value => {
+  const strategies = {
+    IRON_CONDOR: ["IC", "Iron condor"],
+    BULL_PUT_CREDIT_SPREAD: ["BPS", "Bull-put credit spread"],
+    BEAR_CALL_CREDIT_SPREAD: ["BCS", "Bear-call credit spread"],
+  };
+  const [label, title] = strategies[value] || [String(value || "—").replaceAll("_", " "), ""];
+  return title ? `<abbr title="${title}">${label}</abbr>` : label;
+};
+const compactStatus = value => ({
+  ENTRY_PARTIAL: "Partial",
+  EXIT_WORKING: "Exiting",
+  ORDER_ATTEMPTED: "Attempted",
+}[value] || String(value || "—").replaceAll("_", " "));
+const compactExitReason = value => {
+  const reasons = {
+    MANUAL_EMERGENCY_EXIT: ["Emergency", "Manual emergency exit"],
+    HARD_EXIT_TIME: ["Hard exit", "Hard-exit time"],
+    PROFIT_TARGET: ["Target", "Profit target"],
+    POSITION_STOP: ["Stop", "Position stop"],
+    SHORT_STRIKE_TOUCH: ["Strike touch", "Short-strike touch"],
+    SHORT_DELTA_EXIT: ["Delta exit", "Short-delta exit"],
+    VOLATILITY_REBOUND: ["Vol rebound", "Volatility-rebound exit"],
+  };
+  const [label, title] = reasons[value] || [String(value || "—").replaceAll("_", " "), ""];
+  return title ? `<abbr title="${title}">${label}</abbr>` : label;
+};
 
 function renderUnsuccessfulEntries(rows) {
   table("#unsuccessful-entry-attempts", [
@@ -375,14 +411,17 @@ function lineChart(target, series, options = {}) {
       for(let i=1;i<points.length;i+=1){
         const left=points[i-1],right=points[i];
         const leftHeld=Boolean(left.row?.is_carried_forward),rightHeld=Boolean(right.row?.is_carried_forward);
+        const leftEstimated=Boolean(left.row?.is_estimated_mark),rightEstimated=Boolean(right.row?.is_estimated_mark);
         if(leftHeld && !rightHeld){
-          segments.push(`<path d="M${x(left.t).toFixed(1)},${seriesY(left.y).toFixed(1)} L${x(right.t).toFixed(1)},${seriesY(left.y).toFixed(1)}" fill="none" stroke="${s.color}" stroke-width="${s.width||2.5}" stroke-dasharray="7 5" vector-effect="non-scaling-stroke"><title>${s.label} · held at last valid quote until ${shortTime(right.t)}</title></path>`);
-          segments.push(`<path d="M${x(right.t).toFixed(1)},${seriesY(left.y).toFixed(1)} L${x(right.t).toFixed(1)},${seriesY(right.y).toFixed(1)}" fill="none" stroke="${s.color}" stroke-width="${s.width||2.5}" vector-effect="non-scaling-stroke"/>`);
+          segments.push(`<path d="M${x(left.t).toFixed(1)},${seriesY(left.y).toFixed(1)} L${x(right.t).toFixed(1)},${seriesY(left.y).toFixed(1)}" fill="none" stroke="${s.color}" stroke-width="${s.width||2.5}" stroke-dasharray="7 5" vector-effect="non-scaling-stroke"><title>${s.label} · held at last accounting mark until ${shortTime(right.t)}</title></path>`);
+          const estimateDash=rightEstimated?' stroke-dasharray="3 3"':'';
+          segments.push(`<path d="M${x(right.t).toFixed(1)},${seriesY(left.y).toFixed(1)} L${x(right.t).toFixed(1)},${seriesY(right.y).toFixed(1)}" fill="none" stroke="${s.color}" stroke-width="${s.width||2.5}"${estimateDash} vector-effect="non-scaling-stroke"/>`);
           continue;
         }
-        const dash=(leftHeld||rightHeld)?' stroke-dasharray="7 5"':'';
-        const heldTitle=(leftHeld||rightHeld)?`<title>${s.label} · held at last valid quote</title>`:"";
-        segments.push(`<path d="M${x(left.t).toFixed(1)},${seriesY(left.y).toFixed(1)} L${x(right.t).toFixed(1)},${seriesY(right.y).toFixed(1)}" fill="none" stroke="${s.color}" stroke-width="${s.width||2.5}"${dash} vector-effect="non-scaling-stroke">${heldTitle}</path>`);
+        const held=leftHeld||rightHeld,estimated=leftEstimated||rightEstimated;
+        const dash=held?' stroke-dasharray="7 5"':estimated?' stroke-dasharray="3 3"':'';
+        const qualityTitle=held?`<title>${s.label} · held at last accounting mark</title>`:estimated?`<title>${s.label} · estimated zero-bid midpoint</title>`:"";
+        segments.push(`<path d="M${x(left.t).toFixed(1)},${seriesY(left.y).toFixed(1)} L${x(right.t).toFixed(1)},${seriesY(right.y).toFixed(1)}" fill="none" stroke="${s.color}" stroke-width="${s.width||2.5}"${dash} vector-effect="non-scaling-stroke">${qualityTitle}</path>`);
       }
       return segments.join("");
     }
@@ -404,7 +443,7 @@ function lineChart(target, series, options = {}) {
     ${relativeAreas}${zero}${paths}${markers}
     <text x="${pad.l}" y="${height-12}" fill="#667085" font-size="12">${shortTime(minT)}</text>
     <text x="${width-pad.r}" y="${height-12}" text-anchor="end" fill="#667085" font-size="12">${shortTime(maxT)}</text>
-  </svg><div class="chart-legend">${series.filter((s,i,a)=>a.findIndex(t=>(t.legendLabel||t.label)===(s.legendLabel||s.label))===i).map(s => `<span class="legend-key${s.dash ? " legend-key--dashed" : ""}" style="--key:${s.color}">${s.legendLabel || s.label}</span>`).join("")}${options.carriedForwardLegend ? '<span class="legend-key legend-key--dashed" style="--key:#667085">Held at last valid quote</span>' : ''}</div>`;
+  </svg><div class="chart-legend">${series.filter((s,i,a)=>a.findIndex(t=>(t.legendLabel||t.label)===(s.legendLabel||s.label))===i).map(s => `<span class="legend-key${s.dash ? " legend-key--dashed" : ""}" style="--key:${s.color}">${s.legendLabel || s.label}</span>`).join("")}${options.estimatedMarkLegend ? '<span class="legend-key legend-key--estimated" style="--key:#667085">Estimated zero-bid midpoint</span>' : ''}${options.carriedForwardLegend ? '<span class="legend-key legend-key--dashed" style="--key:#667085">Held at last accounting mark</span>' : ''}</div>`;
 }
 
 function portfolioDailyChart(target, rows, expectedHistory = [], intradayHistory = []) {
@@ -924,32 +963,37 @@ async function load() {
   ], {
     money: true, height: 465, includeZero: true, leftTickStep: 250, rightTickStep: 25,
     label: "Daily position and portfolio P&L with SPX", markers: positionMarkers,
-    carriedForwardLegend: true,
+    carriedForwardLegend: true, estimatedMarkLegend: true,
   });
   const dailyChartNode=document.querySelector("#daily-chart");
   if(dailyChartNode && (daily.carried_forward_mark_count||daily.stale_mark_count)>0){
     const warning=document.createElement("p");warning.className="chart-note";
     const count=daily.carried_forward_mark_count||daily.stale_mark_count;
-    warning.textContent=`Dashed segments and TOTAL retain the last valid accounting mark during quote gaps for ${count} position(s); no theoretical full-credit value is substituted.`;
+    warning.textContent=`Long-dashed segments and TOTAL retain the last accounting mark during quote gaps for ${count} position(s). Dotted segments use bounded zero-bid midpoint estimates when fresh asks and current SPX support them.`;
     dailyChartNode.appendChild(warning);
   }
+  if(dailyChartNode && daily.estimated_mark_count>0 && !(daily.carried_forward_mark_count||daily.stale_mark_count)){
+    const note=document.createElement("p");note.className="chart-note";
+    note.textContent=`Dotted segments use bounded zero-bid midpoint estimates for ${daily.estimated_mark_count} position(s); these are fair-value estimates, not executable closing quotes.`;
+    dailyChartNode.appendChild(note);
+  }
   table("#trade-table", [
-    ["Position", "position"], ["Record type", "record_type"], ["Strategy", "strategy"], ["Entry DTE", "dte"],
-    ["Status", "status"],
-    ["Current SPX location", "spx_position_zone", null, positionZoneBadge],
-    ["Position map", "spx_position_zone", null, positionMap],
-    ["Entry (ET)", "entry_time_et", null, shortTime],
+    ["Pos.", "position", null, null, "Position"], ["Type", "record_type", null, compactRecordType, "Record type"], ["Strat.", "strategy", null, compactStrategy, "Strategy: IC = iron condor; BPS = bull-put spread; BCS = bear-call spread"], ["DTE", "dte", null, null, "Entry DTE"],
+    ["Status", "status", null, compactStatus],
+    ["SPX zone", "spx_position_zone", null, positionZoneBadge, "Current SPX location"],
+    ["SPX map", "spx_position_zone", null, positionMap, "Position map"],
+    ["Entry", "entry_time_et", null, shortTime, "Entry time (ET)"],
     ["Expiry", "expiration_date", null, shortDate],
-    ["Exit (ET)", "exit_time_et", null, shortTime],
-    ["Modeled expected return", "modeled_expected_return", null, v => value(v, percent)],
-    ["Probability of full credit", "probability_of_full_credit", null, fullCreditProbability],
+    ["Exit", "exit_time_et", null, shortTime, "Exit time (ET)"],
+    ["Exp. return", "modeled_expected_return", null, v => value(v, percent), "Modeled expected return"],
+    ["Full-credit P", "probability_of_full_credit", null, fullCreditProbability, "Probability of full credit"],
     ["Q−P (pp)", "entry_q_minus_p", null, v => v === null || v === undefined ? "—" : `${Number(v) >= 0 ? "+" : ""}${(Number(v) * 100).toFixed(2)} pp`],
-    ["Total reserve", "total_short_reserve", null, v => value(v, money)],
-    ["Short-call reserve", "short_call_reserve", null, v => value(v, money)],
-    ["Short-put reserve", "short_put_reserve", null, v => value(v, money)], ["Maximum profit", "maximum_profit", pnlClass, v => value(v, money)], ["Base expected", "base_expected_net_pnl", pnlClass, v => value(v, money)],
-    ["Unrealized", "unrealized_net_pnl", pnlClass, v => value(v, money)], ["Realized", "realized_net_pnl", pnlClass, v => value(v, money)],
-    ["Max unrealized", "maximum_unrealized_pnl", pnlClass, v => value(v, money)], ["Min unrealized", "minimum_unrealized_pnl", pnlClass, v => value(v, money)],
-    ["Exit reason", "exit_reason"],
+    ["Reserve", "total_short_reserve", null, v => value(v, money), "Total reserve"],
+    ["Call res.", "short_call_reserve", null, v => value(v, money), "Short-call reserve"],
+    ["Put res.", "short_put_reserve", null, v => value(v, money), "Short-put reserve"], ["Max profit", "maximum_profit", pnlClass, v => value(v, money), "Maximum profit"], ["Base EV", "base_expected_net_pnl", pnlClass, v => value(v, money), "Base expected net P&L"],
+    ["uPnL", "unrealized_net_pnl", pnlClass, v => value(v, money), "Unrealized P&L"], ["Realized", "realized_net_pnl", pnlClass, v => value(v, money)],
+    ["Max uPnL", "maximum_unrealized_pnl", pnlClass, v => value(v, money), "Maximum unrealized P&L"], ["Min uPnL", "minimum_unrealized_pnl", pnlClass, v => value(v, money), "Minimum unrealized P&L"],
+    ["Reason", "exit_reason", null, compactExitReason, "Exit reason"],
   ], daily.trades);
   positionOutcomeChart("#position-outcome-chart", daily.trades);
   renderSettlementScenarioHorizons(

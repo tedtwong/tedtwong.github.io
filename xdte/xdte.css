@@ -124,6 +124,11 @@ th { color: var(--muted); font-size: .69rem; letter-spacing: .05em; text-align: 
 th, td { padding: 11px 10px; border-bottom: 1px solid #e5e0d7; }
 td { white-space: nowrap; }
 tr:last-child td { border-bottom: 0; }
+#trade-table table { font-size: .8rem; }
+#trade-table th { font-size: .65rem; letter-spacing: .035em; }
+#trade-table th, #trade-table td { padding: 8px 6px; }
+#trade-table abbr { cursor: help; text-decoration: none; }
+#trade-table .position-zone { padding: 3px 6px; }
 .positive { color: var(--green); }
 .negative { color: var(--red); }
 .position-zone { display: inline-flex; align-items: center; border-radius: 999px; padding: 4px 9px; color: #fff; font-size: .72rem; font-weight: 800; white-space: nowrap; }
@@ -204,6 +209,7 @@ footer { background: #e7e2d7; color: var(--muted); padding: 28px 18px; text-alig
 }
 
 .legend-key--dashed::before { height: 0; background: none; border-top: 3px dashed var(--key); }
+.legend-key--estimated::before { height: 0; background: none; border-top: 3px dotted var(--key); }
 
 .hero-banner { display: block; width: 100%; height: auto; aspect-ratio: 5 / 1; margin: 20px 0 0; border-radius: 10px; background: var(--paper); }
 
