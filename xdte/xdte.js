@@ -134,32 +134,32 @@ function deployedCapacityChart(rows) {
   const node = document.querySelector("#deployed-capacity-chart");
   if (!node) return;
   const controls = document.querySelector("#deployed-capacity-period-controls");
-  const history = (Array.isArray(rows) ? rows : []).filter(row=>row?.date).slice().sort((a,b)=>String(a.date).localeCompare(String(b.date)));
+  const history = (Array.isArray(rows) ? rows : []).filter(row=>row?.date && Number.isFinite(Date.parse(`${row.date}T00:00:00Z`))).slice().sort((a,b)=>String(a.date).localeCompare(String(b.date)));
   if (!history.length) {node.textContent="No deployed-capacity history available.";return;}
   let selectedWindow = Number(controls?.dataset?.selectedWindow || 30);
 
   const draw = () => {
-    const displayed = history.slice(-Math.max(1, selectedWindow));
+    const latestDay=Date.parse(`${history[history.length-1].date}T00:00:00Z`);
+    const cutoff=latestDay-(Math.max(1,selectedWindow)-1)*24*60*60*1000;
+    const displayed=history.filter(row=>Date.parse(`${row.date}T00:00:00Z`)>=cutoff);
     const width=1050,height=350,pad={l:90,r:105,t:28,b:72};
     const numeric=(value,fallback=0)=>Number.isFinite(Number(value))?Number(value):fallback;
-    const sessionTime=(date,hour,minute=0)=>Date.parse(`${date}T${String(hour).padStart(2,"0")}:${String(minute).padStart(2,"0")}:00Z`);
-    const reserveTimeline=displayed.flatMap(row=>[
-      {row,phase:"Opening",time:sessionTime(row.date,9,30),value:numeric(row.opening_deployed)},
-      {row,phase:"Ending",time:sessionTime(row.date,16),value:numeric(row.deployed)},
+    const maximumSlot=Math.max(1,displayed.length*4-1);
+    const sessionX=(index,slot)=>pad.l+(index*4+slot)/maximumSlot*(width-pad.l-pad.r);
+    const reserveTimeline=displayed.flatMap((row,index)=>[
+      {row,index,slot:0,phase:"Opening",value:numeric(row.opening_deployed)},
+      {row,index,slot:3,phase:"Ending",value:numeric(row.deployed)},
     ]);
-    const changeBars=displayed.flatMap(row=>{
+    const changeBars=displayed.flatMap((row,index)=>{
       const opening=numeric(row.opening_deployed),reserved=numeric(row.reserved_today),ending=numeric(row.deployed),afterNew=opening+reserved;
       return [
-        {row,label:"New filled",time:sessionTime(row.date,11,30),start:opening,end:afterNew,amount:reserved,color:"#f76915",anchor:"opening deployed"},
-        {row,label:"Exited / released",time:sessionTime(row.date,14),start:afterNew,end:ending,amount:ending-afterNew,color:"#2fa236",anchor:"post-fill deployed"},
+        {row,index,slot:1,label:"New filled",start:opening,end:afterNew,amount:reserved,color:"#f76915",anchor:"opening deployed"},
+        {row,index,slot:2,label:"Exited / released",start:afterNew,end:ending,amount:ending-afterNew,color:"#2fa236",anchor:"post-fill deployed"},
       ];
     });
     const capacityValues=[0,...reserveTimeline.map(item=>item.value),...changeBars.flatMap(item=>[item.start,item.end])];
     let capacityMinimum=Math.min(...capacityValues),capacityMaximum=Math.max(...capacityValues);
     if(capacityMinimum===capacityMaximum)capacityMaximum=capacityMinimum+1;
-    const xMinimum=Math.min(...reserveTimeline.map(item=>item.time));
-    const xMaximum=Math.max(...reserveTimeline.map(item=>item.time));
-    const x=value=>pad.l+(value-xMinimum)/Math.max(xMaximum-xMinimum,1)*(width-pad.l-pad.r);
     const capacityY=value=>pad.t+(capacityMaximum-numeric(value))/(capacityMaximum-capacityMinimum)*(height-pad.t-pad.b);
     const pnlRows=displayed.map((row,index)=>({row,index,value:Number(row.realized_pnl)}))
       .filter(item=>Number.isFinite(item.value));
@@ -170,26 +170,25 @@ function deployedCapacityChart(rows) {
     let marks=capacityTicks.map(value=>`<line x1="${pad.l}" x2="${width-pad.r}" y1="${capacityY(value)}" y2="${capacityY(value)}" stroke="#ddd"/><text x="${pad.l-8}" y="${capacityY(value)+4}" text-anchor="end" font-size="12">${money.format(value)}</text>`).join("");
     if(pnlRows.length){
       const pnlTicks=Array.from({length:5},(_,i)=>pnlMinimum+(pnlMaximum-pnlMinimum)*i/4);
-      marks+=pnlTicks.map(value=>`<text x="${width-pad.r+9}" y="${pnlY(value)+4}" text-anchor="start" fill="#7c3aed" font-size="12">${money.format(value)}</text>`).join("");
-      marks+=`<line x1="${pad.l}" x2="${width-pad.r}" y1="${pnlY(0)}" y2="${pnlY(0)}" stroke="#7c3aed" stroke-opacity=".35" stroke-dasharray="4 4"/>`;
+      marks+=pnlTicks.map(value=>`<text x="${width-pad.r+9}" y="${pnlY(value)+4}" text-anchor="start" fill="#6b7280" font-size="12">${money.format(value)}</text>`).join("");
+      marks+=`<line x1="${pad.l}" x2="${width-pad.r}" y1="${pnlY(0)}" y2="${pnlY(0)}" stroke="#6b7280" stroke-opacity=".4" stroke-dasharray="4 4"/>`;
     }
     const labelEvery=Math.max(1,Math.ceil(displayed.length/12));
     changeBars.forEach(item=>{
       const top=Math.min(capacityY(item.start),capacityY(item.end));
       const barHeight=Math.max(1,Math.abs(capacityY(item.start)-capacityY(item.end)));
-      marks+=`<rect x="${x(item.time)-6}" y="${top}" width="12" height="${barHeight}" fill="${item.color}" opacity=".78"><title>${item.row.date}: ${item.label} ${money.format(Math.abs(item.amount))}; starts at ${item.anchor} ${money.format(item.start)}; ends at ${money.format(item.end)}</title></rect>`;
+      marks+=`<rect x="${sessionX(item.index,item.slot)-6}" y="${top}" width="12" height="${barHeight}" fill="${item.color}" opacity=".78"><title>${item.row.date}: ${item.label} ${money.format(Math.abs(item.amount))}; starts at ${item.anchor} ${money.format(item.start)}; ends at ${money.format(item.end)}</title></rect>`;
     });
-    marks+=`<path d="${reserveTimeline.map((item,index)=>`${index?'L':'M'}${x(item.time)},${capacityY(item.value)}`).join(' ')}" fill="none" stroke="#333ed4" stroke-width="2.5"/>`;
-    reserveTimeline.forEach(item=>{const color=item.phase==="Opening"?"#8da2fb":"#333ed4";marks+=`<circle cx="${x(item.time)}" cy="${capacityY(item.value)}" r="4" fill="${color}" stroke="white" stroke-width="1"><title>${item.row.date} ${item.phase.toLowerCase()}: deployed reserve ${money.format(item.value)}</title></circle>`;});
+    marks+=`<path d="${reserveTimeline.map((item,index)=>`${index?'L':'M'}${sessionX(item.index,item.slot)},${capacityY(item.value)}`).join(' ')}" fill="none" stroke="#333ed4" stroke-width="2.5"/>`;
+    reserveTimeline.forEach(item=>{const color=item.phase==="Opening"?"#8da2fb":"#333ed4";marks+=`<circle cx="${sessionX(item.index,item.slot)}" cy="${capacityY(item.value)}" r="4" fill="${color}" stroke="white" stroke-width="1"><title>${item.row.date} ${item.phase.toLowerCase()}: deployed reserve ${money.format(item.value)}</title></circle>`;});
     displayed.forEach((row,index)=>{
-      if(index%labelEvery===0||index===displayed.length-1){const center=(sessionTime(row.date,9,30)+sessionTime(row.date,16))/2;marks+=`<text transform="translate(${x(center)},${height-pad.b+20}) rotate(-30)" text-anchor="end" font-size="12">${row.date}</text>`;}
+      if(index%labelEvery===0||index===displayed.length-1){const center=(sessionX(index,0)+sessionX(index,3))/2;marks+=`<text transform="translate(${center},${height-pad.b+20}) rotate(-30)" text-anchor="end" font-size="12">${row.date}</text>`;}
     });
     if(pnlRows.length){
-      marks+=`<path d="${pnlRows.map((item,index)=>`${index?'L':'M'}${x(sessionTime(item.row.date,16))},${pnlY(item.value)}`).join(' ')}" fill="none" stroke="#7c3aed" stroke-width="3"/>`;
-      pnlRows.forEach(item=>{marks+=`<circle cx="${x(sessionTime(item.row.date,16))}" cy="${pnlY(item.value)}" r="4" fill="#7c3aed"><title>${item.row.date}: realized P&L ${money.format(item.value)}</title></circle>`;});
+      pnlRows.forEach(item=>{const left=sessionX(item.index,1)-8,right=sessionX(item.index,2)+8,top=Math.min(pnlY(0),pnlY(item.value)),barHeight=Math.max(1,Math.abs(pnlY(0)-pnlY(item.value)));marks+=`<rect x="${left}" y="${top}" width="${Math.max(16,right-left)}" height="${barHeight}" fill="#6b7280" opacity=".28"><title>${item.row.date}: daily realized P&L ${money.format(item.value)}</title></rect>`;});
     }
-    marks+=`<text x="${(pad.l+width-pad.r)/2}" y="${height-10}" text-anchor="middle" font-size="12">Session time (ET): opening 09:30 · ending 16:00</text><text transform="translate(18 ${(pad.t+height-pad.b)/2}) rotate(-90)" text-anchor="middle" font-size="12">Deployed reserve ($)</text><text transform="translate(${width-15} ${(pad.t+height-pad.b)/2}) rotate(90)" text-anchor="middle" fill="#7c3aed" font-size="12">Daily realized P&amp;L ($; zero centered)</text>`;
-    node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Opening and ending deployed reserve over session time, sequential intraday reserve changes, and zero-centered daily realized P and L">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#8da2fb">Opening reserve · line point</span><span class="legend-key" style="--key:#333ed4">Ending reserve · line point</span><span class="legend-key" style="--key:#f76915">New filled · from opening</span><span class="legend-key" style="--key:#2fa236">Exited / released · post-fill to ending</span><span class="legend-key" style="--key:#7c3aed">Daily realized P&amp;L · zero-centered right axis</span></div><p class="chart-note">The green exit bar starts at the orange new-filled bar's top and ends at closing reserve. Change-bar positions within each session are visual anchors for daily totals, not the individual event timestamps.</p>`;
+    marks+=`<text x="${(pad.l+width-pad.r)/2}" y="${height-10}" text-anchor="middle" font-size="12">Trading sessions only (ET; closed days omitted)</text><text transform="translate(18 ${(pad.t+height-pad.b)/2}) rotate(-90)" text-anchor="middle" font-size="12">Deployed reserve ($)</text><text transform="translate(${width-15} ${(pad.t+height-pad.b)/2}) rotate(90)" text-anchor="middle" fill="#6b7280" font-size="12">Daily realized P&amp;L ($; zero centered)</text>`;
+    node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Opening and ending deployed reserve across trading sessions only, sequential reserve changes, and foreground daily realized P and L bars">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#8da2fb">Opening reserve · line point</span><span class="legend-key" style="--key:#333ed4">Ending reserve · line point</span><span class="legend-key" style="--key:#f76915">New filled · from opening</span><span class="legend-key" style="--key:#2fa236">Exited / released · post-fill to ending</span><span class="legend-key" style="--key:#6b7280">Daily realized P&amp;L · translucent foreground bar</span></div><p class="chart-note">The selected lookback is ${selectedWindow} calendar days. Weekends and full-market holidays are omitted. Gray P&amp;L bars use the zero-centered right axis and render in front of the orange and green capacity changes.</p>`;
     const reconciliationFailures=displayed.filter(row=>Math.abs(numeric(row.reconciliation_difference))>.01);
     if(reconciliationFailures.length)node.insertAdjacentHTML("beforeend",`<p class="chart-note">Warning: ${reconciliationFailures.length} displayed session(s) do not reconcile opening + deployment − exits to ending reserve.</p>`);
     if(displayed.some(row=>row.status!=="COMPLETE"))node.insertAdjacentHTML("beforeend","<p class=\"chart-note\">Warning: capacity or realized-P&amp;L history is incomplete.</p>");

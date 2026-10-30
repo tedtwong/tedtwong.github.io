@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
   <link rel="stylesheet" href="xdte.css?v=20261029-compact-trade-table">
-  <script defer src="xdte.js?v=20261030-capacity-bridge-v2"></script>
+  <script defer src="xdte.js?v=20261030-capacity-bridge-v4"></script>
 </head>
 <body>
   <header class="hero">
@@ -193,11 +193,11 @@
       </article>
       <article class="panel chart-panel">
         <div class="panel__heading">
-          <div><h3>Deployed reserve capacity bridge — daily history</h3><p>Opening and ending deployed reserve are connected across session time. New filled reserve starts at the opening balance; exited reserve starts at the top of that new-filled bar and ends at closing reserve. Daily realized P&amp;L after costs uses a zero-centered right axis. Cancelled and zero-fill orders are excluded.</p></div>
+          <div><h3>Deployed reserve capacity bridge — daily history</h3><p>Only trading sessions are shown; weekends and full-market holidays are omitted. Opening and ending deployed reserve are connected across session sequence. New filled reserve starts at opening; exited reserve continues from its top to closing reserve. Daily realized P&amp;L is a gray translucent foreground bar on the zero-centered right axis. Cancelled and zero-fill orders are excluded.</p></div>
           <div id="deployed-capacity-period-controls" class="period-controls" role="group" aria-label="Deployed reserve history window" data-selected-window="30">
-            <button type="button" data-capacity-window="1">Today</button>
-            <button type="button" data-capacity-window="7">7 sessions</button>
-            <button type="button" data-capacity-window="30" class="is-active" aria-pressed="true">30 sessions</button>
+            <button type="button" data-capacity-window="7">7 days</button>
+            <button type="button" data-capacity-window="30" class="is-active" aria-pressed="true">30 days</button>
+            <button type="button" data-capacity-window="180">180 days</button>
           </div>
         </div>
         <div id="deployed-capacity-chart" class="chart"></div>
