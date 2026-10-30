@@ -176,6 +176,8 @@ function deployedCapacityChart(rows) {
   const controls = document.querySelector("#deployed-capacity-period-controls");
   const history = (Array.isArray(rows) ? rows : []).filter(row=>row?.date && Number.isFinite(Date.parse(`${row.date}T00:00:00Z`))).slice().sort((a,b)=>String(a.date).localeCompare(String(b.date)));
   if (!history.length) {node.textContent="No deployed-capacity history available.";return;}
+  const sessionDateFormatter=new Intl.DateTimeFormat("en-US",{month:"short",day:"numeric",timeZone:"UTC"});
+  const sessionDateLabel=value=>sessionDateFormatter.format(new Date(`${value}T00:00:00Z`));
   let selectedWindow = Number(controls?.dataset?.selectedWindow || 30);
 
   const draw = () => {
@@ -191,12 +193,8 @@ function deployedCapacityChart(rows) {
     const sessionX=(index,slot)=>pad.l+(index*slotsPerSession+slot)/maximumSlot*(width-pad.l-pad.r);
     const reserveTimeline=displayed.flatMap((row,index)=>{
       const opening=numeric(row.opening_deployed);
-      const afterAdded=numeric(row.after_new_deployment,opening+numeric(row.reserved_today));
-      const afterExited=numeric(row.after_exits,afterAdded-numeric(row.exited_today));
       return [
         {row,index,slot:0,phase:"Starting",value:opening,color:"#8da2fb"},
-        {row,index,slot:1,phase:"After added",value:afterAdded,color:"#f76915"},
-        {row,index,slot:2,phase:"After exited",value:afterExited,color:"#2fa236"},
         {row,index,slot:3,phase:"Ending",value:numeric(row.deployed),color:"#333ed4"},
       ];
     });
@@ -247,11 +245,11 @@ function deployedCapacityChart(rows) {
     });
     reserveTimeline.forEach(item=>{marks+=`<circle data-capacity-layer="state" data-capacity-date="${item.row.date}" data-capacity-stage="${item.phase}" cx="${sessionX(item.index,item.slot)}" cy="${capacityY(item.value)}" r="4" fill="${item.color}" stroke="white" stroke-width="1"><title>${item.row.date} ${item.phase.toLowerCase()}: deployed reserve ${money.format(item.value)}</title></circle>`;});
     displayed.forEach((row,index)=>{
-      if(index%labelEvery===0||index===displayed.length-1){const center=(sessionX(index,1)+sessionX(index,2))/2;marks+=`<text transform="translate(${center},${height-pad.b+20}) rotate(-30)" text-anchor="end" font-size="12">${row.date}</text>`;}
+      if(index%labelEvery===0||index===displayed.length-1){const center=(sessionX(index,1)+sessionX(index,2))/2;marks+=`<text transform="translate(${center},${height-pad.b+20}) rotate(-30)" text-anchor="end" font-size="12">${sessionDateLabel(row.date)}</text>`;}
     });
-    marks+=`<text x="${(pad.l+width-pad.r)/2}" y="18" text-anchor="middle" fill="#475467" font-size="12">Reserve sequence: Open → +New → −Exit → Close · P&amp;L is a full-session background bar</text>`;
+    marks+=`<text x="${(pad.l+width-pad.r)/2}" y="18" text-anchor="middle" fill="#475467" font-size="12">Reserve accounting: Open + New − Exit = Close · reserve line connects Open to Close</text>`;
     marks+=`<text x="${(pad.l+width-pad.r)/2}" y="${height-10}" text-anchor="middle" font-size="12">Trading sessions only (ET; closed days omitted)</text><text transform="translate(18 ${(pad.t+height-pad.b)/2}) rotate(-90)" text-anchor="middle" font-size="12">Deployed reserve ($)</text><text transform="translate(${width-15} ${(pad.t+height-pad.b)/2}) rotate(90)" text-anchor="middle" fill="#6b7280" font-size="12">Daily realized P&amp;L ($; zero centered)</text>`;
-    node.innerHTML=`<svg data-capacity-stage-order="open,new,exit,close" viewBox="0 0 ${width} ${height}" role="img" aria-label="Deployed reserve follows open, new fills, exits, and close in that uninterrupted fixed order; daily realized P and L is a translucent full-session background bar">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#8da2fb">Opening reserve · line point</span><span class="legend-key" style="--key:#f76915">After new fills · line point and change bar</span><span class="legend-key" style="--key:#2fa236">After exits · line point and change bar</span><span class="legend-key" style="--key:#333ed4">Closing reserve · line point</span><span class="legend-key" style="--key:#6b7280">Daily realized P&amp;L · background bar · right axis</span></div><p class="chart-note">The reserve sequence is uninterrupted: Open → +New → −Exit → Close. The +New and −Exit change bars touch at their shared boundary. Each daily realized-P&amp;L value is a translucent gray background bar spanning that session from Open through Close on the independent right axis. It is drawn behind every capacity bar, line, and point, so P&amp;L never occupies a reserve stage. Dashed segments connect one session's close to the next session's open. The selected lookback is ${selectedWindow} calendar days; weekends and full-market holidays are omitted.</p>`;
+    node.innerHTML=`<svg data-capacity-stage-order="open,new,exit,close" data-capacity-line-point-order="open,close" viewBox="0 0 ${width} ${height}" role="img" aria-label="The deployed-reserve line connects opening reserve directly to closing reserve; new-fill and exit changes remain as touching bars; daily realized P and L is a translucent full-session background bar">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#8da2fb">Opening reserve · line point</span><span class="legend-key" style="--key:#f76915">New filled reserve · change bar</span><span class="legend-key" style="--key:#2fa236">Exited / released reserve · change bar</span><span class="legend-key" style="--key:#333ed4">Closing reserve · line point</span><span class="legend-key" style="--key:#6b7280">Daily realized P&amp;L · background bar · right axis</span></div><p class="chart-note">The blue reserve line runs directly from Open to Close with no intermediate line points. The +New and −Exit change bars retain the intraday reconciliation and touch at their shared boundary. Each daily realized-P&amp;L value is a translucent gray background bar spanning that session from Open through Close on the independent right axis. It is drawn behind every capacity bar, line, and point. Dashed segments connect one session's close to the next session's open. The selected lookback is ${selectedWindow} calendar days; weekends and full-market holidays are omitted.</p>`;
     const reconciliationFailures=displayed.filter(row=>Math.abs(numeric(row.reconciliation_difference))>.01);
     if(reconciliationFailures.length)node.insertAdjacentHTML("beforeend",`<p class="chart-note">Warning: ${reconciliationFailures.length} displayed session(s) do not reconcile opening + deployment − exits to ending reserve.</p>`);
     if(displayed.some(row=>row.status!=="COMPLETE"))node.insertAdjacentHTML("beforeend","<p class=\"chart-note\">Warning: capacity or realized-P&amp;L history is incomplete.</p>");
