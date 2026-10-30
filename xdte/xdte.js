@@ -182,10 +182,13 @@ function deployedCapacityChart(rows) {
     const latestDay=Date.parse(`${history[history.length-1].date}T00:00:00Z`);
     const cutoff=latestDay-(Math.max(1,selectedWindow)-1)*24*60*60*1000;
     const displayed=history.filter(row=>Date.parse(`${row.date}T00:00:00Z`)>=cutoff);
-    const width=1050,height=350,pad={l:90,r:105,t:28,b:72};
+    const width=1050,height=370,pad={l:90,r:105,t:46,b:72};
     const numeric=(value,fallback=0)=>Number.isFinite(Number(value))?Number(value):fallback;
-    const maximumSlot=Math.max(1,displayed.length*4-1);
-    const sessionX=(index,slot)=>pad.l+(index*4+slot)/maximumSlot*(width-pad.l-pad.r);
+    // Five fixed visual slots keep every session unambiguous.  P&L occupies
+    // the neutral center slot and can no longer cover or reorder reserve states.
+    const slotsPerSession=5;
+    const maximumSlot=Math.max(1,displayed.length*slotsPerSession-1);
+    const sessionX=(index,slot)=>pad.l+(index*slotsPerSession+slot)/maximumSlot*(width-pad.l-pad.r);
     const reserveTimeline=displayed.flatMap((row,index)=>{
       const opening=numeric(row.opening_deployed);
       const afterAdded=numeric(row.after_new_deployment,opening+numeric(row.reserved_today));
@@ -193,8 +196,8 @@ function deployedCapacityChart(rows) {
       return [
         {row,index,slot:0,phase:"Starting",value:opening,color:"#8da2fb"},
         {row,index,slot:1,phase:"After added",value:afterAdded,color:"#f76915"},
-        {row,index,slot:2,phase:"After exited",value:afterExited,color:"#2fa236"},
-        {row,index,slot:3,phase:"Ending",value:numeric(row.deployed),color:"#333ed4"},
+        {row,index,slot:3,phase:"After exited",value:afterExited,color:"#2fa236"},
+        {row,index,slot:4,phase:"Ending",value:numeric(row.deployed),color:"#333ed4"},
       ];
     });
     const changeBars=displayed.flatMap((row,index)=>{
@@ -203,7 +206,7 @@ function deployedCapacityChart(rows) {
       const afterExits=numeric(row.after_exits,afterNew-numeric(row.exited_today));
       return [
         {row,index,slot:1,label:"New filled",start:opening,end:afterNew,amount:reserved,color:"#f76915",anchor:"opening deployed"},
-        {row,index,slot:2,label:"Exited / released",start:afterNew,end:afterExits,amount:afterExits-afterNew,color:"#2fa236",anchor:"post-fill deployed"},
+        {row,index,slot:3,label:"Exited / released",start:afterNew,end:afterExits,amount:afterExits-afterNew,color:"#2fa236",anchor:"post-fill deployed"},
       ];
     });
     const capacityValues=[0,...reserveTimeline.map(item=>item.value),...changeBars.flatMap(item=>[item.start,item.end])];
@@ -226,18 +229,31 @@ function deployedCapacityChart(rows) {
     changeBars.forEach(item=>{
       const top=Math.min(capacityY(item.start),capacityY(item.end));
       const barHeight=Math.max(1,Math.abs(capacityY(item.start)-capacityY(item.end)));
-      marks+=`<rect x="${sessionX(item.index,item.slot)-6}" y="${top}" width="12" height="${barHeight}" fill="${item.color}" opacity=".78"><title>${item.row.date}: ${item.label} ${money.format(Math.abs(item.amount))}; starts at ${item.anchor} ${money.format(item.start)}; ends at ${money.format(item.end)}</title></rect>`;
+      marks+=`<rect data-capacity-layer="change" data-capacity-date="${item.row.date}" x="${sessionX(item.index,item.slot)-6}" y="${top}" width="12" height="${barHeight}" fill="${item.color}" opacity=".78"><title>${item.row.date}: ${item.label} ${money.format(Math.abs(item.amount))}; starts at ${item.anchor} ${money.format(item.start)}; ends at ${money.format(item.end)}</title></rect>`;
     });
-    marks+=`<path d="${reserveTimeline.map((item,index)=>`${index?'L':'M'}${sessionX(item.index,item.slot)},${capacityY(item.value)}`).join(' ')}" fill="none" stroke="#333ed4" stroke-width="2.5"/>`;
-    reserveTimeline.forEach(item=>{marks+=`<circle cx="${sessionX(item.index,item.slot)}" cy="${capacityY(item.value)}" r="4" fill="${item.color}" stroke="white" stroke-width="1"><title>${item.row.date} ${item.phase.toLowerCase()}: deployed reserve ${money.format(item.value)}</title></circle>`;});
-    displayed.forEach((row,index)=>{
-      if(index%labelEvery===0||index===displayed.length-1){const center=(sessionX(index,0)+sessionX(index,3))/2;marks+=`<text transform="translate(${center},${height-pad.b+20}) rotate(-30)" text-anchor="end" font-size="12">${row.date}</text>`;}
-    });
+    // P&L remains in front of the capacity-change bars, but its dedicated
+    // center slot leaves the reserve line and all four state points visible.
     if(pnlRows.length){
-      pnlRows.forEach(item=>{const left=sessionX(item.index,1)-8,right=sessionX(item.index,2)+8,top=Math.min(pnlY(0),pnlY(item.value)),barHeight=Math.max(1,Math.abs(pnlY(0)-pnlY(item.value)));marks+=`<rect x="${left}" y="${top}" width="${Math.max(16,right-left)}" height="${barHeight}" fill="#6b7280" opacity=".28"><title>${item.row.date}: daily realized P&L ${money.format(item.value)}</title></rect>`;});
+      pnlRows.forEach(item=>{const center=sessionX(item.index,2),top=Math.min(pnlY(0),pnlY(item.value)),barHeight=Math.max(1,Math.abs(pnlY(0)-pnlY(item.value)));marks+=`<rect data-capacity-layer="pnl" data-capacity-date="${item.row.date}" data-capacity-center-x="${center}" x="${center-8}" y="${top}" width="16" height="${barHeight}" fill="#6b7280" opacity=".28"><title>${item.row.date}: daily realized P&L ${money.format(item.value)}</title></rect>`;});
     }
+    // Session-to-session continuity is a dashed connector.  The solid line is
+    // restarted within each day so its state order cannot cross day boundaries.
+    for(let index=1;index<displayed.length;index++){
+      const prior=reserveTimeline.find(item=>item.index===index-1&&item.phase==="Ending");
+      const current=reserveTimeline.find(item=>item.index===index&&item.phase==="Starting");
+      marks+=`<line data-capacity-layer="overnight-connector" x1="${sessionX(index-1,4)}" y1="${capacityY(prior.value)}" x2="${sessionX(index,0)}" y2="${capacityY(current.value)}" stroke="#333ed4" stroke-width="1.5" stroke-opacity=".48" stroke-dasharray="4 4"><title>${prior.row.date} close to ${current.row.date} open: ${money.format(prior.value)} → ${money.format(current.value)}</title></line>`;
+    }
+    displayed.forEach((row,index)=>{
+      const points=reserveTimeline.filter(item=>item.index===index);
+      marks+=`<path data-capacity-layer="session-line" data-capacity-date="${row.date}" d="${points.map((item,pointIndex)=>`${pointIndex?'L':'M'}${sessionX(item.index,item.slot)},${capacityY(item.value)}`).join(' ')}" fill="none" stroke="#333ed4" stroke-width="2.5"/>`;
+    });
+    reserveTimeline.forEach(item=>{marks+=`<circle data-capacity-layer="state" data-capacity-date="${item.row.date}" data-capacity-stage="${item.phase}" cx="${sessionX(item.index,item.slot)}" cy="${capacityY(item.value)}" r="4" fill="${item.color}" stroke="white" stroke-width="1"><title>${item.row.date} ${item.phase.toLowerCase()}: deployed reserve ${money.format(item.value)}</title></circle>`;});
+    displayed.forEach((row,index)=>{
+      if(index%labelEvery===0||index===displayed.length-1){const center=sessionX(index,2);marks+=`<text transform="translate(${center},${height-pad.b+20}) rotate(-30)" text-anchor="end" font-size="12">${row.date}</text>`;}
+    });
+    marks+=`<text x="${(pad.l+width-pad.r)/2}" y="18" text-anchor="middle" fill="#475467" font-size="12">Within each session: Open → +New → −Exit → Close</text>`;
     marks+=`<text x="${(pad.l+width-pad.r)/2}" y="${height-10}" text-anchor="middle" font-size="12">Trading sessions only (ET; closed days omitted)</text><text transform="translate(18 ${(pad.t+height-pad.b)/2}) rotate(-90)" text-anchor="middle" font-size="12">Deployed reserve ($)</text><text transform="translate(${width-15} ${(pad.t+height-pad.b)/2}) rotate(90)" text-anchor="middle" fill="#6b7280" font-size="12">Daily realized P&amp;L ($; zero centered)</text>`;
-    node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Deployed reserve follows starting, added, exited, and ending states for each trading session, with foreground daily realized P and L bars">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#8da2fb">Starting reserve · line point</span><span class="legend-key" style="--key:#f76915">After added · line point and change bar</span><span class="legend-key" style="--key:#2fa236">After exited · line point and change bar</span><span class="legend-key" style="--key:#333ed4">Ending reserve · line point</span><span class="legend-key" style="--key:#6b7280">Daily realized P&amp;L · translucent foreground bar</span></div><p class="chart-note">For each session, the reserve line runs starting → after added → after exited → ending. The selected lookback is ${selectedWindow} calendar days. Weekends and full-market holidays are omitted. Gray P&amp;L bars use the zero-centered right axis and render in front of the capacity changes.</p>`;
+    node.innerHTML=`<svg data-capacity-stage-order="open,new,exit,close" viewBox="0 0 ${width} ${height}" role="img" aria-label="Deployed reserve follows open, new fills, exits, and close in that fixed order for each trading session, with daily realized P and L in a separate center slot">${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#8da2fb">Opening reserve · line point</span><span class="legend-key" style="--key:#f76915">After new fills · line point and change bar</span><span class="legend-key" style="--key:#6b7280">Daily realized P&amp;L · separate center slot</span><span class="legend-key" style="--key:#2fa236">After exits · line point and change bar</span><span class="legend-key" style="--key:#333ed4">Closing reserve · line point</span></div><p class="chart-note">Each session uses five fixed slots: Open → +New → P&amp;L center → −Exit → Close. The reserve line skips the neutral P&amp;L slot and always follows Open → +New → −Exit → Close. Dashed segments connect one session's close to the next session's open. The selected lookback is ${selectedWindow} calendar days; weekends and full-market holidays are omitted.</p>`;
     const reconciliationFailures=displayed.filter(row=>Math.abs(numeric(row.reconciliation_difference))>.01);
     if(reconciliationFailures.length)node.insertAdjacentHTML("beforeend",`<p class="chart-note">Warning: ${reconciliationFailures.length} displayed session(s) do not reconcile opening + deployment − exits to ending reserve.</p>`);
     if(displayed.some(row=>row.status!=="COMPLETE"))node.insertAdjacentHTML("beforeend","<p class=\"chart-note\">Warning: capacity or realized-P&amp;L history is incomplete.</p>");
@@ -586,6 +602,22 @@ function portfolioDailyChart(target, rows, expectedHistory = [], intradayHistory
   const width = 1000, height = 365, pad = {l: 96, r: 100, t: 30, b: 66};
   const plotWidth = width-pad.l-pad.r, plotHeight = height-pad.t-pad.b;
   const x = i => pad.l+(i+.5)*plotWidth/rows.length;
+  const intradayPoints = intraday.slice()
+    .sort((a,b)=>Date.parse(a.time_et)-Date.parse(b.time_et))
+    .map(r=>{
+      const day=r.time_et.slice(0,10),index=rows.findIndex(session=>session.date===day);
+      const clock=r.time_et.slice(11,19).split(":").map(Number);
+      const fraction=Math.max(0,Math.min(1,(clock[0]*60+clock[1]+clock[2]/60-570)/390));
+      return {...r,day,index,stamp:new Date(r.time_et),px:pad.l+(index+.1+.8*fraction)*plotWidth/rows.length};
+    })
+    .filter(point=>point.index>=0);
+  const totalSessionAnchors=new Map();
+  intradayPoints.forEach(point=>totalSessionAnchors.set(point.day,point));
+  // Settled/expected cumulative values are session-close quantities.  Put
+  // their points at the exact horizontal coordinate of that session's final
+  // TOTAL mark; use the right edge only when no TOTAL mark exists.
+  const cumulativeX=(row,index)=>totalSessionAnchors.get(row.date)?.px
+    ?? (pad.l+(index+.9)*plotWidth/rows.length);
   const bounds = values => {
     const maximum = Math.max(1, ...values.filter(finite).map(v => Math.abs(Number(v))));
     const rawStep = maximum/3, power = 10**Math.floor(Math.log10(rawStep));
@@ -610,38 +642,35 @@ function portfolioDailyChart(target, rows, expectedHistory = [], intradayHistory
   const path = rows.map((r,i)=>{
     if (!finite(r.net_pnl)) { drawing=false;return ""; }
     const move = drawing ? "L" : "M"; drawing=true;
-    return `${move}${x(i).toFixed(2)},${ry(r.net_pnl).toFixed(2)}`;
+    return `${move}${cumulativeX(r,i).toFixed(2)},${ry(r.net_pnl).toFixed(2)}`;
   }).join(" ");
-  const dots = rows.map((r,i)=>finite(r.net_pnl) ? `<circle cx="${x(i)}" cy="${ry(r.net_pnl)}" r="3.5" fill="#333ed4"><title>${r.date}: cumulative settled net P&amp;L ${money.format(r.net_pnl)}</title></circle>` : "").join("");
+  const dots = rows.map((r,i)=>finite(r.net_pnl) ? `<circle data-series="cumulative-settled" data-session="${r.date}" cx="${cumulativeX(r,i)}" cy="${ry(r.net_pnl)}" r="3.5" fill="#333ed4"><title>${r.date}: cumulative settled net P&amp;L ${money.format(r.net_pnl)}</title></circle>` : "").join("");
   let expectedDrawing = false;
   const expectedPath = rows.map((r,i)=>{
     if (!finite(r.expected_net_pnl)) { expectedDrawing=false;return ""; }
     const move = expectedDrawing ? "L" : "M"; expectedDrawing=true;
-    return `${move}${x(i).toFixed(2)},${ry(r.expected_net_pnl).toFixed(2)}`;
+    return `${move}${cumulativeX(r,i).toFixed(2)},${ry(r.expected_net_pnl).toFixed(2)}`;
   }).join(" ");
-  const expectedDots = rows.map((r,i)=>finite(r.expected_net_pnl) ? `<circle cx="${x(i)}" cy="${ry(r.expected_net_pnl)}" r="3" fill="#7c3aed"><title>${r.date}: cumulative saved expected net P&amp;L for settled trades ${money.format(r.expected_net_pnl)}</title></circle>` : "").join("");
+  const expectedDots = rows.map((r,i)=>finite(r.expected_net_pnl) ? `<circle data-series="cumulative-expected" data-session="${r.date}" cx="${cumulativeX(r,i)}" cy="${ry(r.expected_net_pnl)}" r="3" fill="#7c3aed"><title>${r.date}: cumulative saved expected net P&amp;L for settled trades ${money.format(r.expected_net_pnl)}</title></circle>` : "").join("");
   let previousMark = null;
   let previousPoint = null;
   const overnightSegments = [];
-  const intradayPath = intraday.slice().sort((a,b)=>Date.parse(a.time_et)-Date.parse(b.time_et)).map(r=>{
-    const day=r.time_et.slice(0,10), index=rows.findIndex(session=>session.date===day);
-    const stamp=new Date(r.time_et), clock=r.time_et.slice(11,19).split(":").map(Number);
-    const fraction=Math.max(0,Math.min(1,(clock[0]*60+clock[1]+clock[2]/60-570)/390));
-    const px=pad.l+(index+.1+.8*fraction)*plotWidth/rows.length;
-    const contiguous=previousMark && previousMark.time_et.slice(0,10)===day && stamp-Date.parse(previousMark.time_et)<=15*60*1000;
-    const point=`${px.toFixed(2)},${ry(r.net_pnl).toFixed(2)}`;
-    if(previousMark && previousMark.time_et.slice(0,10)!==day) overnightSegments.push(`M${previousPoint} L${point}`);
+  const intradayPath = intradayPoints.map(r=>{
+    const contiguous=previousMark && previousMark.day===r.day && r.stamp-previousMark.stamp<=15*60*1000;
+    const point=`${r.px.toFixed(2)},${ry(r.net_pnl).toFixed(2)}`;
+    if(previousMark && previousMark.day!==r.day) overnightSegments.push(`M${previousPoint} L${point}`);
     previousPoint=point;
     previousMark=r;
-    return `${contiguous ? "L" : "M"}${px.toFixed(2)},${ry(r.net_pnl).toFixed(2)}`;
+    return `${contiguous ? "L" : "M"}${r.px.toFixed(2)},${ry(r.net_pnl).toFixed(2)}`;
   }).join(" ");
+  const totalAnchorDots=[...totalSessionAnchors.values()].map(r=>`<circle data-series="total-session-anchor" data-session="${r.day}" cx="${r.px}" cy="${ry(r.net_pnl)}" r="3" fill="#707780"><title>${r.day}: final saved TOTAL P&amp;L ${money.format(r.net_pnl)}</title></circle>`).join("");
   const dateFormat = new Intl.DateTimeFormat("en-US",{month:"short",day:"numeric",timeZone:"UTC"});
   const interval = Math.max(1,Math.ceil(rows.length/8));
   const labels = rows.map((r,i)=>(i%interval===0 || i===rows.length-1) ? `<text x="${x(i)}" y="${height-39}" text-anchor="middle" fill="#667085" font-size="12">${dateFormat.format(new Date(r.date+"T12:00:00Z"))}</text>` : "").join("");
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Daily realized P&amp;L bars, cumulative settled net P&amp;L and cumulative expected P&amp;L by trading session">
     ${grid}${rightTicks}
     <line data-zero-axis="left" x1="${pad.l}" x2="${width-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#7b8495" stroke-width="1.75"/>
-    ${bars}<path data-series="intraday-total" d="${intradayPath}" stroke="#707780" stroke-width="2.3" stroke-opacity="0.6" fill="none" vector-effect="non-scaling-stroke"/><path data-series="overnight-total" d="${overnightSegments.join(" ")}" stroke="#707780" stroke-width="2.3" stroke-opacity="0.6" stroke-dasharray="5 4" fill="none" vector-effect="non-scaling-stroke"/><path d="${path}" stroke="#333ed4" stroke-width="3" fill="none" vector-effect="non-scaling-stroke"/>${dots}<path data-series="expected" d="${expectedPath}" stroke="#7c3aed" stroke-dasharray="6 4" stroke-width="2.5" fill="none" vector-effect="non-scaling-stroke"/>${expectedDots}${labels}
+    ${bars}<path data-series="intraday-total" d="${intradayPath}" stroke="#707780" stroke-width="2.3" stroke-opacity="0.6" fill="none" vector-effect="non-scaling-stroke"/><path data-series="overnight-total" d="${overnightSegments.join(" ")}" stroke="#707780" stroke-width="2.3" stroke-opacity="0.6" stroke-dasharray="5 4" fill="none" vector-effect="non-scaling-stroke"/>${totalAnchorDots}<path data-series="cumulative-settled" d="${path}" stroke="#333ed4" stroke-width="3" fill="none" vector-effect="non-scaling-stroke"/>${dots}<path data-series="expected" d="${expectedPath}" stroke="#7c3aed" stroke-dasharray="6 4" stroke-width="2.5" fill="none" vector-effect="non-scaling-stroke"/>${expectedDots}${labels}
     <text transform="translate(17,${pad.t+plotHeight/2}) rotate(-90)" text-anchor="middle" fill="#667085" font-size="12">Daily realized P&amp;L ($) · left</text>
     <text transform="translate(${width-12},${pad.t+plotHeight/2}) rotate(90)" text-anchor="middle" fill="#333ed4" font-size="12">Total / expected P&amp;L ($) · right</text>
     <text x="${width/2}" y="${height-10}" text-anchor="middle" fill="#667085" font-size="12">Trading sessions (ET; non-market days omitted)</text>
