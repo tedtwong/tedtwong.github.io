@@ -10,8 +10,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
-  <link rel="stylesheet" href="xdte.css?v=20261030-capacity-open-close-v9">
-  <script defer src="xdte.js?v=20261030-capacity-open-close-v9"></script>
+  <link rel="stylesheet" href="xdte.css?v=20261102-expiration-volatility-v10">
+  <script defer src="xdte.js?v=20261102-expiration-volatility-v10"></script>
 </head>
 <body>
   <header class="hero">
@@ -129,8 +129,16 @@
           <span class="control-label">Expiration</span>
           <div id="distribution-expiration-controls" class="snapshot-controls distribution-expiration-controls" role="group" aria-label="Distribution expiration date"></div>
         </div>
-        <div id="distribution-comparison-chart" class="chart"></div>
-        <p id="distribution-comparison-note" class="chart-note"></p>
+        <div class="distribution-view">
+          <h3>Annualized volatility</h3>
+          <div id="distribution-comparison-chart" class="chart"></div>
+          <p id="distribution-comparison-note" class="chart-note"></p>
+        </div>
+        <div class="distribution-view">
+          <h3>Expiration-horizon volatility</h3>
+          <div id="distribution-horizon-chart" class="chart"></div>
+          <p id="distribution-horizon-note" class="chart-note"></p>
+        </div>
       </article>
     </section>
 
