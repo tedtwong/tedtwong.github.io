@@ -871,7 +871,7 @@
     "exit_activity": {
       "exits_filled": 12,
       "net_fill_slippage": null,
-      "realized_pnl": -9183.2,
+      "realized_pnl": -9802.2,
       "released_capital": 13535.2,
       "transaction_costs": 65.2
     },
@@ -17671,10 +17671,10 @@
     "pnl_summary": {
       "accounting_basis_adjustment": 0,
       "baseline_status": "PRIOR_SESSION_SYNCHRONIZED_CLOSE",
-      "current_ledger_pnl_level": -9943.7,
-      "current_synchronized_pnl_level": -9943.7,
+      "current_ledger_pnl_level": -10562.7,
+      "current_synchronized_pnl_level": -10562.7,
       "daily_ledger_pnl": null,
-      "daily_synchronized_pnl": -10224.04,
+      "daily_synchronized_pnl": -10843.04,
       "ledger_baseline_status": "ACTUAL_PRIOR_SESSION_LEDGER_CLOSE_UNAVAILABLE",
       "mark_cost_basis": "ACTUAL_FILL_AND_LIFECYCLE_FEES_V2",
       "prior_ledger_as_of_et": null,
@@ -17986,51 +17986,51 @@
         "time_et": "2026-11-02T15:59:54.468390-05:00"
       },
       {
-        "net_pnl": -10454.04,
+        "net_pnl": -11073.04,
         "time_et": "2026-11-02T16:04:56.284218-05:00"
       },
       {
-        "net_pnl": -10306.54,
+        "net_pnl": -10925.54,
         "time_et": "2026-11-02T16:09:52.323559-05:00"
       },
       {
-        "net_pnl": -10291.54,
+        "net_pnl": -10910.54,
         "time_et": "2026-11-02T16:14:56.064916-05:00"
       },
       {
-        "net_pnl": -10239.04,
+        "net_pnl": -10858.04,
         "time_et": "2026-11-02T16:19:54.430895-05:00"
       },
       {
-        "net_pnl": -10204.04,
+        "net_pnl": -10823.04,
         "time_et": "2026-11-02T16:24:55.482477-05:00"
       },
       {
-        "net_pnl": -10169.04,
+        "net_pnl": -10788.04,
         "time_et": "2026-11-02T16:29:51.317567-05:00"
       },
       {
-        "net_pnl": -10254.04,
+        "net_pnl": -10873.04,
         "time_et": "2026-11-02T16:34:57.705193-05:00"
       },
       {
-        "net_pnl": -10159.04,
+        "net_pnl": -10778.04,
         "time_et": "2026-11-02T16:39:50.175225-05:00"
       },
       {
-        "net_pnl": -10134.04,
+        "net_pnl": -10753.04,
         "time_et": "2026-11-02T16:44:58.046905-05:00"
       },
       {
-        "net_pnl": -10159.04,
+        "net_pnl": -10778.04,
         "time_et": "2026-11-02T16:49:50.389578-05:00"
       },
       {
-        "net_pnl": -10276.54,
+        "net_pnl": -10895.54,
         "time_et": "2026-11-02T16:54:58.442111-05:00"
       },
       {
-        "net_pnl": -10224.04,
+        "net_pnl": -10843.04,
         "time_et": "2026-11-02T16:59:59.593209-05:00"
       }
     ],
@@ -19888,7 +19888,7 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "REALIZED_EXIT",
-            "net_pnl": -90.52,
+            "net_pnl": -533.52,
             "source_time_et": "2026-11-02T16:00:05.850244-05:00",
             "time_et": "2026-11-02T16:00:05.850244-05:00"
           }
@@ -20273,7 +20273,7 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "REALIZED_EXIT",
-            "net_pnl": -1120.52,
+            "net_pnl": -1296.52,
             "source_time_et": "2026-11-02T16:00:01.042483-05:00",
             "time_et": "2026-11-02T16:00:01.042483-05:00"
           }
@@ -56048,9 +56048,9 @@
               "increment_points": 5,
               "lower_level": 7315,
               "note": "Market closed: this retained session-close view includes positions settled at expiration plus positions still outstanding. The realized marker is the aggregate saved net P&L of expiration-settled positions. It remains fixed through midnight ET, then rolls to the current or next regular session.",
-              "realized_expiry_net_pnl": -9183.2,
+              "realized_expiry_net_pnl": -9802.2,
               "realized_result_status": "COMPLETE",
-              "realized_settlement_spx": 7546.76,
+              "realized_settlement_spx": 7542.33,
               "reference_session_date": "2026-11-02",
               "retained_session_settlements": true,
               "retained_settled_count": 12,
@@ -56503,9 +56503,9 @@
         "increment_points": 5,
         "lower_level": 7315,
         "note": "Market closed: this retained session-close view includes positions settled at expiration plus positions still outstanding. The realized marker is the aggregate saved net P&L of expiration-settled positions. It remains fixed through midnight ET, then rolls to the current or next regular session.",
-        "realized_expiry_net_pnl": -9183.2,
+        "realized_expiry_net_pnl": -9802.2,
         "realized_result_status": "COMPLETE",
-        "realized_settlement_spx": 7546.76,
+        "realized_settlement_spx": 7542.33,
         "reference_session_date": "2026-11-02",
         "retained_session_settlements": true,
         "retained_settled_count": 12,
@@ -58355,9 +58355,9 @@
       "increment_points": 5,
       "lower_level": 7315,
       "note": "Market closed: this retained session-close view includes positions settled at expiration plus positions still outstanding. The realized marker is the aggregate saved net P&L of expiration-settled positions. It remains fixed through midnight ET, then rolls to the current or next regular session.",
-      "realized_expiry_net_pnl": -9183.2,
+      "realized_expiry_net_pnl": -9802.2,
       "realized_result_status": "COMPLETE",
-      "realized_settlement_spx": 7546.76,
+      "realized_settlement_spx": 7542.33,
       "reference_session_date": "2026-11-02",
       "retained_session_settlements": true,
       "retained_settled_count": 12,
@@ -59821,7 +59821,7 @@
         "expiration_date": "2026-11-02",
         "maximum_profit": 233.48,
         "maximum_unrealized_pnl": 147.08,
-        "minimum_unrealized_pnl": -192.92,
+        "minimum_unrealized_pnl": -533.52,
         "modeled_expected_return": 0.0663628472589317,
         "planned_loss": null,
         "position": 6,
@@ -59829,7 +59829,7 @@
         "probability_of_full_credit_source": "BLENDED_REFERENCE",
         "profit_target_fraction": null,
         "q_minus_p_wedge": 0.17094124009341405,
-        "realized_net_pnl": -90.52,
+        "realized_net_pnl": -533.52,
         "record_type": "Today",
         "short_call_reserve": 766.52,
         "short_put_reserve": 766.52,
@@ -59852,7 +59852,7 @@
         "expiration_date": "2026-11-02",
         "maximum_profit": 203.48,
         "maximum_unrealized_pnl": 102.08,
-        "minimum_unrealized_pnl": -1120.52,
+        "minimum_unrealized_pnl": -1296.52,
         "modeled_expected_return": 0.030969541305894768,
         "planned_loss": null,
         "position": 7,
@@ -59860,7 +59860,7 @@
         "probability_of_full_credit_source": "BLENDED_REFERENCE",
         "profit_target_fraction": null,
         "q_minus_p_wedge": 0.09578129761351675,
-        "realized_net_pnl": -1120.52,
+        "realized_net_pnl": -1296.52,
         "record_type": "Today",
         "short_call_reserve": 1296.52,
         "short_put_reserve": 1296.52,
@@ -60390,7 +60390,7 @@
     ]
   },
   "distribution_comparison": {
-    "age_seconds": 4508,
+    "age_seconds": 9722,
     "expirations": [
       {
         "expiration": "20261103",
@@ -60892,6 +60892,7 @@
         ],
         "risk_neutral_horizon_volatility": 0.010661971501471988,
         "risk_neutral_iv": 0.20483302383711566,
+        "spot": 7541.4,
         "time_to_expiration_years": 0.0027094122006109463
       },
       {
@@ -61394,6 +61395,7 @@
         ],
         "risk_neutral_horizon_volatility": 0.016833549195368325,
         "risk_neutral_iv": 0.2280796411580412,
+        "spot": 7541.4,
         "time_to_expiration_years": 0.0054472629877430475
       },
       {
@@ -61896,6 +61898,7 @@
         ],
         "risk_neutral_horizon_volatility": 0.026950342450762613,
         "risk_neutral_iv": 0.1948196869332481,
+        "spot": 7541.4,
         "time_to_expiration_years": 0.019136516923403554
       }
     ],
@@ -62654,6 +62657,16 @@
             "time_to_expiration_years": 0.01989828073025198
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7619.14,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7619.14,
+          "session_low_spx": 7615.81,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T09:34:18.016027-05:00"
       },
       {
@@ -63344,6 +63357,16 @@
             "time_to_expiration_years": 0.019888767541004385
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7617.37,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7619.14,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T09:39:18.229448-05:00"
       },
       {
@@ -64034,6 +64057,16 @@
             "time_to_expiration_years": 0.019879101675634395
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7621.65,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7623.31,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T09:44:23.260961-05:00"
       },
       {
@@ -64724,6 +64757,16 @@
             "time_to_expiration_years": 0.019869581909270666
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7626.59,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7626.59,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T09:49:23.681940-05:00"
       },
       {
@@ -65414,6 +65457,16 @@
             "time_to_expiration_years": 0.019859864092263035
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7628.22,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7628.22,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T09:54:30.352922-05:00"
       },
       {
@@ -66104,6 +66157,16 @@
             "time_to_expiration_years": 0.01985026654409714
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7626.35,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7628.22,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T09:59:33.228508-05:00"
       },
       {
@@ -66794,6 +66857,16 @@
             "time_to_expiration_years": 0.01984058787965498
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7629.02,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7629.02,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T10:04:38.663929-05:00"
       },
       {
@@ -67484,6 +67557,16 @@
             "time_to_expiration_years": 0.019832280324581085
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7625.85,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7629.02,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T10:09:00.830429-05:00"
       },
       {
@@ -68174,6 +68257,16 @@
             "time_to_expiration_years": 0.019821732650455042
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7638.08,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7638.08,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T10:14:33.689710-05:00"
       },
       {
@@ -68864,6 +68957,16 @@
             "time_to_expiration_years": 0.019811878824974018
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7646.73,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7646.73,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T10:19:44.652793-05:00"
       },
       {
@@ -69554,6 +69657,16 @@
             "time_to_expiration_years": 0.019803519504746875
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7653.11,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7655.43,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T10:24:08.452877-05:00"
       },
       {
@@ -70244,6 +70357,16 @@
             "time_to_expiration_years": 0.01979364485436155
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7660.47,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T10:29:20.073144-05:00"
       },
       {
@@ -70934,6 +71057,16 @@
             "time_to_expiration_years": 0.019783552787284206
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7650.35,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T10:34:38.554560-05:00"
       },
       {
@@ -71624,6 +71757,16 @@
             "time_to_expiration_years": 0.019775284056043552
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7647.97,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T10:38:59.495873-05:00"
       },
       {
@@ -72314,6 +72457,16 @@
             "time_to_expiration_years": 0.019764104000177453
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7653.49,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T10:44:52.311604-05:00"
       },
       {
@@ -73004,6 +73157,16 @@
             "time_to_expiration_years": 0.01975519741038609
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7647.45,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T10:49:33.382202-05:00"
       },
       {
@@ -73694,6 +73857,16 @@
             "time_to_expiration_years": 0.01974508643410779
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7640.65,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T10:54:52.460347-05:00"
       },
       {
@@ -74384,6 +74557,16 @@
             "time_to_expiration_years": 0.019737227095121303
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7632.33,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T10:59:00.482223-05:00"
       },
       {
@@ -75074,6 +75257,16 @@
             "time_to_expiration_years": 0.019726682092427814
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7636.88,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T11:04:33.257200-05:00"
       },
       {
@@ -75764,6 +75957,16 @@
             "time_to_expiration_years": 0.019718035082008773
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7636.03,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T11:09:06.136096-05:00"
       },
       {
@@ -76454,6 +76657,16 @@
             "time_to_expiration_years": 0.019707323762865363
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7628.97,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T11:14:44.159621-05:00"
       },
       {
@@ -77144,6 +77357,16 @@
             "time_to_expiration_years": 0.01969925628200497
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7627.99,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T11:18:58.749955-05:00"
       },
       {
@@ -77834,6 +78057,16 @@
             "time_to_expiration_years": 0.019688435930077065
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7622.91,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T11:24:40.214293-05:00"
       },
       {
@@ -78524,6 +78757,16 @@
             "time_to_expiration_years": 0.01967988247880067
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7623.44,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T11:29:10.140687-05:00"
       },
       {
@@ -79214,6 +79457,16 @@
             "time_to_expiration_years": 0.01966915884344817
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7626.71,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T11:34:48.552882-05:00"
       },
       {
@@ -79904,6 +80157,16 @@
             "time_to_expiration_years": 0.019660509058863792
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7622.58,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T11:39:21.519324-05:00"
       },
       {
@@ -80457,6 +80720,16 @@
             "time_to_expiration_years": 0.019650182770077573
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7625.13,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T11:44:47.392215-05:00"
       },
       {
@@ -81147,6 +81420,16 @@
             "time_to_expiration_years": 0.019641220181129113
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7623.38,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T11:49:30.230012-05:00"
       },
       {
@@ -81837,6 +82120,16 @@
             "time_to_expiration_years": 0.01963145643429792
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7628.16,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T11:54:38.350429-05:00"
       },
       {
@@ -82527,6 +82820,16 @@
             "time_to_expiration_years": 0.01962295165269222
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7621.58,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T11:59:06.740925-05:00"
       },
       {
@@ -83217,6 +83520,16 @@
             "time_to_expiration_years": 0.019612019966062058
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7621.7,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T12:04:51.718719-05:00"
       },
       {
@@ -83907,6 +84220,16 @@
             "time_to_expiration_years": 0.019603427646937663
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7621.33,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T12:09:22.871689-05:00"
       },
       {
@@ -84597,6 +84920,16 @@
             "time_to_expiration_years": 0.019593443379534562
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7621.03,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T12:14:37.951206-05:00"
       },
       {
@@ -85287,6 +85620,16 @@
             "time_to_expiration_years": 0.019584633763404063
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7621.75,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T12:19:15.961548-05:00"
       },
       {
@@ -85977,6 +86320,16 @@
             "time_to_expiration_years": 0.019575488703355137
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7616.6,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T12:24:04.557695-05:00"
       },
       {
@@ -86667,6 +87020,16 @@
             "time_to_expiration_years": 0.019566738540288234
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7613.71,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7611.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T12:28:40.691841-05:00"
       },
       {
@@ -87357,6 +87720,16 @@
             "time_to_expiration_years": 0.0195565862069042
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7608.03,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7608.03,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T12:34:01.075117-05:00"
       },
       {
@@ -88047,6 +88420,16 @@
             "time_to_expiration_years": 0.019546946375801712
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7607.79,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7606.67,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T12:39:05.285051-05:00"
       },
       {
@@ -88737,6 +89120,16 @@
             "time_to_expiration_years": 0.019537072066443582
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7602.66,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7602.35,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T12:44:16.894556-05:00"
       },
       {
@@ -89427,6 +89820,16 @@
             "time_to_expiration_years": 0.01952649822137932
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7601.58,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T12:49:50.579729-05:00"
       },
       {
@@ -90117,6 +90520,16 @@
             "time_to_expiration_years": 0.019518884573700157
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7600.92,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T12:53:50.848177-05:00"
       },
       {
@@ -90807,6 +91220,16 @@
             "time_to_expiration_years": 0.01950751929703146
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7608.4,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T12:59:49.509032-05:00"
       },
       {
@@ -91497,6 +91920,16 @@
             "time_to_expiration_years": 0.019498084102561666
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7609.85,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T13:04:47.261125-05:00"
       },
       {
@@ -92187,6 +92620,16 @@
             "time_to_expiration_years": 0.01948975115008746
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7614.8,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T13:09:10.229106-05:00"
       },
       {
@@ -92877,6 +93320,16 @@
             "time_to_expiration_years": 0.019481562083935408
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7615.24,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T13:13:28.656380-05:00"
       },
       {
@@ -93567,6 +94020,16 @@
             "time_to_expiration_years": 0.019471223866929045
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7612.22,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T13:18:54.905697-05:00"
       },
       {
@@ -94257,6 +94720,16 @@
             "time_to_expiration_years": 0.01946011449124775
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7608.44,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T13:24:45.490931-05:00"
       },
       {
@@ -94947,6 +95420,16 @@
             "time_to_expiration_years": 0.019451149667338456
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7608.02,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T13:29:28.399258-05:00"
       },
       {
@@ -95637,6 +96120,16 @@
             "time_to_expiration_years": 0.019441170434887318
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7604.89,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T13:34:43.319884-05:00"
       },
       {
@@ -96327,6 +96820,16 @@
             "time_to_expiration_years": 0.01943299337966132
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7604.68,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T13:39:01.368122-05:00"
       },
       {
@@ -97017,6 +97520,16 @@
             "time_to_expiration_years": 0.01942205029729764
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7597.73,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T13:44:46.705538-05:00"
       },
       {
@@ -97707,6 +98220,16 @@
             "time_to_expiration_years": 0.019413145781016303
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7598.23,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T13:49:27.710701-05:00"
       },
       {
@@ -98397,6 +98920,16 @@
             "time_to_expiration_years": 0.019403928382228052
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7596.93,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T13:54:18.589685-05:00"
       },
       {
@@ -99087,6 +99620,16 @@
             "time_to_expiration_years": 0.019394653583859355
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7595.59,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7592.9,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T13:59:11.280062-05:00"
       },
       {
@@ -99777,6 +100320,16 @@
             "time_to_expiration_years": 0.01938503803381753
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7587.89,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7587.89,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T14:04:14.723744-05:00"
       },
       {
@@ -100467,6 +101020,16 @@
             "time_to_expiration_years": 0.01937552902391183
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7586.0,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7585.41,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T14:09:14.805275-05:00"
       },
       {
@@ -101157,6 +101720,16 @@
             "time_to_expiration_years": 0.019365582372867392
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7585.46,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7585.28,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T14:14:28.697710-05:00"
       },
       {
@@ -101847,6 +102420,16 @@
             "time_to_expiration_years": 0.01935524988833118
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7581.16,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7581.16,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T14:19:54.766124-05:00"
       },
       {
@@ -102537,6 +103120,16 @@
             "time_to_expiration_years": 0.019346345108595075
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7572.43,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7570.88,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T14:24:35.779601-05:00"
       },
       {
@@ -103227,6 +103820,16 @@
             "time_to_expiration_years": 0.01933651460725784
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7575.11,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7565.2,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T14:29:46.006630-05:00"
       },
       {
@@ -103917,6 +104520,16 @@
             "time_to_expiration_years": 0.019327530655626535
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7569.78,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7565.2,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T14:34:29.518582-05:00"
       },
       {
@@ -104607,6 +105220,16 @@
             "time_to_expiration_years": 0.01931997270128273
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7563.69,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7563.69,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T14:38:28.029482-05:00"
       },
       {
@@ -105297,6 +105920,16 @@
             "time_to_expiration_years": 0.01930895579809618
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7563.42,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7563.42,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T14:44:15.696506-05:00"
       },
       {
@@ -105987,6 +106620,16 @@
             "time_to_expiration_years": 0.019299840386436232
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7556.49,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7556.49,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T14:49:03.357021-05:00"
       },
       {
@@ -106677,6 +107320,16 @@
             "time_to_expiration_years": 0.019288900014227953
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7564.7,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7556.28,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T14:54:48.608911-05:00"
       },
       {
@@ -107367,6 +108020,16 @@
             "time_to_expiration_years": 0.019279134623608894
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7575.66,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7556.28,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T14:59:56.781202-05:00"
       },
       {
@@ -108057,6 +108720,16 @@
             "time_to_expiration_years": 0.019270631263847697
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7579.43,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7556.28,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T15:04:25.126828-05:00"
       },
       {
@@ -108747,6 +109420,16 @@
             "time_to_expiration_years": 0.019261635510653536
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7580.07,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7556.28,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T15:09:09.011209-05:00"
       },
       {
@@ -109437,6 +110120,16 @@
             "time_to_expiration_years": 0.01925169241117829
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7567.19,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7556.28,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T15:14:22.791565-05:00"
       },
       {
@@ -110127,6 +110820,16 @@
             "time_to_expiration_years": 0.01924210570113063
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7573.89,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7556.28,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T15:19:25.325126-05:00"
       },
       {
@@ -110817,6 +111520,16 @@
             "time_to_expiration_years": 0.019232204382842802
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7575.23,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7556.28,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T15:24:37.786968-05:00"
       },
       {
@@ -111507,6 +112220,16 @@
             "time_to_expiration_years": 0.019223079350045632
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7565.33,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7556.28,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T15:29:25.751103-05:00"
       },
       {
@@ -112197,6 +112920,16 @@
             "time_to_expiration_years": 0.01921439024833954
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7550.92,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7550.92,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T15:33:59.958299-05:00"
       },
       {
@@ -112887,6 +113620,16 @@
             "time_to_expiration_years": 0.01920505899656501
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7549.43,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7549.43,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T15:38:54.430210-05:00"
       },
       {
@@ -113577,6 +114320,16 @@
             "time_to_expiration_years": 0.01919350647704515
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7549.38,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7546.32,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T15:44:59-05:00"
       },
       {
@@ -114267,6 +115020,16 @@
             "time_to_expiration_years": 0.01918400005070094
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7558.7,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7546.32,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T15:49:59-05:00"
       },
       {
@@ -114957,6 +115720,16 @@
             "time_to_expiration_years": 0.01917449362435673
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7553.02,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7546.32,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T15:54:59-05:00"
       },
       {
@@ -115647,6 +116420,16 @@
             "time_to_expiration_years": 0.019164987198012524
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7542.33,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": false,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7539.99,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T15:59:59-05:00"
       },
       {
@@ -116063,6 +116846,16 @@
             "time_to_expiration_years": 0.008204453942790325
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Session close",
+          "current_or_close_spx": 7542.33,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": true,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7539.99,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T16:04:47.124255-05:00"
       },
       {
@@ -116616,6 +117409,16 @@
             "time_to_expiration_years": 0.019147755073009354
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Session close",
+          "current_or_close_spx": 7542.33,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": true,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7539.99,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T16:09:02.804508-05:00"
       },
       {
@@ -117032,10 +117835,21 @@
             "time_to_expiration_years": 0.019136516923403554
           }
         ],
+        "market_references": {
+          "current_or_close_label": "Session close",
+          "current_or_close_spx": 7542.33,
+          "previous_session_close_spx": 7580.21,
+          "previous_session_date": "2026-10-30",
+          "session_complete": true,
+          "session_high_spx": 7661.05,
+          "session_low_spx": 7539.99,
+          "session_open_spx": 7616.77
+        },
         "observed_at_et": "2026-11-02T16:14:57.453538-05:00"
       }
     ],
     "session_date": "2026-11-02",
+    "session_open_spx": 7616.77,
     "source_snapshots_read": 0,
     "status": "RETAINED_SESSION",
     "update_mode": "CACHE_ONLY"
@@ -117044,75 +117858,75 @@
     "calibration_periods": [
       {
         "base_expected_net_pnl": 914.103166764148,
-        "calibration_ratio": -10.04613082405982,
+        "calibration_ratio": -10.723297278029353,
         "closed_trades": 12,
         "expected_return_on_allocation": 0.06753525376530439,
-        "forecast_error": -10097.303166764148,
-        "forecast_error_standard_deviation": 710.3180468250388,
+        "forecast_error": -10716.303166764148,
+        "forecast_error_standard_deviation": 690.0254107835517,
         "frequency": "Daily",
         "gross_risk_deployed": 13535.2,
-        "mean_forecast_error": -841.441930563679,
-        "normalized_error_standard_deviation": 0.5695714301331535,
-        "normalized_error_standard_error": 0.16442110925504816,
+        "mean_forecast_error": -893.0252638970123,
+        "normalized_error_standard_deviation": 0.5529049373456877,
+        "normalized_error_standard_error": 0.15960990720640297,
         "outperformance_rate": 0.25,
         "period": "2026-11-02",
-        "realized_net_pnl": -9183.2,
-        "realized_return_on_allocation": -0.6784679945623264,
-        "return_calibration_difference": -0.7460032483276309
+        "realized_net_pnl": -9802.2,
+        "realized_return_on_allocation": -0.7242006028725102,
+        "return_calibration_difference": -0.7917358566378145
       },
       {
         "base_expected_net_pnl": 914.103166764148,
-        "calibration_ratio": -10.04613082405982,
+        "calibration_ratio": -10.723297278029353,
         "closed_trades": 12,
         "expected_return_on_allocation": 0.06753525376530439,
-        "forecast_error": -10097.303166764148,
-        "forecast_error_standard_deviation": 710.3180468250388,
+        "forecast_error": -10716.303166764148,
+        "forecast_error_standard_deviation": 690.0254107835517,
         "frequency": "Weekly",
         "gross_risk_deployed": 13535.2,
-        "mean_forecast_error": -841.441930563679,
-        "normalized_error_standard_deviation": 0.5695714301331535,
-        "normalized_error_standard_error": 0.16442110925504816,
+        "mean_forecast_error": -893.0252638970123,
+        "normalized_error_standard_deviation": 0.5529049373456877,
+        "normalized_error_standard_error": 0.15960990720640297,
         "outperformance_rate": 0.25,
         "period": "2026-11-02 to 2026-11-02",
-        "realized_net_pnl": -9183.2,
-        "realized_return_on_allocation": -0.6784679945623264,
-        "return_calibration_difference": -0.7460032483276309
+        "realized_net_pnl": -9802.2,
+        "realized_return_on_allocation": -0.7242006028725102,
+        "return_calibration_difference": -0.7917358566378145
       },
       {
         "base_expected_net_pnl": 914.103166764148,
-        "calibration_ratio": -10.04613082405982,
+        "calibration_ratio": -10.723297278029353,
         "closed_trades": 12,
         "expected_return_on_allocation": 0.06753525376530439,
-        "forecast_error": -10097.303166764148,
-        "forecast_error_standard_deviation": 710.3180468250388,
+        "forecast_error": -10716.303166764148,
+        "forecast_error_standard_deviation": 690.0254107835517,
         "frequency": "Monthly",
         "gross_risk_deployed": 13535.2,
-        "mean_forecast_error": -841.441930563679,
-        "normalized_error_standard_deviation": 0.5695714301331535,
-        "normalized_error_standard_error": 0.16442110925504816,
+        "mean_forecast_error": -893.0252638970123,
+        "normalized_error_standard_deviation": 0.5529049373456877,
+        "normalized_error_standard_error": 0.15960990720640297,
         "outperformance_rate": 0.25,
         "period": "2026-11",
-        "realized_net_pnl": -9183.2,
-        "realized_return_on_allocation": -0.6784679945623264,
-        "return_calibration_difference": -0.7460032483276309
+        "realized_net_pnl": -9802.2,
+        "realized_return_on_allocation": -0.7242006028725102,
+        "return_calibration_difference": -0.7917358566378145
       },
       {
         "base_expected_net_pnl": 5010.456827231984,
-        "calibration_ratio": -1.7768559448736663,
+        "calibration_ratio": -1.9003975741789456,
         "closed_trades": 54,
         "expected_return_on_allocation": 0.06205303536430522,
-        "forecast_error": -13913.316827231982,
-        "forecast_error_standard_deviation": 791.5095350494356,
+        "forecast_error": -14532.316827231982,
+        "forecast_error_standard_deviation": 796.6771785662827,
         "frequency": "Yearly",
         "gross_risk_deployed": 80744.75,
-        "mean_forecast_error": -257.6540153191108,
-        "normalized_error_standard_deviation": 0.5569801944039148,
-        "normalized_error_standard_error": 0.07579540406254276,
+        "mean_forecast_error": -269.1169782820738,
+        "normalized_error_standard_deviation": 0.5655158359514618,
+        "normalized_error_standard_error": 0.07695695775247556,
         "outperformance_rate": 0.6666666666666666,
         "period": "2026",
-        "realized_net_pnl": -8902.859999999999,
-        "realized_return_on_allocation": -0.11025930478452158,
-        "return_calibration_difference": -0.1723123401488268
+        "realized_net_pnl": -9521.859999999999,
+        "realized_return_on_allocation": -0.11792543787676596,
+        "return_calibration_difference": -0.1799784732410712
       }
     ],
     "capacity": {
@@ -117651,57 +118465,57 @@
       },
       {
         "cumulative_base_expected_net_pnl": 4193.819649619183,
-        "cumulative_realized_net_pnl": -2103.440000000005,
+        "cumulative_realized_net_pnl": -2279.440000000005,
         "settled_at_et": "2026-11-02T16:00:01.042483-05:00"
       },
       {
         "cumulative_base_expected_net_pnl": 4326.470846652246,
-        "cumulative_realized_net_pnl": -3274.960000000005,
+        "cumulative_realized_net_pnl": -3450.960000000005,
         "settled_at_et": "2026-11-02T16:00:02.178722-05:00"
       },
       {
         "cumulative_base_expected_net_pnl": 4464.425384975049,
-        "cumulative_realized_net_pnl": -4906.480000000005,
+        "cumulative_realized_net_pnl": -5082.480000000005,
         "settled_at_et": "2026-11-02T16:00:03.161125-05:00"
       },
       {
         "cumulative_base_expected_net_pnl": 4515.293834655966,
-        "cumulative_realized_net_pnl": -4997.0000000000055,
+        "cumulative_realized_net_pnl": -5616.0000000000055,
         "settled_at_et": "2026-11-02T16:00:05.850244-05:00"
       },
       {
         "cumulative_base_expected_net_pnl": 4546.883597189697,
-        "cumulative_realized_net_pnl": -4820.260000000006,
+        "cumulative_realized_net_pnl": -5439.260000000006,
         "settled_at_et": "2026-11-02T16:00:06.343792-05:00"
       },
       {
         "cumulative_base_expected_net_pnl": 4646.703112592696,
-        "cumulative_realized_net_pnl": -6091.780000000006,
+        "cumulative_realized_net_pnl": -6710.780000000006,
         "settled_at_et": "2026-11-02T16:00:06.828665-05:00"
       },
       {
         "cumulative_base_expected_net_pnl": 4690.914756779062,
-        "cumulative_realized_net_pnl": -5943.300000000007,
+        "cumulative_realized_net_pnl": -6562.300000000007,
         "settled_at_et": "2026-11-02T16:00:08.755949-05:00"
       },
       {
         "cumulative_base_expected_net_pnl": 4729.424581656275,
-        "cumulative_realized_net_pnl": -6726.560000000007,
+        "cumulative_realized_net_pnl": -7345.560000000007,
         "settled_at_et": "2026-11-02T16:00:10.935927-05:00"
       },
       {
         "cumulative_base_expected_net_pnl": 4869.720277187247,
-        "cumulative_realized_net_pnl": -7883.080000000007,
+        "cumulative_realized_net_pnl": -8502.080000000007,
         "settled_at_et": "2026-11-02T16:00:11.945961-05:00"
       },
       {
         "cumulative_base_expected_net_pnl": 4904.994683649856,
-        "cumulative_realized_net_pnl": -7666.340000000007,
+        "cumulative_realized_net_pnl": -8285.340000000007,
         "settled_at_et": "2026-11-02T16:00:13.005667-05:00"
       },
       {
         "cumulative_base_expected_net_pnl": 5010.456827231984,
-        "cumulative_realized_net_pnl": -8902.860000000008,
+        "cumulative_realized_net_pnl": -9521.860000000008,
         "settled_at_et": "2026-11-02T16:00:14.704480-05:00"
       }
     ],
@@ -117852,7 +118666,7 @@
         "exited_today": 13535.2,
         "is_current_session": true,
         "opening_deployed": 0.0,
-        "realized_pnl": -9183.2,
+        "realized_pnl": -9802.2,
         "realized_pnl_missing_records": 0,
         "reconciliation_difference": -0.0,
         "reservations_today": 24666.91,
@@ -117861,16 +118675,16 @@
       }
     ],
     "performance": {
-      "average_loss": -1160.34,
+      "average_loss": -1194.7288888888888,
       "average_win": 332.86833333333334,
       "by_dte": [
         {
           "deployed_capital": 40229.52,
           "dte": 0,
-          "expectancy": -250.56516129032258,
-          "expectancy_return_per_trade": -0.23913773218377013,
-          "net_pnl": -7767.5199999999995,
-          "net_return_on_deployed_capital": -0.19308010634976505,
+          "expectancy": -270.5329032258065,
+          "expectancy_return_per_trade": -0.26215981770296154,
+          "net_pnl": -8386.52,
+          "net_return_on_deployed_capital": -0.2084668174017488,
           "trades": 31,
           "win_rate": 0.5806451612903226
         },
@@ -117938,28 +118752,28 @@
         },
         {
           "deployed_capital": 55754.33,
-          "expectancy": -240.87675675675678,
-          "expectancy_return_per_trade": -0.1623966329850627,
-          "net_pnl": -8912.44,
-          "net_return_on_deployed_capital": -0.15985197920950714,
+          "expectancy": -257.6064864864865,
+          "expectancy_return_per_trade": -0.18168540733897987,
+          "net_pnl": -9531.44,
+          "net_return_on_deployed_capital": -0.17095425592953947,
           "strategy": "IRON_CONDOR",
           "trades": 37,
           "win_rate": 0.6216216216216216
         }
       ],
       "deployed_capital": 80744.75,
-      "expectancy_per_trade": -164.86777777777775,
-      "expectancy_return_per_trade": -0.1406575370037908,
+      "expectancy_per_trade": -176.3307407407407,
+      "expectancy_return_per_trade": -0.15387391943147477,
       "full_credit_rate": 0.6111111111111112,
       "full_credit_samples": 54,
       "full_credit_trades": 33,
-      "maximum_daily_drawdown": 15574.48,
-      "maximum_realized_drawdown": 15574.480000000005,
-      "net_return_on_deployed_capital": -0.11025930478452158,
-      "profit_factor": 0.573742753560738,
+      "maximum_daily_drawdown": 16193.48,
+      "maximum_realized_drawdown": 16193.480000000005,
+      "net_return_on_deployed_capital": -0.11792543787676596,
+      "profit_factor": 0.5572282321605274,
       "return_samples": 54,
       "settled_trades": 54,
-      "total_net_pnl": -8902.859999999999,
+      "total_net_pnl": -9521.859999999999,
       "trade_win_rate": 0.6666666666666666,
       "trading_days": 8
     },
@@ -118063,9 +118877,9 @@
         "expected_net_pnl": 5010.46,
         "modeled_settled_trades_to_date": 54,
         "net_as_of_et": "2026-11-02T16:00:14.704480-05:00",
-        "net_pnl": -8902.86,
+        "net_pnl": -9521.86,
         "realized_data_complete": true,
-        "realized_net_pnl": -9183.2,
+        "realized_net_pnl": -9802.2,
         "settled_trades_to_date": 54
       }
     ],
@@ -120927,63 +121741,63 @@
         "time_et": "2026-11-02T15:59:54.468390-05:00"
       },
       {
-        "net_pnl": -10173.7,
+        "net_pnl": -10792.7,
         "time_et": "2026-11-02T16:04:56.284218-05:00"
       },
       {
-        "net_pnl": -10026.2,
+        "net_pnl": -10645.2,
         "time_et": "2026-11-02T16:09:52.323559-05:00"
       },
       {
-        "net_pnl": -10011.2,
+        "net_pnl": -10630.2,
         "time_et": "2026-11-02T16:14:56.064916-05:00"
       },
       {
-        "net_pnl": -9958.7,
+        "net_pnl": -10577.7,
         "time_et": "2026-11-02T16:19:54.430895-05:00"
       },
       {
-        "net_pnl": -9923.7,
+        "net_pnl": -10542.7,
         "time_et": "2026-11-02T16:24:55.482477-05:00"
       },
       {
-        "net_pnl": -9888.7,
+        "net_pnl": -10507.7,
         "time_et": "2026-11-02T16:29:51.317567-05:00"
       },
       {
-        "net_pnl": -9973.7,
+        "net_pnl": -10592.7,
         "time_et": "2026-11-02T16:34:57.705193-05:00"
       },
       {
-        "net_pnl": -9878.7,
+        "net_pnl": -10497.7,
         "time_et": "2026-11-02T16:39:50.175225-05:00"
       },
       {
-        "net_pnl": -9853.7,
+        "net_pnl": -10472.7,
         "time_et": "2026-11-02T16:44:58.046905-05:00"
       },
       {
-        "net_pnl": -9878.7,
+        "net_pnl": -10497.7,
         "time_et": "2026-11-02T16:49:50.389578-05:00"
       },
       {
-        "net_pnl": -9996.2,
+        "net_pnl": -10615.2,
         "time_et": "2026-11-02T16:54:58.442111-05:00"
       },
       {
-        "net_pnl": -9943.7,
+        "net_pnl": -10562.7,
         "time_et": "2026-11-02T16:59:59.593209-05:00"
       }
     ],
     "summary": {
       "additional_loss_to_contractual_max": 3279.16,
-      "available_equity": 235736.3,
-      "cash": 241097.14,
+      "available_equity": 235117.3,
+      "cash": 240478.14,
       "closed_trades": 54,
       "contractual_stress_loss": 4320.0,
-      "equity": 240056.3,
+      "equity": 239437.3,
       "open_positions": 2,
-      "realized_pnl": -8902.86,
+      "realized_pnl": -9521.86,
       "reserved_risk": 4320.0,
       "starting_cash": 250000.0,
       "unrealized_pnl": -1040.84
@@ -120991,8 +121805,8 @@
     "trade_averages": {
       "average_capacity": 1495.273148148148,
       "average_duration_hours": 31.165259610576133,
-      "average_net_pnl": -164.86777777777775,
-      "average_return": -0.1406575370037908,
+      "average_net_pnl": -176.3307407407407,
+      "average_return": -0.15387391943147477,
       "capacity_samples": 54,
       "duration_samples": 54,
       "pnl_samples": 54,
@@ -121005,7 +121819,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-11-02T17:30:05.062376-05:00",
+    "published_at_et": "2026-11-02T18:56:59.886312-05:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-11-02"
   },
