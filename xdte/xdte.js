@@ -25,26 +25,33 @@ function renderDistributionComparison(data) {
   slider.dataset.sessionDate=data?.session_date||"";
   slider.dataset.followLatest=String(selectedScanIndex===scans.length-1);
   const timeLabel=value=>value?new Intl.DateTimeFormat("en-US",{hour:"numeric",minute:"2-digit",timeZone:"America/New_York"}).format(new Date(value))+" ET":"Unknown time";
+  const allExpirations=[...new Set(scans.flatMap(scan=>(scan.expirations||[]).map(row=>row.expiration)).filter(Boolean))].sort();
   let rows=[];
-  let selectedExpiration="";
+  const previousExpiration=controls.dataset.selectedExpiration;
+  const initialRows=scans[selectedScanIndex]?.expirations||[];
+  let selectedExpiration=allExpirations.includes(previousExpiration)
+    ? previousExpiration : (initialRows[0]?.expiration||allExpirations[0]||"");
+  controls.dataset.selectedExpiration=selectedExpiration;
   const setActiveButton=()=>controls.querySelectorAll("button").forEach(button=>{
     const active=button.dataset.distributionExpiration===selectedExpiration;
+    const available=rows.some(row=>row.expiration===button.dataset.distributionExpiration);
     button.classList.toggle("is-active",active);
+    button.classList.toggle("is-unavailable",!available);
+    button.disabled=!available;
     button.setAttribute("aria-pressed",String(active));
+    button.setAttribute("aria-disabled",String(!available));
+    button.title=available?"":`Unavailable at ${timeLabel(scans[selectedScanIndex]?.observed_at_et)}`;
   });
   const setScan=()=>{
     const scan=scans[selectedScanIndex];
     rows=scan.expirations||[];
-    const previous=controls.dataset.selectedExpiration;
-    selectedExpiration=rows.some(row=>row.expiration===previous)?previous:(rows[0]?.expiration||"");
-    controls.dataset.selectedExpiration=selectedExpiration;
     scanOutput.textContent=`${timeLabel(scan.observed_at_et)} · scan ${selectedScanIndex+1} of ${scans.length}`;
-    const buttons=rows.map(row=>{
+    const buttons=allExpirations.map(expiration=>{
       const button=document.createElement("button");
       button.type="button";
-      button.dataset.distributionExpiration=row.expiration;
-      button.textContent=row.expiration.replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3");
-      button.onclick=()=>{selectedExpiration=row.expiration;controls.dataset.selectedExpiration=selectedExpiration;setActiveButton();draw();};
+      button.dataset.distributionExpiration=expiration;
+      button.textContent=expiration.replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3");
+      button.onclick=()=>{selectedExpiration=expiration;controls.dataset.selectedExpiration=selectedExpiration;setActiveButton();draw();};
       return button;
     });
     controls.replaceChildren(...buttons);
@@ -54,8 +61,13 @@ function renderDistributionComparison(data) {
   function draw() {
     const row=rows.find(row=>row.expiration===selectedExpiration);
     if(!row){
-      const empty='<p class="chart-empty">No matching blended-reference and risk-neutral curves are available in this scan.</p>';
-      chart.innerHTML=empty;horizonChart.innerHTML=empty;note.textContent="";horizonNote.textContent="";sigmaLevels.replaceChildren();return;
+      const formatted=selectedExpiration.replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3");
+      const scan=scans[selectedScanIndex];
+      const message=`The ${formatted} distribution is unavailable for this scan. The requested expiration remains selected; move to another scan or choose a different expiration.`;
+      const empty=`<p class="chart-empty">${message}</p>`;
+      chart.innerHTML=empty;horizonChart.innerHTML=empty;
+      note.textContent=`As of ${scan.observed_at_et}. A missing fit is shown explicitly and is never replaced with the next available expiration.`;
+      horizonNote.textContent=note.textContent;sigmaLevels.replaceChildren();return;
     }
     const xmin=-7.5,xmax=7.5,xTicks=[-7.5,-5,-2.5,0,2.5,5,7.5];
     const ymin=0,ymax=1,yTicks=[0,.25,.5,.75,1];
