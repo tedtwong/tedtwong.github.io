@@ -4,6 +4,7 @@ function renderDistributionComparison(data) {
   const note=document.querySelector("#distribution-comparison-note");
   const horizonChart=document.querySelector("#distribution-horizon-chart");
   const horizonNote=document.querySelector("#distribution-horizon-note");
+  const sigmaLevels=document.querySelector("#distribution-sigma-levels");
   const slider=document.querySelector("#distribution-scan-slider");
   const scanOutput=document.querySelector("#distribution-scan-output");
   const scans=(data?.scans?.length?data.scans:[{
@@ -13,7 +14,7 @@ function renderDistributionComparison(data) {
   if(!scans.length){
     controls.replaceChildren();slider.disabled=true;scanOutput.textContent="Unavailable";
     const empty='<p class="chart-empty">No matching blended-reference and risk-neutral curves are available.</p>';
-    chart.innerHTML=empty;horizonChart.innerHTML=empty;note.textContent="";horizonNote.textContent="";return;
+    chart.innerHTML=empty;horizonChart.innerHTML=empty;note.textContent="";horizonNote.textContent="";sigmaLevels.replaceChildren();return;
   }
   const sessionChanged=slider.dataset.sessionDate!==(data?.session_date||"");
   const priorMaximum=Number(slider.max);
@@ -54,7 +55,7 @@ function renderDistributionComparison(data) {
     const row=rows.find(row=>row.expiration===selectedExpiration);
     if(!row){
       const empty='<p class="chart-empty">No matching blended-reference and risk-neutral curves are available in this scan.</p>';
-      chart.innerHTML=empty;horizonChart.innerHTML=empty;note.textContent="";horizonNote.textContent="";return;
+      chart.innerHTML=empty;horizonChart.innerHTML=empty;note.textContent="";horizonNote.textContent="";sigmaLevels.replaceChildren();return;
     }
     const xmin=-7.5,xmax=7.5,xTicks=[-7.5,-5,-2.5,0,2.5,5,7.5];
     const ymin=0,ymax=1,yTicks=[0,.25,.5,.75,1];
@@ -65,7 +66,7 @@ function renderDistributionComparison(data) {
     const observedMax=Math.max(...all.map(p=>p.density));
     if(!(all.length>1 && observedMax>0)){
       const empty="No valid distribution values fall within the displayed ±7.5% return range.";
-      chart.textContent=empty;horizonChart.textContent=empty;return;
+      chart.textContent=empty;horizonChart.textContent=empty;sigmaLevels.replaceChildren();return;
     }
     const width=1050,height=420,left=70,right=25,top=25,bottom=65;
     const x=v=>left+(v-xmin)/(xmax-xmin)*(width-left-right);
@@ -85,31 +86,50 @@ function renderDistributionComparison(data) {
     };
     const referenceHorizon=horizonValue(row.reference_horizon_volatility,row.reference_iv);
     const riskNeutralHorizon=horizonValue(row.risk_neutral_horizon_volatility,row.risk_neutral_iv);
+    const snapshotSpx=finiteNonnegative(row.spot);
     const horizonDays=finiteNonnegative(row.horizon_calendar_days) ?? (timeYears===null?null:timeYears*365.25);
     const horizonDuration=horizonDays===null?'exact horizon unavailable':horizonDays<1?`${(horizonDays*24).toFixed(2)} hours`:`${horizonDays.toFixed(3)} calendar days`;
     const annualizedLegend=`<text x="${left+12}" y="${top+18}" fill="#168a91">Blended reference IV: ${ivLabel(row.reference_iv)}</text><text x="${left+12}" y="${top+40}" fill="#8b5cf6">Risk-neutral IV: ${ivLabel(row.risk_neutral_iv)}</text><text x="${left+12}" y="${top+60}" fill="#555" font-size="12">Annualized · selected expiration</text>`;
     const horizonLegend=`<text x="${left+12}" y="${top+18}" fill="#168a91">Blended reference horizon σ: ${ivLabel(referenceHorizon)}</text><text x="${left+12}" y="${top+40}" fill="#8b5cf6">Risk-neutral horizon σ: ${ivLabel(riskNeutralHorizon)}</text><text x="${left+12}" y="${top+60}" fill="#555" font-size="12">Not annualized · ${horizonDuration}</text>`;
     const densityPaths=clipId=>`<g clip-path="url(#${clipId})"><path d="${line(reference)}" fill="none" stroke="#168a91" stroke-width="3" stroke-opacity="0.6"/><path d="${line(riskNeutral)}" fill="none" stroke="#8b5cf6" stroke-width="3" stroke-opacity="0.6"/></g>`;
     const shell=(clipId,legend,extraMarks,aria)=>`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${aria}"><defs><clipPath id="${clipId}"><rect x="${left}" y="${top}" width="${width-left-right}" height="${height-top-bottom}"/></clipPath></defs>${axes}${legend}${densityPaths(clipId)}${extraMarks}<text x="${width/2}" y="${height-10}" text-anchor="middle">SPX return from snapshot level (%) at expiration</text><text transform="translate(17 ${height/2}) rotate(-90)" text-anchor="middle">Density per percentage point</text></svg>`;
-    chart.innerHTML=shell("distribution-density-annualized-clip",annualizedLegend,"","Blended reference versus risk-neutral terminal SPX return density with annualized volatility labels");
     let sigmaMarks="";
+    const sigmaRows=[];
     for(const [sigma,color,label] of [[referenceHorizon,"#168a91","Blended reference"],[riskNeutralHorizon,"#8b5cf6","Risk-neutral"]]){
-      if(sigma===null)continue;
-      for(const direction of [-1,1]){
-        const returnPct=direction*sigma*100;
+      if(sigma===null || snapshotSpx===null || snapshotSpx<=0)continue;
+      for(const multiple of [-2,-1,1,2]){
+        const level=snapshotSpx*Math.exp(multiple*sigma);
+        const returnPct=(level/snapshotSpx-1)*100;
+        const boundary=`${multiple>0?'+':'−'}${Math.abs(multiple)}σ`;
+        sigmaRows.push({label,boundary,multiple,level,returnPct,color});
         if(returnPct<xmin || returnPct>xmax)continue;
-        sigmaMarks+=`<line x1="${x(returnPct)}" x2="${x(returnPct)}" y1="${top+72}" y2="${height-bottom}" stroke="${color}" stroke-width="2" stroke-dasharray="6 4"><title>${label} ${direction<0?'−':'+ '}1σ: ${returnPct.toFixed(3)}%</title></line>`;
+        const dash=Math.abs(multiple)===1?'6 4':'2 5';
+        sigmaMarks+=`<line x1="${x(returnPct)}" x2="${x(returnPct)}" y1="${top+72}" y2="${height-bottom}" stroke="${color}" stroke-width="2" stroke-dasharray="${dash}"><title>${label} ${boundary}: SPX ${level.toFixed(2)} (${returnPct>=0?'+':''}${returnPct.toFixed(3)}%)</title></line>`;
       }
     }
-    horizonChart.innerHTML=shell("distribution-density-horizon-clip",horizonLegend,sigmaMarks,"Blended reference versus risk-neutral terminal SPX return density with exact expiration-horizon volatility and plus or minus one sigma markers");
+    let currentSpxMark="";
+    if(snapshotSpx!==null && snapshotSpx>0){
+      currentSpxMark=`<line x1="${x(0)}" x2="${x(0)}" y1="${top+72}" y2="${height-bottom}" stroke="#475467" stroke-width="3"><title>Current SPX at selected scan: ${snapshotSpx.toFixed(2)}</title></line><text x="${x(0)+7}" y="${top+84}" fill="#475467" font-size="12">SPX ${snapshotSpx.toFixed(2)}</text>`;
+    }
+    const referenceMarks=sigmaMarks+currentSpxMark;
+    chart.innerHTML=shell("distribution-density-annualized-clip",annualizedLegend,referenceMarks,"Blended reference versus risk-neutral terminal SPX return density with current SPX and plus or minus one and two sigma levels");
+    horizonChart.innerHTML=shell("distribution-density-horizon-clip",horizonLegend,referenceMarks,"Blended reference versus risk-neutral terminal SPX return density with exact expiration-horizon volatility, current SPX, and plus or minus one and two sigma levels");
+    if(sigmaRows.length && snapshotSpx!==null){
+      const levelCell=(label,boundary)=>{
+        const item=sigmaRows.find(value=>value.label===label&&value.boundary===boundary);
+        return item?`${item.level.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})} (${item.returnPct>=0?'+':''}${item.returnPct.toFixed(2)}%)`:'—';
+      };
+      const tableRows=['Blended reference','Risk-neutral'].map(label=>`<tr><th scope="row">${label}</th><td>${levelCell(label,'−2σ')}</td><td>${levelCell(label,'−1σ')}</td><td>${snapshotSpx.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}</td><td>${levelCell(label,'+1σ')}</td><td>${levelCell(label,'+2σ')}</td></tr>`).join('');
+      sigmaLevels.innerHTML=`<h4>Sigma reference levels at the selected scan</h4><table><thead><tr><th>Distribution</th><th>−2σ</th><th>−1σ</th><th>Current SPX</th><th>+1σ</th><th>+2σ</th></tr></thead><tbody>${tableRows}</tbody></table>`;
+    }else sigmaLevels.innerHTML='<p class="chart-empty">Sigma SPX reference levels are unavailable for this scan.</p>';
     const scan=scans[selectedScanIndex];
     const age=Math.max(0,(Date.now()-Date.parse(scan.observed_at_et))/1000);
     const isLatest=selectedScanIndex===scans.length-1;
     const stateLabel=!isLatest?"HISTORICAL SCAN — ":data.status==="RETAINED_SESSION"?"RETAINED SESSION CLOSE — ":age>180?"STALE — ":"";
     const clippingNote=observedMax>ymax?' Density above 1.00 is clipped in the chart only; stored values are unchanged.':'';
     const retention=data.status==="RETAINED_SESSION"&&isLatest?" The completed session remains displayed until the next session records a valid distribution.":"";
-    note.textContent=`${stateLabel}As of ${scan.observed_at_et} · ${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: blended reference. Purple: option-implied risk-neutral density. The display is fixed at −7.5% to +7.5% and 0.00 to 1.00 density, with identical vertical ticks for every expiration.${clippingNote} Stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced across scans.${retention}`;
-    horizonNote.textContent=`Expiration-horizon volatility is not annualized: σ(T) = annualized σ × √T using the exact remaining ${horizonDuration}. Dashed vertical lines mark ±1σ. The density curves intentionally match the annualized-label view because both already describe terminal returns at the selected expiration; only the volatility convention changes.${retention}`;
+    note.textContent=`${stateLabel}As of ${scan.observed_at_et} · ${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: blended reference. Purple: option-implied risk-neutral density. Solid gray: SPX at the selected scan. Dashed lines mark exact-horizon ±1σ and ±2σ; hover for their SPX levels. Annualized volatility is converted with the exact T before marker placement. The display is fixed at −7.5% to +7.5% and 0.00 to 1.00 density, with identical vertical ticks for every expiration.${clippingNote} Stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced across scans.${retention}`;
+    horizonNote.textContent=`Expiration-horizon volatility is not annualized: σ(T) = annualized σ × √T using the exact remaining ${horizonDuration}. The solid gray line is current SPX; dashed lines mark ±1σ and ±2σ. SPX levels use S×exp(nσ), consistent with log-return volatility. The density curves intentionally match the annualized-label view because both already describe terminal returns at the selected expiration; only the volatility convention changes.${retention}`;
   }
   slider.oninput=()=>{selectedScanIndex=Math.max(0,Math.min(scans.length-1,Number(slider.value)||0));slider.dataset.followLatest=String(selectedScanIndex===scans.length-1);setScan();};
   setScan();
