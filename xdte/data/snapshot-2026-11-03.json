@@ -133749,7 +133749,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-11-03T17:06:10.006277-05:00",
+    "published_at_et": "2026-11-03T17:08:43.567153-05:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-11-03"
   },
