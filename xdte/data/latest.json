@@ -60390,7 +60390,7 @@
     ]
   },
   "distribution_comparison": {
-    "age_seconds": 9722,
+    "age_seconds": 10343,
     "expirations": [
       {
         "expiration": "20261103",
@@ -121819,7 +121819,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-11-02T18:56:59.886312-05:00",
+    "published_at_et": "2026-11-02T19:07:20.016953-05:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-11-02"
   },

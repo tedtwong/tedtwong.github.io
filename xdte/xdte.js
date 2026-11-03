@@ -119,43 +119,40 @@ function renderDistributionComparison(data) {
     const sigmaRows=[];
     for(const [sigma,color,label] of [[referenceHorizon,"#168a91","Blended reference"],[riskNeutralHorizon,"#8b5cf6","Risk-neutral"]]){
       if(sigma===null || snapshotSpx===null || snapshotSpx<=0)continue;
-      for(const multiple of [-2,-1,1,2]){
+      for(const multiple of [-2,2]){
         const level=snapshotSpx*Math.exp(multiple*sigma);
         const returnPct=(level/snapshotSpx-1)*100;
         const boundary=`${multiple>0?'+':'−'}${Math.abs(multiple)}σ`;
         sigmaRows.push({label,boundary,multiple,level,returnPct,color});
         if(level<xmin || level>xmax)continue;
-        const dash=Math.abs(multiple)===1?'6 4':'2 5';
-        sigmaMarks+=`<line x1="${x(level)}" x2="${x(level)}" y1="${top+72}" y2="${height-bottom}" stroke="${color}" stroke-width="2" stroke-dasharray="${dash}"><title>${label} ${boundary}: SPX ${level.toFixed(2)} (${returnPct>=0?'+':''}${returnPct.toFixed(3)}%)</title></line>`;
+        sigmaMarks+=`<line x1="${x(level)}" x2="${x(level)}" y1="${top+72}" y2="${height-bottom}" stroke="${color}" stroke-width="2" stroke-dasharray="2 5"><title>${label} ${boundary}: SPX ${level.toFixed(2)} (${returnPct>=0?'+':''}${returnPct.toFixed(3)}%)</title></line>`;
       }
     }
     let marketMarks=`<line x1="${x(openingSpx)}" x2="${x(openingSpx)}" y1="${top+72}" y2="${height-bottom}" stroke="#111827" stroke-width="3"><title>Session open: SPX ${openingSpx.toFixed(2)}</title></line>`;
     const marketRows=[
-      ["Session high",finiteNonnegative(marketReferences.session_high_spx),"#2FA236"],
-      ["Session low",finiteNonnegative(marketReferences.session_low_spx),"#FD0100"],
       [marketReferences.current_or_close_label||"Latest at selected scan",finiteNonnegative(marketReferences.current_or_close_spx),"#333ED4"],
       ["Prior-session close",finiteNonnegative(marketReferences.previous_session_close_spx),"#667085"],
     ].filter(item=>item[1]!==null);
     for(const [label,level,color] of marketRows){if(level>=xmin&&level<=xmax)marketMarks+=`<line x1="${x(level)}" x2="${x(level)}" y1="${top+72}" y2="${height-bottom}" stroke="${color}" stroke-width="2" stroke-dasharray="2 4"><title>${label}: SPX ${level.toFixed(2)}</title></line>`;}
     const referenceLegend=`<div class="chart-legend"><span class="legend-key" style="--key:#111827">Open ${preciseLevel(openingSpx)}</span>${marketRows.map(([label,level,color])=>`<span class="legend-key" style="--key:${color}">${label} ${preciseLevel(level)}</span>`).join('')}</div>`;
     const referenceMarks=sigmaMarks+marketMarks;
-    chart.innerHTML=shell("distribution-density-annualized-clip",annualizedLegend,referenceMarks,"Blended reference versus risk-neutral terminal SPX-level density centered on the session open with session references and plus or minus one and two sigma levels")+referenceLegend;
+    chart.innerHTML=shell("distribution-density-annualized-clip",annualizedLegend,referenceMarks,"Blended reference versus risk-neutral terminal SPX-level density centered on the session open with close references and plus or minus two sigma levels")+referenceLegend;
     horizonChart.innerHTML=shell("distribution-density-horizon-clip",horizonLegend,referenceMarks,"Blended reference versus risk-neutral terminal SPX-level density with exact expiration-horizon volatility and session reference levels")+referenceLegend;
     if(sigmaRows.length && snapshotSpx!==null){
       const levelCell=(label,boundary)=>{
         const item=sigmaRows.find(value=>value.label===label&&value.boundary===boundary);
         return item?`${item.level.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})} (${item.returnPct>=0?'+':''}${item.returnPct.toFixed(2)}%)`:'—';
       };
-      const tableRows=['Blended reference','Risk-neutral'].map(label=>`<tr><th scope="row">${label}</th><td>${levelCell(label,'−2σ')}</td><td>${levelCell(label,'−1σ')}</td><td>${snapshotSpx.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}</td><td>${levelCell(label,'+1σ')}</td><td>${levelCell(label,'+2σ')}</td></tr>`).join('');
-      sigmaLevels.innerHTML=`<h4>Sigma reference levels at the selected scan</h4><table><thead><tr><th>Distribution</th><th>−2σ</th><th>−1σ</th><th>Selected scan SPX</th><th>+1σ</th><th>+2σ</th></tr></thead><tbody>${tableRows}</tbody></table>`;
+      const tableRows=['Blended reference','Risk-neutral'].map(label=>`<tr><th scope="row">${label}</th><td>${levelCell(label,'−2σ')}</td><td>${snapshotSpx.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}</td><td>${levelCell(label,'+2σ')}</td></tr>`).join('');
+      sigmaLevels.innerHTML=`<h4>Sigma reference levels at the selected scan</h4><table><thead><tr><th>Distribution</th><th>−2σ</th><th>Selected scan SPX</th><th>+2σ</th></tr></thead><tbody>${tableRows}</tbody></table>`;
     }else sigmaLevels.innerHTML='<p class="chart-empty">Sigma SPX reference levels are unavailable for this scan.</p>';
     const age=Math.max(0,(Date.now()-Date.parse(scan.observed_at_et))/1000);
     const isLatest=selectedScanIndex===scans.length-1;
     const stateLabel=!isLatest?"HISTORICAL SCAN — ":data.status==="RETAINED_SESSION"?"RETAINED SESSION CLOSE — ":age>180?"STALE — ":"";
     const clippingNote=observedMax>ymax?' Density above 1.00 is clipped in the chart only; stored values are unchanged.':'';
     const retention=data.status==="RETAINED_SESSION"&&isLatest?" The completed session remains displayed until the next session records a valid distribution.":"";
-    note.textContent=`${stateLabel}As of ${scan.observed_at_et} · ${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: blended reference. Purple: option-implied risk-neutral density. The horizontal scale is fixed at ${preciseLevel(xmin)} to ${preciseLevel(xmax)}, centered on the session open ${preciseLevel(openingSpx)}, and labeled in actual SPX levels. The solid dark line is the open; dotted lines mark the point-in-time high, low, latest/close, and prior-session close. Dashed lines mark exact-horizon ±1σ and ±2σ. The vertical scale remains 0.00 to 1.00 density per 1% SPX move for comparability.${clippingNote} Stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced across scans.${retention}`;
-    horizonNote.textContent=`Expiration-horizon volatility is not annualized: σ(T) = annualized σ × √T using the exact remaining ${horizonDuration}. The SPX-level axis is centered on the session open. Dotted lines show session high, low, latest/close, and prior-session close; dashed lines mark ±1σ and ±2σ. SPX sigma levels use S×exp(nσ), consistent with log-return volatility. The density curves intentionally match the annualized-label view because both already describe terminal returns at the selected expiration; only the volatility convention changes.${retention}`;
+    note.textContent=`${stateLabel}As of ${scan.observed_at_et} · ${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: blended reference. Purple: option-implied risk-neutral density. The horizontal scale is fixed at ${preciseLevel(xmin)} to ${preciseLevel(xmax)}, centered on the session open ${preciseLevel(openingSpx)}, and labeled in actual SPX levels. The solid dark line is the open; dotted lines mark the point-in-time latest/close and prior-session close. Dashed lines mark exact-horizon ±2σ. The vertical scale remains 0.00 to 1.00 density per 1% SPX move for comparability.${clippingNote} Stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced across scans.${retention}`;
+    horizonNote.textContent=`Expiration-horizon volatility is not annualized: σ(T) = annualized σ × √T using the exact remaining ${horizonDuration}. The SPX-level axis is centered on the session open. Dotted lines show latest/close and prior-session close; dashed lines mark ±2σ. SPX sigma levels use S×exp(nσ), consistent with log-return volatility. The density curves intentionally match the annualized-label view because both already describe terminal returns at the selected expiration; only the volatility convention changes.${retention}`;
   }
   slider.oninput=()=>{selectedScanIndex=Math.max(0,Math.min(scans.length-1,Number(slider.value)||0));slider.dataset.followLatest=String(selectedScanIndex===scans.length-1);setScan();};
   setScan();
