@@ -973,6 +973,7 @@ function renderMarketOpportunities(data, snapshotHistory = []) {
     ['Expected net P&L','base_edge_dollars',null,v=>value(v,money)],
     ['Raw return','base_edge_return_on_planned_loss',null,v=>value(v,percent)],
     ['Duration-adjusted return','duration_adjusted_base_edge_return_on_planned_loss',null,v=>value(v,percent)],
+    ['Combined score','probability_weighted_duration_adjusted_return',null,v=>value(v,percent)],
     ['Full-credit probability','reference_full_credit_probability',null,v=>value(v,percent)],
     ['Q−P','q_minus_p_probability_wedge',null,v=>value(v,percent)],
     ['Required reserve','capital_reserve',null,v=>value(v,money)],
@@ -981,7 +982,7 @@ function renderMarketOpportunities(data, snapshotHistory = []) {
   ], market.rows || []);
   const marketNote = document.querySelector('#market-opportunities-note');
   if(marketNote) marketNote.textContent = market.scan_bucket
-    ? `Scan ${market.scan_bucket} · recorded ${market.observed_at_et}. ${(market.rows || []).length ? 'Market rank is independent of account capacity; entry status is a scan-time assessment, not an order approval.' : 'No independent market opportunities were saved for this scan.'}`
+    ? `Scan ${market.scan_bucket} · recorded ${market.observed_at_et}. ${(market.rows || []).length ? 'Market rank uses duration-adjusted return × full-credit probability and is independent of account capacity; entry status is a scan-time assessment, not an order approval.' : 'No independent market opportunities were saved for this scan.'}`
     : 'Awaiting the first independent market-opportunity scan; historical finalists are not relabeled.';
 }
 
