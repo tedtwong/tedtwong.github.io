@@ -1265,9 +1265,12 @@ async function load() {
   ], ledger.calibration_periods);
   document.querySelector("#trade-average-coverage").textContent = `Settled trades only (${averages.settled_trades || 0}). Duration includes nights and weekends. Duration observations: ${averages.duration_samples || 0}; missing inputs make that average unavailable.`;
   const perf = ledger.performance;
+  const lossWithPercentage = (amount, percentage) => amount == null
+    ? "—"
+    : `${money.format(amount)}${percentage == null ? "" : ` (${percent.format(percentage)})`}`;
   metrics("#performance-metrics", [
     ["Settled trades", value(perf.settled_trades)], ["Trading days", value(perf.trading_days)], ["Total net P&L ($)", value(perf.total_net_pnl, money), pnlClass(perf.total_net_pnl)], ["Net return on deployed capital", value(perf.net_return_on_deployed_capital, percent), pnlClass(perf.net_return_on_deployed_capital)],
-    ["Expectancy / trade", value(perf.expectancy_return_per_trade, percent), pnlClass(perf.expectancy_return_per_trade)], ["Win rate", value(perf.trade_win_rate, percent)], ["Full-credit (%)", value(perf.full_credit_rate, percent)], ["Max realized drawdown", value(perf.maximum_realized_drawdown, money)], ["Max daily realized loss", value(perf.maximum_daily_realized_loss, money)],
+    ["Expectancy / trade", value(perf.expectancy_return_per_trade, percent), pnlClass(perf.expectancy_return_per_trade)], ["Win rate", value(perf.trade_win_rate, percent)], ["Full-credit (%)", value(perf.full_credit_rate, percent)], ["Max realized drawdown", lossWithPercentage(perf.maximum_realized_drawdown, perf.maximum_realized_drawdown_percentage)], ["Max daily realized loss", lossWithPercentage(perf.maximum_daily_realized_loss, perf.maximum_daily_realized_loss_percentage)],
   ]);
   const fullCreditNote = document.querySelector('#full-credit-note');
   if(fullCreditNote) fullCreditNote.textContent = `Full credit: ${perf.full_credit_trades ?? '—'} of ${perf.settled_trades ?? '—'} settled trades retained the entire premium at expiration before fees. Known outcomes: ${perf.full_credit_samples ?? '—'}. Early closes count as not full credit; missing outcome data makes the percentage unavailable.`;
