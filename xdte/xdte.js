@@ -973,7 +973,7 @@ function renderMarketOpportunities(data, snapshotHistory = []) {
     ['Expected net P&L','base_edge_dollars',null,v=>value(v,money)],
     ['Raw return','base_edge_return_on_planned_loss',null,v=>value(v,percent)],
     ['Duration-adjusted return','duration_adjusted_base_edge_return_on_planned_loss',null,v=>value(v,percent)],
-    ['Combined score','probability_weighted_duration_adjusted_return',null,v=>value(v,percent)],
+    ['Combined score (P^1.5)','probability_weighted_duration_adjusted_return',null,v=>value(v,percent)],
     ['Full-credit probability','reference_full_credit_probability',null,v=>value(v,percent)],
     ['Q−P','q_minus_p_probability_wedge',null,v=>value(v,percent)],
     ['Required reserve','capital_reserve',null,v=>value(v,money)],
@@ -1260,7 +1260,7 @@ async function load() {
   const perf = ledger.performance;
   metrics("#performance-metrics", [
     ["Settled trades", value(perf.settled_trades)], ["Trading days", value(perf.trading_days)], ["Total net P&L ($)", value(perf.total_net_pnl, money), pnlClass(perf.total_net_pnl)], ["Net return on deployed capital", value(perf.net_return_on_deployed_capital, percent), pnlClass(perf.net_return_on_deployed_capital)],
-    ["Expectancy / trade", value(perf.expectancy_return_per_trade, percent), pnlClass(perf.expectancy_return_per_trade)], ["Win rate", value(perf.trade_win_rate, percent)], ["Full-credit (%)", value(perf.full_credit_rate, percent)], ["Max realized drawdown", value(perf.maximum_realized_drawdown, money)], ["Max daily-close drawdown", value(perf.maximum_daily_drawdown, money)],
+    ["Expectancy / trade", value(perf.expectancy_return_per_trade, percent), pnlClass(perf.expectancy_return_per_trade)], ["Win rate", value(perf.trade_win_rate, percent)], ["Full-credit (%)", value(perf.full_credit_rate, percent)], ["Max realized drawdown", value(perf.maximum_realized_drawdown, money)], ["Max daily-close drawdown", value(perf.maximum_daily_drawdown, money)], ["Max daily realized loss", value(perf.maximum_daily_realized_loss, money)],
   ]);
   const fullCreditNote = document.querySelector('#full-credit-note');
   if(fullCreditNote) fullCreditNote.textContent = `Full credit: ${perf.full_credit_trades ?? '—'} of ${perf.settled_trades ?? '—'} settled trades retained the entire premium at expiration before fees. Known outcomes: ${perf.full_credit_samples ?? '—'}. Early closes count as not full credit; missing outcome data makes the percentage unavailable.`;
