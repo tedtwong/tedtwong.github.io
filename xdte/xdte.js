@@ -1155,6 +1155,13 @@ async function load() {
     ["Capital released by exits", value(exitActivity.released_capital, money)],
   ]);
   deployedCapacityChart(ledger.deployed_capacity_history || []);
+  const sessionRollover = ledger.capacity.timed_capacity_rollover_fraction;
+  const configuredRollover = ledger.capacity.configured_timed_capacity_rollover_fraction;
+  const rolloverLabel = sessionRollover == null
+    ? (configuredRollover == null ? "—" : percent.format(configuredRollover))
+    : (configuredRollover != null && Math.abs(configuredRollover - sessionRollover) > 1e-9
+      ? `${percent.format(sessionRollover)} session; ${percent.format(configuredRollover)} next policy`
+      : percent.format(sessionRollover));
   metrics("#capacity-metrics", [
     ["Reserved capacity", value(ledger.capacity.total_position_reserve ?? ledger.capacity.aggregate_reserved_capacity ?? summary.reserved_risk, money), capacityClass(ledger.capacity.total_position_reserve ?? ledger.capacity.aggregate_reserved_capacity ?? summary.reserved_risk)],
     ["Total put reserve", value(ledger.capacity.total_put_reserve, money), capacityClass(ledger.capacity.total_put_reserve)],
@@ -1164,7 +1171,7 @@ async function load() {
     ["Total capacity available", value(ledger.capacity.aggregate_available_capacity, money), capacityClass(ledger.capacity.aggregate_available_capacity)],
     ["Available new-entry capacity now", value(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity, money), capacityClass(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity)],
     ["Effective capacity unlocked", value(ledger.capacity.timed_capacity_released, money), capacityClass(ledger.capacity.timed_capacity_released)],
-    ["Carried from prior window (25%)", value(ledger.capacity.timed_capacity_carried_forward, money), capacityClass(ledger.capacity.timed_capacity_carried_forward)],
+    [`Carried from prior window (${rolloverLabel})`, value(ledger.capacity.timed_capacity_carried_forward, money), capacityClass(ledger.capacity.timed_capacity_carried_forward)],
     ["Unused capacity forfeited today", value(ledger.capacity.timed_capacity_forfeited, money), capacityClass(ledger.capacity.timed_capacity_forfeited)],
     ["Long-dated (4+ DTE) capacity available", value(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity, money), capacityClass(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity)],
   ]);

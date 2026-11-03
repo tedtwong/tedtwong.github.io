@@ -129401,6 +129401,7 @@
       "aggregate_available_capacity": 38924.65,
       "available_capacity": 1028.82,
       "capacity_reserved_today": 15155.42,
+      "configured_timed_capacity_rollover_fraction": 0.5,
       "consumed_capacity": 15155.42,
       "daily_new_capacity_available": 1028.82,
       "eligible_recycled_allocations": 0,
@@ -133749,7 +133750,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-11-03T17:08:43.567153-05:00",
+    "published_at_et": "2026-11-03T17:13:41.090395-05:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-11-03"
   },
