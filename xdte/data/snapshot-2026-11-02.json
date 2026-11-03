@@ -876,13 +876,13 @@
       "transaction_costs": 65.2
     },
     "funnel": {
-      "available_daily_capacity": 2249.04,
+      "available_daily_capacity": 0.0,
       "candidates_examined": 157721,
       "completed_scan_decisions": 75,
       "current_capital_allocated": 4333.04,
       "current_unrealized_pnl": -1040.84,
-      "daily_capacity_released": 20117.28,
-      "daily_capacity_total": 20000.0,
+      "daily_capacity_released": 17868.24,
+      "daily_capacity_total": 19135.6,
       "eligible_candidates": 132,
       "next_capacity_release_amount": null,
       "next_capacity_release_time": null,
@@ -60158,6 +60158,17 @@
           "title": "Expiration settlement verification pending"
         },
         {
+          "category": "Scanner",
+          "details": "2 scheduled five-minute scanner cycle(s) had no persisted result. Later scheduled activity confirmed recovery.",
+          "first_seen_at_et": "2026-11-02T09:35:00-05:00",
+          "last_seen_at_et": "2026-11-02T09:40:00-05:00",
+          "recovery_confirmed": true,
+          "rule_id": "SCANNER_HEARTBEAT_MISSING_1",
+          "severity": "WARNING",
+          "state": "RESOLVED",
+          "title": "Scheduled scanner cycle missing"
+        },
+        {
           "category": "Data freshness",
           "details": "Candidate scan computation is slow. Later scheduled activity confirmed recovery.",
           "first_seen_at_et": "2026-11-02T09:47:13.259012-05:00",
@@ -60390,7 +60401,7 @@
     ]
   },
   "distribution_comparison": {
-    "age_seconds": 10343,
+    "age_seconds": 18714,
     "expirations": [
       {
         "expiration": "20261103",
@@ -117932,10 +117943,10 @@
     "capacity": {
       "accepted_allocations": 14,
       "aggregate_available_capacity": 45666.96,
-      "available_capacity": 2249.04,
+      "available_capacity": 0.0,
       "capacity_reserved_today": 17868.24,
       "consumed_capacity": 17868.24,
-      "daily_new_capacity_available": 2249.04,
+      "daily_new_capacity_available": 0.0,
       "eligible_recycled_allocations": 0,
       "long_dated_available_capacity": 12500.0,
       "nearby_interval_headroom": 10666.96,
@@ -117948,11 +117959,11 @@
       "released_capacity": 6798.67,
       "seven_dte_available_capacity": 12500.0,
       "starting_capacity": 20000.0,
-      "timed_capacity_carried_forward": 72.3,
-      "timed_capacity_forfeited": 788.36,
-      "timed_capacity_released": 20117.28,
-      "timed_capacity_rollover_fraction": 0.25,
-      "timed_capacity_total": 20000.0,
+      "timed_capacity_carried_forward": 127.65,
+      "timed_capacity_forfeited": 1276.34,
+      "timed_capacity_released": 17868.24,
+      "timed_capacity_rollover_fraction": 0.35,
+      "timed_capacity_total": 19135.6,
       "total_call_reserve": 4333.04,
       "total_position_reserve": 4333.04,
       "total_put_reserve": 3833.04,
@@ -121819,7 +121830,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-11-02T19:07:20.016953-05:00",
+    "published_at_et": "2026-11-02T21:26:50.962663-05:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-11-02"
   },
