@@ -24804,9 +24804,9 @@
       }
     ],
     "reserve_capacity_flow": {
-      "aggregate_limit": 50000.0,
+      "aggregate_limit": 47838.99,
       "cancelled_today": 6798.67,
-      "ending_available": 45666.96,
+      "ending_available": 43505.95,
       "ending_reserved": 4333.04,
       "exited_today": 13535.2,
       "missing_records": 0,
@@ -24814,42 +24814,42 @@
       "reserved_today": 24666.91,
       "rows": [
         {
-          "amount": 50000.0,
-          "end": 50000.0,
+          "amount": 47838.99,
+          "end": 47838.99,
           "kind": "total",
           "label": "Start of day available",
           "start": 0.0
         },
         {
           "amount": -24666.91,
-          "end": 25333.09,
+          "end": 23172.08,
           "kind": "reserved",
           "label": "Reserved today",
-          "start": 50000.0
+          "start": 47838.99
         },
         {
           "amount": 13535.2,
-          "end": 38868.29,
+          "end": 36707.28,
           "kind": "released",
           "label": "Exited today",
-          "start": 25333.09
+          "start": 23172.08
         },
         {
           "amount": 6798.67,
-          "end": 45666.96,
+          "end": 43505.95,
           "kind": "released",
           "label": "Cancelled / unfilled",
-          "start": 38868.29
+          "start": 36707.28
         },
         {
-          "amount": 45666.96,
-          "end": 45666.96,
+          "amount": 43505.95,
+          "end": 43505.95,
           "kind": "total",
           "label": "Currently available",
           "start": 0.0
         }
       ],
-      "starting_available": 50000.0,
+      "starting_available": 47838.99,
       "status": "COMPLETE",
       "trade_date": "2026-11-02"
     },
@@ -60401,7 +60401,7 @@
     ]
   },
   "distribution_comparison": {
-    "age_seconds": 18714,
+    "age_seconds": 19021,
     "expirations": [
       {
         "expiration": "20261103",
@@ -117942,7 +117942,7 @@
     ],
     "capacity": {
       "accepted_allocations": 14,
-      "aggregate_available_capacity": 45666.96,
+      "aggregate_available_capacity": 43505.95,
       "available_capacity": 0.0,
       "capacity_reserved_today": 17868.24,
       "consumed_capacity": 17868.24,
@@ -121830,7 +121830,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-11-02T21:26:50.962663-05:00",
+    "published_at_et": "2026-11-02T21:31:58.680129-05:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-11-02"
   },
