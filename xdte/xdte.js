@@ -1212,6 +1212,7 @@ async function load() {
     ["SPX zone", "spx_position_zone", null, positionZoneBadge, "Current SPX location"],
     ["SPX map", "spx_position_zone", null, positionMap, "Position map"],
     ["Entry", "entry_time_et", null, shortTime, "Entry time (ET)"],
+    ["SPX entry", "spx_at_entry", null, v => value(v, number), "SPX at entry"],
     ["Expiry", "expiration_date", null, shortDate],
     ["Exp. return", "modeled_expected_return", null, v => value(v, percent), "Modeled expected return"],
     ["Full-credit P", "probability_of_full_credit", null, fullCreditProbability, "Probability of full credit"],
