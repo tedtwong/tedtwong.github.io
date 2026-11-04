@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
   <link rel="stylesheet" href="xdte.css?v=20261103-single-distribution-v14">
-  <script defer src="xdte.js?v=20261103-single-distribution-v14"></script>
+  <script defer src="xdte.js?v=20261104-settlement-scale-v15"></script>
 </head>
 <body>
   <header class="hero">
@@ -108,7 +108,7 @@
         <div id="position-outcome-chart" class="chart position-outcome-chart"></div>
       </article>
       <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>SPX settlement payoff scenarios</h3><p>Select Today or one of the next seven trading sessions. Blue includes positions still outstanding at the selected target; orange includes positions expiring on that target date. After the close, Today retains the completed session and its actual expiration-settled result through midnight ET; it then rolls to the current or next regular session. Positions expiring earlier are omitted. This is a hypothetical lifetime intrinsic payoff after fees, not a forecast or daily ledger change.</p></div></div>
+        <div class="panel__heading"><div><h3>SPX settlement payoff scenarios</h3><p>Select Today or one of the next seven trading sessions. Blue includes positions still outstanding at the selected target; orange includes positions expiring on that target date. The horizontal scale remains fixed at ±3% around the session-opening SPX, and the selected horizon uses one P&amp;L scale across its saved intraday scans. After the close, Today retains the completed session and its actual expiration-settled result through midnight ET; it then rolls to the current or next regular session. Positions expiring earlier are omitted. This is a hypothetical lifetime intrinsic payoff after fees, not a forecast or daily ledger change.</p></div></div>
         <div class="distribution-scan-picker settlement-scan-picker">
           <label for="settlement-scan-slider">Scan time <output id="settlement-scan-output"></output></label>
           <input id="settlement-scan-slider" type="range" min="0" max="0" step="1" value="0" aria-label="Settlement scenario scan time">

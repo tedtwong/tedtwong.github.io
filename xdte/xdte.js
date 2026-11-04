@@ -153,7 +153,7 @@ function renderDistributionComparison(data) {
   setScan();
 }
 
-function settlementScenarioChart(target, scenario) {
+function settlementScenarioChart(target, scenario, fixedScale = {}) {
   const node = document.querySelector(target);
   if (!node) return;
   const rows = (scenario?.rows || []).filter(r => [r.spx_level, r.all_open_net_pnl, r.expiring_today_net_pnl].every(v => typeof v === "number" && Number.isFinite(v)));
@@ -162,29 +162,33 @@ function settlementScenarioChart(target, scenario) {
   const expiryLabel = retainedClose ? "Expiration-settled positions" : (scenario.forward_session ? `Expiring on ${scenario.session_date}` : "Expiring today only");
   const allLabel = retainedClose ? "Session-ending book · settlement payoff" : (scenario.forward_session ? "Outstanding at target · hypothetical settlement" : "All open · hypothetical settlement");
   const width=1000,height=390,p={l:95,r:30,t:30,b:65};
-  const low=rows[0].spx_level,high=rows[rows.length-1].spx_level;
   const finiteValue=value=>value!==null && value!==undefined && value!=="" && Number.isFinite(Number(value));
+  const openingSpx=finiteValue(fixedScale.openingSpx)?Number(fixedScale.openingSpx):(finiteValue(scenario.grid_center_spx)?Number(scenario.grid_center_spx):Number(scenario.spot));
+  const suppliedDomain=Array.isArray(fixedScale.xDomain)&&fixedScale.xDomain.length===2&&fixedScale.xDomain.every(finiteValue)&&Number(fixedScale.xDomain[1])>Number(fixedScale.xDomain[0]);
+  const low=suppliedDomain?Number(fixedScale.xDomain[0]):rows[0].spx_level,high=suppliedDomain?Number(fixedScale.xDomain[1]):rows[rows.length-1].spx_level;
   const hasRealizedPoint = retainedClose && finiteValue(scenario.realized_expiry_net_pnl) && finiteValue(scenario.realized_settlement_spx);
-  const extent=Math.max(1,...rows.flatMap(r=>[Math.abs(r.all_open_net_pnl),Math.abs(r.expiring_today_net_pnl)]),...(hasRealizedPoint?[Math.abs(Number(scenario.realized_expiry_net_pnl))]:[]))*1.08;
+  const calculatedExtent=Math.max(1,...rows.flatMap(r=>[Math.abs(r.all_open_net_pnl),Math.abs(r.expiring_today_net_pnl)]),...(hasRealizedPoint?[Math.abs(Number(scenario.realized_expiry_net_pnl))]:[]))*1.08;
+  const extent=finiteValue(fixedScale.yExtent)&&Number(fixedScale.yExtent)>0?Number(fixedScale.yExtent):calculatedExtent;
   const ymin=-extent,ymax=extent;
   const x=v=>p.l+(v-low)/(high-low||1)*(width-p.l-p.r),y=v=>p.t+(ymax-v)/(ymax-ymin)*(height-p.t-p.b);
   let marks="";
   for(let i=0;i<=6;i++){const v=ymin+(ymax-ymin)*i/6;marks+=`<line x1="${p.l}" x2="${width-p.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e4e7ec"/><text x="${p.l-10}" y="${y(v)+4}" text-anchor="end" font-size="12">${money.format(v)}</text>`;}
-  const tickEvery=Math.max(1,Math.ceil(rows.length/9));
-  rows.forEach((r,i)=>{if(i%tickEvery===0||i===rows.length-1)marks+=`<text x="${x(r.spx_level)}" y="${height-p.b+24}" text-anchor="middle" font-size="12">${number.format(r.spx_level)}</text>`;});
+  const xTicks=Number.isFinite(openingSpx)&&suppliedDomain?Array.from({length:7},(_,index)=>openingSpx*(.97+index*.01)):Array.from({length:7},(_,index)=>low+(high-low)*index/6);
+  xTicks.forEach(value=>{marks+=`<line x1="${x(value)}" x2="${x(value)}" y1="${p.t}" y2="${height-p.b}" stroke="${Math.abs(value-openingSpx)<.01?'#aeb4bc':'#f0f2f5'}"/><text x="${x(value)}" y="${height-p.b+24}" text-anchor="middle" font-size="12">${number.format(value)}</text>`;});
   marks+=`<line x1="${p.l}" x2="${width-p.r}" y1="${y(0)}" y2="${y(0)}" stroke="#475467" stroke-width="1.5"/>`;
   const specs=[["all_open_net_pnl",allLabel, "#333ED4", ""],["expiring_today_net_pnl",expiryLabel, "#F76915", "7 4"]];
   for(const [field,label,color,dash] of specs){
     const line=rows.map((r,i)=>`${i?'L':'M'}${x(r.spx_level)},${y(r[field])}`).join(' ');
-    marks+=`<path d="${line} L${x(high)},${y(0)} L${x(low)},${y(0)} Z" fill="${color}" fill-opacity=".10"/><path d="${line}" fill="none" stroke="${color}" stroke-width="3" stroke-opacity=".65" stroke-dasharray="${dash}"/>`;
-    rows.forEach(r=>{marks+=`<circle cx="${x(r.spx_level)}" cy="${y(r[field])}" r="4" fill="${color}" fill-opacity=".18"><title>SPX ${number.format(r.spx_level)} · ${label}: ${money.format(r[field])}</title></circle>`;});
+    marks+=`<g clip-path="url(#settlement-payoff-clip)"><path d="${line} L${x(high)},${y(0)} L${x(low)},${y(0)} Z" fill="${color}" fill-opacity=".10"/><path d="${line}" fill="none" stroke="${color}" stroke-width="3" stroke-opacity=".65" stroke-dasharray="${dash}"/></g>`;
+    rows.filter(r=>r.spx_level>=low&&r.spx_level<=high).forEach(r=>{marks+=`<circle cx="${x(r.spx_level)}" cy="${y(r[field])}" r="4" fill="${color}" fill-opacity=".18"><title>SPX ${number.format(r.spx_level)} · ${label}: ${money.format(r[field])}</title></circle>`;});
   }
   const referenceSpx=hasRealizedPoint?Number(scenario.realized_settlement_spx):scenario.spot;
+  if(Number.isFinite(openingSpx))marks+=`<line x1="${x(openingSpx)}" x2="${x(openingSpx)}" y1="${p.t}" y2="${height-p.b}" stroke="#111827" stroke-width="2.5"/><text x="${x(openingSpx)}" y="${height-p.b+43}" text-anchor="middle" font-size="12">Open ${number.format(openingSpx)}</text>`;
   if(typeof referenceSpx === "number")marks+=`<line x1="${x(referenceSpx)}" x2="${x(referenceSpx)}" y1="${p.t}" y2="${height-p.b}" stroke="#667085" stroke-dasharray="4 4"/><text x="${x(referenceSpx)}" y="${p.t-10}" text-anchor="middle" font-size="12">${retainedClose?"Settlement":"Current"} SPX ${number.format(referenceSpx)}</text>`;
   if(hasRealizedPoint)marks+=`<circle cx="${x(Number(scenario.realized_settlement_spx))}" cy="${y(Number(scenario.realized_expiry_net_pnl))}" r="7" fill="#2FA236" stroke="white" stroke-width="2"><title>Aggregate realized net P&amp;L at settlement: ${money.format(Number(scenario.realized_expiry_net_pnl))}</title></circle>`;
-  node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Net settlement payoff versus hypothetical SPX: outstanding positions and positions expiring on the selected session"><text x="${(p.l+width-p.r)/2}" y="${height-8}" text-anchor="middle" font-size="13">Hypothetical SPX settlement level · five-point increments</text>${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#333ED4">${allLabel} (${scenario.all_open_count})</span><span class="legend-key" style="--key:#F76915">${expiryLabel} (${scenario.expiring_today_count})</span></div>`;
+  node.innerHTML=`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Net settlement payoff versus hypothetical SPX: outstanding positions and positions expiring on the selected session"><defs><clipPath id="settlement-payoff-clip"><rect x="${p.l}" y="${p.t}" width="${width-p.l-p.r}" height="${height-p.t-p.b}"/></clipPath></defs><text x="${(p.l+width-p.r)/2}" y="${height-8}" text-anchor="middle" font-size="13">Hypothetical SPX settlement level · fixed around session open</text>${marks}</svg><div class="chart-legend"><span class="legend-key" style="--key:#333ED4">${allLabel} (${scenario.all_open_count})</span><span class="legend-key" style="--key:#F76915">${expiryLabel} (${scenario.expiring_today_count})</span></div>`;
   if(hasRealizedPoint)node.insertAdjacentHTML("beforeend",`<div class="chart-legend"><span class="legend-key" style="--key:#2FA236">Actual expiration-settled net P&amp;L ${money.format(Number(scenario.realized_expiry_net_pnl))}</span></div>`);
-  const note=document.createElement("p");note.className="chart-note";note.textContent=`${scenario.note} Session ${scenario.session_date}. ${scenario.as_of_et ? `SPX as of ${scenario.as_of_et}. ` : ""}${scenario.excluded_count ? `Warning: ${scenario.excluded_count} open position(s) excluded; incomplete result. ` : ""}${scenario.expiring_today_count===0 ? `No open positions expire on ${scenario.session_date}; orange curve is zero.` : ""}`;node.appendChild(note);
+  const note=document.createElement("p");note.className="chart-note";note.textContent=`${scenario.note} Session ${scenario.session_date}. ${Number.isFinite(openingSpx)?`Horizontal scale ${number.format(low)}–${number.format(high)}, centered on session-open SPX ${number.format(openingSpx)}. `:""}${scenario.as_of_et ? `SPX as of ${scenario.as_of_et}. ` : ""}${scenario.excluded_count ? `Warning: ${scenario.excluded_count} open position(s) excluded; incomplete result. ` : ""}${scenario.expiring_today_count===0 ? `No open positions expire on ${scenario.session_date}; orange curve is zero.` : ""}`;node.appendChild(note);
 }
 
 function renderSettlementScenarioHorizons(horizons, afterMidnightHorizons = [], rollForwardAtEt = null, history = null) {
@@ -198,6 +202,10 @@ function renderSettlementScenarioHorizons(horizons, afterMidnightHorizons = [], 
   const activeSession=currentScenarios[0]?.reference_session_date || currentScenarios[0]?.session_date || "";
   const savedScans=history?.session_date===activeSession && Array.isArray(history?.scans)?history.scans:[];
   const scans=(savedScans.length?savedScans:[{observed_at_et:currentScenarios[0]?.as_of_et,horizons:currentScenarios}]).filter(scan=>(scan.horizons||[]).length);
+  const finiteValue=value=>value!==null&&value!==undefined&&value!==""&&Number.isFinite(Number(value));
+  const firstScenario=scans.flatMap(scan=>scan.horizons||[])[0]||{};
+  const openingSpx=finiteValue(history?.session_open_spx)?Number(history.session_open_spx):(finiteValue(firstScenario.grid_center_spx)?Number(firstScenario.grid_center_spx):Number(firstScenario.spot));
+  const xDomain=Number.isFinite(openingSpx)?[openingSpx*.97,openingSpx*1.03]:null;
   controls.dataset.rollForwardApplied=String(Boolean(useAfterMidnight));
   if(!scans.length){controls.replaceChildren();slider.disabled=true;scanOutput.textContent="Unavailable";settlementScenarioChart("#settlement-scenario-chart",{status:"NO_SETTLEMENT_HORIZONS",rows:[]});return;}
   const sessionChanged=slider.dataset.sessionDate!==activeSession;
@@ -216,9 +224,20 @@ function renderSettlementScenarioHorizons(horizons, afterMidnightHorizons = [], 
     button.classList.toggle("is-active",active);
     button.setAttribute("aria-pressed",String(active));
   });
+  const extentFor=offset=>{
+    const values=[1];
+    for(const scan of scans){
+      const horizons=scan.horizons||[];
+      const scenario=horizons.find((item,index)=>offsetFor(item,index)===offset);
+      if(!scenario)continue;
+      for(const row of scenario.rows||[])for(const field of ["all_open_net_pnl","expiring_today_net_pnl"])if(finiteValue(row[field]))values.push(Math.abs(Number(row[field])));
+      if(finiteValue(scenario.realized_expiry_net_pnl))values.push(Math.abs(Number(scenario.realized_expiry_net_pnl)));
+    }
+    return Math.max(...values)*1.08;
+  };
   const draw=()=>{
     const scenario=scenarios.find((item,index)=>offsetFor(item,index)===selected);
-    settlementScenarioChart("#settlement-scenario-chart",scenario || {status:"NO_SETTLEMENT_HORIZONS",rows:[]});
+    settlementScenarioChart("#settlement-scenario-chart",scenario || {status:"NO_SETTLEMENT_HORIZONS",rows:[]},{openingSpx,xDomain,yExtent:extentFor(selected)});
   };
   const setScan=()=>{
     const scan=scans[selectedScanIndex];
@@ -964,7 +983,7 @@ function renderMarketOpportunities(data, snapshotHistory = []) {
   }
   const marketTable = document.querySelector('#market-opportunities-table');
   if(marketTable) table('#market-opportunities-table', [
-    ['Market rank','market_rank'],['Strategy','strategy'],['DTE','target_dte'],['Expiration','expiration'],
+    ['Confirmed rank','confirmed_rank'],['Analytical rank','market_rank'],['Strategy','strategy'],['DTE','target_dte'],['Expiration','expiration'],
     ['Expected net P&L','base_edge_dollars',null,v=>value(v,money)],
     ['Raw return','base_edge_return_on_planned_loss',null,v=>value(v,percent)],
     ['Duration-adjusted return','duration_adjusted_base_edge_return_on_planned_loss',null,v=>value(v,percent)],
@@ -978,7 +997,7 @@ function renderMarketOpportunities(data, snapshotHistory = []) {
   ], market.rows || []);
   const marketNote = document.querySelector('#market-opportunities-note');
   if(marketNote) marketNote.textContent = market.scan_bucket
-    ? `Scan ${market.scan_bucket} · recorded ${market.observed_at_et}. ${(market.rows || []).length ? 'Market rank uses duration-adjusted return × full-credit probability and is independent of account capacity; entry status is a scan-time assessment, not an order approval.' : 'No independent market opportunities were saved for this scan.'}`
+    ? `Scan ${market.scan_bucket} · recorded ${market.observed_at_et}. ${(market.rows || []).length ? 'Confirmed rank is the post-confirmation combination-score order; analytical rank preserves the pre-confirmation market order. Both are independent of account capacity, and entry status is not an order approval.' : 'No independent market opportunities were saved for this scan.'}`
     : 'Awaiting the first independent market-opportunity scan; historical finalists are not relabeled.';
 }
 
