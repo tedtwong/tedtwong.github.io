@@ -974,6 +974,7 @@ function renderMarketOpportunities(data, snapshotHistory = []) {
     ['Required reserve','capital_reserve',null,v=>value(v,money)],
     ['Entry hurdle','required_base_edge_return_on_planned_loss',null,v=>value(v,percent)],
     ['Entry status','entry_status'],['Entry blockers','entry_blocking_reasons',null,v=>(v||[]).join(', ')],
+    ['Execution outcome','execution_outcome'],['Execution reason','execution_reason'],
   ], market.rows || []);
   const marketNote = document.querySelector('#market-opportunities-note');
   if(marketNote) marketNote.textContent = market.scan_bucket
