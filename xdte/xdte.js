@@ -11,7 +11,7 @@ function renderDistributionComparison(data) {
   }]).filter(scan=>(scan.expirations||[]).length);
   if(!scans.length){
     controls.replaceChildren();slider.disabled=true;scanOutput.textContent="Unavailable";
-    const empty='<p class="chart-empty">No matching blended-reference and risk-neutral curves are available.</p>';
+    const empty='<p class="chart-empty">No matching physical-forecast and risk-neutral curves are available.</p>';
     chart.innerHTML=empty;note.textContent="";sigmaLevels.replaceChildren();return;
   }
   const sessionChanged=slider.dataset.sessionDate!==(data?.session_date||"");
@@ -109,12 +109,17 @@ function renderDistributionComparison(data) {
     const riskNeutralHorizon=horizonValue(row.risk_neutral_horizon_volatility,row.risk_neutral_iv);
     const horizonDays=finiteNonnegative(row.horizon_calendar_days) ?? (timeYears===null?null:timeYears*365.25);
     const horizonDuration=horizonDays===null?'exact horizon unavailable':horizonDays<1?`${(horizonDays*24).toFixed(2)} hours`:`${horizonDays.toFixed(3)} calendar days`;
-    const horizonLegend=`<text x="${left+12}" y="${top+18}" fill="#168a91">Blended reference annualized volatility: ${ivLabel(row.reference_iv)} · horizon σ: ${ivLabel(referenceHorizon)}</text><text x="${left+12}" y="${top+40}" fill="#8b5cf6">Risk-neutral implied volatility (annualized): ${ivLabel(row.risk_neutral_iv)} · horizon σ: ${ivLabel(riskNeutralHorizon)}</text><text x="${left+12}" y="${top+60}" fill="#555" font-size="12">Exact-horizon σ · ${horizonDuration}</text>`;
+    const referenceLabel=row.reference_label||"Physical forecast";
+    const vixClockScale=finiteNonnegative(row.vix_clock_scale_iv);
+    const physicalDiscount=finiteNonnegative(row.physical_discount);
+    const scaleText=vixClockScale===null?'VIX-family nonlinear-clock scale unavailable':`VIX-family nonlinear-clock scale: ${ivLabel(vixClockScale)}`;
+    const discountText=physicalDiscount===null?'Bayesian physical discount unavailable':`Bayesian physical discount d: ${physicalDiscount.toFixed(3)}`;
+    const horizonLegend=`<text x="${left+12}" y="${top+18}" fill="#168a91">${referenceLabel} volatility: ${ivLabel(row.reference_iv)} · horizon σ: ${ivLabel(referenceHorizon)}</text><text x="${left+12}" y="${top+40}" fill="#8b5cf6">Option-implied risk-neutral volatility: ${ivLabel(row.risk_neutral_iv)} · horizon σ: ${ivLabel(riskNeutralHorizon)}</text><text x="${left+12}" y="${top+60}" fill="#555" font-size="12">${scaleText} · ${discountText}</text><text x="${left+12}" y="${top+78}" fill="#555" font-size="12">Exact expiration horizon · ${horizonDuration}</text>`;
     const densityPaths=clipId=>`<g clip-path="url(#${clipId})"><path d="${line(reference)}" fill="none" stroke="#168a91" stroke-width="3" stroke-opacity="0.6"/><path d="${line(riskNeutral)}" fill="none" stroke="#8b5cf6" stroke-width="3" stroke-opacity="0.6"/></g>`;
     const shell=(clipId,legend,extraMarks,aria)=>`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${aria}"><defs><clipPath id="${clipId}"><rect x="${left}" y="${top}" width="${width-left-right}" height="${height-top-bottom}"/></clipPath></defs>${axes}${legend}${densityPaths(clipId)}${extraMarks}<text x="${width/2}" y="${height-10}" text-anchor="middle">SPX level · centered on session open ${preciseLevel(openingSpx)}</text><text transform="translate(17 ${height/2}) rotate(-90)" text-anchor="middle">Density per 1% SPX move</text></svg>`;
     let sigmaMarks="";
     const sigmaRows=[];
-    for(const [sigma,color,label] of [[referenceHorizon,"#168a91","Blended reference"],[riskNeutralHorizon,"#8b5cf6","Risk-neutral"]]){
+    for(const [sigma,color,label] of [[referenceHorizon,"#168a91",referenceLabel],[riskNeutralHorizon,"#8b5cf6","Option-implied risk-neutral"]]){
       if(sigma===null || snapshotSpx===null || snapshotSpx<=0)continue;
       for(const multiple of [-2,-1,1,2]){
         const level=snapshotSpx*Math.exp(multiple*sigma);
@@ -123,24 +128,24 @@ function renderDistributionComparison(data) {
         sigmaRows.push({label,boundary,multiple,level,returnPct,color});
         if(Math.abs(multiple)!==2)continue;
         if(level<xmin || level>xmax)continue;
-        sigmaMarks+=`<line x1="${x(level)}" x2="${x(level)}" y1="${top+72}" y2="${height-bottom}" stroke="${color}" stroke-width="2" stroke-dasharray="2 5"><title>${label} ${boundary}: SPX ${level.toFixed(2)} (${returnPct>=0?'+':''}${returnPct.toFixed(3)}%)</title></line>`;
+        sigmaMarks+=`<line x1="${x(level)}" x2="${x(level)}" y1="${top+90}" y2="${height-bottom}" stroke="${color}" stroke-width="2" stroke-dasharray="2 5"><title>${label} ${boundary}: SPX ${level.toFixed(2)} (${returnPct>=0?'+':''}${returnPct.toFixed(3)}%)</title></line>`;
       }
     }
-    let marketMarks=`<line x1="${x(openingSpx)}" x2="${x(openingSpx)}" y1="${top+72}" y2="${height-bottom}" stroke="#111827" stroke-width="3"><title>Session open: SPX ${openingSpx.toFixed(2)}</title></line>`;
+    let marketMarks=`<line x1="${x(openingSpx)}" x2="${x(openingSpx)}" y1="${top+90}" y2="${height-bottom}" stroke="#111827" stroke-width="3"><title>Session open: SPX ${openingSpx.toFixed(2)}</title></line>`;
     const marketRows=[
       [marketReferences.current_or_close_label||"Latest at selected scan",finiteNonnegative(marketReferences.current_or_close_spx),"#333ED4"],
       ["Prior-session close",finiteNonnegative(marketReferences.previous_session_close_spx),"#667085"],
     ].filter(item=>item[1]!==null);
-    for(const [label,level,color] of marketRows){if(level>=xmin&&level<=xmax)marketMarks+=`<line x1="${x(level)}" x2="${x(level)}" y1="${top+72}" y2="${height-bottom}" stroke="${color}" stroke-width="2" stroke-dasharray="2 4"><title>${label}: SPX ${level.toFixed(2)}</title></line>`;}
+    for(const [label,level,color] of marketRows){if(level>=xmin&&level<=xmax)marketMarks+=`<line x1="${x(level)}" x2="${x(level)}" y1="${top+90}" y2="${height-bottom}" stroke="${color}" stroke-width="2" stroke-dasharray="2 4"><title>${label}: SPX ${level.toFixed(2)}</title></line>`;}
     const referenceLegend=`<div class="chart-legend"><span class="legend-key" style="--key:#111827">Open ${preciseLevel(openingSpx)}</span>${marketRows.map(([label,level,color])=>`<span class="legend-key" style="--key:${color}">${label} ${preciseLevel(level)}</span>`).join('')}</div>`;
     const referenceMarks=sigmaMarks+marketMarks;
-    chart.innerHTML=shell("distribution-density-horizon-clip",horizonLegend,referenceMarks,"Blended reference versus risk-neutral terminal SPX-level density with exact expiration-horizon volatility and session reference levels")+referenceLegend;
+    chart.innerHTML=shell("distribution-density-horizon-clip",horizonLegend,referenceMarks,"Shape-scale-clock physical forecast versus option-implied risk-neutral terminal SPX-level density with exact expiration-horizon volatility and session reference levels")+referenceLegend;
     if(sigmaRows.length && snapshotSpx!==null){
       const levelCell=(label,boundary)=>{
         const item=sigmaRows.find(value=>value.label===label&&value.boundary===boundary);
         return item?`${item.level.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})} (${item.returnPct>=0?'+':''}${item.returnPct.toFixed(2)}%)`:'—';
       };
-      const tableRows=['Blended reference','Risk-neutral'].map(label=>`<tr><th scope="row">${label}</th><td>${levelCell(label,'−2σ')}</td><td>${levelCell(label,'−1σ')}</td><td>${snapshotSpx.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}</td><td>${levelCell(label,'+1σ')}</td><td>${levelCell(label,'+2σ')}</td></tr>`).join('');
+      const tableRows=[referenceLabel,'Option-implied risk-neutral'].map(label=>`<tr><th scope="row">${label}</th><td>${levelCell(label,'−2σ')}</td><td>${levelCell(label,'−1σ')}</td><td>${snapshotSpx.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}</td><td>${levelCell(label,'+1σ')}</td><td>${levelCell(label,'+2σ')}</td></tr>`).join('');
       sigmaLevels.innerHTML=`<h4>Sigma reference levels at the selected scan</h4><table><thead><tr><th>Distribution</th><th>−2σ</th><th>−1σ</th><th>Selected scan SPX</th><th>+1σ</th><th>+2σ</th></tr></thead><tbody>${tableRows}</tbody></table>`;
     }else sigmaLevels.innerHTML='<p class="chart-empty">Sigma SPX reference levels are unavailable for this scan.</p>';
     const age=Math.max(0,(Date.now()-Date.parse(scan.observed_at_et))/1000);
@@ -148,7 +153,8 @@ function renderDistributionComparison(data) {
     const stateLabel=!isLatest?"HISTORICAL SCAN — ":data.status==="RETAINED_SESSION"?"RETAINED SESSION CLOSE — ":age>180?"STALE — ":"";
     const clippingNote=observedMax>ymax?' Density above 1.00 is clipped in the chart only; stored values are unchanged.':'';
     const retention=data.status==="RETAINED_SESSION"&&isLatest?" The completed session remains displayed until the next session records a valid distribution.":"";
-    note.textContent=`${stateLabel}As of ${scan.observed_at_et} · ${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: blended reference. Purple: option-implied risk-neutral density. Annualized volatility and exact-horizon σ are both displayed: σ(T) = annualized volatility × √T over the remaining ${horizonDuration}. The horizontal scale is fixed at ${preciseLevel(xmin)} to ${preciseLevel(xmax)}, centered on the session open ${preciseLevel(openingSpx)}, and labeled in actual SPX levels. The solid dark line is the open; dotted lines mark the point-in-time latest/close and prior-session close. Dashed lines mark exact-horizon ±2σ; ±1σ is reported in the reference table without additional chart lines. The vertical scale remains 0.00 to 1.00 density per 1% SPX move for comparability.${clippingNote} Stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced across scans.${retention}`;
+    const modelDescription=row.reference_model_version==='spxw_shape_vix_nonlinear_clock_physical_v1'?'SPXW supplies standardized shape/skew and forward; VIX1D/VIX9D/VIX supply total-variance scale through the nonlinear intraday/overnight/event clock; the displayed Bayesian discount converts that scale to physical variance.':'This retained snapshot predates the active shape–scale–clock model.';
+    note.textContent=`${stateLabel}As of ${scan.observed_at_et} · ${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: ${referenceLabel}. Purple: option-implied risk-neutral density. ${modelDescription} Annualized-equivalent volatility and exact-horizon σ are both displayed over the remaining ${horizonDuration}. The horizontal scale is fixed at ${preciseLevel(xmin)} to ${preciseLevel(xmax)}, centered on the session open ${preciseLevel(openingSpx)}, and labeled in actual SPX levels. The solid dark line is the open; dotted lines mark the point-in-time latest/close and prior-session close. Dashed lines mark exact-horizon ±2σ; ±1σ is reported in the reference table without additional chart lines. The vertical scale remains 0.00 to 1.00 density per 1% SPX move for comparability.${clippingNote} Stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced across scans.${retention}`;
   }
   slider.oninput=()=>{selectedScanIndex=Math.max(0,Math.min(scans.length-1,Number(slider.value)||0));slider.dataset.followLatest=String(selectedScanIndex===scans.length-1);setScan();};
   setScan();

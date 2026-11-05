@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
   <link rel="stylesheet" href="xdte.css?v=20261103-single-distribution-v14">
-  <script defer src="xdte.js?v=20261104-settlement-scale-v15"></script>
+  <script defer src="xdte.js?v=20261105-shape-clock-v16"></script>
 </head>
 <body>
   <header class="hero">
@@ -100,7 +100,7 @@
     <section aria-labelledby="positions-heading">
       <div class="section-heading"><div><p class="section-number">03</p><h2 id="positions-heading">Current positions</h2></div></div>
       <article class="panel">
-        <div class="panel__heading"><div><h3>Entries and exits</h3><p>Sanitized position summaries, including each position’s observed maximum and minimum unrealized P&amp;L over its holding period; option legs and raw quotes are excluded. Modeled expected return is expected net P&amp;L divided by total reserve; full-credit probability uses the saved blended reference, or a Black–Scholes fallback marked (BS), reconstructed from saved entry delta/IV when needed. A dash means neither estimate was recorded. Q−P is the saved entry-time risk-neutral minus model probability of finishing in the loss region, in percentage points. Positive values mean option prices assign more loss risk than the entry model. Historical rows retain their original model, which may predate the blended reference.</p></div></div>
+        <div class="panel__heading"><div><h3>Entries and exits</h3><p>Sanitized position summaries, including each position’s observed maximum and minimum unrealized P&amp;L over its holding period; option legs and raw quotes are excluded. Modeled expected return is expected net P&amp;L divided by total reserve; full-credit probability uses the saved active physical model, or a Black–Scholes fallback marked (BS), reconstructed from saved entry delta/IV when needed. A dash means neither estimate was recorded. Q−P is the saved entry-time risk-neutral minus model probability of finishing in the loss region, in percentage points. Positive values mean option prices assign more loss risk than the entry model. Historical rows retain the model active when they were evaluated.</p></div></div>
         <div id="trade-table" class="table-wrap"></div>
       </article>
       <article class="panel chart-panel">
@@ -119,7 +119,7 @@
     </section>
 
     <section aria-labelledby="distribution-comparison-heading">
-      <div class="section-heading"><p class="section-number">04</p><h2 id="distribution-comparison-heading">Blended reference and option-implied distribution</h2></div>
+      <div class="section-heading"><p class="section-number">04</p><h2 id="distribution-comparison-heading">Shape–scale–clock physical forecast and option-implied distribution</h2></div>
       <article class="panel">
         <div class="distribution-scan-picker distribution-history-scan-picker">
           <label for="distribution-scan-slider">Scan time <output id="distribution-scan-output"></output></label>
@@ -130,7 +130,7 @@
           <div id="distribution-expiration-controls" class="snapshot-controls distribution-expiration-controls" role="group" aria-label="Distribution expiration date"></div>
         </div>
         <div class="distribution-view">
-          <h3>Expiration-horizon distribution</h3>
+          <h3>Physical forecast versus risk-neutral pricing distribution</h3>
           <div id="distribution-comparison-chart" class="chart"></div>
           <p id="distribution-comparison-note" class="chart-note"></p>
           <div id="distribution-sigma-levels" class="table-wrap distribution-sigma-levels"></div>
@@ -177,7 +177,7 @@
         </div>
         <p id="candidate-percentile-window" class="chart-note"></p>
         <div id="candidate-percentile-table" class="table-wrap"></div>
-        <p class="chart-note">Displayed values are independent empirical 90th percentiles. MARKET_TOP_TEN uses the top ten market opportunities from each scan, pooled by DTE and strategy—not every positive-edge candidate. Historical execution-filtered finalists remain separate under their original evaluation scopes. Each candidate counts once per scan; repeat scans count separately. Raw return is modeled base edge / reserve (historical fallback: saved planned-loss return). Full-credit probability prefers the saved blended reference, with saved Black–Scholes fallback. Columns need not describe the same candidate. Small samples and changing models limit comparisons.</p>
+        <p class="chart-note">Displayed values are independent empirical 90th percentiles. MARKET_TOP_TEN uses the top ten market opportunities from each scan, pooled by DTE and strategy—not every positive-edge candidate. Historical execution-filtered finalists remain separate under their original evaluation scopes. Each candidate counts once per scan; repeat scans count separately. Raw return is modeled base edge / reserve (historical fallback: saved planned-loss return). Full-credit probability prefers the saved active physical forecast, with saved Black–Scholes fallback. Columns need not describe the same candidate. Small samples and changing models limit comparisons.</p>
       </article>
     </section>
 

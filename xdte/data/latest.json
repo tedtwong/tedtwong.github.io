@@ -125912,7 +125912,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-11-05T05:14:56.545763-05:00",
+    "published_at_et": "2026-11-05T06:15:20.421570-05:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-11-04"
   },
