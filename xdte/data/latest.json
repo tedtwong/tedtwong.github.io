@@ -57992,7 +57992,7 @@
     ]
   },
   "distribution_comparison": {
-    "age_seconds": 10204,
+    "age_seconds": 10559,
     "expirations": [
       {
         "bayesian_shadow_discount": 0.84195,
@@ -123384,7 +123384,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-11-06T17:33:59.084676-05:00",
+    "published_at_et": "2026-11-06T17:39:53.904896-05:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-11-06"
   },

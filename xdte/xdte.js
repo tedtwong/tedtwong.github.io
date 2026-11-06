@@ -1105,7 +1105,7 @@ function renderEstimatedMarketVariables(model) {
     ["200-session center", decimal(data.long_run_discount_center)],
     ["Latest log-variance state", decimal(data.latest_state_log_variance)],
     ["State age", sessionCount(data.state_age_sessions)],
-    ["Integrated-RV history", sessionCount(data.observed_session_count)],
+    ["Integrated-RV history", sessionCount(data.available_observed_session_count)],
     ["Prior initialization", sessionCount(data.prior_padding_session_count)],
   ]);
   const regime = data.vix_regime || {};
@@ -1113,7 +1113,6 @@ function renderEstimatedMarketVariables(model) {
     ["Robust VIX center", Number.isFinite(Number(regime.vix_center)) ? (100 * Number(regime.vix_center)).toFixed(2) : "—"],
     ["Posterior regime slope", decimal(regime.posterior_log_variance_slope)],
     ["Regime data weight", Number.isFinite(Number(regime.data_weight)) ? `${(100 * Number(regime.data_weight)).toFixed(1)}%` : "—"],
-    ["Backfilled sessions", sessionCount(regime.observation_count)],
   ]);
   table("#vix-regime-parameters", [
     ["Parameter", "parameter"],
@@ -1129,7 +1128,7 @@ function renderEstimatedMarketVariables(model) {
     {parameter: "Prior slope", value: decimal(regime.prior_log_variance_slope)},
     {parameter: "Prior effective sessions", value: decimal(regime.prior_effective_sessions, 1)},
     {parameter: "Effective observed sessions", value: decimal(regime.effective_observed_sessions, 2)},
-    {parameter: "Backfill period", value: regime.backfill_start_date && regime.backfill_end_date ? `${regime.backfill_start_date} through ${regime.backfill_end_date}` : "—"},
+    {parameter: "Integrated-RV history period", value: regime.backfill_start_date && regime.backfill_end_date ? `${regime.backfill_start_date} through ${regime.backfill_end_date}` : "—"},
   ]);
   table("#discount-surface-current", [
     ["DTE", "target_dte"],
