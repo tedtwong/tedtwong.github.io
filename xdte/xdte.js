@@ -1108,6 +1108,29 @@ function renderEstimatedMarketVariables(model) {
     ["Integrated-RV history", sessionCount(data.observed_session_count)],
     ["Prior initialization", sessionCount(data.prior_padding_session_count)],
   ]);
+  const regime = data.vix_regime || {};
+  metrics("#vix-regime-metrics", [
+    ["Robust VIX center", Number.isFinite(Number(regime.vix_center)) ? (100 * Number(regime.vix_center)).toFixed(2) : "—"],
+    ["Posterior regime slope", decimal(regime.posterior_log_variance_slope)],
+    ["Regime data weight", Number.isFinite(Number(regime.data_weight)) ? `${(100 * Number(regime.data_weight)).toFixed(1)}%` : "—"],
+    ["Backfilled sessions", sessionCount(regime.observation_count)],
+  ]);
+  table("#vix-regime-parameters", [
+    ["Parameter", "parameter"],
+    ["Value", "value"],
+  ], [
+    {parameter: "Regime variable", value: regime.variable || "—"},
+    {parameter: "Log-VIX center", value: decimal(regime.log_vix_center)},
+    {parameter: "Robust log-VIX scale", value: decimal(regime.log_vix_robust_scale)},
+    {parameter: "Z-score cap", value: decimal(regime.z_cap, 2)},
+    {parameter: "Unshrunk sample slope", value: decimal(regime.sample_log_variance_slope)},
+    {parameter: "Posterior slope", value: decimal(regime.posterior_log_variance_slope)},
+    {parameter: "Maximum absolute slope", value: decimal(regime.maximum_absolute_log_variance_slope)},
+    {parameter: "Prior slope", value: decimal(regime.prior_log_variance_slope)},
+    {parameter: "Prior effective sessions", value: decimal(regime.prior_effective_sessions, 1)},
+    {parameter: "Effective observed sessions", value: decimal(regime.effective_observed_sessions, 2)},
+    {parameter: "Backfill period", value: regime.backfill_start_date && regime.backfill_end_date ? `${regime.backfill_start_date} through ${regime.backfill_end_date}` : "—"},
+  ]);
   table("#discount-surface-current", [
     ["DTE", "target_dte"],
     ["Expiration", "expiration", null, shortDate],
