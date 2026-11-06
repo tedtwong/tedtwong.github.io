@@ -1105,7 +1105,7 @@ function renderEstimatedMarketVariables(model) {
     ["200-session center", decimal(data.long_run_discount_center)],
     ["Latest log-variance state", decimal(data.latest_state_log_variance)],
     ["State age", sessionCount(data.state_age_sessions)],
-    ["Observed calibration history", sessionCount(data.observed_session_count)],
+    ["Integrated-RV history", sessionCount(data.observed_session_count)],
     ["Prior initialization", sessionCount(data.prior_padding_session_count)],
   ]);
   table("#discount-surface-current", [
@@ -1132,7 +1132,7 @@ function renderEstimatedMarketVariables(model) {
   );
   const note = document.querySelector("#estimated-market-variable-note");
   const status = String(data.status || "UNAVAILABLE").replaceAll("_", " ");
-  note.textContent = `Status: ${status} · session ${data.session_date || "unavailable"} · model source: ${String(data.model_source || "unavailable").replaceAll("_", " ")} · latest calibration observation: ${data.latest_calibration_observation_date || "unavailable"}. These are saved operational discounts already used by the model; this display does not recalculate or interpolate missing scan values.`;
+  note.textContent = `Status: ${status} · session ${data.session_date || "unavailable"} · model source: ${String(data.model_source || "unavailable").replaceAll("_", " ")} · latest calibration observation: ${data.latest_calibration_observation_date || "unavailable"}. Active calibration uses five-minute integrated SPX realized variance against horizon-matched VIX1D/VIX9D/VIX clock variance, including overnight and weekend/holiday gaps. Terminal displacement is shadow-only. These are saved operational discounts already used by the model; this display does not recalculate or interpolate missing scan values.`;
 }
 
 async function load() {
@@ -1351,10 +1351,18 @@ async function load() {
     : "No settled-trade history is available.";
   table("#calibration-table", [
     ["Frequency", "frequency"], ["Period", "period"], ["Trades", "closed_trades"],
-    ["Risk deployed", "gross_risk_deployed", null, v => value(v, money)], ["Expected", "base_expected_net_pnl", pnlClass, v => value(v, money)],
-    ["Realized", "realized_net_pnl", pnlClass, v => value(v, money)], ["Difference", "forecast_error", pnlClass, v => value(v, money)],
-    ["Expected return", "expected_return_on_allocation", null, v => value(v, percent)], ["Realized return", "realized_return_on_allocation", null, v => value(v, percent)],
-    ["Error SD", "normalized_error_standard_deviation", null, v => value(v, percent)],
+    ["Risk deployed", "gross_risk_deployed", null, v => value(v, money)],
+    ["Candidate EV", "candidate_expected_net_pnl", pnlClass, v => value(v, money)],
+    ["Fill-adjusted EV", "actual_credit_adjusted_expected_net_pnl", pnlClass, v => value(v, money)],
+    ["Fill coverage", "actual_credit_adjusted_trades"],
+    ["Realized", "realized_net_pnl", pnlClass, v => value(v, money)],
+    ["Vs candidate", "candidate_forecast_error", pnlClass, v => value(v, money)],
+    ["Vs fill-adjusted", "actual_credit_adjusted_forecast_error", pnlClass, v => value(v, money)],
+    ["Candidate return", "candidate_expected_return_on_allocation", null, v => value(v, percent)],
+    ["Fill-adjusted return", "actual_credit_adjusted_expected_return_on_allocation", null, v => value(v, percent)],
+    ["Realized return", "realized_return_on_allocation", null, v => value(v, percent)],
+    ["Candidate error SD", "candidate_normalized_error_standard_deviation", null, v => value(v, percent)],
+    ["Fill-adjusted error SD", "actual_credit_adjusted_normalized_error_standard_deviation", null, v => value(v, percent)],
   ], ledger.calibration_periods);
   document.querySelector("#trade-average-coverage").textContent = `Settled trades only (${averages.settled_trades || 0}). Duration includes nights and weekends. Duration observations: ${averages.duration_samples || 0}; missing inputs make that average unavailable.`;
   const perf = ledger.performance;
