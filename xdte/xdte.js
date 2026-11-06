@@ -1088,6 +1088,7 @@ function updateRefreshButton() {
   button.textContent = refreshInFlight ? "Refreshing…" : "Refresh P&L";
 }
 
+let selectedVix1dHistoryDays = 1;
 function renderEstimatedMarketVariables(model) {
   const data = model || {};
   const decimal = (input, digits = 5) => {
@@ -1132,11 +1133,30 @@ function renderEstimatedMarketVariables(model) {
     data.surface_matrix || [],
     {emptyMessage: "No intraday discount history is available."},
   );
-  const vixHistory = data.vix1d_discount_history || [];
+  const allVixHistory = (data.vix1d_discount_history || []).filter(row =>
+    Number.isFinite(Date.parse(row?.observed_at_et || ""))
+  );
+  const latestVixTimestamp = Math.max(
+    ...allVixHistory.map(row => Date.parse(row.observed_at_et)),
+  );
+  const vixCutoff = latestVixTimestamp - selectedVix1dHistoryDays * 24 * 60 * 60 * 1000;
+  const vixHistory = Number.isFinite(latestVixTimestamp)
+    ? allVixHistory.filter(row => Date.parse(row.observed_at_et) >= vixCutoff)
+    : [];
   lineChart("#vix1d-discount-chart", [
     {rows: vixHistory, x: "observed_at_et", y: "vix1d_percent", label: "VIX1D", color: "#333ED4"},
-    {rows: vixHistory, x: "observed_at_et", y: "discounted_vix1d_percent", label: "Physical VIX1D", color: "#2FA236"},
-  ], {label: "VIX1D and discounted physical-volatility estimate", height: 320});
+    {rows: vixHistory, x: "observed_at_et", y: "discounted_vix1d_percent", label: "Discounted VIX1D", color: "#2FA236"},
+    {rows: vixHistory, x: "observed_at_et", y: "realized_vix1d_percent", label: "Realized VIX1D (5-minute RV)", color: "#F76915"},
+  ], {label: "VIX1D, discounted estimate, and realized volatility", height: 320});
+  document.querySelectorAll("[data-vix1d-window]").forEach(button => {
+    const active = Number(button.dataset.vix1dWindow) === selectedVix1dHistoryDays;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+    button.onclick = () => {
+      selectedVix1dHistoryDays = Number(button.dataset.vix1dWindow) || 1;
+      renderEstimatedMarketVariables(data);
+    };
+  });
   const note = document.querySelector("#estimated-market-variable-note");
   const status = String(data.status || "UNAVAILABLE").replaceAll("_", " ");
   note.textContent = `Status: ${status} · session ${data.session_date || "unavailable"} · model source: ${String(data.model_source || "unavailable").replaceAll("_", " ")} · latest calibration observation: ${data.latest_calibration_observation_date || "unavailable"}. Active calibration uses five-minute integrated SPX realized variance against horizon-matched VIX1D/VIX9D/VIX clock variance, including overnight and weekend/holiday gaps. Terminal displacement is shadow-only. These are saved operational discounts already used by the model; this display does not recalculate or interpolate missing scan values.`;

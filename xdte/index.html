@@ -232,7 +232,15 @@
         <p id="estimated-market-variable-note" class="chart-note"></p>
       </article>
       <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>VIX1D and discounted physical-volatility estimate</h3><p>The physical estimate is VIX1D multiplied by the active 0DTE discount. It is a modeled physical-volatility scale, not subsequently realized volatility.</p></div></div>
+        <div class="panel__heading">
+          <div><h3>VIX1D, discounted estimate, and realized volatility</h3><p>Discounted VIX1D applies the active 0DTE discount. Realized VIX1D is annualized five-minute integrated SPX realized volatility observed through each timestamp.</p></div>
+          <div id="vix1d-history-period-controls" class="period-controls" role="group" aria-label="VIX1D history window" data-selected-window="1">
+            <button type="button" data-vix1d-window="1" class="is-active" aria-pressed="true">1 day</button>
+            <button type="button" data-vix1d-window="3">3 days</button>
+            <button type="button" data-vix1d-window="7">7 days</button>
+            <button type="button" data-vix1d-window="30">30 days</button>
+          </div>
+        </div>
         <div id="vix1d-discount-chart" class="chart"></div>
       </article>
     </section>
