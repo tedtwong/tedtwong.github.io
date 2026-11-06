@@ -1102,23 +1102,20 @@ function renderEstimatedMarketVariables(model) {
     ["Horizon persistence", "average_horizon_persistence", null, value => decimal(value)],
     ["Observed (ET)", "observed_at_et", null, shortTime],
   ], data.current_by_dte || []);
-  const palette = {
-    0: "#FD0100", 1: "#F76915", 2: "#B59F00", 3: "#2FA236", 7: "#333ED4",
-  };
-  const grouped = new Map();
-  for (const row of data.surface || []) {
-    const dte = Number(row.target_dte);
-    if (!Number.isFinite(dte)) continue;
-    if (!grouped.has(dte)) grouped.set(dte, []);
-    grouped.get(dte).push(row);
-  }
-  const series = [...grouped.entries()].sort((left, right) => left[0] - right[0]).map(([dte, rows]) => ({
-    rows, x: "observed_at_et", y: "active_discount", label: `${dte} DTE`,
-    color: palette[dte] || "#666", width: 2.5,
-  }));
-  lineChart("#discount-surface-chart", series, {
-    height: 360, label: "Active physical-volatility discount by target DTE",
-  });
+  const timeColumns = (data.surface_time_columns || []).filter(column => column?.key);
+  const matrixColumns = [
+    ["DTE", "target_dte", null, value => Number.isFinite(Number(value)) ? `${Number(value)} DTE` : "—"],
+    ...timeColumns.map(column => [
+      String(column.label || column.key), String(column.key), null,
+      value => decimal(value),
+    ]),
+  ];
+  table(
+    "#discount-surface-matrix",
+    matrixColumns,
+    data.surface_matrix || [],
+    {emptyMessage: "No intraday discount history is available."},
+  );
   const note = document.querySelector("#estimated-market-variable-note");
   const status = String(data.status || "UNAVAILABLE").replaceAll("_", " ");
   note.textContent = `Status: ${status} · session ${data.session_date || "unavailable"} · model source: ${String(data.model_source || "unavailable").replaceAll("_", " ")} · latest calibration observation: ${data.latest_calibration_observation_date || "unavailable"}. These are saved operational discounts already used by the model; this display does not recalculate or interpolate missing scan values.`;

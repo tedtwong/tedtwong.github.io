@@ -226,9 +226,9 @@
         <div class="panel__heading"><div><h3>Current active discount by DTE</h3><p>Saved operational values from the latest scan for each target expiration.</p></div></div>
         <div id="discount-surface-current" class="table-wrap"></div>
       </article>
-      <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>Intraday active discount surface</h3><p>Each line follows one target DTE through the retained trading session.</p></div></div>
-        <div id="discount-surface-chart" class="chart"></div>
+      <article class="panel">
+        <div class="panel__heading"><div><h3>Intraday active discount surface</h3><p>DTEs are rows and saved New York scan times are columns. Blank cells are not interpolated.</p></div></div>
+        <div id="discount-surface-matrix" class="table-wrap"></div>
         <p id="estimated-market-variable-note" class="chart-note"></p>
       </article>
     </section>
