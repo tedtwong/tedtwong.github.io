@@ -465,8 +465,22 @@ const positionMap = (zone, row = {}) => {
     <text x="4" y="41" class="axis-end-label">Lower SPX</text><text x="96" y="41" text-anchor="end" class="axis-end-label">Higher SPX</text>
   </svg>`;
 };
-const shortTime = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }).format(new Date(v)) : "—";
-const shortDate = v => v ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(new Date(`${v}T00:00:00Z`)) : "—";
+const parsedPublicDate = value => {
+  if (value === null || value === undefined || value === "") return null;
+  let normalized = value;
+  if (typeof value === "string") {
+    const compact = value.trim().match(/^(\d{4})(\d{2})(\d{2})$/);
+    normalized = compact
+      ? `${compact[1]}-${compact[2]}-${compact[3]}T00:00:00Z`
+      : /^\d{4}-\d{2}-\d{2}$/.test(value.trim())
+        ? `${value.trim()}T00:00:00Z`
+        : value;
+  }
+  const parsed = new Date(normalized);
+  return Number.isFinite(parsed.getTime()) ? parsed : null;
+};
+const shortTime = v => { const parsed = parsedPublicDate(v); return parsed ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }).format(parsed) : "—"; };
+const shortDate = v => { const parsed = parsedPublicDate(v); return parsed ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(parsed) : "—"; };
 const liveFeedUrl = "https://storage.googleapis.com/ibkr-steamroller-coins-xdte-feed/latest.json";
 const autoRefreshIntervalMilliseconds = 5 * 60 * 1000;
 const publicationRefreshDelayMilliseconds = 90 * 1000;
