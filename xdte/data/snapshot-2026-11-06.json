@@ -57992,7 +57992,7 @@
     ]
   },
   "distribution_comparison": {
-    "age_seconds": 11655,
+    "age_seconds": 11923,
     "expirations": [
       {
         "bayesian_shadow_discount": 0.84195,
@@ -117205,6 +117205,449 @@
       }
     ],
     "terminal_displacement_shadow_observation_count": 56.0,
+    "vix1d_discount_history": [
+      {
+        "active_discount": 0.89644,
+        "discounted_vix1d_percent": 19.8023596,
+        "observed_at_et": "2026-11-06T09:34:55.388207-05:00",
+        "vix1d_observed_at_et": "2026-11-06T09:34:55.388207-05:00",
+        "vix1d_percent": 22.09
+      },
+      {
+        "active_discount": 0.89644,
+        "discounted_vix1d_percent": 18.9059196,
+        "observed_at_et": "2026-11-06T09:39:55.390705-05:00",
+        "vix1d_observed_at_et": "2026-11-06T09:39:55.390705-05:00",
+        "vix1d_percent": 21.09
+      },
+      {
+        "active_discount": 0.89644,
+        "discounted_vix1d_percent": 19.0583144,
+        "observed_at_et": "2026-11-06T09:44:55.853669-05:00",
+        "vix1d_observed_at_et": "2026-11-06T09:44:55.853669-05:00",
+        "vix1d_percent": 21.26
+      },
+      {
+        "active_discount": 0.90089,
+        "discounted_vix1d_percent": 18.909681099999997,
+        "observed_at_et": "2026-11-06T09:49:56.179371-05:00",
+        "vix1d_observed_at_et": "2026-11-06T09:49:56.179371-05:00",
+        "vix1d_percent": 20.99
+      },
+      {
+        "active_discount": 0.90641,
+        "discounted_vix1d_percent": 19.0074177,
+        "observed_at_et": "2026-11-06T09:54:56.073015-05:00",
+        "vix1d_observed_at_et": "2026-11-06T09:54:56.073015-05:00",
+        "vix1d_percent": 20.97
+      },
+      {
+        "active_discount": 0.9119,
+        "discounted_vix1d_percent": 19.323161000000002,
+        "observed_at_et": "2026-11-06T09:59:56.415279-05:00",
+        "vix1d_observed_at_et": "2026-11-06T09:59:56.415279-05:00",
+        "vix1d_percent": 21.19
+      },
+      {
+        "active_discount": 0.91736,
+        "discounted_vix1d_percent": 19.796628799999997,
+        "observed_at_et": "2026-11-06T10:04:56.187919-05:00",
+        "vix1d_observed_at_et": "2026-11-06T10:04:56.187919-05:00",
+        "vix1d_percent": 21.58
+      },
+      {
+        "active_discount": 0.92278,
+        "discounted_vix1d_percent": 19.682897399999998,
+        "observed_at_et": "2026-11-06T10:09:56.184183-05:00",
+        "vix1d_observed_at_et": "2026-11-06T10:09:56.184183-05:00",
+        "vix1d_percent": 21.33
+      },
+      {
+        "active_discount": 0.92818,
+        "discounted_vix1d_percent": 19.6402888,
+        "observed_at_et": "2026-11-06T10:14:56.314821-05:00",
+        "vix1d_observed_at_et": "2026-11-06T10:14:56.314821-05:00",
+        "vix1d_percent": 21.16
+      },
+      {
+        "active_discount": 0.93354,
+        "discounted_vix1d_percent": 19.884402,
+        "observed_at_et": "2026-11-06T10:19:56.580541-05:00",
+        "vix1d_observed_at_et": "2026-11-06T10:19:56.580541-05:00",
+        "vix1d_percent": 21.3
+      },
+      {
+        "active_discount": 0.93887,
+        "discounted_vix1d_percent": 19.941598799999998,
+        "observed_at_et": "2026-11-06T10:24:56.470468-05:00",
+        "vix1d_observed_at_et": "2026-11-06T10:24:56.470468-05:00",
+        "vix1d_percent": 21.24
+      },
+      {
+        "active_discount": 0.94418,
+        "discounted_vix1d_percent": 20.3187536,
+        "observed_at_et": "2026-11-06T10:29:56.276176-05:00",
+        "vix1d_observed_at_et": "2026-11-06T10:29:56.276176-05:00",
+        "vix1d_percent": 21.52
+      },
+      {
+        "active_discount": 0.94945,
+        "discounted_vix1d_percent": 21.514537,
+        "observed_at_et": "2026-11-06T10:34:56.481601-05:00",
+        "vix1d_observed_at_et": "2026-11-06T10:34:56.481601-05:00",
+        "vix1d_percent": 22.66
+      },
+      {
+        "active_discount": 0.95469,
+        "discounted_vix1d_percent": 21.480525,
+        "observed_at_et": "2026-11-06T10:39:56.512071-05:00",
+        "vix1d_observed_at_et": "2026-11-06T10:39:56.512071-05:00",
+        "vix1d_percent": 22.5
+      },
+      {
+        "active_discount": 0.95991,
+        "discounted_vix1d_percent": 20.772452400000002,
+        "observed_at_et": "2026-11-06T10:44:56.598209-05:00",
+        "vix1d_observed_at_et": "2026-11-06T10:44:56.598209-05:00",
+        "vix1d_percent": 21.64
+      },
+      {
+        "active_discount": 0.96509,
+        "discounted_vix1d_percent": 20.537115200000002,
+        "observed_at_et": "2026-11-06T10:49:56.578565-05:00",
+        "vix1d_observed_at_et": "2026-11-06T10:49:56.578565-05:00",
+        "vix1d_percent": 21.28
+      },
+      {
+        "active_discount": 0.97025,
+        "discounted_vix1d_percent": 20.7342425,
+        "observed_at_et": "2026-11-06T10:54:56.580403-05:00",
+        "vix1d_observed_at_et": "2026-11-06T10:54:56.580403-05:00",
+        "vix1d_percent": 21.37
+      },
+      {
+        "active_discount": 0.97538,
+        "discounted_vix1d_percent": 20.7853478,
+        "observed_at_et": "2026-11-06T10:59:56.471298-05:00",
+        "vix1d_observed_at_et": "2026-11-06T10:59:56.471298-05:00",
+        "vix1d_percent": 21.31
+      },
+      {
+        "active_discount": 0.96917,
+        "discounted_vix1d_percent": 21.2732815,
+        "observed_at_et": "2026-11-06T11:04:56.570889-05:00",
+        "vix1d_observed_at_et": "2026-11-06T11:04:56.570889-05:00",
+        "vix1d_percent": 21.95
+      },
+      {
+        "active_discount": 0.96006,
+        "discounted_vix1d_percent": 21.1981248,
+        "observed_at_et": "2026-11-06T11:09:56.601860-05:00",
+        "vix1d_observed_at_et": "2026-11-06T11:09:56.601860-05:00",
+        "vix1d_percent": 22.08
+      },
+      {
+        "active_discount": 0.95085,
+        "discounted_vix1d_percent": 21.517735499999997,
+        "observed_at_et": "2026-11-06T11:14:56.486562-05:00",
+        "vix1d_observed_at_et": "2026-11-06T11:14:56.486562-05:00",
+        "vix1d_percent": 22.63
+      },
+      {
+        "active_discount": 0.94156,
+        "discounted_vix1d_percent": 21.326334,
+        "observed_at_et": "2026-11-06T11:19:56.411353-05:00",
+        "vix1d_observed_at_et": "2026-11-06T11:19:56.411353-05:00",
+        "vix1d_percent": 22.65
+      },
+      {
+        "active_discount": 0.93217,
+        "discounted_vix1d_percent": 20.5823136,
+        "observed_at_et": "2026-11-06T11:24:56.389112-05:00",
+        "vix1d_observed_at_et": "2026-11-06T11:24:56.389112-05:00",
+        "vix1d_percent": 22.08
+      },
+      {
+        "active_discount": 0.92269,
+        "discounted_vix1d_percent": 20.4283566,
+        "observed_at_et": "2026-11-06T11:29:56.655902-05:00",
+        "vix1d_observed_at_et": "2026-11-06T11:29:56.655902-05:00",
+        "vix1d_percent": 22.14
+      },
+      {
+        "active_discount": 0.9131,
+        "discounted_vix1d_percent": 20.060807,
+        "observed_at_et": "2026-11-06T11:34:56.516492-05:00",
+        "vix1d_observed_at_et": "2026-11-06T11:34:56.516492-05:00",
+        "vix1d_percent": 21.97
+      },
+      {
+        "active_discount": 0.90342,
+        "discounted_vix1d_percent": 20.0378556,
+        "observed_at_et": "2026-11-06T11:39:56.525020-05:00",
+        "vix1d_observed_at_et": "2026-11-06T11:39:56.525020-05:00",
+        "vix1d_percent": 22.18
+      },
+      {
+        "active_discount": 0.89363,
+        "discounted_vix1d_percent": 20.0977387,
+        "observed_at_et": "2026-11-06T11:44:56.595346-05:00",
+        "vix1d_observed_at_et": "2026-11-06T11:44:56.595346-05:00",
+        "vix1d_percent": 22.49
+      },
+      {
+        "active_discount": 0.88373,
+        "discounted_vix1d_percent": 19.9192742,
+        "observed_at_et": "2026-11-06T11:49:56.558768-05:00",
+        "vix1d_observed_at_et": "2026-11-06T11:49:56.558768-05:00",
+        "vix1d_percent": 22.54
+      },
+      {
+        "active_discount": 0.87373,
+        "discounted_vix1d_percent": 19.5453401,
+        "observed_at_et": "2026-11-06T11:54:55.827547-05:00",
+        "vix1d_observed_at_et": "2026-11-06T11:54:55.827547-05:00",
+        "vix1d_percent": 22.37
+      },
+      {
+        "active_discount": 0.8636,
+        "discounted_vix1d_percent": 19.370548,
+        "observed_at_et": "2026-11-06T11:59:55.795854-05:00",
+        "vix1d_observed_at_et": "2026-11-06T11:59:55.795854-05:00",
+        "vix1d_percent": 22.43
+      },
+      {
+        "active_discount": 0.85336,
+        "discounted_vix1d_percent": 20.1904976,
+        "observed_at_et": "2026-11-06T12:04:55.833956-05:00",
+        "vix1d_observed_at_et": "2026-11-06T12:04:55.833956-05:00",
+        "vix1d_percent": 23.66
+      },
+      {
+        "active_discount": 0.8,
+        "discounted_vix1d_percent": 18.52,
+        "observed_at_et": "2026-11-06T12:09:08.598581-05:00",
+        "vix1d_observed_at_et": "2026-11-06T12:09:08.598581-05:00",
+        "vix1d_percent": 23.15
+      },
+      {
+        "active_discount": 0.8,
+        "discounted_vix1d_percent": 18.44,
+        "observed_at_et": "2026-11-06T12:14:08.547318-05:00",
+        "vix1d_observed_at_et": "2026-11-06T12:14:08.547318-05:00",
+        "vix1d_percent": 23.05
+      },
+      {
+        "active_discount": 0.82185,
+        "discounted_vix1d_percent": 18.894331499999996,
+        "observed_at_et": "2026-11-06T12:19:08.449877-05:00",
+        "vix1d_observed_at_et": "2026-11-06T12:19:08.449877-05:00",
+        "vix1d_percent": 22.99
+      },
+      {
+        "active_discount": 0.76342,
+        "discounted_vix1d_percent": 17.535757399999998,
+        "observed_at_et": "2026-11-06T12:24:12.275618-05:00",
+        "vix1d_observed_at_et": "2026-11-06T12:24:12.275618-05:00",
+        "vix1d_percent": 22.97
+      },
+      {
+        "active_discount": 0.75315,
+        "discounted_vix1d_percent": 17.382702,
+        "observed_at_et": "2026-11-06T12:29:12.222458-05:00",
+        "vix1d_observed_at_et": "2026-11-06T12:29:12.222458-05:00",
+        "vix1d_percent": 23.08
+      },
+      {
+        "active_discount": 0.74273,
+        "discounted_vix1d_percent": 17.7586743,
+        "observed_at_et": "2026-11-06T12:34:12.320119-05:00",
+        "vix1d_observed_at_et": "2026-11-06T12:34:12.320119-05:00",
+        "vix1d_percent": 23.91
+      },
+      {
+        "active_discount": 0.77787,
+        "discounted_vix1d_percent": 20.800243799999997,
+        "observed_at_et": "2026-11-06T12:39:12.235311-05:00",
+        "vix1d_observed_at_et": "2026-11-06T12:39:12.235311-05:00",
+        "vix1d_percent": 26.74
+      },
+      {
+        "active_discount": 0.76648,
+        "discounted_vix1d_percent": 20.1660888,
+        "observed_at_et": "2026-11-06T12:44:12.299726-05:00",
+        "vix1d_observed_at_et": "2026-11-06T12:44:12.299726-05:00",
+        "vix1d_percent": 26.31
+      },
+      {
+        "active_discount": 0.75492,
+        "discounted_vix1d_percent": 20.163913200000003,
+        "observed_at_et": "2026-11-06T12:49:12.346018-05:00",
+        "vix1d_observed_at_et": "2026-11-06T12:49:12.346018-05:00",
+        "vix1d_percent": 26.71
+      },
+      {
+        "active_discount": 0.69951,
+        "discounted_vix1d_percent": 19.215539699999997,
+        "observed_at_et": "2026-11-06T12:54:35.525389-05:00",
+        "vix1d_observed_at_et": "2026-11-06T12:54:35.525389-05:00",
+        "vix1d_percent": 27.47
+      },
+      {
+        "active_discount": 0.69875,
+        "discounted_vix1d_percent": 18.293274999999998,
+        "observed_at_et": "2026-11-06T12:59:35.487282-05:00",
+        "vix1d_observed_at_et": "2026-11-06T12:59:35.487282-05:00",
+        "vix1d_percent": 26.18
+      },
+      {
+        "active_discount": 0.70022,
+        "discounted_vix1d_percent": 18.744889399999998,
+        "observed_at_et": "2026-11-06T13:03:35.569783-05:00",
+        "vix1d_observed_at_et": "2026-11-06T13:03:35.569783-05:00",
+        "vix1d_percent": 26.77
+      },
+      {
+        "active_discount": 0.70242,
+        "discounted_vix1d_percent": 18.614130000000003,
+        "observed_at_et": "2026-11-06T13:09:57.997502-05:00",
+        "vix1d_observed_at_et": "2026-11-06T13:09:57.997502-05:00",
+        "vix1d_percent": 26.5
+      },
+      {
+        "active_discount": 0.70389,
+        "discounted_vix1d_percent": 18.4208013,
+        "observed_at_et": "2026-11-06T13:13:57.889781-05:00",
+        "vix1d_observed_at_et": "2026-11-06T13:13:57.889781-05:00",
+        "vix1d_percent": 26.17
+      },
+      {
+        "active_discount": 0.70608,
+        "discounted_vix1d_percent": 18.71112,
+        "observed_at_et": "2026-11-06T13:19:01.282584-05:00",
+        "vix1d_observed_at_et": "2026-11-06T13:19:01.282584-05:00",
+        "vix1d_percent": 26.5
+      },
+      {
+        "active_discount": 0.7079,
+        "discounted_vix1d_percent": 19.1133,
+        "observed_at_et": "2026-11-06T13:24:01.271343-05:00",
+        "vix1d_observed_at_et": "2026-11-06T13:24:01.271343-05:00",
+        "vix1d_percent": 27.0
+      },
+      {
+        "active_discount": 0.70971,
+        "discounted_vix1d_percent": 19.1337816,
+        "observed_at_et": "2026-11-06T13:29:01.477759-05:00",
+        "vix1d_observed_at_et": "2026-11-06T13:29:01.477759-05:00",
+        "vix1d_percent": 26.96
+      },
+      {
+        "active_discount": 0.71152,
+        "discounted_vix1d_percent": 18.4425984,
+        "observed_at_et": "2026-11-06T13:34:01.275049-05:00",
+        "vix1d_observed_at_et": "2026-11-06T13:34:01.275049-05:00",
+        "vix1d_percent": 25.92
+      },
+      {
+        "active_discount": 0.71333,
+        "discounted_vix1d_percent": 18.760579,
+        "observed_at_et": "2026-11-06T13:39:48.723057-05:00",
+        "vix1d_observed_at_et": "2026-11-06T13:39:48.723057-05:00",
+        "vix1d_percent": 26.3
+      },
+      {
+        "active_discount": 0.71513,
+        "discounted_vix1d_percent": 18.7650112,
+        "observed_at_et": "2026-11-06T13:44:47.826738-05:00",
+        "vix1d_observed_at_et": "2026-11-06T13:44:47.826738-05:00",
+        "vix1d_percent": 26.24
+      },
+      {
+        "active_discount": 0.71693,
+        "discounted_vix1d_percent": 18.833751099999997,
+        "observed_at_et": "2026-11-06T13:49:47.695974-05:00",
+        "vix1d_observed_at_et": "2026-11-06T13:49:47.695974-05:00",
+        "vix1d_percent": 26.27
+      },
+      {
+        "active_discount": 0.71872,
+        "discounted_vix1d_percent": 18.9670208,
+        "observed_at_et": "2026-11-06T13:54:47.794231-05:00",
+        "vix1d_observed_at_et": "2026-11-06T13:54:47.794231-05:00",
+        "vix1d_percent": 26.39
+      },
+      {
+        "active_discount": 0.72051,
+        "discounted_vix1d_percent": 18.8125161,
+        "observed_at_et": "2026-11-06T13:59:47.701837-05:00",
+        "vix1d_observed_at_et": "2026-11-06T13:59:47.701837-05:00",
+        "vix1d_percent": 26.11
+      },
+      {
+        "active_discount": 0.72782,
+        "discounted_vix1d_percent": 19.105275,
+        "observed_at_et": "2026-11-06T14:04:47.700957-05:00",
+        "vix1d_observed_at_et": "2026-11-06T14:04:47.700957-05:00",
+        "vix1d_percent": 26.25
+      },
+      {
+        "active_discount": 0.73643,
+        "discounted_vix1d_percent": 19.4122948,
+        "observed_at_et": "2026-11-06T14:09:47.791163-05:00",
+        "vix1d_observed_at_et": "2026-11-06T14:09:47.791163-05:00",
+        "vix1d_percent": 26.36
+      },
+      {
+        "active_discount": 0.74494,
+        "discounted_vix1d_percent": 19.3386424,
+        "observed_at_et": "2026-11-06T14:14:47.726121-05:00",
+        "vix1d_observed_at_et": "2026-11-06T14:14:47.726121-05:00",
+        "vix1d_percent": 25.96
+      },
+      {
+        "active_discount": 0.75335,
+        "discounted_vix1d_percent": 19.8507725,
+        "observed_at_et": "2026-11-06T14:19:47.797828-05:00",
+        "vix1d_observed_at_et": "2026-11-06T14:19:47.797828-05:00",
+        "vix1d_percent": 26.35
+      },
+      {
+        "active_discount": 0.76166,
+        "discounted_vix1d_percent": 20.4734208,
+        "observed_at_et": "2026-11-06T14:24:47.850058-05:00",
+        "vix1d_observed_at_et": "2026-11-06T14:24:47.850058-05:00",
+        "vix1d_percent": 26.88
+      },
+      {
+        "active_discount": 0.76989,
+        "discounted_vix1d_percent": 20.710040999999997,
+        "observed_at_et": "2026-11-06T14:29:47.897082-05:00",
+        "vix1d_observed_at_et": "2026-11-06T14:29:47.897082-05:00",
+        "vix1d_percent": 26.9
+      },
+      {
+        "active_discount": 0.77803,
+        "discounted_vix1d_percent": 21.2557796,
+        "observed_at_et": "2026-11-06T14:34:47.858041-05:00",
+        "vix1d_observed_at_et": "2026-11-06T14:34:47.858041-05:00",
+        "vix1d_percent": 27.32
+      },
+      {
+        "active_discount": 0.78609,
+        "discounted_vix1d_percent": 21.617475,
+        "observed_at_et": "2026-11-06T14:39:47.829530-05:00",
+        "vix1d_observed_at_et": "2026-11-06T14:39:47.829530-05:00",
+        "vix1d_percent": 27.5
+      },
+      {
+        "active_discount": 0.79248,
+        "discounted_vix1d_percent": 21.4920576,
+        "observed_at_et": "2026-11-06T14:43:54.768416-05:00",
+        "vix1d_observed_at_et": "2026-11-06T14:43:54.768416-05:00",
+        "vix1d_percent": 27.12
+      }
+    ],
     "vix_regime": {
       "backfill_end_date": "2026-11-06",
       "backfill_start_date": "2026-10-20",
@@ -123388,7 +123831,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-11-06T17:58:10.180630-05:00",
+    "published_at_et": "2026-11-06T18:02:37.294394-05:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-11-06"
   },

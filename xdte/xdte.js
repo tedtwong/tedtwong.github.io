@@ -1132,6 +1132,11 @@ function renderEstimatedMarketVariables(model) {
     data.surface_matrix || [],
     {emptyMessage: "No intraday discount history is available."},
   );
+  const vixHistory = data.vix1d_discount_history || [];
+  lineChart("#vix1d-discount-chart", [
+    {rows: vixHistory, x: "observed_at_et", y: "vix1d_percent", label: "VIX1D", color: "#333ED4"},
+    {rows: vixHistory, x: "observed_at_et", y: "discounted_vix1d_percent", label: "Physical VIX1D", color: "#2FA236"},
+  ], {label: "VIX1D and discounted physical-volatility estimate", height: 320});
   const note = document.querySelector("#estimated-market-variable-note");
   const status = String(data.status || "UNAVAILABLE").replaceAll("_", " ");
   note.textContent = `Status: ${status} · session ${data.session_date || "unavailable"} · model source: ${String(data.model_source || "unavailable").replaceAll("_", " ")} · latest calibration observation: ${data.latest_calibration_observation_date || "unavailable"}. Active calibration uses five-minute integrated SPX realized variance against horizon-matched VIX1D/VIX9D/VIX clock variance, including overnight and weekend/holiday gaps. Terminal displacement is shadow-only. These are saved operational discounts already used by the model; this display does not recalculate or interpolate missing scan values.`;
