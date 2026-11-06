@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
   <link rel="stylesheet" href="xdte.css?v=20261103-single-distribution-v14">
-  <script defer src="xdte.js?v=20261105-shape-clock-v16"></script>
+  <script defer src="xdte.js?v=20261106-estimated-market-variables-v17"></script>
 </head>
 <body>
   <header class="hero">
@@ -216,9 +216,26 @@
       </article>
     </section>
 
+    <section aria-labelledby="estimated-market-variables-heading">
+      <div class="section-heading">
+        <div><p class="section-number">07</p><h2 id="estimated-market-variables-heading">Estimated Market Variables</h2></div>
+        <p>Current learned persistence and the active physical-volatility discount surface used by the research model.</p>
+      </div>
+      <div id="estimated-market-variable-metrics" class="metric-grid"></div>
+      <article class="panel">
+        <div class="panel__heading"><div><h3>Current active discount by DTE</h3><p>Saved operational values from the latest scan for each target expiration.</p></div></div>
+        <div id="discount-surface-current" class="table-wrap"></div>
+      </article>
+      <article class="panel chart-panel">
+        <div class="panel__heading"><div><h3>Intraday active discount surface</h3><p>Each line follows one target DTE through the retained trading session.</p></div></div>
+        <div id="discount-surface-chart" class="chart"></div>
+        <p id="estimated-market-variable-note" class="chart-note"></p>
+      </article>
+    </section>
+
     <section class="method" aria-labelledby="method-heading">
       <div class="section-heading">
-        <div><p class="section-number">07</p><h2 id="method-heading">Publication policy</h2></div>
+        <div><p class="section-number">08</p><h2 id="method-heading">Publication policy</h2></div>
       </div>
       <div class="method-grid">
         <p><strong>Paper trading only.</strong> These are simulated research results and do not represent a brokerage statement or live-trading performance.</p>
