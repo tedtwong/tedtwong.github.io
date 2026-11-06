@@ -1106,18 +1106,9 @@ function renderEstimatedMarketVariables(model) {
     ["Latest log-variance state", decimal(data.latest_state_log_variance)],
     ["Integrated-RV history", sessionCount(data.available_observed_session_count)],
     ["Prior initialization", sessionCount(data.prior_padding_session_count)],
-  ]);
-  const freshnessAlert = document.querySelector("#discount-calibration-alert");
-  const calibrationStale = data.discount_update_stale === true;
-  freshnessAlert.classList.toggle("hidden", !calibrationStale);
-  freshnessAlert.textContent = calibrationStale
-    ? (data.discount_update_alert || "Discount calibration is stale or its freshness cannot be verified.")
-    : "";
-  const regime = data.vix_regime || {};
-  metrics("#vix-regime-metrics", [
-    ["Robust VIX center", Number.isFinite(Number(regime.vix_center)) ? (100 * Number(regime.vix_center)).toFixed(2) : "—"],
-    ["Posterior regime slope", decimal(regime.posterior_log_variance_slope)],
-    ["Regime data weight", Number.isFinite(Number(regime.data_weight)) ? `${(100 * Number(regime.data_weight)).toFixed(1)}%` : "—"],
+    ["VIX regime center", Number.isFinite(Number(data.vix_regime?.vix_center)) ? (100 * Number(data.vix_regime.vix_center)).toFixed(2) : "—"],
+    ["VIX regime slope", decimal(data.vix_regime?.posterior_log_variance_slope)],
+    ["VIX regime data weight", Number.isFinite(Number(data.vix_regime?.data_weight)) ? `${(100 * Number(data.vix_regime.data_weight)).toFixed(1)}%` : "—"],
   ]);
   table("#discount-surface-current", [
     ["DTE", "target_dte"],
