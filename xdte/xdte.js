@@ -1104,31 +1104,20 @@ function renderEstimatedMarketVariables(model) {
     ["Rho half-life", Number.isFinite(Number(data.rho_half_life_sessions)) ? `${Number(data.rho_half_life_sessions).toFixed(1)} sessions` : "—"],
     ["200-session center", decimal(data.long_run_discount_center)],
     ["Latest log-variance state", decimal(data.latest_state_log_variance)],
-    ["State age", sessionCount(data.state_age_sessions)],
     ["Integrated-RV history", sessionCount(data.available_observed_session_count)],
     ["Prior initialization", sessionCount(data.prior_padding_session_count)],
   ]);
+  const freshnessAlert = document.querySelector("#discount-calibration-alert");
+  const calibrationStale = data.discount_update_stale === true;
+  freshnessAlert.classList.toggle("hidden", !calibrationStale);
+  freshnessAlert.textContent = calibrationStale
+    ? (data.discount_update_alert || "Discount calibration is stale or its freshness cannot be verified.")
+    : "";
   const regime = data.vix_regime || {};
   metrics("#vix-regime-metrics", [
     ["Robust VIX center", Number.isFinite(Number(regime.vix_center)) ? (100 * Number(regime.vix_center)).toFixed(2) : "—"],
     ["Posterior regime slope", decimal(regime.posterior_log_variance_slope)],
     ["Regime data weight", Number.isFinite(Number(regime.data_weight)) ? `${(100 * Number(regime.data_weight)).toFixed(1)}%` : "—"],
-  ]);
-  table("#vix-regime-parameters", [
-    ["Parameter", "parameter"],
-    ["Value", "value"],
-  ], [
-    {parameter: "Regime variable", value: regime.variable || "—"},
-    {parameter: "Log-VIX center", value: decimal(regime.log_vix_center)},
-    {parameter: "Robust log-VIX scale", value: decimal(regime.log_vix_robust_scale)},
-    {parameter: "Z-score cap", value: decimal(regime.z_cap, 2)},
-    {parameter: "Unshrunk sample slope", value: decimal(regime.sample_log_variance_slope)},
-    {parameter: "Posterior slope", value: decimal(regime.posterior_log_variance_slope)},
-    {parameter: "Maximum absolute slope", value: decimal(regime.maximum_absolute_log_variance_slope)},
-    {parameter: "Prior slope", value: decimal(regime.prior_log_variance_slope)},
-    {parameter: "Prior effective sessions", value: decimal(regime.prior_effective_sessions, 1)},
-    {parameter: "Effective observed sessions", value: decimal(regime.effective_observed_sessions, 2)},
-    {parameter: "Integrated-RV history period", value: regime.backfill_start_date && regime.backfill_end_date ? `${regime.backfill_start_date} through ${regime.backfill_end_date}` : "—"},
   ]);
   table("#discount-surface-current", [
     ["DTE", "target_dte"],

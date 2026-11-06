@@ -57992,7 +57992,7 @@
     ]
   },
   "distribution_comparison": {
-    "age_seconds": 10559,
+    "age_seconds": 11216,
     "expirations": [
       {
         "bayesian_shadow_discount": 0.84195,
@@ -113649,7 +113649,7 @@
     "available_prior_padding_session_count": 186.0,
     "calibration_backfill_status": "UPDATED_FOR_NEXT_SESSION",
     "calibration_observation_definition": "ONE_0DTE_FIXED_TIME_INTEGRATED_5_MINUTE_REALIZED_VARIANCE_OVER_VIX1D_VIX9D_VIX_CLOCK_VARIANCE_PER_TRADING_SESSION",
-    "calibration_snapshot_evaluated_at_et": "2026-11-06T17:31:37.224925-05:00",
+    "calibration_snapshot_evaluated_at_et": "2026-11-06T17:45:05.462198-05:00",
     "current_by_dte": [
       {
         "active_discount": 0.79248,
@@ -113697,6 +113697,10 @@
         "target_dte": 7
       }
     ],
+    "discount_update_alert": null,
+    "discount_update_freshness_status": "CURRENT",
+    "discount_update_maximum_state_age_sessions": 1.0,
+    "discount_update_stale": false,
     "latest_calibration_observation_date": "2026-11-06",
     "latest_state_log_variance": 0.07919216613583445,
     "long_run_discount_center": 0.8037190326175973,
@@ -123384,7 +123388,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-11-06T17:39:53.904896-05:00",
+    "published_at_et": "2026-11-06T17:50:50.989302-05:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-11-06"
   },
