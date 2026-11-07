@@ -596,7 +596,14 @@ function renderUnsuccessfulEntries(rows) {
 
 function lineChart(target, series, options = {}) {
   const node = document.querySelector(target);
-  const chartPoints = s => s.rows.map(r => ({ t: new Date(r[s.x]).getTime(), y: Number(r[s.y]), row: r })).filter(p => Number.isFinite(p.t) && Number.isFinite(p.y));
+  const chartPoints = s => s.rows.map(r => {
+    const rawY = r[s.y];
+    return {
+      t: new Date(r[s.x]).getTime(),
+      y: rawY === null || rawY === undefined || rawY === "" ? null : Number(rawY),
+      row: r,
+    };
+  }).filter(p => Number.isFinite(p.t) && Number.isFinite(p.y));
   const leftSeries = series.filter(s => s.axis !== "right");
   const rightSeries = series.filter(s => s.axis === "right");
   const leftPoints = leftSeries.flatMap(chartPoints);
@@ -605,6 +612,8 @@ function lineChart(target, series, options = {}) {
   if (!all.length) { node.innerHTML = `<div class="chart-empty">No chart data are available for this period.</div>`; return; }
   const width = 1000, height = options.height || 310, pad = { l: 76, r: rightPoints.length ? 76 : 24, t: 18, b: 42 };
   const minT = Math.min(...all.map(p => p.t)), maxT = Math.max(...all.map(p => p.t));
+  const orderedTimes = [...new Set(all.map(point => point.t))].sort((left, right) => left - right);
+  const tradingTimeIndex = new Map(orderedTimes.map((value, index) => [value, index]));
   const observedMinY = leftPoints.length ? Math.min(...leftPoints.map(p => p.y)) : 0;
   const observedMaxY = leftPoints.length ? Math.max(...leftPoints.map(p => p.y)) : 0;
   const minY0 = options.includeZero ? Math.min(observedMinY, 0) : observedMinY;
@@ -628,7 +637,12 @@ function lineChart(target, series, options = {}) {
       ? steppedBounds(rightObservedMin, rightObservedMax, options.rightTickStep)
       : (() => { const range = Math.max(rightObservedMax - rightObservedMin, 1); return [rightObservedMin - range * .08, rightObservedMax + range * .08]; })())
     : [0, 1];
-  const x = t => pad.l + (t - minT) / Math.max(maxT - minT, 1) * (width - pad.l - pad.r);
+  const x = t => {
+    const fraction = options.compressTimeGaps
+      ? (tradingTimeIndex.get(t) || 0) / Math.max(orderedTimes.length - 1, 1)
+      : (t - minT) / Math.max(maxT - minT, 1);
+    return pad.l + fraction * (width - pad.l - pad.r);
+  };
   const y = v => pad.t + (maxY - v) / Math.max(maxY - minY, 1) * (height - pad.t - pad.b);
   const rightY = v => pad.t + (rightBounds[1] - v) / Math.max(rightBounds[1] - rightBounds[0], 1) * (height - pad.t - pad.b);
   const axisTicks = (minimum, maximum, step) => step
@@ -1146,7 +1160,7 @@ function renderEstimatedMarketVariables(model) {
     {rows: vixHistory, x: "observed_at_et", y: "vix1d_percent", label: "VIX1D", color: "#333ED4"},
     {rows: vixHistory, x: "observed_at_et", y: "discounted_vix1d_percent", label: "Discounted VIX1D", color: "#2FA236"},
     {rows: vixHistory, x: "observed_at_et", y: "realized_vix1d_percent", label: "Forward realized SPX volatility", color: "#F76915"},
-  ], {label: "VIX1D forecast validation", height: 320});
+  ], {label: "VIX1D forecast validation", height: 320, compressTimeGaps: true});
   const selectedPeriod = validation.periods?.[String(selectedVix1dHistoryDays)] || {};
   const validationRows = [
     {forecast:"Raw VIX1D", ...(selectedPeriod.raw_vix1d || {})},
