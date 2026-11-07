@@ -1133,21 +1133,35 @@ function renderEstimatedMarketVariables(model) {
     data.surface_matrix || [],
     {emptyMessage: "No intraday discount history is available."},
   );
-  const allVixHistory = (data.vix1d_discount_history || []).filter(row =>
+  const validation = data.vix1d_forecast_validation || {};
+  const allVixHistory = (validation.history || []).filter(row =>
     Number.isFinite(Date.parse(row?.observed_at_et || ""))
   );
-  const latestVixTimestamp = Math.max(
-    ...allVixHistory.map(row => Date.parse(row.observed_at_et)),
+  const forecastDates = [...new Set(allVixHistory.map(row => row.observed_at_et.slice(0, 10)))].sort();
+  const selectedForecastDates = new Set(forecastDates.slice(-selectedVix1dHistoryDays));
+  const vixHistory = allVixHistory.filter(row =>
+    selectedForecastDates.has(row.observed_at_et.slice(0, 10))
   );
-  const vixCutoff = latestVixTimestamp - selectedVix1dHistoryDays * 24 * 60 * 60 * 1000;
-  const vixHistory = Number.isFinite(latestVixTimestamp)
-    ? allVixHistory.filter(row => Date.parse(row.observed_at_et) >= vixCutoff)
-    : [];
   lineChart("#vix1d-discount-chart", [
     {rows: vixHistory, x: "observed_at_et", y: "vix1d_percent", label: "VIX1D", color: "#333ED4"},
     {rows: vixHistory, x: "observed_at_et", y: "discounted_vix1d_percent", label: "Discounted VIX1D", color: "#2FA236"},
-    {rows: vixHistory, x: "observed_at_et", y: "realized_vix1d_percent", label: "Realized VIX1D (5-minute RV)", color: "#F76915"},
-  ], {label: "VIX1D, discounted estimate, and realized volatility", height: 320});
+    {rows: vixHistory, x: "observed_at_et", y: "realized_vix1d_percent", label: "Forward realized SPX volatility", color: "#F76915"},
+  ], {label: "VIX1D forecast validation", height: 320});
+  const selectedPeriod = validation.periods?.[String(selectedVix1dHistoryDays)] || {};
+  const validationRows = [
+    {forecast:"Raw VIX1D", ...(selectedPeriod.raw_vix1d || {})},
+    {forecast:"Discounted VIX1D", ...(selectedPeriod.discounted_vix1d || {})},
+  ];
+  table("#vix1d-validation-metrics", [
+    ["Forecast", "forecast"],
+    ["MAE", "mae", null, v => Number.isFinite(Number(v)) ? `${Number(v).toFixed(2)} vol pts` : "—"],
+    ["RMSE", "rmse", null, v => Number.isFinite(Number(v)) ? `${Number(v).toFixed(2)} vol pts` : "—"],
+    ["Bias", "bias", null, v => Number.isFinite(Number(v)) ? `${Number(v).toFixed(2)} vol pts` : "—"],
+    ["Forecast correlation", "forecast_correlation", null, v => Number.isFinite(Number(v)) ? Number(v).toFixed(3) : "—"],
+    ["Observations", "observations"],
+  ], validationRows);
+  const validationNote = document.querySelector("#vix1d-validation-note");
+  if(validationNote) validationNote.textContent = `${selectedPeriod.completed_sessions || 0} completed trading session(s), ${selectedPeriod.start_date || "unavailable"} through ${selectedPeriod.end_date || "unavailable"}. Bias is forecast minus realized volatility; positive values indicate overprediction.`;
   document.querySelectorAll("[data-vix1d-window]").forEach(button => {
     const active = Number(button.dataset.vix1dWindow) === selectedVix1dHistoryDays;
     button.classList.toggle("is-active", active);
