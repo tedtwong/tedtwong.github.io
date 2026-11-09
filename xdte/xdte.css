@@ -78,6 +78,8 @@ section { padding: 68px 0 10px; }
 .summary-group h3, .capacity-heading { font-size: 1rem; margin: 0 0 14px; }
 .summary-metrics { display: grid; gap: 0; }
 .spx-reference-metrics { border-top: 1px solid var(--line); margin-top: 8px; padding-top: 8px; }
+.spx-reference-metrics .summary-metric { align-items: flex-start; flex-direction: column; gap: 4px; }
+.spx-reference-metrics .summary-metric__value { white-space: normal; }
 .spx-reference-note { font-size: .72rem; line-height: 1.4; margin: 8px 0 0; }
 .summary-metric { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 10px 0; border-bottom: 1px solid #e5e0d7; }
 .summary-metric:last-child { border-bottom: 0; }
