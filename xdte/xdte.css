@@ -81,9 +81,11 @@ section { padding: 68px 0 10px; }
 .summary-group { background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); padding: 20px; }
 .summary-group h3, .capacity-heading { font-size: 1rem; margin: 0 0 14px; }
 .summary-metrics { display: grid; gap: 0; }
-.spx-reference-metrics { border-top: 1px solid var(--line); margin-top: 8px; padding-top: 8px; }
-.spx-reference-metrics .summary-metric { align-items: flex-start; flex-direction: column; gap: 4px; }
-.spx-reference-metrics .summary-metric__value { white-space: normal; }
+.spx-reference-metrics { border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 8px; padding-top: 12px; }
+.spx-reference-card { background: rgba(255, 255, 255, .42); border: 1px solid var(--line); border-radius: 10px; display: flex; flex-direction: column; gap: 3px; min-width: 0; padding: 10px; }
+.spx-reference-card__label { color: var(--muted); font-size: .69rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+.spx-reference-card__value { font-family: Georgia, "Times New Roman", serif; font-size: 1.2rem; font-variant-numeric: tabular-nums; line-height: 1.2; }
+.spx-reference-card__change { font-size: .71rem; font-variant-numeric: tabular-nums; line-height: 1.25; }
 .spx-reference-note { font-size: .72rem; line-height: 1.4; margin: 8px 0 0; }
 .summary-metric { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; padding: 10px 0; border-bottom: 1px solid #e5e0d7; }
 .summary-metric:last-child { border-bottom: 0; }

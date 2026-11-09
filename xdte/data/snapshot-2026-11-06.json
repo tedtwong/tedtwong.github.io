@@ -56802,6 +56802,26 @@
         "time_et": "2026-11-06T16:15:01.484930-05:00"
       }
     ],
+    "spx_reference": {
+      "close_at_et": "2026-11-06T16:00:00-05:00",
+      "close_change_from_prior_close_percent": 0.3145,
+      "close_source": "IBKR_SPX_DAILY_RTH_BACKFILL_CLOSE",
+      "close_spx": 7376.86,
+      "current_at_et": "2026-11-06T16:00:00-05:00",
+      "current_change_from_open_percent": -0.0107,
+      "current_change_from_prior_close_percent": 0.3145,
+      "current_source": "IBKR_SPX_DAILY_RTH_BACKFILL_CLOSE",
+      "current_spx": 7376.86,
+      "open_at_et": "2026-11-06T09:30:00-05:00",
+      "open_change_from_prior_close_percent": 0.3253,
+      "open_source": "IBKR_SPX_DAILY_RTH_BACKFILL_OPEN",
+      "open_spx": 7377.65,
+      "prior_close_at_et": null,
+      "prior_close_source": "IBKR_SPX_DAILY_RTH_BACKFILL_PRIOR_CLOSE",
+      "prior_close_spx": 7353.73,
+      "session_date": "2026-11-06",
+      "status": "AVAILABLE"
+    },
     "stale_mark_count": 0,
     "system_readiness": {
       "checked_at_et": "2026-11-06T14:08:28.033748-05:00",

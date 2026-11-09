@@ -521,6 +521,12 @@ function summaryMetrics(target, items) {
   ).join("");
 }
 
+function spxReferenceMetrics(target, items) {
+  document.querySelector(target).innerHTML = items.map(({label, display, changes = [], className = ""}) =>
+    `<div class="spx-reference-card"><span class="spx-reference-card__label">${label}</span><strong class="spx-reference-card__value ${className}">${display}</strong>${changes.map(change => `<span class="spx-reference-card__change ${change.className || ""}">${change.text}</span>`).join("")}</div>`
+  ).join("");
+}
+
 function fullCreditProbability(probability, row) {
   const displayed = value(probability, percent);
   return probability !== null && probability !== undefined && Number.isFinite(Number(probability)) && ["BLACK_SCHOLES", "BLACK_SCHOLES_RECONSTRUCTED"].includes(row.probability_of_full_credit_source)
@@ -1343,11 +1349,18 @@ async function load({ historicalDate = null } = {}) {
     ["Realized P&L on exits", value(exitActivity.realized_pnl, money), pnlClass(exitActivity.realized_pnl)],
   ]);
   const spxReference = daily.spx_reference || {};
-  summaryMetrics("#spx-reference-metrics", [
-    ["Last close SPX", value(spxReference.prior_close_spx)],
-    ["Today's open SPX", `${value(spxReference.open_spx)} · ${signedPercentPoints(spxReference.open_change_from_prior_close_percent)} close`, pnlClass(spxReference.open_change_from_prior_close_percent)],
-    ["Current SPX", `${value(spxReference.current_spx)} · ${signedPercentPoints(spxReference.current_change_from_prior_close_percent)} close · ${signedPercentPoints(spxReference.current_change_from_open_percent)} open`, pnlClass(spxReference.current_change_from_prior_close_percent)],
-    ["Today's close SPX", spxReference.close_spx == null ? "Pending until 4:00 p.m. ET" : `${value(spxReference.close_spx)} · ${signedPercentPoints(spxReference.close_change_from_prior_close_percent)} last close`, pnlClass(spxReference.close_change_from_prior_close_percent)],
+  spxReferenceMetrics("#spx-reference-metrics", [
+    {label: "Prior close", display: value(spxReference.prior_close_spx)},
+    {label: "Open", display: value(spxReference.open_spx), className: pnlClass(spxReference.open_change_from_prior_close_percent), changes: [
+      {text: `${signedPercentPoints(spxReference.open_change_from_prior_close_percent)} vs prior`, className: pnlClass(spxReference.open_change_from_prior_close_percent)},
+    ]},
+    {label: "Current", display: value(spxReference.current_spx), className: pnlClass(spxReference.current_change_from_prior_close_percent), changes: [
+      {text: `${signedPercentPoints(spxReference.current_change_from_prior_close_percent)} vs prior`, className: pnlClass(spxReference.current_change_from_prior_close_percent)},
+      {text: `${signedPercentPoints(spxReference.current_change_from_open_percent)} vs open`, className: pnlClass(spxReference.current_change_from_open_percent)},
+    ]},
+    {label: "Close", display: spxReference.close_spx == null ? "Pending" : value(spxReference.close_spx), className: pnlClass(spxReference.close_change_from_prior_close_percent), changes: spxReference.close_spx == null ? [] : [
+      {text: `${signedPercentPoints(spxReference.close_change_from_prior_close_percent)} vs prior`, className: pnlClass(spxReference.close_change_from_prior_close_percent)},
+    ]},
   ]);
   const baselineNote = document.querySelector("#ledger-baseline-note");
   if (baselineNote) baselineNote.textContent = pnlSummary.daily_ledger_pnl == null
