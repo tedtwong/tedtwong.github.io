@@ -1316,6 +1316,7 @@ async function load() {
     ["Last close SPX", value(spxReference.prior_close_spx)],
     ["Today's open SPX", `${value(spxReference.open_spx)} · ${signedPercentPoints(spxReference.open_change_from_prior_close_percent)} close`, pnlClass(spxReference.open_change_from_prior_close_percent)],
     ["Current SPX", `${value(spxReference.current_spx)} · ${signedPercentPoints(spxReference.current_change_from_prior_close_percent)} close · ${signedPercentPoints(spxReference.current_change_from_open_percent)} open`, pnlClass(spxReference.current_change_from_prior_close_percent)],
+    ["Today's close SPX", spxReference.close_spx == null ? "Pending until 4:00 p.m. ET" : `${value(spxReference.close_spx)} · ${signedPercentPoints(spxReference.close_change_from_prior_close_percent)} last close`, pnlClass(spxReference.close_change_from_prior_close_percent)],
   ]);
   const baselineNote = document.querySelector("#ledger-baseline-note");
   if (baselineNote) baselineNote.textContent = pnlSummary.daily_ledger_pnl == null
