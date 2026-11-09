@@ -1152,7 +1152,8 @@ function renderEstimatedMarketVariables(model) {
     Number.isFinite(Date.parse(row?.observed_at_et || ""))
   );
   const forecastDates = [...new Set(allVixHistory.map(row => row.observed_at_et.slice(0, 10)))].sort();
-  const selectedForecastDates = new Set(forecastDates.slice(-selectedVix1dHistoryDays));
+  const displayedVix1dHistoryDays = selectedVix1dHistoryDays + 1;
+  const selectedForecastDates = new Set(forecastDates.slice(-displayedVix1dHistoryDays));
   const vixHistory = allVixHistory.filter(row =>
     selectedForecastDates.has(row.observed_at_et.slice(0, 10))
   );
@@ -1175,7 +1176,7 @@ function renderEstimatedMarketVariables(model) {
     ["Observations", "observations"],
   ], validationRows);
   const validationNote = document.querySelector("#vix1d-validation-note");
-  if(validationNote) validationNote.textContent = `${selectedPeriod.completed_sessions || 0} completed trading session(s), ${selectedPeriod.start_date || "unavailable"} through ${selectedPeriod.end_date || "unavailable"}. Bias is forecast minus realized volatility; positive values indicate overprediction.`;
+  if(validationNote) validationNote.textContent = `${selectedPeriod.completed_sessions || 0} completed trading session(s), ${selectedPeriod.start_date || "unavailable"} through ${selectedPeriod.end_date || "unavailable"}. The chart displays ${displayedVix1dHistoryDays} forecast sessions to include the one-session realization lag. Bias is forecast minus realized volatility; positive values indicate overprediction.`;
   document.querySelectorAll("[data-vix1d-window]").forEach(button => {
     const active = Number(button.dataset.vix1dWindow) === selectedVix1dHistoryDays;
     button.classList.toggle("is-active", active);
