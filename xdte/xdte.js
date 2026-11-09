@@ -1128,6 +1128,33 @@ function renderEstimatedMarketVariables(model) {
     ["VIX regime slope", decimal(data.vix_regime?.posterior_log_variance_slope)],
     ["VIX regime data weight", Number.isFinite(Number(data.vix_regime?.data_weight)) ? `${(100 * Number(data.vix_regime.data_weight)).toFixed(1)}%` : "—"],
   ]);
+  const terminalStats = data.terminal_observation_statistics || {};
+  const integrated = terminalStats.integrated_realized_variance || {};
+  const displacement = terminalStats.terminal_squared_displacement || {};
+  const fullCredit = terminalStats.full_credit_probability_calibration || {};
+  const scaleInterval = row => Number.isFinite(Number(row.lower_90_scale_multiplier)) && Number.isFinite(Number(row.upper_90_scale_multiplier))
+    ? `[${Number(row.lower_90_scale_multiplier).toFixed(3)}, ${Number(row.upper_90_scale_multiplier).toFixed(3)}]` : "—";
+  const authority = input => String(input || "—").replaceAll("_", " ");
+  const terminalRows = [
+    {method:"Integrated path variance", authority:authority(integrated.authority), observations:integrated.observations, variance_ratio:integrated.observed_variance_ratio, scale:integrated.posterior_scale_multiplier, interval:scaleInterval(integrated)},
+    {method:"Terminal squared displacement", authority:authority(displacement.authority), observations:displacement.observations, variance_ratio:displacement.observed_variance_ratio, scale:displacement.posterior_scale_multiplier, interval:scaleInterval(displacement)},
+    {method:"Full-credit terminal calibration", authority:authority(fullCredit.authority), observations:fullCredit.observations, forecast_probability:fullCredit.mean_forecast_full_credit_probability, realized_probability:fullCredit.realized_full_credit_rate, gap:fullCredit.calibration_gap_percentage_points, brier:fullCredit.brier_score},
+  ];
+  table("#terminal-observation-statistics", [
+    ["Method", "method"], ["Authority", "authority"], ["Observations", "observations"],
+    ["Observed / forecast variance", "variance_ratio", null, v => Number.isFinite(Number(v)) ? Number(v).toFixed(3) : "—"],
+    ["Posterior scale", "scale", null, v => Number.isFinite(Number(v)) ? Number(v).toFixed(3) : "—"],
+    ["90% scale interval", "interval"],
+    ["Forecast full-credit", "forecast_probability", null, v => value(v, percent)],
+    ["Realized full-credit", "realized_probability", null, v => value(v, percent)],
+    ["Calibration gap", "gap", null, v => Number.isFinite(Number(v)) ? `${Number(v) >= 0 ? "+" : ""}${Number(v).toFixed(2)} pp` : "—"],
+    ["Brier score", "brier", null, v => Number.isFinite(Number(v)) ? Number(v).toFixed(3) : "—"],
+  ], terminalRows);
+  const historical = fullCredit.all_historical_policies || {};
+  const terminalNote = document.querySelector("#terminal-observation-note");
+  if (terminalNote) terminalNote.textContent = Number(historical.observations) > 0
+    ? `Current-model full-credit evidence is preliminary. All stored probability policies: ${historical.observations} outcomes, ${value(historical.mean_forecast_full_credit_probability, percent)} mean forecast, ${value(historical.realized_full_credit_rate, percent)} realized, ${Number(historical.calibration_gap_percentage_points) >= 0 ? "+" : ""}${Number(historical.calibration_gap_percentage_points).toFixed(2)} pp gap, Brier ${Number(historical.brier_score).toFixed(3)}. A variance ratio below 1 means realized variation was below the horizon-matched VIX clock forecast.`
+    : "Full-credit calibration requires expiration settlements with saved entry probabilities and valid short strikes.";
   table("#discount-surface-current", [
     ["DTE", "target_dte"],
     ["Expiration", "expiration", null, shortDate],
