@@ -1008,7 +1008,7 @@
       "candidates_examined": 107306,
       "completed_scan_decisions": 78,
       "current_capital_allocated": 18662.0,
-      "current_unrealized_pnl": -1250.7,
+      "current_unrealized_pnl": -1380.7,
       "daily_capacity_released": 17679.64,
       "daily_capacity_total": 19226.28,
       "eligible_candidates": 86,
@@ -22729,18 +22729,18 @@
     "pnl_summary": {
       "accounting_basis_adjustment": 0,
       "baseline_status": "PRIOR_SESSION_SYNCHRONIZED_CLOSE",
-      "current_ledger_pnl_level": -14361.9,
-      "current_synchronized_pnl_level": -14361.9,
-      "daily_ledger_pnl": -5038.05,
-      "daily_synchronized_pnl": -5038.05,
+      "current_ledger_pnl_level": -14491.9,
+      "current_synchronized_pnl_level": -14491.9,
+      "daily_ledger_pnl": -5168.05,
+      "daily_synchronized_pnl": -5168.05,
       "ledger_baseline_status": "ACTUAL_PRIOR_SESSION_LEDGER_CLOSE",
       "mark_cost_basis": "ACTUAL_FILL_AND_LIFECYCLE_FEES_V2",
       "prior_ledger_as_of_et": "2026-11-06T16:30:04.488105-05:00",
       "prior_ledger_equity": 240676.15,
       "prior_session_as_of_et": "2026-11-06T16:15:03.920583-05:00",
       "prior_session_pnl_level": -9323.85,
-      "synchronized_as_of_et": "2026-11-09T16:12:09.957896-05:00",
-      "unrealized_pnl": -1250.7
+      "synchronized_as_of_et": "2026-11-09T16:59:59.600001-05:00",
+      "unrealized_pnl": -1380.7
     },
     "portfolio_pnl": [
       {
@@ -23064,8 +23064,44 @@
         "time_et": "2026-11-09T16:09:59.529305-05:00"
       },
       {
-        "net_pnl": -4978.2,
-        "time_et": "2026-11-09T16:12:09.957896-05:00"
+        "net_pnl": -5008.2,
+        "time_et": "2026-11-09T16:14:59.719629-05:00"
+      },
+      {
+        "net_pnl": -4955.7,
+        "time_et": "2026-11-09T16:19:59.977958-05:00"
+      },
+      {
+        "net_pnl": -4895.7,
+        "time_et": "2026-11-09T16:24:59.603638-05:00"
+      },
+      {
+        "net_pnl": -4963.2,
+        "time_et": "2026-11-09T16:29:57.389229-05:00"
+      },
+      {
+        "net_pnl": -4975.7,
+        "time_et": "2026-11-09T16:34:59.612821-05:00"
+      },
+      {
+        "net_pnl": -5048.2,
+        "time_et": "2026-11-09T16:39:59.125758-05:00"
+      },
+      {
+        "net_pnl": -5015.7,
+        "time_et": "2026-11-09T16:44:59.050446-05:00"
+      },
+      {
+        "net_pnl": -5075.7,
+        "time_et": "2026-11-09T16:49:58.537879-05:00"
+      },
+      {
+        "net_pnl": -5053.2,
+        "time_et": "2026-11-09T16:54:58.518753-05:00"
+      },
+      {
+        "net_pnl": -5108.2,
+        "time_et": "2026-11-09T16:59:59.600001-05:00"
       }
     ],
     "position_pnl": [
@@ -23330,9 +23366,90 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -41.45,
+            "source_time_et": "2026-11-09T16:14:57.407774-05:00",
+            "time_et": "2026-11-09T16:14:57.407774-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
             "net_pnl": -46.45,
-            "source_time_et": "2026-11-09T16:12:07.593089-05:00",
-            "time_et": "2026-11-09T16:12:07.593089-05:00"
+            "source_time_et": "2026-11-09T16:19:50.953698-05:00",
+            "time_et": "2026-11-09T16:19:50.953698-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -66.45,
+            "source_time_et": "2026-11-09T16:24:59.603638-05:00",
+            "time_et": "2026-11-09T16:24:59.603638-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -51.45,
+            "source_time_et": "2026-11-09T16:29:52.624111-05:00",
+            "time_et": "2026-11-09T16:29:52.624111-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -51.45,
+            "source_time_et": "2026-11-09T16:34:45.592714-05:00",
+            "time_et": "2026-11-09T16:34:45.592714-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -56.45,
+            "source_time_et": "2026-11-09T16:39:53.982330-05:00",
+            "time_et": "2026-11-09T16:39:53.982330-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -46.45,
+            "source_time_et": "2026-11-09T16:44:46.896614-05:00",
+            "time_et": "2026-11-09T16:44:46.896614-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -36.45,
+            "source_time_et": "2026-11-09T16:49:55.275394-05:00",
+            "time_et": "2026-11-09T16:49:55.275394-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -26.45,
+            "source_time_et": "2026-11-09T16:54:48.209933-05:00",
+            "time_et": "2026-11-09T16:54:48.209933-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -6.45,
+            "source_time_et": "2026-11-09T16:59:56.607739-05:00",
+            "time_et": "2026-11-09T16:59:56.607739-05:00"
           }
         ],
         "position": "Position 1"
@@ -23670,9 +23787,90 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 18.55,
+            "source_time_et": "2026-11-09T16:14:51.171933-05:00",
+            "time_et": "2026-11-09T16:14:51.171933-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
             "net_pnl": 13.55,
-            "source_time_et": "2026-11-09T16:12:00.516176-05:00",
-            "time_et": "2026-11-09T16:12:00.516176-05:00"
+            "source_time_et": "2026-11-09T16:19:59.977958-05:00",
+            "time_et": "2026-11-09T16:19:59.977958-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 3.55,
+            "source_time_et": "2026-11-09T16:24:53.154527-05:00",
+            "time_et": "2026-11-09T16:24:53.154527-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 3.55,
+            "source_time_et": "2026-11-09T16:29:46.388020-05:00",
+            "time_et": "2026-11-09T16:29:46.388020-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 3.55,
+            "source_time_et": "2026-11-09T16:34:54.866092-05:00",
+            "time_et": "2026-11-09T16:34:54.866092-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 13.55,
+            "source_time_et": "2026-11-09T16:39:47.941673-05:00",
+            "time_et": "2026-11-09T16:39:47.941673-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 8.55,
+            "source_time_et": "2026-11-09T16:44:56.469502-05:00",
+            "time_et": "2026-11-09T16:44:56.469502-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 28.55,
+            "source_time_et": "2026-11-09T16:49:49.546364-05:00",
+            "time_et": "2026-11-09T16:49:49.546364-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 38.55,
+            "source_time_et": "2026-11-09T16:54:58.107605-05:00",
+            "time_et": "2026-11-09T16:54:58.107605-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 48.55,
+            "source_time_et": "2026-11-09T16:59:51.173070-05:00",
+            "time_et": "2026-11-09T16:59:51.173070-05:00"
           }
         ],
         "position": "Position 2"
@@ -24109,9 +24307,90 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
-            "net_pnl": -27.9,
-            "source_time_et": "2026-11-09T16:12:00.044843-05:00",
-            "time_et": "2026-11-09T16:12:00.044843-05:00"
+            "net_pnl": -40.4,
+            "source_time_et": "2026-11-09T16:14:50.148548-05:00",
+            "time_et": "2026-11-09T16:14:50.148548-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -25.4,
+            "source_time_et": "2026-11-09T16:19:59.009902-05:00",
+            "time_et": "2026-11-09T16:19:59.009902-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -17.9,
+            "source_time_et": "2026-11-09T16:24:36.855507-05:00",
+            "time_et": "2026-11-09T16:24:36.855507-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -25.4,
+            "source_time_et": "2026-11-09T16:29:45.554148-05:00",
+            "time_et": "2026-11-09T16:29:45.554148-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -32.9,
+            "source_time_et": "2026-11-09T16:34:54.164362-05:00",
+            "time_et": "2026-11-09T16:34:54.164362-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -52.9,
+            "source_time_et": "2026-11-09T16:39:47.286140-05:00",
+            "time_et": "2026-11-09T16:39:47.286140-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -42.9,
+            "source_time_et": "2026-11-09T16:44:55.813679-05:00",
+            "time_et": "2026-11-09T16:44:55.813679-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -47.9,
+            "source_time_et": "2026-11-09T16:49:48.975851-05:00",
+            "time_et": "2026-11-09T16:49:48.975851-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -47.9,
+            "source_time_et": "2026-11-09T16:54:57.563262-05:00",
+            "time_et": "2026-11-09T16:54:57.563262-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -42.9,
+            "source_time_et": "2026-11-09T16:59:50.689384-05:00",
+            "time_et": "2026-11-09T16:59:50.689384-05:00"
           }
         ],
         "position": "Position 3"
@@ -24702,8 +24981,89 @@
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
             "net_pnl": -27.9,
-            "source_time_et": "2026-11-09T16:12:05.206578-05:00",
-            "time_et": "2026-11-09T16:12:05.206578-05:00"
+            "source_time_et": "2026-11-09T16:14:55.059520-05:00",
+            "time_et": "2026-11-09T16:14:55.059520-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -22.9,
+            "source_time_et": "2026-11-09T16:19:48.396249-05:00",
+            "time_et": "2026-11-09T16:19:48.396249-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -12.9,
+            "source_time_et": "2026-11-09T16:24:57.215713-05:00",
+            "time_et": "2026-11-09T16:24:57.215713-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -32.9,
+            "source_time_et": "2026-11-09T16:29:50.384211-05:00",
+            "time_et": "2026-11-09T16:29:50.384211-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -27.9,
+            "source_time_et": "2026-11-09T16:34:58.827857-05:00",
+            "time_et": "2026-11-09T16:34:58.827857-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -27.9,
+            "source_time_et": "2026-11-09T16:39:51.894953-05:00",
+            "time_et": "2026-11-09T16:39:51.894953-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -32.9,
+            "source_time_et": "2026-11-09T16:44:44.937034-05:00",
+            "time_et": "2026-11-09T16:44:44.937034-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -37.9,
+            "source_time_et": "2026-11-09T16:49:53.408736-05:00",
+            "time_et": "2026-11-09T16:49:53.408736-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -32.9,
+            "source_time_et": "2026-11-09T16:54:46.526094-05:00",
+            "time_et": "2026-11-09T16:54:46.526094-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -42.9,
+            "source_time_et": "2026-11-09T16:59:55.006565-05:00",
+            "time_et": "2026-11-09T16:59:55.006565-05:00"
           }
         ],
         "position": "Position 4"
@@ -25320,9 +25680,90 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 288.55,
+            "source_time_et": "2026-11-09T16:14:46.430597-05:00",
+            "time_et": "2026-11-09T16:14:46.430597-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 288.55,
+            "source_time_et": "2026-11-09T16:19:55.201269-05:00",
+            "time_et": "2026-11-09T16:19:55.201269-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 273.55,
+            "source_time_et": "2026-11-09T16:24:48.606014-05:00",
+            "time_et": "2026-11-09T16:24:48.606014-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 288.55,
+            "source_time_et": "2026-11-09T16:29:57.389229-05:00",
+            "time_et": "2026-11-09T16:29:57.389229-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
             "net_pnl": 283.55,
-            "source_time_et": "2026-11-09T16:11:56.157823-05:00",
-            "time_et": "2026-11-09T16:11:56.157823-05:00"
+            "source_time_et": "2026-11-09T16:34:50.481967-05:00",
+            "time_et": "2026-11-09T16:34:50.481967-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 283.55,
+            "source_time_et": "2026-11-09T16:39:59.125758-05:00",
+            "time_et": "2026-11-09T16:39:59.125758-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 288.55,
+            "source_time_et": "2026-11-09T16:44:52.233873-05:00",
+            "time_et": "2026-11-09T16:44:52.233873-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 298.55,
+            "source_time_et": "2026-11-09T16:49:45.399301-05:00",
+            "time_et": "2026-11-09T16:49:45.399301-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 303.55,
+            "source_time_et": "2026-11-09T16:54:53.970995-05:00",
+            "time_et": "2026-11-09T16:54:53.970995-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 313.55,
+            "source_time_et": "2026-11-09T16:59:47.069042-05:00",
+            "time_et": "2026-11-09T16:59:47.069042-05:00"
           }
         ],
         "position": "Position 5"
@@ -25948,9 +26389,90 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
-            "net_pnl": -67.9,
-            "source_time_et": "2026-11-09T16:12:06.041888-05:00",
-            "time_et": "2026-11-09T16:12:06.041888-05:00"
+            "net_pnl": -72.9,
+            "source_time_et": "2026-11-09T16:14:56.183970-05:00",
+            "time_et": "2026-11-09T16:14:56.183970-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -60.4,
+            "source_time_et": "2026-11-09T16:19:49.383783-05:00",
+            "time_et": "2026-11-09T16:19:49.383783-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -60.4,
+            "source_time_et": "2026-11-09T16:24:58.112380-05:00",
+            "time_et": "2026-11-09T16:24:58.112380-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -70.4,
+            "source_time_et": "2026-11-09T16:29:51.178863-05:00",
+            "time_et": "2026-11-09T16:29:51.178863-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -65.4,
+            "source_time_et": "2026-11-09T16:34:59.612821-05:00",
+            "time_et": "2026-11-09T16:34:59.612821-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -70.4,
+            "source_time_et": "2026-11-09T16:39:52.575341-05:00",
+            "time_et": "2026-11-09T16:39:52.575341-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -70.4,
+            "source_time_et": "2026-11-09T16:44:45.599962-05:00",
+            "time_et": "2026-11-09T16:44:45.599962-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -77.9,
+            "source_time_et": "2026-11-09T16:49:54.082943-05:00",
+            "time_et": "2026-11-09T16:49:54.082943-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -75.4,
+            "source_time_et": "2026-11-09T16:54:47.046287-05:00",
+            "time_et": "2026-11-09T16:54:47.046287-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -85.4,
+            "source_time_et": "2026-11-09T16:59:55.433581-05:00",
+            "time_et": "2026-11-09T16:59:55.433581-05:00"
           }
         ],
         "position": "Position 6"
@@ -26648,9 +27170,90 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -122.9,
+            "source_time_et": "2026-11-09T16:14:44.791936-05:00",
+            "time_et": "2026-11-09T16:14:44.791936-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
             "net_pnl": -117.9,
-            "source_time_et": "2026-11-09T16:12:09.957896-05:00",
-            "time_et": "2026-11-09T16:12:09.957896-05:00"
+            "source_time_et": "2026-11-09T16:19:53.573239-05:00",
+            "time_et": "2026-11-09T16:19:53.573239-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -110.4,
+            "source_time_et": "2026-11-09T16:24:46.848725-05:00",
+            "time_et": "2026-11-09T16:24:46.848725-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -117.9,
+            "source_time_et": "2026-11-09T16:29:55.470467-05:00",
+            "time_et": "2026-11-09T16:29:55.470467-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -120.4,
+            "source_time_et": "2026-11-09T16:34:48.487374-05:00",
+            "time_et": "2026-11-09T16:34:48.487374-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -117.9,
+            "source_time_et": "2026-11-09T16:39:57.030604-05:00",
+            "time_et": "2026-11-09T16:39:57.030604-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -112.9,
+            "source_time_et": "2026-11-09T16:44:50.050550-05:00",
+            "time_et": "2026-11-09T16:44:50.050550-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -125.4,
+            "source_time_et": "2026-11-09T16:49:58.537879-05:00",
+            "time_et": "2026-11-09T16:49:58.537879-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -125.4,
+            "source_time_et": "2026-11-09T16:54:51.590085-05:00",
+            "time_et": "2026-11-09T16:54:51.590085-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -137.9,
+            "source_time_et": "2026-11-09T16:59:44.618671-05:00",
+            "time_et": "2026-11-09T16:59:44.618671-05:00"
           }
         ],
         "position": "Position 7"
@@ -27357,9 +27960,90 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
-            "net_pnl": -30.4,
-            "source_time_et": "2026-11-09T16:12:01.614596-05:00",
-            "time_et": "2026-11-09T16:12:01.614596-05:00"
+            "net_pnl": -42.9,
+            "source_time_et": "2026-11-09T16:14:51.639604-05:00",
+            "time_et": "2026-11-09T16:14:51.639604-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -32.9,
+            "source_time_et": "2026-11-09T16:19:29.748819-05:00",
+            "time_et": "2026-11-09T16:19:29.748819-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 7.1,
+            "source_time_et": "2026-11-09T16:24:38.432459-05:00",
+            "time_et": "2026-11-09T16:24:38.432459-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 4.6,
+            "source_time_et": "2026-11-09T16:29:46.970741-05:00",
+            "time_et": "2026-11-09T16:29:46.970741-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -27.9,
+            "source_time_et": "2026-11-09T16:34:55.401579-05:00",
+            "time_et": "2026-11-09T16:34:55.401579-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -62.9,
+            "source_time_et": "2026-11-09T16:39:48.433866-05:00",
+            "time_et": "2026-11-09T16:39:48.433866-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -50.4,
+            "source_time_et": "2026-11-09T16:44:56.880248-05:00",
+            "time_et": "2026-11-09T16:44:56.880248-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -82.9,
+            "source_time_et": "2026-11-09T16:49:49.954306-05:00",
+            "time_et": "2026-11-09T16:49:49.954306-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -97.9,
+            "source_time_et": "2026-11-09T16:54:58.518753-05:00",
+            "time_et": "2026-11-09T16:54:58.518753-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -112.9,
+            "source_time_et": "2026-11-09T16:59:51.595113-05:00",
+            "time_et": "2026-11-09T16:59:51.595113-05:00"
           }
         ],
         "position": "Position 8"
@@ -28093,9 +28777,90 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -866.45,
+            "source_time_et": "2026-11-09T16:14:53.555934-05:00",
+            "time_et": "2026-11-09T16:14:53.555934-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -861.45,
+            "source_time_et": "2026-11-09T16:19:46.918430-05:00",
+            "time_et": "2026-11-09T16:19:46.918430-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -841.45,
+            "source_time_et": "2026-11-09T16:24:55.800499-05:00",
+            "time_et": "2026-11-09T16:24:55.800499-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
             "net_pnl": -871.45,
-            "source_time_et": "2026-11-09T16:12:03.192573-05:00",
-            "time_et": "2026-11-09T16:12:03.192573-05:00"
+            "source_time_et": "2026-11-09T16:29:49.002316-05:00",
+            "time_et": "2026-11-09T16:29:49.002316-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -856.45,
+            "source_time_et": "2026-11-09T16:34:57.507382-05:00",
+            "time_et": "2026-11-09T16:34:57.507382-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -866.45,
+            "source_time_et": "2026-11-09T16:39:50.568712-05:00",
+            "time_et": "2026-11-09T16:39:50.568712-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -866.45,
+            "source_time_et": "2026-11-09T16:44:59.050446-05:00",
+            "time_et": "2026-11-09T16:44:59.050446-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -886.45,
+            "source_time_et": "2026-11-09T16:49:52.142583-05:00",
+            "time_et": "2026-11-09T16:49:52.142583-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -886.45,
+            "source_time_et": "2026-11-09T16:54:45.223544-05:00",
+            "time_et": "2026-11-09T16:54:45.223544-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -911.45,
+            "source_time_et": "2026-11-09T16:59:53.721414-05:00",
+            "time_et": "2026-11-09T16:59:53.721414-05:00"
           }
         ],
         "position": "Position 9"
@@ -28829,9 +29594,90 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
-            "net_pnl": -357.9,
-            "source_time_et": "2026-11-09T16:12:09.505982-05:00",
-            "time_et": "2026-11-09T16:12:09.505982-05:00"
+            "net_pnl": -372.9,
+            "source_time_et": "2026-11-09T16:14:59.719629-05:00",
+            "time_et": "2026-11-09T16:14:59.719629-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -362.9,
+            "source_time_et": "2026-11-09T16:19:53.141714-05:00",
+            "time_et": "2026-11-09T16:19:53.141714-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -342.9,
+            "source_time_et": "2026-11-09T16:24:46.429983-05:00",
+            "time_et": "2026-11-09T16:24:46.429983-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -362.9,
+            "source_time_et": "2026-11-09T16:29:55.047059-05:00",
+            "time_et": "2026-11-09T16:29:55.047059-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -352.9,
+            "source_time_et": "2026-11-09T16:34:48.071281-05:00",
+            "time_et": "2026-11-09T16:34:48.071281-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -362.9,
+            "source_time_et": "2026-11-09T16:39:56.620336-05:00",
+            "time_et": "2026-11-09T16:39:56.620336-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -362.9,
+            "source_time_et": "2026-11-09T16:44:49.638597-05:00",
+            "time_et": "2026-11-09T16:44:49.638597-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -380.4,
+            "source_time_et": "2026-11-09T16:49:58.102593-05:00",
+            "time_et": "2026-11-09T16:49:58.102593-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -375.4,
+            "source_time_et": "2026-11-09T16:54:51.174121-05:00",
+            "time_et": "2026-11-09T16:54:51.174121-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -402.9,
+            "source_time_et": "2026-11-09T16:59:59.600001-05:00",
+            "time_et": "2026-11-09T16:59:59.600001-05:00"
           }
         ],
         "position": "Position 10"
@@ -71435,7 +72281,7 @@
           "horizons": [
             {
               "all_open_count": 13,
-              "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+              "as_of_et": "2026-11-09T16:14:56.267077-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "RETAINED_SESSION_CLOSE",
               "excluded_count": 0,
@@ -71679,7 +72525,7 @@
             },
             {
               "all_open_count": 10,
-              "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+              "as_of_et": "2026-11-09T16:14:56.267077-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -71873,7 +72719,7 @@
             },
             {
               "all_open_count": 0,
-              "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+              "as_of_et": "2026-11-09T16:14:56.267077-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -71901,7 +72747,7 @@
             },
             {
               "all_open_count": 0,
-              "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+              "as_of_et": "2026-11-09T16:14:56.267077-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -71929,7 +72775,7 @@
             },
             {
               "all_open_count": 0,
-              "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+              "as_of_et": "2026-11-09T16:14:56.267077-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -71957,7 +72803,7 @@
             },
             {
               "all_open_count": 0,
-              "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+              "as_of_et": "2026-11-09T16:14:56.267077-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -71985,7 +72831,7 @@
             },
             {
               "all_open_count": 0,
-              "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+              "as_of_et": "2026-11-09T16:14:56.267077-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -72013,7 +72859,7 @@
             },
             {
               "all_open_count": 0,
-              "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+              "as_of_et": "2026-11-09T16:14:56.267077-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -72040,7 +72886,7 @@
               "upper_level": 7680
             }
           ],
-          "observed_at_et": "2026-11-09T16:11:56.115657-05:00"
+          "observed_at_et": "2026-11-09T16:14:56.267077-05:00"
         }
       ],
       "schema_version": "settlement-scenario-history-v1",
@@ -72051,7 +72897,7 @@
     "settlement_scenario_horizons": [
       {
         "all_open_count": 13,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "RETAINED_SESSION_CLOSE",
         "excluded_count": 0,
@@ -72535,7 +73381,7 @@
       },
       {
         "all_open_count": 10,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73019,7 +73865,7 @@
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73047,7 +73893,7 @@
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73075,7 +73921,7 @@
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73103,7 +73949,7 @@
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73131,7 +73977,7 @@
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73159,7 +74005,7 @@
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73189,7 +74035,7 @@
     "settlement_scenario_horizons_after_midnight": [
       {
         "all_open_count": 10,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73673,7 +74519,7 @@
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73701,7 +74547,7 @@
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73729,7 +74575,7 @@
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73757,7 +74603,7 @@
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73785,7 +74631,7 @@
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73813,7 +74659,7 @@
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73841,7 +74687,7 @@
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+        "as_of_et": "2026-11-09T16:14:56.267077-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -73872,7 +74718,7 @@
     "settlement_scenario_roll_policy": "MIDNIGHT_ET",
     "settlement_scenarios": {
       "all_open_count": 13,
-      "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+      "as_of_et": "2026-11-09T16:14:56.267077-05:00",
       "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
       "display_mode": "RETAINED_SESSION_CLOSE",
       "excluded_count": 0,
@@ -74356,7 +75202,7 @@
     },
     "settlement_scenarios_next_session": {
       "all_open_count": 10,
-      "as_of_et": "2026-11-09T16:11:56.115657-05:00",
+      "as_of_et": "2026-11-09T16:14:56.267077-05:00",
       "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
       "display_mode": "CURRENT_SESSION",
       "excluded_count": 0,
@@ -75133,15 +75979,15 @@
       },
       {
         "spx": 7549.94,
-        "time_et": "2026-11-09T16:11:56.115657-05:00"
+        "time_et": "2026-11-09T16:14:56.267077-05:00"
       }
     ],
     "spx_reference": {
-      "close_at_et": "2026-11-09T16:11:56.115657-05:00",
+      "close_at_et": "2026-11-09T16:14:56.267077-05:00",
       "close_change_from_prior_close_percent": 2.3463,
       "close_source": "FINAL_SYNCHRONIZED_SESSION_MARK_AT_OR_AFTER_16_00_ET",
       "close_spx": 7549.94,
-      "current_at_et": "2026-11-09T16:11:56.115657-05:00",
+      "current_at_et": "2026-11-09T16:14:56.267077-05:00",
       "current_change_from_open_percent": 1.4728,
       "current_change_from_prior_close_percent": 2.3463,
       "current_source": "LATEST_SYNCHRONIZED_SESSION_MARK",
@@ -75178,7 +76024,7 @@
         "expiration_date": "2026-11-10",
         "maximum_profit": 456.74999999999994,
         "maximum_unrealized_pnl": 108.55,
-        "minimum_unrealized_pnl": -136.45,
+        "minimum_unrealized_pnl": -156.45,
         "modeled_expected_return": 0.031783428686340175,
         "planned_loss": null,
         "position": 1,
@@ -75196,7 +76042,7 @@
         "status": "OPEN",
         "strategy": "BULL_PUT_CREDIT_SPREAD",
         "total_short_reserve": 2043.25,
-        "unrealized_net_pnl": -46.45
+        "unrealized_net_pnl": -6.45
       },
       {
         "allocation": 2053.25,
@@ -75228,7 +76074,7 @@
         "status": "OPEN",
         "strategy": "BULL_PUT_CREDIT_SPREAD",
         "total_short_reserve": 2053.25,
-        "unrealized_net_pnl": 13.55
+        "unrealized_net_pnl": 48.55
       },
       {
         "allocation": 2881.5,
@@ -75260,7 +76106,7 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 2881.5,
-        "unrealized_net_pnl": -27.9
+        "unrealized_net_pnl": -42.9
       },
       {
         "allocation": 706.5,
@@ -75292,7 +76138,7 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 706.5,
-        "unrealized_net_pnl": -27.9
+        "unrealized_net_pnl": -42.9
       },
       {
         "allocation": 2423.25,
@@ -75324,7 +76170,7 @@
         "status": "OPEN",
         "strategy": "BULL_PUT_CREDIT_SPREAD",
         "total_short_reserve": 2423.25,
-        "unrealized_net_pnl": 283.55
+        "unrealized_net_pnl": 313.55
       },
       {
         "allocation": 756.5,
@@ -75356,7 +76202,7 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 756.5,
-        "unrealized_net_pnl": -67.9
+        "unrealized_net_pnl": -85.4
       },
       {
         "allocation": 746.5,
@@ -75388,7 +76234,7 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 746.5,
-        "unrealized_net_pnl": -117.9
+        "unrealized_net_pnl": -137.9
       },
       {
         "allocation": 3851.5,
@@ -75420,7 +76266,7 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 3851.5,
-        "unrealized_net_pnl": -30.4
+        "unrealized_net_pnl": -112.9
       },
       {
         "allocation": 1653.25,
@@ -75452,7 +76298,7 @@
         "status": "OPEN",
         "strategy": "BEAR_CALL_CREDIT_SPREAD",
         "total_short_reserve": 1653.25,
-        "unrealized_net_pnl": -871.45
+        "unrealized_net_pnl": -911.45
       },
       {
         "allocation": 1546.5,
@@ -75484,7 +76330,7 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 1546.5,
-        "unrealized_net_pnl": -357.9
+        "unrealized_net_pnl": -402.9
       },
       {
         "allocation": 2046.5,
@@ -75587,9 +76433,9 @@
       "alerts": [
         {
           "category": "Broker reconciliation",
-          "details": "13 trade(s) still lack required broker evidence after the next-morning retry grace period.",
-          "first_seen_at_et": "2026-11-09T08:53:02.806048-05:00",
-          "last_seen_at_et": "2026-11-09T08:53:02.806048-05:00",
+          "details": "11 trade(s) still lack required broker evidence after the next-morning retry grace period.",
+          "first_seen_at_et": "2026-11-09T16:23:00.845374-05:00",
+          "last_seen_at_et": "2026-11-09T16:23:00.845374-05:00",
           "recovery_confirmed": false,
           "rule_id": "BROKER_RECONCILIATION_INCOMPLETE",
           "severity": "WARNING",
@@ -75599,8 +76445,8 @@
         {
           "category": "Broker reconciliation",
           "details": "Broker reconciliation status changed.",
-          "first_seen_at_et": "2026-11-09T08:53:02.806048-05:00",
-          "last_seen_at_et": "2026-11-09T08:53:02.806048-05:00",
+          "first_seen_at_et": "2026-11-09T16:23:00.845374-05:00",
+          "last_seen_at_et": "2026-11-09T16:23:00.845374-05:00",
           "recovery_confirmed": false,
           "rule_id": "BROKER_RECONCILIATION_OPEN_ENTRY_EVIDENCE_PENDING",
           "severity": "WARNING",
@@ -75610,8 +76456,8 @@
         {
           "category": "Broker reconciliation",
           "details": "Some broker events could not be uniquely matched to the research ledger; this does not by itself prove an accounting discrepancy.",
-          "first_seen_at_et": "2026-11-09T08:53:02.806048-05:00",
-          "last_seen_at_et": "2026-11-09T08:53:02.806048-05:00",
+          "first_seen_at_et": "2026-11-09T16:23:00.845374-05:00",
+          "last_seen_at_et": "2026-11-09T16:23:00.845374-05:00",
           "recovery_confirmed": false,
           "rule_id": "BROKER_RECONCILIATION_UNMATCHED_EVENTS",
           "severity": "WARNING",
@@ -75621,8 +76467,8 @@
         {
           "category": "Broker reconciliation",
           "details": "Broker reconciliation status changed.",
-          "first_seen_at_et": "2026-11-09T08:53:02.806048-05:00",
-          "last_seen_at_et": "2026-11-09T08:53:02.806048-05:00",
+          "first_seen_at_et": "2026-11-09T16:23:00.845374-05:00",
+          "last_seen_at_et": "2026-11-09T16:23:00.845374-05:00",
           "recovery_confirmed": false,
           "rule_id": "BROKER_RECONCILIATION_EXPIRATION_LAPSE_RECORDED",
           "severity": "INFO",
@@ -75690,10 +76536,10 @@
           "flag": "HIGH_IMPACT_EVENT"
         }
       ],
-      "calendar_fresh_until": "2026-11-13",
-      "calendar_reviewed_on": "2026-11-06",
+      "calendar_fresh_until": "2026-11-16",
+      "calendar_reviewed_on": "2026-11-09",
       "calendar_status": "CALENDAR_FLAGS_PRESENT",
-      "calendar_valid_through": "2026-11-13",
+      "calendar_valid_through": "2026-11-16",
       "calendar_window_end_date": "2026-11-15",
       "session_message": "10 paper entry-order submissions are recorded for this trading date.",
       "session_status": "PAPER_ENTRY_ORDER_ACTIVITY"
@@ -75910,7 +76756,7 @@
     ]
   },
   "distribution_comparison": {
-    "age_seconds": 74,
+    "age_seconds": 3960,
     "expirations": [
       {
         "bayesian_shadow_discount": 0.96685,
@@ -139847,7 +140693,7 @@
     "session_date": "2026-11-09",
     "session_open_spx": 7440.36,
     "source_snapshots_read": 0,
-    "status": "CURRENT",
+    "status": "RETAINED_SESSION",
     "update_mode": "MATERIALIZED_READ"
   },
   "estimated_market_variables": {
@@ -139928,7 +140774,7 @@
     "session_date": "2026-11-09",
     "state_age_sessions": 1.0,
     "state_update_weight": 0.8703927276052016,
-    "status": "CURRENT",
+    "status": "RETAINED_SESSION",
     "surface": [
       {
         "active_discount": 0.92638,
@@ -183091,16 +183937,16 @@
           "vix_percent": 19.95
         },
         {
-          "active_discount": 0.78392,
+          "active_discount": 0.78377,
           "discount_source": "MEAN_REVERTING_200D_TIME_PROFILE",
-          "discounted_vix1d_percent": 13.506942,
+          "discounted_vix1d_percent": 13.488682,
           "forecast_expiration": "20261110",
-          "forecast_horizon_end_et": "2026-11-10T16:11:56.115657-05:00",
+          "forecast_horizon_end_et": "2026-11-10T16:14:56.267077-05:00",
           "forecast_provenance": "SAVED_ACTIVE_STATE",
           "forecast_spx": 7549.94,
           "forward_realized_variance": null,
-          "observed_at_et": "2026-11-09T16:11:56.115657-05:00",
-          "one_day_clock_mass": 1.4233610512594463,
+          "observed_at_et": "2026-11-09T16:14:56.267077-05:00",
+          "one_day_clock_mass": 1.423573418417697,
           "outcome_status": "PENDING_FORWARD_HORIZON",
           "overnight_open_source": "UNAVAILABLE",
           "realized_variance_component_return_counts": null,
@@ -183109,8 +183955,8 @@
           "realized_variance_coverage": null,
           "realized_variance_interval_minutes": 5,
           "realized_vix1d_percent": null,
-          "vix1d_percent": 17.23,
-          "vix_percent": 19.96
+          "vix1d_percent": 17.21,
+          "vix_percent": 19.89
         }
       ],
       "metric_definition": {
@@ -189776,22 +190622,58 @@
         "time_et": "2026-11-09T16:09:59.529305-05:00"
       },
       {
-        "net_pnl": -14361.9,
-        "time_et": "2026-11-09T16:12:09.957896-05:00"
+        "net_pnl": -14391.9,
+        "time_et": "2026-11-09T16:14:59.719629-05:00"
+      },
+      {
+        "net_pnl": -14339.4,
+        "time_et": "2026-11-09T16:19:59.977958-05:00"
+      },
+      {
+        "net_pnl": -14279.4,
+        "time_et": "2026-11-09T16:24:59.603638-05:00"
+      },
+      {
+        "net_pnl": -14346.9,
+        "time_et": "2026-11-09T16:29:57.389229-05:00"
+      },
+      {
+        "net_pnl": -14359.4,
+        "time_et": "2026-11-09T16:34:59.612821-05:00"
+      },
+      {
+        "net_pnl": -14431.9,
+        "time_et": "2026-11-09T16:39:59.125758-05:00"
+      },
+      {
+        "net_pnl": -14399.4,
+        "time_et": "2026-11-09T16:44:59.050446-05:00"
+      },
+      {
+        "net_pnl": -14459.4,
+        "time_et": "2026-11-09T16:49:58.537879-05:00"
+      },
+      {
+        "net_pnl": -14436.9,
+        "time_et": "2026-11-09T16:54:58.518753-05:00"
+      },
+      {
+        "net_pnl": -14491.9,
+        "time_et": "2026-11-09T16:59:59.600001-05:00"
       }
     ],
     "summary": {
-      "additional_loss_to_contractual_max": 17359.3,
-      "available_equity": 217028.1,
+      "additional_loss_to_contractual_max": 17229.3,
+      "available_equity": 216898.1,
       "cash": 236888.8,
       "closed_trades": 83,
       "contractual_stress_loss": 18610.0,
-      "equity": 235638.1,
+      "equity": 235508.1,
       "open_positions": 10,
       "realized_pnl": -13111.2,
       "reserved_risk": 18610.0,
       "starting_cash": 250000.0,
-      "unrealized_pnl": -1250.7
+      "unrealized_pnl": -1380.7
     },
     "trade_averages": {
       "average_capacity": 1571.6531325301205,
@@ -189807,11 +190689,11 @@
   },
   "publication": {
     "data_policy": "Derived paper-trading research only. Raw IBKR quotes, contract identifiers, account details, and active option legs are excluded.",
-    "market_data_is_live": true,
-    "market_data_status": "MARKET_OPEN",
+    "market_data_is_live": false,
+    "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-11-09T16:12:10.207716-05:00",
-    "status": "PRELIMINARY_SESSION_ACTIVE",
+    "published_at_et": "2026-11-09T17:16:56.139887-05:00",
+    "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-11-09"
   },
   "schema_version": "xdte-public-v2"

@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
   <link rel="stylesheet" href="xdte.css?v=20261103-single-distribution-v14">
-  <script defer src="xdte.js?v=20261109-close-spx-v20"></script>
+  <script defer src="xdte.js?v=20261109-historical-date-v21"></script>
 </head>
 <body>
   <header class="hero">
@@ -38,6 +38,13 @@
         <span id="as-of">Reading the latest snapshot…</span>
         <button id="refresh-feed" class="refresh-button" type="button" disabled>Refresh P&amp;L</button>
       </div>
+      <form id="snapshot-date-form" class="snapshot-date-form">
+        <label for="snapshot-date">View a prior trading date</label>
+        <input id="snapshot-date" name="snapshot-date" type="date" required>
+        <button class="refresh-button" type="submit">Load selected date</button>
+        <button id="load-latest-snapshot" class="refresh-button" type="button" hidden>Return to latest</button>
+        <span id="snapshot-date-status">Prior dates load only after selection.</span>
+      </form>
       <p id="readiness-detail" class="readiness-detail">Waiting for today’s premarket readiness result.</p>
       <p id="feed-status" class="feed-status">Connecting to the five-minute intraday feed…</p>
     </div>

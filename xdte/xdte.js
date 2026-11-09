@@ -485,6 +485,7 @@ const parsedPublicDate = value => {
 const shortTime = v => { const parsed = parsedPublicDate(v); return parsed ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", hour: "numeric", minute: "2-digit", timeZone: "America/New_York" }).format(parsed) : "—"; };
 const shortDate = v => { const parsed = parsedPublicDate(v); return parsed ? new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", timeZone: "UTC" }).format(parsed) : "—"; };
 const liveFeedUrl = "https://storage.googleapis.com/ibkr-steamroller-coins-xdte-feed/latest.json";
+const historicalFeedBaseUrl = "https://storage.googleapis.com/ibkr-steamroller-coins-xdte-feed/history";
 const autoRefreshIntervalMilliseconds = 5 * 60 * 1000;
 const publicationRefreshDelayMilliseconds = 90 * 1000;
 function publicationWindowDelay(now = Date.now()) {
@@ -499,13 +500,14 @@ function nextAutomaticRefreshDelay(now = Date.now()) {
 function scheduleAutomaticRefresh() {
   setTimeout(() => {
     scheduleAutomaticRefresh();
-    if (!document.hidden) refresh();
+    if (!activeHistoricalDate && !document.hidden) refresh();
   }, nextAutomaticRefreshDelay());
 }
 
 let lastSuccessfulRefreshAt = 0;
 let refreshInFlight = false;
 let lastRenderedPublicationAt = 0;
+let activeHistoricalDate = null;
 
 function metrics(target, items) {
   document.querySelector(target).innerHTML = items.map(([label, display, className = ""]) =>
@@ -1099,6 +1101,28 @@ async function retrieveSnapshot() {
   return selectNewestSnapshot(candidates);
 }
 
+async function retrieveHistoricalSnapshot(tradeDate) {
+  const name = `snapshot-${tradeDate}.json`;
+  const version = Date.now();
+  try {
+    return await fetchSnapshot(
+      `${historicalFeedBaseUrl}/${name}?v=${version}`,
+      `Google Storage archive for ${tradeDate}`,
+    );
+  } catch (storageError) {
+    try {
+      return await fetchSnapshot(
+        `data/${name}?v=${version}`,
+        `Static archive for ${tradeDate}`,
+      );
+    } catch (staticError) {
+      throw new Error(
+        `No archived snapshot is available for ${tradeDate} (${storageError.message}; ${staticError.message})`,
+      );
+    }
+  }
+}
+
 function updateRefreshButton() {
   const button = document.querySelector("#refresh-feed");
   button.disabled = refreshInFlight;
@@ -1221,12 +1245,14 @@ function renderEstimatedMarketVariables(model) {
   note.textContent = `Status: ${status} · session ${data.session_date || "unavailable"} · model source: ${String(data.model_source || "unavailable").replaceAll("_", " ")} · latest calibration observation: ${data.latest_calibration_observation_date || "unavailable"}. Active calibration uses five-minute integrated SPX realized variance against horizon-matched VIX1D/VIX9D/VIX clock variance, including overnight and weekend/holiday gaps. Terminal displacement is shadow-only. These are saved operational discounts already used by the model; this display does not recalculate or interpolate missing scan values.`;
 }
 
-async function load() {
-  const retrieved = await retrieveSnapshot();
+async function load({ historicalDate = null } = {}) {
+  const retrieved = historicalDate
+    ? await retrieveHistoricalSnapshot(historicalDate)
+    : await retrieveSnapshot();
   const data = retrieved.data;
   const publicationAt=Date.parse(data.publication?.published_at_et || '');
   if(!Number.isFinite(publicationAt))throw new Error('Snapshot publication timestamp is invalid');
-  if(publicationAt<lastRenderedPublicationAt)return lastRenderedPublicationAt;
+  if(!historicalDate && publicationAt<lastRenderedPublicationAt)return lastRenderedPublicationAt;
 
   const pub = data.publication, daily = data.daily, ledger = data.ledger, funnel = daily.funnel, summary = ledger.summary;
   renderDistributionComparison(data.distribution_comparison);
@@ -1258,9 +1284,14 @@ async function load() {
   }
   document.querySelector("#as-of").textContent = `Trading date ${pub.trade_date} · published ${shortTime(pub.published_at_et)} ET`;
   document.querySelector("#footer-date").textContent = `Snapshot ${pub.trade_date}`;
-  document.querySelector("#feed-status").textContent = `Source: ${retrieved.source} · refreshes automatically every five minutes after a 90-second publication allowance`;
+  document.querySelector("#feed-status").textContent = historicalDate
+    ? `Source: ${retrieved.source} · historical snapshots do not refresh automatically`
+    : `Source: ${retrieved.source} · refreshes automatically every five minutes after a 90-second publication allowance`;
   const warning = document.querySelector("#data-warning");
-  if (marketDataStatus === "MARKET_CLOSED") {
+  if (historicalDate) {
+    warning.classList.remove("hidden");
+    warning.textContent = `Historical view — displaying the saved ${pub.trade_date} research snapshot. Values are not live market data.`;
+  } else if (marketDataStatus === "MARKET_CLOSED") {
     warning.classList.remove("hidden");
     warning.textContent = `Market Closed — retaining Daily P&L for ${pub.trade_date} until the next regular trading session opens. Values are not live market data.`;
   } else if (pub.status !== "FINAL_AFTER_CLOSE") {
@@ -1473,32 +1504,35 @@ async function load() {
     ["Dimension", "dimension"], ["Group", "group"], ["Trades", "trades"], ["Win rate", "win_rate", null, v => value(v, percent)],
     ["Total net ($)", "net_pnl", pnlClass, v => value(v, money)], ["Net return (%)", "net_return_on_deployed_capital", pnlClass, v => value(v, percent)], ["Expectancy / trade", "expectancy_return_per_trade", pnlClass, v => value(v, percent)],
   ], groups);
-  lastRenderedPublicationAt=publicationAt;
+  if(!historicalDate)lastRenderedPublicationAt=publicationAt;
   return publicationAt;
 }
 
 async function refresh({ manual = false } = {}) {
-  if (refreshInFlight) return;
+  if (refreshInFlight) return false;
+  let succeeded = false;
   refreshInFlight = true;
   updateRefreshButton();
   try {
     const publicationWait = manual ? 0 : publicationWindowDelay();
     if (publicationWait > 0) await new Promise(resolve => setTimeout(resolve, publicationWait));
     const expectedBoundary=Math.floor(Date.now()/autoRefreshIntervalMilliseconds)*autoRefreshIntervalMilliseconds;
-    let publishedAt=await load();
+    let publishedAt=await load({historicalDate:activeHistoricalDate});
     // A slow publisher may finish after the normal 90-second grace.
     // Retry only automatic refreshes; manual requests always fetch immediately.
-    for(let retry=0; !manual && publishedAt<expectedBoundary && retry<3; retry++){
+    for(let retry=0; !manual && !activeHistoricalDate && publishedAt<expectedBoundary && retry<3; retry++){
       await new Promise(resolve=>setTimeout(resolve,20000));
       publishedAt=await load();
     }
     lastSuccessfulRefreshAt = Date.now();
+    succeeded = true;
   } catch (error) {
     showLoadError(error, lastSuccessfulRefreshAt > 0);
   } finally {
     refreshInFlight = false;
     updateRefreshButton();
   }
+  return succeeded;
 }
 
 function initializeThesisBanner() {
@@ -1536,9 +1570,59 @@ initializeThesisBanner();
 document.querySelector("#refresh-feed").addEventListener("click", () => {
   refresh({ manual: true });
 });
+
+function initializeSnapshotDateSelector() {
+  const form = document.querySelector("#snapshot-date-form");
+  const input = document.querySelector("#snapshot-date");
+  const latest = document.querySelector("#load-latest-snapshot");
+  const status = document.querySelector("#snapshot-date-status");
+  const etParts = new Intl.DateTimeFormat("en-US", {
+    timeZone:"America/New_York", year:"numeric", month:"2-digit", day:"2-digit",
+  }).formatToParts(new Date());
+  const etPart = type => Number(etParts.find(part => part.type === type).value);
+  const today = new Date(Date.UTC(
+    etPart("year"), etPart("month") - 1, etPart("day"), 12,
+  ));
+  const maximum = new Date(today.getTime() - 24 * 60 * 60 * 1000);
+  const minimum = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
+  const iso = date => date.toISOString().slice(0, 10);
+  input.min = iso(minimum);
+  input.max = iso(maximum);
+  input.value = iso(maximum);
+  form.addEventListener("submit", async event => {
+    event.preventDefault();
+    const selected = input.value;
+    if (!selected || selected < input.min || selected > input.max) {
+      status.textContent = "Choose a date within the prior 30 calendar days.";
+      return;
+    }
+    activeHistoricalDate = selected;
+    latest.hidden = false;
+    status.textContent = `Loading ${selected} only…`;
+    const loaded = await refresh({manual:true});
+    status.textContent = loaded
+      ? `Showing saved ${selected}. Automatic live refresh is paused.`
+      : `The saved ${selected} snapshot could not be loaded.`;
+    if (!loaded) {
+      activeHistoricalDate = null;
+      latest.hidden = true;
+    }
+  });
+  latest.addEventListener("click", async () => {
+    activeHistoricalDate = null;
+    latest.hidden = true;
+    status.textContent = "Loading the latest snapshot…";
+    const loaded = await refresh({manual:true});
+    status.textContent = loaded
+      ? "Latest snapshot active. Prior dates load only after selection."
+      : "The latest snapshot could not be loaded.";
+  });
+}
+
+initializeSnapshotDateSelector();
 scheduleAutomaticRefresh();
 document.addEventListener("visibilitychange", () => {
-  if (!document.hidden && Date.now() - lastSuccessfulRefreshAt >= autoRefreshIntervalMilliseconds) refresh();
+  if (!activeHistoricalDate && !document.hidden && Date.now() - lastSuccessfulRefreshAt >= autoRefreshIntervalMilliseconds) refresh();
 });
 
 function showLoadError(error, preserveCurrent = false) {
