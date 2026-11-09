@@ -411,6 +411,9 @@ const number = new Intl.NumberFormat("en-US", { maximumFractionDigits: 2 });
 const percent = new Intl.NumberFormat("en-US", { style: "percent", maximumFractionDigits: 2 });
 
 const value = (v, formatter = number) => v === null || v === undefined || Number.isNaN(Number(v)) ? "—" : formatter.format(Number(v));
+const signedPercentPoints = v => v === null || v === undefined || Number.isNaN(Number(v))
+  ? "—"
+  : `${Number(v) >= 0 ? "+" : ""}${number.format(Number(v))}%`;
 const capacityClass = v => v !== null && v !== undefined && v !== "" && Number.isFinite(Number(v)) && Number(v) <= 0 ? "negative" : "";
 const pnlClass = v => Number(v) > 0 ? "positive" : Number(v) < 0 ? "negative" : "";
 const slippageClass = v => Number(v) < 0 ? "positive" : Number(v) > 0 ? "negative" : "";
@@ -1280,6 +1283,12 @@ async function load() {
     ["Daily P&L", value(pnlSummary.daily_ledger_pnl, money), pnlClass(pnlSummary.daily_ledger_pnl)],
     ["Unrealized P&L", value(pnlSummary.unrealized_pnl, money), pnlClass(pnlSummary.unrealized_pnl)],
     ["Realized P&L on exits", value(exitActivity.realized_pnl, money), pnlClass(exitActivity.realized_pnl)],
+  ]);
+  const spxReference = daily.spx_reference || {};
+  summaryMetrics("#spx-reference-metrics", [
+    ["Last close SPX", value(spxReference.prior_close_spx)],
+    ["Today's open SPX", `${value(spxReference.open_spx)} · ${signedPercentPoints(spxReference.open_change_from_prior_close_percent)} close`, pnlClass(spxReference.open_change_from_prior_close_percent)],
+    ["Current SPX", `${value(spxReference.current_spx)} · ${signedPercentPoints(spxReference.current_change_from_prior_close_percent)} close · ${signedPercentPoints(spxReference.current_change_from_open_percent)} open`, pnlClass(spxReference.current_change_from_prior_close_percent)],
   ]);
   const baselineNote = document.querySelector("#ledger-baseline-note");
   if (baselineNote) baselineNote.textContent = pnlSummary.daily_ledger_pnl == null
