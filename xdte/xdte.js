@@ -719,7 +719,11 @@ function lineChart(target, series, options = {}) {
   const all = [...leftPoints, ...rightPoints];
   if (!all.length) { node.innerHTML = `<div class="chart-empty">No chart data are available for this period.</div>`; return; }
   const width = 1000, height = options.height || 310, pad = { l: 76, r: rightPoints.length ? 76 : 24, t: 18, b: 42 };
-  const minT = Math.min(...all.map(p => p.t)), maxT = Math.max(...all.map(p => p.t));
+  const verticalRuleTimes = (options.verticalRules || [])
+    .map(rule => new Date(rule.time).getTime())
+    .filter(Number.isFinite);
+  const domainTimes = [...all.map(point => point.t), ...verticalRuleTimes];
+  const minT = Math.min(...domainTimes), maxT = Math.max(...domainTimes);
   const orderedTimes = [...new Set(all.map(point => point.t))].sort((left, right) => left - right);
   const tradingTimeIndex = new Map(orderedTimes.map((value, index) => [value, index]));
   const observedMinY = leftPoints.length ? Math.min(...leftPoints.map(p => p.y)) : 0;
@@ -825,11 +829,17 @@ function lineChart(target, series, options = {}) {
     }
     return `<path d="M${cx.toFixed(1)},${(cy-6).toFixed(1)} L${(cx-6).toFixed(1)},${(cy+5).toFixed(1)} L${(cx+6).toFixed(1)},${(cy+5).toFixed(1)} Z" fill="${color}" stroke="white" stroke-width="1.5"><title>${marker.position} Entry · ${money.format(v)}</title></path>`;
   }).join("");
+  const verticalRules = (options.verticalRules || []).map(rule => {
+    const t = new Date(rule.time).getTime();
+    if (!Number.isFinite(t) || t < minT || t > maxT) return "";
+    const ruleX = x(t), color = rule.color || "#667085";
+    return `<line x1="${ruleX.toFixed(1)}" x2="${ruleX.toFixed(1)}" y1="${pad.t}" y2="${height-pad.b}" stroke="${color}" stroke-width="${rule.width || 1.75}" stroke-dasharray="${rule.dash || "6 5"}"/><text x="${(ruleX-7).toFixed(1)}" y="${pad.t+13}" text-anchor="end" fill="${color}" font-size="12" font-weight="700">${rule.label || "Reference time"}</text>`;
+  }).join("");
   const zero = minY <= 0 && maxY >= 0 ? `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#7b8495" stroke-width="1.75"/>` : "";
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${options.label || "Time series"}">
     ${ticks.map(v => `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e4dfd6"/><text x="${pad.l-10}" y="${y(v)+4}" text-anchor="end" fill="#667085" font-size="12">${options.money ? money.format(v) : number.format(v)}</text>`).join("")}
     ${rightTicks.map(v => `<line x1="${width-pad.r}" x2="${width-pad.r+5}" y1="${rightY(v)}" y2="${rightY(v)}" stroke="#667085"/><text x="${width-pad.r+10}" y="${rightY(v)+4}" fill="#667085" font-size="12">${number.format(v)}</text>`).join("")}
-    ${relativeAreas}${zero}${paths}${markers}
+    ${relativeAreas}${zero}${verticalRules}${paths}${markers}
     <text x="${pad.l}" y="${height-12}" fill="#667085" font-size="12">${shortTime(minT)}</text>
     <text x="${width-pad.r}" y="${height-12}" text-anchor="end" fill="#667085" font-size="12">${shortTime(maxT)}</text>
   </svg><div class="chart-legend">${series.filter((s,i,a)=>a.findIndex(t=>(t.legendLabel||t.label)===(s.legendLabel||s.label))===i).map(s => `<span class="legend-key${s.dash ? " legend-key--dashed" : ""}" style="--key:${s.color}">${s.legendLabel || s.label}</span>`).join("")}${options.estimatedMarkLegend ? '<span class="legend-key legend-key--estimated" style="--key:#667085">Estimated zero-bid midpoint</span>' : ''}${options.carriedForwardLegend ? '<span class="legend-key legend-key--dashed" style="--key:#667085">Held at last accounting mark</span>' : ''}</div>`;
@@ -1559,6 +1569,10 @@ async function load({ historicalDate = null } = {}) {
   const positionMarkers = currentPositionPnl.flatMap(item => item.points
     .filter(point => point.event === "Entry" || point.event === "Exit")
     .map(point => ({ ...point, position: item.position })));
+  const easternOffset = [...(daily.spx_history || []), ...(daily.portfolio_pnl || [])]
+    .map(row => String(row.time_et || "").match(/([+-]\d{2}:\d{2})$/)?.[1])
+    .find(Boolean) || "-05:00";
+  const marketCloseTimeEt = `${pub.trade_date}T16:00:00${easternOffset}`;
   lineChart("#portfolio-spx-chart", [
     { rows: daily.portfolio_pnl, x: "time_et", y: "net_pnl", label: "TOTAL", color: "#333ED4", width: 4 },
     {
@@ -1571,6 +1585,10 @@ async function load({ historicalDate = null } = {}) {
     leftTickQuantum: 250, leftTickMinimumCount: 5, leftTickMaximumCount: 10, leftTickTargetCount: 7,
     rightTickStep: 25,
     label: "Daily total portfolio P&L with SPX",
+    verticalRules: [{
+      time: marketCloseTimeEt, label: "4:00 PM ET · close / expiration",
+      color: "#667085", dash: "6 5", width: 1.75,
+    }],
     carriedForwardLegend: true,
   });
   lineChart("#current-position-chart", positionSeries, {
