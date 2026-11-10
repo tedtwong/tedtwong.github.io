@@ -311,6 +311,37 @@
         </div>
         <p class="methodology-equation-note">These are compact descriptions of the active research logic. The implementation uses exact settlement horizons, fitted option-distribution shape, calibrated clock and discount states, executable structure prices, and the full independent risk-gate sequence.</p>
       </article>
+      <article class="panel methodology-risk-controls">
+        <div class="panel__heading"><div><h3>Risk controls and capacity release</h3><p>Candidate ranking identifies an opportunity; it never overrides a binding safety, execution, or capital gate.</p></div></div>
+        <div class="risk-control-grid">
+          <div>
+            <h4>Capital basis</h4>
+            <p>The day’s limits are calculated from conservative risk equity—cash plus the more adverse usable position marks—and frozen before the first entry. The aggregate open-reserve ceiling is 20% of that basis.</p>
+            <p class="methodology-formula">Aggregate reserve cap = 20% × frozen conservative risk equity</p>
+          </div>
+          <div>
+            <h4>Nested limits</h4>
+            <p>New entries may use at most 40% of the aggregate cap each day. Positions with at least four trading sessions remaining share 25% of the aggregate cap, while each nearby put-side or call-side strike cluster is limited to 37.5%.</p>
+            <p class="methodology-formula">Daily / long-dated / directional = 40% / 25% / 37.5% of aggregate</p>
+          </div>
+          <div>
+            <h4>Reserve measurement</h4>
+            <p>Each filled or working entry reserves its contractual maximum loss plus modeled expiration expenses. Zero-fill cancellations release their reservation; filled exposure retains it through settlement. There is no separate active position-count limit or fixed per-trade ceiling.</p>
+          </div>
+          <div>
+            <h4>Independent gates</h4>
+            <p>Validated SPXW contracts, fresh executable quotes, positive retained edge, full-credit probability, concentration limits, duplicate prevention, operational health, and one-order-per-scan locking must all pass independently. No soft capacity exception is active.</p>
+          </div>
+        </div>
+        <div class="capacity-release-table" role="table" aria-label="Intraday capacity release schedule">
+          <div class="capacity-release-table__heading" role="row"><span role="columnheader">New York time</span><span role="columnheader">Increment released</span><span role="columnheader">Cumulative daily release</span></div>
+          <div role="row"><span role="cell">9:00 a.m.</span><span role="cell">15% of aggregate</span><span role="cell">15% of aggregate</span></div>
+          <div role="row"><span role="cell">10:30 a.m.</span><span role="cell">10% of aggregate</span><span role="cell">25% of aggregate</span></div>
+          <div role="row"><span role="cell">12:00 p.m.</span><span role="cell">7.5% of aggregate</span><span role="cell">32.5% of aggregate</span></div>
+          <div role="row"><span role="cell">1:00 p.m.</span><span role="cell">7.5% of aggregate</span><span role="cell">40% of aggregate</span></div>
+        </div>
+        <p class="methodology-equation-note">Fifty percent of unused capacity from one window carries only into the immediately following window; the remainder expires. Future windows cannot be borrowed, and capacity is not recycled after a profitable close under the current hold-to-expiration experiment.</p>
+      </article>
       <h3 class="subsection-heading methodology-policy-heading">Publication policy</h3>
       <div class="method-grid">
         <p><strong>Paper trading only.</strong> These are simulated research results and do not represent a brokerage statement or live-trading performance.</p>
