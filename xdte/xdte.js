@@ -115,12 +115,12 @@ function renderDistributionComparison(data) {
     const bayesianShadowDiscount=finiteNonnegative(row.bayesian_shadow_discount);
     const fixedDiscount=row.physical_discount_source==='FIXED_DISCOUNT_WITH_BAYESIAN_SHADOW';
     const centeredDiscount=row.physical_discount_source==='DTE_CENTERED_BAYESIAN_TIME_PROFILE';
-    const meanRevertingDiscount=['MEAN_REVERTING_200D_TIME_PROFILE','MEAN_REVERTING_200D_PRIOR_FALLBACK'].includes(row.physical_discount_source);
+    const meanRevertingDiscount=['MEAN_REVERTING_200D_TIME_PROFILE','MEAN_REVERTING_200D_PRIOR_FALLBACK','MEAN_REVERTING_100D_EW_TIME_PROFILE','MEAN_REVERTING_100D_EW_PRIOR_FALLBACK'].includes(row.physical_discount_source);
     const discountCenter=finiteNonnegative(row.physical_discount_center);
     const longRunCenter=finiteNonnegative(row.physical_discount_long_run_center);
     const dailyRho=finiteNonnegative(row.physical_discount_rho_daily);
     const scaleText=vixClockScale===null?'VIX-family nonlinear-clock scale unavailable':`VIX-family nonlinear-clock scale: ${ivLabel(vixClockScale)}`;
-    const discountText=physicalDiscount===null?'Physical discount unavailable':meanRevertingDiscount?`Mean-reverting discount d: ${physicalDiscount.toFixed(3)}${longRunCenter===null?'':` · 200-session center: ${longRunCenter.toFixed(3)}`}${dailyRho===null?'':` · daily ρ: ${dailyRho.toFixed(3)}`}`:centeredDiscount?`Active time-profile discount d: ${physicalDiscount.toFixed(3)}${discountCenter===null?'':` · DTE center: ${discountCenter.toFixed(3)}`}${bayesianShadowDiscount===null?'':` · Bayesian shadow d: ${bayesianShadowDiscount.toFixed(3)}`}`:fixedDiscount?`Fixed physical discount d: ${physicalDiscount.toFixed(3)}${bayesianShadowDiscount===null?'':` · Bayesian shadow d: ${bayesianShadowDiscount.toFixed(3)}`}`:`Bayesian physical discount d: ${physicalDiscount.toFixed(3)}`;
+    const discountText=physicalDiscount===null?'Physical discount unavailable':meanRevertingDiscount?`Mean-reverting discount d: ${physicalDiscount.toFixed(3)}${longRunCenter===null?'':` · 100-session EW center: ${longRunCenter.toFixed(3)}`}${dailyRho===null?'':` · residual ρ: ${dailyRho.toFixed(3)}`}`:centeredDiscount?`Active time-profile discount d: ${physicalDiscount.toFixed(3)}${discountCenter===null?'':` · DTE center: ${discountCenter.toFixed(3)}`}${bayesianShadowDiscount===null?'':` · Bayesian shadow d: ${bayesianShadowDiscount.toFixed(3)}`}`:fixedDiscount?`Fixed physical discount d: ${physicalDiscount.toFixed(3)}${bayesianShadowDiscount===null?'':` · Bayesian shadow d: ${bayesianShadowDiscount.toFixed(3)}`}`:`Bayesian physical discount d: ${physicalDiscount.toFixed(3)}`;
     const horizonLegend=`<text x="${left+12}" y="${top+18}" fill="#168a91">${referenceLabel} volatility: ${ivLabel(row.reference_iv)} · horizon σ: ${ivLabel(referenceHorizon)}</text><text x="${left+12}" y="${top+40}" fill="#8b5cf6">Option-implied risk-neutral volatility: ${ivLabel(row.risk_neutral_iv)} · horizon σ: ${ivLabel(riskNeutralHorizon)}</text><text x="${left+12}" y="${top+60}" fill="#555" font-size="12">${scaleText} · ${discountText}</text><text x="${left+12}" y="${top+78}" fill="#555" font-size="12">Exact expiration horizon · ${horizonDuration}</text>`;
     const densityPaths=clipId=>`<g clip-path="url(#${clipId})"><path d="${line(reference)}" fill="none" stroke="#168a91" stroke-width="3" stroke-opacity="0.6"/><path d="${line(riskNeutral)}" fill="none" stroke="#8b5cf6" stroke-width="3" stroke-opacity="0.6"/></g>`;
     const shell=(clipId,legend,extraMarks,aria)=>`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${aria}"><defs><clipPath id="${clipId}"><rect x="${left}" y="${top}" width="${width-left-right}" height="${height-top-bottom}"/></clipPath></defs>${axes}${legend}${densityPaths(clipId)}${extraMarks}<text x="${width/2}" y="${height-10}" text-anchor="middle">SPX level · centered on session open ${preciseLevel(openingSpx)}</text><text transform="translate(17 ${height/2}) rotate(-90)" text-anchor="middle">Density per 1% SPX move</text></svg>`;
@@ -160,7 +160,7 @@ function renderDistributionComparison(data) {
     const stateLabel=!isLatest?"HISTORICAL SCAN — ":data.status==="RETAINED_SESSION"?"RETAINED SESSION CLOSE — ":age>180?"STALE — ":"";
     const clippingNote=observedMax>ymax?' Density above 1.00 is clipped in the chart only; stored values are unchanged.':'';
     const retention=data.status==="RETAINED_SESSION"&&isLatest?" The completed session remains displayed until the next session records a valid distribution.":"";
-    const discountDescription=meanRevertingDiscount?'The active discount combines a data-driven 200-session center, learned daily volatility persistence and mean reversion, and the Bayesian relative intraday profile; 0.80 initializes missing pre-history.':centeredDiscount?'The active discount preserves the Bayesian intraday profile but normalizes every DTE row to a 0.80 average; cross-DTE posterior levels remain observational.':fixedDiscount?'The fixed 0.80 discount converts that scale to physical variance; the Bayesian DTE/time posterior remains observational.':'The displayed Bayesian discount converts that scale to physical variance.';
+    const discountDescription=meanRevertingDiscount?'The active discount combines a data-driven 100-session exponentially weighted center, a separately persistent residual state, an independent contemporaneous VIX-regime effect, and the Bayesian relative intraday profile; 0.80 is the no-data fallback.':centeredDiscount?'The active discount preserves the Bayesian intraday profile but normalizes every DTE row to a 0.80 average; cross-DTE posterior levels remain observational.':fixedDiscount?'The fixed 0.80 discount converts that scale to physical variance; the Bayesian DTE/time posterior remains observational.':'The displayed Bayesian discount converts that scale to physical variance.';
     const modelDescription=String(row.reference_model_version||'').startsWith('spxw_shape_vix_nonlinear_clock_physical_v')?`SPXW supplies standardized shape/skew and forward; VIX1D/VIX9D/VIX supply total-variance scale through the nonlinear intraday/overnight/event clock; ${discountDescription}`:'This retained snapshot predates the active shape–scale–clock model.';
     note.textContent=`${stateLabel}As of ${scan.observed_at_et} · ${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: ${referenceLabel}. Purple: option-implied risk-neutral density. ${modelDescription} Annualized-equivalent volatility and exact-horizon σ are both displayed over the remaining ${horizonDuration}. The horizontal scale is fixed at ${preciseLevel(xmin)} to ${preciseLevel(xmax)}, centered on the session open ${preciseLevel(openingSpx)}, and labeled in actual SPX levels. The solid dark line is the open; dotted lines mark the point-in-time latest/close and prior-session close. Dashed lines mark exact-horizon ±2σ; ±1σ is reported in the reference table without additional chart lines. The vertical scale remains 0.00 to 1.00 density per 1% SPX move for comparability.${clippingNote} Stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced across scans.${retention}`;
   }
@@ -1138,6 +1138,7 @@ function updateRefreshButton() {
 let selectedVix1dHistoryDays = 1;
 function renderEstimatedMarketVariables(model) {
   const data = model || {};
+  const meanReversion = data.realized_volatility_mean_reversion || {};
   const decimal = (input, digits = 5) => {
     const numberValue = Number(input);
     return Number.isFinite(numberValue) ? numberValue.toFixed(digits) : "—";
@@ -1150,13 +1151,18 @@ function renderEstimatedMarketVariables(model) {
     ["Daily rho", decimal(data.rho_daily)],
     ["Rho 90% interval", interval],
     ["Rho half-life", Number.isFinite(Number(data.rho_half_life_sessions)) ? `${Number(data.rho_half_life_sessions).toFixed(1)} sessions` : "—"],
-    ["200-session center", decimal(data.long_run_discount_center)],
+    ["100-session EW center", decimal(data.long_run_discount_center)],
     ["Latest log-variance state", decimal(data.latest_state_log_variance)],
     ["Integrated-RV history", sessionCount(data.available_observed_session_count)],
     ["Prior initialization", sessionCount(data.prior_padding_session_count)],
     ["VIX regime center", Number.isFinite(Number(data.vix_regime?.vix_center)) ? (100 * Number(data.vix_regime.vix_center)).toFixed(2) : "—"],
     ["VIX regime slope", decimal(data.vix_regime?.posterior_log_variance_slope)],
     ["VIX regime data weight", Number.isFinite(Number(data.vix_regime?.data_weight)) ? `${(100 * Number(data.vix_regime.data_weight)).toFixed(1)}%` : "—"],
+    ["RV long-run level", Number.isFinite(Number(meanReversion.long_run_annualized_volatility)) ? `${(100 * Number(meanReversion.long_run_annualized_volatility)).toFixed(2)}%` : "—"],
+    ["Latest RV level", Number.isFinite(Number(meanReversion.latest_annualized_volatility)) ? `${(100 * Number(meanReversion.latest_annualized_volatility)).toFixed(2)}%` : "—"],
+    ["RV level persistence", decimal(meanReversion.persistence_per_clock_unit)],
+    ["Disagreement beta", decimal(meanReversion.beta)],
+    ["MR effective history", Number.isFinite(Number(meanReversion.effective_observation_count)) ? `${Number(meanReversion.effective_observation_count).toFixed(1)} sessions` : "—"],
   ]);
   const terminalStats = data.terminal_observation_statistics || {};
   const integrated = terminalStats.integrated_realized_variance || {};
@@ -1248,7 +1254,7 @@ function renderEstimatedMarketVariables(model) {
   });
   const note = document.querySelector("#estimated-market-variable-note");
   const status = String(data.status || "UNAVAILABLE").replaceAll("_", " ");
-  note.textContent = `Status: ${status} · session ${data.session_date || "unavailable"} · model source: ${String(data.model_source || "unavailable").replaceAll("_", " ")} · latest calibration observation: ${data.latest_calibration_observation_date || "unavailable"}. Active calibration uses five-minute integrated SPX realized variance against horizon-matched VIX1D/VIX9D/VIX clock variance, including overnight and weekend/holiday gaps. Terminal displacement is shadow-only. These are saved operational discounts already used by the model; this display does not recalculate or interpolate missing scan values.`;
+  note.textContent = `Status: ${status} · session ${data.session_date || "unavailable"} · model source: ${String(data.model_source || "unavailable").replaceAll("_", " ")} · latest calibration observation: ${data.latest_calibration_observation_date || "unavailable"} · level mean reversion: ${String(meanReversion.status || "not calibrated").replaceAll("_", " ")}. Active calibration uses five-minute integrated SPX realized variance against horizon-matched VIX1D/VIX9D/VIX clock variance, including overnight and weekend/holiday gaps. The RV long-run and latest levels annualize one-session integrated variance with 252 trading sessions; persistence governs reversion and disagreement beta controls the physical-forecast adjustment. Terminal displacement is shadow-only. These are saved operational values already used by the model; this display does not recalculate or interpolate missing scan values.`;
 }
 
 async function load({ historicalDate = null } = {}) {
