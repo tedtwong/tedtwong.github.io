@@ -11,8 +11,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
-  <link rel="stylesheet" href="xdte.css?v=20261110-access-variable-help-v24">
-  <script defer src="xdte.js?v=20261110-access-password-v25"></script>
+  <link rel="stylesheet" href="xdte.css?v=20261110-tabbed-layout-v25">
+  <script defer src="xdte.js?v=20261110-tabbed-layout-v26"></script>
 </head>
 <body class="access-locked">
   <div id="access-gate" class="access-gate" role="dialog" aria-modal="true" aria-labelledby="access-gate-title">
@@ -30,7 +30,7 @@
   <header class="hero">
     <div class="hero__inner">
       <a id="critical-alert-banner" class="critical-alert-banner hidden"
-         href="#trading-status-heading" role="alert" aria-live="assertive">
+         href="#operations" data-open-tab="operations" role="alert" aria-live="assertive">
         <span class="critical-alert-badge">CRITICAL ALERT</span>
         <span id="critical-alert-text"></span>
       </a>
@@ -66,7 +66,19 @@
   <main>
     <div id="data-warning" class="notice hidden"></div>
 
-    <section aria-labelledby="daily-heading">
+    <nav class="research-tabs" aria-label="XDTE research sections">
+      <div class="research-tabs__list" role="tablist" aria-label="Dashboard views">
+        <button id="tab-today" type="button" role="tab" aria-selected="true" aria-controls="daily-heading" tabindex="0" data-tab="today">Today</button>
+        <button id="tab-positions" type="button" role="tab" aria-selected="false" aria-controls="positions-heading" tabindex="-1" data-tab="positions">Positions</button>
+        <button id="tab-opportunities" type="button" role="tab" aria-selected="false" aria-controls="funnel-history-heading" tabindex="-1" data-tab="opportunities">Opportunities</button>
+        <button id="tab-forecasts" type="button" role="tab" aria-selected="false" aria-controls="distribution-comparison-heading estimated-market-variables-heading" tabindex="-1" data-tab="forecasts">Forecasts</button>
+        <button id="tab-ledger" type="button" role="tab" aria-selected="false" aria-controls="ledger-heading" tabindex="-1" data-tab="ledger">Ledger</button>
+        <button id="tab-operations" type="button" role="tab" aria-selected="false" aria-controls="trading-status-heading" tabindex="-1" data-tab="operations">Operations</button>
+        <button id="tab-methodology" type="button" role="tab" aria-selected="false" aria-controls="method-heading" tabindex="-1" data-tab="methodology">Methodology</button>
+      </div>
+    </nav>
+
+    <section role="tabpanel" aria-labelledby="tab-today" data-tab-panel="today">
       <div class="section-heading">
         <div><p class="section-number">01</p><h2 id="daily-heading">Daily P&amp;L</h2></div>
       </div>
@@ -91,13 +103,19 @@
       <h3 class="capacity-heading">Capacity</h3>
       <div id="capacity-metrics" class="metric-grid capacity-metrics"></div>
       <p class="chart-note">Put and call reserve totals overlap for condors and are not additive.</p>
+      <article class="panel today-status-panel">
+        <div class="panel__heading"><div><h3>Trading status</h3><p>Current session status and active conditions. Critical conditions remain visible above every tab.</p></div></div>
+        <div id="today-trading-status-summary" class="status-summary"></div>
+        <p id="today-active-alert-summary" class="chart-note"></p>
+        <a class="tab-detail-link" href="#operations" data-open-tab="operations">View operational details</a>
+      </article>
       <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>Today’s position P&amp;L</h3><p>Individual paper positions after estimated costs, with green entry triangles, red exit squares, the total as a thick dark-gray line at 50% opacity, and dashed grey SPX on the right axis. Position lines share colors by expiration: red nearest, progressing through the spectrum to violet furthest; individual lines are retained. TOTAL sums the displayed positions (including carryovers and positions closed today), excludes positions closed before this session, and uses each position’s lifetime P&amp;L. SPX area above its opening level is green; area below it is red.</p></div></div>
-        <div id="daily-chart" class="chart"></div>
+        <div class="panel__heading"><div><h3>Today’s total P&amp;L and SPX</h3><p>TOTAL sums the session’s displayed lifecycles, including carryovers and positions closed today, and uses lifetime P&amp;L for those positions. SPX uses the right axis; green and red shading show movement above and below the session’s opening level.</p></div></div>
+        <div id="portfolio-spx-chart" class="chart"></div>
       </article>
     </section>
 
-    <section class="status-section" aria-labelledby="trading-status-heading">
+    <section class="status-section" role="tabpanel" aria-labelledby="tab-operations" data-tab-panel="operations" hidden>
       <div class="section-heading">
         <div><p class="section-number">02</p><h2 id="trading-status-heading">Trading status and alerts</h2></div>
         <p>Current paper-session status and high-impact economic-calendar flags during the next seven calendar days.</p>
@@ -119,8 +137,12 @@
       </article>
     </section>
 
-    <section aria-labelledby="positions-heading">
+    <section role="tabpanel" aria-labelledby="tab-positions" data-tab-panel="positions" hidden>
       <div class="section-heading"><div><p class="section-number">03</p><h2 id="positions-heading">Current positions</h2></div></div>
+      <article class="panel chart-panel">
+        <div class="panel__heading"><div><h3>Current positions P&amp;L</h3><p>Each currently open or exiting position has its own stable color. Green triangles mark entries. Dotted segments are estimated marks; longer dashes retain the last accepted accounting mark during quote gaps.</p></div></div>
+        <div id="current-position-chart" class="chart"></div>
+      </article>
       <article class="panel">
         <div class="panel__heading"><div><h3>Entries and exits</h3><p>Sanitized position summaries, including each position’s observed maximum and minimum unrealized P&amp;L over its holding period; option legs and raw quotes are excluded. Modeled expected return is expected net P&amp;L divided by total reserve; full-credit probability uses the saved active physical model, or a Black–Scholes fallback marked (BS), reconstructed from saved entry delta/IV when needed. A dash means neither estimate was recorded. Q−P is the saved entry-time risk-neutral minus model probability of finishing in the loss region, in percentage points. Positive values mean option prices assign more loss risk than the entry model. Historical rows retain the model active when they were evaluated.</p></div></div>
         <div id="trade-table" class="table-wrap"></div>
@@ -140,7 +162,7 @@
       </article>
     </section>
 
-    <section aria-labelledby="distribution-comparison-heading">
+    <section role="tabpanel" aria-labelledby="tab-forecasts" data-tab-panel="forecasts" hidden>
       <div class="section-heading"><p class="section-number">04</p><h2 id="distribution-comparison-heading">Shape–scale–clock physical forecast and option-implied distribution</h2></div>
       <article class="panel">
         <div class="distribution-scan-picker distribution-history-scan-picker">
@@ -160,7 +182,7 @@
       </article>
     </section>
 
-    <section aria-labelledby="funnel-history-heading">
+    <section role="tabpanel" aria-labelledby="tab-opportunities" data-tab-panel="opportunities" hidden>
       <div class="section-heading">
         <div><p class="section-number">05</p><h2 id="funnel-history-heading">Candidate funnel history</h2></div>
         <p>Strategy and DTE progression through the research funnel, followed by the recorded reasons candidates did not advance.</p>
@@ -203,7 +225,7 @@
       </article>
     </section>
 
-    <section aria-labelledby="ledger-heading">
+    <section role="tabpanel" aria-labelledby="tab-ledger" data-tab-panel="ledger" hidden>
       <div class="section-heading">
         <div><p class="section-number">06</p><h2 id="ledger-heading">Account ledger</h2></div>
         <p>Model-account capital, risk deployment, and portfolio outcomes.</p>
@@ -238,7 +260,7 @@
       </article>
     </section>
 
-    <section aria-labelledby="estimated-market-variables-heading">
+    <section role="tabpanel" aria-labelledby="tab-forecasts" data-tab-panel="forecasts" hidden>
       <div class="section-heading">
         <div><p class="section-number">07</p><h2 id="estimated-market-variables-heading">Estimated Market Variables</h2></div>
         <p>Current learned discount persistence, realized-volatility level mean reversion, and the active physical-volatility surface used by the research model.</p>
@@ -274,7 +296,7 @@
       </article>
     </section>
 
-    <section class="method" aria-labelledby="method-heading">
+    <section class="method" role="tabpanel" aria-labelledby="tab-methodology" data-tab-panel="methodology" hidden>
       <div class="section-heading">
         <div><p class="section-number">08</p><h2 id="method-heading">Publication policy</h2></div>
       </div>

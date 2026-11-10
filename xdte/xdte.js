@@ -509,6 +509,59 @@ let refreshInFlight = false;
 let lastRenderedPublicationAt = 0;
 let activeHistoricalDate = null;
 
+function initializeTabbedNavigation() {
+  const buttons = [...document.querySelectorAll('[role="tab"][data-tab]')];
+  const panels = [...document.querySelectorAll("[data-tab-panel]")];
+  const aliases = {
+    "daily-heading": "today",
+    "positions-heading": "positions",
+    "funnel-history-heading": "opportunities",
+    "distribution-comparison-heading": "forecasts",
+    "estimated-market-variables-heading": "forecasts",
+    "ledger-heading": "ledger",
+    "trading-status-heading": "operations",
+    "method-heading": "methodology",
+  };
+  const names = new Set(buttons.map(button => button.dataset.tab));
+  const nameFromHash = () => {
+    const raw = decodeURIComponent(location.hash.replace(/^#/, ""));
+    return names.has(raw) ? raw : aliases[raw] || "today";
+  };
+  const activate = (name, { updateHash = true, focus = false, scroll = false } = {}) => {
+    const selected = names.has(name) ? name : "today";
+    buttons.forEach(button => {
+      const active = button.dataset.tab === selected;
+      button.setAttribute("aria-selected", String(active));
+      button.tabIndex = active ? 0 : -1;
+      if (active && focus) button.focus();
+    });
+    panels.forEach(panel => { panel.hidden = panel.dataset.tabPanel !== selected; });
+    if (updateHash && location.hash !== `#${selected}`) history.replaceState(null, "", `#${selected}`);
+    if (scroll) document.querySelector(".research-tabs")?.scrollIntoView({ block: "start", behavior: "smooth" });
+  };
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", () => activate(button.dataset.tab, { scroll: true }));
+    button.addEventListener("keydown", event => {
+      let nextIndex = null;
+      if (event.key === "ArrowRight") nextIndex = (index + 1) % buttons.length;
+      if (event.key === "ArrowLeft") nextIndex = (index - 1 + buttons.length) % buttons.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = buttons.length - 1;
+      if (nextIndex === null) return;
+      event.preventDefault();
+      activate(buttons[nextIndex].dataset.tab, { focus: true, scroll: true });
+    });
+  });
+  document.querySelectorAll("[data-open-tab]").forEach(link => {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      activate(link.dataset.openTab, { scroll: true });
+    });
+  });
+  window.addEventListener("hashchange", () => activate(nameFromHash(), { updateHash: false }));
+  activate(nameFromHash(), { updateHash: false });
+}
+
 function metrics(target, items) {
   document.querySelector(target).innerHTML = items.map(([label, display, className = "", description = ""]) =>
     `<div class="metric"><span class="metric__label">${label}</span><span class="metric__value ${className}">${display}</span>${description ? `<p class="metric__description">${description}</p>` : ""}</div>`
@@ -605,6 +658,50 @@ function renderUnsuccessfulEntries(rows) {
   ], rows || [], { compactEmpty: true, emptyMessage: "No unsuccessful entry attempts recorded for this session." });
 }
 
+function roundedTickAxis(minimum, maximum, options = {}) {
+  const quantum = Math.max(Number(options.quantum) || 250, Number.EPSILON);
+  const minimumTickCount = Math.max(2, Math.floor(Number(options.minimumTickCount) || 5));
+  const maximumTickCount = Math.max(minimumTickCount, Math.floor(Number(options.maximumTickCount) || 10));
+  const targetTickCount = Math.max(
+    minimumTickCount,
+    Math.min(maximumTickCount, Math.floor(Number(options.targetTickCount) || 7)),
+  );
+  const observedMinimum = options.includeZero ? Math.min(Number(minimum), 0) : Number(minimum);
+  const observedMaximum = options.includeZero ? Math.max(Number(maximum), 0) : Number(maximum);
+  const observedSpan = Math.max(observedMaximum - observedMinimum, quantum);
+  let step = Math.max(
+    quantum,
+    Math.round((observedSpan / Math.max(targetTickCount - 1, 1)) / quantum) * quantum,
+  );
+  let low;
+  let high;
+  let tickCount;
+  const calculateBounds = () => {
+    low = Math.floor(observedMinimum / step) * step;
+    high = Math.ceil(observedMaximum / step) * step;
+    if (low === high) high = low + step;
+    tickCount = Math.round((high - low) / step) + 1;
+  };
+  calculateBounds();
+  while (tickCount > maximumTickCount) {
+    step += quantum;
+    calculateBounds();
+  }
+  while (tickCount < minimumTickCount) {
+    const lowerPadding = observedMinimum - low;
+    const upperPadding = high - observedMaximum;
+    if (lowerPadding <= upperPadding) low -= step;
+    else high += step;
+    tickCount += 1;
+  }
+  return {
+    minimum: low,
+    maximum: high,
+    step,
+    ticks: Array.from({ length: tickCount }, (_, index) => low + index * step),
+  };
+}
+
 function lineChart(target, series, options = {}) {
   const node = document.querySelector(target);
   const chartPoints = s => s.rows.map(r => {
@@ -637,7 +734,18 @@ function lineChart(target, series, options = {}) {
     if (low === high) { low -= step; high += step; }
     return [low, high];
   };
-  const leftBounds = options.leftTickStep
+  const roundedLeftAxis = options.leftTickQuantum
+    ? roundedTickAxis(minY0, maxY0, {
+      quantum: options.leftTickQuantum,
+      minimumTickCount: options.leftTickMinimumCount,
+      maximumTickCount: options.leftTickMaximumCount,
+      targetTickCount: options.leftTickTargetCount,
+      includeZero: options.includeZero,
+    })
+    : null;
+  const leftBounds = roundedLeftAxis
+    ? [roundedLeftAxis.minimum, roundedLeftAxis.maximum]
+    : options.leftTickStep
     ? steppedBounds(minY0, maxY0, options.leftTickStep, options.includeZero)
     : (() => { const range = Math.max(maxY0 - minY0, 1); return [minY0 - range * .08, maxY0 + range * .08]; })();
   const minY = leftBounds[0], maxY = leftBounds[1];
@@ -659,7 +767,7 @@ function lineChart(target, series, options = {}) {
   const axisTicks = (minimum, maximum, step) => step
     ? Array.from({ length: Math.round((maximum - minimum) / step) + 1 }, (_, i) => minimum + i * step)
     : Array.from({ length: 5 }, (_, i) => minimum + (maximum - minimum) * i / 4);
-  const ticks = axisTicks(minY, maxY, options.leftTickStep);
+  const ticks = roundedLeftAxis?.ticks || axisTicks(minY, maxY, options.leftTickStep);
   const rightTicks = rightPoints.length ? axisTicks(rightBounds[0], rightBounds[1], options.rightTickStep) : [];
   const relativeAreas = series.map(s => {
     if (!s.shadeRelativeToFirst) return "";
@@ -1316,6 +1424,8 @@ async function load({ historicalDate = null } = {}) {
   const tradingStatus = daily.trading_status_and_alerts || {};
   const statusSummary = document.querySelector("#trading-status-summary");
   statusSummary.innerHTML = `<span class="alert-label">${tradingStatus.session_status?.replaceAll("_", " ") || "STATUS UNAVAILABLE"}</span><p>${tradingStatus.session_message || "Trading status is unavailable in this snapshot."}</p>`;
+  const todayStatusSummary = document.querySelector("#today-trading-status-summary");
+  if (todayStatusSummary) todayStatusSummary.innerHTML = statusSummary.innerHTML;
   const coverage = document.querySelector("#calendar-coverage");
   const coverageWindow = tradingStatus.calendar_as_of_date && tradingStatus.calendar_window_end_date
     ? `${tradingStatus.calendar_as_of_date} through ${tradingStatus.calendar_window_end_date}` : "unavailable";
@@ -1327,6 +1437,12 @@ async function load({ historicalDate = null } = {}) {
   ], tradingStatus.calendar_flags || []);
   const activeAlerts = (tradingStatus.alerts || []).filter(row => row.state === "ACTIVE");
   const criticalAlerts = activeAlerts.filter(row => String(row.severity || "").toUpperCase() === "CRITICAL");
+  const todayActiveAlertSummary = document.querySelector("#today-active-alert-summary");
+  if (todayActiveAlertSummary) {
+    todayActiveAlertSummary.textContent = activeAlerts.length
+      ? `${activeAlerts.length} active condition${activeAlerts.length === 1 ? "" : "s"}: ${activeAlerts.map(row => row.title || "Unspecified condition").join("; ")}.`
+      : "No active trading or operational conditions.";
+  }
   const criticalBanner = document.querySelector("#critical-alert-banner");
   const criticalText = document.querySelector("#critical-alert-text");
   if (criticalAlerts.length) {
@@ -1416,41 +1532,72 @@ async function load({ historicalDate = null } = {}) {
     ["Unused capacity forfeited today", value(ledger.capacity.timed_capacity_forfeited, money), capacityClass(ledger.capacity.timed_capacity_forfeited)],
     ["Long-dated (4+ DTE) capacity available", value(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity, money), capacityClass(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity)],
   ]);
-  const positionSeries = [...(daily.position_pnl || [])].sort((a,b) => {
-    const dateKey = item => /^\d{4}-\d{2}-\d{2}$/.test(item.exit_date_group || "") ? item.exit_date_group : "9999-99-99";
-    return dateKey(a).localeCompare(dateKey(b));
-  }).map(item => ({
+  const closedPositionStatuses = new Set(["CLOSED", "SETTLED", "EXPIRED", "CANCELLED", "REJECTED", "UNFILLED"]);
+  const normalizedPositionLabel = value => String(value || "").startsWith("Position ")
+    ? String(value) : `Position ${value}`;
+  const statusByPosition = new Map((daily.trades || [])
+    .filter(row => row.position !== null && row.position !== undefined)
+    .map(row => [normalizedPositionLabel(row.position), String(row.status || "").toUpperCase()]));
+  const currentPositionPnl = (daily.position_pnl || []).filter(item => {
+    const status = statusByPosition.get(item.position);
+    if (status) return !closedPositionStatuses.has(status);
+    return !(item.points || []).some(point => point.event === "Exit");
+  });
+  const positionPalette = [
+    "#F76915", "#C5A900", "#84B82A", "#2FA236", "#FD0100", "#8B5CF6",
+    "#0891B2", "#DB2777", "#A16207", "#64748B", "#2563EB", "#9333EA",
+  ];
+  const positionColor = (label, index) => {
+    const match = String(label || "").match(/(\d+)$/);
+    const ordinal = match ? Math.max(0, Number(match[1]) - 1) : index;
+    return positionPalette[ordinal] || `hsl(${Math.round((ordinal * 137.508) % 360)} 62% 42%)`;
+  };
+  const positionSeries = currentPositionPnl.map((item, index) => ({
     rows: item.points, x: "time_et", y: "net_pnl", label: `${item.position} · expiry ${item.exit_date_group || "unknown"}`,
-    legendLabel: `Expiry ${item.exit_date_group || "unknown"}`,
-    color: item.exit_date_color || "#8b939f", width: 2, dashCarriedForward: true,
+    color: positionColor(item.position, index), width: 2.4, dashCarriedForward: true,
   }));
-  const positionMarkers = (daily.position_pnl || []).flatMap(item => item.points
+  const positionMarkers = currentPositionPnl.flatMap(item => item.points
     .filter(point => point.event === "Entry" || point.event === "Exit")
     .map(point => ({ ...point, position: item.position })));
-  lineChart("#daily-chart", [
-    ...positionSeries,
-    { rows: daily.portfolio_pnl, x: "time_et", y: "net_pnl", label: "TOTAL", color: "rgba(24,24,27,0.5)", width: 4 },
+  lineChart("#portfolio-spx-chart", [
+    { rows: daily.portfolio_pnl, x: "time_et", y: "net_pnl", label: "TOTAL", color: "#333ED4", width: 4 },
     {
       rows: daily.spx_history || [], x: "time_et", y: "spx", label: "SPX",
       color: "#aeb4bd", width: 2.5, dash: "7 5", axis: "right", shadeRelativeToFirst: true,
       aboveColor: "#2fa236", belowColor: "#fd0100",
     },
   ], {
-    money: true, height: 465, includeZero: true, leftTickStep: 250, rightTickStep: 25,
-    label: "Daily position and portfolio P&L with SPX", markers: positionMarkers,
+    money: true, height: 465, includeZero: true,
+    leftTickQuantum: 250, leftTickMinimumCount: 5, leftTickMaximumCount: 10, leftTickTargetCount: 7,
+    rightTickStep: 25,
+    label: "Daily total portfolio P&L with SPX",
+    carriedForwardLegend: true,
+  });
+  lineChart("#current-position-chart", positionSeries, {
+    money: true, height: 465, includeZero: true,
+    leftTickQuantum: 250, leftTickMinimumCount: 5, leftTickMaximumCount: 10, leftTickTargetCount: 7,
+    label: "Current open-position P&L", markers: positionMarkers,
     carriedForwardLegend: true, estimatedMarkLegend: true,
   });
-  const dailyChartNode=document.querySelector("#daily-chart");
-  if(dailyChartNode && (daily.carried_forward_mark_count||daily.stale_mark_count)>0){
-    const warning=document.createElement("p");warning.className="chart-note";
+  const portfolioChartNode=document.querySelector("#portfolio-spx-chart");
+  const currentPositionChartNode=document.querySelector("#current-position-chart");
+  if((daily.carried_forward_mark_count||daily.stale_mark_count)>0){
     const count=daily.carried_forward_mark_count||daily.stale_mark_count;
-    warning.textContent=`Long-dashed segments and TOTAL retain the last accounting mark during quote gaps for ${count} position(s). Dotted segments use bounded zero-bid midpoint estimates when fresh asks and current SPX support them.`;
-    dailyChartNode.appendChild(warning);
+    if(portfolioChartNode){
+      const warning=document.createElement("p");warning.className="chart-note";
+      warning.textContent=`TOTAL retains the last accepted accounting mark during quote gaps affecting ${count} position(s).`;
+      portfolioChartNode.appendChild(warning);
+    }
+    if(currentPositionChartNode){
+      const warning=document.createElement("p");warning.className="chart-note";
+      warning.textContent=`Long-dashed segments retain the last accepted accounting mark during quote gaps. Dotted segments use bounded zero-bid midpoint estimates when fresh asks and current SPX support them.`;
+      currentPositionChartNode.appendChild(warning);
+    }
   }
-  if(dailyChartNode && daily.estimated_mark_count>0 && !(daily.carried_forward_mark_count||daily.stale_mark_count)){
+  if(currentPositionChartNode && daily.estimated_mark_count>0 && !(daily.carried_forward_mark_count||daily.stale_mark_count)){
     const note=document.createElement("p");note.className="chart-note";
     note.textContent=`Dotted segments use bounded zero-bid midpoint estimates for ${daily.estimated_mark_count} position(s); these are fair-value estimates, not executable closing quotes.`;
-    dailyChartNode.appendChild(note);
+    currentPositionChartNode.appendChild(note);
   }
   table("#trade-table", [
     ["Pos.", "position", null, null, "Position"], ["Type", "record_type", null, compactRecordType, "Record type"], ["Strat.", "strategy", null, compactStrategy, "Strategy: IC = iron condor; BPS = bull-put spread; BCS = bear-call spread"], ["DTE", "dte", null, null, "Entry DTE"],
@@ -1590,6 +1737,7 @@ function initializeThesisBanner() {
   });
 }
 
+initializeTabbedNavigation();
 initializeThesisBanner();
 
 document.querySelector("#refresh-feed").addEventListener("click", () => {
