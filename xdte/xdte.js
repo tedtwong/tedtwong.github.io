@@ -1573,28 +1573,32 @@ async function load({ historicalDate = null } = {}) {
     .map(row => String(row.time_et || "").match(/([+-]\d{2}:\d{2})$/)?.[1])
     .find(Boolean) || "-05:00";
   const marketCloseTimeEt = `${pub.trade_date}T16:00:00${easternOffset}`;
+  const spxSeries = {
+    rows: daily.spx_history || [], x: "time_et", y: "spx", label: "SPX",
+    color: "#aeb4bd", width: 2.5, dash: "7 5", axis: "right", shadeRelativeToFirst: true,
+    aboveColor: "#2fa236", belowColor: "#fd0100",
+  };
+  const closeExpirationRule = {
+    time: marketCloseTimeEt, label: "4:00 PM ET · close / expiration",
+    color: "#667085", dash: "6 5", width: 1.75,
+  };
   lineChart("#portfolio-spx-chart", [
     { rows: daily.portfolio_pnl, x: "time_et", y: "net_pnl", label: "TOTAL", color: "#333ED4", width: 4 },
-    {
-      rows: daily.spx_history || [], x: "time_et", y: "spx", label: "SPX",
-      color: "#aeb4bd", width: 2.5, dash: "7 5", axis: "right", shadeRelativeToFirst: true,
-      aboveColor: "#2fa236", belowColor: "#fd0100",
-    },
+    spxSeries,
   ], {
     money: true, height: 465, includeZero: true,
     leftTickQuantum: 250, leftTickMinimumCount: 5, leftTickMaximumCount: 10, leftTickTargetCount: 7,
     rightTickStep: 25,
     label: "Daily total portfolio P&L with SPX",
-    verticalRules: [{
-      time: marketCloseTimeEt, label: "4:00 PM ET · close / expiration",
-      color: "#667085", dash: "6 5", width: 1.75,
-    }],
+    verticalRules: [closeExpirationRule],
     carriedForwardLegend: true,
   });
-  lineChart("#current-position-chart", positionSeries, {
+  lineChart("#current-position-chart", positionSeries.length ? [...positionSeries, spxSeries] : [], {
     money: true, height: 465, includeZero: true,
     leftTickQuantum: 250, leftTickMinimumCount: 5, leftTickMaximumCount: 10, leftTickTargetCount: 7,
+    rightTickStep: 25,
     label: "Current open-position P&L", markers: positionMarkers,
+    verticalRules: [closeExpirationRule],
     carriedForwardLegend: true, estimatedMarkLegend: true,
   });
   const portfolioChartNode=document.querySelector("#portfolio-spx-chart");
