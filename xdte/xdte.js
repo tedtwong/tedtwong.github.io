@@ -1658,8 +1658,8 @@ function showLoadError(error, preserveCurrent = false) {
   }
 }
 
-const ACCESS_PASSWORD_SHA256 = "e6367b0520b4c77e515e0ec36c0e40285b03f416e362acf143eeedd8feb005e4";
-const ACCESS_SESSION_KEY = "xdte-public-access-v1";
+const ACCESS_PASSWORD_SHA256 = "d5ec25c7971045ce2104605f72cd7b689a59da1b9af5474f58df1765d2c08a52";
+const ACCESS_SESSION_KEY = "xdte-public-access-v2";
 
 async function sha256Hex(value) {
   const bytes = new TextEncoder().encode(value);
