@@ -148,10 +148,6 @@
         <div id="trade-table" class="table-wrap"></div>
       </article>
       <article class="panel chart-panel">
-        <div class="panel__heading"><div><h3>Position outcome map</h3><p>Risk/reward boundaries, expected value, and observed P&amp;L for each filled position. Allocation is shown as a negative loss boundary; maximum profit is net of modeled expenses.</p></div></div>
-        <div id="position-outcome-chart" class="chart position-outcome-chart"></div>
-      </article>
-      <article class="panel chart-panel">
         <div class="panel__heading"><div><h3>SPX settlement payoff scenarios</h3><p>Select Today or one of the next seven trading sessions. Blue includes positions still outstanding at the selected target; orange includes positions expiring on that target date. The horizontal scale remains fixed at ±3% around the session-opening SPX, and the selected horizon uses one P&amp;L scale across its saved intraday scans. After the close, Today retains the completed session and its actual expiration-settled result through midnight ET; it then rolls to the current or next regular session. Positions expiring earlier are omitted. This is a hypothetical lifetime intrinsic payoff after fees, not a forecast or daily ledger change.</p></div></div>
         <div class="distribution-scan-picker settlement-scan-picker">
           <label for="settlement-scan-slider">Scan time <output id="settlement-scan-output"></output></label>
@@ -159,6 +155,10 @@
         </div>
         <div id="settlement-horizon-controls" class="snapshot-controls settlement-horizon-controls" role="group" aria-label="Settlement target trading session"></div>
         <div id="settlement-scenario-chart" class="chart"></div>
+      </article>
+      <article class="panel chart-panel">
+        <div class="panel__heading"><div><h3>Position outcome map</h3><p>Risk/reward boundaries, expected value, and observed P&amp;L for each filled position. Allocation is shown as a negative loss boundary; maximum profit is net of modeled expenses.</p></div></div>
+        <div id="position-outcome-chart" class="chart position-outcome-chart"></div>
       </article>
     </section>
 
