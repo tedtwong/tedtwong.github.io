@@ -1104,7 +1104,7 @@
       "candidates_examined": 41310,
       "completed_scan_decisions": 65,
       "current_capital_allocated": 32162.75,
-      "current_unrealized_pnl": 4860.85,
+      "current_unrealized_pnl": 4808.35,
       "daily_capacity_released": 15635.07,
       "daily_capacity_total": 18768.66,
       "eligible_candidates": 123,
@@ -23415,18 +23415,18 @@
     "pnl_summary": {
       "accounting_basis_adjustment": 0,
       "baseline_status": "PRIOR_SESSION_SYNCHRONIZED_CLOSE",
-      "current_ledger_pnl_level": -8250.35,
-      "current_synchronized_pnl_level": -8250.35,
-      "daily_ledger_pnl": 6241.55,
-      "daily_synchronized_pnl": 6241.55,
+      "current_ledger_pnl_level": -8302.85,
+      "current_synchronized_pnl_level": -8292.85,
+      "daily_ledger_pnl": 6189.05,
+      "daily_synchronized_pnl": 6199.05,
       "ledger_baseline_status": "ACTUAL_PRIOR_SESSION_LEDGER_CLOSE",
       "mark_cost_basis": "ACTUAL_FILL_AND_LIFECYCLE_FEES_V2",
       "prior_ledger_as_of_et": "2026-11-09T16:59:59.667774-05:00",
       "prior_ledger_equity": 235508.1,
       "prior_session_as_of_et": "2026-11-09T16:59:59.600001-05:00",
       "prior_session_pnl_level": -14491.9,
-      "synchronized_as_of_et": "2026-11-10T14:54:39.721843-05:00",
-      "unrealized_pnl": 4860.85
+      "synchronized_as_of_et": "2026-11-10T14:55:53.323626-05:00",
+      "unrealized_pnl": 4808.35
     },
     "portfolio_pnl": [
       {
@@ -23686,8 +23686,12 @@
         "time_et": "2026-11-10T14:49:59.203867-05:00"
       },
       {
-        "net_pnl": 4890.85,
-        "time_et": "2026-11-10T14:54:39.721843-05:00"
+        "net_pnl": 4935.85,
+        "time_et": "2026-11-10T14:54:58.370277-05:00"
+      },
+      {
+        "net_pnl": 4818.35,
+        "time_et": "2026-11-10T14:55:53.323626-05:00"
       }
     ],
     "position_pnl": [
@@ -23703,6 +23707,15 @@
             "net_pnl": -6.45,
             "source_time_et": "2026-11-10T14:51:34.055712-05:00",
             "time_et": "2026-11-10T14:51:34.055712-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -76.45,
+            "source_time_et": "2026-11-10T14:55:44.399652-05:00",
+            "time_et": "2026-11-10T14:55:44.399652-05:00"
           }
         ],
         "position": "Position 1"
@@ -24022,9 +24035,18 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
-            "net_pnl": -155.4,
-            "source_time_et": "2026-11-10T14:54:34.799547-05:00",
-            "time_et": "2026-11-10T14:54:34.799547-05:00"
+            "net_pnl": -102.9,
+            "source_time_et": "2026-11-10T14:54:50.269523-05:00",
+            "time_et": "2026-11-10T14:54:50.269523-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -85.4,
+            "source_time_et": "2026-11-10T14:55:53.323626-05:00",
+            "time_et": "2026-11-10T14:55:53.323626-05:00"
           }
         ],
         "position": "Position 2"
@@ -24426,8 +24448,17 @@
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
             "net_pnl": 176.05,
-            "source_time_et": "2026-11-10T14:54:36.809850-05:00",
-            "time_et": "2026-11-10T14:54:36.809850-05:00"
+            "source_time_et": "2026-11-10T14:54:52.281168-05:00",
+            "time_et": "2026-11-10T14:54:52.281168-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 178.55,
+            "source_time_et": "2026-11-10T14:55:39.757145-05:00",
+            "time_et": "2026-11-10T14:55:39.757145-05:00"
           }
         ],
         "position": "Position 3"
@@ -24873,9 +24904,18 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
-            "net_pnl": 61.05,
-            "source_time_et": "2026-11-10T14:54:38.861358-05:00",
-            "time_et": "2026-11-10T14:54:38.861358-05:00"
+            "net_pnl": 91.05,
+            "source_time_et": "2026-11-10T14:54:54.484175-05:00",
+            "time_et": "2026-11-10T14:54:54.484175-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 118.55,
+            "source_time_et": "2026-11-10T14:55:43.508932-05:00",
+            "time_et": "2026-11-10T14:55:43.508932-05:00"
           }
         ],
         "position": "Position 4"
@@ -25339,9 +25379,18 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
-            "net_pnl": 147.1,
-            "source_time_et": "2026-11-10T14:54:30.300540-05:00",
-            "time_et": "2026-11-10T14:54:30.300540-05:00"
+            "net_pnl": 134.6,
+            "source_time_et": "2026-11-10T14:54:45.812750-05:00",
+            "time_et": "2026-11-10T14:54:45.812750-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 122.1,
+            "source_time_et": "2026-11-10T14:55:49.615099-05:00",
+            "time_et": "2026-11-10T14:55:49.615099-05:00"
           }
         ],
         "position": "Position 5"
@@ -25823,9 +25872,18 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
-            "net_pnl": 242.1,
-            "source_time_et": "2026-11-10T14:54:39.721843-05:00",
-            "time_et": "2026-11-10T14:54:39.721843-05:00"
+            "net_pnl": 247.1,
+            "source_time_et": "2026-11-10T14:54:55.200267-05:00",
+            "time_et": "2026-11-10T14:54:55.200267-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 247.1,
+            "source_time_et": "2026-11-10T14:55:43.960250-05:00",
+            "time_et": "2026-11-10T14:55:43.960250-05:00"
           }
         ],
         "position": "Position 6"
@@ -26316,9 +26374,18 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
-            "net_pnl": 337.1,
-            "source_time_et": "2026-11-10T14:54:27.395063-05:00",
-            "time_et": "2026-11-10T14:54:27.395063-05:00"
+            "net_pnl": 339.6,
+            "source_time_et": "2026-11-10T14:54:58.370277-05:00",
+            "time_et": "2026-11-10T14:54:58.370277-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 347.1,
+            "source_time_et": "2026-11-10T14:55:46.283965-05:00",
+            "time_et": "2026-11-10T14:55:46.283965-05:00"
           }
         ],
         "position": "Position 7"
@@ -26908,9 +26975,18 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
-            "net_pnl": 51.05,
-            "source_time_et": "2026-11-10T14:54:30.733413-05:00",
-            "time_et": "2026-11-10T14:54:30.733413-05:00"
+            "net_pnl": 16.05,
+            "source_time_et": "2026-11-10T14:54:46.711513-05:00",
+            "time_et": "2026-11-10T14:54:46.711513-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": -68.95,
+            "source_time_et": "2026-11-10T14:55:50.273947-05:00",
+            "time_et": "2026-11-10T14:55:50.273947-05:00"
           }
         ],
         "position": "Position 8"
@@ -27500,9 +27576,18 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
-            "net_pnl": 291.05,
-            "source_time_et": "2026-11-10T14:54:32.898198-05:00",
-            "time_et": "2026-11-10T14:54:32.898198-05:00"
+            "net_pnl": 276.05,
+            "source_time_et": "2026-11-10T14:54:48.403288-05:00",
+            "time_et": "2026-11-10T14:54:48.403288-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 246.05,
+            "source_time_et": "2026-11-10T14:55:52.244629-05:00",
+            "time_et": "2026-11-10T14:55:52.244629-05:00"
           }
         ],
         "position": "Position 9"
@@ -28093,8 +28178,17 @@
             "is_estimated_mark": true,
             "mark_quality": "ESTIMATED_ZERO_BID_MIDPOINT",
             "net_pnl": 607.1,
-            "source_time_et": "2026-11-10T14:54:35.272399-05:00",
-            "time_et": "2026-11-10T14:54:35.272399-05:00"
+            "source_time_et": "2026-11-10T14:54:51.214942-05:00",
+            "time_et": "2026-11-10T14:54:51.214942-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": true,
+            "mark_quality": "ESTIMATED_ZERO_BID_MIDPOINT",
+            "net_pnl": 602.1,
+            "source_time_et": "2026-11-10T14:55:41.761447-05:00",
+            "time_et": "2026-11-10T14:55:41.761447-05:00"
           }
         ],
         "position": "Position 10"
@@ -28685,8 +28779,17 @@
             "is_estimated_mark": true,
             "mark_quality": "ESTIMATED_ZERO_BID_MIDPOINT",
             "net_pnl": 279.6,
-            "source_time_et": "2026-11-10T14:54:38.100535-05:00",
-            "time_et": "2026-11-10T14:54:38.100535-05:00"
+            "source_time_et": "2026-11-10T14:54:54.019756-05:00",
+            "time_et": "2026-11-10T14:54:54.019756-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": true,
+            "mark_quality": "ESTIMATED_ZERO_BID_MIDPOINT",
+            "net_pnl": 287.1,
+            "source_time_et": "2026-11-10T14:55:45.812299-05:00",
+            "time_et": "2026-11-10T14:55:45.812299-05:00"
           }
         ],
         "position": "Position 11"
@@ -29277,8 +29380,17 @@
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
             "net_pnl": 563.55,
-            "source_time_et": "2026-11-10T14:54:26.049683-05:00",
-            "time_et": "2026-11-10T14:54:26.049683-05:00"
+            "source_time_et": "2026-11-10T14:54:56.986487-05:00",
+            "time_et": "2026-11-10T14:54:56.986487-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 558.55,
+            "source_time_et": "2026-11-10T14:55:45.354472-05:00",
+            "time_et": "2026-11-10T14:55:45.354472-05:00"
           }
         ],
         "position": "Position 12"
@@ -29869,8 +29981,17 @@
             "is_estimated_mark": true,
             "mark_quality": "ESTIMATED_ZERO_BID_MIDPOINT",
             "net_pnl": 232.1,
-            "source_time_et": "2026-11-10T14:54:32.458904-05:00",
-            "time_et": "2026-11-10T14:54:32.458904-05:00"
+            "source_time_et": "2026-11-10T14:54:48.877341-05:00",
+            "time_et": "2026-11-10T14:54:48.877341-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": true,
+            "mark_quality": "ESTIMATED_ZERO_BID_MIDPOINT",
+            "net_pnl": 237.1,
+            "source_time_et": "2026-11-10T14:55:39.284635-05:00",
+            "time_et": "2026-11-10T14:55:39.284635-05:00"
           }
         ],
         "position": "Position 13"
@@ -30461,8 +30582,17 @@
             "is_estimated_mark": true,
             "mark_quality": "ESTIMATED_ZERO_BID_MIDPOINT",
             "net_pnl": 242.1,
-            "source_time_et": "2026-11-10T14:54:36.344469-05:00",
-            "time_et": "2026-11-10T14:54:36.344469-05:00"
+            "source_time_et": "2026-11-10T14:54:52.729534-05:00",
+            "time_et": "2026-11-10T14:54:52.729534-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": true,
+            "mark_quality": "ESTIMATED_ZERO_BID_MIDPOINT",
+            "net_pnl": 247.1,
+            "source_time_et": "2026-11-10T14:55:43.042603-05:00",
+            "time_et": "2026-11-10T14:55:43.042603-05:00"
           }
         ],
         "position": "Position 14"
@@ -31053,8 +31183,17 @@
             "is_estimated_mark": true,
             "mark_quality": "ESTIMATED_ZERO_BID_MIDPOINT",
             "net_pnl": 1132.1,
-            "source_time_et": "2026-11-10T14:54:27.830878-05:00",
-            "time_et": "2026-11-10T14:54:27.830878-05:00"
+            "source_time_et": "2026-11-10T14:54:43.806347-05:00",
+            "time_et": "2026-11-10T14:54:43.806347-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": true,
+            "mark_quality": "ESTIMATED_ZERO_BID_MIDPOINT",
+            "net_pnl": 1132.1,
+            "source_time_et": "2026-11-10T14:55:48.700822-05:00",
+            "time_et": "2026-11-10T14:55:48.700822-05:00"
           }
         ],
         "position": "Position 15"
@@ -31644,9 +31783,18 @@
             "is_carried_forward": false,
             "is_estimated_mark": false,
             "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
-            "net_pnl": 263.55,
-            "source_time_et": "2026-11-10T14:54:29.422881-05:00",
-            "time_et": "2026-11-10T14:54:29.422881-05:00"
+            "net_pnl": 276.05,
+            "source_time_et": "2026-11-10T14:54:44.883966-05:00",
+            "time_et": "2026-11-10T14:54:44.883966-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": false,
+            "mark_quality": "VALID_SYNCHRONIZED_MIDPOINT",
+            "net_pnl": 288.55,
+            "source_time_et": "2026-11-10T14:55:49.165642-05:00",
+            "time_et": "2026-11-10T14:55:49.165642-05:00"
           }
         ],
         "position": "Position 16"
@@ -32236,9 +32384,18 @@
             "is_carried_forward": false,
             "is_estimated_mark": true,
             "mark_quality": "ESTIMATED_ZERO_BID_MIDPOINT",
-            "net_pnl": 427.1,
-            "source_time_et": "2026-11-10T14:54:29.864036-05:00",
-            "time_et": "2026-11-10T14:54:29.864036-05:00"
+            "net_pnl": 432.1,
+            "source_time_et": "2026-11-10T14:54:46.258542-05:00",
+            "time_et": "2026-11-10T14:54:46.258542-05:00"
+          },
+          {
+            "event": null,
+            "is_carried_forward": false,
+            "is_estimated_mark": true,
+            "mark_quality": "ESTIMATED_ZERO_BID_MIDPOINT",
+            "net_pnl": 437.1,
+            "source_time_et": "2026-11-10T14:55:52.697686-05:00",
+            "time_et": "2026-11-10T14:55:52.697686-05:00"
           }
         ],
         "position": "Position 17"
@@ -64398,7 +64555,7 @@
           "horizons": [
             {
               "all_open_count": 17,
-              "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+              "as_of_et": "2026-11-10T14:54:42.663387-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -64681,13 +64838,13 @@
               ],
               "rows_are_piecewise_breakpoints": true,
               "session_date": "2026-11-10",
-              "spot": 7515.56,
+              "spot": 7514.03,
               "status": "AVAILABLE",
               "upper_level": 7735
             },
             {
               "all_open_count": 3,
-              "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+              "as_of_et": "2026-11-10T14:54:42.663387-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -64770,13 +64927,13 @@
               ],
               "rows_are_piecewise_breakpoints": true,
               "session_date": "2026-11-11",
-              "spot": 7515.56,
+              "spot": 7514.03,
               "status": "AVAILABLE",
               "upper_level": 7735
             },
             {
               "all_open_count": 0,
-              "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+              "as_of_et": "2026-11-10T14:54:42.663387-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -64798,13 +64955,13 @@
               "rows": [],
               "rows_are_piecewise_breakpoints": true,
               "session_date": "2026-11-12",
-              "spot": 7515.56,
+              "spot": 7514.03,
               "status": "NO_OPEN_POSITIONS",
               "upper_level": 7735
             },
             {
               "all_open_count": 0,
-              "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+              "as_of_et": "2026-11-10T14:54:42.663387-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -64826,13 +64983,13 @@
               "rows": [],
               "rows_are_piecewise_breakpoints": true,
               "session_date": "2026-11-13",
-              "spot": 7515.56,
+              "spot": 7514.03,
               "status": "NO_OPEN_POSITIONS",
               "upper_level": 7735
             },
             {
               "all_open_count": 0,
-              "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+              "as_of_et": "2026-11-10T14:54:42.663387-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -64854,13 +65011,13 @@
               "rows": [],
               "rows_are_piecewise_breakpoints": true,
               "session_date": "2026-11-16",
-              "spot": 7515.56,
+              "spot": 7514.03,
               "status": "NO_OPEN_POSITIONS",
               "upper_level": 7735
             },
             {
               "all_open_count": 0,
-              "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+              "as_of_et": "2026-11-10T14:54:42.663387-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -64882,13 +65039,13 @@
               "rows": [],
               "rows_are_piecewise_breakpoints": true,
               "session_date": "2026-11-17",
-              "spot": 7515.56,
+              "spot": 7514.03,
               "status": "NO_OPEN_POSITIONS",
               "upper_level": 7735
             },
             {
               "all_open_count": 0,
-              "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+              "as_of_et": "2026-11-10T14:54:42.663387-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -64910,13 +65067,13 @@
               "rows": [],
               "rows_are_piecewise_breakpoints": true,
               "session_date": "2026-11-18",
-              "spot": 7515.56,
+              "spot": 7514.03,
               "status": "NO_OPEN_POSITIONS",
               "upper_level": 7735
             },
             {
               "all_open_count": 0,
-              "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+              "as_of_et": "2026-11-10T14:54:42.663387-05:00",
               "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
               "display_mode": "CURRENT_SESSION",
               "excluded_count": 0,
@@ -64938,12 +65095,12 @@
               "rows": [],
               "rows_are_piecewise_breakpoints": true,
               "session_date": "2026-11-19",
-              "spot": 7515.56,
+              "spot": 7514.03,
               "status": "NO_OPEN_POSITIONS",
               "upper_level": 7735
             }
           ],
-          "observed_at_et": "2026-11-10T14:53:42.636607-05:00"
+          "observed_at_et": "2026-11-10T14:54:42.663387-05:00"
         }
       ],
       "schema_version": "settlement-scenario-history-v1",
@@ -64954,7 +65111,7 @@
     "settlement_scenario_horizons": [
       {
         "all_open_count": 17,
-        "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+        "as_of_et": "2026-11-10T14:54:42.663387-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -65432,13 +65589,13 @@
           }
         ],
         "session_date": "2026-11-10",
-        "spot": 7515.56,
+        "spot": 7514.03,
         "status": "AVAILABLE",
         "upper_level": 7735
       },
       {
         "all_open_count": 3,
-        "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+        "as_of_et": "2026-11-10T14:54:42.663387-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -65916,13 +66073,13 @@
           }
         ],
         "session_date": "2026-11-11",
-        "spot": 7515.56,
+        "spot": 7514.03,
         "status": "AVAILABLE",
         "upper_level": 7735
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+        "as_of_et": "2026-11-10T14:54:42.663387-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -65944,13 +66101,13 @@
         "retained_settled_count": 0,
         "rows": [],
         "session_date": "2026-11-12",
-        "spot": 7515.56,
+        "spot": 7514.03,
         "status": "NO_OPEN_POSITIONS",
         "upper_level": 7735
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+        "as_of_et": "2026-11-10T14:54:42.663387-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -65972,13 +66129,13 @@
         "retained_settled_count": 0,
         "rows": [],
         "session_date": "2026-11-13",
-        "spot": 7515.56,
+        "spot": 7514.03,
         "status": "NO_OPEN_POSITIONS",
         "upper_level": 7735
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+        "as_of_et": "2026-11-10T14:54:42.663387-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -66000,13 +66157,13 @@
         "retained_settled_count": 0,
         "rows": [],
         "session_date": "2026-11-16",
-        "spot": 7515.56,
+        "spot": 7514.03,
         "status": "NO_OPEN_POSITIONS",
         "upper_level": 7735
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+        "as_of_et": "2026-11-10T14:54:42.663387-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -66028,13 +66185,13 @@
         "retained_settled_count": 0,
         "rows": [],
         "session_date": "2026-11-17",
-        "spot": 7515.56,
+        "spot": 7514.03,
         "status": "NO_OPEN_POSITIONS",
         "upper_level": 7735
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+        "as_of_et": "2026-11-10T14:54:42.663387-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -66056,13 +66213,13 @@
         "retained_settled_count": 0,
         "rows": [],
         "session_date": "2026-11-18",
-        "spot": 7515.56,
+        "spot": 7514.03,
         "status": "NO_OPEN_POSITIONS",
         "upper_level": 7735
       },
       {
         "all_open_count": 0,
-        "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+        "as_of_et": "2026-11-10T14:54:42.663387-05:00",
         "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
         "display_mode": "CURRENT_SESSION",
         "excluded_count": 0,
@@ -66084,7 +66241,7 @@
         "retained_settled_count": 0,
         "rows": [],
         "session_date": "2026-11-19",
-        "spot": 7515.56,
+        "spot": 7514.03,
         "status": "NO_OPEN_POSITIONS",
         "upper_level": 7735
       }
@@ -66094,7 +66251,7 @@
     "settlement_scenario_roll_policy": "MIDNIGHT_ET",
     "settlement_scenarios": {
       "all_open_count": 17,
-      "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+      "as_of_et": "2026-11-10T14:54:42.663387-05:00",
       "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
       "display_mode": "CURRENT_SESSION",
       "excluded_count": 0,
@@ -66572,13 +66729,13 @@
         }
       ],
       "session_date": "2026-11-10",
-      "spot": 7515.56,
+      "spot": 7514.03,
       "status": "AVAILABLE",
       "upper_level": 7735
     },
     "settlement_scenarios_next_session": {
       "all_open_count": 3,
-      "as_of_et": "2026-11-10T14:53:42.636607-05:00",
+      "as_of_et": "2026-11-10T14:54:42.663387-05:00",
       "basis": "LIFETIME_NET_INTRINSIC_PAYOFF_AFTER_ENTRY_AND_SETTLEMENT_FEES",
       "display_mode": "CURRENT_SESSION",
       "excluded_count": 0,
@@ -67056,7 +67213,7 @@
         }
       ],
       "session_date": "2026-11-11",
-      "spot": 7515.56,
+      "spot": 7514.03,
       "status": "AVAILABLE",
       "upper_level": 7735
     },
@@ -67318,8 +67475,8 @@
         "time_et": "2026-11-10T14:49:31.657634-05:00"
       },
       {
-        "spx": 7515.56,
-        "time_et": "2026-11-10T14:53:42.636607-05:00"
+        "spx": 7514.03,
+        "time_et": "2026-11-10T14:54:42.663387-05:00"
       }
     ],
     "spx_reference": {
@@ -67327,11 +67484,11 @@
       "close_change_from_prior_close_percent": null,
       "close_source": null,
       "close_spx": null,
-      "current_at_et": "2026-11-10T14:53:42.636607-05:00",
-      "current_change_from_open_percent": 0.2755,
-      "current_change_from_prior_close_percent": -0.4554,
+      "current_at_et": "2026-11-10T14:54:42.663387-05:00",
+      "current_change_from_open_percent": 0.2551,
+      "current_change_from_prior_close_percent": -0.4756,
       "current_source": "LATEST_SYNCHRONIZED_SESSION_MARK",
-      "current_spx": 7515.56,
+      "current_spx": 7514.03,
       "open_at_et": "2026-11-10T09:30:44.365673-05:00",
       "open_change_from_prior_close_percent": -0.7289,
       "open_source": "FIRST_SYNCHRONIZED_SESSION_MARK",
@@ -67350,7 +67507,7 @@
       "session_low_spx": 7473.03,
       "status": "AVAILABLE"
     },
-    "stale_mark_count": 1,
+    "stale_mark_count": 0,
     "system_readiness": {
       "checked_at_et": "2026-11-10T09:18:01.431576-05:00",
       "failed_checks": 0,
@@ -67372,7 +67529,7 @@
         "expiration_date": "2026-11-11",
         "maximum_profit": 426.75,
         "maximum_unrealized_pnl": -6.45,
-        "minimum_unrealized_pnl": -46.45,
+        "minimum_unrealized_pnl": -76.45,
         "modeled_expected_return": 0.030093613324570126,
         "planned_loss": null,
         "position": 1,
@@ -67390,7 +67547,7 @@
         "status": "OPEN",
         "strategy": "BULL_PUT_CREDIT_SPREAD",
         "total_short_reserve": 2573.25,
-        "unrealized_net_pnl": -36.45
+        "unrealized_net_pnl": -76.45
       },
       {
         "allocation": 1256.5,
@@ -67417,12 +67574,12 @@
         "short_call_reserve": 1256.5,
         "short_put_reserve": 1256.5,
         "spx_at_entry": 7488.31,
-        "spx_position_direction": "UPPER",
-        "spx_position_zone": "BETWEEN_SHORT_AND_LONG",
+        "spx_position_direction": "CENTER",
+        "spx_position_zone": "INSIDE_SHORTS",
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 1256.5,
-        "unrealized_net_pnl": -155.4
+        "unrealized_net_pnl": -95.4
       },
       {
         "allocation": 803.25,
@@ -67454,7 +67611,7 @@
         "status": "OPEN",
         "strategy": "BULL_PUT_CREDIT_SPREAD",
         "total_short_reserve": 803.25,
-        "unrealized_net_pnl": 176.05
+        "unrealized_net_pnl": 178.55
       },
       {
         "allocation": 1648.25,
@@ -67486,7 +67643,7 @@
         "status": "OPEN",
         "strategy": "BEAR_CALL_CREDIT_SPREAD",
         "total_short_reserve": 1648.25,
-        "unrealized_net_pnl": 61.05
+        "unrealized_net_pnl": 118.55
       },
       {
         "allocation": 2606.5,
@@ -67518,7 +67675,7 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 2606.5,
-        "unrealized_net_pnl": 147.1
+        "unrealized_net_pnl": 122.1
       },
       {
         "allocation": 1236.5,
@@ -67550,7 +67707,7 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 1236.5,
-        "unrealized_net_pnl": 242.1
+        "unrealized_net_pnl": 247.1
       },
       {
         "allocation": 3376.5,
@@ -67582,7 +67739,7 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 3376.5,
-        "unrealized_net_pnl": 337.1
+        "unrealized_net_pnl": 347.1
       },
       {
         "allocation": 2043.25,
@@ -67614,7 +67771,7 @@
         "status": "OPEN",
         "strategy": "BULL_PUT_CREDIT_SPREAD",
         "total_short_reserve": 2043.25,
-        "unrealized_net_pnl": 51.05
+        "unrealized_net_pnl": -68.95
       },
       {
         "allocation": 2053.25,
@@ -67646,7 +67803,7 @@
         "status": "OPEN",
         "strategy": "BULL_PUT_CREDIT_SPREAD",
         "total_short_reserve": 2053.25,
-        "unrealized_net_pnl": 291.05
+        "unrealized_net_pnl": 246.05
       },
       {
         "allocation": 2881.5,
@@ -67678,7 +67835,7 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 2881.5,
-        "unrealized_net_pnl": 607.1
+        "unrealized_net_pnl": 602.1
       },
       {
         "allocation": 706.5,
@@ -67691,7 +67848,7 @@
         "exit_time_et": null,
         "expiration_date": "2026-11-10",
         "maximum_profit": 293.5,
-        "maximum_unrealized_pnl": 284.6,
+        "maximum_unrealized_pnl": 287.1,
         "minimum_unrealized_pnl": -157.9,
         "modeled_expected_return": 0.09617878698272776,
         "planned_loss": null,
@@ -67710,7 +67867,7 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 706.5,
-        "unrealized_net_pnl": 279.6
+        "unrealized_net_pnl": 287.1
       },
       {
         "allocation": 2423.25,
@@ -67742,7 +67899,7 @@
         "status": "OPEN",
         "strategy": "BULL_PUT_CREDIT_SPREAD",
         "total_short_reserve": 2423.25,
-        "unrealized_net_pnl": 563.55
+        "unrealized_net_pnl": 558.55
       },
       {
         "allocation": 756.5,
@@ -67774,7 +67931,7 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 756.5,
-        "unrealized_net_pnl": 232.1
+        "unrealized_net_pnl": 237.1
       },
       {
         "allocation": 746.5,
@@ -67806,7 +67963,7 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 746.5,
-        "unrealized_net_pnl": 242.1
+        "unrealized_net_pnl": 247.1
       },
       {
         "allocation": 3851.5,
@@ -67870,7 +68027,7 @@
         "status": "OPEN",
         "strategy": "BEAR_CALL_CREDIT_SPREAD",
         "total_short_reserve": 1653.25,
-        "unrealized_net_pnl": 263.55
+        "unrealized_net_pnl": 288.55
       },
       {
         "allocation": 1546.5,
@@ -67902,7 +68059,7 @@
         "status": "OPEN",
         "strategy": "IRON_CONDOR",
         "total_short_reserve": 1546.5,
-        "unrealized_net_pnl": 427.1
+        "unrealized_net_pnl": 437.1
       }
     ],
     "trading_status_and_alerts": {
@@ -67911,7 +68068,7 @@
           "category": "Position monitoring",
           "details": "No available bids: scan_20261109_0950_1dte_iron_condor.",
           "first_seen_at_et": null,
-          "last_seen_at_et": "2026-11-10T14:54:36.344469-05:00",
+          "last_seen_at_et": "2026-11-10T14:55:43.042603-05:00",
           "recovery_confirmed": false,
           "rule_id": "OPEN_POSITION_QUOTE_SIDES_UNAVAILABLE",
           "severity": "WARNING",
@@ -67922,7 +68079,7 @@
           "category": "Position monitoring",
           "details": "No available bids: scan_20261109_1030_1dte_iron_condor.",
           "first_seen_at_et": null,
-          "last_seen_at_et": "2026-11-10T14:54:32.458904-05:00",
+          "last_seen_at_et": "2026-11-10T14:55:39.284635-05:00",
           "recovery_confirmed": false,
           "rule_id": "OPEN_POSITION_QUOTE_SIDES_UNAVAILABLE",
           "severity": "WARNING",
@@ -67933,7 +68090,7 @@
           "category": "Position monitoring",
           "details": "No available bids: scan_20261106_1415_2dte_iron_condor.",
           "first_seen_at_et": null,
-          "last_seen_at_et": "2026-11-10T14:54:29.864036-05:00",
+          "last_seen_at_et": "2026-11-10T14:55:52.697686-05:00",
           "recovery_confirmed": false,
           "rule_id": "OPEN_POSITION_QUOTE_SIDES_UNAVAILABLE",
           "severity": "WARNING",
@@ -67944,7 +68101,7 @@
           "category": "Position monitoring",
           "details": "No available bids: scan_20261109_1050_1dte_iron_condor.",
           "first_seen_at_et": null,
-          "last_seen_at_et": "2026-11-10T14:54:38.100535-05:00",
+          "last_seen_at_et": "2026-11-10T14:55:45.812299-05:00",
           "recovery_confirmed": false,
           "rule_id": "OPEN_POSITION_QUOTE_SIDES_UNAVAILABLE",
           "severity": "WARNING",
@@ -67955,7 +68112,7 @@
           "category": "Position monitoring",
           "details": "No available bids: scan_20261109_0945_1dte_iron_condor.",
           "first_seen_at_et": null,
-          "last_seen_at_et": "2026-11-10T14:54:27.830878-05:00",
+          "last_seen_at_et": "2026-11-10T14:55:48.700822-05:00",
           "recovery_confirmed": false,
           "rule_id": "OPEN_POSITION_QUOTE_SIDES_UNAVAILABLE",
           "severity": "WARNING",
@@ -67966,7 +68123,7 @@
           "category": "Position monitoring",
           "details": "No available bids: scan_20261109_1215_1dte_iron_condor.",
           "first_seen_at_et": null,
-          "last_seen_at_et": "2026-11-10T14:54:35.272399-05:00",
+          "last_seen_at_et": "2026-11-10T14:55:41.761447-05:00",
           "recovery_confirmed": false,
           "rule_id": "OPEN_POSITION_QUOTE_SIDES_UNAVAILABLE",
           "severity": "WARNING",
@@ -68276,24 +68433,24 @@
     ]
   },
   "distribution_comparison": {
-    "age_seconds": 308,
+    "age_seconds": 72,
     "expirations": [
       {
-        "bayesian_shadow_discount": 0.79251,
-        "bayesian_shadow_discount_observations": 11.55,
+        "bayesian_shadow_discount": 0.79101,
+        "bayesian_shadow_discount_observations": 11.3,
         "bayesian_shadow_discount_source": "BAYESIAN_INTERPOLATED_SHRUNK_SURFACE",
         "bayesian_shadow_discount_time_bucket_et": null,
         "expiration": "20261110",
-        "horizon_calendar_days": 0.048939147754629625,
-        "physical_discount": 0.75924,
-        "physical_discount_average_horizon_persistence": 0.9151492061059153,
+        "horizon_calendar_days": 0.04533954413194445,
+        "physical_discount": 0.75803,
+        "physical_discount_average_horizon_persistence": 0.9222292560791066,
         "physical_discount_center": null,
         "physical_discount_latest_observation_date": "2026-11-09",
         "physical_discount_latest_state_log_variance": 0.030275893264144985,
         "physical_discount_long_run_center": 0.8043116628832923,
         "physical_discount_observations": 15,
         "physical_discount_prior_padding_sessions": 185,
-        "physical_discount_relative_time_profile": 0.9257058297960731,
+        "physical_discount_relative_time_profile": 0.9239588880371915,
         "physical_discount_rho_daily": 0.3333333333333333,
         "physical_discount_rho_half_life_sessions": 0.6309297535714574,
         "physical_discount_rho_lower_90": 0.0,
@@ -68303,8 +68460,8 @@
         "physical_discount_state_update_weight": 0.8474119280760453,
         "physical_discount_time_bucket_et": null,
         "quality": "LOW_CONFIDENCE",
-        "realized_return_count": 150,
-        "realized_volatility": 0.1256675829922879,
+        "realized_return_count": 153,
+        "realized_volatility": 0.1260072655450278,
         "reference": [
           {
             "density": 0.0,
@@ -68379,107 +68536,107 @@
             "return_pct": -3.25
           },
           {
-            "density": 3e-08,
+            "density": 0.0,
             "return_pct": -3.0
           },
           {
-            "density": 2.7e-07,
+            "density": 0.0,
             "return_pct": -2.75
           },
           {
-            "density": 2.27e-06,
+            "density": 8e-08,
             "return_pct": -2.5
           },
           {
-            "density": 1.53e-05,
+            "density": 1.07e-06,
             "return_pct": -2.25
           },
           {
-            "density": 8.395e-05,
+            "density": 1.135e-05,
             "return_pct": -2.0
           },
           {
-            "density": 0.00037488,
+            "density": 9.03e-05,
             "return_pct": -1.75
           },
           {
-            "density": 0.00136464,
+            "density": 0.00054166,
             "return_pct": -1.5
           },
           {
-            "density": 0.00405532,
+            "density": 0.00245391,
             "return_pct": -1.25
           },
           {
-            "density": 0.00985284,
+            "density": 0.00841549,
             "return_pct": -1.0
           },
           {
-            "density": 0.019779,
+            "density": 0.02206318,
             "return_pct": -0.75
           },
           {
-            "density": 0.06244729,
+            "density": 0.08030128,
             "return_pct": -0.5
           },
           {
-            "density": 0.73555851,
+            "density": 0.91448616,
             "return_pct": -0.25
           },
           {
-            "density": 2.14571295,
+            "density": 2.20984363,
             "return_pct": 0.0
           },
           {
-            "density": 0.90357642,
+            "density": 0.66359141,
             "return_pct": 0.25
           },
           {
-            "density": 0.08063894,
+            "density": 0.06328894,
             "return_pct": 0.5
           },
           {
-            "density": 0.02025827,
+            "density": 0.022995,
             "return_pct": 0.75
           },
           {
-            "density": 0.01017466,
+            "density": 0.00912001,
             "return_pct": 1.0
           },
           {
-            "density": 0.00431423,
+            "density": 0.00279676,
             "return_pct": 1.25
           },
           {
-            "density": 0.00151781,
+            "density": 0.00066228,
             "return_pct": 1.5
           },
           {
-            "density": 0.00044356,
+            "density": 0.00012137,
             "return_pct": 1.75
           },
           {
-            "density": 0.00010785,
+            "density": 1.724e-05,
             "return_pct": 2.0
           },
           {
-            "density": 2.184e-05,
+            "density": 1.9e-06,
             "return_pct": 2.25
           },
           {
-            "density": 3.69e-06,
+            "density": 1.6e-07,
             "return_pct": 2.5
           },
           {
-            "density": 5.2e-07,
+            "density": 1e-08,
             "return_pct": 2.75
           },
           {
-            "density": 6e-08,
+            "density": 0.0,
             "return_pct": 3.0
           },
           {
-            "density": 1e-08,
+            "density": 0.0,
             "return_pct": 3.25
           },
           {
@@ -68553,8 +68710,8 @@
         ],
         "reference_clock_source": "BAYESIAN_NONLINEAR_INTRADAY_OVERNIGHT_EVENT_CLOCK",
         "reference_decision_authority": "ACTIVE_EDGE_AND_PROBABILITY",
-        "reference_horizon_volatility": 0.0022544238067871846,
-        "reference_iv": 0.19476121410907582,
+        "reference_horizon_volatility": 0.0021694801760405013,
+        "reference_iv": 0.19472074556754557,
         "reference_label": "Shape\u2013scale\u2013clock physical",
         "reference_model_version": "spxw_shape_vix_nonlinear_clock_physical_v4",
         "reference_scale_source": "VIX_FAMILY_TOTAL_VARIANCE",
@@ -68665,39 +68822,39 @@
             "return_pct": -1.25
           },
           {
-            "density": 0.00222912,
+            "density": 0.0,
             "return_pct": -1.0
           },
           {
-            "density": 0.05665094,
+            "density": 0.10818854,
             "return_pct": -0.75
           },
           {
-            "density": 0.30032594,
+            "density": 0.32174143,
             "return_pct": -0.5
           },
           {
-            "density": 0.64754253,
+            "density": 0.65592122,
             "return_pct": -0.25
           },
           {
-            "density": 3.595406,
+            "density": 2.58047197,
             "return_pct": 0.0
           },
           {
-            "density": 0.6812428,
+            "density": 0.58612848,
             "return_pct": 0.25
           },
           {
-            "density": 0.31883844,
+            "density": 0.28068338,
             "return_pct": 0.5
           },
           {
-            "density": 0.08957622,
+            "density": 0.08709059,
             "return_pct": 0.75
           },
           {
-            "density": 0.00722294,
+            "density": 0.00614665,
             "return_pct": 1.0
           },
           {
@@ -68805,28 +68962,28 @@
             "return_pct": 7.5
           }
         ],
-        "risk_neutral_horizon_volatility": 0.002805739008548258,
-        "risk_neutral_iv": 0.24238971134571488,
-        "spot": 7513.15,
-        "time_to_expiration_years": 0.00013398808420158692,
-        "vix_clock_scale_iv": 0.25652127668336205
+        "risk_neutral_horizon_volatility": 0.0028821123358186308,
+        "risk_neutral_iv": 0.25868273378938084,
+        "spot": 7514.03,
+        "time_to_expiration_years": 0.00012413290658985475,
+        "vix_clock_scale_iv": 0.2568773604838141
       },
       {
-        "bayesian_shadow_discount": 0.97418,
+        "bayesian_shadow_discount": 0.97017,
         "bayesian_shadow_discount_observations": 12.0,
         "bayesian_shadow_discount_source": "BAYESIAN_INTERPOLATED_SHRUNK_SURFACE",
         "bayesian_shadow_discount_time_bucket_et": null,
         "expiration": "20261111",
-        "horizon_calendar_days": 1.0489391477546297,
-        "physical_discount": 0.80172,
-        "physical_discount_average_horizon_persistence": 0.473646659503991,
+        "horizon_calendar_days": 1.0453395441319446,
+        "physical_discount": 0.79851,
+        "physical_discount_average_horizon_persistence": 0.4763776874398086,
         "physical_discount_center": null,
         "physical_discount_latest_observation_date": "2026-11-09",
         "physical_discount_latest_state_log_variance": 0.030275893264144985,
         "physical_discount_long_run_center": 0.8043116628832923,
         "physical_discount_observations": 15,
         "physical_discount_prior_padding_sessions": 185,
-        "physical_discount_relative_time_profile": 0.9867483775989019,
+        "physical_discount_relative_time_profile": 0.9826787375438177,
         "physical_discount_rho_daily": 0.3333333333333333,
         "physical_discount_rho_half_life_sessions": 0.6309297535714574,
         "physical_discount_rho_lower_90": 0.0,
@@ -68836,8 +68993,8 @@
         "physical_discount_state_update_weight": 0.8474119280760453,
         "physical_discount_time_bucket_et": null,
         "quality": "LOW_CONFIDENCE",
-        "realized_return_count": 150,
-        "realized_volatility": 0.1256675829922879,
+        "realized_return_count": 153,
+        "realized_volatility": 0.1260072655450278,
         "reference": [
           {
             "density": 0.0,
@@ -68872,7 +69029,7 @@
             "return_pct": -5.75
           },
           {
-            "density": 0.0,
+            "density": 1e-08,
             "return_pct": -5.5
           },
           {
@@ -68880,159 +69037,159 @@
             "return_pct": -5.25
           },
           {
-            "density": 1.4e-07,
+            "density": 1.6e-07,
             "return_pct": -5.0
           },
           {
-            "density": 6.9e-07,
+            "density": 7.5e-07,
             "return_pct": -4.75
           },
           {
-            "density": 2.96e-06,
+            "density": 3.23e-06,
             "return_pct": -4.5
           },
           {
-            "density": 1.161e-05,
+            "density": 1.265e-05,
             "return_pct": -4.25
           },
           {
-            "density": 4.132e-05,
+            "density": 4.503e-05,
             "return_pct": -4.0
           },
           {
-            "density": 0.00013374,
+            "density": 0.00014564,
             "return_pct": -3.75
           },
           {
-            "density": 0.00039398,
+            "density": 0.00042819,
             "return_pct": -3.5
           },
           {
-            "density": 0.00105716,
+            "density": 0.00114529,
             "return_pct": -3.25
           },
           {
-            "density": 0.00258591,
+            "density": 0.00278881,
             "return_pct": -3.0
           },
           {
-            "density": 0.0057688,
+            "density": 0.00618652,
             "return_pct": -2.75
           },
           {
-            "density": 0.01174754,
+            "density": 0.01251195,
             "return_pct": -2.5
           },
           {
-            "density": 0.02185566,
+            "density": 0.02309359,
             "return_pct": -2.25
           },
           {
-            "density": 0.03720532,
+            "density": 0.03897229,
             "return_pct": -2.0
           },
           {
-            "density": 0.05816775,
+            "density": 0.06040615,
             "return_pct": -1.75
           },
           {
-            "density": 0.08437492,
+            "density": 0.08705972,
             "return_pct": -1.5
           },
           {
-            "density": 0.11630458,
+            "density": 0.11993244,
             "return_pct": -1.25
           },
           {
-            "density": 0.15884679,
+            "density": 0.16506708,
             "return_pct": -1.0
           },
           {
-            "density": 0.22358382,
+            "density": 0.23489857,
             "return_pct": -0.75
           },
           {
-            "density": 0.3220374,
+            "density": 0.33937104,
             "return_pct": -0.5
           },
           {
-            "density": 0.44686333,
+            "density": 0.4662521,
             "return_pct": -0.25
           },
           {
-            "density": 0.55730447,
+            "density": 0.57004726,
             "return_pct": 0.0
           },
           {
-            "density": 0.59563531,
+            "density": 0.59419899,
             "return_pct": 0.25
           },
           {
-            "density": 0.53192723,
+            "density": 0.51652481,
             "return_pct": 0.5
           },
           {
-            "density": 0.39242134,
+            "density": 0.37082907,
             "return_pct": 0.75
           },
           {
-            "density": 0.23831808,
+            "density": 0.21924912,
             "return_pct": 1.0
           },
           {
-            "density": 0.1193197,
+            "density": 0.10692802,
             "return_pct": 1.25
           },
           {
-            "density": 0.04957594,
+            "density": 0.04329171,
             "return_pct": 1.5
           },
           {
-            "density": 0.01733244,
+            "density": 0.01473688,
             "return_pct": 1.75
           },
           {
-            "density": 0.00523645,
+            "density": 0.00432515,
             "return_pct": 2.0
           },
           {
-            "density": 0.00143295,
+            "density": 0.00114336,
             "return_pct": 2.25
           },
           {
-            "density": 0.00037895,
+            "density": 0.00029018,
             "return_pct": 2.5
           },
           {
-            "density": 0.00010257,
+            "density": 7.503e-05,
             "return_pct": 2.75
           },
           {
-            "density": 2.873e-05,
+            "density": 2.011e-05,
             "return_pct": 3.0
           },
           {
-            "density": 8.06e-06,
+            "density": 5.42e-06,
             "return_pct": 3.25
           },
           {
-            "density": 2.18e-06,
+            "density": 1.41e-06,
             "return_pct": 3.5
           },
           {
-            "density": 5.5e-07,
+            "density": 3.5e-07,
             "return_pct": 3.75
           },
           {
-            "density": 1.3e-07,
+            "density": 8e-08,
             "return_pct": 4.0
           },
           {
-            "density": 3e-08,
+            "density": 2e-08,
             "return_pct": 4.25
           },
           {
-            "density": 1e-08,
+            "density": 0.0,
             "return_pct": 4.5
           },
           {
@@ -69086,8 +69243,8 @@
         ],
         "reference_clock_source": "BAYESIAN_NONLINEAR_INTRADAY_OVERNIGHT_EVENT_CLOCK",
         "reference_decision_authority": "ACTIVE_EDGE_AND_PROBABILITY",
-        "reference_horizon_volatility": 0.007719935923880887,
-        "reference_iv": 0.14405676601299483,
+        "reference_horizon_volatility": 0.0076874361778333875,
+        "reference_iv": 0.14369708085476304,
         "reference_label": "Shape\u2013scale\u2013clock physical",
         "reference_model_version": "spxw_shape_vix_nonlinear_clock_physical_v4",
         "reference_scale_source": "VIX_FAMILY_TOTAL_VARIANCE",
@@ -69158,103 +69315,103 @@
             "return_pct": -3.75
           },
           {
-            "density": 0.02725801,
+            "density": 0.01912053,
             "return_pct": -3.5
           },
           {
-            "density": 0.01825555,
+            "density": 0.01319058,
             "return_pct": -3.25
           },
           {
-            "density": 0.01683488,
+            "density": 0.0184358,
             "return_pct": -3.0
           },
           {
-            "density": 0.0060292,
+            "density": 0.00810992,
             "return_pct": -2.75
           },
           {
-            "density": 0.01050324,
+            "density": 0.00879412,
             "return_pct": -2.5
           },
           {
-            "density": 0.02637192,
+            "density": 0.02638458,
             "return_pct": -2.25
           },
           {
-            "density": 0.04543309,
+            "density": 0.04725493,
             "return_pct": -2.0
           },
           {
-            "density": 0.06731649,
+            "density": 0.07119345,
             "return_pct": -1.75
           },
           {
-            "density": 0.0920705,
+            "density": 0.0980632,
             "return_pct": -1.5
           },
           {
-            "density": 0.11994898,
+            "density": 0.12897658,
             "return_pct": -1.25
           },
           {
-            "density": 0.15385972,
+            "density": 0.16499182,
             "return_pct": -1.0
           },
           {
-            "density": 0.19725348,
+            "density": 0.2111262,
             "return_pct": -0.75
           },
           {
-            "density": 0.26235145,
+            "density": 0.27796831,
             "return_pct": -0.5
           },
           {
-            "density": 0.40784974,
+            "density": 0.43507328,
             "return_pct": -0.25
           },
           {
-            "density": 0.69899904,
+            "density": 0.78021629,
             "return_pct": 0.0
           },
           {
-            "density": 0.49724836,
+            "density": 0.43322,
             "return_pct": 0.25
           },
           {
-            "density": 0.35132463,
+            "density": 0.31652375,
             "return_pct": 0.5
           },
           {
-            "density": 0.29110837,
+            "density": 0.26510197,
             "return_pct": 0.75
           },
           {
-            "density": 0.23846302,
+            "density": 0.21988606,
             "return_pct": 1.0
           },
           {
-            "density": 0.18272774,
+            "density": 0.17127116,
             "return_pct": 1.25
           },
           {
-            "density": 0.12905712,
+            "density": 0.12429512,
             "return_pct": 1.5
           },
           {
-            "density": 0.07768755,
+            "density": 0.08018066,
             "return_pct": 1.75
           },
           {
-            "density": 0.02970176,
+            "density": 0.03927701,
             "return_pct": 2.0
           },
           {
-            "density": 0.00266949,
+            "density": 0.0025412,
             "return_pct": 2.25
           },
           {
-            "density": 1.862e-05,
+            "density": 0.00014141,
             "return_pct": 2.5
           },
           {
@@ -69338,28 +69495,28 @@
             "return_pct": 7.5
           }
         ],
-        "risk_neutral_horizon_volatility": 0.009251834839071013,
-        "risk_neutral_iv": 0.17264254778074897,
-        "spot": 7513.15,
-        "time_to_expiration_years": 0.002871838871333688,
-        "vix_clock_scale_iv": 0.17968463554981143
+        "risk_neutral_horizon_volatility": 0.009340457178015557,
+        "risk_neutral_iv": 0.17459610711305257,
+        "spot": 7514.03,
+        "time_to_expiration_years": 0.0028619836937219564,
+        "vix_clock_scale_iv": 0.17995652008711605
       },
       {
-        "bayesian_shadow_discount": 0.92041,
+        "bayesian_shadow_discount": 0.92013,
         "bayesian_shadow_discount_observations": 13.0,
         "bayesian_shadow_discount_source": "BAYESIAN_INTERPOLATED_SHRUNK_SURFACE",
         "bayesian_shadow_discount_time_bucket_et": null,
         "expiration": "20261112",
-        "horizon_calendar_days": 2.0489391477546297,
-        "physical_discount": 0.81129,
-        "physical_discount_average_horizon_persistence": 0.29861297069499654,
+        "horizon_calendar_days": 2.045339544131944,
+        "physical_discount": 0.8111,
+        "physical_discount_average_horizon_persistence": 0.2998935394119287,
         "physical_discount_center": null,
         "physical_discount_latest_observation_date": "2026-11-09",
         "physical_discount_latest_state_log_variance": 0.030275893264144985,
         "physical_discount_long_run_center": 0.8043116628832923,
         "physical_discount_observations": 15,
         "physical_discount_prior_padding_sessions": 185,
-        "physical_discount_relative_time_profile": 1.0022697767832027,
+        "physical_discount_relative_time_profile": 1.0019606386642237,
         "physical_discount_rho_daily": 0.3333333333333333,
         "physical_discount_rho_half_life_sessions": 0.6309297535714574,
         "physical_discount_rho_lower_90": 0.0,
@@ -69369,239 +69526,239 @@
         "physical_discount_state_update_weight": 0.8474119280760453,
         "physical_discount_time_bucket_et": null,
         "quality": "LOW_CONFIDENCE",
-        "realized_return_count": 150,
-        "realized_volatility": 0.1256675829922879,
+        "realized_return_count": 153,
+        "realized_volatility": 0.1260072655450278,
         "reference": [
           {
-            "density": 5.7e-07,
+            "density": 1.74e-06,
             "return_pct": -7.5
           },
           {
-            "density": 1.47e-06,
+            "density": 4.06e-06,
             "return_pct": -7.25
           },
           {
-            "density": 3.62e-06,
+            "density": 9.15e-06,
             "return_pct": -7.0
           },
           {
-            "density": 8.54e-06,
+            "density": 1.983e-05,
             "return_pct": -6.75
           },
           {
-            "density": 1.934e-05,
+            "density": 4.142e-05,
             "return_pct": -6.5
           },
           {
-            "density": 4.209e-05,
+            "density": 8.339e-05,
             "return_pct": -6.25
           },
           {
-            "density": 8.801e-05,
+            "density": 0.00016177,
             "return_pct": -6.0
           },
           {
-            "density": 0.00017691,
+            "density": 0.00030269,
             "return_pct": -5.75
           },
           {
-            "density": 0.00034188,
+            "density": 0.00054618,
             "return_pct": -5.5
           },
           {
-            "density": 0.00063539,
+            "density": 0.00095095,
             "return_pct": -5.25
           },
           {
-            "density": 0.00113609,
+            "density": 0.00159762,
             "return_pct": -5.0
           },
           {
-            "density": 0.00195487,
+            "density": 0.00259144,
             "return_pct": -4.75
           },
           {
-            "density": 0.00323807,
+            "density": 0.00405853,
             "return_pct": -4.5
           },
           {
-            "density": 0.00516472,
+            "density": 0.00613905,
             "return_pct": -4.25
           },
           {
-            "density": 0.00793457,
+            "density": 0.00897252,
             "return_pct": -4.0
           },
           {
-            "density": 0.01174484,
+            "density": 0.01267467,
             "return_pct": -3.75
           },
           {
-            "density": 0.01675569,
+            "density": 0.01731389,
             "return_pct": -3.5
           },
           {
-            "density": 0.02304935,
+            "density": 0.02289204,
             "return_pct": -3.25
           },
           {
-            "density": 0.03059404,
+            "density": 0.02934608,
             "return_pct": -3.0
           },
           {
-            "density": 0.0392349,
+            "density": 0.03659481,
             "return_pct": -2.75
           },
           {
-            "density": 0.0487395,
+            "density": 0.04465943,
             "return_pct": -2.5
           },
           {
-            "density": 0.05895074,
+            "density": 0.0538754,
             "return_pct": -2.25
           },
           {
-            "density": 0.07006747,
+            "density": 0.06516808,
             "return_pct": -2.0
           },
           {
-            "density": 0.08302174,
+            "density": 0.08027637,
             "return_pct": -1.75
           },
           {
-            "density": 0.09980851,
+            "density": 0.10170465,
             "return_pct": -1.5
           },
           {
-            "density": 0.12340454,
+            "density": 0.13214901,
             "return_pct": -1.25
           },
           {
-            "density": 0.15697191,
+            "density": 0.17330037,
             "return_pct": -1.0
           },
           {
-            "density": 0.20209953,
+            "density": 0.22423746,
             "return_pct": -0.75
           },
           {
-            "density": 0.25675333,
+            "density": 0.28024143,
             "return_pct": -0.5
           },
           {
-            "density": 0.31393364,
+            "density": 0.33281717,
             "return_pct": -0.25
           },
           {
-            "density": 0.36245862,
+            "density": 0.37152661,
             "return_pct": 0.0
           },
           {
-            "density": 0.39021945,
+            "density": 0.38721027,
             "return_pct": 0.25
           },
           {
-            "density": 0.38874265,
+            "density": 0.37526502,
             "return_pct": 0.5
           },
           {
-            "density": 0.35679812,
+            "density": 0.33747448,
             "return_pct": 0.75
           },
           {
-            "density": 0.30104932,
+            "density": 0.28131603,
             "return_pct": 1.0
           },
           {
-            "density": 0.2333029,
+            "density": 0.21731351,
             "return_pct": 1.25
           },
           {
-            "density": 0.16606855,
+            "density": 0.15560541,
             "return_pct": 1.5
           },
           {
-            "density": 0.10866453,
+            "density": 0.10336248,
             "return_pct": 1.75
           },
           {
-            "density": 0.06546508,
+            "density": 0.06376968,
             "return_pct": 2.0
           },
           {
-            "density": 0.03640609,
+            "density": 0.03660742,
             "return_pct": 2.25
           },
           {
-            "density": 0.01876742,
+            "density": 0.01960791,
             "return_pct": 2.5
           },
           {
-            "density": 0.00902535,
+            "density": 0.00984344,
             "return_pct": 2.75
           },
           {
-            "density": 0.00408809,
+            "density": 0.00465951,
             "return_pct": 3.0
           },
           {
-            "density": 0.00176926,
+            "density": 0.00209933,
             "return_pct": 3.25
           },
           {
-            "density": 0.00074635,
+            "density": 0.00091245,
             "return_pct": 3.5
           },
           {
-            "density": 0.00031423,
+            "density": 0.00038943,
             "return_pct": 3.75
           },
           {
-            "density": 0.00013474,
+            "density": 0.00016652,
             "return_pct": 4.0
           },
           {
-            "density": 5.951e-05,
+            "density": 7.259e-05,
             "return_pct": 4.25
           },
           {
-            "density": 2.698e-05,
+            "density": 3.254e-05,
             "return_pct": 4.5
           },
           {
-            "density": 1.24e-05,
+            "density": 1.495e-05,
             "return_pct": 4.75
           },
           {
-            "density": 5.69e-06,
+            "density": 6.97e-06,
             "return_pct": 5.0
           },
           {
-            "density": 2.58e-06,
+            "density": 3.25e-06,
             "return_pct": 5.25
           },
           {
-            "density": 1.15e-06,
+            "density": 1.5e-06,
             "return_pct": 5.5
           },
           {
-            "density": 5e-07,
+            "density": 6.8e-07,
             "return_pct": 5.75
           },
           {
-            "density": 2.1e-07,
+            "density": 3e-07,
             "return_pct": 6.0
           },
           {
-            "density": 9e-08,
+            "density": 1.3e-07,
             "return_pct": 6.25
           },
           {
-            "density": 3e-08,
+            "density": 6e-08,
             "return_pct": 6.5
           },
           {
-            "density": 1e-08,
+            "density": 2e-08,
             "return_pct": 6.75
           },
           {
@@ -69619,8 +69776,8 @@
         ],
         "reference_clock_source": "BAYESIAN_NONLINEAR_INTRADAY_OVERNIGHT_EVENT_CLOCK",
         "reference_decision_authority": "ACTIVE_EDGE_AND_PROBABILITY",
-        "reference_horizon_volatility": 0.012192638347991508,
-        "reference_iv": 0.16279020658948246,
+        "reference_horizon_volatility": 0.012178347147753255,
+        "reference_iv": 0.16274241426321406,
         "reference_label": "Shape\u2013scale\u2013clock physical",
         "reference_model_version": "spxw_shape_vix_nonlinear_clock_physical_v4",
         "reference_scale_source": "VIX_FAMILY_TOTAL_VARIANCE",
@@ -69671,167 +69828,167 @@
             "return_pct": -5.0
           },
           {
-            "density": 0.01252652,
+            "density": 0.01534206,
             "return_pct": -4.75
           },
           {
-            "density": 0.01349811,
+            "density": 0.01677614,
             "return_pct": -4.5
           },
           {
-            "density": 0.00744344,
+            "density": 0.00649088,
             "return_pct": -4.25
           },
           {
-            "density": 0.00523737,
+            "density": 0.00523835,
             "return_pct": -4.0
           },
           {
-            "density": 0.01114578,
+            "density": 0.01021879,
             "return_pct": -3.75
           },
           {
-            "density": 0.01793466,
+            "density": 0.01582976,
             "return_pct": -3.5
           },
           {
-            "density": 0.02534353,
+            "density": 0.0219334,
             "return_pct": -3.25
           },
           {
-            "density": 0.03388443,
+            "density": 0.02967615,
             "return_pct": -3.0
           },
           {
-            "density": 0.04405074,
+            "density": 0.0394694,
             "return_pct": -2.75
           },
           {
-            "density": 0.05403002,
+            "density": 0.05065522,
             "return_pct": -2.5
           },
           {
-            "density": 0.06404086,
+            "density": 0.06331595,
             "return_pct": -2.25
           },
           {
-            "density": 0.07471513,
+            "density": 0.0774311,
             "return_pct": -2.0
           },
           {
-            "density": 0.08658699,
+            "density": 0.09335956,
             "return_pct": -1.75
           },
           {
-            "density": 0.09941836,
+            "density": 0.10919897,
             "return_pct": -1.5
           },
           {
-            "density": 0.11472749,
+            "density": 0.1263635,
             "return_pct": -1.25
           },
           {
-            "density": 0.1335988,
+            "density": 0.14689166,
             "return_pct": -1.0
           },
           {
-            "density": 0.15906376,
+            "density": 0.17393803,
             "return_pct": -0.75
           },
           {
-            "density": 0.20192841,
+            "density": 0.22015845,
             "return_pct": -0.5
           },
           {
-            "density": 0.30238693,
+            "density": 0.33670939,
             "return_pct": -0.25
           },
           {
-            "density": 0.48692149,
+            "density": 0.52446191,
             "return_pct": 0.0
           },
           {
-            "density": 0.38947237,
+            "density": 0.35388489,
             "return_pct": 0.25
           },
           {
-            "density": 0.29232604,
+            "density": 0.26883522,
             "return_pct": 0.5
           },
           {
-            "density": 0.26426688,
+            "density": 0.23590514,
             "return_pct": 0.75
           },
           {
-            "density": 0.24826149,
+            "density": 0.21034215,
             "return_pct": 1.0
           },
           {
-            "density": 0.23097536,
+            "density": 0.19197551,
             "return_pct": 1.25
           },
           {
-            "density": 0.19096374,
+            "density": 0.17135294,
             "return_pct": 1.5
           },
           {
-            "density": 0.15047295,
+            "density": 0.15108081,
             "return_pct": 1.75
           },
           {
-            "density": 0.10690568,
+            "density": 0.11561842,
             "return_pct": 2.0
           },
           {
-            "density": 0.06658931,
+            "density": 0.08136532,
             "return_pct": 2.25
           },
           {
-            "density": 0.02889506,
+            "density": 0.04575596,
             "return_pct": 2.5
           },
           {
-            "density": 0.00035048,
+            "density": 0.01285778,
             "return_pct": 2.75
           },
           {
-            "density": 0.00145401,
+            "density": 0.00422261,
             "return_pct": 3.0
           },
           {
-            "density": 0.00133606,
+            "density": 0.0,
             "return_pct": 3.25
           },
           {
-            "density": 0.00052461,
+            "density": 0.0,
             "return_pct": 3.5
           },
           {
-            "density": 6.812e-05,
+            "density": 6.898e-05,
             "return_pct": 3.75
           },
           {
-            "density": 0.0001808,
+            "density": 2.755e-05,
             "return_pct": 4.0
           },
           {
-            "density": 5.779e-05,
+            "density": 0.0,
             "return_pct": 4.25
           },
           {
-            "density": 0.00011915,
+            "density": 0.0,
             "return_pct": 4.5
           },
           {
-            "density": 7.97e-06,
+            "density": 0.0,
             "return_pct": 4.75
           },
           {
-            "density": 1.07e-05,
+            "density": 0.0,
             "return_pct": 5.0
           },
           {
-            "density": 1.996e-05,
+            "density": 0.0,
             "return_pct": 5.25
           },
           {
@@ -69871,28 +70028,28 @@
             "return_pct": 7.5
           }
         ],
-        "risk_neutral_horizon_volatility": 0.013084925166445853,
-        "risk_neutral_iv": 0.17470358836687133,
-        "spot": 7513.15,
-        "time_to_expiration_years": 0.00560968965846579,
-        "vix_clock_scale_iv": 0.20065600043077375
+        "risk_neutral_horizon_volatility": 0.013332088169353143,
+        "risk_neutral_iv": 0.17816015502981003,
+        "spot": 7514.03,
+        "time_to_expiration_years": 0.005599834480854057,
+        "vix_clock_scale_iv": 0.20064408120233518
       },
       {
-        "bayesian_shadow_discount": 0.87239,
-        "bayesian_shadow_discount_observations": 11.816666666666666,
+        "bayesian_shadow_discount": 0.8719,
+        "bayesian_shadow_discount_observations": 11.9,
         "bayesian_shadow_discount_source": "BAYESIAN_INTERPOLATED_SHRUNK_SURFACE",
         "bayesian_shadow_discount_time_bucket_et": null,
         "expiration": "20261113",
-        "horizon_calendar_days": 3.0489391477546297,
-        "physical_discount": 0.80804,
-        "physical_discount_average_horizon_persistence": 0.20769020807856522,
+        "horizon_calendar_days": 3.045339544131944,
+        "physical_discount": 0.80763,
+        "physical_discount_average_horizon_persistence": 0.20835443936515669,
         "physical_discount_center": null,
         "physical_discount_latest_observation_date": "2026-11-09",
         "physical_discount_latest_state_log_variance": 0.030275893264144985,
         "physical_discount_long_run_center": 0.8043116628832923,
         "physical_discount_observations": 15,
         "physical_discount_prior_padding_sessions": 185,
-        "physical_discount_relative_time_profile": 1.0001949936048733,
+        "physical_discount_relative_time_profile": 0.9996339937534384,
         "physical_discount_rho_daily": 0.3333333333333333,
         "physical_discount_rho_half_life_sessions": 0.6309297535714574,
         "physical_discount_rho_lower_90": 0.0,
@@ -69902,258 +70059,258 @@
         "physical_discount_state_update_weight": 0.8474119280760453,
         "physical_discount_time_bucket_et": null,
         "quality": "LOW_CONFIDENCE",
-        "realized_return_count": 150,
-        "realized_volatility": 0.1256675829922879,
+        "realized_return_count": 153,
+        "realized_volatility": 0.1260072655450278,
         "reference": [
           {
-            "density": 0.00011707,
+            "density": 0.00017444,
             "return_pct": -7.5
           },
           {
-            "density": 0.0001975,
+            "density": 0.0002839,
             "return_pct": -7.25
           },
           {
-            "density": 0.00032524,
+            "density": 0.0004514,
             "return_pct": -7.0
           },
           {
-            "density": 0.00052267,
+            "density": 0.00070135,
             "return_pct": -6.75
           },
           {
-            "density": 0.0008202,
+            "density": 0.00106503,
             "return_pct": -6.5
           },
           {
-            "density": 0.00125667,
+            "density": 0.00158098,
             "return_pct": -6.25
           },
           {
-            "density": 0.00188035,
+            "density": 0.00229459,
             "return_pct": -6.0
           },
           {
-            "density": 0.00274871,
+            "density": 0.0032567,
             "return_pct": -5.75
           },
           {
-            "density": 0.00392546,
+            "density": 0.00452082,
             "return_pct": -5.5
           },
           {
-            "density": 0.00547796,
+            "density": 0.00613904,
             "return_pct": -5.25
           },
           {
-            "density": 0.00747142,
+            "density": 0.00815653,
             "return_pct": -5.0
           },
           {
-            "density": 0.00996199,
+            "density": 0.0106052,
             "return_pct": -4.75
           },
           {
-            "density": 0.01298713,
+            "density": 0.01349727,
             "return_pct": -4.5
           },
           {
-            "density": 0.016558,
+            "density": 0.01682023,
             "return_pct": -4.25
           },
           {
-            "density": 0.02065245,
+            "density": 0.02053581,
             "return_pct": -4.0
           },
           {
-            "density": 0.02521272,
+            "density": 0.02458392,
             "return_pct": -3.75
           },
           {
-            "density": 0.03015209,
+            "density": 0.02890079,
             "return_pct": -3.5
           },
           {
-            "density": 0.03537598,
+            "density": 0.03345216,
             "return_pct": -3.25
           },
           {
-            "density": 0.04082407,
+            "density": 0.03828708,
             "return_pct": -3.0
           },
           {
-            "density": 0.04653822,
+            "density": 0.0436119,
             "return_pct": -2.75
           },
           {
-            "density": 0.05275486,
+            "density": 0.04987831,
             "return_pct": -2.5
           },
           {
-            "density": 0.06000534,
+            "density": 0.05784287,
             "return_pct": -2.25
           },
           {
-            "density": 0.06918446,
+            "density": 0.06858556,
             "return_pct": -2.0
           },
           {
-            "density": 0.0815316,
+            "density": 0.08338167,
             "return_pct": -1.75
           },
           {
-            "density": 0.09845812,
+            "density": 0.10346867,
             "return_pct": -1.5
           },
           {
-            "density": 0.12119134,
+            "density": 0.12959065,
             "return_pct": -1.25
           },
           {
-            "density": 0.15021922,
+            "density": 0.16156211,
             "return_pct": -1.0
           },
           {
-            "density": 0.18477009,
+            "density": 0.19782803,
             "return_pct": -0.75
           },
           {
-            "density": 0.22243426,
+            "density": 0.23535265,
             "return_pct": -0.5
           },
           {
-            "density": 0.25920883,
+            "density": 0.26989855,
             "return_pct": -0.25
           },
           {
-            "density": 0.29008016,
+            "density": 0.29674223,
             "return_pct": 0.0
           },
           {
-            "density": 0.31010965,
+            "density": 0.31170181,
             "return_pct": 0.25
           },
           {
-            "density": 0.31557793,
+            "density": 0.31212175,
             "return_pct": 0.5
           },
           {
-            "density": 0.30508844,
+            "density": 0.29754985,
             "return_pct": 0.75
           },
           {
-            "density": 0.27982719,
+            "density": 0.26985385,
             "return_pct": 1.0
           },
           {
-            "density": 0.24337406,
+            "density": 0.23275132,
             "return_pct": 1.25
           },
           {
-            "density": 0.20067041,
+            "density": 0.19091998,
             "return_pct": 1.5
           },
           {
-            "density": 0.1568817,
+            "density": 0.14896666,
             "return_pct": 1.75
           },
           {
-            "density": 0.11633641,
+            "density": 0.11060332,
             "return_pct": 2.0
           },
           {
-            "density": 0.08188041,
+            "density": 0.07818616,
             "return_pct": 2.25
           },
           {
-            "density": 0.05475242,
+            "density": 0.05266275,
             "return_pct": 2.5
           },
           {
-            "density": 0.03483268,
+            "density": 0.03383222,
             "return_pct": 2.75
           },
           {
-            "density": 0.02112034,
+            "density": 0.02076233,
             "return_pct": 3.0
           },
           {
-            "density": 0.01223706,
+            "density": 0.01219402,
             "return_pct": 3.25
           },
           {
-            "density": 0.00680019,
+            "density": 0.00687198,
             "return_pct": 3.5
           },
           {
-            "density": 0.00364333,
+            "density": 0.00372976,
             "return_pct": 3.75
           },
           {
-            "density": 0.00189559,
+            "density": 0.00195964,
             "return_pct": 4.0
           },
           {
-            "density": 0.00096697,
+            "density": 0.00100417,
             "return_pct": 4.25
           },
           {
-            "density": 0.00048932,
+            "density": 0.00050659,
             "return_pct": 4.5
           },
           {
-            "density": 0.00024876,
+            "density": 0.00025432,
             "return_pct": 4.75
           },
           {
-            "density": 0.00012847,
+            "density": 0.00012859,
             "return_pct": 5.0
           },
           {
-            "density": 6.785e-05,
+            "density": 6.619e-05,
             "return_pct": 5.25
           },
           {
-            "density": 3.666e-05,
+            "density": 3.485e-05,
             "return_pct": 5.5
           },
           {
-            "density": 2.016e-05,
+            "density": 1.878e-05,
             "return_pct": 5.75
           },
           {
-            "density": 1.12e-05,
+            "density": 1.03e-05,
             "return_pct": 6.0
           },
           {
-            "density": 6.23e-06,
+            "density": 5.71e-06,
             "return_pct": 6.25
           },
           {
-            "density": 3.46e-06,
+            "density": 3.17e-06,
             "return_pct": 6.5
           },
           {
-            "density": 1.9e-06,
+            "density": 1.75e-06,
             "return_pct": 6.75
           },
           {
-            "density": 1.03e-06,
+            "density": 9.6e-07,
             "return_pct": 7.0
           },
           {
-            "density": 5.5e-07,
+            "density": 5.2e-07,
             "return_pct": 7.25
           },
           {
-            "density": 2.9e-07,
+            "density": 2.8e-07,
             "return_pct": 7.5
           }
         ],
         "reference_clock_source": "BAYESIAN_NONLINEAR_INTRADAY_OVERNIGHT_EVENT_CLOCK",
         "reference_decision_authority": "ACTIVE_EDGE_AND_PROBABILITY",
-        "reference_horizon_volatility": 0.015476673292143046,
-        "reference_iv": 0.16939412695331002,
+        "reference_horizon_volatility": 0.015451279063993064,
+        "reference_iv": 0.16921610243513305,
         "reference_label": "Shape\u2013scale\u2013clock physical",
         "reference_model_version": "spxw_shape_vix_nonlinear_clock_physical_v4",
         "reference_scale_source": "VIX_FAMILY_TOTAL_VARIANCE",
@@ -70184,191 +70341,191 @@
             "return_pct": -6.25
           },
           {
-            "density": 0.02292874,
+            "density": 0.01879875,
             "return_pct": -6.0
           },
           {
-            "density": 0.01571856,
+            "density": 0.01413103,
             "return_pct": -5.75
           },
           {
-            "density": 0.01277509,
+            "density": 0.01254706,
             "return_pct": -5.5
           },
           {
-            "density": 0.00861779,
+            "density": 0.00599029,
             "return_pct": -5.25
           },
           {
-            "density": 0.00291291,
+            "density": 0.00353348,
             "return_pct": -5.0
           },
           {
-            "density": 0.00576904,
+            "density": 0.00692733,
             "return_pct": -4.75
           },
           {
-            "density": 0.0093732,
+            "density": 0.01080985,
             "return_pct": -4.5
           },
           {
-            "density": 0.01319103,
+            "density": 0.01494582,
             "return_pct": -4.25
           },
           {
-            "density": 0.01728318,
+            "density": 0.01934384,
             "return_pct": -4.0
           },
           {
-            "density": 0.02218788,
+            "density": 0.02422736,
             "return_pct": -3.75
           },
           {
-            "density": 0.02874357,
+            "density": 0.03000699,
             "return_pct": -3.5
           },
           {
-            "density": 0.03622178,
+            "density": 0.03646519,
             "return_pct": -3.25
           },
           {
-            "density": 0.0443162,
+            "density": 0.04391387,
             "return_pct": -3.0
           },
           {
-            "density": 0.0530783,
+            "density": 0.05241293,
             "return_pct": -2.75
           },
           {
-            "density": 0.06127108,
+            "density": 0.06060699,
             "return_pct": -2.5
           },
           {
-            "density": 0.06899623,
+            "density": 0.06903512,
             "return_pct": -2.25
           },
           {
-            "density": 0.07752961,
+            "density": 0.07832791,
             "return_pct": -2.0
           },
           {
-            "density": 0.08638635,
+            "density": 0.08814691,
             "return_pct": -1.75
           },
           {
-            "density": 0.09691438,
+            "density": 0.09981397,
             "return_pct": -1.5
           },
           {
-            "density": 0.10835787,
+            "density": 0.1124396,
             "return_pct": -1.25
           },
           {
-            "density": 0.12193364,
+            "density": 0.12759993,
             "return_pct": -1.0
           },
           {
-            "density": 0.14186114,
+            "density": 0.1496159,
             "return_pct": -0.75
           },
           {
-            "density": 0.1760504,
+            "density": 0.18656288,
             "return_pct": -0.5
           },
           {
-            "density": 0.25308273,
+            "density": 0.27638032,
             "return_pct": -0.25
           },
           {
-            "density": 0.40637275,
+            "density": 0.38715266,
             "return_pct": 0.0
           },
           {
-            "density": 0.35047019,
+            "density": 0.32368322,
             "return_pct": 0.25
           },
           {
-            "density": 0.25397749,
+            "density": 0.24216328,
             "return_pct": 0.5
           },
           {
-            "density": 0.22879348,
+            "density": 0.21598086,
             "return_pct": 0.75
           },
           {
-            "density": 0.21665239,
+            "density": 0.20097711,
             "return_pct": 1.0
           },
           {
-            "density": 0.20581633,
+            "density": 0.18543816,
             "return_pct": 1.25
           },
           {
-            "density": 0.19112125,
+            "density": 0.17380966,
             "return_pct": 1.5
           },
           {
-            "density": 0.16675829,
+            "density": 0.15807818,
             "return_pct": 1.75
           },
           {
-            "density": 0.14412387,
+            "density": 0.14303335,
             "return_pct": 2.0
           },
           {
-            "density": 0.11866136,
+            "density": 0.12164689,
             "return_pct": 2.25
           },
           {
-            "density": 0.08760041,
+            "density": 0.09227215,
             "return_pct": 2.5
           },
           {
-            "density": 0.05863341,
+            "density": 0.0643957,
             "return_pct": 2.75
           },
           {
-            "density": 0.02998339,
+            "density": 0.03545703,
             "return_pct": 3.0
           },
           {
-            "density": 0.00604106,
+            "density": 0.00969586,
             "return_pct": 3.25
           },
           {
-            "density": 0.00467871,
+            "density": 0.00188957,
             "return_pct": 3.5
           },
           {
-            "density": 0.00061684,
+            "density": 0.00091432,
             "return_pct": 3.75
           },
           {
-            "density": 0.0,
+            "density": 0.00024586,
             "return_pct": 4.0
           },
           {
-            "density": 2.744e-05,
+            "density": 0.00092645,
             "return_pct": 4.25
           },
           {
-            "density": 0.00040664,
+            "density": 0.00014581,
             "return_pct": 4.5
           },
           {
-            "density": 0.00018491,
+            "density": 6.214e-05,
             "return_pct": 4.75
           },
           {
-            "density": 0.0,
+            "density": 2.39e-05,
             "return_pct": 5.0
           },
           {
-            "density": 0.0,
+            "density": 7e-06,
             "return_pct": 5.25
           },
           {
-            "density": 0.0,
+            "density": 2.5e-07,
             "return_pct": 5.5
           },
           {
@@ -70404,28 +70561,28 @@
             "return_pct": 7.5
           }
         ],
-        "risk_neutral_horizon_volatility": 0.016247409319951757,
-        "risk_neutral_iv": 0.17782992927837418,
-        "spot": 7513.15,
-        "time_to_expiration_years": 0.00834754044559789,
-        "vix_clock_scale_iv": 0.20963581871356618
+        "risk_neutral_horizon_volatility": 0.016429834734123593,
+        "risk_neutral_iv": 0.1799328447727409,
+        "spot": 7514.03,
+        "time_to_expiration_years": 0.008337685267986158,
+        "vix_clock_scale_iv": 0.20952181374532033
       },
       {
-        "bayesian_shadow_discount": 0.88371,
-        "bayesian_shadow_discount_observations": 6.183333333333334,
+        "bayesian_shadow_discount": 0.88265,
+        "bayesian_shadow_discount_observations": 6.1,
         "bayesian_shadow_discount_source": "BAYESIAN_INTERPOLATED_SHRUNK_SURFACE",
         "bayesian_shadow_discount_time_bucket_et": null,
         "expiration": "20261117",
-        "horizon_calendar_days": 7.048939147754631,
-        "physical_discount": 0.79543,
-        "physical_discount_average_horizon_persistence": 0.1266153216801093,
+        "horizon_calendar_days": 7.045339544131945,
+        "physical_discount": 0.79449,
+        "physical_discount_average_horizon_persistence": 0.126869565762177,
         "physical_discount_center": null,
         "physical_discount_latest_observation_date": "2026-11-09",
         "physical_discount_latest_state_log_variance": 0.030275893264144985,
         "physical_discount_long_run_center": 0.8043116628832923,
         "physical_discount_observations": 15,
         "physical_discount_prior_padding_sessions": 185,
-        "physical_discount_relative_time_profile": 0.9862857207532371,
+        "physical_discount_relative_time_profile": 0.9851005393826234,
         "physical_discount_rho_daily": 0.3333333333333333,
         "physical_discount_rho_half_life_sessions": 0.6309297535714574,
         "physical_discount_rho_lower_90": 0.0,
@@ -70435,516 +70592,516 @@
         "physical_discount_state_update_weight": 0.8474119280760453,
         "physical_discount_time_bucket_et": null,
         "quality": "LOW_CONFIDENCE",
-        "realized_return_count": 150,
-        "realized_volatility": 0.1256675829922879,
+        "realized_return_count": 153,
+        "realized_volatility": 0.1260072655450278,
         "reference": [
           {
-            "density": 0.00297056,
+            "density": 0.00346543,
             "return_pct": -7.5
           },
           {
-            "density": 0.00377807,
+            "density": 0.00429188,
             "return_pct": -7.25
           },
           {
-            "density": 0.00474243,
+            "density": 0.00525303,
             "return_pct": -7.0
           },
           {
-            "density": 0.00587586,
+            "density": 0.00635395,
             "return_pct": -6.75
           },
           {
-            "density": 0.00718663,
+            "density": 0.00759645,
             "return_pct": -6.5
           },
           {
-            "density": 0.0086778,
+            "density": 0.00897758,
             "return_pct": -6.25
           },
           {
-            "density": 0.01034603,
+            "density": 0.01048879,
             "return_pct": -6.0
           },
           {
-            "density": 0.01218073,
+            "density": 0.01211673,
             "return_pct": -5.75
           },
           {
-            "density": 0.01416376,
+            "density": 0.01384257,
             "return_pct": -5.5
           },
           {
-            "density": 0.0162696,
+            "density": 0.01564358,
             "return_pct": -5.25
           },
           {
-            "density": 0.01846663,
+            "density": 0.01749581,
             "return_pct": -5.0
           },
           {
-            "density": 0.02072087,
+            "density": 0.01937809,
             "return_pct": -4.75
           },
           {
-            "density": 0.02300109,
+            "density": 0.02127869,
             "return_pct": -4.5
           },
           {
-            "density": 0.02528726,
+            "density": 0.02320548,
             "return_pct": -4.25
           },
           {
-            "density": 0.0275831,
+            "density": 0.02519933,
             "return_pct": -4.0
           },
           {
-            "density": 0.02993284,
+            "density": 0.02735124,
             "return_pct": -3.75
           },
           {
-            "density": 0.03244061,
+            "density": 0.02982153,
             "return_pct": -3.5
           },
           {
-            "density": 0.03529375,
+            "density": 0.03285801,
             "return_pct": -3.25
           },
           {
-            "density": 0.03877943,
+            "density": 0.03680864,
             "return_pct": -3.0
           },
           {
-            "density": 0.04329661,
+            "density": 0.04211739,
             "return_pct": -2.75
           },
           {
-            "density": 0.04934315,
+            "density": 0.04930248,
             "return_pct": -2.5
           },
           {
-            "density": 0.05748532,
+            "density": 0.05890397,
             "return_pct": -2.25
           },
           {
-            "density": 0.0682747,
+            "density": 0.07140122,
             "return_pct": -2.0
           },
           {
-            "density": 0.08217189,
+            "density": 0.08710673,
             "return_pct": -1.75
           },
           {
-            "density": 0.09937884,
+            "density": 0.10604369,
             "return_pct": -1.5
           },
           {
-            "density": 0.11975449,
+            "density": 0.1278394,
             "return_pct": -1.25
           },
           {
-            "density": 0.14268845,
+            "density": 0.15166249,
             "return_pct": -1.0
           },
           {
-            "density": 0.16706528,
+            "density": 0.17622442,
             "return_pct": -0.75
           },
           {
-            "density": 0.19132147,
+            "density": 0.19986615,
             "return_pct": -0.5
           },
           {
-            "density": 0.21357203,
+            "density": 0.22072787,
             "return_pct": -0.25
           },
           {
-            "density": 0.23185568,
+            "density": 0.23697066,
             "return_pct": 0.0
           },
           {
-            "density": 0.24439699,
+            "density": 0.24704511,
             "return_pct": 0.25
           },
           {
-            "density": 0.24987508,
+            "density": 0.24993127,
             "return_pct": 0.5
           },
           {
-            "density": 0.24762251,
+            "density": 0.24527402,
             "return_pct": 0.75
           },
           {
-            "density": 0.23776007,
+            "density": 0.23342042,
             "return_pct": 1.0
           },
           {
-            "density": 0.22115202,
+            "density": 0.21541441,
             "return_pct": 1.25
           },
           {
-            "density": 0.19925943,
+            "density": 0.19278816,
             "return_pct": 1.5
           },
           {
-            "density": 0.17391629,
+            "density": 0.16733121,
             "return_pct": 1.75
           },
           {
-            "density": 0.14706435,
+            "density": 0.14088294,
             "return_pct": 2.0
           },
           {
-            "density": 0.12050408,
+            "density": 0.11508344,
             "return_pct": 2.25
           },
           {
-            "density": 0.09570424,
+            "density": 0.09124125,
             "return_pct": 2.5
           },
           {
-            "density": 0.07369358,
+            "density": 0.07022454,
             "return_pct": 2.75
           },
           {
-            "density": 0.05503761,
+            "density": 0.05250457,
             "return_pct": 3.0
           },
           {
-            "density": 0.03988569,
+            "density": 0.03814153,
             "return_pct": 3.25
           },
           {
-            "density": 0.02806343,
+            "density": 0.02695008,
             "return_pct": 3.5
           },
           {
-            "density": 0.01918338,
+            "density": 0.0185267,
             "return_pct": 3.75
           },
           {
-            "density": 0.01275091,
+            "density": 0.01241353,
             "return_pct": 4.0
           },
           {
-            "density": 0.0082502,
+            "density": 0.00811191,
             "return_pct": 4.25
           },
           {
-            "density": 0.00520516,
+            "density": 0.0051822,
             "return_pct": 4.5
           },
           {
-            "density": 0.00320834,
+            "density": 0.0032436,
             "return_pct": 4.75
           },
           {
-            "density": 0.0019366,
+            "density": 0.0019946,
             "return_pct": 5.0
           },
           {
-            "density": 0.00114854,
+            "density": 0.0012114,
             "return_pct": 5.25
           },
           {
-            "density": 0.00067213,
+            "density": 0.00072962,
             "return_pct": 5.5
           },
           {
-            "density": 0.00039058,
+            "density": 0.00043846,
             "return_pct": 5.75
           },
           {
-            "density": 0.00022663,
+            "density": 0.00026494,
             "return_pct": 6.0
           },
           {
-            "density": 0.00013218,
+            "density": 0.00016191,
             "return_pct": 6.25
           },
           {
-            "density": 7.805e-05,
+            "density": 0.0001006,
             "return_pct": 6.5
           },
           {
-            "density": 4.689e-05,
+            "density": 6.375e-05,
             "return_pct": 6.75
           },
           {
-            "density": 2.871e-05,
+            "density": 4.124e-05,
             "return_pct": 7.0
           },
           {
-            "density": 1.794e-05,
+            "density": 2.715e-05,
             "return_pct": 7.25
           },
           {
-            "density": 1.139e-05,
+            "density": 1.813e-05,
             "return_pct": 7.5
           }
         ],
         "reference_clock_source": "BAYESIAN_NONLINEAR_INTRADAY_OVERNIGHT_EVENT_CLOCK",
         "reference_decision_authority": "ACTIVE_EDGE_AND_PROBABILITY",
-        "reference_horizon_volatility": 0.020262510187229972,
-        "reference_iv": 0.14585673169045568,
+        "reference_horizon_volatility": 0.02021285444668137,
+        "reference_iv": 0.14553645655604155,
         "reference_label": "Shape\u2013scale\u2013clock physical",
         "reference_model_version": "spxw_shape_vix_nonlinear_clock_physical_v4",
         "reference_scale_source": "VIX_FAMILY_TOTAL_VARIANCE",
         "reference_shape_source": "SPXW_TWO_LOGNORMAL_STANDARDIZED_SHAPE_ONLY",
         "risk_neutral": [
           {
-            "density": 0.01714718,
+            "density": 0.01575921,
             "return_pct": -7.5
           },
           {
-            "density": 0.01291287,
+            "density": 0.01102963,
             "return_pct": -7.25
           },
           {
-            "density": 0.00985794,
+            "density": 0.00756234,
             "return_pct": -7.0
           },
           {
-            "density": 0.00903256,
+            "density": 0.00755132,
             "return_pct": -6.75
           },
           {
-            "density": 0.00869074,
+            "density": 0.00783352,
             "return_pct": -6.5
           },
           {
-            "density": 0.00840041,
+            "density": 0.00817813,
             "return_pct": -6.25
           },
           {
-            "density": 0.00810362,
+            "density": 0.00854217,
             "return_pct": -6.0
           },
           {
-            "density": 0.00779776,
+            "density": 0.00892501,
             "return_pct": -5.75
           },
           {
-            "density": 0.00748218,
+            "density": 0.00932915,
             "return_pct": -5.5
           },
           {
-            "density": 0.00716671,
+            "density": 0.00977444,
             "return_pct": -5.25
           },
           {
-            "density": 0.00713821,
+            "density": 0.01060562,
             "return_pct": -5.0
           },
           {
-            "density": 0.00904398,
+            "density": 0.01280714,
             "return_pct": -4.75
           },
           {
-            "density": 0.01295549,
+            "density": 0.01653804,
             "return_pct": -4.5
           },
           {
-            "density": 0.01736742,
+            "density": 0.0207304,
             "return_pct": -4.25
           },
           {
-            "density": 0.02306348,
+            "density": 0.02579917,
             "return_pct": -4.0
           },
           {
-            "density": 0.02998793,
+            "density": 0.03171034,
             "return_pct": -3.75
           },
           {
-            "density": 0.03737796,
+            "density": 0.0380886,
             "return_pct": -3.5
           },
           {
-            "density": 0.04486184,
+            "density": 0.04463255,
             "return_pct": -3.25
           },
           {
-            "density": 0.0527127,
+            "density": 0.05173354,
             "return_pct": -3.0
           },
           {
-            "density": 0.06129871,
+            "density": 0.05947156,
             "return_pct": -2.75
           },
           {
-            "density": 0.06913799,
+            "density": 0.06657666,
             "return_pct": -2.5
           },
           {
-            "density": 0.07638461,
+            "density": 0.07360321,
             "return_pct": -2.25
           },
           {
-            "density": 0.08468806,
+            "density": 0.08152701,
             "return_pct": -2.0
           },
           {
-            "density": 0.09248602,
+            "density": 0.08880138,
             "return_pct": -1.75
           },
           {
-            "density": 0.09695271,
+            "density": 0.09447627,
             "return_pct": -1.5
           },
           {
-            "density": 0.10223148,
+            "density": 0.10126924,
             "return_pct": -1.25
           },
           {
-            "density": 0.10984148,
+            "density": 0.11105399,
             "return_pct": -1.0
           },
           {
-            "density": 0.12167026,
+            "density": 0.12618123,
             "return_pct": -0.75
           },
           {
-            "density": 0.14227615,
+            "density": 0.15257534,
             "return_pct": -0.5
           },
           {
-            "density": 0.19740197,
+            "density": 0.23038227,
             "return_pct": -0.25
           },
           {
-            "density": 0.29476746,
+            "density": 0.26572977,
             "return_pct": 0.0
           },
           {
-            "density": 0.2831468,
+            "density": 0.28486068,
             "return_pct": 0.25
           },
           {
-            "density": 0.19886951,
+            "density": 0.20936066,
             "return_pct": 0.5
           },
           {
-            "density": 0.18574348,
+            "density": 0.19482704,
             "return_pct": 0.75
           },
           {
-            "density": 0.18332923,
+            "density": 0.19033043,
             "return_pct": 1.0
           },
           {
-            "density": 0.18419237,
+            "density": 0.1882893,
             "return_pct": 1.25
           },
           {
-            "density": 0.18362672,
+            "density": 0.17449673,
             "return_pct": 1.5
           },
           {
-            "density": 0.18349151,
+            "density": 0.16073899,
             "return_pct": 1.75
           },
           {
-            "density": 0.18276482,
+            "density": 0.14905209,
             "return_pct": 2.0
           },
           {
-            "density": 0.16357852,
+            "density": 0.13474648,
             "return_pct": 2.25
           },
           {
-            "density": 0.13548108,
+            "density": 0.1199157,
             "return_pct": 2.5
           },
           {
-            "density": 0.10928613,
+            "density": 0.10597712,
             "return_pct": 2.75
           },
           {
-            "density": 0.08253808,
+            "density": 0.08788496,
             "return_pct": 3.0
           },
           {
-            "density": 0.05448286,
+            "density": 0.06539476,
             "return_pct": 3.25
           },
           {
-            "density": 0.02807276,
+            "density": 0.04389706,
             "return_pct": 3.5
           },
           {
-            "density": 0.00442879,
+            "density": 0.02245537,
             "return_pct": 3.75
           },
           {
-            "density": 0.00854153,
+            "density": 0.00089586,
             "return_pct": 4.0
           },
           {
-            "density": 0.00071419,
+            "density": 0.00146345,
             "return_pct": 4.25
           },
           {
-            "density": 0.00388382,
+            "density": 1.73e-06,
             "return_pct": 4.5
           },
           {
-            "density": 0.00282316,
+            "density": 0.00010841,
             "return_pct": 4.75
           },
           {
-            "density": 0.00023561,
+            "density": 0.00247217,
             "return_pct": 5.0
           },
           {
-            "density": 0.0,
+            "density": 0.0002094,
             "return_pct": 5.25
           },
           {
-            "density": 0.0,
+            "density": 0.00137746,
             "return_pct": 5.5
           },
           {
-            "density": 0.0,
+            "density": 0.00044263,
             "return_pct": 5.75
           },
           {
-            "density": 0.0,
+            "density": 0.00092435,
             "return_pct": 6.0
           },
           {
-            "density": 0.0,
+            "density": 0.00080413,
             "return_pct": 6.25
           },
           {
-            "density": 1e-07,
+            "density": 0.0,
             "return_pct": 6.5
           },
           {
-            "density": 3.72e-05,
+            "density": 1.943e-05,
             "return_pct": 6.75
           },
           {
-            "density": 0.00032358,
+            "density": 0.00013118,
             "return_pct": 7.0
           },
           {
-            "density": 0.00037156,
+            "density": 0.00027037,
             "return_pct": 7.25
           },
           {
-            "density": 0.00036587,
+            "density": 0.00037605,
             "return_pct": 7.5
           }
         ],
-        "risk_neutral_horizon_volatility": 0.0217344877037505,
-        "risk_neutral_iv": 0.1564525476924053,
-        "spot": 7513.15,
-        "time_to_expiration_years": 0.0192989435941263,
-        "vix_clock_scale_iv": 0.18336840663597764
+        "risk_neutral_horizon_volatility": 0.021853944185587178,
+        "risk_neutral_iv": 0.1573526196873228,
+        "spot": 7514.03,
+        "time_to_expiration_years": 0.019289088416514565,
+        "vix_clock_scale_iv": 0.1831822383617686
       }
     ],
-    "observed_at_et": "2026-11-10T14:49:31.657634-05:00",
+    "observed_at_et": "2026-11-10T14:54:42.663387-05:00",
     "return_grid": [
       -7.5,
       -7.25,
@@ -71008,7 +71165,7 @@
       7.25,
       7.5
     ],
-    "scan_count": 64,
+    "scan_count": 65,
     "scan_interval_minutes": 5,
     "scans": [
       {
@@ -125410,12 +125567,862 @@
           "session_open_spx": 7494.91
         },
         "observed_at_et": "2026-11-10T14:49:31.657634-05:00"
+      },
+      {
+        "expirations": [
+          {
+            "bayesian_shadow_discount": 0.79101,
+            "bayesian_shadow_discount_observations": 11.3,
+            "bayesian_shadow_discount_source": "BAYESIAN_INTERPOLATED_SHRUNK_SURFACE",
+            "bayesian_shadow_discount_time_bucket_et": null,
+            "expiration": "20261110",
+            "horizon_calendar_days": 0.04533954413194445,
+            "physical_discount": 0.75803,
+            "physical_discount_average_horizon_persistence": 0.9222292560791066,
+            "physical_discount_center": null,
+            "physical_discount_latest_observation_date": "2026-11-09",
+            "physical_discount_latest_state_log_variance": 0.030275893264144985,
+            "physical_discount_long_run_center": 0.8043116628832923,
+            "physical_discount_observations": 15,
+            "physical_discount_prior_padding_sessions": 185,
+            "physical_discount_relative_time_profile": 0.9239588880371915,
+            "physical_discount_rho_daily": 0.3333333333333333,
+            "physical_discount_rho_half_life_sessions": 0.6309297535714574,
+            "physical_discount_rho_lower_90": 0.0,
+            "physical_discount_rho_upper_90": 0.6078737376191303,
+            "physical_discount_source": "MEAN_REVERTING_200D_TIME_PROFILE",
+            "physical_discount_state_age_sessions": 1,
+            "physical_discount_state_update_weight": 0.8474119280760453,
+            "physical_discount_time_bucket_et": null,
+            "quality": "LOW_CONFIDENCE",
+            "realized_return_count": 153,
+            "realized_volatility": 0.1260072655450278,
+            "reference_clock_source": "BAYESIAN_NONLINEAR_INTRADAY_OVERNIGHT_EVENT_CLOCK",
+            "reference_decision_authority": "ACTIVE_EDGE_AND_PROBABILITY",
+            "reference_density": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              8e-08,
+              1.07e-06,
+              1.135e-05,
+              9.03e-05,
+              0.00054166,
+              0.00245391,
+              0.00841549,
+              0.02206318,
+              0.08030128,
+              0.91448616,
+              2.20984363,
+              0.66359141,
+              0.06328894,
+              0.022995,
+              0.00912001,
+              0.00279676,
+              0.00066228,
+              0.00012137,
+              1.724e-05,
+              1.9e-06,
+              1.6e-07,
+              1e-08,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "reference_horizon_volatility": 0.0021694801760405013,
+            "reference_iv": 0.19472074556754557,
+            "reference_label": "Shape\u2013scale\u2013clock physical",
+            "reference_model_version": "spxw_shape_vix_nonlinear_clock_physical_v4",
+            "reference_scale_source": "VIX_FAMILY_TOTAL_VARIANCE",
+            "reference_shape_source": "SPXW_TWO_LOGNORMAL_STANDARDIZED_SHAPE_ONLY",
+            "risk_neutral_density": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.10818854,
+              0.32174143,
+              0.65592122,
+              2.58047197,
+              0.58612848,
+              0.28068338,
+              0.08709059,
+              0.00614665,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "risk_neutral_horizon_volatility": 0.0028821123358186308,
+            "risk_neutral_iv": 0.25868273378938084,
+            "spot": 7514.03,
+            "time_to_expiration_years": 0.00012413290658985475,
+            "vix_clock_scale_iv": 0.2568773604838141
+          },
+          {
+            "bayesian_shadow_discount": 0.97017,
+            "bayesian_shadow_discount_observations": 12.0,
+            "bayesian_shadow_discount_source": "BAYESIAN_INTERPOLATED_SHRUNK_SURFACE",
+            "bayesian_shadow_discount_time_bucket_et": null,
+            "expiration": "20261111",
+            "horizon_calendar_days": 1.0453395441319446,
+            "physical_discount": 0.79851,
+            "physical_discount_average_horizon_persistence": 0.4763776874398086,
+            "physical_discount_center": null,
+            "physical_discount_latest_observation_date": "2026-11-09",
+            "physical_discount_latest_state_log_variance": 0.030275893264144985,
+            "physical_discount_long_run_center": 0.8043116628832923,
+            "physical_discount_observations": 15,
+            "physical_discount_prior_padding_sessions": 185,
+            "physical_discount_relative_time_profile": 0.9826787375438177,
+            "physical_discount_rho_daily": 0.3333333333333333,
+            "physical_discount_rho_half_life_sessions": 0.6309297535714574,
+            "physical_discount_rho_lower_90": 0.0,
+            "physical_discount_rho_upper_90": 0.6078737376191303,
+            "physical_discount_source": "MEAN_REVERTING_200D_TIME_PROFILE",
+            "physical_discount_state_age_sessions": 1,
+            "physical_discount_state_update_weight": 0.8474119280760453,
+            "physical_discount_time_bucket_et": null,
+            "quality": "LOW_CONFIDENCE",
+            "realized_return_count": 153,
+            "realized_volatility": 0.1260072655450278,
+            "reference_clock_source": "BAYESIAN_NONLINEAR_INTRADAY_OVERNIGHT_EVENT_CLOCK",
+            "reference_decision_authority": "ACTIVE_EDGE_AND_PROBABILITY",
+            "reference_density": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1e-08,
+              3e-08,
+              1.6e-07,
+              7.5e-07,
+              3.23e-06,
+              1.265e-05,
+              4.503e-05,
+              0.00014564,
+              0.00042819,
+              0.00114529,
+              0.00278881,
+              0.00618652,
+              0.01251195,
+              0.02309359,
+              0.03897229,
+              0.06040615,
+              0.08705972,
+              0.11993244,
+              0.16506708,
+              0.23489857,
+              0.33937104,
+              0.4662521,
+              0.57004726,
+              0.59419899,
+              0.51652481,
+              0.37082907,
+              0.21924912,
+              0.10692802,
+              0.04329171,
+              0.01473688,
+              0.00432515,
+              0.00114336,
+              0.00029018,
+              7.503e-05,
+              2.011e-05,
+              5.42e-06,
+              1.41e-06,
+              3.5e-07,
+              8e-08,
+              2e-08,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "reference_horizon_volatility": 0.0076874361778333875,
+            "reference_iv": 0.14369708085476304,
+            "reference_label": "Shape\u2013scale\u2013clock physical",
+            "reference_model_version": "spxw_shape_vix_nonlinear_clock_physical_v4",
+            "reference_scale_source": "VIX_FAMILY_TOTAL_VARIANCE",
+            "reference_shape_source": "SPXW_TWO_LOGNORMAL_STANDARDIZED_SHAPE_ONLY",
+            "risk_neutral_density": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.01912053,
+              0.01319058,
+              0.0184358,
+              0.00810992,
+              0.00879412,
+              0.02638458,
+              0.04725493,
+              0.07119345,
+              0.0980632,
+              0.12897658,
+              0.16499182,
+              0.2111262,
+              0.27796831,
+              0.43507328,
+              0.78021629,
+              0.43322,
+              0.31652375,
+              0.26510197,
+              0.21988606,
+              0.17127116,
+              0.12429512,
+              0.08018066,
+              0.03927701,
+              0.0025412,
+              0.00014141,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "risk_neutral_horizon_volatility": 0.009340457178015557,
+            "risk_neutral_iv": 0.17459610711305257,
+            "spot": 7514.03,
+            "time_to_expiration_years": 0.0028619836937219564,
+            "vix_clock_scale_iv": 0.17995652008711605
+          },
+          {
+            "bayesian_shadow_discount": 0.92013,
+            "bayesian_shadow_discount_observations": 13.0,
+            "bayesian_shadow_discount_source": "BAYESIAN_INTERPOLATED_SHRUNK_SURFACE",
+            "bayesian_shadow_discount_time_bucket_et": null,
+            "expiration": "20261112",
+            "horizon_calendar_days": 2.045339544131944,
+            "physical_discount": 0.8111,
+            "physical_discount_average_horizon_persistence": 0.2998935394119287,
+            "physical_discount_center": null,
+            "physical_discount_latest_observation_date": "2026-11-09",
+            "physical_discount_latest_state_log_variance": 0.030275893264144985,
+            "physical_discount_long_run_center": 0.8043116628832923,
+            "physical_discount_observations": 15,
+            "physical_discount_prior_padding_sessions": 185,
+            "physical_discount_relative_time_profile": 1.0019606386642237,
+            "physical_discount_rho_daily": 0.3333333333333333,
+            "physical_discount_rho_half_life_sessions": 0.6309297535714574,
+            "physical_discount_rho_lower_90": 0.0,
+            "physical_discount_rho_upper_90": 0.6078737376191303,
+            "physical_discount_source": "MEAN_REVERTING_200D_TIME_PROFILE",
+            "physical_discount_state_age_sessions": 1,
+            "physical_discount_state_update_weight": 0.8474119280760453,
+            "physical_discount_time_bucket_et": null,
+            "quality": "LOW_CONFIDENCE",
+            "realized_return_count": 153,
+            "realized_volatility": 0.1260072655450278,
+            "reference_clock_source": "BAYESIAN_NONLINEAR_INTRADAY_OVERNIGHT_EVENT_CLOCK",
+            "reference_decision_authority": "ACTIVE_EDGE_AND_PROBABILITY",
+            "reference_density": [
+              1.74e-06,
+              4.06e-06,
+              9.15e-06,
+              1.983e-05,
+              4.142e-05,
+              8.339e-05,
+              0.00016177,
+              0.00030269,
+              0.00054618,
+              0.00095095,
+              0.00159762,
+              0.00259144,
+              0.00405853,
+              0.00613905,
+              0.00897252,
+              0.01267467,
+              0.01731389,
+              0.02289204,
+              0.02934608,
+              0.03659481,
+              0.04465943,
+              0.0538754,
+              0.06516808,
+              0.08027637,
+              0.10170465,
+              0.13214901,
+              0.17330037,
+              0.22423746,
+              0.28024143,
+              0.33281717,
+              0.37152661,
+              0.38721027,
+              0.37526502,
+              0.33747448,
+              0.28131603,
+              0.21731351,
+              0.15560541,
+              0.10336248,
+              0.06376968,
+              0.03660742,
+              0.01960791,
+              0.00984344,
+              0.00465951,
+              0.00209933,
+              0.00091245,
+              0.00038943,
+              0.00016652,
+              7.259e-05,
+              3.254e-05,
+              1.495e-05,
+              6.97e-06,
+              3.25e-06,
+              1.5e-06,
+              6.8e-07,
+              3e-07,
+              1.3e-07,
+              6e-08,
+              2e-08,
+              1e-08,
+              0.0,
+              0.0
+            ],
+            "reference_horizon_volatility": 0.012178347147753255,
+            "reference_iv": 0.16274241426321406,
+            "reference_label": "Shape\u2013scale\u2013clock physical",
+            "reference_model_version": "spxw_shape_vix_nonlinear_clock_physical_v4",
+            "reference_scale_source": "VIX_FAMILY_TOTAL_VARIANCE",
+            "reference_shape_source": "SPXW_TWO_LOGNORMAL_STANDARDIZED_SHAPE_ONLY",
+            "risk_neutral_density": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.01534206,
+              0.01677614,
+              0.00649088,
+              0.00523835,
+              0.01021879,
+              0.01582976,
+              0.0219334,
+              0.02967615,
+              0.0394694,
+              0.05065522,
+              0.06331595,
+              0.0774311,
+              0.09335956,
+              0.10919897,
+              0.1263635,
+              0.14689166,
+              0.17393803,
+              0.22015845,
+              0.33670939,
+              0.52446191,
+              0.35388489,
+              0.26883522,
+              0.23590514,
+              0.21034215,
+              0.19197551,
+              0.17135294,
+              0.15108081,
+              0.11561842,
+              0.08136532,
+              0.04575596,
+              0.01285778,
+              0.00422261,
+              0.0,
+              0.0,
+              6.898e-05,
+              2.755e-05,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "risk_neutral_horizon_volatility": 0.013332088169353143,
+            "risk_neutral_iv": 0.17816015502981003,
+            "spot": 7514.03,
+            "time_to_expiration_years": 0.005599834480854057,
+            "vix_clock_scale_iv": 0.20064408120233518
+          },
+          {
+            "bayesian_shadow_discount": 0.8719,
+            "bayesian_shadow_discount_observations": 11.9,
+            "bayesian_shadow_discount_source": "BAYESIAN_INTERPOLATED_SHRUNK_SURFACE",
+            "bayesian_shadow_discount_time_bucket_et": null,
+            "expiration": "20261113",
+            "horizon_calendar_days": 3.045339544131944,
+            "physical_discount": 0.80763,
+            "physical_discount_average_horizon_persistence": 0.20835443936515669,
+            "physical_discount_center": null,
+            "physical_discount_latest_observation_date": "2026-11-09",
+            "physical_discount_latest_state_log_variance": 0.030275893264144985,
+            "physical_discount_long_run_center": 0.8043116628832923,
+            "physical_discount_observations": 15,
+            "physical_discount_prior_padding_sessions": 185,
+            "physical_discount_relative_time_profile": 0.9996339937534384,
+            "physical_discount_rho_daily": 0.3333333333333333,
+            "physical_discount_rho_half_life_sessions": 0.6309297535714574,
+            "physical_discount_rho_lower_90": 0.0,
+            "physical_discount_rho_upper_90": 0.6078737376191303,
+            "physical_discount_source": "MEAN_REVERTING_200D_TIME_PROFILE",
+            "physical_discount_state_age_sessions": 1,
+            "physical_discount_state_update_weight": 0.8474119280760453,
+            "physical_discount_time_bucket_et": null,
+            "quality": "LOW_CONFIDENCE",
+            "realized_return_count": 153,
+            "realized_volatility": 0.1260072655450278,
+            "reference_clock_source": "BAYESIAN_NONLINEAR_INTRADAY_OVERNIGHT_EVENT_CLOCK",
+            "reference_decision_authority": "ACTIVE_EDGE_AND_PROBABILITY",
+            "reference_density": [
+              0.00017444,
+              0.0002839,
+              0.0004514,
+              0.00070135,
+              0.00106503,
+              0.00158098,
+              0.00229459,
+              0.0032567,
+              0.00452082,
+              0.00613904,
+              0.00815653,
+              0.0106052,
+              0.01349727,
+              0.01682023,
+              0.02053581,
+              0.02458392,
+              0.02890079,
+              0.03345216,
+              0.03828708,
+              0.0436119,
+              0.04987831,
+              0.05784287,
+              0.06858556,
+              0.08338167,
+              0.10346867,
+              0.12959065,
+              0.16156211,
+              0.19782803,
+              0.23535265,
+              0.26989855,
+              0.29674223,
+              0.31170181,
+              0.31212175,
+              0.29754985,
+              0.26985385,
+              0.23275132,
+              0.19091998,
+              0.14896666,
+              0.11060332,
+              0.07818616,
+              0.05266275,
+              0.03383222,
+              0.02076233,
+              0.01219402,
+              0.00687198,
+              0.00372976,
+              0.00195964,
+              0.00100417,
+              0.00050659,
+              0.00025432,
+              0.00012859,
+              6.619e-05,
+              3.485e-05,
+              1.878e-05,
+              1.03e-05,
+              5.71e-06,
+              3.17e-06,
+              1.75e-06,
+              9.6e-07,
+              5.2e-07,
+              2.8e-07
+            ],
+            "reference_horizon_volatility": 0.015451279063993064,
+            "reference_iv": 0.16921610243513305,
+            "reference_label": "Shape\u2013scale\u2013clock physical",
+            "reference_model_version": "spxw_shape_vix_nonlinear_clock_physical_v4",
+            "reference_scale_source": "VIX_FAMILY_TOTAL_VARIANCE",
+            "reference_shape_source": "SPXW_TWO_LOGNORMAL_STANDARDIZED_SHAPE_ONLY",
+            "risk_neutral_density": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.01879875,
+              0.01413103,
+              0.01254706,
+              0.00599029,
+              0.00353348,
+              0.00692733,
+              0.01080985,
+              0.01494582,
+              0.01934384,
+              0.02422736,
+              0.03000699,
+              0.03646519,
+              0.04391387,
+              0.05241293,
+              0.06060699,
+              0.06903512,
+              0.07832791,
+              0.08814691,
+              0.09981397,
+              0.1124396,
+              0.12759993,
+              0.1496159,
+              0.18656288,
+              0.27638032,
+              0.38715266,
+              0.32368322,
+              0.24216328,
+              0.21598086,
+              0.20097711,
+              0.18543816,
+              0.17380966,
+              0.15807818,
+              0.14303335,
+              0.12164689,
+              0.09227215,
+              0.0643957,
+              0.03545703,
+              0.00969586,
+              0.00188957,
+              0.00091432,
+              0.00024586,
+              0.00092645,
+              0.00014581,
+              6.214e-05,
+              2.39e-05,
+              7e-06,
+              2.5e-07,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "risk_neutral_horizon_volatility": 0.016429834734123593,
+            "risk_neutral_iv": 0.1799328447727409,
+            "spot": 7514.03,
+            "time_to_expiration_years": 0.008337685267986158,
+            "vix_clock_scale_iv": 0.20952181374532033
+          },
+          {
+            "bayesian_shadow_discount": 0.88265,
+            "bayesian_shadow_discount_observations": 6.1,
+            "bayesian_shadow_discount_source": "BAYESIAN_INTERPOLATED_SHRUNK_SURFACE",
+            "bayesian_shadow_discount_time_bucket_et": null,
+            "expiration": "20261117",
+            "horizon_calendar_days": 7.045339544131945,
+            "physical_discount": 0.79449,
+            "physical_discount_average_horizon_persistence": 0.126869565762177,
+            "physical_discount_center": null,
+            "physical_discount_latest_observation_date": "2026-11-09",
+            "physical_discount_latest_state_log_variance": 0.030275893264144985,
+            "physical_discount_long_run_center": 0.8043116628832923,
+            "physical_discount_observations": 15,
+            "physical_discount_prior_padding_sessions": 185,
+            "physical_discount_relative_time_profile": 0.9851005393826234,
+            "physical_discount_rho_daily": 0.3333333333333333,
+            "physical_discount_rho_half_life_sessions": 0.6309297535714574,
+            "physical_discount_rho_lower_90": 0.0,
+            "physical_discount_rho_upper_90": 0.6078737376191303,
+            "physical_discount_source": "MEAN_REVERTING_200D_TIME_PROFILE",
+            "physical_discount_state_age_sessions": 1,
+            "physical_discount_state_update_weight": 0.8474119280760453,
+            "physical_discount_time_bucket_et": null,
+            "quality": "LOW_CONFIDENCE",
+            "realized_return_count": 153,
+            "realized_volatility": 0.1260072655450278,
+            "reference_clock_source": "BAYESIAN_NONLINEAR_INTRADAY_OVERNIGHT_EVENT_CLOCK",
+            "reference_decision_authority": "ACTIVE_EDGE_AND_PROBABILITY",
+            "reference_density": [
+              0.00346543,
+              0.00429188,
+              0.00525303,
+              0.00635395,
+              0.00759645,
+              0.00897758,
+              0.01048879,
+              0.01211673,
+              0.01384257,
+              0.01564358,
+              0.01749581,
+              0.01937809,
+              0.02127869,
+              0.02320548,
+              0.02519933,
+              0.02735124,
+              0.02982153,
+              0.03285801,
+              0.03680864,
+              0.04211739,
+              0.04930248,
+              0.05890397,
+              0.07140122,
+              0.08710673,
+              0.10604369,
+              0.1278394,
+              0.15166249,
+              0.17622442,
+              0.19986615,
+              0.22072787,
+              0.23697066,
+              0.24704511,
+              0.24993127,
+              0.24527402,
+              0.23342042,
+              0.21541441,
+              0.19278816,
+              0.16733121,
+              0.14088294,
+              0.11508344,
+              0.09124125,
+              0.07022454,
+              0.05250457,
+              0.03814153,
+              0.02695008,
+              0.0185267,
+              0.01241353,
+              0.00811191,
+              0.0051822,
+              0.0032436,
+              0.0019946,
+              0.0012114,
+              0.00072962,
+              0.00043846,
+              0.00026494,
+              0.00016191,
+              0.0001006,
+              6.375e-05,
+              4.124e-05,
+              2.715e-05,
+              1.813e-05
+            ],
+            "reference_horizon_volatility": 0.02021285444668137,
+            "reference_iv": 0.14553645655604155,
+            "reference_label": "Shape\u2013scale\u2013clock physical",
+            "reference_model_version": "spxw_shape_vix_nonlinear_clock_physical_v4",
+            "reference_scale_source": "VIX_FAMILY_TOTAL_VARIANCE",
+            "reference_shape_source": "SPXW_TWO_LOGNORMAL_STANDARDIZED_SHAPE_ONLY",
+            "risk_neutral_density": [
+              0.01575921,
+              0.01102963,
+              0.00756234,
+              0.00755132,
+              0.00783352,
+              0.00817813,
+              0.00854217,
+              0.00892501,
+              0.00932915,
+              0.00977444,
+              0.01060562,
+              0.01280714,
+              0.01653804,
+              0.0207304,
+              0.02579917,
+              0.03171034,
+              0.0380886,
+              0.04463255,
+              0.05173354,
+              0.05947156,
+              0.06657666,
+              0.07360321,
+              0.08152701,
+              0.08880138,
+              0.09447627,
+              0.10126924,
+              0.11105399,
+              0.12618123,
+              0.15257534,
+              0.23038227,
+              0.26572977,
+              0.28486068,
+              0.20936066,
+              0.19482704,
+              0.19033043,
+              0.1882893,
+              0.17449673,
+              0.16073899,
+              0.14905209,
+              0.13474648,
+              0.1199157,
+              0.10597712,
+              0.08788496,
+              0.06539476,
+              0.04389706,
+              0.02245537,
+              0.00089586,
+              0.00146345,
+              1.73e-06,
+              0.00010841,
+              0.00247217,
+              0.0002094,
+              0.00137746,
+              0.00044263,
+              0.00092435,
+              0.00080413,
+              0.0,
+              1.943e-05,
+              0.00013118,
+              0.00027037,
+              0.00037605
+            ],
+            "risk_neutral_horizon_volatility": 0.021853944185587178,
+            "risk_neutral_iv": 0.1573526196873228,
+            "spot": 7514.03,
+            "time_to_expiration_years": 0.019289088416514565,
+            "vix_clock_scale_iv": 0.1831822383617686
+          }
+        ],
+        "market_references": {
+          "current_or_close_label": "Latest at selected scan",
+          "current_or_close_spx": 7514.03,
+          "previous_session_close_spx": 7549.83,
+          "previous_session_date": "2026-11-09",
+          "session_complete": false,
+          "session_high_spx": 7543.33,
+          "session_low_spx": 7473.03,
+          "session_open_spx": 7494.91
+        },
+        "observed_at_et": "2026-11-10T14:54:42.663387-05:00"
       }
     ],
     "session_date": "2026-11-10",
     "session_open_spx": 7494.91,
     "source_snapshots_read": 0,
-    "status": "STALE",
+    "status": "CURRENT",
     "update_mode": "MATERIALIZED_READ"
   },
   "estimated_market_variables": {
@@ -125426,52 +126433,52 @@
     "calibration_snapshot_evaluated_at_et": "2026-11-09T17:45:05.285364-05:00",
     "current_by_dte": [
       {
-        "active_discount": 0.75924,
-        "average_horizon_persistence": 0.9151492061059153,
+        "active_discount": 0.75803,
+        "average_horizon_persistence": 0.9222292560791066,
         "expiration": "20261110",
-        "observed_at_et": "2026-11-10T14:49:31.657634-05:00",
-        "realized_volatility": 0.1256675829922879,
-        "relative_time_profile": 0.9257058297960731,
+        "observed_at_et": "2026-11-10T14:54:42.663387-05:00",
+        "realized_volatility": 0.1260072655450278,
+        "relative_time_profile": 0.9239588880371915,
         "source": "MEAN_REVERTING_200D_TIME_PROFILE",
         "target_dte": 0
       },
       {
-        "active_discount": 0.80172,
-        "average_horizon_persistence": 0.473646659503991,
+        "active_discount": 0.79851,
+        "average_horizon_persistence": 0.4763776874398086,
         "expiration": "20261111",
-        "observed_at_et": "2026-11-10T14:49:31.657634-05:00",
-        "realized_volatility": 0.1256675829922879,
-        "relative_time_profile": 0.9867483775989019,
+        "observed_at_et": "2026-11-10T14:54:42.663387-05:00",
+        "realized_volatility": 0.1260072655450278,
+        "relative_time_profile": 0.9826787375438177,
         "source": "MEAN_REVERTING_200D_TIME_PROFILE",
         "target_dte": 1
       },
       {
-        "active_discount": 0.81129,
-        "average_horizon_persistence": 0.29861297069499654,
+        "active_discount": 0.8111,
+        "average_horizon_persistence": 0.2998935394119287,
         "expiration": "20261112",
-        "observed_at_et": "2026-11-10T14:49:31.657634-05:00",
-        "realized_volatility": 0.1256675829922879,
-        "relative_time_profile": 1.0022697767832027,
+        "observed_at_et": "2026-11-10T14:54:42.663387-05:00",
+        "realized_volatility": 0.1260072655450278,
+        "relative_time_profile": 1.0019606386642237,
         "source": "MEAN_REVERTING_200D_TIME_PROFILE",
         "target_dte": 2
       },
       {
-        "active_discount": 0.80804,
-        "average_horizon_persistence": 0.20769020807856522,
+        "active_discount": 0.80763,
+        "average_horizon_persistence": 0.20835443936515669,
         "expiration": "20261113",
-        "observed_at_et": "2026-11-10T14:49:31.657634-05:00",
-        "realized_volatility": 0.1256675829922879,
-        "relative_time_profile": 1.0001949936048733,
+        "observed_at_et": "2026-11-10T14:54:42.663387-05:00",
+        "realized_volatility": 0.1260072655450278,
+        "relative_time_profile": 0.9996339937534384,
         "source": "MEAN_REVERTING_200D_TIME_PROFILE",
         "target_dte": 3
       },
       {
-        "active_discount": 0.79543,
-        "average_horizon_persistence": 0.1266153216801093,
+        "active_discount": 0.79449,
+        "average_horizon_persistence": 0.126869565762177,
         "expiration": "20261117",
-        "observed_at_et": "2026-11-10T14:49:31.657634-05:00",
-        "realized_volatility": 0.1256675829922879,
-        "relative_time_profile": 0.9862857207532371,
+        "observed_at_et": "2026-11-10T14:54:42.663387-05:00",
+        "realized_volatility": 0.1260072655450278,
+        "relative_time_profile": 0.9851005393826234,
         "source": "MEAN_REVERTING_200D_TIME_PROFILE",
         "target_dte": 7
       }
@@ -125484,7 +126491,7 @@
     "latest_state_log_variance": 0.09082767979243496,
     "long_run_discount_center": 0.8043116628832923,
     "model_source": "MEAN_REVERTING_200D_TIME_PROFILE",
-    "observed_at_et": "2026-11-10T14:49:31.657634-05:00",
+    "observed_at_et": "2026-11-10T14:54:42.663387-05:00",
     "observed_session_count": 15.0,
     "prior_padding_session_count": 185.0,
     "realized_variance_interval_minutes": 5.0,
@@ -125522,7 +126529,7 @@
     "session_date": "2026-11-10",
     "state_age_sessions": 1.0,
     "state_update_weight": 0.8474119280760453,
-    "status": "STALE",
+    "status": "CURRENT",
     "surface": [
       {
         "active_discount": 0.9129,
@@ -128723,6 +129730,56 @@
         "relative_time_profile": 0.9862857207532371,
         "source": "MEAN_REVERTING_200D_TIME_PROFILE",
         "target_dte": 7
+      },
+      {
+        "active_discount": 0.75803,
+        "average_horizon_persistence": 0.9222292560791066,
+        "expiration": "20261110",
+        "observed_at_et": "2026-11-10T14:54:42.663387-05:00",
+        "realized_volatility": 0.1260072655450278,
+        "relative_time_profile": 0.9239588880371915,
+        "source": "MEAN_REVERTING_200D_TIME_PROFILE",
+        "target_dte": 0
+      },
+      {
+        "active_discount": 0.79851,
+        "average_horizon_persistence": 0.4763776874398086,
+        "expiration": "20261111",
+        "observed_at_et": "2026-11-10T14:54:42.663387-05:00",
+        "realized_volatility": 0.1260072655450278,
+        "relative_time_profile": 0.9826787375438177,
+        "source": "MEAN_REVERTING_200D_TIME_PROFILE",
+        "target_dte": 1
+      },
+      {
+        "active_discount": 0.8111,
+        "average_horizon_persistence": 0.2998935394119287,
+        "expiration": "20261112",
+        "observed_at_et": "2026-11-10T14:54:42.663387-05:00",
+        "realized_volatility": 0.1260072655450278,
+        "relative_time_profile": 1.0019606386642237,
+        "source": "MEAN_REVERTING_200D_TIME_PROFILE",
+        "target_dte": 2
+      },
+      {
+        "active_discount": 0.80763,
+        "average_horizon_persistence": 0.20835443936515669,
+        "expiration": "20261113",
+        "observed_at_et": "2026-11-10T14:54:42.663387-05:00",
+        "realized_volatility": 0.1260072655450278,
+        "relative_time_profile": 0.9996339937534384,
+        "source": "MEAN_REVERTING_200D_TIME_PROFILE",
+        "target_dte": 3
+      },
+      {
+        "active_discount": 0.79449,
+        "average_horizon_persistence": 0.126869565762177,
+        "expiration": "20261117",
+        "observed_at_et": "2026-11-10T14:54:42.663387-05:00",
+        "realized_volatility": 0.1260072655450278,
+        "relative_time_profile": 0.9851005393826234,
+        "source": "MEAN_REVERTING_200D_TIME_PROFILE",
+        "target_dte": 7
       }
     ],
     "surface_matrix": [
@@ -128791,7 +129848,8 @@
         "time_060": 0.76346,
         "time_061": 0.76238,
         "time_062": 0.76098,
-        "time_063": 0.75924
+        "time_063": 0.75924,
+        "time_064": 0.75803
       },
       {
         "target_dte": 1,
@@ -128858,7 +129916,8 @@
         "time_060": 0.81156,
         "time_061": 0.80847,
         "time_062": 0.80519,
-        "time_063": 0.80172
+        "time_063": 0.80172,
+        "time_064": 0.79851
       },
       {
         "target_dte": 2,
@@ -128925,7 +129984,8 @@
         "time_060": 0.81207,
         "time_061": 0.8119200000000001,
         "time_062": 0.81166,
-        "time_063": 0.81129
+        "time_063": 0.81129,
+        "time_064": 0.8111
       },
       {
         "target_dte": 3,
@@ -128992,7 +130052,8 @@
         "time_060": 0.80943,
         "time_061": 0.80904,
         "time_062": 0.80858,
-        "time_063": 0.80804
+        "time_063": 0.80804,
+        "time_064": 0.80763
       },
       {
         "target_dte": 7,
@@ -129059,7 +130120,8 @@
         "time_060": 0.79831,
         "time_061": 0.7974,
         "time_062": 0.79644,
-        "time_063": 0.79543
+        "time_063": 0.79543,
+        "time_064": 0.79449
       }
     ],
     "surface_time_columns": [
@@ -129382,6 +130444,11 @@
         "key": "time_063",
         "label": "2:49 PM",
         "observed_at_et": "2026-11-10T14:49:31.657634-05:00"
+      },
+      {
+        "key": "time_064",
+        "label": "2:54 PM",
+        "observed_at_et": "2026-11-10T14:54:42.663387-05:00"
       }
     ],
     "terminal_displacement_shadow_observation_count": 61.0,
@@ -170446,15 +171513,15 @@
           "vix_percent": 19.86
         },
         {
-          "active_discount": 0.79959,
+          "active_discount": 0.79902,
           "discount_source": "MEAN_REVERTING_200D_TIME_PROFILE",
-          "discounted_vix1d_percent": 11.170272,
+          "discounted_vix1d_percent": 11.19427,
           "forecast_expiration": "20261111",
-          "forecast_horizon_end_et": "2026-11-11T14:53:42.636607-05:00",
+          "forecast_horizon_end_et": "2026-11-11T14:54:42.663387-05:00",
           "forecast_provenance": "SAVED_ACTIVE_STATE",
-          "forecast_spx": 7515.56,
+          "forecast_spx": 7514.03,
           "forward_realized_variance": null,
-          "observed_at_et": "2026-11-10T14:53:42.636607-05:00",
+          "observed_at_et": "2026-11-10T14:54:42.663387-05:00",
           "one_day_clock_mass": 1.42096048455822,
           "outcome_status": "PENDING_FORWARD_HORIZON",
           "overnight_open_source": "UNAVAILABLE",
@@ -170464,8 +171531,30 @@
           "realized_variance_coverage": null,
           "realized_variance_interval_minutes": 5,
           "realized_vix1d_percent": null,
-          "vix1d_percent": 13.97,
-          "vix_percent": 19.84
+          "vix1d_percent": 14.01,
+          "vix_percent": 19.89
+        },
+        {
+          "active_discount": 0.79852,
+          "discount_source": "MEAN_REVERTING_200D_TIME_PROFILE",
+          "discounted_vix1d_percent": 11.275102,
+          "forecast_expiration": "20261111",
+          "forecast_horizon_end_et": "2026-11-11T14:55:42.633448-05:00",
+          "forecast_provenance": "SAVED_ACTIVE_STATE",
+          "forecast_spx": 7510.9,
+          "forward_realized_variance": null,
+          "observed_at_et": "2026-11-10T14:55:42.633448-05:00",
+          "one_day_clock_mass": 1.42096048455822,
+          "outcome_status": "PENDING_FORWARD_HORIZON",
+          "overnight_open_source": "UNAVAILABLE",
+          "realized_variance_component_return_counts": null,
+          "realized_variance_component_shares": null,
+          "realized_variance_components": null,
+          "realized_variance_coverage": null,
+          "realized_variance_interval_minutes": 5,
+          "realized_vix1d_percent": null,
+          "vix1d_percent": 14.12,
+          "vix_percent": 19.97
         }
       ],
       "metric_definition": {
@@ -177492,22 +178581,26 @@
         "time_et": "2026-11-10T14:49:59.203867-05:00"
       },
       {
-        "net_pnl": -8250.35,
-        "time_et": "2026-11-10T14:54:39.721843-05:00"
+        "net_pnl": -8230.35,
+        "time_et": "2026-11-10T14:54:58.370277-05:00"
+      },
+      {
+        "net_pnl": -8292.85,
+        "time_et": "2026-11-10T14:55:53.323626-05:00"
       }
     ],
     "summary": {
-      "additional_loss_to_contractual_max": 36935.85,
-      "available_equity": 209674.65,
+      "additional_loss_to_contractual_max": 36883.35,
+      "available_equity": 209622.15,
       "cash": 236888.8,
       "closed_trades": 83,
       "contractual_stress_loss": 32075.0,
-      "equity": 241749.65,
+      "equity": 241697.15,
       "open_positions": 17,
       "realized_pnl": -13111.2,
       "reserved_risk": 32075.0,
       "starting_cash": 250000.0,
-      "unrealized_pnl": 4860.85
+      "unrealized_pnl": 4808.35
     },
     "trade_averages": {
       "average_capacity": 1571.6531325301205,
@@ -177526,7 +178619,7 @@
     "market_data_is_live": true,
     "market_data_status": "MARKET_OPEN",
     "paper_trading_only": true,
-    "published_at_et": "2026-11-10T14:54:39.666177-05:00",
+    "published_at_et": "2026-11-10T14:55:54.826183-05:00",
     "status": "PRELIMINARY_SESSION_ACTIVE",
     "trade_date": "2026-11-10"
   },
