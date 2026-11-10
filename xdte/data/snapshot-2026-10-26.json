@@ -7911,6 +7911,14 @@
       "prior_close_source": "IBKR_SPX_DAILY_RTH_BACKFILL_PRIOR_CLOSE",
       "prior_close_spx": 7623.68,
       "session_date": "2026-10-26",
+      "session_high_at_et": null,
+      "session_high_change_from_prior_close_percent": 1.029,
+      "session_high_source": "IBKR_SPX_DAILY_RTH_BACKFILL_HIGH",
+      "session_high_spx": 7702.13,
+      "session_low_at_et": null,
+      "session_low_change_from_prior_close_percent": 0.2101,
+      "session_low_source": "IBKR_SPX_DAILY_RTH_BACKFILL_LOW",
+      "session_low_spx": 7639.7,
       "status": "AVAILABLE"
     },
     "system_readiness": {
