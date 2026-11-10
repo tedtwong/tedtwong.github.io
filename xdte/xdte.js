@@ -797,6 +797,29 @@ function lineChart(target, series, options = {}) {
     }
     return `<g aria-label="${s.label} area relative to opening level">${regions.join("")}<line x1="${pad.l}" x2="${width-pad.r}" y1="${baselineY.toFixed(1)}" y2="${baselineY.toFixed(1)}" stroke="${s.color}" stroke-width="1" stroke-dasharray="4 4" opacity="0.8"><title>${s.label} opening level ${number.format(baseline)}</title></line></g>`;
   }).join("");
+  const regimeShading = (() => {
+    const settings = options.regimeShading;
+    if (!settings || !Array.isArray(settings.rows)) return "";
+    const points = settings.rows.map(row => ({
+      t: new Date(row[settings.x]).getTime(),
+      regime: String(row[settings.field] || ""),
+    })).filter(point => Number.isFinite(point.t) && tradingTimeIndex.has(point.t) && point.regime);
+    const unique = [...new Map(points.map(point => [point.t, point])).values()]
+      .sort((left, right) => left.t - right.t);
+    if (!unique.length) return "";
+    const opacity = Number.isFinite(Number(settings.opacity)) ? Number(settings.opacity) : 0.10;
+    return unique.map((point, index) => {
+      const center = x(point.t);
+      const left = index === 0
+        ? pad.l
+        : (x(unique[index - 1].t) + center) / 2;
+      const right = index === unique.length - 1
+        ? width - pad.r
+        : (center + x(unique[index + 1].t)) / 2;
+      const color = settings.colors?.[point.regime] || settings.colors?.Unavailable || "#98A2B3";
+      return `<rect x="${left.toFixed(1)}" y="${pad.t}" width="${Math.max(0, right-left).toFixed(1)}" height="${height-pad.t-pad.b}" fill="${color}" fill-opacity="${opacity}"><title>VIX regime: ${point.regime}</title></rect>`;
+    }).join("");
+  })();
   const paths = series.map(s => {
     const points = chartPoints(s), seriesY = s.axis === "right" ? rightY : y;
     if (s.dashCarriedForward) {
@@ -837,12 +860,13 @@ function lineChart(target, series, options = {}) {
   }).join("");
   const zero = minY <= 0 && maxY >= 0 ? `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#7b8495" stroke-width="1.75"/>` : "";
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${options.label || "Time series"}">
+    ${regimeShading}
     ${ticks.map(v => `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e4dfd6"/><text x="${pad.l-10}" y="${y(v)+4}" text-anchor="end" fill="#667085" font-size="12">${options.money ? money.format(v) : number.format(v)}</text>`).join("")}
     ${rightTicks.map(v => `<line x1="${width-pad.r}" x2="${width-pad.r+5}" y1="${rightY(v)}" y2="${rightY(v)}" stroke="#667085"/><text x="${width-pad.r+10}" y="${rightY(v)+4}" fill="#667085" font-size="12">${number.format(v)}</text>`).join("")}
     ${relativeAreas}${zero}${verticalRules}${paths}${markers}
     <text x="${pad.l}" y="${height-12}" fill="#667085" font-size="12">${shortTime(minT)}</text>
     <text x="${width-pad.r}" y="${height-12}" text-anchor="end" fill="#667085" font-size="12">${shortTime(maxT)}</text>
-  </svg><div class="chart-legend">${series.filter((s,i,a)=>a.findIndex(t=>(t.legendLabel||t.label)===(s.legendLabel||s.label))===i).map(s => `<span class="legend-key${s.dash ? " legend-key--dashed" : ""}" style="--key:${s.color}">${s.legendLabel || s.label}</span>`).join("")}${options.estimatedMarkLegend ? '<span class="legend-key legend-key--estimated" style="--key:#667085">Estimated zero-bid midpoint</span>' : ''}${options.carriedForwardLegend ? '<span class="legend-key legend-key--dashed" style="--key:#667085">Held at last accounting mark</span>' : ''}</div>`;
+  </svg><div class="chart-legend">${series.filter((s,i,a)=>a.findIndex(t=>(t.legendLabel||t.label)===(s.legendLabel||s.label))===i).map(s => `<span class="legend-key${s.dash ? " legend-key--dashed" : ""}" style="--key:${s.color}">${s.legendLabel || s.label}</span>`).join("")}${options.regimeShading ? Object.entries(options.regimeShading.colors || {}).filter(([label]) => label !== "Unavailable").map(([label,color]) => `<span class="legend-key legend-key--regime" style="--key:${color}">${label} VIX</span>`).join("") : ""}${options.estimatedMarkLegend ? '<span class="legend-key legend-key--estimated" style="--key:#667085">Estimated zero-bid midpoint</span>' : ''}${options.carriedForwardLegend ? '<span class="legend-key legend-key--dashed" style="--key:#667085">Held at last accounting mark</span>' : ''}</div>`;
 }
 
 function portfolioDailyChart(target, rows, expectedHistory = [], intradayHistory = []) {
@@ -1341,11 +1365,47 @@ function renderEstimatedMarketVariables(model) {
   const vixHistory = allVixHistory.filter(row =>
     selectedForecastDates.has(row.observed_at_et.slice(0, 10))
   );
+  const vixRegimeShading = {
+    rows: vixHistory,
+    x: "observed_at_et",
+    field: "vix_regime",
+    opacity: 0.10,
+    colors: {Low: "#5B8FF9", Average: "#2FA236", High: "#F76915", Unavailable: "#98A2B3"},
+  };
   lineChart("#vix1d-discount-chart", [
     {rows: vixHistory, x: "observed_at_et", y: "vix1d_percent", label: "VIX1D", color: "#333ED4"},
     {rows: vixHistory, x: "observed_at_et", y: "discounted_vix1d_percent", label: "Discounted VIX1D", color: "#2FA236"},
     {rows: vixHistory, x: "observed_at_et", y: "realized_vix1d_percent", label: "Forward realized SPX volatility", color: "#F76915"},
-  ], {label: "VIX1D forecast validation", height: 320, compressTimeGaps: true});
+  ], {label: "VIX1D forecast validation", height: 320, compressTimeGaps: true, regimeShading: vixRegimeShading});
+  const settlementHorizons = data.settlement_horizon_forecast_validation?.horizons || {};
+  [1, 7].forEach(targetDte => {
+    const horizon = settlementHorizons[String(targetDte)] || {};
+    const allRows = (horizon.history || []).filter(row =>
+      Number.isFinite(Date.parse(row?.observed_at_et || ""))
+    );
+    const dates = [...new Set(allRows.map(row => row.observed_at_et.slice(0, 10)))].sort();
+    const selectedDates = new Set(dates.slice(-displayedVix1dHistoryDays));
+    const rows = allRows.filter(row => selectedDates.has(row.observed_at_et.slice(0, 10)));
+    const selector = `#vix-${targetDte}dte-settlement-chart`;
+    lineChart(selector, [
+      {rows, x: "observed_at_et", y: "risk_neutral_volatility_percent", label: "Risk-neutral horizon volatility", color: "#333ED4"},
+      {rows, x: "observed_at_et", y: "physical_forecast_volatility_percent", label: "Active physical forecast", color: "#2FA236"},
+      {rows, x: "observed_at_et", y: "realized_horizon_volatility_percent", label: "Realized through settlement", color: "#F76915"},
+    ], {
+      label: `${targetDte}DTE exact-settlement volatility validation`,
+      height: 320,
+      compressTimeGaps: true,
+      regimeShading: {
+        ...vixRegimeShading,
+        rows,
+      },
+    });
+    const note = document.querySelector(`#vix-${targetDte}dte-settlement-note`);
+    if (note) {
+      const matured = (horizon.history || []).filter(row => row.outcome_status === "VALID").length;
+      note.textContent = `Exact observation-to-${targetDte}DTE SPXW settlement horizon. ${matured} matured forecast observation(s) currently have valid five-minute realized-volatility outcomes.`;
+    }
+  });
   const selectedPeriod = validation.periods?.[String(selectedVix1dHistoryDays)] || {};
   const validationRows = [
     {forecast:"Raw VIX1D", ...(selectedPeriod.raw_vix1d || {})},
@@ -1697,6 +1757,7 @@ async function load({ historicalDate = null } = {}) {
     ...perf.by_strategy.map(r => ({ dimension: "Strategy", group: r.strategy, ...r })),
     ...perf.by_dte.map(r => ({ dimension: "DTE", group: r.dte, ...r })),
     ...(perf.by_entry_time || []).map(r => ({ dimension: "Entry time (ET)", group: r.entry_time_bucket, ...r })),
+    ...(perf.by_vix_regime || []).map(r => ({ dimension: "Entry VIX regime", group: r.vix_regime, ...r })),
   ];
   table("#performance-table", [
     ["Dimension", "dimension"], ["Group", "group"], ["Trades", "trades"], ["Win rate", "win_rate", null, v => value(v, percent)],
