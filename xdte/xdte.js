@@ -510,8 +510,8 @@ let lastRenderedPublicationAt = 0;
 let activeHistoricalDate = null;
 
 function metrics(target, items) {
-  document.querySelector(target).innerHTML = items.map(([label, display, className = ""]) =>
-    `<div class="metric"><span class="metric__label">${label}</span><span class="metric__value ${className}">${display}</span></div>`
+  document.querySelector(target).innerHTML = items.map(([label, display, className = "", description = ""]) =>
+    `<div class="metric"><span class="metric__label">${label}</span><span class="metric__value ${className}">${display}</span>${description ? `<p class="metric__description">${description}</p>` : ""}</div>`
   ).join("");
 }
 
@@ -1148,21 +1148,21 @@ function renderEstimatedMarketVariables(model) {
   const interval = Number.isFinite(Number(data.rho_lower_90)) && Number.isFinite(Number(data.rho_upper_90))
     ? `[${decimal(data.rho_lower_90)}, ${decimal(data.rho_upper_90)}]` : "—";
   metrics("#estimated-market-variable-metrics", [
-    ["Daily rho", decimal(data.rho_daily)],
-    ["Rho 90% interval", interval],
-    ["Rho half-life", Number.isFinite(Number(data.rho_half_life_sessions)) ? `${Number(data.rho_half_life_sessions).toFixed(1)} sessions` : "—"],
-    ["Long-run discount center", decimal(data.long_run_discount_center)],
-    ["Latest log-variance state", decimal(data.latest_state_log_variance)],
-    ["Integrated-RV history", sessionCount(data.available_observed_session_count)],
-    ["Prior initialization", sessionCount(data.prior_padding_session_count)],
-    ["VIX regime center", Number.isFinite(Number(data.vix_regime?.vix_center)) ? (100 * Number(data.vix_regime.vix_center)).toFixed(2) : "—"],
-    ["VIX regime slope", decimal(data.vix_regime?.posterior_log_variance_slope)],
-    ["VIX regime data weight", Number.isFinite(Number(data.vix_regime?.data_weight)) ? `${(100 * Number(data.vix_regime.data_weight)).toFixed(1)}%` : "—"],
-    ["RV long-run level", Number.isFinite(Number(meanReversion.long_run_annualized_volatility)) ? `${(100 * Number(meanReversion.long_run_annualized_volatility)).toFixed(2)}%` : "—"],
-    ["Latest RV level", Number.isFinite(Number(meanReversion.latest_annualized_volatility)) ? `${(100 * Number(meanReversion.latest_annualized_volatility)).toFixed(2)}%` : "—"],
-    ["RV level persistence", decimal(meanReversion.persistence_per_clock_unit)],
-    ["Disagreement beta", decimal(meanReversion.beta)],
-    ["MR effective history", Number.isFinite(Number(meanReversion.effective_observation_count)) ? `${Number(meanReversion.effective_observation_count).toFixed(1)} sessions` : "—"],
+    ["Daily rho", decimal(data.rho_daily), "", "Estimated day-to-day autocorrelation of the discount residual after separating the VIX-regime effect."],
+    ["Rho 90% interval", interval, "", "The central 90% uncertainty interval around the estimated daily rho."],
+    ["Rho half-life", Number.isFinite(Number(data.rho_half_life_sessions)) ? `${Number(data.rho_half_life_sessions).toFixed(1)} sessions` : "—", "", "The estimated trading sessions required for half of a discount-state shock to decay."],
+    ["Long-run discount center", decimal(data.long_run_discount_center), "", "The exponentially weighted long-run ratio of physical volatility to horizon-matched VIX-family volatility."],
+    ["Latest log-variance state", decimal(data.latest_state_log_variance), "", "The latest persistent deviation from the long-run discount center expressed in log-variance units."],
+    ["Integrated-RV history", sessionCount(data.available_observed_session_count), "", "The completed trading sessions with usable five-minute integrated realized variance supporting the discount model."],
+    ["Prior initialization", sessionCount(data.prior_padding_session_count), "", "The unobserved lookback slots initialized at the configured prior while the historical sample matures."],
+    ["VIX regime center", Number.isFinite(Number(data.vix_regime?.vix_center)) ? (100 * Number(data.vix_regime.vix_center)).toFixed(2) : "—", "", "The robust reference VIX level used to distinguish relatively high- and low-volatility regimes."],
+    ["VIX regime slope", decimal(data.vix_regime?.posterior_log_variance_slope), "", "The estimated change in physical log variance for a one-unit robust VIX regime move."],
+    ["VIX regime data weight", Number.isFinite(Number(data.vix_regime?.data_weight)) ? `${(100 * Number(data.vix_regime.data_weight)).toFixed(1)}%` : "—", "", "The share of the VIX-regime slope estimate supplied by observed data rather than its stability prior."],
+    ["RV long-run level", Number.isFinite(Number(meanReversion.long_run_annualized_volatility)) ? `${(100 * Number(meanReversion.long_run_annualized_volatility)).toFixed(2)}%` : "—", "", "The mean-reverting long-run annualized level estimated from completed-session realized variance."],
+    ["Latest RV level", Number.isFinite(Number(meanReversion.latest_annualized_volatility)) ? `${(100 * Number(meanReversion.latest_annualized_volatility)).toFixed(2)}%` : "—", "", "The latest completed session’s five-minute integrated realized variance expressed as annualized volatility."],
+    ["RV level persistence", decimal(meanReversion.persistence_per_clock_unit), "", "The fitted persistence of realized-variance deviations for each unit of the nonlinear variance clock."],
+    ["Disagreement beta", decimal(meanReversion.beta), "", "The calibrated fraction of mean-reversion versus current-forecast log-variance disagreement applied to the active physical forecast."],
+    ["MR effective history", Number.isFinite(Number(meanReversion.effective_observation_count)) ? `${Number(meanReversion.effective_observation_count).toFixed(1)} sessions` : "—", "", "The recency-weighted effective number of completed sessions supporting the mean-reversion level estimate."],
   ]);
   const terminalStats = data.terminal_observation_statistics || {};
   const integrated = terminalStats.integrated_realized_variance || {};
@@ -1645,10 +1645,6 @@ function initializeSnapshotDateSelector() {
 }
 
 initializeSnapshotDateSelector();
-scheduleAutomaticRefresh();
-document.addEventListener("visibilitychange", () => {
-  if (!activeHistoricalDate && !document.hidden && Date.now() - lastSuccessfulRefreshAt >= autoRefreshIntervalMilliseconds) refresh();
-});
 
 function showLoadError(error, preserveCurrent = false) {
   const warning = document.querySelector("#data-warning"); warning.classList.remove("hidden");
@@ -1662,4 +1658,53 @@ function showLoadError(error, preserveCurrent = false) {
   }
 }
 
-refresh({ manual: true });
+const ACCESS_PASSWORD_SHA256 = "e6367b0520b4c77e515e0ec36c0e40285b03f416e362acf143eeedd8feb005e4";
+const ACCESS_SESSION_KEY = "xdte-public-access-v1";
+
+async function sha256Hex(value) {
+  const bytes = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  return Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, "0")).join("");
+}
+
+function unlockResearchSite() {
+  document.body.classList.remove("access-locked");
+  document.querySelector("#access-gate").hidden = true;
+}
+
+async function requireResearchAccess() {
+  if (sessionStorage.getItem(ACCESS_SESSION_KEY) === ACCESS_PASSWORD_SHA256) {
+    unlockResearchSite();
+    return;
+  }
+  const form = document.querySelector("#access-gate-form");
+  const password = document.querySelector("#access-password");
+  const error = document.querySelector("#access-gate-error");
+  await new Promise(resolve => {
+    form.addEventListener("submit", async event => {
+      event.preventDefault();
+      const suppliedHash = await sha256Hex(password.value);
+      if (suppliedHash !== ACCESS_PASSWORD_SHA256) {
+        error.textContent = "That password was not recognized.";
+        password.value = "";
+        password.focus();
+        return;
+      }
+      sessionStorage.setItem(ACCESS_SESSION_KEY, suppliedHash);
+      error.textContent = "";
+      unlockResearchSite();
+      resolve();
+    });
+  });
+}
+
+async function startResearchSite() {
+  await requireResearchAccess();
+  scheduleAutomaticRefresh();
+  document.addEventListener("visibilitychange", () => {
+    if (!activeHistoricalDate && !document.hidden && Date.now() - lastSuccessfulRefreshAt >= autoRefreshIntervalMilliseconds) refresh();
+  });
+  refresh({ manual: true });
+}
+
+startResearchSite();

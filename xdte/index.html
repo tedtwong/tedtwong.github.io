@@ -5,15 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>XDTE Paper Trading Research</title>
   <meta name="description" content="Daily SPXW paper-trading results, portfolio P&L, and expected-versus-realized model diagnostics.">
+  <meta name="robots" content="noindex,nofollow,noarchive">
   <meta property="og:title" content="XDTE Paper Trading Research">
   <meta property="og:description" content="Daily SPXW paper-trading results and portfolio diagnostics.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
-  <link rel="stylesheet" href="xdte.css?v=20261110-spx-day-range-v23">
-  <script defer src="xdte.js?v=20261110-spx-day-range-v23"></script>
+  <link rel="stylesheet" href="xdte.css?v=20261110-access-variable-help-v24">
+  <script defer src="xdte.js?v=20261110-access-variable-help-v24"></script>
 </head>
-<body>
+<body class="access-locked">
+  <div id="access-gate" class="access-gate" role="dialog" aria-modal="true" aria-labelledby="access-gate-title">
+    <form id="access-gate-form" class="access-gate__card">
+      <p class="eyebrow">PRIVATE RESEARCH ACCESS</p>
+      <h1 id="access-gate-title">XDTE research</h1>
+      <p>This static research record requires its shared access password.</p>
+      <label for="access-password">Password</label>
+      <input id="access-password" name="password" type="password" autocomplete="current-password" required autofocus>
+      <button type="submit">Open research site</button>
+      <p id="access-gate-error" class="access-gate__error" role="alert" aria-live="polite"></p>
+      <p class="access-gate__note">Access is remembered only for this browser tab.</p>
+    </form>
+  </div>
   <header class="hero">
     <div class="hero__inner">
       <a id="critical-alert-banner" class="critical-alert-banner hidden"
