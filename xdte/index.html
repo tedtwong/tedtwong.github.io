@@ -298,8 +298,20 @@
 
     <section class="method" role="tabpanel" aria-labelledby="tab-methodology" data-tab-panel="methodology" hidden>
       <div class="section-heading">
-        <div><p class="section-number">08</p><h2 id="method-heading">Publication policy</h2></div>
+        <div><p class="section-number">08</p><h2 id="method-heading">Methodology</h2></div>
       </div>
+      <article class="panel methodology-summary">
+        <div class="panel__heading"><div><h3>Research methodology</h3></div></div>
+        <p>This paper-only experiment treats defined-risk SPXW credit positions as short-duration insurance underwriting. SPXW option prices supply the market’s distribution shape and skew, while VIX-family indexes provide the volatility scale. A nonlinear variance clock adjusts that scale for time of day, overnight periods, weekends, and scheduled events; a calibrated physical discount and realized-volatility adjustment convert it into a real-world forecast. The program compares that forecast with option-implied pricing, evaluates complete executable structures after estimated costs, and ranks eligible candidates by probability-weighted duration-adjusted expected return. Quote quality, portfolio concentration, released-capacity timing, and aggregate capital limits remain independent gates. Positions are currently modeled and monitored for expiration settlement, and realized outcomes are retained to evaluate forecasts and recalibrate model parameters over time.</p>
+        <div class="methodology-equations" aria-label="Simplified methodology equations">
+          <p><strong>Horizon variance:</strong> <span><var>V</var><sub>Q</sub>(<var>T</var>) = ∫ variance scale × variance-clock weight</span></p>
+          <p><strong>Physical forecast:</strong> <span><var>V</var><sub>P</sub><sup>*</sup> = <var>d</var><sup>2</sup><var>V</var><sub>Q</sub> × exp[<var>β</var> log(<var>V</var><sub>MR</sub> / <var>V</var><sub>P</sub>)]</span></p>
+          <p><strong>Expected net edge:</strong> <span>entry credit − E<sub>P</sub>[expiration liability] − estimated costs</span></p>
+          <p><strong>Candidate score:</strong> <span>duration-adjusted expected return × P(full credit)<sup>1.5</sup></span></p>
+        </div>
+        <p class="methodology-equation-note">These are compact descriptions of the active research logic. The implementation uses exact settlement horizons, fitted option-distribution shape, calibrated clock and discount states, executable structure prices, and the full independent risk-gate sequence.</p>
+      </article>
+      <h3 class="subsection-heading methodology-policy-heading">Publication policy</h3>
       <div class="method-grid">
         <p><strong>Paper trading only.</strong> These are simulated research results and do not represent a brokerage statement or live-trading performance.</p>
         <p><strong>Sanitized output.</strong> Account identifiers, order identifiers, contracts, strikes, raw quotes, local paths, and credentials are never included.</p>
