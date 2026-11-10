@@ -256,7 +256,7 @@
         <div id="calibration-table" class="table-wrap"></div>
       </article>
       <article class="panel">
-        <div class="panel__heading"><div><h3>Realized performance</h3><p>Settled paper trades after recorded transaction costs. Net return is realized net P&amp;L divided by total saved deployed allocations; expectancy is the average individual trade return. Each reuse of capital counts as a new deployment. Missing allocations are unavailable; these are not NAV or annualized returns.</p></div></div>
+        <div class="panel__heading"><div><h3>Realized performance</h3><p>Settled paper trades after recorded transaction costs. Net return is realized net P&amp;L divided by total saved deployed allocations; expectancy is the average individual trade return. Each reuse of capital counts as a new deployment. Results are also grouped by verified entry-time windows aligned with the daily capacity-release schedule. Missing allocations or entry times are shown as unavailable; these are not NAV or annualized returns.</p></div></div>
         <div id="performance-metrics" class="metric-grid metric-grid--compact"></div>
         <p id="full-credit-note" class="chart-note"></p>
         <div id="performance-table" class="table-wrap"></div>
@@ -316,13 +316,13 @@
         <div class="risk-control-grid">
           <div>
             <h4>Capital basis</h4>
-            <p>The day’s limits are calculated from conservative risk equity—cash plus the more adverse usable position marks—and frozen before the first entry. The aggregate open-reserve ceiling is 20% of that basis.</p>
+            <p>The day’s limits are calculated from conservative risk equity—cash plus the more adverse usable position marks—and frozen before the first entry. The aggregate open-reserve ceiling is 20% of that basis ($50,000 at the nominal $250,000 basis).</p>
             <p class="methodology-formula">Aggregate reserve cap = 20% × frozen conservative risk equity</p>
           </div>
           <div>
             <h4>Nested limits</h4>
-            <p>New entries may use at most 40% of the aggregate cap each day. Positions with at least four trading sessions remaining share 25% of the aggregate cap, while each nearby put-side or call-side strike cluster is limited to 37.5%.</p>
-            <p class="methodology-formula">Daily / long-dated / directional = 40% / 25% / 37.5% of aggregate</p>
+            <p>New entries may use at most 50% of the aggregate cap each day ($25,000 nominal). Positions with at least four trading sessions remaining share 25% ($12,500 nominal), while each nearby put-side or call-side strike cluster is limited to 35% ($17,500 nominal).</p>
+            <p class="methodology-formula">Daily / long-dated / directional = 50% ($25,000) / 25% ($12,500) / 35% ($17,500) of aggregate</p>
           </div>
           <div>
             <h4>Reserve measurement</h4>
@@ -335,12 +335,12 @@
         </div>
         <div class="capacity-release-table" role="table" aria-label="Intraday capacity release schedule">
           <div class="capacity-release-table__heading" role="row"><span role="columnheader">New York time</span><span role="columnheader">Increment released</span><span role="columnheader">Cumulative daily release</span></div>
-          <div role="row"><span role="cell">9:00 a.m.</span><span role="cell">15% of aggregate</span><span role="cell">15% of aggregate</span></div>
-          <div role="row"><span role="cell">10:30 a.m.</span><span role="cell">10% of aggregate</span><span role="cell">25% of aggregate</span></div>
-          <div role="row"><span role="cell">12:00 p.m.</span><span role="cell">7.5% of aggregate</span><span role="cell">32.5% of aggregate</span></div>
-          <div role="row"><span role="cell">1:00 p.m.</span><span role="cell">7.5% of aggregate</span><span role="cell">40% of aggregate</span></div>
+          <div role="row"><span role="cell">9:00 a.m.</span><span role="cell">15% ($7,500)</span><span role="cell">15% ($7,500)</span></div>
+          <div role="row"><span role="cell">10:30 a.m.</span><span role="cell">12.5% ($6,250)</span><span role="cell">27.5% ($13,750)</span></div>
+          <div role="row"><span role="cell">12:00 p.m.</span><span role="cell">12.5% ($6,250)</span><span role="cell">40% ($20,000)</span></div>
+          <div role="row"><span role="cell">1:30 p.m.</span><span role="cell">10% ($5,000)</span><span role="cell">50% ($25,000)</span></div>
         </div>
-        <p class="methodology-equation-note">Fifty percent of unused capacity from one window carries only into the immediately following window; the remainder expires. Future windows cannot be borrowed, and capacity is not recycled after a profitable close under the current hold-to-expiration experiment.</p>
+        <p class="methodology-equation-note">Dollar amounts assume a $250,000 frozen conservative-equity basis and therefore a $50,000 aggregate cap. Fifty percent of unused capacity from one window carries only into the immediately following window; the remainder expires. Future windows cannot be borrowed, and capacity is not recycled after a profitable close under the current hold-to-expiration experiment.</p>
       </article>
       <h3 class="subsection-heading methodology-policy-heading">Publication policy</h3>
       <div class="method-grid">

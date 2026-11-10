@@ -1693,7 +1693,11 @@ async function load({ historicalDate = null } = {}) {
   ]);
   const fullCreditNote = document.querySelector('#full-credit-note');
   if(fullCreditNote) fullCreditNote.textContent = `Full credit: ${perf.full_credit_trades ?? '—'} of ${perf.settled_trades ?? '—'} settled trades retained the entire premium at expiration before fees. Known outcomes: ${perf.full_credit_samples ?? '—'}. Early closes count as not full credit; missing outcome data makes the percentage unavailable.`;
-  const groups = [...perf.by_strategy.map(r => ({ dimension: "Strategy", group: r.strategy, ...r })), ...perf.by_dte.map(r => ({ dimension: "DTE", group: r.dte, ...r }))];
+  const groups = [
+    ...perf.by_strategy.map(r => ({ dimension: "Strategy", group: r.strategy, ...r })),
+    ...perf.by_dte.map(r => ({ dimension: "DTE", group: r.dte, ...r })),
+    ...(perf.by_entry_time || []).map(r => ({ dimension: "Entry time (ET)", group: r.entry_time_bucket, ...r })),
+  ];
   table("#performance-table", [
     ["Dimension", "dimension"], ["Group", "group"], ["Trades", "trades"], ["Win rate", "win_rate", null, v => value(v, percent)],
     ["Total net ($)", "net_pnl", pnlClass, v => value(v, money)], ["Net return (%)", "net_return_on_deployed_capital", pnlClass, v => value(v, percent)], ["Expectancy / trade", "expectancy_return_per_trade", pnlClass, v => value(v, percent)],

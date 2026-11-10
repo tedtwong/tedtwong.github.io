@@ -83203,7 +83203,7 @@
     ]
   },
   "distribution_comparison": {
-    "age_seconds": 4639,
+    "age_seconds": 5937,
     "expirations": [
       {
         "bayesian_shadow_discount": 0.96532,
@@ -153428,11 +153428,11 @@
     "update_mode": "MATERIALIZED_READ"
   },
   "estimated_market_variables": {
-    "available_observed_session_count": 15.0,
-    "available_prior_padding_session_count": 85.0,
-    "calibration_backfill_status": "ACTIVE",
+    "available_observed_session_count": 16.0,
+    "available_prior_padding_session_count": 84.0,
+    "calibration_backfill_status": "UPDATED_FOR_NEXT_SESSION",
     "calibration_observation_definition": "ONE_0DTE_FIXED_TIME_INTEGRATED_5_MINUTE_REALIZED_VARIANCE_OVER_VIX1D_VIX9D_VIX_CLOCK_VARIANCE_PER_TRADING_SESSION",
-    "calibration_snapshot_evaluated_at_et": "2026-11-10T08:00:00-05:00",
+    "calibration_snapshot_evaluated_at_et": "2026-11-10T17:45:01.978005-05:00",
     "current_by_dte": [
       {
         "active_discount": 0.8066617265781776,
@@ -153489,9 +153489,9 @@
     "discount_update_freshness_status": "CURRENT",
     "discount_update_maximum_state_age_sessions": 1.0,
     "discount_update_stale": false,
-    "latest_calibration_observation_date": "2026-11-09",
-    "latest_state_log_variance": -0.03359697775413756,
-    "long_run_discount_center": 0.8639557294013648,
+    "latest_calibration_observation_date": "2026-11-10",
+    "latest_state_log_variance": 0.11841974797238802,
+    "long_run_discount_center": 0.8681334688037735,
     "model_source": "MEAN_REVERTING_100D_EW_TIME_PROFILE",
     "observed_at_et": "2026-11-10T16:12:42.686680-05:00",
     "observed_session_count": 15.0,
@@ -153499,38 +153499,38 @@
     "realized_variance_interval_minutes": 5.0,
     "realized_variance_minimum_coverage": 0.8,
     "realized_volatility_mean_reversion": {
-      "beta": 0.030124491167789067,
-      "beta_data_weight": 0.7339446387016345,
-      "beta_effective_outcome_count": 27.586162335535825,
-      "beta_outcome_count": 34.0,
+      "beta": 0.08051390281289461,
+      "beta_data_weight": 0.7594420038131338,
+      "beta_effective_outcome_count": 31.57001703752124,
+      "beta_outcome_count": 39.0,
       "beta_status": "ESTIMATED",
       "decision_authority": "ACTIVE_EDGE_AND_PROBABILITY",
-      "effective_observation_count": 13.733031087354481,
+      "effective_observation_count": 14.67253662655434,
       "enabled": true,
       "half_life_sessions": 20.0,
-      "latest_annualized_volatility": 0.12308452852229505,
-      "latest_observation_date": "2026-11-09",
-      "latest_variance_per_clock_unit": 6.011825857760184e-05,
-      "long_run_annualized_volatility": 0.11458287919780362,
-      "long_run_variance_per_clock_unit": 5.210014367166055e-05,
-      "matured_outcome_count": 34.0,
+      "latest_annualized_volatility": 0.11388100040501359,
+      "latest_observation_date": "2026-11-10",
+      "latest_variance_per_clock_unit": 5.14638184652647e-05,
+      "long_run_annualized_volatility": 0.11452406896145922,
+      "long_run_variance_per_clock_unit": 5.204667607733757e-05,
+      "matured_outcome_count": 39.0,
       "model_version": "ew_realized_variance_mean_reversion_v1",
-      "observation_count": 14.0,
+      "observation_count": 15.0,
       "oldest_observation_date": "2026-10-21",
-      "persistence_half_life_clock_units": 0.6742636692173509,
-      "persistence_per_clock_unit": 0.3577194986105384,
+      "persistence_half_life_clock_units": 0.6723174741788721,
+      "persistence_per_clock_unit": 0.3566565696392224,
       "status": "ACTIVE",
-      "unconstrained_beta": 0.041044636855826086,
-      "weighted_residual_variance": 2.042887904016843e-09,
+      "unconstrained_beta": 0.10601718420713749,
+      "weighted_residual_variance": 1.8630549410037053e-09,
       "window_sessions": 100.0
     },
     "rho_daily": 0.0,
     "rho_half_life_sessions": 0.0,
     "rho_lower_90": 0.0,
-    "rho_upper_90": 0.3478723953887466,
+    "rho_upper_90": 0.3411140795691841,
     "session_date": "2026-11-10",
-    "state_age_sessions": 1.0,
-    "state_update_weight": 0.8296723702460479,
+    "state_age_sessions": 0.0,
+    "state_update_weight": 0.8319648498119506,
     "status": "RETAINED_SESSION",
     "surface": [
       {
@@ -158358,9 +158358,9 @@
         "observed_at_et": "2026-11-10T16:12:42.686680-05:00"
       }
     ],
-    "terminal_displacement_shadow_observation_count": 61.0,
+    "terminal_displacement_shadow_observation_count": 66.0,
     "terminal_observation_statistics": {
-      "evaluated_at_et": "2026-11-10T08:00:00-05:00",
+      "evaluated_at_et": "2026-11-10T17:45:01.978005-05:00",
       "full_credit_probability_calibration": {
         "all_historical_policies": {
           "brier_score": 0.27366410630592586,
@@ -158389,28 +158389,28 @@
       },
       "integrated_realized_variance": {
         "authority": "ACTIVE_SCALE_CALIBRATION",
-        "lower_90_scale_multiplier": 0.7990459833416815,
+        "lower_90_scale_multiplier": 0.7973557762226465,
         "method": "FIVE_MINUTE_INTEGRATED_QUADRATIC_VARIATION",
-        "observations": 61,
-        "observed_variance_ratio": 0.8397729054699498,
-        "posterior_scale_multiplier": 0.9317938525347081,
-        "posterior_variance_ratio": 0.8682397836214735,
+        "observations": 66,
+        "observed_variance_ratio": 0.8280976530068488,
+        "posterior_scale_multiplier": 0.924108058975417,
+        "posterior_variance_ratio": 0.8539757046633129,
         "status": "POSTERIOR_UPDATED",
         "title": "Integrated path variance",
-        "upper_90_scale_multiplier": 1.0785311027045006
+        "upper_90_scale_multiplier": 1.0636898190935635
       },
       "schema_version": "terminal-observation-statistics-v1",
       "terminal_squared_displacement": {
         "authority": "SHADOW_ONLY",
-        "lower_90_scale_multiplier": 0.9827860691904439,
+        "lower_90_scale_multiplier": 0.9546290679204014,
         "method": "FORECAST_TO_SETTLEMENT_SQUARED_LOG_RETURN",
-        "observations": 61,
-        "observed_variance_ratio": 1.270387747784037,
-        "posterior_scale_multiplier": 1.1460592215214462,
-        "posterior_variance_ratio": 1.3134517392343434,
+        "observations": 66,
+        "observed_variance_ratio": 1.1869886681218673,
+        "posterior_scale_multiplier": 1.1063824221310983,
+        "posterior_variance_ratio": 1.2240820640006758,
         "status": "POSTERIOR_UPDATED",
         "title": "Terminal squared displacement",
-        "upper_90_scale_multiplier": 1.3265386035653686
+        "upper_90_scale_multiplier": 1.2734957854925848
       }
     },
     "vix1d_forecast_validation": {
@@ -200065,23 +200065,23 @@
       }
     },
     "vix_regime": {
-      "backfill_end_date": "2026-11-09",
+      "backfill_end_date": "2026-11-10",
       "backfill_start_date": "2026-10-20",
       "backfill_status": "COMPLETE_AVAILABLE_DENSE_HISTORY",
-      "data_weight": 0.4119913012769559,
-      "effective_observed_sessions": 14.013102260958439,
+      "data_weight": 0.42652258265196374,
+      "effective_observed_sessions": 14.874956528344432,
       "interpretation": "Positive slope means d rises when VIX is above its robust historical center; negative slope means d falls.",
-      "log_vix_center": -1.6809339141391704,
-      "log_vix_robust_scale": 0.10046996890072186,
+      "log_vix_center": -1.669518499277276,
+      "log_vix_robust_scale": 0.11536660749847692,
       "maximum_absolute_log_variance_slope": 0.5,
-      "observation_count": 15.0,
-      "posterior_log_variance_slope": 0.019150816003839895,
+      "observation_count": 16.0,
+      "posterior_log_variance_slope": 0.025369428294779166,
       "prior_effective_sessions": 20.0,
       "prior_log_variance_slope": 0.0,
-      "sample_log_variance_slope": 0.04648354454203878,
+      "sample_log_variance_slope": 0.059479683671240104,
       "status": "ESTIMATED",
       "variable": "LOG_VIX",
-      "vix_center": 0.1862,
+      "vix_center": 0.18833772856228248,
       "z_cap": 2.5
     }
   },
@@ -202028,6 +202028,48 @@
           "net_return_on_deployed_capital": 0.4620114081876462,
           "trades": 4,
           "win_rate": 1.0
+        }
+      ],
+      "by_entry_time": [
+        {
+          "deployed_capital": 42605.61,
+          "entry_time_bucket": "9:30\u201310:29 a.m.",
+          "expectancy": -68.88699999999999,
+          "expectancy_return_per_trade": -0.09326096868021332,
+          "net_pnl": -2066.6099999999997,
+          "net_return_on_deployed_capital": -0.04850558412378087,
+          "trades": 30,
+          "win_rate": 0.6666666666666666
+        },
+        {
+          "deployed_capital": 36779.01,
+          "entry_time_bucket": "10:30\u201311:59 a.m.",
+          "expectancy": -86.89782608695651,
+          "expectancy_return_per_trade": -0.06800763229682266,
+          "net_pnl": -1998.6499999999999,
+          "net_return_on_deployed_capital": -0.05434213699607466,
+          "trades": 23,
+          "win_rate": 0.782608695652174
+        },
+        {
+          "deployed_capital": 42407.42,
+          "entry_time_bucket": "12:00\u20131:29 p.m.",
+          "expectancy": -211.72,
+          "expectancy_return_per_trade": -0.12505786334931362,
+          "net_pnl": -4446.12,
+          "net_return_on_deployed_capital": -0.10484297323440096,
+          "trades": 21,
+          "win_rate": 0.6666666666666666
+        },
+        {
+          "deployed_capital": 32261.67,
+          "entry_time_bucket": "1:30\u20134:00 p.m.",
+          "expectancy": 24.768695652173914,
+          "expectancy_return_per_trade": -0.06678866956931868,
+          "net_pnl": 569.6800000000001,
+          "net_return_on_deployed_capital": 0.017658106353452878,
+          "trades": 23,
+          "win_rate": 0.7391304347826086
         }
       ],
       "by_strategy": [
@@ -207260,7 +207302,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-11-10T17:30:01.571144-05:00",
+    "published_at_et": "2026-11-10T17:51:39.986300-05:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-11-10"
   },
