@@ -1360,18 +1360,18 @@ async function load({ historicalDate = null } = {}) {
     {label: "Open", display: value(spxReference.open_spx), className: pnlClass(spxReference.open_change_from_prior_close_percent), changes: [
       {text: `${signedPercentPoints(spxReference.open_change_from_prior_close_percent)} vs prior`, className: pnlClass(spxReference.open_change_from_prior_close_percent)},
     ]},
+    {label: "Day high", display: value(spxReference.session_high_spx), className: pnlClass(spxReference.session_high_change_from_prior_close_percent), changes: spxReference.session_high_spx == null ? [] : [
+      {text: `${signedPercentPoints(spxReference.session_high_change_from_prior_close_percent)} vs prior`, className: pnlClass(spxReference.session_high_change_from_prior_close_percent)},
+    ]},
+    {label: "Day low", display: value(spxReference.session_low_spx), className: pnlClass(spxReference.session_low_change_from_prior_close_percent), changes: spxReference.session_low_spx == null ? [] : [
+      {text: `${signedPercentPoints(spxReference.session_low_change_from_prior_close_percent)} vs prior`, className: pnlClass(spxReference.session_low_change_from_prior_close_percent)},
+    ]},
     {label: "Current", display: value(spxReference.current_spx), className: pnlClass(spxReference.current_change_from_prior_close_percent), changes: [
       {text: `${signedPercentPoints(spxReference.current_change_from_prior_close_percent)} vs prior`, className: pnlClass(spxReference.current_change_from_prior_close_percent)},
       {text: `${signedPercentPoints(spxReference.current_change_from_open_percent)} vs open`, className: pnlClass(spxReference.current_change_from_open_percent)},
     ]},
     {label: "Close", display: spxReference.close_spx == null ? "Pending" : value(spxReference.close_spx), className: pnlClass(spxReference.close_change_from_prior_close_percent), changes: spxReference.close_spx == null ? [] : [
       {text: `${signedPercentPoints(spxReference.close_change_from_prior_close_percent)} vs prior`, className: pnlClass(spxReference.close_change_from_prior_close_percent)},
-    ]},
-    {label: "Day high", display: value(spxReference.session_high_spx), className: pnlClass(spxReference.session_high_change_from_prior_close_percent), changes: spxReference.session_high_spx == null ? [] : [
-      {text: `${signedPercentPoints(spxReference.session_high_change_from_prior_close_percent)} vs prior`, className: pnlClass(spxReference.session_high_change_from_prior_close_percent)},
-    ]},
-    {label: "Day low", display: value(spxReference.session_low_spx), className: pnlClass(spxReference.session_low_change_from_prior_close_percent), changes: spxReference.session_low_spx == null ? [] : [
-      {text: `${signedPercentPoints(spxReference.session_low_change_from_prior_close_percent)} vs prior`, className: pnlClass(spxReference.session_low_change_from_prior_close_percent)},
     ]},
   ]);
   const baselineNote = document.querySelector("#ledger-baseline-note");
