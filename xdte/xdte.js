@@ -718,7 +718,7 @@ function lineChart(target, series, options = {}) {
   const rightPoints = rightSeries.flatMap(chartPoints);
   const all = [...leftPoints, ...rightPoints];
   if (!all.length) { node.innerHTML = `<div class="chart-empty">No chart data are available for this period.</div>`; return; }
-  const width = 1000, height = options.height || 310, pad = { l: 76, r: rightPoints.length ? 76 : 24, t: 18, b: 42 };
+  const width = 1000, height = options.height || 310, pad = { l: 76, r: rightPoints.length ? 76 : 24, t: 18, b: options.sessionDateAxis ? 66 : 42 };
   const verticalRuleTimes = (options.verticalRules || [])
     .map(rule => new Date(rule.time).getTime())
     .filter(Number.isFinite);
@@ -766,6 +766,37 @@ function lineChart(target, series, options = {}) {
       : (t - minT) / Math.max(maxT - minT, 1);
     return pad.l + fraction * (width - pad.l - pad.r);
   };
+  const easternDateParts = timestamp => {
+    const parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/New_York", year: "numeric", month: "2-digit", day: "2-digit",
+    }).formatToParts(new Date(timestamp));
+    const values = Object.fromEntries(parts.map(part => [part.type, part.value]));
+    return `${values.year}-${values.month}-${values.day}`;
+  };
+  const sessionDateLabel = new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York", month: "short", day: "numeric",
+  });
+  const sessionGroups = (() => {
+    if (!options.sessionDateAxis) return [];
+    const groups = [];
+    orderedTimes.forEach(timestamp => {
+      const key = easternDateParts(timestamp);
+      const prior = groups[groups.length - 1];
+      if (prior?.key === key) prior.times.push(timestamp);
+      else groups.push({key, times: [timestamp]});
+    });
+    return groups;
+  })();
+  const sessionSeparators = sessionGroups.slice(1).map((group, index) => {
+    const prior = sessionGroups[index];
+    const boundary = (x(prior.times[prior.times.length - 1]) + x(group.times[0])) / 2;
+    return `<line x1="${boundary.toFixed(1)}" x2="${boundary.toFixed(1)}" y1="${pad.t}" y2="${height-pad.b}" stroke="#98A2B3" stroke-width="1" stroke-opacity="0.65" stroke-dasharray="2 4"/>`;
+  }).join("");
+  const sessionDateLabels = sessionGroups.map(group => {
+    const midpoint = (x(group.times[0]) + x(group.times[group.times.length - 1])) / 2;
+    const label = sessionDateLabel.format(new Date(group.times[0]));
+    return `<text transform="translate(${midpoint.toFixed(1)},${height-12}) rotate(-28)" text-anchor="end" fill="#667085" font-size="12">${label}</text>`;
+  }).join("");
   const y = v => pad.t + (maxY - v) / Math.max(maxY - minY, 1) * (height - pad.t - pad.b);
   const rightY = v => pad.t + (rightBounds[1] - v) / Math.max(rightBounds[1] - rightBounds[0], 1) * (height - pad.t - pad.b);
   const axisTicks = (minimum, maximum, step) => step
@@ -868,12 +899,11 @@ function lineChart(target, series, options = {}) {
   }).join("");
   const zero = minY <= 0 && maxY >= 0 ? `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(0)}" y2="${y(0)}" stroke="#7b8495" stroke-width="1.75"/>` : "";
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${options.label || "Time series"}">
-    ${regimeShading}
+    ${regimeShading}${sessionSeparators}
     ${ticks.map(v => `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e4dfd6"/><text x="${pad.l-10}" y="${y(v)+4}" text-anchor="end" fill="#667085" font-size="12">${options.money ? money.format(v) : number.format(v)}</text>`).join("")}
     ${rightTicks.map(v => `<line x1="${width-pad.r}" x2="${width-pad.r+5}" y1="${rightY(v)}" y2="${rightY(v)}" stroke="#667085"/><text x="${width-pad.r+10}" y="${rightY(v)+4}" fill="#667085" font-size="12">${number.format(v)}</text>`).join("")}
     ${relativeAreas}${zero}${verticalRules}${paths}${markers}
-    <text x="${pad.l}" y="${height-12}" fill="#667085" font-size="12">${shortTime(minT)}</text>
-    <text x="${width-pad.r}" y="${height-12}" text-anchor="end" fill="#667085" font-size="12">${shortTime(maxT)}</text>
+    ${options.sessionDateAxis ? sessionDateLabels : `<text x="${pad.l}" y="${height-12}" fill="#667085" font-size="12">${shortTime(minT)}</text><text x="${width-pad.r}" y="${height-12}" text-anchor="end" fill="#667085" font-size="12">${shortTime(maxT)}</text>`}
   </svg><div class="chart-legend">${series.filter((s,i,a)=>a.findIndex(t=>(t.legendLabel||t.label)===(s.legendLabel||s.label))===i).map(s => `<span class="legend-key${s.dash ? " legend-key--dashed" : ""}" style="--key:${s.color}">${s.legendLabel || s.label}</span>`).join("")}${options.regimeShading ? Object.entries(options.regimeShading.colors || {}).filter(([label]) => label !== "Unavailable").map(([label,color]) => `<span class="legend-key legend-key--regime" style="--key:${color}">${label} VIX</span>`).join("") : ""}${options.estimatedMarkLegend ? '<span class="legend-key legend-key--estimated" style="--key:#667085">Estimated zero-bid midpoint</span>' : ''}${options.carriedForwardLegend ? '<span class="legend-key legend-key--dashed" style="--key:#667085">Held at last accounting mark</span>' : ''}</div>`;
 }
 
@@ -1384,9 +1414,9 @@ function renderEstimatedMarketVariables(model) {
     {rows: vixHistory, x: "observed_at_et", y: "vix1d_percent", label: "VIX1D", color: "#333ED4"},
     {rows: vixHistory, x: "observed_at_et", y: "discounted_vix1d_percent", label: "Discounted VIX1D", color: "#2FA236"},
     {rows: vixHistory, x: "observed_at_et", y: "realized_vix1d_percent", label: "Forward realized SPX volatility", color: "#F76915"},
-  ], {label: "One-session VIX1D diagnostic", height: 320, compressTimeGaps: true, regimeShading: vixRegimeShading});
+  ], {label: "One-session VIX1D diagnostic", height: 320, compressTimeGaps: true, sessionDateAxis: true, regimeShading: vixRegimeShading});
   const settlementHorizons = data.settlement_horizon_forecast_validation?.horizons || {};
-  [0, 1, 7].forEach(targetDte => {
+  [0, 1, 2, 3, 7].forEach(targetDte => {
     const horizon = settlementHorizons[String(targetDte)] || {};
     const allRows = (horizon.history || []).filter(row =>
       Number.isFinite(Date.parse(row?.observed_at_et || ""))
@@ -1405,10 +1435,12 @@ function renderEstimatedMarketVariables(model) {
       {rows, x: "observed_at_et", y: "risk_neutral_volatility_percent", label: "Risk-neutral horizon volatility", color: "#333ED4"},
       {rows, x: "observed_at_et", y: "physical_forecast_volatility_percent", label: "Active physical forecast", color: "#2FA236"},
       {rows, x: "observed_at_et", y: "realized_horizon_volatility_percent", label: "Realized through settlement", color: "#F76915"},
+      {rows, x: "observed_at_et", y: "provisional_realized_volatility_percent", label: "Provisional realized pace", color: "#98A2B3", dash: "7 5"},
     ], {
       label: `${targetDte}DTE exact-settlement volatility validation`,
       height: 320,
       compressTimeGaps: true,
+      sessionDateAxis: true,
       regimeShading: {
         ...vixRegimeShading,
         rows,
@@ -1417,7 +1449,8 @@ function renderEstimatedMarketVariables(model) {
     const note = document.querySelector(`#vix-${targetDte}dte-settlement-note`);
     if (note) {
       const matured = (horizon.history || []).filter(row => row.outcome_status === "VALID").length;
-      note.textContent = `Exact observation-to-${targetDte}DTE SPXW settlement horizon. ${matured} matured forecast observation(s) currently have valid five-minute realized-volatility outcomes.`;
+      const provisional = (horizon.history || []).filter(row => row.provisional_status === "VALID" && row.outcome_status !== "VALID").length;
+      note.textContent = `Exact observation-to-${targetDte}DTE SPXW settlement horizon. ${matured} matured forecast observation(s) have final five-minute realized-volatility outcomes; ${provisional} current-session pending observation(s) have a dashed provisional realized pace through the latest retained SPX point. Provisional values do not enter completed accuracy statistics.`;
     }
   });
   const periodKey = String(selectedVix1dHistoryDays);

@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
   <link rel="stylesheet" href="xdte.css?v=20261110-tabbed-layout-v25">
-  <script defer src="xdte.js?v=20261111-horizon-validation-v28"></script>
+  <script defer src="xdte.js?v=20261111-session-date-axis-v30"></script>
 </head>
 <body class="access-locked">
   <div id="access-gate" class="access-gate" role="dialog" aria-modal="true" aria-labelledby="access-gate-title">
@@ -182,7 +182,7 @@
       </article>
       <article class="panel chart-panel">
         <div class="panel__heading">
-          <div><h3>Horizon volatility forecast validation</h3><p>Exact DTE results run from each scan through the contract's 4:00 p.m. ET settlement. The one-session VIX1D chart remains a separate clock-model diagnostic and is not labeled as 0DTE. Pending outcomes remain blank, and closed-market gaps are removed from the chart.</p></div>
+          <div><h3>Horizon volatility forecast validation</h3><p>Exact DTE results run from each scan through the contract's 4:00 p.m. ET settlement. The one-session VIX1D chart remains a separate clock-model diagnostic and is not labeled as 0DTE. Pending horizons show a dashed realized-volatility pace through the latest retained five-minute SPX observation; only settled values enter accuracy statistics.</p></div>
           <div id="vix1d-history-period-controls" class="period-controls" role="group" aria-label="VIX1D history window" data-selected-window="1">
             <button type="button" data-vix1d-window="1" class="is-active" aria-pressed="true">1 day</button>
             <button type="button" data-vix1d-window="3">3 days</button>
@@ -199,6 +199,12 @@
         <div class="panel__heading"><div><h3>1DTE exact-settlement volatility</h3><p>Horizon-matched VIX-family volatility, the active physical forecast, and subsequently realized volatility from each observation through the selected 1DTE SPXW settlement.</p></div></div>
         <div id="vix-1dte-settlement-chart" class="chart"></div>
         <p id="vix-1dte-settlement-note" class="chart-note"></p>
+        <div class="panel__heading"><div><h3>2DTE exact-settlement volatility</h3><p>Horizon-matched VIX-family volatility, the active physical forecast, and provisional or settled realized volatility through the selected 2DTE SPXW settlement.</p></div></div>
+        <div id="vix-2dte-settlement-chart" class="chart"></div>
+        <p id="vix-2dte-settlement-note" class="chart-note"></p>
+        <div class="panel__heading"><div><h3>3DTE exact-settlement volatility</h3><p>Horizon-matched VIX-family volatility, the active physical forecast, and provisional or settled realized volatility through the selected 3DTE SPXW settlement.</p></div></div>
+        <div id="vix-3dte-settlement-chart" class="chart"></div>
+        <p id="vix-3dte-settlement-note" class="chart-note"></p>
         <div class="panel__heading"><div><h3>7DTE exact-settlement volatility</h3><p>Horizon-matched VIX-family volatility, the active physical forecast, and subsequently realized volatility from each observation through the selected approximately 7DTE SPXW settlement.</p></div></div>
         <div id="vix-7dte-settlement-chart" class="chart"></div>
         <p id="vix-7dte-settlement-note" class="chart-note"></p>
