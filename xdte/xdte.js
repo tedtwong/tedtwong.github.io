@@ -1376,9 +1376,9 @@ function renderEstimatedMarketVariables(model) {
     {rows: vixHistory, x: "observed_at_et", y: "vix1d_percent", label: "VIX1D", color: "#333ED4"},
     {rows: vixHistory, x: "observed_at_et", y: "discounted_vix1d_percent", label: "Discounted VIX1D", color: "#2FA236"},
     {rows: vixHistory, x: "observed_at_et", y: "realized_vix1d_percent", label: "Forward realized SPX volatility", color: "#F76915"},
-  ], {label: "VIX1D forecast validation", height: 320, compressTimeGaps: true, regimeShading: vixRegimeShading});
+  ], {label: "One-session VIX1D diagnostic", height: 320, compressTimeGaps: true, regimeShading: vixRegimeShading});
   const settlementHorizons = data.settlement_horizon_forecast_validation?.horizons || {};
-  [1, 7].forEach(targetDte => {
+  [0, 1, 7].forEach(targetDte => {
     const horizon = settlementHorizons[String(targetDte)] || {};
     const allRows = (horizon.history || []).filter(row =>
       Number.isFinite(Date.parse(row?.observed_at_et || ""))
@@ -1406,13 +1406,27 @@ function renderEstimatedMarketVariables(model) {
       note.textContent = `Exact observation-to-${targetDte}DTE SPXW settlement horizon. ${matured} matured forecast observation(s) currently have valid five-minute realized-volatility outcomes.`;
     }
   });
-  const selectedPeriod = validation.periods?.[String(selectedVix1dHistoryDays)] || {};
-  const validationRows = [
-    {forecast:"Raw VIX1D", ...(selectedPeriod.raw_vix1d || {})},
-    {forecast:"Discounted VIX1D", ...(selectedPeriod.discounted_vix1d || {})},
-  ];
+  const periodKey = String(selectedVix1dHistoryDays);
+  const periodLabel = period => `${period?.start_date || "unavailable"} to ${period?.end_date || "unavailable"}`;
+  const validationRows = [];
+  [0, 1, 2, 3, 7].forEach(targetDte => {
+    const horizonPeriod = settlementHorizons[String(targetDte)]?.periods?.[periodKey] || {};
+    [
+      ["Risk-neutral horizon volatility", "risk_neutral"],
+      ["Active physical forecast", "physical"],
+    ].forEach(([forecast, key]) => validationRows.push({
+      horizon: `${targetDte}DTE`,
+      forecast,
+      completed_sessions: horizonPeriod.completed_sessions || 0,
+      period: periodLabel(horizonPeriod),
+      ...(horizonPeriod[key] || {}),
+    }));
+  });
   table("#vix1d-validation-metrics", [
+    ["Horizon", "horizon"],
     ["Forecast", "forecast"],
+    ["Completed sessions", "completed_sessions"],
+    ["Period", "period"],
     ["MAE", "mae", null, v => Number.isFinite(Number(v)) ? `${Number(v).toFixed(2)} vol pts` : "—"],
     ["RMSE", "rmse", null, v => Number.isFinite(Number(v)) ? `${Number(v).toFixed(2)} vol pts` : "—"],
     ["Bias", "bias", null, v => Number.isFinite(Number(v)) ? `${Number(v).toFixed(2)} vol pts` : "—"],
@@ -1420,7 +1434,7 @@ function renderEstimatedMarketVariables(model) {
     ["Observations", "observations"],
   ], validationRows);
   const validationNote = document.querySelector("#vix1d-validation-note");
-  if(validationNote) validationNote.textContent = `${selectedPeriod.completed_sessions || 0} completed trading session(s), ${selectedPeriod.start_date || "unavailable"} through ${selectedPeriod.end_date || "unavailable"}. The chart displays ${displayedVix1dHistoryDays} forecast sessions to include the one-session realization lag. Bias is forecast minus realized volatility; positive values indicate overprediction.`;
+  if(validationNote) validationNote.textContent = `Each row uses up to the selected ${selectedVix1dHistoryDays} most recent completed forecast session(s) for its exact settlement horizon. Bias is forecast minus realized volatility; positive values indicate overprediction. The one-session VIX1D diagnostic above is intentionally excluded from the DTE table.`;
   document.querySelectorAll("[data-vix1d-window]").forEach(button => {
     const active = Number(button.dataset.vix1dWindow) === selectedVix1dHistoryDays;
     button.classList.toggle("is-active", active);
