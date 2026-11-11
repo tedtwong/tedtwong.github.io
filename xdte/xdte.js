@@ -807,8 +807,9 @@ function lineChart(target, series, options = {}) {
     const unique = [...new Map(points.map(point => [point.t, point])).values()]
       .sort((left, right) => left.t - right.t);
     if (!unique.length) return "";
-    const opacity = Number.isFinite(Number(settings.opacity)) ? Number(settings.opacity) : 0.10;
-    return unique.map((point, index) => {
+    const opacity = Number.isFinite(Number(settings.opacity)) ? Number(settings.opacity) : 0.04;
+    const bands = [];
+    unique.forEach((point, index) => {
       const center = x(point.t);
       const left = index === 0
         ? pad.l
@@ -816,8 +817,15 @@ function lineChart(target, series, options = {}) {
       const right = index === unique.length - 1
         ? width - pad.r
         : (center + x(unique[index + 1].t)) / 2;
-      const color = settings.colors?.[point.regime] || settings.colors?.Unavailable || "#98A2B3";
-      return `<rect x="${left.toFixed(1)}" y="${pad.t}" width="${Math.max(0, right-left).toFixed(1)}" height="${height-pad.t-pad.b}" fill="${color}" fill-opacity="${opacity}"><title>VIX regime: ${point.regime}</title></rect>`;
+      const prior = bands[bands.length - 1];
+      if (prior && prior.regime === point.regime) prior.right = right;
+      else bands.push({regime: point.regime, left, right});
+    });
+    return bands.map(band => {
+      const color = settings.colors?.[band.regime] || settings.colors?.Unavailable || "#98A2B3";
+      const left = Math.max(pad.l, band.left - 0.25);
+      const right = Math.min(width - pad.r, band.right + 0.25);
+      return `<rect x="${left.toFixed(1)}" y="${pad.t}" width="${Math.max(0, right-left).toFixed(1)}" height="${height-pad.t-pad.b}" fill="${color}" fill-opacity="${opacity}"><title>VIX regime: ${band.regime}</title></rect>`;
     }).join("");
   })();
   const paths = series.map(s => {
@@ -1369,8 +1377,8 @@ function renderEstimatedMarketVariables(model) {
     rows: vixHistory,
     x: "observed_at_et",
     field: "vix_regime",
-    opacity: 0.10,
-    colors: {Low: "#5B8FF9", Average: "#2FA236", High: "#F76915", Unavailable: "#98A2B3"},
+    opacity: 0.04,
+    colors: {Low: "#5B8FF9", Average: "#2FA236", High: "#F4A6B8", Unavailable: "#98A2B3"},
   };
   lineChart("#vix1d-discount-chart", [
     {rows: vixHistory, x: "observed_at_et", y: "vix1d_percent", label: "VIX1D", color: "#333ED4"},
@@ -1384,7 +1392,13 @@ function renderEstimatedMarketVariables(model) {
       Number.isFinite(Date.parse(row?.observed_at_et || ""))
     );
     const dates = [...new Set(allRows.map(row => row.observed_at_et.slice(0, 10)))].sort();
-    const selectedDates = new Set(dates.slice(-displayedVix1dHistoryDays));
+    const completedPeriod = horizon.periods?.[String(selectedVix1dHistoryDays)] || {};
+    const completedStart = completedPeriod.start_date || null;
+    const selectedDates = new Set(
+      completedStart
+        ? dates.filter(date => date >= completedStart)
+        : dates.slice(-displayedVix1dHistoryDays)
+    );
     const rows = allRows.filter(row => selectedDates.has(row.observed_at_et.slice(0, 10)));
     const selector = `#vix-${targetDte}dte-settlement-chart`;
     lineChart(selector, [
