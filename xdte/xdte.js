@@ -1678,17 +1678,10 @@ async function load({ historicalDate = null } = {}) {
     ["Unused capacity forfeited today", value(ledger.capacity.timed_capacity_forfeited, money), capacityClass(ledger.capacity.timed_capacity_forfeited)],
     ["Long-dated (4+ DTE) capacity available", value(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity, money), capacityClass(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity)],
   ]);
-  const closedPositionStatuses = new Set(["CLOSED", "SETTLED", "EXPIRED", "CANCELLED", "REJECTED", "UNFILLED"]);
-  const normalizedPositionLabel = value => String(value || "").startsWith("Position ")
-    ? String(value) : `Position ${value}`;
-  const statusByPosition = new Map((daily.trades || [])
-    .filter(row => row.position !== null && row.position !== undefined)
-    .map(row => [normalizedPositionLabel(row.position), String(row.status || "").toUpperCase()]));
-  const currentPositionPnl = (daily.position_pnl || []).filter(item => {
-    const status = statusByPosition.get(item.position);
-    if (status) return !closedPositionStatuses.has(status);
-    return !(item.points || []).some(point => point.event === "Exit");
-  });
+  // The payload is already scoped to the displayed session. Keep positions
+  // that settled today so their final realized value remains visible after
+  // expiration; positions closed before this session are absent upstream.
+  const currentPositionPnl = daily.position_pnl || [];
   const positionPalette = [
     "#F76915", "#C5A900", "#84B82A", "#2FA236", "#FD0100", "#8B5CF6",
     "#0891B2", "#DB2777", "#A16207", "#64748B", "#2563EB", "#9333EA",
@@ -1733,7 +1726,7 @@ async function load({ historicalDate = null } = {}) {
     money: true, height: 465, includeZero: true,
     leftTickQuantum: 250, leftTickMinimumCount: 5, leftTickMaximumCount: 10, leftTickTargetCount: 7,
     rightTickStep: 25,
-    label: "Current open-position P&L", markers: positionMarkers,
+    label: "Today’s position P&L", markers: positionMarkers,
     verticalRules: [closeExpirationRule],
     carriedForwardLegend: true, estimatedMarkLegend: true,
   });
