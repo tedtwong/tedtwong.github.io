@@ -760,12 +760,6 @@ function lineChart(target, series, options = {}) {
       ? steppedBounds(rightObservedMin, rightObservedMax, options.rightTickStep)
       : (() => { const range = Math.max(rightObservedMax - rightObservedMin, 1); return [rightObservedMin - range * .08, rightObservedMax + range * .08]; })())
     : [0, 1];
-  const x = t => {
-    const fraction = options.compressTimeGaps
-      ? (tradingTimeIndex.get(t) || 0) / Math.max(orderedTimes.length - 1, 1)
-      : (t - minT) / Math.max(maxT - minT, 1);
-    return pad.l + fraction * (width - pad.l - pad.r);
-  };
   const easternDateParts = timestamp => {
     const parts = new Intl.DateTimeFormat("en-US", {
       timeZone: "America/New_York", year: "numeric", month: "2-digit", day: "2-digit",
@@ -787,13 +781,34 @@ function lineChart(target, series, options = {}) {
     });
     return groups;
   })();
+  const sessionPositions = new Map();
+  sessionGroups.forEach((group, sessionIndex) => {
+    const denominator = Math.max(group.times.length - 1, 1);
+    group.times.forEach((timestamp, observationIndex) => {
+      const withinSession = group.times.length === 1
+        ? 0.5
+        : 0.05 + 0.90 * observationIndex / denominator;
+      sessionPositions.set(
+        timestamp,
+        (sessionIndex + withinSession) / Math.max(sessionGroups.length, 1),
+      );
+    });
+  });
+  const x = t => {
+    const sessionFraction = sessionPositions.get(t);
+    const fraction = options.sessionDateAxis && Number.isFinite(sessionFraction)
+      ? sessionFraction
+      : options.compressTimeGaps
+      ? (tradingTimeIndex.get(t) || 0) / Math.max(orderedTimes.length - 1, 1)
+      : (t - minT) / Math.max(maxT - minT, 1);
+    return pad.l + fraction * (width - pad.l - pad.r);
+  };
   const sessionSeparators = sessionGroups.slice(1).map((group, index) => {
-    const prior = sessionGroups[index];
-    const boundary = (x(prior.times[prior.times.length - 1]) + x(group.times[0])) / 2;
+    const boundary = pad.l + (index + 1) / sessionGroups.length * (width - pad.l - pad.r);
     return `<line x1="${boundary.toFixed(1)}" x2="${boundary.toFixed(1)}" y1="${pad.t}" y2="${height-pad.b}" stroke="#98A2B3" stroke-width="1" stroke-opacity="0.65" stroke-dasharray="2 4"/>`;
   }).join("");
-  const sessionDateLabels = sessionGroups.map(group => {
-    const midpoint = (x(group.times[0]) + x(group.times[group.times.length - 1])) / 2;
+  const sessionDateLabels = sessionGroups.map((group, index) => {
+    const midpoint = pad.l + (index + 0.5) / sessionGroups.length * (width - pad.l - pad.r);
     const label = sessionDateLabel.format(new Date(group.times[0]));
     return `<text transform="translate(${midpoint.toFixed(1)},${height-12}) rotate(-28)" text-anchor="end" fill="#667085" font-size="12">${label}</text>`;
   }).join("");
