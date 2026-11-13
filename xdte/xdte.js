@@ -1359,7 +1359,8 @@ function renderEstimatedMarketVariables(model) {
     ["RV long-run level", Number.isFinite(Number(meanReversion.long_run_annualized_volatility)) ? `${(100 * Number(meanReversion.long_run_annualized_volatility)).toFixed(2)}%` : "—", "", "The mean-reverting long-run annualized level estimated from completed-session realized variance."],
     ["Latest RV level", Number.isFinite(Number(meanReversion.latest_annualized_volatility)) ? `${(100 * Number(meanReversion.latest_annualized_volatility)).toFixed(2)}%` : "—", "", "The latest completed session’s five-minute integrated realized variance expressed as annualized volatility."],
     ["RV level persistence", decimal(meanReversion.persistence_per_clock_unit), "", "The fitted persistence of realized-variance deviations for each unit of the nonlinear variance clock."],
-    ["Disagreement beta", decimal(meanReversion.beta), "", "The calibrated fraction of mean-reversion versus current-forecast log-variance disagreement applied to the active physical forecast."],
+    ["Active pooled anchor beta", decimal(meanReversion.beta), "", "The pooled fraction of mean-reversion versus current-forecast disagreement around which the active bounded clock-component betas are estimated."],
+    ["Pooled-beta shadow", decimal(meanReversion.pooled_shadow_beta), "", "The former single-beta model, now retained without decision authority for comparison."],
     ["MR effective history", Number.isFinite(Number(meanReversion.effective_observation_count)) ? `${Number(meanReversion.effective_observation_count).toFixed(1)} sessions` : "—", "", "The recency-weighted effective number of completed sessions supporting the mean-reversion level estimate."],
   ]);
   const terminalStats = data.terminal_observation_statistics || {};
@@ -1411,6 +1412,29 @@ function renderEstimatedMarketVariables(model) {
     data.surface_matrix || [],
     {emptyMessage: "No intraday discount history is available."},
   );
+  const componentBetas = meanReversion.component_betas || {};
+  const betaRows = Object.entries(componentBetas).map(([name, beta]) => ({
+    component: String(name).replaceAll("_", " "), beta,
+  }));
+  if (Number.isFinite(Number(meanReversion.event_logit_adjustment))) betaRows.push({
+    component: "SCHEDULED EVENT LOGIT ADJUSTMENT",
+    beta: meanReversion.event_logit_adjustment,
+  });
+  table("#clock-component-beta-table", [
+    ["Clock component", "component"],
+    ["Active beta", "beta", null, value => decimal(value)],
+  ], betaRows, {emptyMessage: "Clock-component calibration is not yet available."});
+  table("#physical-model-comparison-table", [
+    ["Model", "model"], ["Authority", "authority"],
+    ["Outcomes", "outcome_count"],
+    ["Effective outcomes", "effective_outcome_count", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(1) : "—"],
+    ["Log-var MAE", "log_variance_mae", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(4) : "—"],
+    ["Log-var RMSE", "log_variance_rmse", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(4) : "—"],
+    ["Log-var bias", "log_variance_bias", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(4) : "—"],
+    ["QLIKE", "qlike", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(6) : "—"],
+  ], meanReversion.model_comparison_statistics || [], {
+    emptyMessage: "Physical-model comparison statistics are not yet available.",
+  });
   const validation = data.vix1d_forecast_validation || {};
   const allVixHistory = (validation.history || []).filter(row =>
     Number.isFinite(Date.parse(row?.observed_at_et || ""))

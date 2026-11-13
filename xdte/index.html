@@ -311,6 +311,12 @@
         <div id="discount-surface-matrix" class="table-wrap"></div>
         <p id="estimated-market-variable-note" class="chart-note"></p>
       </article>
+      <article class="panel">
+        <div class="panel__heading"><div><h3>Active physical model and shadow comparison</h3><p>The bounded clock-component model is active; the former pooled-beta model and the unadjusted physical forecast remain non-authoritative shadows.</p></div></div>
+        <div id="clock-component-beta-table" class="table-wrap"></div>
+        <div id="physical-model-comparison-table" class="table-wrap"></div>
+        <p class="chart-note">Statistics use the same recency-weighted, matured, overlap-adjusted calibration sample. They are calibration diagnostics rather than out-of-sample evidence.</p>
+      </article>
     </section>
 
     <section class="method" role="tabpanel" aria-labelledby="tab-methodology" data-tab-panel="methodology" hidden>
@@ -322,7 +328,7 @@
         <p>This paper-only experiment treats defined-risk SPXW credit positions as short-duration insurance underwriting. SPXW option prices supply the market’s distribution shape and skew, while VIX-family indexes provide the volatility scale. A nonlinear variance clock adjusts that scale for time of day, overnight periods, weekends, and scheduled events; a calibrated physical discount and realized-volatility adjustment convert it into a real-world forecast. The program compares that forecast with option-implied pricing, evaluates complete executable structures after estimated costs, and ranks eligible candidates by probability-weighted duration-adjusted expected return. Quote quality, portfolio concentration, released-capacity timing, and aggregate capital limits remain independent gates. Positions are currently modeled and monitored for expiration settlement, and realized outcomes are retained to evaluate forecasts and recalibrate model parameters over time.</p>
         <div class="methodology-equations" aria-label="Simplified methodology equations">
           <p><strong>Horizon variance:</strong> <span><var>V</var><sub>Q</sub>(<var>T</var>) = ∫ variance scale × variance-clock weight</span></p>
-          <p><strong>Physical forecast:</strong> <span><var>V</var><sub>P</sub><sup>*</sup> = <var>d</var><sup>2</sup><var>V</var><sub>Q</sub> × exp[<var>β</var> log(<var>V</var><sub>MR</sub> / <var>V</var><sub>P</sub>)]</span></p>
+          <p><strong>Physical forecast:</strong> <span><var>V</var><sub>P</sub><sup>*</sup> = Σ<sub>s</sub> <var>V</var><sub>P,s</sub> × exp[<var>β</var><sub>s</sub> log(<var>V</var><sub>MR,s</sub> / <var>V</var><sub>P,s</sub>)]</span></p>
           <p><strong>Expected net edge:</strong> <span>entry credit − E<sub>P</sub>[expiration liability] − estimated costs</span></p>
           <p><strong>Candidate score:</strong> <span>duration-adjusted expected return × P(full credit)<sup>1.5</sup></span></p>
         </div>
