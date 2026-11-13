@@ -757,7 +757,10 @@ function lineChart(target, series, options = {}) {
   const rightObservedMax = rightPoints.length ? Math.max(...rightPoints.map(p => p.y)) : 0;
   const rightBounds = rightPoints.length
     ? (options.rightTickStep
-      ? steppedBounds(rightObservedMin, rightObservedMax, options.rightTickStep)
+      ? steppedBounds(
+        rightObservedMin, rightObservedMax, options.rightTickStep,
+        options.rightIncludeZero,
+      )
       : (() => { const range = Math.max(rightObservedMax - rightObservedMin, 1); return [rightObservedMin - range * .08, rightObservedMax + range * .08]; })())
     : [0, 1];
   const easternDateParts = timestamp => {
@@ -916,7 +919,7 @@ function lineChart(target, series, options = {}) {
   node.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${options.label || "Time series"}">
     ${regimeShading}${sessionSeparators}
     ${ticks.map(v => `<line x1="${pad.l}" x2="${width-pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#e4dfd6"/><text x="${pad.l-10}" y="${y(v)+4}" text-anchor="end" fill="#667085" font-size="12">${options.money ? money.format(v) : number.format(v)}</text>`).join("")}
-    ${rightTicks.map(v => `<line x1="${width-pad.r}" x2="${width-pad.r+5}" y1="${rightY(v)}" y2="${rightY(v)}" stroke="#667085"/><text x="${width-pad.r+10}" y="${rightY(v)+4}" fill="#667085" font-size="12">${number.format(v)}</text>`).join("")}
+    ${rightTicks.map(v => `<line x1="${width-pad.r}" x2="${width-pad.r+5}" y1="${rightY(v)}" y2="${rightY(v)}" stroke="#667085"/><text x="${width-pad.r+10}" y="${rightY(v)+4}" fill="#667085" font-size="12">${number.format(v)}${options.rightTickSuffix || ""}</text>`).join("")}
     ${relativeAreas}${zero}${verticalRules}${paths}${markers}
     ${options.sessionDateAxis ? sessionDateLabels : `<text x="${pad.l}" y="${height-12}" fill="#667085" font-size="12">${shortTime(minT)}</text><text x="${width-pad.r}" y="${height-12}" text-anchor="end" fill="#667085" font-size="12">${shortTime(maxT)}</text>`}
   </svg><div class="chart-legend">${series.filter((s,i,a)=>a.findIndex(t=>(t.legendLabel||t.label)===(s.legendLabel||s.label))===i).map(s => `<span class="legend-key${s.dash ? " legend-key--dashed" : ""}" style="--key:${s.color}">${s.legendLabel || s.label}</span>`).join("")}${options.regimeShading ? Object.entries(options.regimeShading.colors || {}).filter(([label]) => label !== "Unavailable").map(([label,color]) => `<span class="legend-key legend-key--regime" style="--key:${color}">${label} VIX</span>`).join("") : ""}${options.estimatedMarkLegend ? '<span class="legend-key legend-key--estimated" style="--key:#667085">Estimated zero-bid midpoint</span>' : ''}${options.carriedForwardLegend ? '<span class="legend-key legend-key--dashed" style="--key:#667085">Held at last accounting mark</span>' : ''}</div>`;
@@ -1451,12 +1454,15 @@ function renderEstimatedMarketVariables(model) {
       {rows, x: "observed_at_et", y: "risk_neutral_volatility_percent", label: "Risk-neutral horizon volatility", color: "#333ED4"},
       {rows, x: "observed_at_et", y: "physical_forecast_volatility_percent", label: "Active physical forecast", color: "#2FA236"},
       {rows, x: "observed_at_et", y: "realized_horizon_volatility_percent", label: "Realized through settlement", color: "#F76915"},
-      {rows, x: "observed_at_et", y: "provisional_realized_volatility_percent", label: "Provisional realized pace", color: "#98A2B3", dash: "7 5"},
+      {rows, x: "observed_at_et", y: "provisional_physical_variance_consumed_percent", label: "Physical variance consumed", color: "#98A2B3", dash: "7 5", axis: "right"},
     ], {
       label: `${targetDte}DTE exact-settlement volatility validation`,
       height: 320,
       compressTimeGaps: true,
       sessionDateAxis: true,
+      rightTickStep: 25,
+      rightIncludeZero: true,
+      rightTickSuffix: "%",
       regimeShading: {
         ...vixRegimeShading,
         rows,
@@ -1466,7 +1472,7 @@ function renderEstimatedMarketVariables(model) {
     if (note) {
       const matured = (horizon.history || []).filter(row => row.outcome_status === "VALID").length;
       const provisional = (horizon.history || []).filter(row => row.provisional_status === "VALID" && row.outcome_status !== "VALID").length;
-      note.textContent = `Exact observation-to-${targetDte}DTE SPXW settlement horizon. ${matured} matured forecast observation(s) have final five-minute realized-volatility outcomes; ${provisional} current-session pending observation(s) have a dashed provisional realized pace through the latest retained SPX point. Provisional values do not enter completed accuracy statistics.`;
+      note.textContent = `Exact observation-to-${targetDte}DTE SPXW settlement horizon. ${matured} matured forecast observation(s) have final five-minute realized-volatility outcomes; ${provisional} current-session pending observation(s) show physical variance consumed on the dashed gray right-axis line. A value of 100% means realized variance so far equals the complete active physical variance budget. Consumption values do not enter completed accuracy statistics.`;
     }
   });
   const periodKey = String(selectedVix1dHistoryDays);
