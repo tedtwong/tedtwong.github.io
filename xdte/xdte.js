@@ -1427,7 +1427,8 @@ function renderEstimatedMarketVariables(model) {
   };
   lineChart("#vix1d-discount-chart", [
     {rows: vixHistory, x: "observed_at_et", y: "vix1d_percent", label: "VIX1D", color: "#333ED4"},
-    {rows: vixHistory, x: "observed_at_et", y: "discounted_vix1d_percent", label: "Discounted VIX1D", color: "#2FA236"},
+    {rows: vixHistory, x: "observed_at_et", y: "discounted_vix1d_percent", label: "Discount-only VIX1D", color: "#98A2B3", dash: "6 4"},
+    {rows: vixHistory, x: "observed_at_et", y: "active_physical_vix1d_percent", label: "Active physical one-session", color: "#2FA236"},
     {rows: vixHistory, x: "observed_at_et", y: "realized_vix1d_percent", label: "Forward realized SPX volatility", color: "#F76915"},
   ], {label: "One-session VIX1D diagnostic", height: 320, compressTimeGaps: true, sessionDateAxis: true, regimeShading: vixRegimeShading});
   const settlementHorizons = data.settlement_horizon_forecast_validation?.horizons || {};
