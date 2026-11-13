@@ -604,7 +604,7 @@ function table(target, columns, rows, options = {}) {
     return;
   }
   node.innerHTML = `<table><thead><tr>${columns.map(c => `<th${c[4] ? ` title="${c[4]}"` : ""}>${c[0]}</th>`).join("")}</tr></thead><tbody>${rows.map(row =>
-    `<tr class="${target === "#trade-table" && expiresToday(row.expiration_date) ? "expiring-today" : ""}">${columns.map(c => `<td class="${c[2] ? c[2](row[c[1]]) : ""}">${c[3] ? c[3](row[c[1]], row) : (row[c[1]] ?? "—")}</td>`).join("")}</tr>`
+    `<tr class="${["#trade-table", "#put-bump-trade-table"].includes(target) && expiresToday(row.expiration_date) ? "expiring-today" : ""}">${columns.map(c => `<td class="${c[2] ? c[2](row[c[1]]) : ""}">${c[3] ? c[3](row[c[1]], row) : (row[c[1]] ?? "—")}</td>`).join("")}</tr>`
   ).join("")}</tbody></table>`;
 }
 
@@ -1797,7 +1797,7 @@ async function load({ historicalDate = null } = {}) {
     note.textContent=`Dotted segments use bounded zero-bid midpoint estimates for ${daily.estimated_mark_count} position(s); these are fair-value estimates, not executable closing quotes.`;
     currentPositionChartNode.appendChild(note);
   }
-  table("#trade-table", [
+  const tradeColumns = [
     ["Pos.", "position", null, null, "Position"], ["Type", "record_type", null, compactRecordType, "Record type"], ["Strat.", "strategy", null, compactStrategy, "Strategy: IC = iron condor; BPS = bull-put spread; BCS = bear-call spread"], ["DTE", "dte", null, null, "Entry DTE"],
     ["Status", "status", null, compactStatus],
     ["SPX zone", "spx_position_zone", null, positionZoneBadge, "Current SPX location"],
@@ -1815,7 +1815,15 @@ async function load({ historicalDate = null } = {}) {
     ["Max uPnL", "maximum_unrealized_pnl", pnlClass, v => value(v, money), "Maximum unrealized P&L"], ["Min uPnL", "minimum_unrealized_pnl", pnlClass, v => value(v, money), "Minimum unrealized P&L"],
     ["Exit", "exit_time_et", null, shortTime, "Exit time (ET)"],
     ["Reason", "exit_reason", null, compactExitReason, "Exit reason"],
-  ], daily.trades);
+  ];
+  const putBumpTrades = (daily.trades || []).filter(
+    row => row.paper_program_id === "PUT_BUMP_50_POINT_V1"
+  );
+  const xdteTrades = (daily.trades || []).filter(
+    row => row.paper_program_id !== "PUT_BUMP_50_POINT_V1"
+  );
+  table("#trade-table", tradeColumns, xdteTrades);
+  table("#put-bump-trade-table", tradeColumns, putBumpTrades);
   positionOutcomeChart("#position-outcome-chart", daily.trades);
   renderSettlementScenarioHorizons(
     daily.settlement_scenario_horizons || [
@@ -1837,6 +1845,14 @@ async function load({ historicalDate = null } = {}) {
     ["Average return / trade", value(averages.average_return, percent), pnlClass(averages.average_return)],
     ["Average duration / trade", averages.average_duration_hours == null ? "—" : `${number.format(averages.average_duration_hours)} hours`],
   ]);
+  const programLedger = ledger.programs || [];
+  metrics("#program-ledger-metrics", programLedger.flatMap(program => [
+    [`${program.label} open`, value(program.open_positions)],
+    [`${program.label} active reserve`, value(program.active_reserve, money), capacityClass(program.active_reserve)],
+    [`${program.label} unrealized`, value(program.unrealized_pnl, money), pnlClass(program.unrealized_pnl)],
+    [`${program.label} settled`, value(program.settled_trades)],
+    [`${program.label} realized`, value(program.realized_pnl, money), pnlClass(program.realized_pnl)],
+  ]));
   portfolioDailyChart("#portfolio-chart", ledger.portfolio_daily || [], [], ledger.portfolio_pnl || []);
   const settledHistory = (ledger.portfolio_daily || []).filter(row => row.basis === "SETTLED_TRADES_ONLY");
   const settledCoverage = settledHistory.at(-1);
@@ -1860,6 +1876,14 @@ async function load({ historicalDate = null } = {}) {
   ], ledger.calibration_periods);
   document.querySelector("#trade-average-coverage").textContent = `Settled trades only (${averages.settled_trades || 0}). Duration includes nights and weekends. Duration observations: ${averages.duration_samples || 0}; missing inputs make that average unavailable.`;
   const perf = ledger.performance;
+  table("#program-performance-table", [
+    ["Program", "label"], ["Settled", "trades"],
+    ["Deployed capital", "deployed_capital", null, v => value(v, money)],
+    ["Net P&L", "net_pnl", pnlClass, v => value(v, money)],
+    ["Net return", "net_return_on_deployed_capital", pnlClass, v => value(v, percent)],
+    ["Win rate", "win_rate", null, v => value(v, percent)],
+    ["Expectancy / trade", "expectancy_return_per_trade", pnlClass, v => value(v, percent)],
+  ], perf.by_program || []);
   const lossWithPercentage = (amount, percentage) => amount == null
     ? "—"
     : `${money.format(amount)}${percentage == null ? "" : ` (${percent.format(percentage)})`}`;

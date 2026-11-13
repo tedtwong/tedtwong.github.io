@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
   <link rel="stylesheet" href="xdte.css?v=20261110-tabbed-layout-v25">
-  <script defer src="xdte.js?v=20261112-equal-session-axis-v31"></script>
+  <script defer src="xdte.js?v=20261113-paper-program-sections-v32"></script>
 </head>
 <body class="access-locked">
   <div id="access-gate" class="access-gate" role="dialog" aria-modal="true" aria-labelledby="access-gate-title">
@@ -144,8 +144,12 @@
         <div id="current-position-chart" class="chart"></div>
       </article>
       <article class="panel">
-        <div class="panel__heading"><div><h3>Entries and exits</h3><p>Sanitized position summaries, including each position’s observed maximum and minimum unrealized P&amp;L over its holding period; option legs and raw quotes are excluded. Modeled expected return is expected net P&amp;L divided by total reserve; full-credit probability uses the saved active physical model, or a Black–Scholes fallback marked (BS), reconstructed from saved entry delta/IV when needed. A dash means neither estimate was recorded. Q−P is the saved entry-time risk-neutral minus model probability of finishing in the loss region, in percentage points. Positive values mean option prices assign more loss risk than the entry model. Historical rows retain the model active when they were evaluated.</p></div></div>
+        <div class="panel__heading"><div><h3>XDTE strategy entries and exits</h3><p>Regular cross-strategy XDTE positions, separate from the downside-density-bump research sleeve. Modeled expected return is expected net P&amp;L divided by total reserve; full-credit probability uses the saved active physical model, or a Black–Scholes fallback marked (BS). Q−P is the saved entry-time risk-neutral minus model loss-region probability.</p></div></div>
         <div id="trade-table" class="table-wrap"></div>
+      </article>
+      <article class="panel">
+        <div class="panel__heading"><div><h3>Put-bump research entries and exits</h3><p>Positions tagged <code>PUT_BUMP_50_POINT_V1</code>: downside-density-bump bull-put spreads with exact 50-point protection. These rows remain economically and operationally separate from regular XDTE reporting.</p></div></div>
+        <div id="put-bump-trade-table" class="table-wrap"></div>
       </article>
       <article class="panel chart-panel">
         <div class="panel__heading"><div><h3>SPX settlement payoff scenarios</h3><p>Select Today or one of the next seven trading sessions. Blue includes positions still outstanding at the selected target; orange includes positions expiring on that target date. The horizontal scale remains fixed at ±3% around the session-opening SPX, and the selected horizon uses one P&amp;L scale across its saved intraday scans. After the close, Today retains the completed session and its actual expiration-settled result through midnight ET; it then rolls to the current or next regular session. Positions expiring earlier are omitted. This is a hypothetical lifetime intrinsic payoff after fees, not a forecast or daily ledger change.</p></div></div>
@@ -263,6 +267,11 @@
       </div>
       <div id="ledger-metrics" class="metric-grid"></div>
       <p id="trade-average-coverage" class="chart-note"></p>
+      <article class="panel">
+        <div class="panel__heading"><div><h3>Ledger by paper program</h3><p>Mutually exclusive XDTE and put-bump sleeve totals. The account-level tiles above remain the authoritative combined ledger and are not the sum of duplicated rows.</p></div></div>
+        <div id="program-ledger-metrics" class="metric-grid metric-grid--compact"></div>
+        <div id="program-performance-table" class="table-wrap"></div>
+      </article>
       <article class="panel chart-panel">
         <div class="panel__heading"><div><h3>Portfolio net P&amp;L history</h3><p>Settled trades only. Bars show realized net P&amp;L on settlement dates (left axis). The blue line shows cumulative realized net P&amp;L; the dashed purple line accumulates saved entry-time expected net P&amp;L for the same settled trades (right axis). Each cumulative session point shares the horizontal coordinate of that session's final saved TOTAL P&amp;L point. The translucent gray intraday line includes open-position unrealized P&amp;L plus cumulative realized P&amp;L, using saved accounting marks on the right axis. Dashed gray segments connect session-end and next-session marks; they show overnight changes, not observed overnight fluctuations. Intraday missing intervals over 15 minutes remain disconnected. Stale components retain their last accepted marks. Unfilled orders are excluded. Weekends and market holidays are omitted.</p></div></div>
         <div id="portfolio-chart" class="chart"></div>
