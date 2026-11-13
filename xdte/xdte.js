@@ -1413,15 +1413,31 @@ function renderEstimatedMarketVariables(model) {
     {emptyMessage: "No intraday discount history is available."},
   );
   const componentBetas = meanReversion.component_betas || {};
+  const clockComponentLabels = {
+    REMAINING_RTH: "REMAINING RTH (REGULAR TRADING HOURS)",
+    FUTURE_RTH: "FUTURE RTH (REGULAR TRADING HOURS)",
+    OVERNIGHT: "OVERNIGHT",
+    WEEKEND_HOLIDAY: "WEEKEND OR HOLIDAY",
+  };
+  const clockComponentDescriptions = {
+    REMAINING_RTH: "The current session's remaining regular trading hours.",
+    FUTURE_RTH: "Regular trading hours in later sessions before settlement.",
+    OVERNIGHT: "Ordinary close-to-next-open intervals.",
+    WEEKEND_HOLIDAY: "Extended closed-market intervals across weekends or holidays.",
+  };
   const betaRows = Object.entries(componentBetas).map(([name, beta]) => ({
-    component: String(name).replaceAll("_", " "), beta,
+    component: clockComponentLabels[name] || String(name).replaceAll("_", " "),
+    meaning: clockComponentDescriptions[name] || "",
+    beta,
   }));
   if (Number.isFinite(Number(meanReversion.event_logit_adjustment))) betaRows.push({
     component: "SCHEDULED EVENT LOGIT ADJUSTMENT",
+    meaning: "Adjusts component betas when a scheduled event is active.",
     beta: meanReversion.event_logit_adjustment,
   });
   table("#clock-component-beta-table", [
     ["Clock component", "component"],
+    ["Meaning", "meaning"],
     ["Active beta", "beta", null, value => decimal(value)],
   ], betaRows, {emptyMessage: "Clock-component calibration is not yet available."});
   table("#physical-model-comparison-table", [
