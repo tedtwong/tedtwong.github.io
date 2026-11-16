@@ -33261,6 +33261,18 @@
         "position": "Position 13"
       }
     ],
+    "put_bump_capacity": {
+      "available": 50000.0,
+      "capacity": 50000.0,
+      "enabled": true,
+      "hourly_bucket": "2026-11-13T18:00:00-05:00",
+      "hourly_submission_available": true,
+      "maximum_submissions_per_hour": 1,
+      "next_hour_at_et": "2026-11-13T19:00:00-05:00",
+      "policy_id": "PUT_BUMP_50_POINT_V1",
+      "reserved": 0,
+      "submissions_this_hour": 0
+    },
     "reserve_capacity_flow": {
       "aggregate_limit": 60941.8,
       "cancelled_today": 20030.95,
@@ -84440,7 +84452,7 @@
     ]
   },
   "distribution_comparison": {
-    "age_seconds": 7824,
+    "age_seconds": 8229,
     "expirations": [
       {
         "bayesian_shadow_discount": 0.85741,
@@ -486997,7 +487009,7 @@
     "market_data_is_live": false,
     "market_data_status": "MARKET_CLOSED",
     "paper_trading_only": true,
-    "published_at_et": "2026-11-13T18:23:35.849134-05:00",
+    "published_at_et": "2026-11-13T18:30:20.750550-05:00",
     "status": "FINAL_AFTER_CLOSE",
     "trade_date": "2026-11-13"
   },

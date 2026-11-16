@@ -1193,6 +1193,7 @@ function renderCandidatePercentiles(history) {
 
 let selectedFunnelPeriod = "day";
 let selectedMarketOpportunitySnapshot = "__LATEST__";
+let selectedPutBumpOpportunitySnapshot = "__LATEST__";
 const marketSnapshotTimeFormatter = new Intl.DateTimeFormat("en-US", {
   hour: "numeric", minute: "2-digit", timeZone: "America/New_York",
 });
@@ -1251,6 +1252,60 @@ function renderMarketOpportunities(data, snapshotHistory = []) {
   if(marketNote) marketNote.textContent = market.scan_bucket
     ? `Scan ${market.scan_bucket} · recorded ${market.observed_at_et}. ${(market.rows || []).length ? 'Confirmed rank is the post-confirmation combination-score order; analytical rank preserves the pre-confirmation market order. Both are independent of account capacity, and entry status is not an order approval.' : 'No independent market opportunities were saved for this scan.'}`
     : 'Awaiting the first independent market-opportunity scan; historical finalists are not relabeled.';
+}
+
+function renderPutBumpOpportunities(data, snapshotHistory = []) {
+  const snapshotsByBucket = new Map();
+  [data, ...(Array.isArray(snapshotHistory) ? snapshotHistory : [])].forEach(snapshot => {
+    if(snapshot?.scan_bucket && !snapshotsByBucket.has(snapshot.scan_bucket)) snapshotsByBucket.set(snapshot.scan_bucket, snapshot);
+  });
+  const snapshots = [...snapshotsByBucket.values()];
+  const latest = data?.scan_bucket ? data : (snapshots[0] || null);
+  if(selectedPutBumpOpportunitySnapshot !== "__LATEST__" && !snapshotsByBucket.has(selectedPutBumpOpportunitySnapshot)) {
+    selectedPutBumpOpportunitySnapshot = "__LATEST__";
+  }
+  const selected = selectedPutBumpOpportunitySnapshot === "__LATEST__"
+    ? (latest || {rows:[]})
+    : (snapshotsByBucket.get(selectedPutBumpOpportunitySnapshot) || {rows:[]});
+  const controls = document.querySelector('#put-bump-opportunity-snapshot-controls');
+  if(controls) {
+    const options = latest ? [
+      {key:"__LATEST__", label:`Latest · ${marketSnapshotTimeLabel(latest)}`},
+      ...snapshots.filter(snapshot => snapshot.scan_bucket !== latest.scan_bucket).map(snapshot => ({
+        key:snapshot.scan_bucket, label:marketSnapshotTimeLabel(snapshot),
+      })),
+    ] : [];
+    controls.hidden = !options.length;
+    controls.innerHTML = options.map(option => `<button type="button" data-put-bump-snapshot="${escapeText(option.key)}">${escapeText(option.label)}</button>`).join("");
+    controls.querySelectorAll("[data-put-bump-snapshot]").forEach(button => {
+      const active = button.dataset.putBumpSnapshot === selectedPutBumpOpportunitySnapshot;
+      button.classList.toggle("is-active", active);
+      button.setAttribute("aria-pressed", String(active));
+      button.onclick = () => {
+        selectedPutBumpOpportunitySnapshot = button.dataset.putBumpSnapshot;
+        renderPutBumpOpportunities(data, snapshotHistory);
+      };
+    });
+  }
+  table('#put-bump-opportunities-table', [
+    ['DTE','target_dte'], ['Expiration','expiration'],
+    ['Search status','search_status'], ['Result / rejection reason','rejection_reason'],
+    ['Detected bump','bump_level',null,v=>value(v,number)],
+    ['Bump return','bump_return',null,v=>value(v,percent)],
+    ['Short put','short_put',null,v=>value(v,number)],
+    ['Long put','long_put',null,v=>value(v,number)],
+    ['Short delta','signed_short_delta',null,v=>v===null||v===undefined?'—':Number(v).toFixed(4)],
+    ['Gross credit','gross_credit',null,v=>v===null||v===undefined?'—':`${Number(v).toFixed(2)} pts`],
+    ['Expected net P&L','base_edge_dollars',null,v=>value(v,money)],
+    ['Return / reserve','base_edge_return_on_reserve',null,v=>value(v,percent)],
+    ['Required return','minimum_edge_return_on_reserve',null,v=>value(v,percent)],
+    ['Full-credit probability','full_credit_probability',null,v=>value(v,percent)],
+    ['Q−P','q_minus_p_probability_wedge',null,v=>value(v,percent)],
+  ], selected.rows || []);
+  const note = document.querySelector('#put-bump-opportunities-note');
+  if(note) note.textContent = selected.scan_bucket
+    ? `Scan ${selected.scan_bucket} · recorded ${selected.observed_at_et}. Every enabled DTE remains visible even when no bump candidate advanced.`
+    : 'Awaiting the first persisted put-bump search result; the next completed scanner cycle will populate this table.';
 }
 
 function renderFunnelHistory(history) {
@@ -1699,6 +1754,7 @@ async function load({ historicalDate = null } = {}) {
   if (entrySlippageNote) entrySlippageNote.textContent = `Entry fill slippage: requested credit minus filled credit, in dollars. Positive is worse; negative is price improvement. Measured for ${daily.entry_activity?.measured_trades ?? 0} of ${daily.entry_activity?.filled_trades ?? 0} filled trades today.`;
   renderFunnelHistory(daily.funnel_history || {});
   renderMarketOpportunities(daily.market_opportunities, daily.market_opportunity_snapshots);
+  renderPutBumpOpportunities(daily.put_bump_opportunities, daily.put_bump_opportunity_snapshots);
   summaryMetrics("#exit-metrics", [
     ["Exits filled today", value(exitActivity.exits_filled)],
     ["Transaction costs on exits", value(exitActivity.transaction_costs, money)],
@@ -1724,6 +1780,15 @@ async function load({ historicalDate = null } = {}) {
     [`Carried from prior window (${rolloverLabel})`, value(ledger.capacity.timed_capacity_carried_forward, money), capacityClass(ledger.capacity.timed_capacity_carried_forward)],
     ["Unused capacity forfeited today", value(ledger.capacity.timed_capacity_forfeited, money), capacityClass(ledger.capacity.timed_capacity_forfeited)],
     ["Long-dated (4+ DTE) capacity available", value(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity, money), capacityClass(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity)],
+  ]);
+  const bumpCapacity = daily.put_bump_capacity || {};
+  const bumpHourlyUsed = bumpCapacity.submissions_this_hour;
+  const bumpHourlyLimit = bumpCapacity.maximum_submissions_per_hour;
+  metrics("#put-bump-capacity-metrics", [
+    ["Put-bump sleeve limit", value(bumpCapacity.capacity, money)],
+    ["Put-bump active reserve", value(bumpCapacity.reserved, money), capacityClass(bumpCapacity.reserved)],
+    ["Put-bump available", value(bumpCapacity.available, money), capacityClass(bumpCapacity.available)],
+    ["Put-bump hourly entries", bumpHourlyUsed == null || bumpHourlyLimit == null ? "—" : `${number.format(bumpHourlyUsed)} / ${number.format(bumpHourlyLimit)} used`, bumpCapacity.hourly_submission_available === false ? "negative" : "positive"],
   ]);
   // The payload is already scoped to the displayed session. Keep positions
   // that settled today so their final realized value remains visible after

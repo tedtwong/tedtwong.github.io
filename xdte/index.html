@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
   <link rel="stylesheet" href="xdte.css?v=20261110-tabbed-layout-v25">
-  <script defer src="xdte.js?v=20261113-paper-program-sections-v32"></script>
+  <script defer src="xdte.js?v=20261113-put-bump-capacity-v33"></script>
 </head>
 <body class="access-locked">
   <div id="access-gate" class="access-gate" role="dialog" aria-modal="true" aria-labelledby="access-gate-title">
@@ -103,6 +103,9 @@
       <h3 class="capacity-heading">Capacity</h3>
       <div id="capacity-metrics" class="metric-grid capacity-metrics"></div>
       <p class="chart-note">Put and call reserve totals overlap for condors and are not additive.</p>
+      <h3 class="capacity-heading">Put-bump sleeve capacity</h3>
+      <div id="put-bump-capacity-metrics" class="metric-grid capacity-metrics"></div>
+      <p class="chart-note">This research sleeve is a sublimit. Global daily, aggregate, long-dated, directional, liquidity, and operational gates remain binding.</p>
       <article class="panel today-status-panel">
         <div class="panel__heading"><div><h3>Trading status</h3><p>Current session status and active conditions. Critical conditions remain visible above every tab.</p></div></div>
         <div id="today-trading-status-summary" class="status-summary"></div>
@@ -232,6 +235,17 @@
         </div>
         <p id="market-opportunities-note" class="chart-note"></p>
         <div id="market-opportunities-table" class="table-wrap"></div>
+      </article>
+      <article class="panel">
+        <div class="panel__heading market-opportunity-heading">
+          <div>
+            <h3>Put-bump opportunities</h3>
+            <p>One auditable result per enabled DTE, including explicit reasons a detected downside-density bump did not produce an eligible exact 50-point spread.</p>
+          </div>
+          <div id="put-bump-opportunity-snapshot-controls" class="snapshot-controls" role="group" aria-label="Put-bump opportunity snapshot time"></div>
+        </div>
+        <p id="put-bump-opportunities-note" class="chart-note"></p>
+        <div id="put-bump-opportunities-table" class="table-wrap"></div>
       </article>
       <article class="panel chart-panel">
         <div class="panel__heading funnel-heading">
