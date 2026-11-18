@@ -1503,14 +1503,6 @@ function renderEstimatedMarketVariables(model) {
   ], betaRows, {emptyMessage: "Clock-component calibration is not yet available."});
   table("#physical-model-comparison-table", [
     ["Model", "model"], ["Authority", "authority"],
-    ["Outcomes", "outcome_count"],
-    ["Effective outcomes", "effective_outcome_count", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(1) : "—"],
-    ["Log-var MAE", "log_variance_mae", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(4) : "—"],
-    ["Log-var RMSE", "log_variance_rmse", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(4) : "—"],
-    ["Log-var bias", "log_variance_bias", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(4) : "—"],
-    ["QLIKE", "qlike", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(6) : "—"],
-    ["Realized/forecast vol", "geometric_volatility_ratio", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(3) : "—"],
-    ["Underforecast fraction", "weighted_underforecast_fraction", null, value => Number.isFinite(Number(value)) ? `${(100 * Number(value)).toFixed(1)}%` : "—"],
     ["Tail status", "max_loss_calibration_status"],
     ["Tail observations", "max_loss_observation_count"],
     ["Max-loss events", "max_loss_event_count"],
@@ -1518,6 +1510,14 @@ function renderEstimatedMarketVariables(model) {
     ["Observed max-loss", "observed_max_loss_rate", null, value => Number.isFinite(Number(value)) ? `${(100 * Number(value)).toFixed(2)}%` : "—"],
     ["Max-loss bias", "max_loss_probability_bias", null, value => Number.isFinite(Number(value)) ? `${Number(value) >= 0 ? "+" : ""}${(100 * Number(value)).toFixed(2)} pp` : "—"],
     ["Max-loss Brier", "max_loss_brier_score", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(4) : "—"],
+    ["Outcomes", "outcome_count"],
+    ["Effective outcomes", "effective_outcome_count", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(1) : "—"],
+    ["Log-var MAE", "log_variance_mae", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(4) : "—"],
+    ["Log-var RMSE", "log_variance_rmse", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(4) : "—"],
+    ["Log-var bias", "log_variance_bias", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(4) : "—"],
+    ["QLIKE", "qlike", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(6) : "—"],
+    ["Forecast/realized vol", "geometric_volatility_ratio", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(3) : "—"],
+    ["Underforecast fraction", "weighted_underforecast_fraction", null, value => Number.isFinite(Number(value)) ? `${(100 * Number(value)).toFixed(1)}%` : "—"],
   ], meanReversion.model_comparison_statistics || [], {
     emptyMessage: "Physical-model comparison statistics are not yet available.",
   });
