@@ -1414,8 +1414,8 @@ function renderEstimatedMarketVariables(model) {
     ["RV long-run level", Number.isFinite(Number(meanReversion.long_run_annualized_volatility)) ? `${(100 * Number(meanReversion.long_run_annualized_volatility)).toFixed(2)}%` : "—", "", "The mean-reverting long-run annualized level estimated from completed-session realized variance."],
     ["Latest RV level", Number.isFinite(Number(meanReversion.latest_annualized_volatility)) ? `${(100 * Number(meanReversion.latest_annualized_volatility)).toFixed(2)}%` : "—", "", "The latest completed session’s five-minute integrated realized variance expressed as annualized volatility."],
     ["RV level persistence", decimal(meanReversion.persistence_per_clock_unit), "", "The fitted persistence of realized-variance deviations for each unit of the nonlinear variance clock."],
-    ["Active pooled anchor beta", decimal(meanReversion.beta), "", "The pooled fraction of mean-reversion versus current-forecast disagreement around which the active bounded clock-component betas are estimated."],
-    ["Pooled-beta shadow", decimal(meanReversion.pooled_shadow_beta), "", "The former single-beta model, now retained without decision authority for comparison."],
+    ["Active beta anchor", decimal(meanReversion.beta), "", "The pooled anchor for the decision-authoritative clock-component weights from the strict rolling-origin current-model replay."],
+    ["Mixed-history pooled shadow", decimal(meanReversion.pooled_shadow_beta), "", "The mixed-generation pooled calibration retained without decision authority for comparison."],
     ["MR effective history", Number.isFinite(Number(meanReversion.effective_observation_count)) ? `${Number(meanReversion.effective_observation_count).toFixed(1)} sessions` : "—", "", "The recency-weighted effective number of completed sessions supporting the mean-reversion level estimate."],
   ]);
   const terminalStats = data.terminal_observation_statistics || {};
@@ -1467,7 +1467,10 @@ function renderEstimatedMarketVariables(model) {
     data.surface_matrix || [],
     {emptyMessage: "No intraday discount history is available."},
   );
-  const componentBetas = meanReversion.component_betas || {};
+  const activeComponentBetas = meanReversion.component_betas || {};
+  const shadowComponentBetas = meanReversion.calibrated_component_shadow_betas || {};
+  const componentBetas = Object.keys(activeComponentBetas).length ? activeComponentBetas : shadowComponentBetas;
+  const componentBetasAreShadow = !Object.keys(activeComponentBetas).length && Object.keys(shadowComponentBetas).length;
   const clockComponentLabels = {
     REMAINING_RTH: "REMAINING RTH (REGULAR TRADING HOURS)",
     FUTURE_RTH: "FUTURE RTH (REGULAR TRADING HOURS)",
@@ -1485,15 +1488,18 @@ function renderEstimatedMarketVariables(model) {
     meaning: clockComponentDescriptions[name] || "",
     beta,
   }));
-  if (Number.isFinite(Number(meanReversion.event_logit_adjustment))) betaRows.push({
+  const eventBeta = componentBetasAreShadow
+    ? meanReversion.calibrated_component_shadow_event_logit_adjustment
+    : meanReversion.event_logit_adjustment;
+  if (Number.isFinite(Number(eventBeta))) betaRows.push({
     component: "SCHEDULED EVENT LOGIT ADJUSTMENT",
     meaning: "Adjusts component betas when a scheduled event is active.",
-    beta: meanReversion.event_logit_adjustment,
+    beta: eventBeta,
   });
   table("#clock-component-beta-table", [
     ["Clock component", "component"],
     ["Meaning", "meaning"],
-    ["Active beta", "beta", null, value => decimal(value)],
+    [componentBetasAreShadow ? "Shadow beta" : "Active beta", "beta", null, value => decimal(value)],
   ], betaRows, {emptyMessage: "Clock-component calibration is not yet available."});
   table("#physical-model-comparison-table", [
     ["Model", "model"], ["Authority", "authority"],
@@ -1503,6 +1509,8 @@ function renderEstimatedMarketVariables(model) {
     ["Log-var RMSE", "log_variance_rmse", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(4) : "—"],
     ["Log-var bias", "log_variance_bias", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(4) : "—"],
     ["QLIKE", "qlike", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(6) : "—"],
+    ["Realized/forecast vol", "geometric_volatility_ratio", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(3) : "—"],
+    ["Underforecast fraction", "weighted_underforecast_fraction", null, value => Number.isFinite(Number(value)) ? `${(100 * Number(value)).toFixed(1)}%` : "—"],
   ], meanReversion.model_comparison_statistics || [], {
     emptyMessage: "Physical-model comparison statistics are not yet available.",
   });
@@ -1768,18 +1776,27 @@ async function load({ historicalDate = null } = {}) {
     : (configuredRollover != null && Math.abs(configuredRollover - sessionRollover) > 1e-9
       ? `${percent.format(sessionRollover)} session; ${percent.format(configuredRollover)} next policy`
       : percent.format(sessionRollover));
+  const aggregateFraction = ledger.capacity.aggregate_equity_fraction;
+  const aggregateLimitLabel = aggregateFraction == null
+    ? "Aggregate active-reserve limit"
+    : `Aggregate active-reserve limit (${percent.format(aggregateFraction)} of risk equity)`;
   metrics("#capacity-metrics", [
-    ["Reserved capacity", value(ledger.capacity.total_position_reserve ?? ledger.capacity.aggregate_reserved_capacity ?? summary.reserved_risk, money), capacityClass(ledger.capacity.total_position_reserve ?? ledger.capacity.aggregate_reserved_capacity ?? summary.reserved_risk)],
+    ["Conservative risk equity", value(ledger.capacity.conservative_risk_equity_basis, money)],
+    [aggregateLimitLabel, value(ledger.capacity.aggregate_capacity, money)],
+    ["Aggregate active reserve", value(ledger.capacity.aggregate_reserved_capacity ?? ledger.capacity.total_position_reserve ?? summary.reserved_risk, money), capacityClass(ledger.capacity.aggregate_reserved_capacity ?? ledger.capacity.total_position_reserve ?? summary.reserved_risk)],
+    ["Aggregate capacity available", value(ledger.capacity.aggregate_available_capacity, money), capacityClass(ledger.capacity.aggregate_available_capacity)],
+    ["Daily new-entry limit", value(ledger.capacity.daily_new_capacity_limit ?? ledger.capacity.timed_capacity_total, money)],
+    ["Daily capacity effectively unlocked", value(ledger.capacity.timed_capacity_released, money)],
+    ["Daily capacity consumed", value(ledger.capacity.daily_new_capacity_consumed ?? ledger.capacity.capacity_reserved_today, money), capacityClass(ledger.capacity.daily_new_capacity_consumed ?? ledger.capacity.capacity_reserved_today)],
+    ["Daily new-entry capacity available", value(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity, money), capacityClass(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity)],
+    ["Long-dated (4+ sessions) limit", value(ledger.capacity.long_dated_capacity, money)],
+    ["Long-dated active reserve", value(ledger.capacity.long_dated_reserved_capacity, money), capacityClass(ledger.capacity.long_dated_reserved_capacity)],
+    ["Long-dated capacity available", value(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity, money), capacityClass(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity)],
     ["Total put reserve", value(ledger.capacity.total_put_reserve, money), capacityClass(ledger.capacity.total_put_reserve)],
     ["Total call reserve", value(ledger.capacity.total_call_reserve, money), capacityClass(ledger.capacity.total_call_reserve)],
     ["Lowest nearby-interval headroom", value(ledger.capacity.nearby_interval_headroom, money), capacityClass(ledger.capacity.nearby_interval_headroom)],
-    ["Capacity reserved today", value(ledger.capacity.capacity_reserved_today, money), capacityClass(ledger.capacity.capacity_reserved_today)],
-    ["Total capacity available", value(ledger.capacity.aggregate_available_capacity, money), capacityClass(ledger.capacity.aggregate_available_capacity)],
-    ["Available new-entry capacity now", value(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity, money), capacityClass(ledger.capacity.daily_new_capacity_available ?? ledger.capacity.available_capacity)],
-    ["Effective capacity unlocked", value(ledger.capacity.timed_capacity_released, money), capacityClass(ledger.capacity.timed_capacity_released)],
     [`Carried from prior window (${rolloverLabel})`, value(ledger.capacity.timed_capacity_carried_forward, money), capacityClass(ledger.capacity.timed_capacity_carried_forward)],
     ["Unused capacity forfeited today", value(ledger.capacity.timed_capacity_forfeited, money), capacityClass(ledger.capacity.timed_capacity_forfeited)],
-    ["Long-dated (4+ DTE) capacity available", value(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity, money), capacityClass(ledger.capacity.long_dated_available_capacity ?? ledger.capacity.seven_dte_available_capacity)],
   ]);
   const bumpCapacity = daily.put_bump_capacity || {};
   const bumpHourlyUsed = bumpCapacity.submissions_this_hour;
