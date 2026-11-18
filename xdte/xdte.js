@@ -1511,6 +1511,13 @@ function renderEstimatedMarketVariables(model) {
     ["QLIKE", "qlike", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(6) : "—"],
     ["Realized/forecast vol", "geometric_volatility_ratio", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(3) : "—"],
     ["Underforecast fraction", "weighted_underforecast_fraction", null, value => Number.isFinite(Number(value)) ? `${(100 * Number(value)).toFixed(1)}%` : "—"],
+    ["Tail status", "max_loss_calibration_status"],
+    ["Tail observations", "max_loss_observation_count"],
+    ["Max-loss events", "max_loss_event_count"],
+    ["Pred. max-loss", "forecast_max_loss_probability", null, value => Number.isFinite(Number(value)) ? `${(100 * Number(value)).toFixed(2)}%` : "—"],
+    ["Observed max-loss", "observed_max_loss_rate", null, value => Number.isFinite(Number(value)) ? `${(100 * Number(value)).toFixed(2)}%` : "—"],
+    ["Max-loss bias", "max_loss_probability_bias", null, value => Number.isFinite(Number(value)) ? `${Number(value) >= 0 ? "+" : ""}${(100 * Number(value)).toFixed(2)} pp` : "—"],
+    ["Max-loss Brier", "max_loss_brier_score", null, value => Number.isFinite(Number(value)) ? Number(value).toFixed(4) : "—"],
   ], meanReversion.model_comparison_statistics || [], {
     emptyMessage: "Physical-model comparison statistics are not yet available.",
   });
