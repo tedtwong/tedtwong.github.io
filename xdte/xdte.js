@@ -1242,6 +1242,7 @@ function renderMarketOpportunities(data, snapshotHistory = []) {
     ['Duration-adjusted return','duration_adjusted_base_edge_return_on_planned_loss',null,v=>value(v,percent)],
     ['Combined score (P^1.5)','probability_weighted_duration_adjusted_return',null,v=>value(v,percent)],
     ['Full-credit probability','reference_full_credit_probability',null,v=>value(v,percent)],
+    ['Modeled full-loss probability','physical_full_loss_probability',null,v=>value(v,percent)],
     ['Q−P','q_minus_p_probability_wedge',null,v=>value(v,percent)],
     ['Required reserve','capital_reserve',null,v=>value(v,money)],
     ['Entry hurdle','required_base_edge_return_on_planned_loss',null,v=>value(v,percent)],
@@ -1291,7 +1292,7 @@ function renderPutBumpOpportunities(data, snapshotHistory = []) {
     ['DTE','target_dte'], ['Expiration','expiration'],
     ['Search status','search_status'], ['Result / rejection reason','rejection_reason'],
     ['Detected bump','bump_level',null,v=>value(v,number)],
-    ['Bump return','bump_return',null,v=>value(v,percent)],
+    ['Bump location','bump_return',null,v=>value(v,percent)],
     ['Short put','short_put',null,v=>value(v,number)],
     ['Long put','long_put',null,v=>value(v,number)],
     ['Short delta','signed_short_delta',null,v=>v===null||v===undefined?'—':Number(v).toFixed(4)],
@@ -1300,6 +1301,7 @@ function renderPutBumpOpportunities(data, snapshotHistory = []) {
     ['Return / reserve','base_edge_return_on_reserve',null,v=>value(v,percent)],
     ['Required return','minimum_edge_return_on_reserve',null,v=>value(v,percent)],
     ['Full-credit probability','full_credit_probability',null,v=>value(v,percent)],
+    ['Modeled full-loss probability','physical_full_loss_probability',null,v=>value(v,percent)],
     ['Q−P','q_minus_p_probability_wedge',null,v=>value(v,percent)],
   ], selected.rows || []);
   const note = document.querySelector('#put-bump-opportunities-note');
