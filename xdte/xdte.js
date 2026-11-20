@@ -1236,7 +1236,7 @@ function renderMarketOpportunities(data, snapshotHistory = []) {
   }
   const marketTable = document.querySelector('#market-opportunities-table');
   if(marketTable) table('#market-opportunities-table', [
-    ['Confirmed rank','confirmed_rank'],['Analytical rank','market_rank'],['Strategy','strategy'],['DTE','target_dte'],['Expiration','expiration'],
+    ['Paper program','paper_program_id'],['Confirmed rank','confirmed_rank'],['Analytical rank','market_rank'],['Strategy','strategy'],['DTE','target_dte'],['Expiration','expiration'],
     ['Expected net P&L','base_edge_dollars',null,v=>value(v,money)],
     ['Raw return','base_edge_return_on_planned_loss',null,v=>value(v,percent)],
     ['Duration-adjusted return','duration_adjusted_base_edge_return_on_planned_loss',null,v=>value(v,percent)],
@@ -1816,6 +1816,18 @@ async function load({ historicalDate = null } = {}) {
     ["Put-bump available", value(bumpCapacity.available, money), capacityClass(bumpCapacity.available)],
     ["Put-bump hourly entries", bumpHourlyUsed == null || bumpHourlyLimit == null ? "—" : `${number.format(bumpHourlyUsed)} / ${number.format(bumpHourlyLimit)} used`, bumpCapacity.hourly_submission_available === false ? "negative" : "positive"],
   ]);
+  const meicCapacity = daily.meic_capacity || {};
+  const meicHourlyUsed = meicCapacity.submissions_this_hour;
+  const meicHourlyLimit = meicCapacity.maximum_submissions_per_hour;
+  metrics("#meic-capacity-metrics", [
+    ["MEIC separate sleeve limit", value(meicCapacity.capacity, money)],
+    ["MEIC active reserve", value(meicCapacity.reserved, money), capacityClass(meicCapacity.reserved)],
+    ["MEIC available", value(meicCapacity.available, money), capacityClass(meicCapacity.available)],
+    ["MEIC timed daily available", value(meicCapacity.daily_available, money), capacityClass(meicCapacity.daily_available)],
+    ["MEIC long-dated available", value(meicCapacity.long_dated_available, money), capacityClass(meicCapacity.long_dated_available)],
+    ["MEIC lowest directional headroom", value(meicCapacity.lowest_directional_headroom, money), capacityClass(meicCapacity.lowest_directional_headroom)],
+    ["MEIC hourly entries", meicHourlyUsed == null || meicHourlyLimit == null ? "—" : `${number.format(meicHourlyUsed)} / ${number.format(meicHourlyLimit)} used`, meicCapacity.hourly_submission_available === false ? "negative" : "positive"],
+  ]);
   // The payload is already scoped to the displayed session. Keep positions
   // that settled today so their final realized value remains visible after
   // expiration; positions closed before this session are absent upstream.
@@ -1910,11 +1922,15 @@ async function load({ historicalDate = null } = {}) {
   const putBumpTrades = (daily.trades || []).filter(
     row => row.paper_program_id === "PUT_BUMP_50_POINT_V1"
   );
+  const meicTrades = (daily.trades || []).filter(
+    row => row.paper_program_id === "MEIC_18X_EQUAL_CREDIT_V1"
+  );
   const xdteTrades = (daily.trades || []).filter(
-    row => row.paper_program_id !== "PUT_BUMP_50_POINT_V1"
+    row => !["PUT_BUMP_50_POINT_V1", "MEIC_18X_EQUAL_CREDIT_V1"].includes(row.paper_program_id)
   );
   table("#trade-table", tradeColumns, xdteTrades);
   table("#put-bump-trade-table", tradeColumns, putBumpTrades);
+  table("#meic-trade-table", tradeColumns, meicTrades);
   positionOutcomeChart("#position-outcome-chart", daily.trades);
   renderSettlementScenarioHorizons(
     daily.settlement_scenario_horizons || [

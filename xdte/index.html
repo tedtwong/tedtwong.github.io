@@ -105,7 +105,9 @@
       <p class="chart-note">Each scope reconciles independently: aggregate and long-dated limits equal active reserve plus available capacity; effective daily capacity equals consumed plus available capacity. Put and call reserve totals overlap for condors and are not additive.</p>
       <h3 class="capacity-heading">Put-bump sleeve capacity</h3>
       <div id="put-bump-capacity-metrics" class="metric-grid capacity-metrics"></div>
-      <p class="chart-note">This research sleeve is a sublimit. Global daily, aggregate, long-dated, directional, liquidity, and operational gates remain binding.</p>
+      <h3 class="capacity-heading">MEIC 1.8× equal-credit sleeve capacity</h3>
+      <div id="meic-capacity-metrics" class="metric-grid capacity-metrics"></div>
+      <p class="chart-note">Put-bump is an XDTE sublimit. MEIC has a separate capacity sleeve equal to XDTE's aggregate limit; shared account-loss, broker, liquidity, overlap, and operational safeguards remain binding.</p>
       <article class="panel today-status-panel">
         <div class="panel__heading"><div><h3>Trading status</h3><p>Current session status and active conditions. Critical conditions remain visible above every tab.</p></div></div>
         <div id="today-trading-status-summary" class="status-summary"></div>
@@ -153,6 +155,10 @@
       <article class="panel">
         <div class="panel__heading"><div><h3>Put-bump research entries and exits</h3><p>Positions tagged <code>PUT_BUMP_50_POINT_V1</code>: downside-density-bump bull-put spreads with exact 50-point protection. These rows remain economically and operationally separate from regular XDTE reporting.</p></div></div>
         <div id="put-bump-trade-table" class="table-wrap"></div>
+      </article>
+      <article class="panel">
+        <div class="panel__heading"><div><h3>MEIC 1.8× equal-credit entries and exits</h3><p>A separately capitalized PAPER sleeve selling approximately equal-credit iron condors. Each vertical has its own 1.8× debit stop; closing one side does not close the other.</p></div></div>
+        <div id="meic-trade-table" class="table-wrap"></div>
       </article>
       <article class="panel chart-panel">
         <div class="panel__heading"><div><h3>SPX settlement payoff scenarios</h3><p>Select Today or one of the next seven trading sessions. Blue includes positions still outstanding at the selected target; orange includes positions expiring on that target date. The horizontal scale remains fixed at ±3% around the session-opening SPX, and the selected horizon uses one P&amp;L scale across its saved intraday scans. After the close, Today retains the completed session and its actual expiration-settled result through midnight ET; it then rolls to the current or next regular session. Positions expiring earlier are omitted. This is a hypothetical lifetime intrinsic payoff after fees, not a forecast or daily ledger change.</p></div></div>
