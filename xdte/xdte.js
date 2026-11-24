@@ -1407,6 +1407,7 @@ function renderEstimatedMarketVariables(model) {
     ["Rho 90% interval", interval, "", "The central 90% uncertainty interval around the estimated daily rho."],
     ["Rho half-life", Number.isFinite(Number(data.rho_half_life_sessions)) ? `${Number(data.rho_half_life_sessions).toFixed(1)} sessions` : "—", "", "The estimated trading sessions required for half of a discount-state shock to decay."],
     ["Long-run discount center", decimal(data.long_run_discount_center), "", "The exponentially weighted long-run ratio of physical volatility to horizon-matched VIX-family volatility."],
+    ["Uncapped long-run center", decimal(data.long_run_discount_center_uncapped), "", "The data-estimated long-run discount center before the configured policy cap is applied."],
     ["Latest log-variance state", decimal(data.latest_state_log_variance), "", "The latest persistent deviation from the long-run discount center expressed in log-variance units."],
     ["Integrated-RV history", sessionCount(data.available_observed_session_count), "", "The completed trading sessions with usable five-minute integrated realized variance supporting the discount model."],
     ["Prior initialization", sessionCount(data.prior_padding_session_count), "", "The unobserved lookback slots initialized at the configured prior while the historical sample matures."],
