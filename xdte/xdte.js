@@ -3,6 +3,7 @@ function renderDistributionComparison(data) {
   const chart=document.querySelector("#distribution-comparison-chart");
   const note=document.querySelector("#distribution-comparison-note");
   const sigmaLevels=document.querySelector("#distribution-sigma-levels");
+  const shadowValidation=document.querySelector("#physical-shape-shadow-validation");
   const slider=document.querySelector("#distribution-scan-slider");
   const scanOutput=document.querySelector("#distribution-scan-output");
   const scans=(data?.scans?.length?data.scans:[{
@@ -12,7 +13,7 @@ function renderDistributionComparison(data) {
   if(!scans.length){
     controls.replaceChildren();slider.disabled=true;scanOutput.textContent="Unavailable";
     const empty='<p class="chart-empty">No matching physical-forecast and risk-neutral curves are available.</p>';
-    chart.innerHTML=empty;note.textContent="";sigmaLevels.replaceChildren();return;
+    chart.innerHTML=empty;note.textContent="";sigmaLevels.replaceChildren();shadowValidation?.replaceChildren();return;
   }
   const sessionChanged=slider.dataset.sessionDate!==(data?.session_date||"");
   const priorMaximum=Number(slider.max);
@@ -66,7 +67,7 @@ function renderDistributionComparison(data) {
       const empty=`<p class="chart-empty">${message}</p>`;
       chart.innerHTML=empty;
       note.textContent=`As of ${scan.observed_at_et}. A missing fit is shown explicitly and is never replaced with the next available expiration.`;
-      sigmaLevels.replaceChildren();return;
+      sigmaLevels.replaceChildren();shadowValidation?.replaceChildren();return;
     }
     const finiteNonnegative=value=>value!==null && value!=="" && Number.isFinite(Number(value)) && Number(value)>=0 ? Number(value) : null;
     const snapshotSpx=finiteNonnegative(row.spot);
@@ -74,7 +75,7 @@ function renderDistributionComparison(data) {
     const openingSpx=finiteNonnegative(marketReferences.session_open_spx)??finiteNonnegative(data.session_open_spx)??snapshotSpx;
     if(!(snapshotSpx>0 && openingSpx>0)){
       const empty="SPX session-open or selected-scan reference is unavailable.";
-      chart.textContent=empty;sigmaLevels.replaceChildren();return;
+      chart.textContent=empty;sigmaLevels.replaceChildren();shadowValidation?.replaceChildren();return;
     }
     const returnTicks=[-7.5,-5,-2.5,0,2.5,5,7.5];
     const xmin=openingSpx*.925,xmax=openingSpx*1.075,xTicks=returnTicks.map(value=>openingSpx*(1+value/100));
@@ -82,11 +83,14 @@ function renderDistributionComparison(data) {
     const inView=points=>(points||[]).filter(p=>Number.isFinite(p.return_pct)&&Number.isFinite(p.density)).map(p=>({...p,spx_level:snapshotSpx*(1+p.return_pct/100)})).filter(p=>p.spx_level>=xmin&&p.spx_level<=xmax);
     const compactPoints=field=>(row[field]||[]).map((density,index)=>({return_pct:data.return_grid?.[index],density}));
     const reference=inView(row.reference||compactPoints("reference_density")),riskNeutral=inView(row.risk_neutral||compactPoints("risk_neutral_density"));
-    const all=[...reference,...riskNeutral];
+    const cdfRecalibrated=inView(row.cdf_recalibrated||compactPoints("cdf_recalibrated_density"));
+    const empiricalResidual=inView(row.empirical_residual||compactPoints("empirical_residual_density"));
+    const realizedResidual=inView(row.realized_residual||compactPoints("realized_residual_density"));
+    const all=[...reference,...riskNeutral,...cdfRecalibrated,...empiricalResidual,...realizedResidual];
     const observedMax=Math.max(...all.map(p=>p.density));
     if(!(all.length>1 && observedMax>0)){
       const empty="No valid distribution values fall within the SPX-level range centered on the session open.";
-      chart.textContent=empty;sigmaLevels.replaceChildren();return;
+      chart.textContent=empty;sigmaLevels.replaceChildren();shadowValidation?.replaceChildren();return;
     }
     const width=1050,height=420,left=70,right=25,top=25,bottom=65;
     const x=v=>left+(v-xmin)/(xmax-xmin)*(width-left-right);
@@ -122,7 +126,8 @@ function renderDistributionComparison(data) {
     const scaleText=vixClockScale===null?'VIX-family nonlinear-clock scale unavailable':`VIX-family nonlinear-clock scale: ${ivLabel(vixClockScale)}`;
     const discountText=physicalDiscount===null?'Physical discount unavailable':meanRevertingDiscount?`Mean-reverting discount d: ${physicalDiscount.toFixed(3)}${longRunCenter===null?'':` · long-run center: ${longRunCenter.toFixed(3)}`}${dailyRho===null?'':` · residual ρ: ${dailyRho.toFixed(3)}`}`:centeredDiscount?`Active time-profile discount d: ${physicalDiscount.toFixed(3)}${discountCenter===null?'':` · DTE center: ${discountCenter.toFixed(3)}`}${bayesianShadowDiscount===null?'':` · Bayesian shadow d: ${bayesianShadowDiscount.toFixed(3)}`}`:fixedDiscount?`Fixed physical discount d: ${physicalDiscount.toFixed(3)}${bayesianShadowDiscount===null?'':` · Bayesian shadow d: ${bayesianShadowDiscount.toFixed(3)}`}`:`Bayesian physical discount d: ${physicalDiscount.toFixed(3)}`;
     const horizonLegend=`<text x="${left+12}" y="${top+18}" fill="#168a91">${referenceLabel} volatility: ${ivLabel(row.reference_iv)} · horizon σ: ${ivLabel(referenceHorizon)}</text><text x="${left+12}" y="${top+40}" fill="#8b5cf6">Option-implied risk-neutral volatility: ${ivLabel(row.risk_neutral_iv)} · horizon σ: ${ivLabel(riskNeutralHorizon)}</text><text x="${left+12}" y="${top+60}" fill="#555" font-size="12">${scaleText} · ${discountText}</text><text x="${left+12}" y="${top+78}" fill="#555" font-size="12">Exact expiration horizon · ${horizonDuration}</text>`;
-    const densityPaths=clipId=>`<g clip-path="url(#${clipId})"><path d="${line(reference)}" fill="none" stroke="#168a91" stroke-width="3" stroke-opacity="0.6"/><path d="${line(riskNeutral)}" fill="none" stroke="#8b5cf6" stroke-width="3" stroke-opacity="0.6"/></g>`;
+    const optionalPath=(points,color,dash,width=2.5)=>points.length>1?`<path d="${line(points)}" fill="none" stroke="${color}" stroke-width="${width}" stroke-opacity="0.72" stroke-dasharray="${dash}"/>`:'';
+    const densityPaths=clipId=>`<g clip-path="url(#${clipId})"><path d="${line(reference)}" fill="none" stroke="#168a91" stroke-width="3" stroke-opacity="0.75"/><path d="${line(riskNeutral)}" fill="none" stroke="#8b5cf6" stroke-width="3" stroke-opacity="0.55"/>${optionalPath(cdfRecalibrated,"#F76915","8 4")}${optionalPath(empiricalResidual,"#2FA236","3 3")}${optionalPath(realizedResidual,"#667085","1 5",2)}</g>`;
     const shell=(clipId,legend,extraMarks,aria)=>`<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${aria}"><defs><clipPath id="${clipId}"><rect x="${left}" y="${top}" width="${width-left-right}" height="${height-top-bottom}"/></clipPath></defs>${axes}${legend}${densityPaths(clipId)}${extraMarks}<text x="${width/2}" y="${height-10}" text-anchor="middle">SPX level · centered on session open ${preciseLevel(openingSpx)}</text><text transform="translate(17 ${height/2}) rotate(-90)" text-anchor="middle">Density per 1% SPX move</text></svg>`;
     let sigmaMarks="";
     const sigmaRows=[];
@@ -144,7 +149,18 @@ function renderDistributionComparison(data) {
       ["Prior-session close",finiteNonnegative(marketReferences.previous_session_close_spx),"#667085"],
     ].filter(item=>item[1]!==null);
     for(const [label,level,color] of marketRows){if(level>=xmin&&level<=xmax)marketMarks+=`<line x1="${x(level)}" x2="${x(level)}" y1="${top+90}" y2="${height-bottom}" stroke="${color}" stroke-width="2" stroke-dasharray="2 4"><title>${label}: SPX ${level.toFixed(2)}</title></line>`;}
-    const referenceLegend=`<div class="chart-legend"><span class="legend-key" style="--key:#111827">Open ${preciseLevel(openingSpx)}</span>${marketRows.map(([label,level,color])=>`<span class="legend-key" style="--key:${color}">${label} ${preciseLevel(level)}</span>`).join('')}</div>`;
+    const shadowMeta=row.physical_shape_shadows||{};
+    const validation=shadowMeta.rolling_origin_validation?.models||{};
+    const validationRows=[
+      ["Active physical",validation.active_physical],
+      ["#2 PIT-calibrated shadow",validation.cdf_recalibrated_shadow],
+      ["#3 empirical-residual shadow",validation.empirical_residual_shadow],
+    ].filter(([,metrics])=>metrics?.observations);
+    if(shadowValidation){
+      shadowValidation.innerHTML=validationRows.length?`<h4>Rolling-origin calibration against realized settlements</h4><table><thead><tr><th>Model</th><th>Sessions</th><th>Mean PIT</th><th>PIT KS</th><th>Central 80%</th><th>Central 90%</th></tr></thead><tbody>${validationRows.map(([label,metrics])=>`<tr><th scope="row">${label}</th><td>${metrics.session_count}</td><td>${Number(metrics.mean_pit).toFixed(3)}</td><td>${Number(metrics.pit_ks_distance).toFixed(3)}</td><td>${(100*Number(metrics.central_80_coverage)).toFixed(1)}%</td><td>${(100*Number(metrics.central_90_coverage)).toFixed(1)}%</td></tr>`).join('')}</tbody></table><p class="chart-note">Strict session rolling-origin evidence only. Lower PIT KS is better; coverage should approach its stated level. These preliminary diagnostics have no trading authority.</p>`:'<p class="chart-empty">Rolling-origin physical-shape validation is not yet available.</p>';
+    }
+    const shadowLegend=`<div class="chart-legend"><span class="legend-key" style="--key:#168a91">Active physical</span><span class="legend-key" style="--key:#8b5cf6">Risk-neutral</span>${cdfRecalibrated.length?'<span class="legend-key" style="--key:#F76915">#2 PIT-calibrated shadow</span>':''}${empiricalResidual.length?'<span class="legend-key" style="--key:#2FA236">#3 empirical-residual shadow</span>':''}${realizedResidual.length?'<span class="legend-key" style="--key:#667085">Historical realized residual shape</span>':''}</div>`;
+    const referenceLegend=shadowLegend+`<div class="chart-legend"><span class="legend-key" style="--key:#111827">Open ${preciseLevel(openingSpx)}</span>${marketRows.map(([label,level,color])=>`<span class="legend-key" style="--key:${color}">${label} ${preciseLevel(level)}</span>`).join('')}</div>`;
     const referenceMarks=sigmaMarks+marketMarks;
     chart.innerHTML=shell("distribution-density-horizon-clip",horizonLegend,referenceMarks,"Shape-scale-clock physical forecast versus option-implied risk-neutral terminal SPX-level density with exact expiration-horizon volatility and session reference levels")+referenceLegend;
     if(sigmaRows.length && snapshotSpx!==null){
@@ -162,7 +178,8 @@ function renderDistributionComparison(data) {
     const retention=data.status==="RETAINED_SESSION"&&isLatest?" The completed session remains displayed until the next session records a valid distribution.":"";
     const discountDescription=meanRevertingDiscount?'The active discount combines a data-driven long-run center, a persistent residual state, a contemporaneous VIX-regime effect when supported by the saved model version, and the Bayesian relative intraday profile.':centeredDiscount?'The active discount preserves the Bayesian intraday profile but normalizes every DTE row to a 0.80 average; cross-DTE posterior levels remain observational.':fixedDiscount?'The fixed 0.80 discount converts that scale to physical variance; the Bayesian DTE/time posterior remains observational.':'The displayed Bayesian discount converts that scale to physical variance.';
     const modelDescription=String(row.reference_model_version||'').startsWith('spxw_shape_vix_nonlinear_clock_physical_v')?`SPXW supplies standardized shape/skew and forward; VIX1D/VIX9D/VIX supply total-variance scale through the nonlinear intraday/overnight/event clock; ${discountDescription}`:'This retained snapshot predates the active shape–scale–clock model.';
-    note.textContent=`${stateLabel}As of ${scan.observed_at_et} · ${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: ${referenceLabel}. Purple: option-implied risk-neutral density. ${modelDescription} Annualized-equivalent volatility and exact-horizon σ are both displayed over the remaining ${horizonDuration}. The horizontal scale is fixed at ${preciseLevel(xmin)} to ${preciseLevel(xmax)}, centered on the session open ${preciseLevel(openingSpx)}, and labeled in actual SPX levels. The solid dark line is the open; dotted lines mark the point-in-time latest/close and prior-session close. Dashed lines mark exact-horizon ±2σ; ±1σ is reported in the reference table without additional chart lines. The vertical scale remains 0.00 to 1.00 density per 1% SPX move for comparability.${clippingNote} Stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced across scans.${retention}`;
+    const shadowDescription=cdfRecalibrated.length?` Shadow evidence: ${shadowMeta.session_count??'—'} independent sessions (${Number(shadowMeta.effective_session_count||0).toFixed(1)} recency-weighted); empirical blend weight ${Number(shadowMeta.empirical_blend_weight||0).toFixed(3)}; decision authority NONE.`:' Physical-shape shadow calibration is not yet available.';
+    note.textContent=`${stateLabel}As of ${scan.observed_at_et} · ${Math.round(age/60)} minutes old · Option-implied fit: ${row.quality}. Teal: ${referenceLabel}. Purple: option-implied risk-neutral density. Orange dashed: monotone PIT/CDF recalibration (#2). Green dotted: empirical standardized-residual shadow (#3). Gray dotted: the historical realized residual shape mapped to the current horizon. ${modelDescription}${shadowDescription} Annualized-equivalent volatility and exact-horizon σ are both displayed over the remaining ${horizonDuration}. The horizontal scale is fixed at ${preciseLevel(xmin)} to ${preciseLevel(xmax)}, centered on the session open ${preciseLevel(openingSpx)}, and labeled in actual SPX levels. The solid dark line is the open; dotted reference lines mark the point-in-time latest/close and prior-session close. Dashed vertical lines mark exact-horizon ±2σ; ±1σ is reported in the reference table without additional chart lines. The vertical scale remains 0.00 to 1.00 density per 1% SPX move for comparability.${clippingNote} Stored tails and probability calculations are not truncated or renormalized. Risk-neutral probabilities are pricing measures, not real-world forecasts. Missing expirations are not replaced across scans.${retention}`;
   }
   slider.oninput=()=>{selectedScanIndex=Math.max(0,Math.min(scans.length-1,Number(slider.value)||0));slider.dataset.followLatest=String(selectedScanIndex===scans.length-1);setScan();};
   setScan();
