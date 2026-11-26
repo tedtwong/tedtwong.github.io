@@ -155,6 +155,7 @@ function renderDistributionComparison(data) {
       ["Active physical",validation.active_physical],
       ["#2 PIT-calibrated shadow",validation.cdf_recalibrated_shadow],
       ["#3 empirical-residual shadow",validation.empirical_residual_shadow],
+      ["Option-implied risk-neutral",validation.risk_neutral],
     ].filter(([,metrics])=>metrics?.observations);
     if(shadowValidation){
       shadowValidation.innerHTML=validationRows.length?`<h4>Rolling-origin calibration against realized settlements</h4><table><thead><tr><th>Model</th><th>Sessions</th><th>Mean PIT</th><th>PIT KS</th><th>Central 80%</th><th>Central 90%</th></tr></thead><tbody>${validationRows.map(([label,metrics])=>`<tr><th scope="row">${label}</th><td>${metrics.session_count}</td><td>${Number(metrics.mean_pit).toFixed(3)}</td><td>${Number(metrics.pit_ks_distance).toFixed(3)}</td><td>${(100*Number(metrics.central_80_coverage)).toFixed(1)}%</td><td>${(100*Number(metrics.central_90_coverage)).toFixed(1)}%</td></tr>`).join('')}</tbody></table><p class="chart-note">Strict session rolling-origin evidence only. Lower PIT KS is better; coverage should approach its stated level. These preliminary diagnostics have no trading authority.</p>`:'<p class="chart-empty">Rolling-origin physical-shape validation is not yet available.</p>';
