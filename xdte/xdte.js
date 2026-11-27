@@ -1313,6 +1313,7 @@ function renderPutBumpOpportunities(data, snapshotHistory = []) {
     ['Bump location','bump_return',null,v=>value(v,percent)],
     ['Short put','short_put',null,v=>value(v,number)],
     ['Long put','long_put',null,v=>value(v,number)],
+    ['Wing width','protective_wing_width',null,v=>v===null||v===undefined?'—':`${Number(v).toFixed(0)} pts`],
     ['Short delta','signed_short_delta',null,v=>v===null||v===undefined?'—':Number(v).toFixed(4)],
     ['Gross credit','gross_credit',null,v=>v===null||v===undefined?'—':`${Number(v).toFixed(2)} pts`],
     ['Expected net P&L','base_edge_dollars',null,v=>value(v,money)],
@@ -1321,6 +1322,7 @@ function renderPutBumpOpportunities(data, snapshotHistory = []) {
     ['Full-credit probability','full_credit_probability',null,v=>value(v,percent)],
     ['Modeled full-loss probability','physical_full_loss_probability',null,v=>value(v,percent)],
     ['Q−P','q_minus_p_probability_wedge',null,v=>value(v,percent)],
+    ['Matching 20–50 point wings','matching_protective_wing_candidate_count'],
   ], selected.rows || []);
   const note = document.querySelector('#put-bump-opportunities-note');
   if(note) note.textContent = selected.scan_bucket

@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://codelooper.com/xdte/">
   <link rel="canonical" href="https://codelooper.com/xdte/">
   <link rel="stylesheet" href="xdte.css?v=20261110-tabbed-layout-v25">
-  <script defer src="xdte.js?v=20261126-risk-neutral-pit-v35"></script>
+  <script defer src="xdte.js?v=20261127-put-bump-wings-v36"></script>
 </head>
 <body class="access-locked">
   <div id="access-gate" class="access-gate" role="dialog" aria-modal="true" aria-labelledby="access-gate-title">
@@ -153,7 +153,7 @@
         <div id="trade-table" class="table-wrap"></div>
       </article>
       <article class="panel">
-        <div class="panel__heading"><div><h3>Put-bump research entries and exits</h3><p>Positions tagged <code>PUT_BUMP_50_POINT_V1</code>: downside-density-bump bull-put spreads with exact 50-point protection. These rows remain economically and operationally separate from regular XDTE reporting.</p></div></div>
+        <div class="panel__heading"><div><h3>Put-bump research entries and exits</h3><p>Positions retain the legacy-compatible <code>PUT_BUMP_50_POINT_V1</code> tag: downside-density-bump bull-put spreads now select listed protective wings from 20 to 50 points. These rows remain economically and operationally separate from regular XDTE reporting.</p></div></div>
         <div id="put-bump-trade-table" class="table-wrap"></div>
       </article>
       <article class="panel">
@@ -247,7 +247,7 @@
         <div class="panel__heading market-opportunity-heading">
           <div>
             <h3>Put-bump opportunities</h3>
-            <p>One auditable result per enabled DTE, including explicit reasons a detected downside-density bump did not produce an eligible exact 50-point spread.</p>
+            <p>One auditable result per enabled DTE, including explicit reasons a detected downside-density bump did not produce an eligible 20-to-50-point spread.</p>
           </div>
           <div id="put-bump-opportunity-snapshot-controls" class="snapshot-controls" role="group" aria-label="Put-bump opportunity snapshot time"></div>
         </div>
