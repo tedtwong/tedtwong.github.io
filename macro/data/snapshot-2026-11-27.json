@@ -109995,7 +109995,7 @@
       "summary": "Latest reported value 790,554.000 millions of U.S. dollars, seasonally adjusted annual rate; reported-scale forecast 786,645.000 millions of U.S. dollars, seasonally adjusted annual rate. The model uses absolute change. Status: normal."
     }
   ],
-  "generated_at": "2026-11-27T13:02:37.195244+00:00",
+  "generated_at": "2026-11-27T21:30:05.415016+00:00",
   "macro_heatmap": {
     "categories": [
       {
@@ -110119,7 +110119,7 @@
         "usable": 1
       }
     ],
-    "generated_at": "2026-11-27T13:02:37.271755+00:00",
+    "generated_at": "2026-11-27T21:30:05.491474+00:00",
     "method_version": "macro_heatmap_v1",
     "notes": [
       "Colors use directionally normalized model surprises, not raw changes.",
@@ -128207,7 +128207,7 @@
         "product_code": "FF",
         "product_name": "US Fed Funds Target Rate",
         "source_url": "https://forecastex.com/markets/",
-        "status": "AVAILABLE",
+        "status": "UNAVAILABLE",
         "venue": "FORECASTX"
       },
       {
@@ -128215,7 +128215,7 @@
         "product_code": "PCEY",
         "product_name": "US PCE inflation",
         "source_url": "https://forecastex.com/markets/",
-        "status": "AVAILABLE",
+        "status": "UNAVAILABLE",
         "venue": "FORECASTX"
       },
       {
@@ -128223,7 +128223,7 @@
         "product_code": "PREMP",
         "product_name": "US Payroll Employment",
         "source_url": "https://forecastex.com/markets/",
-        "status": "UNAVAILABLE",
+        "status": "AVAILABLE",
         "venue": "FORECASTX"
       },
       {
@@ -128231,7 +128231,7 @@
         "product_code": "RGDP",
         "product_name": "US Real GDP",
         "source_url": "https://forecastex.com/markets/",
-        "status": "AVAILABLE",
+        "status": "UNAVAILABLE",
         "venue": "FORECASTX"
       },
       {
@@ -128239,7 +128239,7 @@
         "product_code": "UNR",
         "product_name": "US Unemployment Rate",
         "source_url": "https://forecastex.com/markets/",
-        "status": "AVAILABLE",
+        "status": "UNAVAILABLE",
         "venue": "FORECASTX"
       },
       {
@@ -128247,7 +128247,7 @@
         "product_code": "USEUR",
         "product_name": "Euro to US dollar exchange rate",
         "source_url": "https://forecastex.com/markets/",
-        "status": "AVAILABLE",
+        "status": "UNAVAILABLE",
         "venue": "FORECASTX"
       },
       {
@@ -128279,7 +128279,7 @@
         "product_code": "JPUSD",
         "product_name": "US dollar to Japanese yen exchange rate",
         "source_url": "https://forecastex.com/markets/",
-        "status": "AVAILABLE",
+        "status": "UNAVAILABLE",
         "venue": "FORECASTX"
       },
       {
